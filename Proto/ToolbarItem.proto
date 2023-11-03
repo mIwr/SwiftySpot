@@ -1,0 +1,34 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.component.v1.proto;
+
+import "UbiElementInfo.proto";
+
+message ToolbarItemFeedComponent {
+    string title = 1;
+    string uri = 2;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ToolbarItemListeningHistoryComponent {
+    string title = 1;
+    string uri = 2;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ToolbarItemProfileComponent {
+    string accessibilityTitle = 1;
+    string username = 2;
+    string firstInitial = 3;
+    string uri = 4;
+    string image = 5;
+    string displayName = 6;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ToolbarItemSettingsComponent {
+    string title = 1;
+    string uri = 2;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}

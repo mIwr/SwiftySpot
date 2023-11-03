@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.viewservice.v1.proto;
+
+message HomeViewServiceRequest {
+    //'default'
+    string facet = 1;
+    //{Region}/{City} timezone format
+    string timezone = 2;
+}

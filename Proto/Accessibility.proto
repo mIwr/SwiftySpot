@@ -1,0 +1,8 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.accessibility.v1.proto;
+
+message Accessibility {
+    string description = 1;
+}

@@ -1,0 +1,45 @@
+
+syntax = "proto3";
+
+message PlaylistInfo {
+    bytes uid = 1;
+    int32 count = 2;
+    PlaylistMeta meta = 3;
+    PlaylistPayload payload = 5;
+    int64 create_ts_utc = 15;
+    string author = 16;
+    int32 todoUnknownNum = 17;
+    PlaylistMetaUnknownObj obj = 18;
+}
+
+message PlaylistPayload {
+    int32 val1 = 1;
+    int32 val2 = 2;
+    repeated PlaylistTrack tracks = 3;
+}
+
+message PlaylistMeta {
+    string name = 1;
+    string desc = 2;
+    int32 todoUnknownNum = 4;
+    string idName = 11;
+    map<string, string> additional = 12;
+    map<string, string> image = 13;
+}
+
+message PlaylistMetaUnknownObj {
+    int32 var1 = 1;
+    int32 var2 = 2;
+    int32 var4 = 4;
+    int32 var5 = 5;
+}
+
+message PlaylistTrack {
+    message Info {
+        optional int64 create_ts_ms_utc = 2;
+        map<string, string> props = 11;
+        bytes todoUnknownBytes = 12;
+    }
+    string uri = 1;
+    Info info = 2;
+}

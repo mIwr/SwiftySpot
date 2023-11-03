@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+message SPConnectivity {
+    PlatformSpecificData platform = 1;
+    string deviceId = 2;
+}
+
+message PlatformSpecificData {
+    oneof data {
+        NativeAndroidData android = 1;
+        NativeIOSData ios = 2;
+        NativeWindowsData windows = 4;
+    }
+}
+
+message NativeAndroidData {
+    SPScreenInfo screen = 1;
+    string osVer = 2;
+    int32 sdk = 3;
+    string model = 4;
+    string model2 = 5;
+    string brand = 6;
+    string brand2 = 7;
+    int32 aarch = 8;
+}
+
+message NativeIOSData {
+    int32 userInterfaceIdiom = 1;
+    bool simulator = 2;
+    string hw = 3;
+    string osVer = 4;
+    string model = 5;
+}
+
+message NativeWindowsData {
+    int32 something1 = 1;
+    int32 something3 = 3;
+    int32 something4 = 4;
+    int32 something6 = 6;
+    int32 something7 = 7;
+    int32 something8 = 8;
+    bool something10 = 10;
+}
+
+message SPScreenInfo {
+    int32 width = 1;
+    int32 height = 2;
+    int32 density = 3;
+    int32 densityOther = 4;
+}

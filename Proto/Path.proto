@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+
+package com.spotify.ubi.proto.elementinfo.v1;
+
+message Path {
+    repeated PathNode nodes = 1;
+}
+
+message PathNode {
+    string name = 1;
+    optional string id = 2;
+    optional string uri = 3;
+    optional int32 position = 4;
+    optional string reason = 5;
+}

@@ -1,0 +1,51 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.component.v1.proto;
+
+import "google/protobuf/any.proto";
+import "UbiElementInfo.proto";
+
+message HomePageComponent {
+    //Primary sections
+    repeated .google.protobuf.Any components = 2;
+    PageInfo page_info = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ToolbarComponent {
+    string day_part_message = 1;
+    optional string subtitle = 2;
+    repeated .google.protobuf.Any items = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message SectionHeaderComponent {
+    string title = 1;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ShortcutsSectionComponent {
+    string title = 1;
+    repeated .google.protobuf.Any shortcuts = 2;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message SectionComponent {
+    //Card components
+    repeated .google.protobuf.Any components = 2;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message RecentlyPlayedSectionComponent {
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+    ComponentInstanceInfo component_instance_info = 2001;
+}
+
+message PageInfo {
+    string facet = 1;
+}
+
+message ComponentInstanceInfo {
+    string id = 1;
+}

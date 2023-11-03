@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.component.experimental.v1.proto;
+
+import "UbiElementInfo.proto";
+
+message FilterComponent {
+    repeated Facet facets = 1;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message Facet {
+    string title = 1;
+    string value = 2;
+    bool selected = 3;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}

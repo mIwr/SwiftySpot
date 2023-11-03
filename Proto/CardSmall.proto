@@ -1,0 +1,94 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.component.v1.proto;
+
+import "google/protobuf/any.proto";
+import "Accessibility.proto";
+import "UbiElementInfo.proto";
+
+message PlaylistCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .com.spotify.home.dac.accessibility.v1.proto.Accessibility accessibility = 4;
+    .google.protobuf.Any context_menu = 5;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message YourEpisodesCardSmallComponent {
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message LikedSongsCardSmallComponent {
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message DownloadedPlaylistCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message AlbumCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message TrackCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message DownloadedAlbumCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message DownloadedLikedSongsCardSmallComponent {
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ArtistCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ShowCardSmallComponent {
+    string title = 1;
+    string showCategories = 2;
+    string uri = 3;
+    string image = 4;
+    .google.protobuf.Any context_menu = 5;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message DownloadedEpisodeCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message EpisodeCardSmallComponent {
+    string title = 1;
+    string uri = 2;
+    string image = 3;
+    .google.protobuf.Any context_menu = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}

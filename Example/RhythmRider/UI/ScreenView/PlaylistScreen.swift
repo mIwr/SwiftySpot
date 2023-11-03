@@ -1,0 +1,182 @@
+//
+//  PlaylistScreen.swift
+//  RhythmRider
+//
+//  Created by Developer on 16.10.2023.
+//
+
+import SwiftUI
+import SwiftySpot
+
+struct PlaylistScreen: View {
+    
+    @EnvironmentObject var api: ApiController
+    @EnvironmentObject var playController: PlaybackController
+    
+    @State fileprivate var _loaded: Bool? = nil
+    @State fileprivate var _errMsg: String = ""
+    
+    fileprivate var _playlistDetailed: PlaylistInfoVModel
+    
+    init(playlistShort: SPLandingPlaylist) {
+        var title = playlistShort.name
+        if (playlistShort.name.isEmpty) {
+            title = playlistShort.subtitle
+        }
+        _playlistDetailed = PlaylistInfoVModel(id: playlistShort.id, name: title, desc: playlistShort.subtitle, orderedTrackUris: [], tracksDetails: [:])
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            if (_loaded == nil) {
+                LoadingView()
+            } else if (_loaded == false) {
+                ErrorView(title: R.string.localizable.playlistTracksLoadError(), subtitle: _errMsg) {
+                    _loaded = nil
+                    _errMsg = ""
+                    Task {
+                        _loaded = await loadData()
+                    }
+                }
+            } else {
+                ScrollView(.vertical, showsIndicators: true) {
+                    LazyVStack(alignment: .leading, spacing: 12, content: {
+                        PlaylistHeaderView(title: _playlistDetailed.name, desc: _playlistDetailed.desc, img: nil, tracksCount: _playlistDetailed.orderedTrackUris.count)
+                            
+                        Divider()
+                        ForEach(0..._playlistDetailed.orderedTrackUris.count - 1, id: \.self) { index in
+                            
+                            let uri = _playlistDetailed.orderedTrackUris[index]
+                            let onPress: () -> Void = {
+#if DEBUG
+                                print("Track TAP")
+                                if (ProcessInfo.processInfo.previewMode) {
+                                    //Disable real play track in preview
+                                    return
+                                }
+#endif
+                                if (playController.playingTrackUri == uri) {
+                                    return
+                                }
+                                let vmodelHash = _playlistDetailed.orderedUrisSeqHash
+                                let playbackHash = playController.playSeqHash
+                                if (vmodelHash == playbackHash && !playController.shuffle) {
+                                    _ = playController.setPlayingTrackByIndex(index, play: true)
+                                    return
+                                }
+                                _ = playController.setPlaybackSeq(_playlistDetailed.orderedPlaybackSeq, playIndex: index, playNow: true)
+                            }
+                            if let safeTrack = _playlistDetailed.tracksDetails[uri] {
+                                let artists: [String] = safeTrack.artists.map({ artist in
+                                    return artist.name
+                                })
+                                TrackView(trackUri: uri, title: safeTrack.name, img: nil, artists: artists, onPress: onPress, playUri: playController.playingTrackUri)
+                            } else {
+                                TrackView(trackUri: uri, title: "N/A", img: nil, artists: [], onPress: onPress, playUri: playController.playingTrackUri)
+                            }
+                        }
+                    })
+                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+                }
+            }
+        }
+        .navigationTitle(_playlistDetailed.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if let safePlaylistInfo = api.client.metaStorage.findPlaylist(uri: _playlistDetailed.uri) {
+                _playlistDetailed.orderedTrackUris = safePlaylistInfo.tracks.map({ track in
+                    return track.uri
+                })
+                _playlistDetailed.tracksDetails = api.client.metaStorage.findTracks(uris: Set(safePlaylistInfo.tracks.map({ trackMeta in
+                    return trackMeta.uri
+                })))
+                if (_playlistDetailed.noInfoTracks.isEmpty) {
+                    _loaded = true
+                    return
+                }
+            }
+#if DEBUG
+            if (ProcessInfo.processInfo.previewMode) {
+                //Disable real API requests
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    _playlistDetailed.orderedTrackUris = [
+                        "sp:t:123",
+                        "sp:t:1234",
+                        "sp:t:12345",
+                        "sp:t:123456",
+                        "sp:t:1234567",
+                        "sp:t:12345678",
+                    ]
+                    _playlistDetailed.tracksDetails = [
+                        "sp:t:123": SPMetadataTrack(gid: [], name: "Some track name"),
+                        "sp:t:1234": SPMetadataTrack(gid: [], name: "Some track name 2"),
+                        "sp:t:12345": SPMetadataTrack(gid: [], name: "Some track name 3"),
+                        "sp:t:123456": SPMetadataTrack(gid: [], name: "Some track name 4"),
+                        "sp:t:1234567": SPMetadataTrack(gid: [], name: "Some track name 5"),
+                        "sp:t:12345678": SPMetadataTrack(gid: [], name: "Some track name 6"),
+                    ]
+                    _loaded = true
+                }
+                return
+            }
+#endif
+            Task {
+                _loaded = await loadData()
+            }
+        }
+    }
+    
+    fileprivate func loadData() async -> Bool {
+        if (_playlistDetailed.orderedTrackUris.isEmpty) {
+            let playlistTracks = await withCheckedContinuation { continuation in
+                api.client.getPlaylistInfo(id: _playlistDetailed.id) { result in
+                    do {
+                        let playlistInfo = try result.get()
+                        continuation.resume(returning: playlistInfo.tracks)
+                    } catch {
+                        if let spErr = error as? SPError {
+                            _errMsg = spErr.errorDescription
+                        } else {
+                            _errMsg = error.localizedDescription
+                        }
+                        continuation.resume(returning: [])
+                    }
+                }
+            }
+            if (playlistTracks.isEmpty) {
+                return false
+            }
+            _playlistDetailed.orderedTrackUris = playlistTracks.map({ track in
+                return track.uri
+            })
+        }
+        return await withCheckedContinuation { continuation in
+            api.client.getTracksDetails(trackUris: [String].init(_playlistDetailed.noInfoTracks)) { result in
+                do {
+                    let info = try result.get()
+                    for entry in info {
+                        _playlistDetailed.tracksDetails[entry.key] = entry.value
+                    }
+                    continuation.resume(returning: true)
+                } catch {
+                    if let spErr = error as? SPError {
+                        _errMsg = spErr.errorDescription
+                    } else {
+                        _errMsg = error.localizedDescription
+                    }
+                    continuation.resume(returning: false)
+                }
+            }
+        }
+    }
+}
+
+#Preview(body: {
+    @StateObject var api = ApiController(previewApiClient)
+    let landingPlaylist = SPLandingPlaylist(name: "Playlist name", subtitle: "Playlist subtitle", uri: "sp:1234", image: "")
+    return NavigationView(content: {
+        PlaylistScreen(playlistShort: landingPlaylist)
+    })
+    .environmentObject(api)
+    .environmentObject(previewPlayController)
+})

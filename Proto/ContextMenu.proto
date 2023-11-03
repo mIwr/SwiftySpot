@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.contextMenu.v1.proto;
+
+message ContextMenu {
+    string uri = 1;
+    string title = 2;
+    optional string subtitle = 3;
+    string image = 4;
+    optional string placeholder = 5;
+    repeated ContextAction actions = 6;
+}
+
+message ContextAction {
+    oneof action {
+        ContextActionDismiss dismiss = 1;
+        ContextActionNotInterested not_interested = 2;
+    }
+}
+
+message ContextActionDismiss {}
+
+message ContextActionNotInterested {
+    string entity_type = 1;
+}

@@ -1,0 +1,10 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.element.v1.proto;
+
+message HighlightedText {
+    string text = 1;
+    int32 startInclusive = 2;
+    int32 endInclusive = 3;
+}

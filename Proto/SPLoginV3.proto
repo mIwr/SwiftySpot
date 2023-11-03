@@ -1,0 +1,127 @@
+
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";
+import "SPCredentials.proto";
+import "SPClientInfo.proto";
+
+//Requests
+message SPLoginV3Request {
+    SPShortClientInfo client = 1;
+    optional bytes context = 2;
+    optional LoginChallengeAnswerData answerData = 3;
+    oneof request {
+        SPStoredCredential stored = 100;
+        SPPassword password = 101;
+        FacebookAccessToken facebook = 102;
+        PhoneNumber phone = 103;
+        SPOneTimeToken oneTimeToken = 104;
+        SPParentChildCredential parentChildCred = 105;
+        AppleSignInCredential appleSignIn = 106;
+    }
+}
+
+message PhoneNumber {
+    string number = 1;
+    string isoCountryCode = 2;
+    string countryCallingCode = 3;
+}
+
+message LoginChallengeAnswerData {
+    repeated LoginChallengeAnswer answers = 1;
+}
+
+message LoginChallengeAnswer {
+    oneof answer {
+        HashcashAnswer hashcash = 1;
+        LoginCodeAnswer code = 2;
+    }
+}
+
+message HashcashAnswer {
+    bytes suffix = 1;
+    .google.protobuf.Duration duration = 2;
+}
+
+message LoginCodeAnswer {
+    string val = 1;
+}
+
+//Responses
+message SPLoginV3Response {
+    enum Warning {
+        UNKNOWN_WARNING = 0;
+        DEPRECATED_PROTOCOL_VERSION = 1;
+    }
+    enum Error {
+        UNKNOWN_ERROR = 0;
+        INVALID_CREDENTIALS = 1;
+        BAD_REQUEST = 2;
+        UNSUPPORTED_LOGIN_PROTOCOL = 3;
+        TIMEOUT = 4;
+        UNKNOWN_IDENTIFIER = 5;
+        TOO_MANY_ATTEMPTS = 6;
+        INVALID_PHONENUMBER = 7;
+        TRY_AGAIN_LATER = 8;
+    }
+    oneof response {
+        SPAuthToken auth = 1;
+        SPLoginV3Response.Error error = 2;
+        LoginChallengesData challenge = 3;
+    }
+    repeated SPLoginV3Response.Warning warnings = 4;//intern tip: repeated is already optional
+    optional bytes context = 5;
+    optional string idToken = 6;
+    optional UserInfo userInfo = 7;
+}
+
+message SPAuthToken {
+    string username = 1;
+    string token = 2;
+    bytes storedCredential = 3;
+    int32 expiresInS = 4;
+}
+
+message UserInfo {
+    enum Gender {
+        UNKNOWN = 0;
+        MALE = 1;
+        FEMALE = 2;
+        NEUTRAL = 3;
+    }
+    string name = 1;
+    string email = 2;
+    bool emailVerified = 3;
+    string birthdate = 4;
+    UserInfo.Gender gender = 5;
+    string phone = 6;
+    bool phoneVerified = 7;
+    bool emailAlredyRegistered = 8;
+}
+
+message LoginChallengesData {
+    repeated LoginChallenge challenges = 1;
+}
+
+message LoginChallenge {
+    oneof method {
+        LoginHashcashChallenge hashcash = 1;
+        LoginCodeChallenge code = 2;
+    }
+}
+
+message LoginHashcashChallenge {
+    bytes prefix = 1;
+    int32 length = 2;
+}
+
+message LoginCodeChallenge {
+    enum Method {
+        UNKNOWN = 0;
+        SMS = 1;
+    }
+    LoginCodeChallenge.Method method = 1;
+    int32 length = 2;
+    int32 expiresInS = 3;
+    string phone = 4;
+}

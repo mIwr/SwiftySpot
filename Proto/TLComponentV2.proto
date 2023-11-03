@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package com.spotify.home.dac.component.v2.proto;
+
+import "google/protobuf/any.proto";
+import "ToolbarItem.proto";
+import "UbiElementInfo.proto";
+
+
+message ToolbarComponentV2 {
+    string day_part_message = 1;
+    optional string subtitle = 2;
+    repeated .google.protobuf.Any items = 3;
+    .com.spotify.home.dac.component.v1.proto.ToolbarItemProfileComponent profile_btn = 4;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}
+
+message ShortcutsSectionComponentV2 {
+    repeated .google.protobuf.Any shortcuts = 1;
+    .com.spotify.ubi.proto.elementinfo.v1.UbiElementInfo ubi_element_info = 2000;
+}

@@ -1,0 +1,815 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B103E172AF147C000842D79 /* ProfileInfoVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */; };
+		8B103E1A2AF14DE000842D79 /* ProfileInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */; };
+		8B103E1C2AF1525A00842D79 /* ProfileToggleSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */; };
+		8B103E1E2AF1621C00842D79 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E1D2AF1621C00842D79 /* SearchScreen.swift */; };
+		8B172DFC2AD1A56B00ECBD74 /* RhythmRiderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172DFB2AD1A56B00ECBD74 /* RhythmRiderApp.swift */; };
+		8B172E002AD1A56C00ECBD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B172DFF2AD1A56C00ECBD74 /* Assets.xcassets */; };
+		8B1D46DD2AF0F05F00FC3906 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D46DC2AF0F05F00FC3906 /* ScrollView.swift */; };
+		8B1D46DF2AF0F3E500FC3906 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D46DE2AF0F3E500FC3906 /* OffsetObservingScrollView.swift */; };
+		8B1F502C2AEF81B0008D9A09 /* FavScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F502B2AEF81B0008D9A09 /* FavScreen.swift */; };
+		8B1F50312AEF86DC008D9A09 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F50302AEF86DC008D9A09 /* ProfileScreen.swift */; };
+		8B248CF92AEB914400405911 /* PlaybackSeqScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B248CF82AEB914400405911 /* PlaybackSeqScreen.swift */; };
+		8B29B4ED2AD1EBD800A7AD33 /* BitBool8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B4EC2AD1EBD800A7AD33 /* BitBool8.swift */; };
+		8B29B4F02AD1ECD100A7AD33 /* AppProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B4EF2AD1ECD100A7AD33 /* AppProperties.swift */; };
+		8B29B4F32AD1ECF600A7AD33 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B4F22AD1ECF600A7AD33 /* NSObject.swift */; };
+		8B29B4FD2AD1ED4200A7AD33 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B4FC2AD1ED4200A7AD33 /* SecureStorage.swift */; };
+		8B29B4FF2AD1ED5700A7AD33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29B4FE2AD1ED5700A7AD33 /* Constants.swift */; };
+		8B2ED5892ADD660C008E861D /* AccentWideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2ED5882ADD660C008E861D /* AccentWideButtonStyle.swift */; };
+		8B2ED58B2ADD77D5008E861D /* TabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2ED58A2ADD77D5008E861D /* TabBarScreen.swift */; };
+		8B3542E62AEBE169000B5B9F /* GuardActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3542E52AEBE169000B5B9F /* GuardActivityVC.swift */; };
+		8B3542E82AEBECCA000B5B9F /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3542E72AEBECCA000B5B9F /* ActivityVC.swift */; };
+		8B3C1AE42AEAEDF00048FF7E /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */; };
+		8B3C1AE62AEAF93F0048FF7E /* PlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */; };
+		8B3DA8862AF3974100895807 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DA8852AF3974100895807 /* SearchController.swift */; };
+		8B4247B82AD4307000749AE3 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B72AD4307000749AE3 /* TrackView.swift */; };
+		8B4247BA2AD4381100749AE3 /* PlaylistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */; };
+		8B4247BC2AD43A3A00749AE3 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247BB2AD43A3A00749AE3 /* AuthScreen.swift */; };
+		8B4247C52AD44C6100749AE3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4247C42AD44C6100749AE3 /* Icons.xcassets */; };
+		8B4247C72AD44C9200749AE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4247C62AD44C9200749AE3 /* Images.xcassets */; };
+		8B4247C92AD44CB400749AE3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4247C82AD44CB400749AE3 /* Colors.xcassets */; };
+		8B4247D32AD46D2600749AE3 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247D22AD46D2600749AE3 /* R.swift */; };
+		8B4247D52AD4723400749AE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4247D72AD4723400749AE3 /* Localizable.strings */; };
+		8B47DFF02AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47DFEF2AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift */; };
+		8B47DFF42AD5E32B00410D12 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47DFF32AD5E32B00410D12 /* UIApplication.swift */; };
+		8B47DFF62AD5E5AF00410D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B47DFF52AD5E5AF00410D12 /* LaunchScreen.storyboard */; };
+		8B59F4482AE5ABCA005FE723 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B172E022AD1A56C00ECBD74 /* Preview Assets.xcassets */; };
+		8B66AE402AE8FD25002B4088 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE3F2AE8FD25002B4088 /* PlaybackController.swift */; };
+		8B66AE422AE90A2B002B4088 /* PlaybackTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE412AE90A2B002B4088 /* PlaybackTrack.swift */; };
+		8B8B5CE12ADDA4830069A435 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE02ADDA4830069A435 /* HomeScreen.swift */; };
+		8B8B5CE32ADDA49E0069A435 /* PlaylistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE22ADDA49E0069A435 /* PlaylistCardView.swift */; };
+		8B8B5CE62ADDA7420069A435 /* DateDistanceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */; };
+		8B8B5CE82ADDAB230069A435 /* PlaylistScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE72ADDAB230069A435 /* PlaylistScreen.swift */; };
+		8B8B5CED2ADDBB800069A435 /* LandingPlaylistArrVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */; };
+		8B8B5CEF2ADDC0680069A435 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CEE2ADDC0680069A435 /* TabItemView.swift */; };
+		8B9127932AEA3AFD00EBCCB3 /* ProcessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9127922AEA3AFD00EBCCB3 /* ProcessInfo.swift */; };
+		8B9367B32AF3E93600A81D1C /* TrackFullInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9367B22AF3E93600A81D1C /* TrackFullInfoScreen.swift */; };
+		8BF13FB72AE29C4D0058C8EB /* PlaylistInfoVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF13FB62AE29C4D0058C8EB /* PlaylistInfoVModel.swift */; };
+		8BF13FBA2AE2A1030058C8EB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF13FB92AE2A1030058C8EB /* ErrorView.swift */; };
+		8BF13FBC2AE2A1D70058C8EB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF13FBB2AE2A1D70058C8EB /* LoadingView.swift */; };
+		8BF21C012AD953CA00FEA6D6 /* PlistWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C002AD953CA00FEA6D6 /* PlistWrapper.swift */; };
+		8BF21C062AD98B9400FEA6D6 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C052AD98B9400FEA6D6 /* Published.swift */; };
+		8BF21C082AD98D0B00FEA6D6 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C072AD98D0B00FEA6D6 /* ApiController.swift */; };
+		8BF21C0E2AD9931600FEA6D6 /* AuthSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C0D2AD9931600FEA6D6 /* AuthSessionController.swift */; };
+		8BF21C102AD993F700FEA6D6 /* ClSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C0F2AD993F700FEA6D6 /* ClSessionController.swift */; };
+		8BFE6C072AF3D00F009CF608 /* FavStorageVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE6C062AF3D00F009CF608 /* FavStorageVModel.swift */; };
+		A9EBD3AB645F7D97250EB0D5 /* Pods_RhythmRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A01C47867C04C40488533E /* Pods_RhythmRider.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.release.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.release.xcconfig"; sourceTree = "<group>"; };
+		74A01C47867C04C40488533E /* Pods_RhythmRider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmRider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoVModel.swift; sourceTree = "<group>"; };
+		8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentView.swift; sourceTree = "<group>"; };
+		8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileToggleSettingView.swift; sourceTree = "<group>"; };
+		8B103E1D2AF1621C00842D79 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
+		8B172DF82AD1A56B00ECBD74 /* RhythmRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythmRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B172DFB2AD1A56B00ECBD74 /* RhythmRiderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmRiderApp.swift; sourceTree = "<group>"; };
+		8B172DFF2AD1A56C00ECBD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B172E022AD1A56C00ECBD74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B1D46DC2AF0F05F00FC3906 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		8B1D46DE2AF0F3E500FC3906 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
+		8B1F502B2AEF81B0008D9A09 /* FavScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavScreen.swift; sourceTree = "<group>"; };
+		8B1F50302AEF86DC008D9A09 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		8B248CF82AEB914400405911 /* PlaybackSeqScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSeqScreen.swift; sourceTree = "<group>"; };
+		8B29B4E62AD1E9A900A7AD33 /* SwiftySpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftySpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B29B4EC2AD1EBD800A7AD33 /* BitBool8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitBool8.swift; sourceTree = "<group>"; };
+		8B29B4EF2AD1ECD100A7AD33 /* AppProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProperties.swift; sourceTree = "<group>"; };
+		8B29B4F22AD1ECF600A7AD33 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		8B29B4FC2AD1ED4200A7AD33 /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		8B29B4FE2AD1ED5700A7AD33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B29B5002AD1ED9900A7AD33 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8B29B5012AD1EDF900A7AD33 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8B2ED5882ADD660C008E861D /* AccentWideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentWideButtonStyle.swift; sourceTree = "<group>"; };
+		8B2ED58A2ADD77D5008E861D /* TabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreen.swift; sourceTree = "<group>"; };
+		8B3542E52AEBE169000B5B9F /* GuardActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardActivityVC.swift; sourceTree = "<group>"; };
+		8B3542E72AEBECCA000B5B9F /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScreen.swift; sourceTree = "<group>"; };
+		8B3DA8852AF3974100895807 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		8B4247B72AD4307000749AE3 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
+		8B4247BB2AD43A3A00749AE3 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		8B4247C42AD44C6100749AE3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		8B4247C62AD44C9200749AE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8B4247C82AD44CB400749AE3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8B4247D22AD46D2600749AE3 /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		8B4247D42AD46D4200749AE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8B4247D82AD4723C00749AE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B4247D92AD4724A00749AE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B47DFEF2AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldWithReveal.swift; sourceTree = "<group>"; };
+		8B47DFF32AD5E32B00410D12 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		8B47DFF52AD5E5AF00410D12 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B66AE3F2AE8FD25002B4088 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
+		8B66AE412AE90A2B002B4088 /* PlaybackTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackTrack.swift; sourceTree = "<group>"; };
+		8B8B5CE02ADDA4830069A435 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		8B8B5CE22ADDA49E0069A435 /* PlaylistCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCardView.swift; sourceTree = "<group>"; };
+		8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDistanceUtil.swift; sourceTree = "<group>"; };
+		8B8B5CE72ADDAB230069A435 /* PlaylistScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistScreen.swift; sourceTree = "<group>"; };
+		8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPlaylistArrVModel.swift; sourceTree = "<group>"; };
+		8B8B5CEE2ADDC0680069A435 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
+		8B9127922AEA3AFD00EBCCB3 /* ProcessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInfo.swift; sourceTree = "<group>"; };
+		8B9367B22AF3E93600A81D1C /* TrackFullInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackFullInfoScreen.swift; sourceTree = "<group>"; };
+		8BB6BF732AEA863400DE5072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8BF13FB62AE29C4D0058C8EB /* PlaylistInfoVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfoVModel.swift; sourceTree = "<group>"; };
+		8BF13FB92AE2A1030058C8EB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		8BF13FBB2AE2A1D70058C8EB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8BF21C002AD953CA00FEA6D6 /* PlistWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistWrapper.swift; sourceTree = "<group>"; };
+		8BF21C052AD98B9400FEA6D6 /* Published.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Published.swift; sourceTree = "<group>"; };
+		8BF21C072AD98D0B00FEA6D6 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		8BF21C0D2AD9931600FEA6D6 /* AuthSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionController.swift; sourceTree = "<group>"; };
+		8BF21C0F2AD993F700FEA6D6 /* ClSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClSessionController.swift; sourceTree = "<group>"; };
+		8BFE6C062AF3D00F009CF608 /* FavStorageVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavStorageVModel.swift; sourceTree = "<group>"; };
+		EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.debug.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B172DF52AD1A56B00ECBD74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9EBD3AB645F7D97250EB0D5 /* Pods_RhythmRider.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B103E182AF14DC300842D79 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */,
+				8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8B172DEF2AD1A56B00ECBD74 = {
+			isa = PBXGroup;
+			children = (
+				8B29B5012AD1EDF900A7AD33 /* .gitignore */,
+				8B29B5002AD1ED9900A7AD33 /* Podfile */,
+				8B172DFA2AD1A56B00ECBD74 /* RhythmRider */,
+				8B172DF92AD1A56B00ECBD74 /* Products */,
+				8B29B4E52AD1E9A900A7AD33 /* Frameworks */,
+				9719BC03B7C3C6E5D313F64A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8B172DF92AD1A56B00ECBD74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B172DF82AD1A56B00ECBD74 /* RhythmRider.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B172DFA2AD1A56B00ECBD74 /* RhythmRider */ = {
+			isa = PBXGroup;
+			children = (
+				8B4247D42AD46D4200749AE3 /* .gitignore */,
+				8BF21C022AD9555600FEA6D6 /* Controller */,
+				8B4247D12AD46D2600749AE3 /* Generated */,
+				8B29B4F12AD1ECEC00A7AD33 /* Extension */,
+				8B29B4EB2AD1EBC800A7AD33 /* Model */,
+				8B8B5CEB2ADDBB610069A435 /* VModel */,
+				8B4247B42AD4292E00749AE3 /* UI */,
+				8B8B5CE42ADDA7180069A435 /* Util */,
+				8B29B4FE2AD1ED5700A7AD33 /* Constants.swift */,
+				8B29B4FC2AD1ED4200A7AD33 /* SecureStorage.swift */,
+				8B172DFB2AD1A56B00ECBD74 /* RhythmRiderApp.swift */,
+				8BF21C002AD953CA00FEA6D6 /* PlistWrapper.swift */,
+				8B47DFF52AD5E5AF00410D12 /* LaunchScreen.storyboard */,
+				8BB6BF732AEA863400DE5072 /* Info.plist */,
+				8B4247D72AD4723400749AE3 /* Localizable.strings */,
+				8B172DFF2AD1A56C00ECBD74 /* Assets.xcassets */,
+				8B4247C82AD44CB400749AE3 /* Colors.xcassets */,
+				8B4247C42AD44C6100749AE3 /* Icons.xcassets */,
+				8B4247C62AD44C9200749AE3 /* Images.xcassets */,
+				8B172E012AD1A56C00ECBD74 /* Preview Content */,
+			);
+			path = RhythmRider;
+			sourceTree = "<group>";
+		};
+		8B172E012AD1A56C00ECBD74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B172E022AD1A56C00ECBD74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B248CF72AEB912C00405911 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				8B248CF82AEB914400405911 /* PlaybackSeqScreen.swift */,
+				8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */,
+				8B9367B22AF3E93600A81D1C /* TrackFullInfoScreen.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		8B29B4E52AD1E9A900A7AD33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B29B4E62AD1E9A900A7AD33 /* SwiftySpot.framework */,
+				74A01C47867C04C40488533E /* Pods_RhythmRider.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B29B4EB2AD1EBC800A7AD33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B29B4EF2AD1ECD100A7AD33 /* AppProperties.swift */,
+				8B29B4EC2AD1EBD800A7AD33 /* BitBool8.swift */,
+				8B66AE412AE90A2B002B4088 /* PlaybackTrack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B29B4F12AD1ECEC00A7AD33 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B29B4F22AD1ECF600A7AD33 /* NSObject.swift */,
+				8B9127922AEA3AFD00EBCCB3 /* ProcessInfo.swift */,
+				8BF21C052AD98B9400FEA6D6 /* Published.swift */,
+				8B1D46DC2AF0F05F00FC3906 /* ScrollView.swift */,
+				8B47DFF32AD5E32B00410D12 /* UIApplication.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B3C1AE02AEAEDC20048FF7E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		8B4247B42AD4292E00749AE3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8B4247B52AD4293F00749AE3 /* ScreenView */,
+				8B4247B62AD4294700749AE3 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8B4247B52AD4293F00749AE3 /* ScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				8B8B5CDE2ADDA44F0069A435 /* Auth */,
+				8B248CF72AEB912C00405911 /* Player */,
+				8B8B5CDF2ADDA4580069A435 /* TabBar */,
+				8B8B5CE72ADDAB230069A435 /* PlaylistScreen.swift */,
+				8B1F50302AEF86DC008D9A09 /* ProfileScreen.swift */,
+			);
+			path = ScreenView;
+			sourceTree = "<group>";
+		};
+		8B4247B62AD4294700749AE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B47DFEE2AD5DB4600410D12 /* GenPurpose */,
+				8B3C1AE02AEAEDC20048FF7E /* Player */,
+				8B8B5CE92ADDAD720069A435 /* Playlist */,
+				8B103E182AF14DC300842D79 /* Profile */,
+				8B8B5CEA2ADDAD810069A435 /* Track */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B4247D12AD46D2600749AE3 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				8B4247D22AD46D2600749AE3 /* R.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		8B47DFEE2AD5DB4600410D12 /* GenPurpose */ = {
+			isa = PBXGroup;
+			children = (
+				8B2ED5882ADD660C008E861D /* AccentWideButtonStyle.swift */,
+				8BF13FB92AE2A1030058C8EB /* ErrorView.swift */,
+				8BF13FBB2AE2A1D70058C8EB /* LoadingView.swift */,
+				8B1D46DE2AF0F3E500FC3906 /* OffsetObservingScrollView.swift */,
+				8B47DFEF2AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift */,
+				8B8B5CEE2ADDC0680069A435 /* TabItemView.swift */,
+			);
+			path = GenPurpose;
+			sourceTree = "<group>";
+		};
+		8B8B5CDE2ADDA44F0069A435 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8B4247BB2AD43A3A00749AE3 /* AuthScreen.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8B8B5CDF2ADDA4580069A435 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8B2ED58A2ADD77D5008E861D /* TabBarScreen.swift */,
+				8B8B5CE02ADDA4830069A435 /* HomeScreen.swift */,
+				8B1F502B2AEF81B0008D9A09 /* FavScreen.swift */,
+				8B103E1D2AF1621C00842D79 /* SearchScreen.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8B8B5CE42ADDA7180069A435 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8B8B5CE92ADDAD720069A435 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				8B8B5CE22ADDA49E0069A435 /* PlaylistCardView.swift */,
+				8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		8B8B5CEA2ADDAD810069A435 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				8B4247B72AD4307000749AE3 /* TrackView.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		8B8B5CEB2ADDBB610069A435 /* VModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BFE6C062AF3D00F009CF608 /* FavStorageVModel.swift */,
+				8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */,
+				8BF13FB62AE29C4D0058C8EB /* PlaylistInfoVModel.swift */,
+				8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */,
+			);
+			path = VModel;
+			sourceTree = "<group>";
+		};
+		8BF21C022AD9555600FEA6D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B3542E72AEBECCA000B5B9F /* ActivityVC.swift */,
+				8B3542E52AEBE169000B5B9F /* GuardActivityVC.swift */,
+				8BF21C072AD98D0B00FEA6D6 /* ApiController.swift */,
+				8BF21C0D2AD9931600FEA6D6 /* AuthSessionController.swift */,
+				8BF21C0F2AD993F700FEA6D6 /* ClSessionController.swift */,
+				8B66AE3F2AE8FD25002B4088 /* PlaybackController.swift */,
+				8B3DA8852AF3974100895807 /* SearchController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9719BC03B7C3C6E5D313F64A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */,
+				720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B172DF72AD1A56B00ECBD74 /* RhythmRider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B172E062AD1A56C00ECBD74 /* Build configuration list for PBXNativeTarget "RhythmRider" */;
+			buildPhases = (
+				D4EBB1D242725FC797B00B2F /* [CP] Check Pods Manifest.lock */,
+				8B4247D02AD46AE500749AE3 /* R.swift Generator */,
+				8B172DF42AD1A56B00ECBD74 /* Sources */,
+				8B172DF52AD1A56B00ECBD74 /* Frameworks */,
+				8B172DF62AD1A56B00ECBD74 /* Resources */,
+				8C31380BFDD0C1DFD944ECC9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RhythmRider;
+			packageProductDependencies = (
+			);
+			productName = RhythmRider;
+			productReference = 8B172DF82AD1A56B00ECBD74 /* RhythmRider.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B172DF02AD1A56B00ECBD74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					8B172DF72AD1A56B00ECBD74 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 8B172DF32AD1A56B00ECBD74 /* Build configuration list for PBXProject "RhythmRider" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 8B172DEF2AD1A56B00ECBD74;
+			packageReferences = (
+			);
+			productRefGroup = 8B172DF92AD1A56B00ECBD74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B172DF72AD1A56B00ECBD74 /* RhythmRider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B172DF62AD1A56B00ECBD74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B172E002AD1A56C00ECBD74 /* Assets.xcassets in Resources */,
+				8B4247C72AD44C9200749AE3 /* Images.xcassets in Resources */,
+				8B4247D52AD4723400749AE3 /* Localizable.strings in Resources */,
+				8B59F4482AE5ABCA005FE723 /* Preview Assets.xcassets in Resources */,
+				8B4247C52AD44C6100749AE3 /* Icons.xcassets in Resources */,
+				8B4247C92AD44CB400749AE3 /* Colors.xcassets in Resources */,
+				8B47DFF62AD5E5AF00410D12 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B4247D02AD46AE500749AE3 /* R.swift Generator */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R.swift Generator";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$PROJECT_DIR/RhythmRider/Generated/R.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$PROJECT_DIR/RhythmRider/Generated/R.swift\" --generators image,string,color --access-level internal\n";
+		};
+		8C31380BFDD0C1DFD944ECC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4EBB1D242725FC797B00B2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmRider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B172DF42AD1A56B00ECBD74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF21C012AD953CA00FEA6D6 /* PlistWrapper.swift in Sources */,
+				8B47DFF42AD5E32B00410D12 /* UIApplication.swift in Sources */,
+				8B2ED5892ADD660C008E861D /* AccentWideButtonStyle.swift in Sources */,
+				8B29B4F02AD1ECD100A7AD33 /* AppProperties.swift in Sources */,
+				8B9367B32AF3E93600A81D1C /* TrackFullInfoScreen.swift in Sources */,
+				8B8B5CE12ADDA4830069A435 /* HomeScreen.swift in Sources */,
+				8B29B4ED2AD1EBD800A7AD33 /* BitBool8.swift in Sources */,
+				8B103E1C2AF1525A00842D79 /* ProfileToggleSettingView.swift in Sources */,
+				8B4247BC2AD43A3A00749AE3 /* AuthScreen.swift in Sources */,
+				8B3DA8862AF3974100895807 /* SearchController.swift in Sources */,
+				8B103E1A2AF14DE000842D79 /* ProfileInfoComponentView.swift in Sources */,
+				8B1F502C2AEF81B0008D9A09 /* FavScreen.swift in Sources */,
+				8B9127932AEA3AFD00EBCCB3 /* ProcessInfo.swift in Sources */,
+				8BF13FBA2AE2A1030058C8EB /* ErrorView.swift in Sources */,
+				8B3542E82AEBECCA000B5B9F /* ActivityVC.swift in Sources */,
+				8BF21C102AD993F700FEA6D6 /* ClSessionController.swift in Sources */,
+				8B1D46DD2AF0F05F00FC3906 /* ScrollView.swift in Sources */,
+				8B66AE422AE90A2B002B4088 /* PlaybackTrack.swift in Sources */,
+				8B8B5CEF2ADDC0680069A435 /* TabItemView.swift in Sources */,
+				8B29B4FD2AD1ED4200A7AD33 /* SecureStorage.swift in Sources */,
+				8B248CF92AEB914400405911 /* PlaybackSeqScreen.swift in Sources */,
+				8B3542E62AEBE169000B5B9F /* GuardActivityVC.swift in Sources */,
+				8B4247BA2AD4381100749AE3 /* PlaylistHeaderView.swift in Sources */,
+				8B29B4F32AD1ECF600A7AD33 /* NSObject.swift in Sources */,
+				8B1F50312AEF86DC008D9A09 /* ProfileScreen.swift in Sources */,
+				8BFE6C072AF3D00F009CF608 /* FavStorageVModel.swift in Sources */,
+				8B103E172AF147C000842D79 /* ProfileInfoVModel.swift in Sources */,
+				8B8B5CE32ADDA49E0069A435 /* PlaylistCardView.swift in Sources */,
+				8B3C1AE62AEAF93F0048FF7E /* PlayerScreen.swift in Sources */,
+				8BF21C062AD98B9400FEA6D6 /* Published.swift in Sources */,
+				8B3C1AE42AEAEDF00048FF7E /* NowPlayingView.swift in Sources */,
+				8B8B5CED2ADDBB800069A435 /* LandingPlaylistArrVModel.swift in Sources */,
+				8BF21C082AD98D0B00FEA6D6 /* ApiController.swift in Sources */,
+				8B4247B82AD4307000749AE3 /* TrackView.swift in Sources */,
+				8BF13FB72AE29C4D0058C8EB /* PlaylistInfoVModel.swift in Sources */,
+				8BF13FBC2AE2A1D70058C8EB /* LoadingView.swift in Sources */,
+				8B1D46DF2AF0F3E500FC3906 /* OffsetObservingScrollView.swift in Sources */,
+				8B2ED58B2ADD77D5008E861D /* TabBarScreen.swift in Sources */,
+				8B172DFC2AD1A56B00ECBD74 /* RhythmRiderApp.swift in Sources */,
+				8BF21C0E2AD9931600FEA6D6 /* AuthSessionController.swift in Sources */,
+				8B66AE402AE8FD25002B4088 /* PlaybackController.swift in Sources */,
+				8B29B4FF2AD1ED5700A7AD33 /* Constants.swift in Sources */,
+				8B8B5CE62ADDA7420069A435 /* DateDistanceUtil.swift in Sources */,
+				8B103E1E2AF1621C00842D79 /* SearchScreen.swift in Sources */,
+				8B8B5CE82ADDAB230069A435 /* PlaylistScreen.swift in Sources */,
+				8B47DFF02AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift in Sources */,
+				8B4247D32AD46D2600749AE3 /* R.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B4247D72AD4723400749AE3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B4247D82AD4723C00749AE3 /* en */,
+				8B4247D92AD4724A00749AE3 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B172E042AD1A56C00ECBD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B172E052AD1A56C00ECBD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B172E072AD1A56C00ECBD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
+				DEVELOPMENT_TEAM = KTJ3SX58WK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RhythmRider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RhythmRider;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.3.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B172E082AD1A56C00ECBD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
+				DEVELOPMENT_TEAM = KTJ3SX58WK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RhythmRider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RhythmRider;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.3.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B172DF32AD1A56B00ECBD74 /* Build configuration list for PBXProject "RhythmRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B172E042AD1A56C00ECBD74 /* Debug */,
+				8B172E052AD1A56C00ECBD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B172E062AD1A56C00ECBD74 /* Build configuration list for PBXNativeTarget "RhythmRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B172E072AD1A56C00ECBD74 /* Debug */,
+				8B172E082AD1A56C00ECBD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B172DF02AD1A56B00ECBD74 /* Project object */;
+}

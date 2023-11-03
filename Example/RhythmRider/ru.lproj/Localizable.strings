@@ -1,0 +1,58 @@
+"authLoginTitle" = "Эл. почта или имя пользователя";
+"authLoginSignIn" = "Войти";
+"authLoginEmptyLogin" = "Не введен логин";
+"authLoginEmptyPassword" = "Не введен пароль";
+"authLoginNoAuthToken" = "Ошибка входа: отсутствует токен авторизации. Проверьте правильность ввода учетных данных и повторите";
+
+"tabHome" = "Главная";
+"tabFav" = "Избранное";
+"tabSearch" = "Поиск";
+
+"homePlaylistSet" = "Сгенерированные плейлисты";
+"homeLoadError" = "Ошибка загрузки плейлистов";
+
+"playlistNoTracks" = "Нет треков";
+"playlistTracksLoadError" = "Ошибка загрузки информации о треках";
+
+"itemContextLike" = "Нравится";
+"itemContextRemoveLike" = "Удалить из коллекции 'Нравится'";
+"itemContextShare" = "Поделиться";
+"itemContextDislike" = "Не нравится";
+"itemContextRemoveDislike" = "Удалить из коллекции 'Не нравится'";
+
+"playerNotPlaying" = "Не проигрывается";
+"playerUnknownArtist" = "Неизвестный артист";
+"playerUnknownTrackTitle" = "Без имени";
+
+"trackInfoAlbumName" = "Альбом";
+"trackInfoReleaseYear" = "Год выпуска";
+"trackInfoArtists" = "Исполнители";
+"trackInfoDuration" = "Продолжительность";
+
+"favTitle" = "Избранное";
+"favLikedTracks" = "Понравившиеся треки";
+"favUserPlaylists" = "Плейлисты";
+"favLikedTracksLoadError" = "Не удалось загрузить информацию о понравившихся треках";
+
+"profileBirthdate" = "Дата рождения";
+"profileCountry" = "Страна";
+"profileSubscriptionPlan" = "План подписки";
+"profileTrafficEconomyTitle" = "Экономия трафика";
+"profileTrafficEconomySubtitle" = "При включенной опции каждый трек будет загружаться в минимально возможном качестве";
+
+"searchQueryHint" = "Поиск";
+"searchLoadError" = "Ошибка загрузки предложений по поиску";
+
+"alertConfirmTitle" = "Вы уверены?";
+"alertConfirmSubtitle" = "Данное действие необратимо";
+
+"generalProfile" = "Профиль";
+"generalPassword" = "Пароль";
+"generalUpdated" = "Обновлено";
+"generalToday" = "Сегодня";
+"generalYesterday" = "Вчера";
+"generalTracks" = "Треки";
+"generalRefresh" = "Обновить";
+"generalClose" = "Закрыть";
+"generalLogout" = "Выйти из учетной записи";
+"generalCancel" = "Отмена";

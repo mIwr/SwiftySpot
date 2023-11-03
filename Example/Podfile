@@ -1,0 +1,24 @@
+platform :ios,'14.0'
+
+target 'RhythmRider' do
+  use_frameworks!
+
+  pod 'R.swift'
+  pod 'MobileVLCKit'
+  pod 'YAD'
+  pod 'SwiftySpot', :path => "../SwiftySpot.podspec"
+end
+
+## CryptoSwift force release optimization setup (Debug config) for decrypt speed up
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+      if target.name == "CryptoSwift"
+        target.build_configurations.each do |config|
+          if config.name = "Debug"
+            config.build_settings["GCC_OPTIMIZATION_LEVEL"] = "3"
+            config.build_settings["SWIFT_OPTIMIZATION_LEVEL"] = "-O"
+          end
+        end
+      end
+  end
+end

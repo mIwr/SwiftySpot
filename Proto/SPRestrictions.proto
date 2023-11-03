@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+message SPRestrictions {
+    repeated string pause_reasons = 1;
+    repeated string resume_reasons = 2;
+    repeated string seek_reasons = 3;
+    repeated string peek_prev_reasons = 4;
+    repeated string peek_next_reasons = 5;
+    repeated string skip_prev_reasons = 6;
+    repeated string skip_next_reasons = 7;
+    repeated string repeat_toggle_reasons = 8;
+    repeated string repeat_track_toggle_reasons = 9;
+    repeated string shiffle_toggle_teasons = 10;
+    repeated string set_queue_reasons = 11;
+    repeated string interrupt_playback_reasons = 12;
+    repeated string transfer_playback_reasons = 13;
+    repeated string remote_control_reasons = 14;
+    repeated string insert_into_next_track_reasons = 15;
+    repeated string insert_into_context_tracks_reasons = 16;
+    repeated string reorder_next_tracks_reasons = 17;
+    repeated string reorder_context_tracks_reasons = 18;
+    repeated string remove_from_next_tracks_reasons = 19;
+    repeated string remove_from_context_tracks_reasons = 20;
+    repeated string update_context_reasons = 21;
+    repeated string play_reasons = 22;
+    repeated string stop_reasons = 23;
+}

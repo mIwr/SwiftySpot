@@ -1,0 +1,44 @@
+
+// swift-tools-version: 5.9
+import PackageDescription
+
+let package = Package(
+    name: "SwiftySpot",
+    platforms: [
+        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11), .watchOS(.v4)
+    ],
+    products: [
+        .library(
+            name: "SwiftySpot",
+            targets: ["SwiftySpot"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.25.0")
+    ],
+    targets: [
+        .target(name: "SwiftySpot", dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")]),
+        .testTarget(name: "SwiftySpotLocalTests", dependencies: ["SwiftySpot"], exclude: ["TestConstansXCodeEnvExt.swift"], resources: [
+            .process("albumsMetaReq.protobuf"),
+            .process("albumsMetaResponse.protobuf"),
+            .process("artistsMetaReq.protobuf"),
+            .process("artistsMetaResponse.protobuf"),
+            .process("dislikedArtistsReq.protobuf"),
+            .process("dislikedArtistsResponse.protobuf"),
+            .process("dislikedTracksReq.protobuf"),
+            .process("dislikedTracksResponse.protobuf"),
+            .process("landingResponse.protobuf"),
+            .process("likedArtistsReq.protobuf"),
+            .process("likedArtistsResponse.protobuf"),
+            .process("likedTracksReq.protobuf"),
+            .process("likedTracksResponse.protobuf"),
+            .process("playlistMetaReq.protobuf"),
+            .process("playlistMetaResponse.protobuf"),
+            .process("playlistResponse.protobuf"),
+            .process("searchAutocompleteResponse.protobuf"),
+            .process("searchResponse.protobuf"),
+            .process("tracksMetaReq.protobuf"),
+            .process("tracksMetaResponse.protobuf"),
+        ]),
+    ],
+    swiftLanguageVersions: [.v5]
+)

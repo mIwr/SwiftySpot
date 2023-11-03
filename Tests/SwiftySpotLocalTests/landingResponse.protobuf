@@ -1,0 +1,2326 @@
+ô®	
+Mtype.googleapis.com/com.spotify.home.dac.component.v1.proto.HomePageComponent∆ß	ô
+
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.ToolbarComponent»	
+–î–æ–±—Ä—ã–π –≤–µ—á–µ—Ä"À
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.ToolbarItemFeedComponentÚ
+What's new Feedspotify:content-feedÇ}«
+õ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+toolbar
+
+	feed_iconspotify:homemobile-home"37.7.0*music214.14.18"Û
+`type.googleapis.com/com.spotify.home.dac.component.v1.proto.ToolbarItemListeningHistoryComponenté
+Listening History!spotify:internal:listeninghistoryÇ}‘
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+toolbar
+&
+listening_history_iconspotify:homemobile-home"37.7.0*music214.14.18"∏
+Xtype.googleapis.com/com.spotify.home.dac.component.v1.proto.ToolbarItemSettingsComponent€
+Settingsspotify:configÇ}Ω
+ë
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+toolbar
+
+settings_iconmobile-home"37.7.0*music214.14.18Ç}¨
+Ä
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+toolbarmobile-home"37.7.0*music214.14.18 
+Xtype.googleapis.com/com.spotify.home.dac.component.experimental.v1.proto.FilterComponentÌ
+“
+–ú—É–∑—ã–∫–∞
+music-chipÇ}¥
+à
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+filters
+
+chipmobile-home"37.7.0*music214.14.18
+Â
+–ü–æ–¥–∫–∞—Å—Ç—ã –∏ —à–æ—Épodcasts-chipÇ}∂
+ä
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+filters
+
+chip mobile-home"37.7.0*music214.14.18Ç}¨
+Ä
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+	
+filtersmobile-home"37.7.0*music214.14.18ÆF
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ShortcutsSectionComponent‘E 
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentÏ
+–û—Ç–∫—Ä—ã—Ç–∏—è –Ω–µ–¥–µ–ª–∏'spotify:playlist:37i9dQZEVXcTNwvoSSyWc2}https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/aAbca4VNfzWuUCQ_FGiEFA==/bmVuZW5lbmVuZW5lbmVuZQ=="|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZEVXcTNwvoSSyWc2","uri":"spotify:playlist:37i9dQZEVXcTNwvoSSyWc2"}{}*ï
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu«
+'spotify:playlist:37i9dQZEVXcTNwvoSSyWc2–û—Ç–∫—Ä—ã—Ç–∏—è –Ω–µ–¥–µ–ª–∏"}https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/aAbca4VNfzWuUCQ_FGiEFA==/bmVuZW5lbmVuZW5lbmVuZQ==Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+3
+nav_card'spotify:playlist:37i9dQZEVXcTNwvoSSyWc2mobile-home"37.7.0*music214.14.18ò
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponent∫
+–õ—é–±–∏–º—ã–µ —Ç—Ä–µ–∫–∏"spotify:user:anonymized:collection4https://misc.scdn.co/liked-songs/liked-songs-300.png"r
+l{"pages":[],"url":"context://spotify:user:anonymized:collection","uri":"spotify:user:anonymized:collection"}{}*¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+"spotify:user:anonymized:collection–õ—é–±–∏–º—ã–µ —Ç—Ä–µ–∫–∏"4https://misc.scdn.co/liked-songs/liked-songs-300.pngÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+0
+nav_card"spotify:user:anonymized:collection mobile-home"37.7.0*music214.14.18ú
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentæ
+Release Radar'spotify:playlist:37i9dQZEVXblV8enQMNFl5uhttps://newjams-images.scdn.co/image/ab67647800003f8a/dt/v3/release-radar/ab6761610000e5ebcff1cc5a83944708b18ded1c/en"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZEVXblV8enQMNFl5","uri":"spotify:playlist:37i9dQZEVXblV8enQMNFl5"}{}*˝
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuØ
+'spotify:playlist:37i9dQZEVXblV8enQMNFl5Release Radar"uhttps://newjams-images.scdn.co/image/ab67647800003f8a/dt/v3/release-radar/ab6761610000e5ebcff1cc5a83944708b18ded1c/enÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZEVXblV8enQMNFl5 mobile-home"37.7.0*music214.14.18ˆ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentò
+–ú–∏–∫—Å –¥–Ω—è¬†#3'spotify:playlist:37i9dQZF1E38wLJZZPK6yC\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb53cec7b8cce1000493419d7a/3/ru/default"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1E38wLJZZPK6yC","uri":"spotify:playlist:37i9dQZF1E38wLJZZPK6yC"}{}*Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E38wLJZZPK6yC–ú–∏–∫—Å –¥–Ω—è¬†#3"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb53cec7b8cce1000493419d7a/3/ru/defaultÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1E38wLJZZPK6yC mobile-home"37.7.0*music214.14.18ˆ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentò
+–ú–∏–∫—Å –¥–Ω—è¬†#1'spotify:playlist:37i9dQZF1E371G6gGxF85G\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb342d685ddd05b0b89d5ce997/1/ru/default"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1E371G6gGxF85G","uri":"spotify:playlist:37i9dQZF1E371G6gGxF85G"}{}*Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E371G6gGxF85G–ú–∏–∫—Å –¥–Ω—è¬†#1"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb342d685ddd05b0b89d5ce997/1/ru/defaultÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1E371G6gGxF85G mobile-home"37.7.0*music214.14.18ﬁ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentÄ
+Vita: –º–∏–∫—Å'spotify:playlist:37i9dQZF1EIY5mI2Xx8orMUhttps://seed-mix-image.spotifycdn.com/v6/img/artist/6xFDR4HD7uLGWhdV9vF9qP/ru/default"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1EIY5mI2Xx8orM","uri":"spotify:playlist:37i9dQZF1EIY5mI2Xx8orM"}{}*ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1EIY5mI2Xx8orMVita: –º–∏–∫—Å"Uhttps://seed-mix-image.spotifycdn.com/v6/img/artist/6xFDR4HD7uLGWhdV9vF9qP/ru/defaultÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1EIY5mI2Xx8orM mobile-home"37.7.0*music214.14.18ƒ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentÊ
+This Is C√âLINE'spotify:playlist:37i9dQZF1DZ06evO3xlzuEGhttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3xlzuE-default.jpg"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1DZ06evO3xlzuE","uri":"spotify:playlist:37i9dQZF1DZ06evO3xlzuE"}{}*—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1DZ06evO3xlzuEThis Is C√âLINE"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3xlzuE-default.jpgÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3xlzuE mobile-home"37.7.0*music214.14.18ª
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponent›
+This Is LEA'spotify:playlist:37i9dQZF1DZ06evO3wob0BGhttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpg"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1DZ06evO3wob0B","uri":"spotify:playlist:37i9dQZF1DZ06evO3wob0B"}{}*Ã
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu
+'spotify:playlist:37i9dQZF1DZ06evO3wob0BThis Is LEA"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpgÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3wob0B mobile-home"37.7.0*music214.14.18£
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardShortcutComponent«
+Stinie Whizz%spotify:artist:4MkrCf9RDnPGcKJJaIen7I@https://i.scdn.co/image/ab6761610000f17882bb950ca8bb7d6d3f52868a"x
+r{"pages":[],"url":"context://spotify:artist:4MkrCf9RDnPGcKJJaIen7I","uri":"spotify:artist:4MkrCf9RDnPGcKJJaIen7I"}{}*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+%spotify:artist:4MkrCf9RDnPGcKJJaIen7IStinie Whizz"@https://i.scdn.co/image/ab6761610000517482bb950ca8bb7d6d3f52868aÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+3
+nav_card%spotify:artist:4MkrCf9RDnPGcKJJaIen7I mobile-home"37.7.0*music214.14.18ˆ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardShortcutComponentò
+–ú–∏–∫—Å –¥–Ω—è¬†#2'spotify:playlist:37i9dQZF1E37BMMVAnDzfM\https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe4468ba37500e18ea9dc4137/2/ru/default"|
+v{"pages":[],"url":"context://spotify:playlist:37i9dQZF1E37BMMVAnDzfM","uri":"spotify:playlist:37i9dQZF1E37BMMVAnDzfM"}{}*Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E37BMMVAnDzfM–ú–∏–∫—Å –¥–Ω—è¬†#2"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe4468ba37500e18ea9dc4137/2/ru/defaultÇ}ç
+·
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Y
+5
+nav_card'spotify:playlist:37i9dQZF1E37BMMVAnDzfM 	mobile-home"37.7.0*music214.14.18Ç}“
+™
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+3
+	shortcuts&spotify:section:0JQ5DAIiKWzVFULQfUm85Ymobile-home"37.7.0*music214.14.1‹
+Xtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PromoSectionHeadingComponentˇ
+$–°–ø–µ—Ü–∏–∞–ª—å–Ω–æ –¥–ª—è —Ç–µ–±—èø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+$spotify:album:6v3GGTQUhTPz6ap8v3DOs8Bakermat"@https://i.scdn.co/image/ab67616d00001e02bd926d55b6e76193867d1b53Ç}Í
+æ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+5
+	promotion&spotify:section:0JQ5DApMPy0jM78k6Ozvy1 
+
+section_headermobile-home"37.7.0*music214.14.18ä}&
+$c0ffd10a-1536-44b5-b8a2-04748fe9fad7∆
+Stype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardPromoComponentÓ
+Bakermat8H√∂r jetzt 'From A Bakermat Point Of View'. Klicke hier!$spotify:album:6v3GGTQUhTPz6ap8v3DOs8"$spotify:album:6v3GGTQUhTPz6ap8v3DOs8*@https://i.scdn.co/image/ab67616d00001e02bd926d55b6e76193867d1b532–ê–ª—å–±–æ–º:v
+p{"pages":[],"url":"context://spotify:album:6v3GGTQUhTPz6ap8v3DOs8","uri":"spotify:album:6v3GGTQUhTPz6ap8v3DOs8"}{}Ç}í
+Ê
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+5
+	promotion&spotify:section:0JQ5DApMPy0jM78k6Ozvy1 
+8
+promotionv1_feed$spotify:album:6v3GGTQUhTPz6ap8v3DOs8mobile-home"37.7.0*music214.14.18ﬂ
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentà
+–°–ª—É—à–∞–µ–º –¥–∞–ª—å—à–µ?Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+
+section_headermobile-home"37.7.0*music214.14.18ı 
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent§ ƒ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentË&Soda, TRFN, OsMan –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1E37BMMVAnDzfM"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe4468ba37500e18ea9dc4137/2/ru/default*=
+;–ú–∏–∫—Å –¥–Ω—è¬†#2. Soda, TRFN, OsMan –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E37BMMVAnDzfM–ú–∏–∫—Å –¥–Ω—è¬†#2"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe4468ba37500e18ea9dc4137/2/ru/defaultÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+3
+nav_card'spotify:playlist:37i9dQZF1E37BMMVAnDzfMmobile-home"37.7.0*music214.14.18Í
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentéQThis is C√âLINE. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO3xlzuE"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3xlzuE-default.jpg*d
+bThis Is C√âLINE. This is C√âLINE. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1DZ06evO3xlzuEThis Is C√âLINE"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3xlzuE-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3xlzuE mobile-home"37.7.0*music214.14.18Ÿ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent˝MThis is LEA. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO3wob0B"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpg*\
+ZThis Is LEA. This is LEA. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2Ã
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu
+'spotify:playlist:37i9dQZF1DZ06evO3wob0BThis Is LEA"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3wob0B mobile-home"37.7.0*music214.14.18ï
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentª
+Vita%spotify:artist:6xFDR4HD7uLGWhdV9vF9qP"@https://i.scdn.co/image/ab6761610000517462cefb5452718b5f3f844566*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+%spotify:artist:6xFDR4HD7uLGWhdV9vF9qPVita"@https://i.scdn.co/image/ab6761610000517462cefb5452718b5f3f844566Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+3
+nav_card%spotify:artist:6xFDR4HD7uLGWhdV9vF9qP mobile-home"37.7.0*music214.14.18•
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentÀ
+Stinie Whizz%spotify:artist:4MkrCf9RDnPGcKJJaIen7I"@https://i.scdn.co/image/ab6761610000517482bb950ca8bb7d6d3f52868a*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+%spotify:artist:4MkrCf9RDnPGcKJJaIen7IStinie Whizz"@https://i.scdn.co/image/ab6761610000517482bb950ca8bb7d6d3f52868aÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X 
+3
+nav_card%spotify:artist:4MkrCf9RDnPGcKJJaIen7I mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAIiKWzVFULQfUm85X mobile-home"37.7.0*music214.14.1
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentô
+#–ù–µ–¥–∞–≤–Ω–æ –ø—Ä–æ—Å–ª—É—à–∞–Ω–æÇ}
+ƒ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+;
+recently_played&spotify:section:0JQ5DAroEmF9ANbLaiJ7Wx 
+
+section_headermobile-home"37.7.0*music214.14.18Ê
+Ztype.googleapis.com/com.spotify.home.dac.component.v1.proto.RecentlyPlayedSectionComponentáÇ}⁄
+≤
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+;
+recently_played&spotify:section:0JQ5DAroEmF9ANbLaiJ7Wx mobile-home"37.7.0*music214.14.1ä}&
+$fa9f5856-2734-4c51-aa33-015db96eab49Á
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentê
+$–¢–æ–ª—å–∫–æ –¥–ª—è —Ç–µ–±—è, MickeyÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAUnp4wcj0bCb3wh3S 
+
+section_headermobile-home"37.7.0*music214.14.18‡
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentè‰
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentà6C√âLINE, reezy, ROTE M√úTZE RAPHI –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1E399mQTD07HRl"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb3b843cc4c0ddd118a2b946a2/4/ru/default*M
+K–ú–∏–∫—Å –¥–Ω—è¬†#4. C√âLINE, reezy, ROTE M√úTZE RAPHI –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E399mQTD07HRl–ú–∏–∫—Å –¥–Ω—è¬†#4"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb3b843cc4c0ddd118a2b946a2/4/ru/defaultÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAUnp4wcj0bCb3wh3S 
+3
+nav_card'spotify:playlist:37i9dQZF1E399mQTD07HRlmobile-home"37.7.0*music214.14.18‡
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÑ3LUNAX, Scott Rill, Alle Farben –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1E37V7ZK85T78O"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb4a83f4f6f217095a4e0ea662/5/ru/default*J
+H–ú–∏–∫—Å –¥–Ω—è¬†#5. LUNAX, Scott Rill, Alle Farben –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E37V7ZK85T78O–ú–∏–∫—Å –¥–Ω—è¬†#5"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb4a83f4f6f217095a4e0ea662/5/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAUnp4wcj0bCb3wh3S 
+5
+nav_card'spotify:playlist:37i9dQZF1E37V7ZK85T78O mobile-home"37.7.0*music214.14.18Ó
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentí:Gest√∂rt aber GeiL, Seven, Steve Aoki –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1E37aaX0olc0MT"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb29b6ab025ffe1a4955a9bb80/6/ru/default*Q
+O–ú–∏–∫—Å –¥–Ω—è¬†#6. Gest√∂rt aber GeiL, Seven, Steve Aoki –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuú
+'spotify:playlist:37i9dQZF1E37aaX0olc0MT–ú–∏–∫—Å –¥–Ω—è¬†#6"\https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb29b6ab025ffe1a4955a9bb80/6/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAUnp4wcj0bCb3wh3S 
+5
+nav_card'spotify:playlist:37i9dQZF1E37aaX0olc0MT mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAUnp4wcj0bCb3wh3S mobile-home"37.7.0*music214.14.1„
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentå
+ –¢–≤–æ–∏ –ª—É—á—à–∏–µ –º–∏–∫—Å—ãÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+
+section_headermobile-home"37.7.0*music214.14.18Ü@
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentµ?¨
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent–$Achtabahn, C√âLINE –∏ Fabian Wegerer'spotify:playlist:37i9dQZF1EIWufEhaMk0BE"Uhttps://seed-mix-image.spotifycdn.com/v6/img/artist/3r5Kc95Oz8lDc8BL9ChO7n/ru/default*8
+6Mathea: –º–∏–∫—Å. Achtabahn, C√âLINE –∏ Fabian Wegerer2‡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuí
+'spotify:playlist:37i9dQZF1EIWufEhaMk0BEMathea: –º–∏–∫—Å"Uhttps://seed-mix-image.spotifycdn.com/v6/img/artist/3r5Kc95Oz8lDc8BL9ChO7n/ru/defaultÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+3
+nav_card'spotify:playlist:37i9dQZF1EIWufEhaMk0BEmobile-home"37.7.0*music214.14.18ê
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¥6Achtabahn, Anna Tr√ºmner, Jellina –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EVKuMoAJjoTIw"Thttps://seed-mix-image.spotifycdn.com/v6/img/moody/2bnHA3uft5ff7aFQLvscV5/ru/default*j
+h–ú–∏–∫—Å –º–µ–ª–∞–Ω—Ö–æ–ª–∏—á–Ω–æ–π –º—É–∑—ã–∫–∏. Achtabahn, Anna Tr√ºmner, Jellina –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2ˇ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu±
+'spotify:playlist:37i9dQZF1EVKuMoAJjoTIw0–ú–∏–∫—Å –º–µ–ª–∞–Ω—Ö–æ–ª–∏—á–Ω–æ–π –º—É–∑—ã–∫–∏"Thttps://seed-mix-image.spotifycdn.com/v6/img/moody/2bnHA3uft5ff7aFQLvscV5/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EVKuMoAJjoTIw mobile-home"37.7.0*music214.14.18‚
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÜ1VINIVILLA, Frederico, ISHNLV –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EVHGWrwldPRtj"Thttps://seed-mix-image.spotifycdn.com/v6/img/chill/3sKDmnjtBa1yO8Th3s8mxN/ru/default*S
+Q–ú–∏–∫—Å –¥–ª—è —Ä–µ–ª–∞–∫—Å–∞. VINIVILLA, Frederico, ISHNLV –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Ì
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuü
+'spotify:playlist:37i9dQZF1EVHGWrwldPRtj–ú–∏–∫—Å –¥–ª—è —Ä–µ–ª–∞–∫—Å–∞"Thttps://seed-mix-image.spotifycdn.com/v6/img/chill/3sKDmnjtBa1yO8Th3s8mxN/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EVHGWrwldPRtj mobile-home"37.7.0*music214.14.18‘
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¯5Ship Wrek, Mahalo, David Puentez –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQpoj8u9Hn81e"Thttps://seed-mix-image.spotifycdn.com/v6/img/house/1ic0FHNGIjXZAWH6O6Reif/ru/default*L
+J–ú–∏–∫—Å —Ö–∞—É—Å–∞. Ship Wrek, Mahalo, David Puentez –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2‚
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuî
+'spotify:playlist:37i9dQZF1EQpoj8u9Hn81e–ú–∏–∫—Å —Ö–∞—É—Å–∞"Thttps://seed-mix-image.spotifycdn.com/v6/img/house/1ic0FHNGIjXZAWH6O6Reif/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQpoj8u9Hn81e mobile-home"37.7.0*music214.14.18Ä
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent§DHarry Styles, La Oreja de Van Gogh, David Otero –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQncLwOalG3K7"Rhttps://seed-mix-image.spotifycdn.com/v6/img/pop/6KImCVD70vtIoJWnq6nGn3/ru/default*d
+b–ú–∏–∫—Å –ø–æ–ø-–º—É–∑—ã–∫–∏. Harry Styles, La Oreja de Van Gogh, David Otero –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2È
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuõ
+'spotify:playlist:37i9dQZF1EQncLwOalG3K7–ú–∏–∫—Å –ø–æ–ø-–º—É–∑—ã–∫–∏"Rhttps://seed-mix-image.spotifycdn.com/v6/img/pop/6KImCVD70vtIoJWnq6nGn3/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQncLwOalG3K7 mobile-home"37.7.0*music214.14.18¸
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent†Kito –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQp9BVPsNVof1"_https://seed-mix-image.spotifycdn.com/v6/img/dance_electronic/3FLUBwpAnaIlIKeaBfsxFe/ru/default*U
+S–ú–∏–∫—Å —Ç–∞–Ω—Ü–µ–≤–∞–ª—å–Ω–æ–π —ç–ª–µ–∫—Ç—Ä–æ–Ω–∏–∫–∏. Kito –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2í
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuƒ
+'spotify:playlist:37i9dQZF1EQp9BVPsNVof18–ú–∏–∫—Å —Ç–∞–Ω—Ü–µ–≤–∞–ª—å–Ω–æ–π —ç–ª–µ–∫—Ç—Ä–æ–Ω–∏–∫–∏"_https://seed-mix-image.spotifycdn.com/v6/img/dance_electronic/3FLUBwpAnaIlIKeaBfsxFe/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQp9BVPsNVof1 mobile-home"37.7.0*music214.14.18‘
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¯,Davido, Master KG, Rema –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQqFPe2ux3rbj"Xhttps://seed-mix-image.spotifycdn.com/v6/img/afrobeats/0Y3agQaa6g2r0YmHPOO9rh/ru/default*H
+F–ú–∏–∫—Å: –∞—Ñ—Ä–æ–±–∏—Ç. Davido, Master KG, Rema –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Î
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuù
+'spotify:playlist:37i9dQZF1EQqFPe2ux3rbj–ú–∏–∫—Å: –∞—Ñ—Ä–æ–±–∏—Ç"Xhttps://seed-mix-image.spotifycdn.com/v6/img/afrobeats/0Y3agQaa6g2r0YmHPOO9rh/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQqFPe2ux3rbj mobile-home"37.7.0*music214.14.18˙
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentû=Andr√©s Calamaro, Estopa, Alejandro Sanz –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQn2GRFTFMl2A"Whttps://seed-mix-image.spotifycdn.com/v6/img/nineties/3tAICgiSR5PfYY4B8qsoAU/ru/default*\
+Z–ú–∏–∫—Å –º—É–∑—ã–∫–∏ 90-—Ö. Andr√©s Calamaro, Estopa, Alejandro Sanz –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Ì
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuü
+'spotify:playlist:37i9dQZF1EQn2GRFTFMl2A–ú–∏–∫—Å –º—É–∑—ã–∫–∏ 90-—Ö"Whttps://seed-mix-image.spotifycdn.com/v6/img/nineties/3tAICgiSR5PfYY4B8qsoAU/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQn2GRFTFMl2A mobile-home"37.7.0*music214.14.18ä
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÆ>Estopa, Extremoduro, La Oreja de Van Gogh –∏ –Ω–µ —Ç–æ–ª—å–∫–æ'spotify:playlist:37i9dQZF1EQn4jwNIohw50"\https://seed-mix-image.spotifycdn.com/v6/img/two_thousands/5ZqnEfVdEGmoPxtELhN7ai/ru/default*_
+]–ú–∏–∫—Å –º—É–∑—ã–∫–∏ 2000-—Ö. Estopa, Extremoduro, La Oreja de Van Gogh –∏ –Ω–µ —Ç–æ–ª—å–∫–æ2Ù
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu¶
+'spotify:playlist:37i9dQZF1EQn4jwNIohw50–ú–∏–∫—Å –º—É–∑—ã–∫–∏ 2000-—Ö"\https://seed-mix-image.spotifycdn.com/v6/img/two_thousands/5ZqnEfVdEGmoPxtELhN7ai/ru/defaultÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 
+5
+nav_card'spotify:playlist:37i9dQZF1EQn4jwNIohw50 mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu89 mobile-home"37.7.0*music214.14.1⁄
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentÉ
+–õ—É—á—à–∏–µ —Ç—Ä–µ–∫–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+
+section_headermobile-home"37.7.0*music214.14.18è@
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentæ?◊
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent˚MThis is LEA. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO3wob0B"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpg*\
+ZThis Is LEA. This is LEA. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2Ã
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu
+'spotify:playlist:37i9dQZF1DZ06evO3wob0BThis Is LEA"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3wob0B-default.jpgÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+3
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3wob0Bmobile-home"37.7.0*music214.14.18‚
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÜOThis is LUNAX. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO4vZpcJ"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO4vZpcJ-default.jpg*`
+^This Is LUNAX. This is LUNAX. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÅ
+'spotify:playlist:37i9dQZF1DZ06evO4vZpcJThis Is LUNAX"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO4vZpcJ-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO4vZpcJ mobile-home"37.7.0*music214.14.18ˆ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentöTThis is Scott Rill. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO4gXLvq"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO4gXLvq-default.jpg*j
+hThis Is Scott Rill. This is Scott Rill. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2‘
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÜ
+'spotify:playlist:37i9dQZF1DZ06evO4gXLvqThis Is Scott Rill"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO4gXLvq-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO4gXLvq mobile-home"37.7.0*music214.14.18Ç
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¶WThis is Madeline Juno. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO3Pv32X"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3Pv32X-default.jpg*p
+nThis Is Madeline Juno. This is Madeline Juno. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2◊
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuâ
+'spotify:playlist:37i9dQZF1DZ06evO3Pv32XThis Is Madeline Juno"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3Pv32X-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3Pv32X mobile-home"37.7.0*music214.14.18ﬁ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÇNThis is Juju. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO2BKO2V"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2BKO2V-default.jpg*^
+\This Is Juju. This is Juju. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+'spotify:playlist:37i9dQZF1DZ06evO2BKO2VThis Is Juju"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2BKO2V-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO2BKO2V mobile-home"37.7.0*music214.14.18˙
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentûUThis is Alexa Feser. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO0vJxF7"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0vJxF7-default.jpg*l
+jThis Is Alexa Feser. This is Alexa Feser. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2’
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuá
+'spotify:playlist:37i9dQZF1DZ06evO0vJxF7This Is Alexa Feser"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0vJxF7-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO0vJxF7 mobile-home"37.7.0*music214.14.18Ê
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentäPThis is Mathea. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO1ZK3fj"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1ZK3fj-default.jpg*b
+`This Is Mathea. This is Mathea. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2–
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÇ
+'spotify:playlist:37i9dQZF1DZ06evO1ZK3fjThis Is Mathea"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1ZK3fj-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO1ZK3fj mobile-home"37.7.0*music214.14.18Ç
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¶WThis is Anna Tr√ºmner. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO2alOet"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2alOet-default.jpg*p
+nThis Is Anna Tr√ºmner. This is Anna Tr√ºmner. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2◊
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuâ
+'spotify:playlist:37i9dQZF1DZ06evO2alOetThis Is Anna Tr√ºmner"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2alOet-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO2alOet mobile-home"37.7.0*music214.14.18ﬁ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÇNThis is TRFN. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.'spotify:playlist:37i9dQZF1DZ06evO3v8D8C"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3v8D8C-default.jpg*^
+\This Is TRFN. This is TRFN. –í—Å–µ –ª—É—á—à–∏–µ —Ç—Ä–µ–∫–∏ –≤ –æ–¥–Ω–æ–º –ø–ª–µ–π–ª–∏—Å—Ç–µ.2Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+'spotify:playlist:37i9dQZF1DZ06evO3v8D8CThis Is TRFN"Ghttps://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3v8D8C-default.jpgÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n 
+5
+nav_card'spotify:playlist:37i9dQZF1DZ06evO3v8D8C mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3n mobile-home"37.7.0*music214.14.1⁄
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentÉ
+Bleib auf dem LaufendenÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+
+section_headermobile-home"37.7.0*music214.14.18£C
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent“Bú
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¿-50 Hits in einer Playlist! Cover: Kenya Grace'spotify:playlist:37i9dQZF1DX4jP4eebSWR9"@https://i.scdn.co/image/ab67706f000000024a52d46e99b901eec1561d63*E
+CHot Hits Deutschland. 50 Hits in einer Playlist! Cover: Kenya Grace2œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÅ
+'spotify:playlist:37i9dQZF1DX4jP4eebSWR9Hot Hits Deutschland"@https://i.scdn.co/image/ab67706f000000024a52d46e99b901eec1561d63Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+3
+nav_card'spotify:playlist:37i9dQZF1DX4jP4eebSWR9mobile-home"37.7.0*music214.14.18¨
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent–tDie wichtigsten Deutschrap Releases der letzten Wochen - jeden Freitag aktualisiert. Cover: badm√≥mzjay x Kool Savas'spotify:playlist:37i9dQZF1DWSTqUqJcxFk6"@https://i.scdn.co/image/ab67706f0000000263d5ff9e7bb4a5549fb26109*å
+âDeutschrap Brandneu. Die wichtigsten Deutschrap Releases der letzten Wochen - jeden Freitag aktualisiert. Cover: badm√≥mzjay x Kool Savas2Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+'spotify:playlist:37i9dQZF1DWSTqUqJcxFk6Deutschrap Brandneu"@https://i.scdn.co/image/ab67706f0000000263d5ff9e7bb4a5549fb26109Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DWSTqUqJcxFk6 mobile-home"37.7.0*music214.14.18©
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÕ:Sechs Saiten f√ºr ein Halleluja. Cover: The Rolling Stones'spotify:playlist:37i9dQZF1DWZJhOVGWqUKF"@https://i.scdn.co/image/ab67706f00000002e7a1544d867749f1493cdffa*K
+IRock Rotation. Sechs Saiten f√ºr ein Halleluja. Cover: The Rolling Stones2«
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuz
+'spotify:playlist:37i9dQZF1DWZJhOVGWqUKFRock Rotation"@https://i.scdn.co/image/ab67706f00000002e7a1544d867749f1493cdffaÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZJhOVGWqUKF mobile-home"37.7.0*music214.14.18°
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent≈sThe best new music by independent artists and labels, updated every Wednesday. Cover: Uche Yara, Artwork: Isu Kim.
+'spotify:playlist:37i9dQZF1DX2ddCYH6QIK5"@https://i.scdn.co/image/ab67706f00000002ad97f3adbe9996bdb8baa00e*á
+ÑFresh Finds GSA. The best new music by independent artists and labels, updated every Wednesday. Cover: Uche Yara, Artwork: Isu Kim.
+2…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+'spotify:playlist:37i9dQZF1DX2ddCYH6QIK5Fresh Finds GSA"@https://i.scdn.co/image/ab67706f00000002ad97f3adbe9996bdb8baa00eÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DX2ddCYH6QIK5 mobile-home"37.7.0*music214.14.18¡
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÂBArmin van Buuren, Tinlicker, Maddix, Boris Brejcha, Klangkarussell'spotify:playlist:37i9dQZF1DX8AliSIsGeKd"@https://i.scdn.co/image/ab67706f00000002aa0feb21bba20fb695139d29*W
+UElectronic Rising. Armin van Buuren, Tinlicker, Maddix, Boris Brejcha, Klangkarussell2À
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu~
+'spotify:playlist:37i9dQZF1DX8AliSIsGeKdElectronic Rising"@https://i.scdn.co/image/ab67706f00000002aa0feb21bba20fb695139d29Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DX8AliSIsGeKd mobile-home"37.7.0*music214.14.18ü
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent√;Dein Deutschpop. Deine Welt. Deine Playlist. Cover: 1986zig'spotify:playlist:37i9dQZF1DXbKGrOUA30KN"@https://i.scdn.co/image/ab67706f00000002ee14524c66ef4baeb864b54a*F
+DPOPLAND. Dein Deutschpop. Deine Welt. Deine Playlist. Cover: 1986zig2¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+'spotify:playlist:37i9dQZF1DXbKGrOUA30KNPOPLAND"@https://i.scdn.co/image/ab67706f00000002ee14524c66ef4baeb864b54aÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DXbKGrOUA30KN mobile-home"37.7.0*music214.14.18Õ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÒPDie wichtigste Hip-Hop Playlist Deutschlands. Cover: Jamule, RAF Camora, Dardan 'spotify:playlist:37i9dQZF1DX36edUJpD76c"@https://i.scdn.co/image/ab67706f000000025fde888aa33c2c966166ca16*]
+[Modus Mio. Die wichtigste Hip-Hop Playlist Deutschlands. Cover: Jamule, RAF Camora, Dardan 2√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+'spotify:playlist:37i9dQZF1DX36edUJpD76c	Modus Mio"@https://i.scdn.co/image/ab67706f000000025fde888aa33c2c966166ca16Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DX36edUJpD76c mobile-home"37.7.0*music214.14.18ˇ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent£+New music off the beaten track. Cover: Romy'spotify:playlist:37i9dQZF1DX07Bg0Q5GozA"@https://i.scdn.co/image/ab67706f00000002b993ccb024d08743fdefaf64*6
+4OFF POP. New music off the beaten track. Cover: Romy2¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+'spotify:playlist:37i9dQZF1DX07Bg0Q5GozAOFF POP"@https://i.scdn.co/image/ab67706f00000002b993ccb024d08743fdefaf64Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DX07Bg0Q5GozA mobile-home"37.7.0*music214.14.18˘
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentù#Sorry Ms. Jackson! Cover: Pashanim 'spotify:playlist:37i9dQZF1DWTBz12MDeCuX"@https://i.scdn.co/image/ab67706f00000002a112367f11e05d31c388755c*3
+1me right now. Sorry Ms. Jackson! Cover: Pashanim 2∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+'spotify:playlist:37i9dQZF1DWTBz12MDeCuXme right now"@https://i.scdn.co/image/ab67706f00000002a112367f11e05d31c388755cÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DWTBz12MDeCuX mobile-home"37.7.0*music214.14.18©
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÕ;Neues aus der Welt des Pop. Cover: Marshmello, Dove Cameron'spotify:playlist:37i9dQZF1DX1WhyP6stXXl"@https://i.scdn.co/image/ab67706f0000000264e553ecb1e404c841dcfb17*K
+IPop Brandneu. Neues aus der Welt des Pop. Cover: Marshmello, Dove Cameron2∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+'spotify:playlist:37i9dQZF1DX1WhyP6stXXlPop Brandneu"@https://i.scdn.co/image/ab67706f0000000264e553ecb1e404c841dcfb17Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz 
+5
+nav_card'spotify:playlist:37i9dQZF1DX1WhyP6stXXl 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAuChZYPe9iDhh2mJz mobile-home"37.7.0*music214.14.1¸
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponent•
+9–ü–æ—Ö–æ–∂–µ –Ω–∞ –Ω–µ–¥–∞–≤–Ω–æ –ø—Ä–æ—Å–ª—É—à–∞–Ω–Ω–æ–µÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+
+section_headermobile-home"37.7.0*music214.14.18˜@
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent¶@£
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent«;David Guetta, Calvin Harris, Sam Smith, Marshmello, Farruko'spotify:playlist:37i9dQZF1DX7ZUug1ANKRP"@https://i.scdn.co/image/ab67706f00000002898558f846a736a3e424248a*I
+GMain Stage. David Guetta, Calvin Harris, Sam Smith, Marshmello, Farruko2ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+'spotify:playlist:37i9dQZF1DX7ZUug1ANKRP
+Main Stage"@https://i.scdn.co/image/ab67706f00000002898558f846a736a3e424248aÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+3
+nav_card'spotify:playlist:37i9dQZF1DX7ZUug1ANKRPmobile-home"37.7.0*music214.14.18Ö
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent©0Alan Walker, Alok, R3HAB, Imanbek, Kylie Minogue'spotify:playlist:37i9dQZF1DX97SIuADeA1Y"@https://i.scdn.co/image/ab67706f000000029d6e4c9419de24929e4a238b*9
+7SLAP!. Alan Walker, Alok, R3HAB, Imanbek, Kylie Minogue2ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+'spotify:playlist:37i9dQZF1DX97SIuADeA1YSLAP!"@https://i.scdn.co/image/ab67706f000000029d6e4c9419de24929e4a238bÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DX97SIuADeA1Y mobile-home"37.7.0*music214.14.18ï
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentπ7The Chainsmokers, Bad Bunny, KAROL G, Feid, Myke Towers'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3"@https://i.scdn.co/image/ab67706f00000002708c623e2e1df4607775381b*A
+?Cardio. The Chainsmokers, Bad Bunny, KAROL G, Feid, Myke Towers2¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3Cardio"@https://i.scdn.co/image/ab67706f00000002708c623e2e1df4607775381bÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3 mobile-home"37.7.0*music214.14.18∫
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentﬁ9KAROL G, David Guetta, Dua Lipa, Calvin Harris, Sam Smith'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdO"@https://i.scdn.co/image/ab67706f0000000224414aad49870aa26b368e4c*S
+QSummer Dance Hits 2023. KAROL G, David Guetta, Dua Lipa, Calvin Harris, Sam Smith2—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdOSummer Dance Hits 2023"@https://i.scdn.co/image/ab67706f0000000224414aad49870aa26b368e4cÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdO mobile-home"37.7.0*music214.14.18∑
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent€EThe Chainsmokers, Mark Forster, badm√≥mzjay, The Weeknd, Lana Del Rey'spotify:playlist:37i9dQZF1DX86cOoaMyeqi"@https://i.scdn.co/image/ab67706f000000029aacbeb0942d18c4089ae3b2*R
+PLOBBYHOES. The Chainsmokers, Mark Forster, badm√≥mzjay, The Weeknd, Lana Del Rey2√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+'spotify:playlist:37i9dQZF1DX86cOoaMyeqi	LOBBYHOES"@https://i.scdn.co/image/ab67706f000000029aacbeb0942d18c4089ae3b2Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DX86cOoaMyeqi mobile-home"37.7.0*music214.14.18°
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent≈9David Guetta, Dua Lipa, Calvin Harris, Sam Smith, Ti√´sto'spotify:playlist:37i9dQZF1DX32NsLKyzScr"@https://i.scdn.co/image/ab67706f00000002cb23f54d979311c1f323a056*G
+EPower Hour. David Guetta, Dua Lipa, Calvin Harris, Sam Smith, Ti√´sto2ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+'spotify:playlist:37i9dQZF1DX32NsLKyzScr
+Power Hour"@https://i.scdn.co/image/ab67706f00000002cb23f54d979311c1f323a056Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DX32NsLKyzScr mobile-home"37.7.0*music214.14.18ï
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentπ4Sofi Tukker, Halsey, Alan Walker, Kygo, Fred again..'spotify:playlist:37i9dQZF1DWVrtsSlLKzro"@https://i.scdn.co/image/ab67706f0000000290954451308db71d0e43a9fa*A
+?Sad Beats. Sofi Tukker, Halsey, Alan Walker, Kygo, Fred again..2√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+'spotify:playlist:37i9dQZF1DWVrtsSlLKzro	Sad Beats"@https://i.scdn.co/image/ab67706f0000000290954451308db71d0e43a9faÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DWVrtsSlLKzro mobile-home"37.7.0*music214.14.18ò
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentº+HEDEGAARD, Flo Rida, KVSH, Vini Vici, LUNAX'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3"@https://i.scdn.co/image/ab67706f00000002caf104e283ca7a598861a470*B
+@Psytrance Supernova. HEDEGAARD, Flo Rida, KVSH, Vini Vici, LUNAX2Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3Psytrance Supernova"@https://i.scdn.co/image/ab67706f00000002caf104e283ca7a598861a470Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3 mobile-home"37.7.0*music214.14.18ç
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent±1Butch U, HEDEGAARD, Arem Ozguc, Arman Aydin, Emie'spotify:playlist:37i9dQZF1DXblmY5UIU3v3"@https://i.scdn.co/image/ab67706f00000002296dfaca9d08da66ad668073*=
+;DOWN LOW. Butch U, HEDEGAARD, Arem Ozguc, Arman Aydin, Emie2¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+'spotify:playlist:37i9dQZF1DXblmY5UIU3v3DOWN LOW"@https://i.scdn.co/image/ab67706f00000002296dfaca9d08da66ad668073Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DXblmY5UIU3v3 mobile-home"37.7.0*music214.14.18´
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentœ<Travis Scott, KAROL G, David Guetta, Beyonc√©, Natanael Cano'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5h"@https://i.scdn.co/image/ab67706f00000002c4b4295b5bc9b64388cb800e*L
+JEuphoria EDM. Travis Scott, KAROL G, David Guetta, Beyonc√©, Natanael Cano2∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5hEuphoria EDM"@https://i.scdn.co/image/ab67706f00000002c4b4295b5bc9b64388cb800eÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5h 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3H mobile-home"37.7.0*music214.14.1Ë
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentë
+%–õ—é–±–∏–º—ã–µ –∏—Å–ø–æ–ª–Ω–∏—Ç–µ–ª–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+
+section_headermobile-home"37.7.0*music214.14.18œ6
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent˛5ì
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentπ
+Vita%spotify:artist:6xFDR4HD7uLGWhdV9vF9qP"@https://i.scdn.co/image/ab6761610000517462cefb5452718b5f3f844566*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+%spotify:artist:6xFDR4HD7uLGWhdV9vF9qPVita"@https://i.scdn.co/image/ab6761610000517462cefb5452718b5f3f844566Ç}á
+€
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+1
+nav_card%spotify:artist:6xFDR4HD7uLGWhdV9vF9qPmobile-home"37.7.0*music214.14.18Ø
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent’
+ROTE M√úTZE RAPHI%spotify:artist:0jxy7TWRoSFqe4eucObq6L"@https://i.scdn.co/image/ab67616100005174b213187b97e1d4a071eec52a*…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+%spotify:artist:0jxy7TWRoSFqe4eucObq6LROTE M√úTZE RAPHI"@https://i.scdn.co/image/ab67616100005174b213187b97e1d4a071eec52aÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:0jxy7TWRoSFqe4eucObq6L mobile-home"37.7.0*music214.14.18ó
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentΩ
+LUNAX%spotify:artist:7CLsFRcEkn0Amc9VlVOFwR"@https://i.scdn.co/image/ab676161000051744a83f4f6f217095a4e0ea662*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+%spotify:artist:7CLsFRcEkn0Amc9VlVOFwRLUNAX"@https://i.scdn.co/image/ab676161000051744a83f4f6f217095a4e0ea662Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:7CLsFRcEkn0Amc9VlVOFwR mobile-home"37.7.0*music214.14.18ô
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentø
+KATI K%spotify:artist:277dytbjtOXNnvRXf7Dyyv"@https://i.scdn.co/image/ab676161000051747910f9ff94df24828bc1f9d2*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+%spotify:artist:277dytbjtOXNnvRXf7DyyvKATI K"@https://i.scdn.co/image/ab676161000051747910f9ff94df24828bc1f9d2Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:277dytbjtOXNnvRXf7Dyyv mobile-home"37.7.0*music214.14.18ô
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentø
+Julita%spotify:artist:4NKBz9XWRy7r1B69L4gg5l"@https://i.scdn.co/image/ab67616100005174316ec26f1b5ceca2352ee588*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+%spotify:artist:4NKBz9XWRy7r1B69L4gg5lJulita"@https://i.scdn.co/image/ab67616100005174316ec26f1b5ceca2352ee588Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:4NKBz9XWRy7r1B69L4gg5l mobile-home"37.7.0*music214.14.18£
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent…
+badm√≥mzjay%spotify:artist:7oWrEQO1d3klp0Qrfh7a5h"@https://i.scdn.co/image/ab67616100005174449288e5d868aa22987a3554*√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+%spotify:artist:7oWrEQO1d3klp0Qrfh7a5hbadm√≥mzjay"@https://i.scdn.co/image/ab67616100005174449288e5d868aa22987a3554Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:7oWrEQO1d3klp0Qrfh7a5h mobile-home"37.7.0*music214.14.18õ
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent¡
+C√âLINE%spotify:artist:5ZYOlPpI9FZu2uIPkTB0UA"@https://i.scdn.co/image/ab676161000051743b843cc4c0ddd118a2b946a2*ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+%spotify:artist:5ZYOlPpI9FZu2uIPkTB0UAC√âLINE"@https://i.scdn.co/image/ab676161000051743b843cc4c0ddd118a2b946a2Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:5ZYOlPpI9FZu2uIPkTB0UA mobile-home"37.7.0*music214.14.18ô
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentø
+Hexari%spotify:artist:44vT00ow80vgtTtCC3V28B"@https://i.scdn.co/image/ab6761610000517420edc66d35a7f7ee40742fe3*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+%spotify:artist:44vT00ow80vgtTtCC3V28BHexari"@https://i.scdn.co/image/ab6761610000517420edc66d35a7f7ee40742fe3Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:44vT00ow80vgtTtCC3V28B mobile-home"37.7.0*music214.14.18ì
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentπ
+LEA%spotify:artist:5Yo5iU2nf4H41waPl4ZnS1"@https://i.scdn.co/image/ab67616100005174342d685ddd05b0b89d5ce997*ª
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenun
+%spotify:artist:5Yo5iU2nf4H41waPl4ZnS1LEA"@https://i.scdn.co/image/ab67616100005174342d685ddd05b0b89d5ce997Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:5Yo5iU2nf4H41waPl4ZnS1 mobile-home"37.7.0*music214.14.18ó
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentΩ
+KAYEF%spotify:artist:4hXT6A14n901v8DU5Of337"@https://i.scdn.co/image/ab676161000051740d753e657870e3f8bc5246d6*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+%spotify:artist:4hXT6A14n901v8DU5Of337KAYEF"@https://i.scdn.co/image/ab676161000051740d753e657870e3f8bc5246d6Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	
+3
+nav_card%spotify:artist:4hXT6A14n901v8DU5Of337 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3z 	mobile-home"37.7.0*music214.14.1¯
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponent°
+5–†–µ–∫–æ–º–µ–Ω–¥–æ–≤–∞–Ω–Ω—ã–µ –∏—Å–ø–æ–ª–Ω–∏—Ç–µ–ª–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+
+section_headermobile-home"37.7.0*music214.14.18ı6
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent§6ï
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentª
+Julee%spotify:artist:5DnYZubJvFppN54zUrFDGw"@https://i.scdn.co/image/ab6761610000517457d11e2b43fdbd00fbdbc228*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+%spotify:artist:5DnYZubJvFppN54zUrFDGwJulee"@https://i.scdn.co/image/ab6761610000517457d11e2b43fdbd00fbdbc228Ç}á
+€
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+1
+nav_card%spotify:artist:5DnYZubJvFppN54zUrFDGwmobile-home"37.7.0*music214.14.18ó
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentΩ
+ZAVET%spotify:artist:4iIpwanKVqfqqMXhJOyTFG"@https://i.scdn.co/image/ab676161000051741ae14abd3bf28849ceb22793*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+%spotify:artist:4iIpwanKVqfqqMXhJOyTFGZAVET"@https://i.scdn.co/image/ab676161000051741ae14abd3bf28849ceb22793Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:4iIpwanKVqfqqMXhJOyTFG mobile-home"37.7.0*music214.14.18õ
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent¡
+LARYSSA%spotify:artist:6PDF2Plzpbcd21czXbH6pa"@https://i.scdn.co/image/ab67616100005174c9243d15d1494fd1368cfa29*ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+%spotify:artist:6PDF2Plzpbcd21czXbH6paLARYSSA"@https://i.scdn.co/image/ab67616100005174c9243d15d1494fd1368cfa29Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:6PDF2Plzpbcd21czXbH6pa mobile-home"37.7.0*music214.14.18ü
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent≈
+	Anna Grey%spotify:artist:5SFwozJTdBZNUFYYrAqH4q"@https://i.scdn.co/image/ab676161000051748b3937ae879ca5f41269b81a*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+%spotify:artist:5SFwozJTdBZNUFYYrAqH4q	Anna Grey"@https://i.scdn.co/image/ab676161000051748b3937ae879ca5f41269b81aÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:5SFwozJTdBZNUFYYrAqH4q mobile-home"37.7.0*music214.14.18´
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent—
+Marwin Balsters%spotify:artist:0Pphkx7yya7aVvA2A4IAu5"@https://i.scdn.co/image/ab67616100005174ff4762929b5b55bc4dd0bc64*«
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuz
+%spotify:artist:0Pphkx7yya7aVvA2A4IAu5Marwin Balsters"@https://i.scdn.co/image/ab67616100005174ff4762929b5b55bc4dd0bc64Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:0Pphkx7yya7aVvA2A4IAu5 mobile-home"37.7.0*music214.14.18ï
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentª
+MOJO%spotify:artist:0vEkaYISjtDHGtrhumJH7e"@https://i.scdn.co/image/ab6761610000517474454ecd0b893c644d543d6d*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+%spotify:artist:0vEkaYISjtDHGtrhumJH7eMOJO"@https://i.scdn.co/image/ab6761610000517474454ecd0b893c644d543d6dÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:0vEkaYISjtDHGtrhumJH7e mobile-home"37.7.0*music214.14.18ü
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent≈
+	Cocopuffs%spotify:artist:1vLrEijWGh0SKLntgxAPVZ"@https://i.scdn.co/image/ab6761610000517433e8cc6104e951c576ea8ff6*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+%spotify:artist:1vLrEijWGh0SKLntgxAPVZ	Cocopuffs"@https://i.scdn.co/image/ab6761610000517433e8cc6104e951c576ea8ff6Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:1vLrEijWGh0SKLntgxAPVZ mobile-home"37.7.0*music214.14.18ü
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent≈
+	ZEITRAPHA%spotify:artist:6e44pRzRsmPJd6Sup7gizg"@https://i.scdn.co/image/ab67616100005174a3e4d403adac6f0916bbf946*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+%spotify:artist:6e44pRzRsmPJd6Sup7gizg	ZEITRAPHA"@https://i.scdn.co/image/ab67616100005174a3e4d403adac6f0916bbf946Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:6e44pRzRsmPJd6Sup7gizg mobile-home"37.7.0*music214.14.18£
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent…
+Lena Gercke%spotify:artist:0KcOruDxfwnEbcyFMS1t3f"@https://i.scdn.co/image/ab67616100005174a8dbd44ce72e87fc536ca7d7*√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+%spotify:artist:0KcOruDxfwnEbcyFMS1t3fLena Gercke"@https://i.scdn.co/image/ab67616100005174a8dbd44ce72e87fc536ca7d7Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:0KcOruDxfwnEbcyFMS1t3f mobile-home"37.7.0*music214.14.18´
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponent—
+Sarah Stefanski%spotify:artist:1X9RfxKN2oQFw3LdFtyykQ"@https://i.scdn.co/image/ab67616100005174fd9ef5dfcb1a566f4ee60628*«
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuz
+%spotify:artist:1X9RfxKN2oQFw3LdFtyykQSarah Stefanski"@https://i.scdn.co/image/ab67616100005174fd9ef5dfcb1a566f4ee60628Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+
+3
+nav_card%spotify:artist:1X9RfxKN2oQFw3LdFtyykQ 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3G 
+mobile-home"37.7.0*music214.14.1Ÿ
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentÇ
+Discover Picks For YouÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+
+section_headermobile-home"37.7.0*music214.14.18«:
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentˆ9ø
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÊ
+Memories&–ú–∏–Ω–∏-–∞–ª—å–±–æ–º ‚Ä¢ Kim Hartmann$spotify:album:3sNIofimZs7VNFENpytffT"@https://i.scdn.co/image/ab67616d00001e02af563c58a1b4b8e0ed1f9c15*ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+$spotify:album:3sNIofimZs7VNFENpytffTMemories"@https://i.scdn.co/image/ab67616d00001e02af563c58a1b4b8e0ed1f9c15Ç}Ü
+⁄
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+0
+nav_card$spotify:album:3sNIofimZs7VNFENpytffTmobile-home"37.7.0*music214.14.18Ÿ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÄ
+Late Night Drive (Remix)–°–∏–Ω–≥–ª ‚Ä¢ Leto, GR3Y, NH$spotify:album:7jn7wR7wg0VW5UYc3x6BEe"@https://i.scdn.co/image/ab67616d00001e0223939f85c94c38ca5fb93dc7*–
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÇ
+$spotify:album:7jn7wR7wg0VW5UYc3x6BEeLate Night Drive (Remix)"@https://i.scdn.co/image/ab67616d00001e0223939f85c94c38ca5fb93dc7Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:7jn7wR7wg0VW5UYc3x6BEe mobile-home"37.7.0*music214.14.18Œ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentı
+Need Some Space%–°–∏–Ω–≥–ª ‚Ä¢ Norda, B Martin, Senes$spotify:album:6eactCZVirqeGYyWHFNqHK"@https://i.scdn.co/image/ab67616d00001e02e6581785b891fe7b3f0c8fef*∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+$spotify:album:6eactCZVirqeGYyWHFNqHKNeed Some Space"@https://i.scdn.co/image/ab67616d00001e02e6581785b891fe7b3f0c8fefÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:6eactCZVirqeGYyWHFNqHK mobile-home"37.7.0*music214.14.18„
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentä
+Gift (Pastiche/Remix/Mashup)–°–∏–Ω–≥–ª ‚Ä¢ Chilli Vanilli 2$spotify:album:1bGlqdGWjYCRZg2Pnj5ekV"@https://i.scdn.co/image/ab67616d00001e02408f38af42642d610d040e5c*‘
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÜ
+$spotify:album:1bGlqdGWjYCRZg2Pnj5ekVGift (Pastiche/Remix/Mashup)"@https://i.scdn.co/image/ab67616d00001e02408f38af42642d610d040e5cÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:1bGlqdGWjYCRZg2Pnj5ekV mobile-home"37.7.0*music214.14.18È
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentê
+$Midnighttapes001 - Entertaining Stay–°–∏–Ω–≥–ª ‚Ä¢ Nkalis$spotify:album:1v9nPZYvbEtj1h878EUidD"@https://i.scdn.co/image/ab67616d00001e0202a787f49cdd3169bede9944*‹
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenué
+$spotify:album:1v9nPZYvbEtj1h878EUidD$Midnighttapes001 - Entertaining Stay"@https://i.scdn.co/image/ab67616d00001e0202a787f49cdd3169bede9944Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:1v9nPZYvbEtj1h878EUidD mobile-home"37.7.0*music214.14.18…
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent
+I'll Be There$–°–∏–Ω–≥–ª ‚Ä¢ Nik Taylor, √ò'CL√òCK$spotify:album:6OnLmNa3NrS7O9eiGgyH9k"@https://i.scdn.co/image/ab67616d00001e029b01002039b2e415af8edd27*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+$spotify:album:6OnLmNa3NrS7O9eiGgyH9kI'll Be There"@https://i.scdn.co/image/ab67616d00001e029b01002039b2e415af8edd27Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:6OnLmNa3NrS7O9eiGgyH9k mobile-home"37.7.0*music214.14.18µ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‹
+Kaputt–°–∏–Ω–≥–ª ‚Ä¢ Achtabahn, DXVE$spotify:album:2f9TWjbDcuDgsZF5hq2GIM"@https://i.scdn.co/image/ab67616d00001e02b0a475cc86e48f1089731a78*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+$spotify:album:2f9TWjbDcuDgsZF5hq2GIMKaputt"@https://i.scdn.co/image/ab67616d00001e02b0a475cc86e48f1089731a78Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:2f9TWjbDcuDgsZF5hq2GIM mobile-home"37.7.0*music214.14.18π
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‡
+	Step Baby–°–∏–Ω–≥–ª ‚Ä¢ Maff, SlowMoe$spotify:album:14azM9tRhBUY5uC0S856OI"@https://i.scdn.co/image/ab67616d00001e02c59488181f89eb093d519773*¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+$spotify:album:14azM9tRhBUY5uC0S856OI	Step Baby"@https://i.scdn.co/image/ab67616d00001e02c59488181f89eb093d519773Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:14azM9tRhBUY5uC0S856OI mobile-home"37.7.0*music214.14.18—
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent¯
+WIESO TUN WIR DAS?"–°–∏–Ω–≥–ª ‚Ä¢ Rubi, ThatGurlHanna$spotify:album:0tqkS38rIiloIIn9AEOMNK"@https://i.scdn.co/image/ab67616d00001e0293a374a660553537bbc701cc*…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+$spotify:album:0tqkS38rIiloIIn9AEOMNKWIESO TUN WIR DAS?"@https://i.scdn.co/image/ab67616d00001e0293a374a660553537bbc701ccÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:0tqkS38rIiloIIn9AEOMNK mobile-home"37.7.0*music214.14.18 
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÒ
+	Goldregen-–ú–∏–Ω–∏-–∞–ª—å–±–æ–º ‚Ä¢ Francey, Helena Fin$spotify:album:7yZ2sFZyy2co0hzu8cSHJs"@https://i.scdn.co/image/ab67616d00001e02bf0409fde652ec05fed3991f*¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+$spotify:album:7yZ2sFZyy2co0hzu8cSHJs	Goldregen"@https://i.scdn.co/image/ab67616d00001e02bf0409fde652ec05fed3991fÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf 
+2
+nav_card$spotify:album:7yZ2sFZyy2co0hzu8cSHJs 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnudf mobile-home"37.7.0*music214.14.1‚
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentã
+–ü–æ—Å–ª—É—à–∞–π —Å–µ–≥–æ–¥–Ω—èÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+
+section_headermobile-home"37.7.0*music214.14.18Ä9
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentØ8∏
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentﬂ
+Cheers To You–°–∏–Ω–≥–ª ‚Ä¢ Natixx$spotify:album:3o6uLuuBezmrxOlm35X1CK"@https://i.scdn.co/image/ab67616d00001e02dc5edc6ade71f141944ad53b*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+$spotify:album:3o6uLuuBezmrxOlm35X1CKCheers To You"@https://i.scdn.co/image/ab67616d00001e02dc5edc6ade71f141944ad53bÇ}Ü
+⁄
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+0
+nav_card$spotify:album:3o6uLuuBezmrxOlm35X1CKmobile-home"37.7.0*music214.14.18´
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent“
+I Like–°–∏–Ω–≥–ª ‚Ä¢ LUNAX$spotify:album:5MLZv8FjK5u2hA0277LPGF"@https://i.scdn.co/image/ab67616d00001e027a595ba40c84149ece31b02a*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+$spotify:album:5MLZv8FjK5u2hA0277LPGFI Like"@https://i.scdn.co/image/ab67616d00001e027a595ba40c84149ece31b02aÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:5MLZv8FjK5u2hA0277LPGF mobile-home"37.7.0*music214.14.18∞
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent◊
+MIRRORS–°–∏–Ω–≥–ª ‚Ä¢ AFTR SUN$spotify:album:6jftEbok3IAv5XlsFvqhtm"@https://i.scdn.co/image/ab67616d00001e0297fd23caaaafcbe1b5442043*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+$spotify:album:6jftEbok3IAv5XlsFvqhtmMIRRORS"@https://i.scdn.co/image/ab67616d00001e0297fd23caaaafcbe1b5442043Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:6jftEbok3IAv5XlsFvqhtm mobile-home"37.7.0*music214.14.18∆
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÌ
+	You and I)–°–∏–Ω–≥–ª ‚Ä¢ ALOTT, Wankelmut, Enny-Mae$spotify:album:0LnhXvcJIhcMWIpvxhVguB"@https://i.scdn.co/image/ab67616d00001e02c05f33171cd99e4e3c67bb24*¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+$spotify:album:0LnhXvcJIhcMWIpvxhVguB	You and I"@https://i.scdn.co/image/ab67616d00001e02c05f33171cd99e4e3c67bb24Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:0LnhXvcJIhcMWIpvxhVguB mobile-home"37.7.0*music214.14.18’
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent¸
+time to turn the tide –°–∏–Ω–≥–ª ‚Ä¢ Why So Sad, LissA$spotify:album:2ulC2VKA1351RwK1hSRidL"@https://i.scdn.co/image/ab67616d00001e02c66e91890c78de351843d72b*Ã
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu
+$spotify:album:2ulC2VKA1351RwK1hSRidLtime to turn the tide"@https://i.scdn.co/image/ab67616d00001e02c66e91890c78de351843d72bÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:2ulC2VKA1351RwK1hSRidL mobile-home"37.7.0*music214.14.18∏
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentﬂ
+Numb%–°–∏–Ω–≥–ª ‚Ä¢ Paratone, Max + Johann$spotify:album:3AWv6D5tFPTHHuv1yky0Fb"@https://i.scdn.co/image/ab67616d00001e02ab2c38c52b347c07630fa0ee*ª
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenun
+$spotify:album:3AWv6D5tFPTHHuv1yky0FbNumb"@https://i.scdn.co/image/ab67616d00001e02ab2c38c52b347c07630fa0eeÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:3AWv6D5tFPTHHuv1yky0Fb mobile-home"37.7.0*music214.14.18∑
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentﬁ
+Husky Augen–ê–ª—å–±–æ–º ‚Ä¢ ZAVET$spotify:album:0Zn0Ls1AvADs49L3Kqk5Zi"@https://i.scdn.co/image/ab67616d00001e0216bbf94465f2af939d067cef*¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+$spotify:album:0Zn0Ls1AvADs49L3Kqk5ZiHusky Augen"@https://i.scdn.co/image/ab67616d00001e0216bbf94465f2af939d067cefÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:0Zn0Ls1AvADs49L3Kqk5Zi mobile-home"37.7.0*music214.14.18•
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÃ
+CUP–°–∏–Ω–≥–ª ‚Ä¢ Julee$spotify:album:57FcY1ZDkSOTCsUMP45dW2"@https://i.scdn.co/image/ab67616d00001e024ffe2e17d3e99efecad08641*∫
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenum
+$spotify:album:57FcY1ZDkSOTCsUMP45dW2CUP"@https://i.scdn.co/image/ab67616d00001e024ffe2e17d3e99efecad08641Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:57FcY1ZDkSOTCsUMP45dW2 mobile-home"37.7.0*music214.14.18≈
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÏ
+GIB MIR MEHR"–°–∏–Ω–≥–ª ‚Ä¢ Rubi, ThatGurlHanna$spotify:album:51AkdddTkhzmnnHQraLar7"@https://i.scdn.co/image/ab67616d00001e0259a22aa9501f174ff570a20e*√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+$spotify:album:51AkdddTkhzmnnHQraLar7GIB MIR MEHR"@https://i.scdn.co/image/ab67616d00001e0259a22aa9501f174ff570a20eÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:51AkdddTkhzmnnHQraLar7 mobile-home"37.7.0*music214.14.18∂
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent›
+Ist mir egal–°–∏–Ω–≥–ª ‚Ä¢ NESS$spotify:album:0fod53M2zcwQCILNt5MfuQ"@https://i.scdn.co/image/ab67616d00001e0203b3177dde59ff1e096599a9*√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+$spotify:album:0fod53M2zcwQCILNt5MfuQIst mir egal"@https://i.scdn.co/image/ab67616d00001e0203b3177dde59ff1e096599a9Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F 
+2
+nav_card$spotify:album:0fod53M2zcwQCILNt5MfuQ 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3F mobile-home"37.7.0*music214.14.1ˇ
+Ytype.googleapis.com/com.spotify.home.dac.component.v1.proto.RecsplanationHeadingComponent°
+C√âLINE–ü–æ—Ö–æ–∂–µ –Ω–∞: %spotify:artist:5ZYOlPpI9FZu2uIPkTB0UA"@https://i.scdn.co/image/ab6761610000f1783b843cc4c0ddd118a2b946a2Ç}ñ
+Í
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+@
+tappable_section_header%spotify:artist:5ZYOlPpI9FZu2uIPkTB0UAmobile-home"37.7.0*music214.14.18“8
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentÅ8≥
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent⁄
+Morgen–°–∏–Ω–≥–ª ‚Ä¢ EstA, Tom Twers$spotify:album:6JYdwInTDE3arObsOWqJPv"@https://i.scdn.co/image/ab67616d00001e021c3c4203744723d7258c0ebb*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+$spotify:album:6JYdwInTDE3arObsOWqJPvMorgen"@https://i.scdn.co/image/ab67616d00001e021c3c4203744723d7258c0ebbÇ}Ü
+⁄
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+0
+nav_card$spotify:album:6JYdwInTDE3arObsOWqJPvmobile-home"37.7.0*music214.14.18µ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‹
+Traum –°–∏–Ω–≥–ª ‚Ä¢ Achtabahn, KATI K$spotify:album:0GZhw1fIDyPCvDhZNFuZ1C"@https://i.scdn.co/image/ab67616d00001e0235dae3b4d898a0af4171853f*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+$spotify:album:0GZhw1fIDyPCvDhZNFuZ1CTraum"@https://i.scdn.co/image/ab67616d00001e0235dae3b4d898a0af4171853fÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:0GZhw1fIDyPCvDhZNFuZ1C mobile-home"37.7.0*music214.14.18≈
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÏ
+Perfekt F√ºr Dich–°–∏–Ω–≥–ª ‚Ä¢ Tom Twers$spotify:album:3dCB08h7t72tdp4JCowsYO"@https://i.scdn.co/image/ab67616d00001e023ac68d736bc19f64309827b2*»
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu{
+$spotify:album:3dCB08h7t72tdp4JCowsYOPerfekt F√ºr Dich"@https://i.scdn.co/image/ab67616d00001e023ac68d736bc19f64309827b2Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:3dCB08h7t72tdp4JCowsYO mobile-home"37.7.0*music214.14.18©
+Utype.googleapis.com/com.spotify.home.dac.component.v1.proto.ArtistCardMediumComponentœ
+Gregor H√§gele%spotify:artist:43fk67sl4SOrjJ7mtLTVVt"@https://i.scdn.co/image/ab676161000051742878c5cfee403006c47bc371*∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+%spotify:artist:43fk67sl4SOrjJ7mtLTVVtGregor H√§gele"@https://i.scdn.co/image/ab676161000051742878c5cfee403006c47bc371Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+3
+nav_card%spotify:artist:43fk67sl4SOrjJ7mtLTVVt mobile-home"37.7.0*music214.14.18∆
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÌ
+MIT WEM PT. II–°–∏–Ω–≥–ª ‚Ä¢ Nisa, Florentina$spotify:album:2NIyDJ5qolQ7rKm814vBwI"@https://i.scdn.co/image/ab67616d00001e02ecd1ab4d1c9a592830635be3*≈
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenux
+$spotify:album:2NIyDJ5qolQ7rKm814vBwIMIT WEM PT. II"@https://i.scdn.co/image/ab67616d00001e02ecd1ab4d1c9a592830635be3Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:2NIyDJ5qolQ7rKm814vBwI mobile-home"37.7.0*music214.14.18≤
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentŸ
+	verlierer–ê–ª—å–±–æ–º ‚Ä¢ LUNA$spotify:album:0q8XIgIhKo2O2oukgDsy2s"@https://i.scdn.co/image/ab67616d00001e0284c88304675a82e72d8b7d6f*¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+$spotify:album:0q8XIgIhKo2O2oukgDsy2s	verlierer"@https://i.scdn.co/image/ab67616d00001e0284c88304675a82e72d8b7d6fÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:0q8XIgIhKo2O2oukgDsy2s mobile-home"37.7.0*music214.14.18π
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‡
+Noch Einmal–°–∏–Ω–≥–ª ‚Ä¢ Tom Twers$spotify:album:6hl7zAet8K55yjwoMj78BG"@https://i.scdn.co/image/ab67616d00001e0292ac34e6afa79e45c969d0c1*¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+$spotify:album:6hl7zAet8K55yjwoMj78BGNoch Einmal"@https://i.scdn.co/image/ab67616d00001e0292ac34e6afa79e45c969d0c1Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:6hl7zAet8K55yjwoMj78BG mobile-home"37.7.0*music214.14.18≤
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentŸ
+Alleine–°–∏–Ω–≥–ª ‚Ä¢ Florentina$spotify:album:29h7ryq6taHeULkUT2Cuhj"@https://i.scdn.co/image/ab67616d00001e0236cab5f7c750dd7284d1bbfa*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+$spotify:album:29h7ryq6taHeULkUT2CuhjAlleine"@https://i.scdn.co/image/ab67616d00001e0236cab5f7c750dd7284d1bbfaÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:29h7ryq6taHeULkUT2Cuhj mobile-home"37.7.0*music214.14.18Æ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent’
+Ana–°–∏–Ω–≥–ª ‚Ä¢ Gregor H√§gele$spotify:album:1gvvYn9188zkuEp0VsAhHF"@https://i.scdn.co/image/ab67616d00001e02b96648ec6215ad1a441dca68*∫
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenum
+$spotify:album:1gvvYn9188zkuEp0VsAhHFAna"@https://i.scdn.co/image/ab67616d00001e02b96648ec6215ad1a441dca68Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:1gvvYn9188zkuEp0VsAhHF mobile-home"37.7.0*music214.14.18®
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentœ
+10/10–°–∏–Ω–≥–ª ‚Ä¢ JONA$spotify:album:0npYjRFt9saJRzvAKWdoFx"@https://i.scdn.co/image/ab67616d00001e025b8e5781dd4c346b6480809c*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+$spotify:album:0npYjRFt9saJRzvAKWdoFx10/10"@https://i.scdn.co/image/ab67616d00001e025b8e5781dd4c346b6480809cÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z 
+2
+nav_card$spotify:album:0npYjRFt9saJRzvAKWdoFx 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu5z mobile-home"37.7.0*music214.14.1
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentô
+-–ü–æ–ø—É–ª—è—Ä–Ω—ã–µ —Ä–∞–¥–∏–æ—Å—Ç–∞–Ω—Ü–∏–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+
+section_headermobile-home"37.7.0*music214.14.18Ò;
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponent†;ﬁ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÇ'spotify:playlist:37i9dQZF1E4kGjJhSzjBmN"Mhttps://seeded-session-images.scdn.co/v1/img/artist/1qQLhymHXFPtP5U8KNKsm6/ru*
+Apache 207: —Ä–∞–¥–∏–æ. 2ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1E4kGjJhSzjBmNApache 207: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/1qQLhymHXFPtP5U8KNKsm6/ruÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+3
+nav_card'spotify:playlist:37i9dQZF1E4kGjJhSzjBmNmobile-home"37.7.0*music214.14.18‡
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÑ'spotify:playlist:37i9dQZF1E4DhTXkJJwFJ3"Mhttps://seeded-session-images.scdn.co/v1/img/artist/194kfNUah673vhuQ6g3uNj/ru*
+Micha Maat: —Ä–∞–¥–∏–æ. 2ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1E4DhTXkJJwFJ3Micha Maat: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/194kfNUah673vhuQ6g3uNj/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4DhTXkJJwFJ3 mobile-home"37.7.0*music214.14.18Ó
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentí'spotify:playlist:37i9dQZF1E4BTJ2Wk3Jo1C"Mhttps://seeded-session-images.scdn.co/v1/img/artist/23xqmJEN3oVxwzqtNIyR5m/ru*!
+AnnenMayKantereit: —Ä–∞–¥–∏–æ. 2Â
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuó
+'spotify:playlist:37i9dQZF1E4BTJ2Wk3Jo1CAnnenMayKantereit: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/23xqmJEN3oVxwzqtNIyR5m/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4BTJ2Wk3Jo1C mobile-home"37.7.0*music214.14.18ﬁ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÇ'spotify:playlist:37i9dQZF1E4w0e9HxoZIw4"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6rqlONGmPuP2wJVSfliLBI/ru*
+Peter Fox: —Ä–∞–¥–∏–æ. 2›
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuè
+'spotify:playlist:37i9dQZF1E4w0e9HxoZIw4Peter Fox: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6rqlONGmPuP2wJVSfliLBI/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4w0e9HxoZIw4 mobile-home"37.7.0*music214.14.18‰
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentà'spotify:playlist:37i9dQZF1E4AfEUiirXPyP"Mhttps://seeded-session-images.scdn.co/v1/img/artist/06HL4z0CvFAxyc27GXpf02/ru*
+Taylor Swift: —Ä–∞–¥–∏–æ. 2‡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuí
+'spotify:playlist:37i9dQZF1E4AfEUiirXPyPTaylor Swift: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/06HL4z0CvFAxyc27GXpf02/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4AfEUiirXPyP mobile-home"37.7.0*music214.14.18÷
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent˙'spotify:playlist:37i9dQZF1E4xle7fmxzSld"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6vNAKgK5d74N1I0zTxRPDp/ru*
+Tream: —Ä–∞–¥–∏–æ. 2Ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuã
+'spotify:playlist:37i9dQZF1E4xle7fmxzSldTream: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6vNAKgK5d74N1I0zTxRPDp/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4xle7fmxzSld mobile-home"37.7.0*music214.14.18ÿ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¸'spotify:playlist:37i9dQZF1E4xbEBgR0iATG"Mhttps://seeded-session-images.scdn.co/v1/img/artist/2rEVnwCPBeGkWMv425KoG1/ru*
+AYLIVA: —Ä–∞–¥–∏–æ. 2⁄
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuå
+'spotify:playlist:37i9dQZF1E4xbEBgR0iATGAYLIVA: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/2rEVnwCPBeGkWMv425KoG1/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4xbEBgR0iATG mobile-home"37.7.0*music214.14.18‹
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÄ'spotify:playlist:37i9dQZF1E4zLdpeXDuSkD"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6CP5wWvO8oIxedESJNCN4H/ru*
+Ski Aggu: —Ä–∞–¥–∏–æ. 2‹
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenué
+'spotify:playlist:37i9dQZF1E4zLdpeXDuSkDSki Aggu: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6CP5wWvO8oIxedESJNCN4H/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4zLdpeXDuSkD mobile-home"37.7.0*music214.14.18‡
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÑ'spotify:playlist:37i9dQZF1E4DcffsQOUbbg"Mhttps://seeded-session-images.scdn.co/v1/img/artist/2kS9NyuATpYwjeB93h24H5/ru*
+Nina Chuba: —Ä–∞–¥–∏–æ. 2ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1E4DcffsQOUbbgNina Chuba: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/2kS9NyuATpYwjeB93h24H5/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4DcffsQOUbbg mobile-home"37.7.0*music214.14.18÷
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent˙'spotify:playlist:37i9dQZF1E4BquEbWDiOI8"Mhttps://seeded-session-images.scdn.co/v1/img/artist/1ZyqnbV7Brg5LgyS4EZCUD/ru*
+FiNCH: —Ä–∞–¥–∏–æ. 2Ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuã
+'spotify:playlist:37i9dQZF1E4BquEbWDiOI8FiNCH: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/1ZyqnbV7Brg5LgyS4EZCUD/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h 
+5
+nav_card'spotify:playlist:37i9dQZF1E4BquEbWDiOI8 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4h mobile-home"37.7.0*music214.14.1Ï
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentï
+)–†–µ–∫–æ–º–µ–Ω–¥—É–µ–º—ã–µ —Å—Ç–∞–Ω—Ü–∏–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+
+section_headermobile-home"37.7.0*music214.14.18ˇB
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentÆB‡
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÑDC√âLINE, Philipp Dittberner, LUNA, NESS, Anstandslos & Durchgeknallt'spotify:playlist:37i9dQZF1E4lF1pitum7lC"Mhttps://seeded-session-images.scdn.co/v1/img/artist/277dytbjtOXNnvRXf7Dyyv/ru*Z
+XKATI K: —Ä–∞–¥–∏–æ. C√âLINE, Philipp Dittberner, LUNA, NESS, Anstandslos & Durchgeknallt2⁄
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuå
+'spotify:playlist:37i9dQZF1E4lF1pitum7lCKATI K: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/277dytbjtOXNnvRXf7Dyyv/ruÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+3
+nav_card'spotify:playlist:37i9dQZF1E4lF1pitum7lCmobile-home"37.7.0*music214.14.18∞
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent‘-Juju, badm√≥mzjay, Monet192, Vita, Nina Chuba'spotify:playlist:37i9dQZF1E4EoduT4gOBlF"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6xFDR4HD7uLGWhdV9vF9qP/ru*A
+?Vita: —Ä–∞–¥–∏–æ. Juju, badm√≥mzjay, Monet192, Vita, Nina Chuba2ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuä
+'spotify:playlist:37i9dQZF1E4EoduT4gOBlFVita: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6xFDR4HD7uLGWhdV9vF9qP/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4EoduT4gOBlF mobile-home"37.7.0*music214.14.18∫
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentﬁ+badm√≥mzjay, Mathea, Monet192, Sido, Ufo361'spotify:playlist:37i9dQZF1E4tO7LJjThy6u"Mhttps://seeded-session-images.scdn.co/v1/img/artist/7oWrEQO1d3klp0Qrfh7a5h/ru*F
+Dbadm√≥mzjay: —Ä–∞–¥–∏–æ. badm√≥mzjay, Mathea, Monet192, Sido, Ufo3612ﬂ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuë
+'spotify:playlist:37i9dQZF1E4tO7LJjThy6ubadm√≥mzjay: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/7oWrEQO1d3klp0Qrfh7a5h/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4tO7LJjThy6u mobile-home"37.7.0*music214.14.18∞
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent‘-Juju, badm√≥mzjay, Monet192, Apache 207, GIMS'spotify:playlist:37i9dQZF1E4rOUSXZZG8Az"Mhttps://seeded-session-images.scdn.co/v1/img/artist/4sg4no0TXdsrM1s4SVUwNF/ru*A
+?Juju: —Ä–∞–¥–∏–æ. Juju, badm√≥mzjay, Monet192, Apache 207, GIMS2ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuä
+'spotify:playlist:37i9dQZF1E4rOUSXZZG8AzJuju: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/4sg4no0TXdsrM1s4SVUwNF/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4rOUSXZZG8Az mobile-home"37.7.0*music214.14.18∫
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentﬁ)Mathea, Max Giesinger, Juju, C√âLINE, ART'spotify:playlist:37i9dQZF1E4BrKHAkjtFf8"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6u8KyY2rfBGDtDejRJ9JaQ/ru*F
+DMadeline Juno: —Ä–∞–¥–∏–æ. Mathea, Max Giesinger, Juju, C√âLINE, ART2·
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuì
+'spotify:playlist:37i9dQZF1E4BrKHAkjtFf8Madeline Juno: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/6u8KyY2rfBGDtDejRJ9JaQ/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4BrKHAkjtFf8 mobile-home"37.7.0*music214.14.18¥
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÿ-Octavian, Rubi, NESS, Pietro Lombardi, SOPHIA'spotify:playlist:37i9dQZF1E4wNKb0hRKqu5"Mhttps://seeded-session-images.scdn.co/v1/img/artist/4NKBz9XWRy7r1B69L4gg5l/ru*C
+AJulita: —Ä–∞–¥–∏–æ. Octavian, Rubi, NESS, Pietro Lombardi, SOPHIA2⁄
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuå
+'spotify:playlist:37i9dQZF1E4wNKb0hRKqu5Julita: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/4NKBz9XWRy7r1B69L4gg5l/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4wNKb0hRKqu5 mobile-home"37.7.0*music214.14.18ƒ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentË.Juju, badm√≥mzjay, Monet192, AYLIVA, KC Rebell'spotify:playlist:37i9dQZF1E4BSijhmyY30E"Mhttps://seeded-session-images.scdn.co/v1/img/artist/3IIBqtZVfCcYzVJljAevLq/ru*K
+IAnna Tr√ºmner: —Ä–∞–¥–∏–æ. Juju, badm√≥mzjay, Monet192, AYLIVA, KC Rebell2·
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuì
+'spotify:playlist:37i9dQZF1E4BSijhmyY30EAnna Tr√ºmner: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/3IIBqtZVfCcYzVJljAevLq/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4BSijhmyY30E mobile-home"37.7.0*music214.14.18™
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentŒ&Monet192, Juju, Mathea, Ufo361, Dardan'spotify:playlist:37i9dQZF1E4pOp0ahVE5EI"Mhttps://seeded-session-images.scdn.co/v1/img/artist/60uPSVM3svOL8kZ3Wkb3Zw/ru*>
+<Monet192: —Ä–∞–¥–∏–æ. Monet192, Juju, Mathea, Ufo361, Dardan2‹
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenué
+'spotify:playlist:37i9dQZF1E4pOp0ahVE5EIMonet192: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/60uPSVM3svOL8kZ3Wkb3Zw/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4pOp0ahVE5EI mobile-home"37.7.0*music214.14.18∏
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent‹/Hexari, QUATTROTEQUE, VINIVILLA, Naell, BLACKMO'spotify:playlist:37i9dQZF1E4vfJH2HZfA85"Mhttps://seeded-session-images.scdn.co/v1/img/artist/44vT00ow80vgtTtCC3V28B/ru*E
+CHexari: —Ä–∞–¥–∏–æ. Hexari, QUATTROTEQUE, VINIVILLA, Naell, BLACKMO2⁄
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuå
+'spotify:playlist:37i9dQZF1E4vfJH2HZfA85Hexari: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/44vT00ow80vgtTtCC3V28B/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4vfJH2HZfA85 mobile-home"37.7.0*music214.14.18Æ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent“+Flo Rida, Felix Jaehn, W&W, VINAI, YouNotUs'spotify:playlist:37i9dQZF1E4mqhQqORGHxb"Mhttps://seeded-session-images.scdn.co/v1/img/artist/7CLsFRcEkn0Amc9VlVOFwR/ru*@
+>LUNAX: —Ä–∞–¥–∏–æ. Flo Rida, Felix Jaehn, W&W, VINAI, YouNotUs2Ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuã
+'spotify:playlist:37i9dQZF1E4mqhQqORGHxbLUNAX: —Ä–∞–¥–∏–æ"Mhttps://seeded-session-images.scdn.co/v1/img/artist/7CLsFRcEkn0Amc9VlVOFwR/ruÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R 
+5
+nav_card'spotify:playlist:37i9dQZF1E4mqhQqORGHxb 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3R mobile-home"37.7.0*music214.14.1Í
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentì
+'–ù–æ–≤—ã–µ —Ä–µ–ª–∏–∑—ã –¥–ª—è —Ç–µ–±—èÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+
+section_headermobile-home"37.7.0*music214.14.18è9
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentæ8¡
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentË
+	Airplanes&–°–∏–Ω–≥–ª ‚Ä¢ badm√≥mzjay, Kool Savas$spotify:album:6jBdckldnGZlXigVcXCOFJ"@https://i.scdn.co/image/ab67616d00001e02243ed253de61b916cafbd898*¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+$spotify:album:6jBdckldnGZlXigVcXCOFJ	Airplanes"@https://i.scdn.co/image/ab67616d00001e02243ed253de61b916cafbd898Ç}Ü
+⁄
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+0
+nav_card$spotify:album:6jBdckldnGZlXigVcXCOFJmobile-home"37.7.0*music214.14.18∫
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent·
+
+Limoncello–°–∏–Ω–≥–ª ‚Ä¢ equal, KAYEF$spotify:album:2YGgoIztNE1qyN8ZVHiUi3"@https://i.scdn.co/image/ab67616d00001e025c786600208700ee33f07a2f*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+$spotify:album:2YGgoIztNE1qyN8ZVHiUi3
+Limoncello"@https://i.scdn.co/image/ab67616d00001e025c786600208700ee33f07a2fÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:2YGgoIztNE1qyN8ZVHiUi3 mobile-home"37.7.0*music214.14.18Ω
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‰
+Nur Wegen Dir–°–∏–Ω–≥–ª ‚Ä¢ Tom Twers$spotify:album:6LseV7EAo0Ju8fr8zShw3M"@https://i.scdn.co/image/ab67616d00001e02ea19ebe6853a94eeef2002f7*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+$spotify:album:6LseV7EAo0Ju8fr8zShw3MNur Wegen Dir"@https://i.scdn.co/image/ab67616d00001e02ea19ebe6853a94eeef2002f7Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:6LseV7EAo0Ju8fr8zShw3M mobile-home"37.7.0*music214.14.18ª
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent‚
+Du fehlst mir–°–∏–Ω–≥–ª ‚Ä¢ 1986zig$spotify:album:6jyHmvgU9E5eI3WgD0DVE9"@https://i.scdn.co/image/ab67616d00001e02647b8429d15b893823a1202e*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+$spotify:album:6jyHmvgU9E5eI3WgD0DVE9Du fehlst mir"@https://i.scdn.co/image/ab67616d00001e02647b8429d15b893823a1202eÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:6jyHmvgU9E5eI3WgD0DVE9 mobile-home"37.7.0*music214.14.18≤
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentŸ
+
+ALLE COVER–°–∏–Ω–≥–ª ‚Ä¢ CIVO$spotify:album:5hkBdbUfGXsbmaWChu1PUp"@https://i.scdn.co/image/ab67616d00001e02f45ff5c9767c6a9a974579e5*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+$spotify:album:5hkBdbUfGXsbmaWChu1PUp
+ALLE COVER"@https://i.scdn.co/image/ab67616d00001e02f45ff5c9767c6a9a974579e5Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:5hkBdbUfGXsbmaWChu1PUp mobile-home"37.7.0*music214.14.18≥
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent⁄
+
+nie wieder–°–∏–Ω–≥–ª ‚Ä¢ Eddin$spotify:album:4NegZyPE7BcEKmIaJMwrhb"@https://i.scdn.co/image/ab67616d00001e022ab591f81b07d680cbd4a84d*¡
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenut
+$spotify:album:4NegZyPE7BcEKmIaJMwrhb
+nie wieder"@https://i.scdn.co/image/ab67616d00001e022ab591f81b07d680cbd4a84dÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:4NegZyPE7BcEKmIaJMwrhb mobile-home"37.7.0*music214.14.18√
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÍ
+Leap Of Faith–ú–∏–Ω–∏-–∞–ª—å–±–æ–º ‚Ä¢ KVPV$spotify:album:2pNi2r4WRBcisG9zuGIhq7"@https://i.scdn.co/image/ab67616d00001e023d0ebd4a46dba923436f877e*ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+$spotify:album:2pNi2r4WRBcisG9zuGIhq7Leap Of Faith"@https://i.scdn.co/image/ab67616d00001e023d0ebd4a46dba923436f877eÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:2pNi2r4WRBcisG9zuGIhq7 mobile-home"37.7.0*music214.14.18¨
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent”
+Mark–°–∏–Ω–≥–ª ‚Ä¢ Adam Jamar$spotify:album:6u9iIDpLzAVrI4hMELmKlP"@https://i.scdn.co/image/ab67616d00001e0288adbc9f13b0bcd14c310b07*ª
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenun
+$spotify:album:6u9iIDpLzAVrI4hMELmKlPMark"@https://i.scdn.co/image/ab67616d00001e0288adbc9f13b0bcd14c310b07Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:6u9iIDpLzAVrI4hMELmKlP mobile-home"37.7.0*music214.14.18±
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÿ
+Cannibal–°–∏–Ω–≥–ª ‚Ä¢ Obzkure$spotify:album:12rdTr4k2S8xjdI2DsaTnj"@https://i.scdn.co/image/ab67616d00001e027192f4fa9a1b5c1b674e1dff*ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+$spotify:album:12rdTr4k2S8xjdI2DsaTnjCannibal"@https://i.scdn.co/image/ab67616d00001e027192f4fa9a1b5c1b674e1dffÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:12rdTr4k2S8xjdI2DsaTnj mobile-home"37.7.0*music214.14.18‘
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent˚
+Nie genug geliebt'–°–∏–Ω–≥–ª ‚Ä¢ Julien Bam, Julia Beautx$spotify:album:4to8kkbQe5LIbdqK5BLVag"@https://i.scdn.co/image/ab67616d00001e026bc6acddfb19b326d59b6da4*»
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu{
+$spotify:album:4to8kkbQe5LIbdqK5BLVagNie genug geliebt"@https://i.scdn.co/image/ab67616d00001e026bc6acddfb19b326d59b6da4Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL 
+2
+nav_card$spotify:album:4to8kkbQe5LIbdqK5BLVag 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAob0JwPhg9tCvIWPL mobile-home"37.7.0*music214.14.1Ê
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentè
+#–ü–æ–ø—É–ª—è—Ä–Ω—ã–µ –∞–ª—å–±–æ–º—ãÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+
+section_headermobile-home"37.7.0*music214.14.18Â9
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentî9¨
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent”
+Glas–ê–ª—å–±–æ–º ‚Ä¢ Nina Chuba$spotify:album:1oMWwWSqcGxpn2YhsYkNt6"@https://i.scdn.co/image/ab67616d00001e029ac00fcabc982b2e03987247*ª
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenun
+$spotify:album:1oMWwWSqcGxpn2YhsYkNt6Glas"@https://i.scdn.co/image/ab67616d00001e029ac00fcabc982b2e03987247Ç}Ü
+⁄
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+0
+nav_card$spotify:album:1oMWwWSqcGxpn2YhsYkNt6mobile-home"37.7.0*music214.14.18æ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÂ
+Schwarzes Herz–ê–ª—å–±–æ–º ‚Ä¢ AYLIVA$spotify:album:0Xsdw4O63MRbnZn81z7Uws"@https://i.scdn.co/image/ab67616d00001e026305e51741ae5f4acda89fe2*≈
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenux
+$spotify:album:0Xsdw4O63MRbnZn81z7UwsSchwarzes Herz"@https://i.scdn.co/image/ab67616d00001e026305e51741ae5f4acda89fe2Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:0Xsdw4O63MRbnZn81z7Uws mobile-home"37.7.0*music214.14.18º
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent„
+Gartenstadt–ê–ª—å–±–æ–º ‚Ä¢ Apache 207$spotify:album:6Sd0rVatEiURCktc2Yr4EU"@https://i.scdn.co/image/ab67616d00001e02a25d8a6aaacfe60f336df3d2*¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+$spotify:album:6Sd0rVatEiURCktc2Yr4EUGartenstadt"@https://i.scdn.co/image/ab67616d00001e02a25d8a6aaacfe60f336df3d2Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:6Sd0rVatEiURCktc2Yr4EU mobile-home"37.7.0*music214.14.18∫
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent·
+Weisses Herz–ê–ª—å–±–æ–º ‚Ä¢ AYLIVA$spotify:album:3TGzhEgQ0A1ijA6bnyrsJH"@https://i.scdn.co/image/ab67616d00001e02d366299e7be359f40913bfd3*√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+$spotify:album:3TGzhEgQ0A1ijA6bnyrsJHWeisses Herz"@https://i.scdn.co/image/ab67616d00001e02d366299e7be359f40913bfd3Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:3TGzhEgQ0A1ijA6bnyrsJH mobile-home"37.7.0*music214.14.18Ò
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentò
+M√§dchen auf dem Pferd9–°–∏–Ω–≥–ª ‚Ä¢ Luca-Dante Spadafora, Niklas Dee, Octavian$spotify:album:1nqgi8V3Ii96w1iofIcfcz"@https://i.scdn.co/image/ab67616d00001e0246718115b2b40fc67115657f*Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+$spotify:album:1nqgi8V3Ii96w1iofIcfczM√§dchen auf dem Pferd"@https://i.scdn.co/image/ab67616d00001e0246718115b2b40fc67115657fÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:1nqgi8V3Ii96w1iofIcfcz mobile-home"37.7.0*music214.14.18æ
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÂ
+9 bis 9%–°–∏–Ω–≥–ª ‚Ä¢ SIRA, Bausa, badchieff$spotify:album:00MoqsGjkjG0PS4GtYkSdb"@https://i.scdn.co/image/ab67616d00001e02775cf9ec148ca7b7be5968aa*æ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuq
+$spotify:album:00MoqsGjkjG0PS4GtYkSdb9 bis 9"@https://i.scdn.co/image/ab67616d00001e02775cf9ec148ca7b7be5968aaÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:00MoqsGjkjG0PS4GtYkSdb mobile-home"37.7.0*music214.14.18Ì
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentî
+Folge 223: und der Knochenmann%–ê—É–¥–∏–æ–∫–Ω–∏–≥–∞ ‚Ä¢ Die drei ???$spotify:album:451jKBwuSNrNgLlqEAZfra"@https://i.scdn.co/image/ab67616d00001e02e37da75bbad97a220ee3ee6c*÷
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuà
+$spotify:album:451jKBwuSNrNgLlqEAZfraFolge 223: und der Knochenmann"@https://i.scdn.co/image/ab67616d00001e02e37da75bbad97a220ee3ee6cÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:451jKBwuSNrNgLlqEAZfra mobile-home"37.7.0*music214.14.18¿
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentÁ
+Prada+–°–∏–Ω–≥–ª ‚Ä¢ cass√∂, RAYE, D-Block Europe$spotify:album:5MU0RmBSpoSxOPYBfcobDc"@https://i.scdn.co/image/ab67616d00001e02e4b7dccdfd54375ded9ccc5c*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+$spotify:album:5MU0RmBSpoSxOPYBfcobDcPrada"@https://i.scdn.co/image/ab67616d00001e02e4b7dccdfd54375ded9ccc5cÇ}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:5MU0RmBSpoSxOPYBfcobDc mobile-home"37.7.0*music214.14.18≤
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponentŸ
+Lover–ê–ª—å–±–æ–º ‚Ä¢ Taylor Swift$spotify:album:1NAmidJlEaVgA3MpcPFYGq"@https://i.scdn.co/image/ab67616d00001e02e787cffec20aa2a396a61647*º
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuo
+$spotify:album:1NAmidJlEaVgA3MpcPFYGqLover"@https://i.scdn.co/image/ab67616d00001e02e787cffec20aa2a396a61647Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:1NAmidJlEaVgA3MpcPFYGq mobile-home"37.7.0*music214.14.18¥
+Ttype.googleapis.com/com.spotify.home.dac.component.v1.proto.AlbumCardMediumComponent€
+UTOPIA–ê–ª—å–±–æ–º ‚Ä¢ Travis Scott$spotify:album:18NOKLkZETa4sWwLMIm0UZ"@https://i.scdn.co/image/ab67616d00001e02881d8d8378cd01099babcd44*Ω
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenup
+$spotify:album:18NOKLkZETa4sWwLMIm0UZUTOPIA"@https://i.scdn.co/image/ab67616d00001e02881d8d8378cd01099babcd44Ç}à
+‹
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B 
+2
+nav_card$spotify:album:18NOKLkZETa4sWwLMIm0UZ 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3B mobile-home"37.7.0*music214.14.1Î
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentî
+(–ë–æ–ª—å—à–µ –ª—é–±–∏–º–æ–π –º—É–∑—ã–∫–∏Ç}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+
+section_headermobile-home"37.7.0*music214.14.18«4
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentˆ3ì
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent∑7The Chainsmokers, Bad Bunny, KAROL G, Feid, Myke Towers'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3"@https://i.scdn.co/image/ab67706f00000002708c623e2e1df4607775381b*A
+?Cardio. The Chainsmokers, Bad Bunny, KAROL G, Feid, Myke Towers2¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3Cardio"@https://i.scdn.co/image/ab67706f00000002708c623e2e1df4607775381bÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+3
+nav_card'spotify:playlist:37i9dQZF1DWSJHnPb1f0X3mobile-home"37.7.0*music214.14.18∫
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentﬁ9KAROL G, David Guetta, Dua Lipa, Calvin Harris, Sam Smith'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdO"@https://i.scdn.co/image/ab67706f0000000224414aad49870aa26b368e4c*S
+QSummer Dance Hits 2023. KAROL G, David Guetta, Dua Lipa, Calvin Harris, Sam Smith2—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdOSummer Dance Hits 2023"@https://i.scdn.co/image/ab67706f0000000224414aad49870aa26b368e4cÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZ7eJRBxKzdO mobile-home"37.7.0*music214.14.18∑
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent€EThe Chainsmokers, Mark Forster, badm√≥mzjay, The Weeknd, Lana Del Rey'spotify:playlist:37i9dQZF1DX86cOoaMyeqi"@https://i.scdn.co/image/ab67706f000000029aacbeb0942d18c4089ae3b2*R
+PLOBBYHOES. The Chainsmokers, Mark Forster, badm√≥mzjay, The Weeknd, Lana Del Rey2√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+'spotify:playlist:37i9dQZF1DX86cOoaMyeqi	LOBBYHOES"@https://i.scdn.co/image/ab67706f000000029aacbeb0942d18c4089ae3b2Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DX86cOoaMyeqi mobile-home"37.7.0*music214.14.18°
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent≈9David Guetta, Dua Lipa, Calvin Harris, Sam Smith, Ti√´sto'spotify:playlist:37i9dQZF1DX32NsLKyzScr"@https://i.scdn.co/image/ab67706f00000002cb23f54d979311c1f323a056*G
+EPower Hour. David Guetta, Dua Lipa, Calvin Harris, Sam Smith, Ti√´sto2ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+'spotify:playlist:37i9dQZF1DX32NsLKyzScr
+Power Hour"@https://i.scdn.co/image/ab67706f00000002cb23f54d979311c1f323a056Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DX32NsLKyzScr mobile-home"37.7.0*music214.14.18ï
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentπ4Sofi Tukker, Halsey, Alan Walker, Kygo, Fred again..'spotify:playlist:37i9dQZF1DWVrtsSlLKzro"@https://i.scdn.co/image/ab67706f0000000290954451308db71d0e43a9fa*A
+?Sad Beats. Sofi Tukker, Halsey, Alan Walker, Kygo, Fred again..2√
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuv
+'spotify:playlist:37i9dQZF1DWVrtsSlLKzro	Sad Beats"@https://i.scdn.co/image/ab67706f0000000290954451308db71d0e43a9faÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DWVrtsSlLKzro mobile-home"37.7.0*music214.14.18ò
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentº+HEDEGAARD, Flo Rida, KVSH, Vini Vici, LUNAX'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3"@https://i.scdn.co/image/ab67706f00000002caf104e283ca7a598861a470*B
+@Psytrance Supernova. HEDEGAARD, Flo Rida, KVSH, Vini Vici, LUNAX2Œ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÄ
+'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3Psytrance Supernova"@https://i.scdn.co/image/ab67706f00000002caf104e283ca7a598861a470Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DWXWbLEOaHnU3 mobile-home"37.7.0*music214.14.18ç
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent±1Butch U, HEDEGAARD, Arem Ozguc, Arman Aydin, Emie'spotify:playlist:37i9dQZF1DXblmY5UIU3v3"@https://i.scdn.co/image/ab67706f00000002296dfaca9d08da66ad668073*=
+;DOWN LOW. Butch U, HEDEGAARD, Arem Ozguc, Arman Aydin, Emie2¬
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuu
+'spotify:playlist:37i9dQZF1DXblmY5UIU3v3DOWN LOW"@https://i.scdn.co/image/ab67706f00000002296dfaca9d08da66ad668073Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DXblmY5UIU3v3 mobile-home"37.7.0*music214.14.18´
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentœ<Travis Scott, KAROL G, David Guetta, Beyonc√©, Natanael Cano'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5h"@https://i.scdn.co/image/ab67706f00000002c4b4295b5bc9b64388cb800e*L
+JEuphoria EDM. Travis Scott, KAROL G, David Guetta, Beyonc√©, Natanael Cano2∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5hEuphoria EDM"@https://i.scdn.co/image/ab67706f00000002c4b4295b5bc9b64388cb800eÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZ5Se2LB1C5h mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3J mobile-home"37.7.0*music214.14.1‹
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentÖ
+–õ—É—á—à–∏–µ –∞–≤—Ç–æ—Ä—ãÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+
+section_headermobile-home"37.7.0*music214.14.18åK
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentªJ§
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent»jThe essentials from songwriter Tom Hengelbrock, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFQkevSM0jap2"@https://i.scdn.co/image/ab676d63000076a0e80ccca08e450be71de4a480*â
+ÜWritten By Tom Hengelbrock. The essentials from songwriter Tom Hengelbrock, all in one playlist. Discover more songwriters on Spotify.2’
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuá
+'spotify:playlist:37i9dQZF1EFQkevSM0jap2Written By Tom Hengelbrock"@https://i.scdn.co/image/ab676d63000076a0e80ccca08e450be71de4a480Ç}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+3
+nav_card'spotify:playlist:37i9dQZF1EFQkevSM0jap2mobile-home"37.7.0*music214.14.18 
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÓsThe essentials from songwriter Felix Hain (of FAST BOY), all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFOHv3KCA2lxI"@https://i.scdn.co/image/ab676d63000076a0a020736fd98be121af149719*õ
+òWritten By Felix Hain (of FAST BOY). The essentials from songwriter Felix Hain (of FAST BOY), all in one playlist. Discover more songwriters on Spotify.2ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1EFOHv3KCA2lxI#Written By Felix Hain (of FAST BOY)"@https://i.scdn.co/image/ab676d63000076a0a020736fd98be121af149719Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFOHv3KCA2lxI mobile-home"37.7.0*music214.14.18 
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÓsThe essentials from songwriter Lucas Hain (of FAST BOY), all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFHtyYCOcO3GD"@https://i.scdn.co/image/ab676d63000076a086148cca6eca5422888eccea*õ
+òWritten By Lucas Hain (of FAST BOY). The essentials from songwriter Lucas Hain (of FAST BOY), all in one playlist. Discover more songwriters on Spotify.2ﬁ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuê
+'spotify:playlist:37i9dQZF1EFHtyYCOcO3GD#Written By Lucas Hain (of FAST BOY)"@https://i.scdn.co/image/ab676d63000076a086148cca6eca5422888ecceaÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFHtyYCOcO3GD mobile-home"37.7.0*music214.14.18˜
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentõ_The essentials from songwriter JARO, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFF4pMHAJsXaw"@https://i.scdn.co/image/ab676d63000076a0371a387746a9c7d91c54e952*r
+pWritten By JARO. The essentials from songwriter JARO, all in one playlist. Discover more songwriters on Spotify.2…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+'spotify:playlist:37i9dQZF1EFF4pMHAJsXawWritten By JARO"@https://i.scdn.co/image/ab676d63000076a0371a387746a9c7d91c54e952Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFF4pMHAJsXaw mobile-home"37.7.0*music214.14.18˜
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentõ_The essentials from songwriter Boki, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFAQdbJznjeak"@https://i.scdn.co/image/ab676d63000076a003b3a6decbb43b0af145b8e2*r
+pWritten By Boki. The essentials from songwriter Boki, all in one playlist. Discover more songwriters on Spotify.2…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+'spotify:playlist:37i9dQZF1EFAQdbJznjeakWritten By Boki"@https://i.scdn.co/image/ab676d63000076a003b3a6decbb43b0af145b8e2Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFAQdbJznjeak mobile-home"37.7.0*music214.14.18ê
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent¥eThe essentials from songwriter Flo August, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFKtjR4INJLv7"@https://i.scdn.co/image/ab676d63000076a01417bd8924f9c46ac4f019a2*~
+|Written By Flo August. The essentials from songwriter Flo August, all in one playlist. Discover more songwriters on Spotify.2–
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÇ
+'spotify:playlist:37i9dQZF1EFKtjR4INJLv7Written By Flo August"@https://i.scdn.co/image/ab676d63000076a01417bd8924f9c46ac4f019a2Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFKtjR4INJLv7 mobile-home"37.7.0*music214.14.18¶
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent jThe essentials from songwriter Hubertus Dahlem, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFIxiT2jLfDSw"@https://i.scdn.co/image/ab676d63000076a01e0b5e7da7d81d8d22800092*â
+ÜWritten By Hubertus Dahlem. The essentials from songwriter Hubertus Dahlem, all in one playlist. Discover more songwriters on Spotify.2’
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuá
+'spotify:playlist:37i9dQZF1EFIxiT2jLfDSwWritten By Hubertus Dahlem"@https://i.scdn.co/image/ab676d63000076a01e0b5e7da7d81d8d22800092Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFIxiT2jLfDSw mobile-home"37.7.0*music214.14.18ï
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentπfThe essentials from songwriter Esther Graf, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFy2Uc5apJfud"@https://i.scdn.co/image/ab676d63000076a0712228bfb026e93b0f09e314*Ä
+~Written By Esther Graf. The essentials from songwriter Esther Graf, all in one playlist. Discover more songwriters on Spotify.2—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1EFy2Uc5apJfudWritten By Esther Graf"@https://i.scdn.co/image/ab676d63000076a0712228bfb026e93b0f09e314Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFy2Uc5apJfud mobile-home"37.7.0*music214.14.18∂
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent⁄nThe essentials from songwriter SMR Musikproduction, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFN11t3EE7Gaa"@https://i.scdn.co/image/ab676d63000076a0fec3c8a8885b4138752e9fdf*ë
+éWritten By SMR Musikproduction. The essentials from songwriter SMR Musikproduction, all in one playlist. Discover more songwriters on Spotify.2Ÿ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuã
+'spotify:playlist:37i9dQZF1EFN11t3EE7GaaWritten By SMR Musikproduction"@https://i.scdn.co/image/ab676d63000076a0fec3c8a8885b4138752e9fdfÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFN11t3EE7Gaa mobile-home"37.7.0*music214.14.18¢
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent∆iThe essentials from songwriter Marco Porombka, all in one playlist. Discover more songwriters on Spotify.'spotify:playlist:37i9dQZF1EFA3n0iTgRRAY"@https://i.scdn.co/image/ab676d63000076a07d2434fe8a6f49b4b87bd77f*á
+ÑWritten By Marco Porombka. The essentials from songwriter Marco Porombka, all in one playlist. Discover more songwriters on Spotify.2‘
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÜ
+'spotify:playlist:37i9dQZF1EFA3n0iTgRRAYWritten By Marco Porombka"@https://i.scdn.co/image/ab676d63000076a07d2434fe8a6f49b4b87bd77fÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w 
+5
+nav_card'spotify:playlist:37i9dQZF1EFA3n0iTgRRAY 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu4w mobile-home"37.7.0*music214.14.1‚
+Rtype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionHeaderComponentã
+–°–µ–≥–æ–¥–Ω—è—à–Ω–∏–µ —Ö–∏—Ç—ãÇ}Ê
+∫
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+
+section_headermobile-home"37.7.0*music214.14.18Í@
+Ltype.googleapis.com/com.spotify.home.dac.component.v1.proto.SectionComponentô@´
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentœ8Taylor Swift, The Weeknd, Bad Bunny, Drake, Travis Scott'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"@https://i.scdn.co/image/ab67706f00000002e6391ab695e3af9b295d27ef*M
+KToday's Top Hits . Taylor Swift, The Weeknd, Bad Bunny, Drake, Travis Scott2À
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu~
+'spotify:playlist:37i9dQZF1DXcBWIGoYBM5MToday's Top Hits "@https://i.scdn.co/image/ab67706f00000002e6391ab695e3af9b295d27efÇ}â
+›
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+3
+nav_card'spotify:playlist:37i9dQZF1DXcBWIGoYBM5Mmobile-home"37.7.0*music214.14.18∑
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent€DThe Chainsmokers, Travis Scott, Lana Del Rey, David Guetta, Dua Lipa'spotify:playlist:37i9dQZF1DX6QbU3i33zqm"@https://i.scdn.co/image/ab67706f000000029435cd1c0234d9399d86d29c*R
+PDance 2023. The Chainsmokers, Travis Scott, Lana Del Rey, David Guetta, Dua Lipa2ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+'spotify:playlist:37i9dQZF1DX6QbU3i33zqm
+Dance 2023"@https://i.scdn.co/image/ab67706f000000029435cd1c0234d9399d86d29cÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DX6QbU3i33zqm mobile-home"37.7.0*music214.14.18»
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentÏ@The Chainsmokers, Taylor Swift, The Weeknd, Drake, Billie Eilish'spotify:playlist:37i9dQZF1DX1ngEVM0lKrb"@https://i.scdn.co/image/ab67706f00000002ddc9dd3c97091ccc4b3fa7e0*Z
+XPop Internacional 2023. The Chainsmokers, Taylor Swift, The Weeknd, Drake, Billie Eilish2—
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuÉ
+'spotify:playlist:37i9dQZF1DX1ngEVM0lKrbPop Internacional 2023"@https://i.scdn.co/image/ab67706f00000002ddc9dd3c97091ccc4b3fa7e0Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DX1ngEVM0lKrb mobile-home"37.7.0*music214.14.18ü
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent√6The Chainsmokers, Bad Bunny, Peso Pluma, KAROL G, Feid'spotify:playlist:37i9dQZF1DWSpF87bP6JSF"@https://i.scdn.co/image/ab67706f00000002ebd994f98a5542f1e8992872*F
+DLa Lista Pop. The Chainsmokers, Bad Bunny, Peso Pluma, KAROL G, Feid2∆
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuy
+'spotify:playlist:37i9dQZF1DWSpF87bP6JSFLa Lista Pop"@https://i.scdn.co/image/ab67706f00000002ebd994f98a5542f1e8992872Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DWSpF87bP6JSF mobile-home"37.7.0*music214.14.18ë
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponentµ1Myke Towers, Grupo Frontera, Ozuna, Quevedo, Duki'spotify:playlist:37i9dQZF1DX3sCT1ItXgNd"@https://i.scdn.co/image/ab67706f0000000228104465d2e3e476fd2006fb*?
+=Pop con √ë. Myke Towers, Grupo Frontera, Ozuna, Quevedo, Duki2ƒ
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenuw
+'spotify:playlist:37i9dQZF1DX3sCT1ItXgNd
+Pop con √ë"@https://i.scdn.co/image/ab67706f0000000228104465d2e3e476fd2006fbÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DX3sCT1ItXgNd mobile-home"37.7.0*music214.14.18°
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent≈4Bad Bunny, Peso Pluma, KAROL G, Feid, Rauw Alejandro'spotify:playlist:37i9dQZF1DXaxEKcoCdWHD"@https://i.scdn.co/image/ab67706f0000000242ca5c17d92aec289c90c942*G
+E√âxitos Espa√±a. Bad Bunny, Peso Pluma, KAROL G, Feid, Rauw Alejandro2…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+'spotify:playlist:37i9dQZF1DXaxEKcoCdWHD√âxitos Espa√±a"@https://i.scdn.co/image/ab67706f0000000242ca5c17d92aec289c90c942Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DXaxEKcoCdWHD mobile-home"37.7.0*music214.14.18ì
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent∑1Bad Bunny, Peso Pluma, KAROL G, Feid, Myke Towers'spotify:playlist:37i9dQZF1DX10zKzsJ2jva"@https://i.scdn.co/image/ab67706f000000021e3a8455559f95e9f26ac9cb*@
+>Viva Latino. Bad Bunny, Peso Pluma, KAROL G, Feid, Myke Towers2≈
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenux
+'spotify:playlist:37i9dQZF1DX10zKzsJ2jvaViva Latino"@https://i.scdn.co/image/ab67706f000000021e3a8455559f95e9f26ac9cbÇ}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DX10zKzsJ2jva mobile-home"37.7.0*music214.14.18ˇ
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent£#Farruko, Rels B, Jul, Morad, Noriel'spotify:playlist:37i9dQZF1DWZMtkg0cMXbp"@https://i.scdn.co/image/ab67706f000000026bd51127b916035e02abec92*6
+4Flamenco + Flow. Farruko, Rels B, Jul, Morad, Noriel2…
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenu|
+'spotify:playlist:37i9dQZF1DWZMtkg0cMXbpFlamenco + Flow"@https://i.scdn.co/image/ab67706f000000026bd51127b916035e02abec92Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DWZMtkg0cMXbp mobile-home"37.7.0*music214.14.18ì
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent∑6Bad Bunny, Myke Towers, Anuel AA, Mora, Eladio Carrion'spotify:playlist:37i9dQZF1DWXCGnD7W6WDX"@https://i.scdn.co/image/ab67706f0000000221f35067a3be5e7de470edb9*@
+>BARRAS. Bad Bunny, Myke Towers, Anuel AA, Mora, Eladio Carrion2¿
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenus
+'spotify:playlist:37i9dQZF1DWXCGnD7W6WDXBARRAS"@https://i.scdn.co/image/ab67706f0000000221f35067a3be5e7de470edb9Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DWXCGnD7W6WDX mobile-home"37.7.0*music214.14.18á
+Wtype.googleapis.com/com.spotify.home.dac.component.v1.proto.PlaylistCardMediumComponent´1Bad Bunny, Peso Pluma, KAROL G, Feid, Myke Towers'spotify:playlist:37i9dQZF1DX1HCSfq0nSal"@https://i.scdn.co/image/ab67706f0000000288290ad79334f2008e0b7d59*:
+8PEGAO. Bad Bunny, Peso Pluma, KAROL G, Feid, Myke Towers2ø
+Itype.googleapis.com/com.spotify.home.dac.contextMenu.v1.proto.ContextMenur
+'spotify:playlist:37i9dQZF1DX1HCSfq0nSalPEGAO"@https://i.scdn.co/image/ab67706f0000000288290ad79334f2008e0b7d59Ç}ã
+ﬂ
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M 
+5
+nav_card'spotify:playlist:37i9dQZF1DX1HCSfq0nSal 	mobile-home"37.7.0*music214.14.18Ç}–
+®
+s
+mobile-homehome:default#spotify:page:0JQ5DAozXW0GUBAKjHsifD*1homeview-dac|4ed1a289-7235-b884-0aef-0e310462a841
+1
+shelf&spotify:section:0JQ5DAnM3wGh0gz1MXnu3M mobile-home"37.7.0*music214.14.1'spotify:playlist:37i9dQZEVXcTNwvoSSyWc2'spotify:playlist:37i9dQZEVXblV8enQMNFl5'spotify:playlist:37i9dQZF1E38wLJZZPK6yC'spotify:playlist:37i9dQZF1E371G6gGxF85G'spotify:playlist:37i9dQZF1EIY5mI2Xx8orM'spotify:playlist:37i9dQZF1E37BMMVAnDzfM'spotify:playlist:37i9dQZF1E399mQTD07HRl'spotify:playlist:37i9dQZF1E37V7ZK85T78O'spotify:playlist:37i9dQZF1E37aaX0olc0MT'spotify:playlist:37i9dQZF1EIWufEhaMk0BE'spotify:playlist:37i9dQZF1EVKuMoAJjoTIw'spotify:playlist:37i9dQZF1EVHGWrwldPRtj'spotify:playlist:37i9dQZF1EQpoj8u9Hn81e'spotify:playlist:37i9dQZF1EQncLwOalG3K7'spotify:playlist:37i9dQZF1EQp9BVPsNVof1"	
+default
