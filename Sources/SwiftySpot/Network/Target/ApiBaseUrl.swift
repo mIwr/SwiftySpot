@@ -18,6 +18,8 @@ extension ApiTarget {
         case .clToken: return ApiTarget._clientTokenBaseUrl
         case .acessPoints: return ApiTarget._apBaseUrl
         case .auth: return ApiTarget._authBaseUrl
+        case .signupValidate: return ApiTarget._spClientWgBaseUrl
+        case .signup: return ApiTarget._spClientWgBaseUrl
         case .profile: return ApiTarget._publicApiBaseUrl
         case .landing: return ApiTarget._spClientWgBaseUrl
         case .artist: return ApiTarget._spClientWgBaseUrl

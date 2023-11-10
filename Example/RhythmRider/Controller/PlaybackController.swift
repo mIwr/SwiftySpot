@@ -151,6 +151,10 @@ class PlaybackController: NSObject, ObservableObject {
         setupRemoteTransportControls()
     }
     
+    deinit {
+        UIApplication.shared.endReceivingRemoteControlEvents()
+    }
+    
     func setShuffleMode(enabled: Bool) {
         if (shuffle == enabled) {
             return
@@ -163,19 +167,21 @@ class PlaybackController: NSObject, ObservableObject {
         if (repeatMode == mode) {
             return
         }
-        switch (mode) {
-        case .noRepeat:
-            repeatSeq = false
-            repeatOne = false
-            break
-        case .repeatSequence:
-            repeatSeq = true
-            repeatOne = false
-            break
-        case .repeatItem:
-            repeatSeq = false
-            repeatOne = true
-            break
+        DispatchQueue.main.async {
+            switch (mode) {
+            case .noRepeat:
+                self.repeatSeq = false
+                self.repeatOne = false
+                break
+            case .repeatSequence:
+                self.repeatSeq = true
+                self.repeatOne = false
+                break
+            case .repeatItem:
+                self.repeatSeq = false
+                self.repeatOne = true
+                break
+            }
         }
     }
     
@@ -223,6 +229,12 @@ class PlaybackController: NSObject, ObservableObject {
         if (playing) {
             return true
         }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
         _vlcPlayer.play()
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playbackPositionInS
         notifyPlayStateUpdate(playing: true)
@@ -258,6 +270,31 @@ class PlaybackController: NSObject, ObservableObject {
         if (newIndex >= _stockPlayItemsSeq.count) {
             newIndex = _stockPlayItemsSeq.count - 1
         }
+        if (_appProps.playbackSkipDisliked) {
+            //Skip previous disliked tracks
+            var skipDislikesIndex = newIndex
+            var sucess = false
+            for _ in 0..._stockPlayItemsSeq.count - 1 {
+                let playItem = playItemsSeq[playSeqIndicies[skipDislikesIndex]]
+                if let _ = _apiClient.dislikedTracksStorage.find(uri: playItem.uri) {
+                    skipDislikesIndex -= 1
+                    if (skipDislikesIndex < 0) {
+                        skipDislikesIndex = _stockPlayItemsSeq.count - 1
+                    }
+                    continue
+                }
+                sucess = true
+                break
+            }
+            if (sucess) {
+                newIndex = skipDislikesIndex
+            } else {
+                notifyPlayStateUpdate(playing: false)
+                clearNowPlaying()
+                _vlcPlayer.media = nil
+                return false
+            }
+        }
         //TODO check for availability (restrictions)
         /*
          while _currIndex >= 0 && tracks[_currIndex].available == false {
@@ -280,11 +317,32 @@ class PlaybackController: NSObject, ObservableObject {
             //Index is bigger than playback seq count -> false
             return false
         }
-        //unsubsribePlaybackObservers()
         if (_stockPlayItemsSeq.isEmpty) {
             return false
         }
-        let newIndex = (_currIndex + 1) % _stockPlayItemsSeq.count
+        var newIndex = (_currIndex + 1) % _stockPlayItemsSeq.count
+        if (_appProps.playbackSkipDisliked) {
+            //Skip next disliked tracks
+            var skipDislikesIndex = newIndex
+            var sucess = false
+            for _ in 0..._stockPlayItemsSeq.count - 1 {
+                let playItem = playItemsSeq[playSeqIndicies[skipDislikesIndex]]
+                if let _ = _apiClient.dislikedTracksStorage.find(uri: playItem.uri) {
+                    skipDislikesIndex = (skipDislikesIndex + 1) % _stockPlayItemsSeq.count
+                    continue
+                }
+                sucess = true
+                break
+            }
+            if (sucess) {
+                newIndex = skipDislikesIndex
+            } else {
+                notifyPlayStateUpdate(playing: false)
+                clearNowPlaying()
+                _vlcPlayer.media = nil
+                return false
+            }
+        }
         //TODO check for availability (restrictions)
         /*
          while _currIndex < tracks.count && tracks[_currIndex].available == false {
@@ -380,9 +438,9 @@ class PlaybackController: NSObject, ObservableObject {
         _currIndex = newPlayingInex
     }
     
-    fileprivate func initPlay() {
+    fileprivate func initPlay(forceCodec: SPMetadataAudioFormat? = nil) {
         guard let safePlayingTrack = playingTrack else {return}
-        var file = safePlayingTrack.trackMeta.findAudioFile(codec: .OGG_VORBIS_160)
+        var file = safePlayingTrack.trackMeta.findAudioFile(codec: forceCodec ?? .OGG_VORBIS_160)
         if (_appProps.trafficEconomy || file == nil) {
             file = safePlayingTrack.trackMeta.findAudioFile(codec: .OGG_VORBIS_96)
         }
@@ -401,6 +459,10 @@ class PlaybackController: NSObject, ObservableObject {
             }
             guard let safeIntent = try? intentRes.get() else {
                 UIApplication.shared.endBackgroundTask(taskId)
+                let status = self.playNextTrack()
+                if (!status) {
+                    _ = self.pause(force: true)
+                }
                 return
             }
             self._apiClient.findOrRequestDownloadInfo(hexFileId: safeFile.hexId) { diRes in
@@ -416,30 +478,91 @@ class PlaybackController: NSObject, ObservableObject {
                     UIApplication.shared.endBackgroundTask(taskId)
                     return
                 }
-                self._apiClient.downloadAsOnePiece(cdnLink: safeDirectLink, decryptHandler: { data in
+                let decoder: (Data) -> Data = { input in
                     if (safePlayingTrack.uri != self.playingTrackUri) {
                         UIApplication.shared.endBackgroundTask(taskId)
                         return Data()
                     }
-                    let bytes = [UInt8].init(data)
+                    let bytes = [UInt8].init(input)
                     let decoded = YAD.decrypt(bytes, safeFile.id, safeIntent.obfuscatedKey)
                     let resData = Data(decoded)
                     return resData
-                }) { dRes in
+                }
+                //1 - check decode for the first 256 bytes chunk
+                self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, chunkSizeInBytes: 256, total: nil, decryptHandler: decoder) { chunkRes in
                     if (safePlayingTrack.uri != self.playingTrackUri) {
                         UIApplication.shared.endBackgroundTask(taskId)
                         return
                     }
-                    guard let safeData = try? dRes.get() else {
-                        UIApplication.shared.endBackgroundTask(taskId)
-                        return
+                    do {
+                        let pair = try chunkRes.get()
+                        let markerBytes = [UInt8].init(pair.1)
+                        if (markerBytes.count < 3) {
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            return
+                        }
+                        if (markerBytes[0] != 0x4f || markerBytes[1] != 0x67 || markerBytes[2] != 0x67) {
+                            //fail decrypt -> force ogg96
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            if (forceCodec == nil) {
+                                self.initPlay(forceCodec: .OGG_VORBIS_96)
+                            }
+                            #if DEBUG
+                            print("Fail decode " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+                            #endif
+                            return
+                        }
+                        //2 - download all data
+                        self._apiClient.downloadAsOnePiece(cdnLink: safeDirectLink, decryptHandler: decoder) { dRes in
+                            if (safePlayingTrack.uri != self.playingTrackUri) {
+                                UIApplication.shared.endBackgroundTask(taskId)
+                                return
+                            }
+                            do {
+                                let playableData = try dRes.get()
+                                self._playInputData = playableData
+                                let media = VLCMedia(stream: InputStream(data: self._playInputData))
+                                self._vlcPlayer.media = media
+                                do {
+                                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                                    try AVAudioSession.sharedInstance().setActive(true)
+                                } catch {
+                                    print(error)
+                                }
+                                self._vlcPlayer.play()
+                                self.notifyPlayStateUpdate(playing: true)
+                            } catch {
+                                let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                                if case .invalidResponseStatusCode(let errCode, _) = parsed {
+                                    if (errCode == 404) {
+                                        //Not found or restricted on CDN??? (track meta restrictions is empty) -> next song
+#if DEBUG
+                                        print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+#endif
+                                        let status = self.playNextTrack()
+                                        if (!status) {
+                                            _ = self.pause(force: true)
+                                        }
+                                    }
+                                }
+                            }
+                            UIApplication.shared.endBackgroundTask(taskId)
+                        }
+                    } catch {
+                        let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                        if case .invalidResponseStatusCode(let errCode, _) = parsed {
+                            if (errCode == 404) {
+                                //Not found or restricted on CDN -> next song
+#if DEBUG
+                                print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+#endif
+                                let status = self.playNextTrack()
+                                if (!status) {
+                                    _ = self.pause(force: true)
+                                }
+                            }
+                        }
                     }
-                    self._playInputData = safeData
-                    let media = VLCMedia(stream: InputStream(data: self._playInputData))
-                    self._vlcPlayer.media = media
-                    self._vlcPlayer.play()
-                    self.notifyPlayStateUpdate(playing: true)
-                    UIApplication.shared.endBackgroundTask(taskId)
                 }
                 /*self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, total: nil, decryptHandler: { data in
                     if (safePlayingTrack.uri != self.playingTrackUri) {
@@ -531,6 +654,7 @@ class PlaybackController: NSObject, ObservableObject {
 extension PlaybackController {
     //MediaPlayer handlers ext
     fileprivate func setupRemoteTransportControls() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.skipBackwardCommand.isEnabled = false
         commandCenter.skipForwardCommand.isEnabled = false
@@ -556,7 +680,6 @@ extension PlaybackController {
                 return safeUiImg
             })
         }
-        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = durationInS
         nowPlayingInfo[MPMediaItemPropertyTitle] = safePlayingTrack.trackMeta.name
         nowPlayingInfo[MPMediaItemPropertyArtist] = safePlayingTrack.trackMeta.artists.map({ artist in
             return artist.name

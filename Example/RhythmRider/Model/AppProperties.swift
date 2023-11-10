@@ -20,6 +20,11 @@ class AppProperties: Codable, ObservableObject
         set { _flags.setFlagPropertyValue(for: 0, value: newValue) }
     }
     
+    var playbackSkipDisliked: Bool {
+        get { return _flags.getFlagPropertyValue(for: 1) }
+        set { _flags.setFlagPropertyValue(for: 1, value: newValue) }
+    }
+    
 #if DEBUG
     init() {
         _flags = BitBool8(initVal: 0)

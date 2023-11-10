@@ -59,6 +59,10 @@ struct ProfileScreen: View {
                             appProperties.trafficEconomy = newVal
                             appProperties.save()
                         }
+                        ProfileToggleSettingView(title: R.string.localizable.profileSkipDislikedTitle(), subtitle: R.string.localizable.profileSkipDislikedSubtitle(), initValue: appProperties.playbackSkipDisliked) { newVal in
+                            appProperties.playbackSkipDisliked = newVal
+                            appProperties.save()
+                        }
                     }
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                 }
@@ -89,7 +93,7 @@ struct ProfileScreen: View {
                                             return
                                         }
                                         #endif
-                                        api.client.logout(dropClSession: false)
+                                        api.client.logout(dropClSession: true)
                                     }
                                 ),
                           secondaryButton: .cancel(

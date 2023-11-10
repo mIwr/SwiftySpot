@@ -20,5 +20,8 @@ final class TestCredentialsTemplate {
     
     static let dummyPlayIntentToken: [UInt8] = []
     
+    static let dummyRegisterMail = ""
+    static let dummyRegisterPassword = ""
+    
     fileprivate init() {}
 }

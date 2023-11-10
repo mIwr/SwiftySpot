@@ -14,7 +14,7 @@ struct HomeScreen: View {
     
     @State fileprivate var _loaded: Bool? = nil
     @State fileprivate var _errMsg: String = ""
-    fileprivate var _playlists: LandingPlaylistArrVModel = LandingPlaylistArrVModel(values: [])
+    fileprivate var _playlists: LandingPlaylistArrVModel = LandingPlaylistArrVModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -36,7 +36,7 @@ struct HomeScreen: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .center, spacing: 12.0) {
-                        ForEach(_playlists.values, id: \.uri) { playlist in
+                        ForEach(_playlists.orderedValues, id: \.uri) { playlist in
                             NavigationLink {
                                 PlaylistScreen(playlistShort: playlist)
                             } label: {
@@ -50,17 +50,22 @@ struct HomeScreen: View {
         .frame(maxHeight: .infinity, alignment: .top)
         .onAppear {
             if (_loaded != nil) {
-                return
+                if (!_playlists.mayRefresh) {
+                    return
+                }
+                if (_loaded != nil) {
+                    _loaded = nil
+                }
             }
             #if DEBUG
             if (ProcessInfo.processInfo.previewMode) {
                 //Disable real API requests
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    _playlists.values = [
+                    _playlists.setLandingPlaylists([
                         SPLandingPlaylist(name: "Preview playlist", subtitle: "sub", uri: "sp:123", image: ""),
                         SPLandingPlaylist(name: "Preview playlist 2", subtitle: "sub", uri: "sp:1234", image: ""),
                         SPLandingPlaylist(name: "Preview playlist 3", subtitle: "sub", uri: "sp:12345", image: "")
-                    ]
+                    ])
                     _loaded = true
                 }
                 return
@@ -78,7 +83,13 @@ struct HomeScreen: View {
             api.client.getLandingData { result in
                 do {
                     let info = try result.get()
-                    _playlists.values = info.playlists
+                    if (_playlists.mayRefresh && _playlists.updSeqTsUTC != 0) {
+                        //Remove outdated playlist data from meta repository
+                        api.client.metaStorage.removeOutdatedPlaylists(info.playlists.map({ playlist in
+                            return playlist.uri
+                        }))
+                    }
+                    _playlists.setLandingPlaylists(info.playlists)
                     continuation.resume(returning: true)
                 } catch {
                     _errMsg = error.localizedDescription

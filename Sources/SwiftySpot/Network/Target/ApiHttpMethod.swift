@@ -15,6 +15,8 @@ extension ApiTarget {
         case .clToken: return ApiTarget._postMethod
         case .acessPoints: return ApiTarget._getMethod
         case .auth: return ApiTarget._postMethod
+        case .signupValidate: return ApiTarget._getMethod
+        case .signup: return ApiTarget._postMethod
         case .profile: return ApiTarget._getMethod
         case .landing: return ApiTarget._postMethod
         case .artist: return ApiTarget._getMethod

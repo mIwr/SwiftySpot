@@ -18,6 +18,8 @@ public class SPClient {
     public var appVersionCode: String
     ///Spotify client ID
     public var clientId: String
+    ///Spotify client validation key
+    public var clientValidationKey: String
     ///Device info
     public var device: SPDevice
     ///Client token protobuf obj
@@ -52,6 +54,7 @@ public class SPClient {
     ///Uninitialized unauthorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
     ///- Parameter clientId: Spotify client ID
+    ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
     ///- Parameter device: Device info
     ///- Parameter artistsMeta: Artists info for meta repository
@@ -59,9 +62,10 @@ public class SPClient {
     ///- Parameter playlistsMeta: Playlists info for meta repository
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
+        self.clientValidationKey = clValidationKey
         self.device = device
         clToken = SPClientToken()
         clTokenCreateTsUTC = 0
@@ -81,6 +85,7 @@ public class SPClient {
     ///Initialized unauthorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
     ///- Parameter clientId: Spotify client ID
+    ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
     ///- Parameter device: Device info
     ///- Parameter clToken: Client token
@@ -91,9 +96,10 @@ public class SPClient {
     ///- Parameter playlistsMeta: Playlists info for meta repository
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
+        self.clientValidationKey = clValidationKey
         self.device = device
         self.clToken = SPClientToken()
         self.clToken.val = clToken
@@ -116,6 +122,7 @@ public class SPClient {
     ///Authorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
     ///- Parameter clientId: Spotify client ID
+    ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
     ///- Parameter device: Device info
     ///- Parameter clToken: Client token
@@ -136,9 +143,10 @@ public class SPClient {
     ///- Parameter downloadInfos: Download infos dictionary. Key is hexFileId
     ///- Parameter playIntents: Play intents dictionary. Key is hexFileId
     ///- Returns: SPClient instance on authorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], playIntents: [String: SPPlayIntentData] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], playIntents: [String: SPPlayIntentData] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
+        self.clientValidationKey = clValidationKey
         self.device = device
         self.clToken = SPClientToken()
         self.clToken.val = clToken

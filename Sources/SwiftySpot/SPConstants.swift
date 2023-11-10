@@ -12,6 +12,8 @@ public final class SPConstants {
     public static let appVersionCode = "8.8.66.563"
     ///Client ID
     public static let clID = "9a8d2f0ce77a4e248bb71fefcb557637"
+    ///Client validation key
+    public static let clValidationKey = "142b583129b2df829de3656f9eb484e6"
     
     ///Default spotify private back-end
     public static let defaultSpClientHost = "https://gew1-spclient.spotify.com/"

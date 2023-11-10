@@ -21,6 +21,8 @@ struct TrackView: View {
     @State var dislike: Bool
     @State var playing: Bool
     
+    @State fileprivate var _showTrackInfoSheet: Bool
+    
     var artistString: String {
         get {
             if (artists.isEmpty) {
@@ -45,11 +47,14 @@ struct TrackView: View {
         _like = State(initialValue: false)
         _dislike = State(initialValue: false)
         _playing = State(initialValue: playUri == trackUri)
+        __showTrackInfoSheet = State(initialValue: false)
     }
     
     var body: some View {
         let safeImg = img ?? R.image.cover() ?? UIImage()
         let bgColorRes = playing ? R.color.bgTertiary : R.color.bgSecondary
+        let titleFgColor = dislike ? R.color.tertiary: R.color.primary
+        let artistFgColor = dislike ? R.color.tertiary: R.color.secondary
         Button(action: onPress, label: {
             HStack(alignment: .center, spacing: 12.0) {
                 Image(uiImage: safeImg)
@@ -60,11 +65,11 @@ struct TrackView: View {
                     Text(title)
                         .font(.headline).lineLimit(1)
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(Color(R.color.primary))
+                        .foregroundColor(Color(titleFgColor))
                     Text(artistString)
                         .font(.body).lineLimit(1)
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(Color(R.color.secondary))
+                        .foregroundColor(Color(artistFgColor))
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
@@ -73,9 +78,18 @@ struct TrackView: View {
         .cornerRadius(8.0)
         .contextMenu(ContextMenu(menuItems: {
             _likeMenuAction
+            _infoMenuAction
             _shareMenuAction
             _dislikeMenuAction
         }))
+        .sheet(isPresented: $_showTrackInfoSheet, onDismiss: {
+            _showTrackInfoSheet = false
+        }, content: {
+            let safeTrackMeta = api.client.metaStorage.findTrack(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ artistName in
+                return SPMetadataArtist(gid: [], name: artistName)
+            }))
+            TrackFullInfoScreen(_trackInfo: safeTrackMeta, presented: $_showTrackInfoSheet)
+        })
         .onAppear(perform: {
             let liked = api.client.likedTracksStorage.find(uri: trackUri)
             let disliked = api.client.dislikedTracksStorage.find(uri: trackUri)
@@ -166,6 +180,22 @@ struct TrackView: View {
                         .resizable()
                         .frame(width: 24, height: 24, alignment: .center)
                         .foregroundColor(Color(R.color.error))
+                }
+            )
+        })
+    }
+    
+    fileprivate var _infoMenuAction: some View {
+        return Button(action: {
+            _showTrackInfoSheet = !_showTrackInfoSheet
+        }, label: {
+            Label(
+                title: { Text(R.string.localizable.itemContextInfo()) },
+                icon: {
+                    Image(R.image.icInfo)
+                        .resizable()
+                        .frame(width: 24, height: 24, alignment: .center)
+                        .foregroundColor(Color(R.color.primary))
                 }
             )
         })

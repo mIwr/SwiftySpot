@@ -27,15 +27,32 @@ func postPlayIntentByApi(apHost: String, userAgent: String, clToken: String, aut
     requestSPResponse(req) { result in
         do {
             let response = try result.get()
-            guard let data = response.result else {
+            guard let safeData = response.result else {
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
             if (response.statusCode == 403) {
+                //Playing ban + possible codec is restricted
                 completion(.failure(.playIntentRestricted(hexFileId: audioFileHexId)))
                 return
             }
-            let parsed = try Spotify_Playplay_Proto_PlayIntentResponse(serializedData: data)
+            if (response.statusCode == 400 && safeData.isEmpty) {
+                //Possible country restrictions + 404 'NOT FOUND' on direct download link
+                /*
+                 <Error>
+                 <Code>NoSuchKey</Code>
+                 <Message>The specified key does not exist.</Message>
+                 <Details>No such object: master-storage-audio/audio/{Audio file hex ID}]</Details>
+                 </Error>
+                 */
+                completion(.failure(.playIntentRestricted(hexFileId: audioFileHexId)))
+                return
+            }
+            let parsed = try Spotify_Playplay_Proto_PlayIntentResponse(serializedData: safeData)
+            if (parsed.obfuscatedKey.isEmpty) {
+                completion(.failure(.badResponseData(errCode: response.statusCode, data: ["data": safeData])))
+                return
+            }
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

@@ -16,6 +16,7 @@
 
 "itemContextLike" = "Нравится";
 "itemContextRemoveLike" = "Удалить из коллекции 'Нравится'";
+"itemContextInfo" = "Информация";
 "itemContextShare" = "Поделиться";
 "itemContextDislike" = "Не нравится";
 "itemContextRemoveDislike" = "Удалить из коллекции 'Не нравится'";
@@ -39,6 +40,8 @@
 "profileSubscriptionPlan" = "План подписки";
 "profileTrafficEconomyTitle" = "Экономия трафика";
 "profileTrafficEconomySubtitle" = "При включенной опции каждый трек будет загружаться в минимально возможном качестве";
+"profileSkipDislikedTitle" = "Пропуск дизлайкнутых треков";
+"profileSkipDislikedSubtitle" = "Включение опции дает пропуск дизлайкнутых треков при проигрывании плейлистов";
 
 "searchQueryHint" = "Поиск";
 "searchLoadError" = "Ошибка загрузки предложений по поиску";

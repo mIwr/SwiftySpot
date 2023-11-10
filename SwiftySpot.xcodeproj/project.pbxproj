@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0252FF2AFEB7B600520909 /* SPSignup.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0252FE2AFEB7B600520909 /* SPSignup.pb.swift */; };
+		8B0253022AFEBAA400520909 /* SPGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0253012AFEBAA400520909 /* SPGender.swift */; };
 		8B172A982AD1693800ECBD74 /* SwiftySpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B172A8F2AD1693700ECBD74 /* SwiftySpot.framework */; platformFilters = (ios, macos, tvos, watchos, ); };
 		8B172CD32AD169CB00ECBD74 /* BitShiftUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172C162AD169CA00ECBD74 /* BitShiftUtil.swift */; };
 		8B172CD42AD169CB00ECBD74 /* SPNavigateUriUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172C172AD169CA00ECBD74 /* SPNavigateUriUtil.swift */; };
@@ -199,6 +201,7 @@
 		8B39C8EA2AD2BF04005E682D /* UnitSPClientNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E92AD2BF04005E682D /* UnitSPClientNotifier.swift */; };
 		8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */; };
 		8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */; };
+		8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */; };
 		8B66AE442AE9262A002B4088 /* SPDownloadInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */; };
 		8B99E8EF2AF267B100196FC8 /* searchAutocompleteResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8B99E8EE2AF267B000196FC8 /* searchAutocompleteResponse.protobuf */; };
 		8B99E8F12AF2716D00196FC8 /* SPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F02AF2716D00196FC8 /* SPID.swift */; };
@@ -207,6 +210,11 @@
 		8B9AF9C22AF231B70024DDC1 /* SPSearchSuggestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */; };
 		8BCD7CF92AE2DCA700B1F2C3 /* SPMetaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */; };
 		8BEC798B2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */; };
+		8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */; };
+		8BF94D582AFE8B4500B0AD79 /* SPSignupValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */; };
+		8BF94D5A2AFE8FD200B0AD79 /* UnitApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D592AFE8FD200B0AD79 /* UnitApiSignup.swift */; };
+		8BF94D5C2AFE91A300B0AD79 /* SPClientApiSignupExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D5B2AFE91A300B0AD79 /* SPClientApiSignupExt.swift */; };
+		8BF94D5E2AFE937700B0AD79 /* UnitRemoteApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D5D2AFE937700B0AD79 /* UnitRemoteApiSignup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +235,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B0252FE2AFEB7B600520909 /* SPSignup.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSignup.pb.swift; sourceTree = "<group>"; };
+		8B0253012AFEBAA400520909 /* SPGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGender.swift; sourceTree = "<group>"; };
 		8B172A8F2AD1693700ECBD74 /* SwiftySpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B172A972AD1693800ECBD74 /* Sptf-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sptf-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B172AA72AD1699D00ECBD74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -464,6 +474,7 @@
 		8B3BDA002AF545640039390B /* feed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed.jpg; sourceTree = "<group>"; };
 		8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSHA1.swift; sourceTree = "<group>"; };
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
+		8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupSession.swift; sourceTree = "<group>"; };
 		8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDownloadInfoController.swift; sourceTree = "<group>"; };
 		8B9367B62AF4042D00A81D1C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8B99E8EE2AF267B000196FC8 /* searchAutocompleteResponse.protobuf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = searchAutocompleteResponse.protobuf; sourceTree = "<group>"; };
@@ -473,6 +484,12 @@
 		8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSearchSuggestionResult.swift; sourceTree = "<group>"; };
 		8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMetaController.swift; sourceTree = "<group>"; };
 		8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientApiLikeDislikeExt.swift; sourceTree = "<group>"; };
+		8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSignup.swift; sourceTree = "<group>"; };
+		8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupValidation.swift; sourceTree = "<group>"; };
+		8BF94D592AFE8FD200B0AD79 /* UnitApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitApiSignup.swift; sourceTree = "<group>"; };
+		8BF94D5B2AFE91A300B0AD79 /* SPClientApiSignupExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientApiSignupExt.swift; sourceTree = "<group>"; };
+		8BF94D5D2AFE937700B0AD79 /* UnitRemoteApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRemoteApiSignup.swift; sourceTree = "<group>"; };
+		8BF94D5F2AFE96BC00B0AD79 /* SPSignup.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = SPSignup.proto; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +512,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0253002AFEBA8B00520909 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				8B0253012AFEBAA400520909 /* SPGender.swift */,
+				8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		8B172A852AD1693700ECBD74 = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +598,7 @@
 				8B172C372AD169CA00ECBD74 /* ApiMetadata.swift */,
 				8B172C382AD169CA00ECBD74 /* ApiAuth.swift */,
 				8B172C392AD169CA00ECBD74 /* ApiProfile.swift */,
+				8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */,
 				8B172C362AD169CA00ECBD74 /* Client.swift */,
 			);
 			path = Network;
@@ -618,6 +645,7 @@
 		8B172C5B2AD169CA00ECBD74 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				8B0252FE2AFEB7B600520909 /* SPSignup.pb.swift */,
 				8B172C5C2AD169CA00ECBD74 /* FilterComponent.pb.swift */,
 				8B172C5D2AD169CA00ECBD74 /* PlayCommand.pb.swift */,
 				8B172C5E2AD169CA00ECBD74 /* SPRestrictions.pb.swift */,
@@ -665,7 +693,9 @@
 				8B172C8E2AD169CA00ECBD74 /* Playlist */,
 				8B172CAA2AD169CB00ECBD74 /* Profile */,
 				8B172C912AD169CA00ECBD74 /* Search */,
+				8B0253002AFEBA8B00520909 /* Signup */,
 				8B172CA82AD169CB00ECBD74 /* Support */,
+				8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */,
 				8B172CA72AD169CA00ECBD74 /* SPAccessPoint.swift */,
 				8B172CAE2AD169CB00ECBD74 /* SPAuthSession.swift */,
 				8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */,
@@ -839,6 +869,7 @@
 				8B172D822AD16B2100ECBD74 /* UnitApiCollection.swift */,
 				8B172D832AD16B2100ECBD74 /* UnitApiArtist.swift */,
 				8B172D852AD16B2100ECBD74 /* UnitApiMetadata.swift */,
+				8BF94D592AFE8FD200B0AD79 /* UnitApiSignup.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -876,6 +907,7 @@
 				8B1850222AF56ED700D9DB11 /* UnitRemoteApiProfile.swift */,
 				8B1850232AF56ED700D9DB11 /* UnitRemoteApiSearch.swift */,
 				8B1850202AF56ED700D9DB11 /* UnitRemoteApiSession.swift */,
+				8BF94D5D2AFE937700B0AD79 /* UnitRemoteApiSignup.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -928,6 +960,7 @@
 				8B172C7F2AD169CA00ECBD74 /* SPClientNotifierExt.swift */,
 				8B172C7B2AD169CA00ECBD74 /* SPClientPropExt.swift */,
 				8B172C812AD169CA00ECBD74 /* SPClientApiAuthExt.swift */,
+				8BF94D5B2AFE91A300B0AD79 /* SPClientApiSignupExt.swift */,
 				8B172C1E2AD169CA00ECBD74 /* SPClientApiSupportExt.swift */,
 				8B172C832AD169CA00ECBD74 /* SPClientApiCollectionExt.swift */,
 				8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */,
@@ -1009,6 +1042,7 @@
 				8B172C582AD169CA00ECBD74 /* CardMedium.proto */,
 				8B172C592AD169CA00ECBD74 /* SPCollection.proto */,
 				8B172C5A2AD169CA00ECBD74 /* SPLoginV3.proto */,
+				8BF94D5F2AFE96BC00B0AD79 /* SPSignup.proto */,
 				8B172C7A2AD169CA00ECBD74 /* TLComponentV2.proto */,
 				8B172C4F2AD169CA00ECBD74 /* README.md */,
 			);
@@ -1214,6 +1248,7 @@
 				8B172D2E2AD169CB00ECBD74 /* UbiElementInfo.pb.swift in Sources */,
 				8B172D5D2AD169CB00ECBD74 /* SPMetadataActivityPeriod.swift in Sources */,
 				8B172D782AD169CB00ECBD74 /* SPDevice.swift in Sources */,
+				8B0252FF2AFEB7B600520909 /* SPSignup.pb.swift in Sources */,
 				8B172D3D2AD169CB00ECBD74 /* SPLandingPlaylist.swift in Sources */,
 				8B172CE32AD169CB00ECBD74 /* ApiSearch.swift in Sources */,
 				8B172D512AD169CB00ECBD74 /* SPSearchRelatedEntity.swift in Sources */,
@@ -1239,6 +1274,7 @@
 				8B172D592AD169CB00ECBD74 /* SPExplicit.swift in Sources */,
 				8B172CE92AD169CB00ECBD74 /* ApiReqPath.swift in Sources */,
 				8B24DC0C2AE301E800CE0547 /* SPCollectionController.swift in Sources */,
+				8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */,
 				8B172D162AD169CB00ECBD74 /* HomeViewService.pb.swift in Sources */,
 				8B172CDC2AD169CB00ECBD74 /* SPConstants.swift in Sources */,
 				8B172CD62AD169CB00ECBD74 /* BitConvertUtil.swift in Sources */,
@@ -1258,6 +1294,8 @@
 				8B172D3A2AD169CB00ECBD74 /* SPClientApiCollectionExt.swift in Sources */,
 				8B172D422AD169CB00ECBD74 /* SPPlaylist.swift in Sources */,
 				8B2241702AF4E26C00BFE16B /* SPByteViewProvider.swift in Sources */,
+				8B0253022AFEBAA400520909 /* SPGender.swift in Sources */,
+				8BF94D5C2AFE91A300B0AD79 /* SPClientApiSignupExt.swift in Sources */,
 				8B172CE02AD169CB00ECBD74 /* ApiLanding.swift in Sources */,
 				8B172D332AD169CB00ECBD74 /* SPClientApiLandingExt.swift in Sources */,
 				8B172D702AD169CB00ECBD74 /* SPMetadataAlbum.swift in Sources */,
@@ -1301,6 +1339,7 @@
 				8B172CF22AD169CB00ECBD74 /* ApiAuth.swift in Sources */,
 				8B172D172AD169CB00ECBD74 /* ApiLanding.pb.swift in Sources */,
 				8B172D732AD169CB00ECBD74 /* SPMetadataAvailability.swift in Sources */,
+				8BF94D582AFE8B4500B0AD79 /* SPSignupValidation.swift in Sources */,
 				8B172D2D2AD169CB00ECBD74 /* CardSmall.pb.swift in Sources */,
 				8B172D202AD169CB00ECBD74 /* TLComponentV2.pb.swift in Sources */,
 				8B172D522AD169CB00ECBD74 /* SPSeachAudioShow.swift in Sources */,
@@ -1318,6 +1357,7 @@
 				8B172D212AD169CB00ECBD74 /* TLComponent.pb.swift in Sources */,
 				8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */,
 				8B172CEF2AD169CB00ECBD74 /* SPError.swift in Sources */,
+				8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */,
 				8B172D3E2AD169CB00ECBD74 /* SPCollectionPage.swift in Sources */,
 				8B172CE42AD169CB00ECBD74 /* ApiCollection.swift in Sources */,
 				8B172D632AD169CB00ECBD74 /* SPMetadataCopyright.swift in Sources */,
@@ -1365,6 +1405,7 @@
 				8B172DAE2AD16B2300ECBD74 /* UnitHashcashUtil.swift in Sources */,
 				8B18502C2AF56ED700D9DB11 /* UnitRemoteApiProfile.swift in Sources */,
 				8B18502E2AF56ED700D9DB11 /* UnitRemoteApiMetadata.swift in Sources */,
+				8BF94D5A2AFE8FD200B0AD79 /* UnitApiSignup.swift in Sources */,
 				8B172DAD2AD16B2300ECBD74 /* UnitSPBase16.swift in Sources */,
 				8B1850312AF56ED700D9DB11 /* UnitRemoteApiPlaylist.swift in Sources */,
 				8B172DBA2AD16B2300ECBD74 /* UnitSPClient.swift in Sources */,
@@ -1387,6 +1428,7 @@
 				8B18502D2AF56ED700D9DB11 /* UnitRemoteApiSearch.swift in Sources */,
 				8B172DAF2AD16B2300ECBD74 /* UnitBitConvertUtil.swift in Sources */,
 				8B18502A2AF56ED700D9DB11 /* UnitRemoteApiSession.swift in Sources */,
+				8BF94D5E2AFE937700B0AD79 /* UnitRemoteApiSignup.swift in Sources */,
 				8B172DA52AD16B2300ECBD74 /* UnitApiPlaylist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1441,7 +1483,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1460,7 +1502,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.9;
+				MARKETING_VERSION = 0.4.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1504,7 +1546,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1517,7 +1559,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.9;
+				MARKETING_VERSION = 0.4.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1531,7 +1573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1550,7 +1592,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.9;
+				MARKETING_VERSION = 0.4.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1570,7 +1612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1589,7 +1631,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.9;
+				MARKETING_VERSION = 0.4.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;

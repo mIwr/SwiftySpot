@@ -11,6 +11,8 @@ extension ApiTarget {
     
     fileprivate static let _clientTokenPath = "v1/clienttoken"
     fileprivate static let _authPath = "v3/login"
+    fileprivate static let _signupValidatePathPrefix = "signup/public/v1/account/"
+    fileprivate static let _signupPath = "signup/public/v2/account/create"
     fileprivate static let _profileInfoPath = "v1/me"
     fileprivate static let _dacLandingPath = "home-dac-viewservice/v1/view"
     fileprivate static let _playlistInfoPathPrefix = "playlist/v2/playlist/"
@@ -37,6 +39,14 @@ extension ApiTarget {
             let nowTsUtc = Int64(Date().timeIntervalSince1970)
             return "?time=" + String(nowTsUtc) + "&type=accesspoint&type=spclient&type=dealer" 
         case .auth: return ApiTarget._authPath
+        case .signupValidate(_, _, _, _, let validatorKey, let password):
+            var path = ApiTarget._signupValidatePathPrefix + "?validate=1&key=" + validatorKey
+            if let safePass = password, !safePass.isEmpty {
+                let encodedPass = safePass.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? safePass
+                path += "&suggest=1&password=" + encodedPass
+            }
+            return path
+        case .signup: return ApiTarget._signupPath
         case .profile: return ApiTarget._profileInfoPath
         case .landing: return ApiTarget._dacLandingPath
         case .artist(_, _, _, _, _, _, let uri, let fields, let imgSize):

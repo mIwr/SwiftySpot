@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 47 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 50 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -219,6 +219,13 @@ struct _R {
       /// Locales: en, ru
       var itemContextDislike: RswiftResources.StringResource { .init(key: "itemContextDislike", tableName: "Localizable", source: source, developmentValue: "Dislike", comment: nil) }
 
+      /// en translation: Info
+      ///
+      /// Key: itemContextInfo
+      ///
+      /// Locales: en, ru
+      var itemContextInfo: RswiftResources.StringResource { .init(key: "itemContextInfo", tableName: "Localizable", source: source, developmentValue: "Info", comment: nil) }
+
       /// en translation: Like
       ///
       /// Key: itemContextLike
@@ -295,6 +302,20 @@ struct _R {
       ///
       /// Locales: en, ru
       var profileCountry: RswiftResources.StringResource { .init(key: "profileCountry", tableName: "Localizable", source: source, developmentValue: "Country", comment: nil) }
+
+      /// en translation: If enabled, the disliked tracks will be skipped during playback except user-selected disliked tracks for play
+      ///
+      /// Key: profileSkipDislikedSubtitle
+      ///
+      /// Locales: en, ru
+      var profileSkipDislikedSubtitle: RswiftResources.StringResource { .init(key: "profileSkipDislikedSubtitle", tableName: "Localizable", source: source, developmentValue: "If enabled, the disliked tracks will be skipped during playback except user-selected disliked tracks for play", comment: nil) }
+
+      /// en translation: Disliked tracks skip
+      ///
+      /// Key: profileSkipDislikedTitle
+      ///
+      /// Locales: en, ru
+      var profileSkipDislikedTitle: RswiftResources.StringResource { .init(key: "profileSkipDislikedTitle", tableName: "Localizable", source: source, developmentValue: "Disliked tracks skip", comment: nil) }
 
       /// en translation: Subscription plan
       ///

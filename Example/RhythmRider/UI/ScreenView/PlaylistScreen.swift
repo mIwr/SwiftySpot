@@ -20,10 +20,12 @@ struct PlaylistScreen: View {
     
     init(playlistShort: SPLandingPlaylist) {
         var title = playlistShort.name
+        var subtitle = playlistShort.subtitle
         if (playlistShort.name.isEmpty) {
             title = playlistShort.subtitle
+            subtitle = ""
         }
-        _playlistDetailed = PlaylistInfoVModel(id: playlistShort.id, name: title, desc: playlistShort.subtitle, orderedTrackUris: [], tracksDetails: [:])
+        _playlistDetailed = PlaylistInfoVModel(id: playlistShort.id, name: title, desc: subtitle)
     }
     
     var body: some View {
@@ -84,12 +86,12 @@ struct PlaylistScreen: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if let safePlaylistInfo = api.client.metaStorage.findPlaylist(uri: _playlistDetailed.uri) {
-                _playlistDetailed.orderedTrackUris = safePlaylistInfo.tracks.map({ track in
+                _playlistDetailed.setUris(safePlaylistInfo.tracks.map({ track in
                     return track.uri
-                })
-                _playlistDetailed.tracksDetails = api.client.metaStorage.findTracks(uris: Set(safePlaylistInfo.tracks.map({ trackMeta in
+                }))
+                _playlistDetailed.updateTrackDetails(api.client.metaStorage.findTracks(uris: Set(safePlaylistInfo.tracks.map({ trackMeta in
                     return trackMeta.uri
-                })))
+                }))))
                 if (_playlistDetailed.noInfoTracks.isEmpty) {
                     _loaded = true
                     return
@@ -99,22 +101,22 @@ struct PlaylistScreen: View {
             if (ProcessInfo.processInfo.previewMode) {
                 //Disable real API requests
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    _playlistDetailed.orderedTrackUris = [
+                    _playlistDetailed.setUris([
                         "sp:t:123",
                         "sp:t:1234",
                         "sp:t:12345",
                         "sp:t:123456",
                         "sp:t:1234567",
                         "sp:t:12345678",
-                    ]
-                    _playlistDetailed.tracksDetails = [
+                    ])
+                    _playlistDetailed.updateTrackDetails([
                         "sp:t:123": SPMetadataTrack(gid: [], name: "Some track name"),
                         "sp:t:1234": SPMetadataTrack(gid: [], name: "Some track name 2"),
                         "sp:t:12345": SPMetadataTrack(gid: [], name: "Some track name 3"),
                         "sp:t:123456": SPMetadataTrack(gid: [], name: "Some track name 4"),
                         "sp:t:1234567": SPMetadataTrack(gid: [], name: "Some track name 5"),
-                        "sp:t:12345678": SPMetadataTrack(gid: [], name: "Some track name 6"),
-                    ]
+                        "sp:t:12345678": SPMetadataTrack(gid: [], name: "Some track name 6")
+                    ])
                     _loaded = true
                 }
                 return
@@ -146,17 +148,15 @@ struct PlaylistScreen: View {
             if (playlistTracks.isEmpty) {
                 return false
             }
-            _playlistDetailed.orderedTrackUris = playlistTracks.map({ track in
+            _playlistDetailed.setUris(playlistTracks.map({ track in
                 return track.uri
-            })
+            }))
         }
         return await withCheckedContinuation { continuation in
             api.client.getTracksDetails(trackUris: [String].init(_playlistDetailed.noInfoTracks)) { result in
                 do {
                     let info = try result.get()
-                    for entry in info {
-                        _playlistDetailed.tracksDetails[entry.key] = entry.value
-                    }
+                    _playlistDetailed.updateTrackDetails(info)
                     continuation.resume(returning: true)
                 } catch {
                     if let spErr = error as? SPError {

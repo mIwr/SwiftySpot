@@ -1,5 +1,5 @@
 //
-//  SPAuthTokenDto.swift
+//  SPAuthSession.swift
 //  SwiftySpot
 //
 //  Created by Developer on 11.09.2023.

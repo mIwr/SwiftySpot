@@ -66,13 +66,6 @@ struct RhythmRiderApp: App {
         _hasAuth = spClient.authorized
         let playController = PlaybackController(apiClient: spClient, appProps: props)
         _playController = StateObject(wrappedValue: playController)
-        
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-        } catch {
-            print(error)
-        }
     }
     
     var body: some Scene {
@@ -98,8 +91,7 @@ struct RhythmRiderApp: App {
                     }
                     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: applicationWillResignActive)
                     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification), perform: applicationWillEnterForeground)
-                    .onReceive(NotificationCenter.default.publisher(for: .AVCaptureSessionWasInterrupted), perform: AVInterruptionBegan)
-                    .onReceive(NotificationCenter.default.publisher(for: .AVCaptureSessionInterruptionEnded), perform: AVInterruptionEnded)
+                    .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification), perform: AVInterruptionChanged)
                     .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.routeChangeNotification), perform: AVAudioRouteChange)
             } else {
                 AuthScreen()
@@ -122,8 +114,7 @@ struct RhythmRiderApp: App {
                     }
                     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: applicationWillResignActive)
                     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification), perform: applicationWillEnterForeground)
-                    .onReceive(NotificationCenter.default.publisher(for: .AVCaptureSessionWasInterrupted), perform: AVInterruptionBegan)
-                    .onReceive(NotificationCenter.default.publisher(for: .AVCaptureSessionInterruptionEnded), perform: AVInterruptionEnded)
+                    .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification), perform: AVInterruptionChanged)
                     .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.routeChangeNotification), perform: AVAudioRouteChange)
             }
         }
@@ -144,34 +135,22 @@ struct RhythmRiderApp: App {
         else {return}
         switch interruptionType {
         case .began:
+            _ = playController.pause(force: true)
 #if DEBUG
             print("AV Session Interruption began")
 #endif
+            break
         case .ended:
-            _ = playController.play()
 #if DEBUG
             print("AV Session Interruption ended")
 #endif
+            break
         default:
 #if DEBUG
             print("AV Session Interruption unknown state")
 #endif
             break
         }
-    }
-    
-    fileprivate func AVInterruptionBegan(_ notification: Notification) {
-        _ = playController.pause(force: true)
-#if DEBUG
-        print("AV Session Interruption began")
-#endif
-    }
-    
-    fileprivate func AVInterruptionEnded(_ notification: Notification) {
-        _ = playController.play()
-#if DEBUG
-        print("AV Session Interruption ended")
-#endif
     }
     
     fileprivate func AVAudioRouteChange(_ notification: Notification) {

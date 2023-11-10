@@ -14,6 +14,8 @@ extension ApiTarget {
         case .clToken: return ApiTarget._emptyDict
         case .acessPoints: return ApiTarget._emptyDict
         case .auth: return ApiTarget._emptyDict
+        case .signupValidate: return ApiTarget._emptyDict
+        case .signup: return ApiTarget._emptyDict
         case .profile: return ApiTarget._emptyDict
         case .landing: return ApiTarget._emptyDict
         case .artist: return ApiTarget._emptyDict

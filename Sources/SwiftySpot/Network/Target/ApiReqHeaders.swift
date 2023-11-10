@@ -36,6 +36,23 @@ extension ApiTarget {
             dict["User-Agent"] = userAgent
             dict["client-token"] = clToken
             return dict
+        case .signupValidate(let userAgent, let clToken, let os, let appVer, _, _):
+            let dict: [String: String] = [
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+            ]
+            return dict
+        case .signup(let userAgent, let clToken, let os, let appVer, let clId, _):
+            let dict: [String: String] = [
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+                "X-Client-Id": clId
+            ]
+            return dict
         case .profile(let userAgent, let clToken, let authToken, let os, let appVer):
             let dict: [String: String] = [
                 "Accept": "application/json",

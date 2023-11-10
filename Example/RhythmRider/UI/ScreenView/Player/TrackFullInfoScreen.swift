@@ -53,8 +53,10 @@ struct TrackFullInfoScreen: View {
                             Divider()
                         }
                     }
-                    _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: DateUtil.formattedTrackTime(Double(_trackInfo.durationInMs) / 1000))
-                    Divider()
+                    if (_trackInfo.durationInMs != 0) {
+                        _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: DateUtil.formattedTrackTime(Double(_trackInfo.durationInMs) / 1000))
+                        Divider()
+                    }
                     _textBlockInfo(category: "ID", value: _trackInfo.id)
                     Divider()
                     _textBlockInfo(category: "Global ID", value: StringUtil.bytesToHexString(_trackInfo.globalID))

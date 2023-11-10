@@ -32,6 +32,16 @@ extension ApiTarget {
                 #endif
             }
             return data
+        case .signupValidate: return nil
+        case .signup(_, _, _, _, _, let proto):
+            do {
+                data = try proto.serializedData()
+            } catch {
+                #if DEBUG
+                print(error)
+                #endif
+            }
+            return data
         case .profile: return nil
         case .landing(_, _, _, _, _, _, let proto):
             do {

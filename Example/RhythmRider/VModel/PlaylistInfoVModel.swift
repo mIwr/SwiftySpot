@@ -17,13 +17,15 @@ class PlaylistInfoVModel {
     }
     let name: String
     let desc: String
-    var orderedTrackUris: [String]
+    
+    fileprivate(set) var orderedTrackUris: [String]
     var orderedUrisSeqHash: Int {
         get {
             return PlaybackController.calculatePlaySeqHash(orderedTrackUris)
         }
     }
-    var tracksDetails: [String: SPMetadataTrack]
+    fileprivate(set) var tracksDetails: [String: SPMetadataTrack]
+    
     var orderedPlaybackSeq: [PlaybackTrack] {
         get {
             var res: [PlaybackTrack] = []
@@ -63,11 +65,42 @@ class PlaylistInfoVModel {
         return res
     }
     
+    init(id: String, name: String, desc: String) {
+        self.id = id
+        self.name = name
+        self.desc = desc
+        orderedTrackUris = []
+        tracksDetails = [:]
+    }
+    
     init(id: String, name: String, desc: String, orderedTrackUris: [String], tracksDetails: [String: SPMetadataTrack]) {
         self.id = id
         self.name = name
         self.desc = desc
         self.orderedTrackUris = orderedTrackUris
         self.tracksDetails = tracksDetails
+    }
+    
+    func setUris(_ orderedUris: [String]) {
+        orderedTrackUris = orderedUris
+    }
+    
+    func appendUris(_ orderedUris: [String]) {
+        orderedTrackUris.append(contentsOf: orderedUris)
+    }
+    
+    func updateTrackDetails(_ details: [String: SPMetadataTrack]) {
+        for entry in details {
+            tracksDetails[entry.key] = entry.value
+        }
+    }
+    
+    func resetTrackDetails() {
+        tracksDetails.removeAll()
+    }
+    
+    func resetSeq() {
+        orderedTrackUris = []
+        resetTrackDetails()
     }
 }

@@ -12,7 +12,7 @@ final class HashCashUtil {
     
     fileprivate init() {}
     
-    ///Compute hashcash for client token challenge asynchronous
+    ///Compute hashcash for client token challenge asynchronously
     ///- Parameter prefix:hex string for calculating hashcash
     ///- Parameter length: hashcash trailing zeros count
     ///- Parameter completion: hashcash solution completion handler

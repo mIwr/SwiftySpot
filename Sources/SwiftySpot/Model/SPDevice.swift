@@ -5,8 +5,6 @@
 //  Created by Developer on 07.09.2023.
 //
 
-import Foundation
-
 ///Represents device info for requests
 public class SPDevice {
 

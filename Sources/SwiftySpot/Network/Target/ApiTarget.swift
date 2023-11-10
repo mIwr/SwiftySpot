@@ -15,6 +15,10 @@ enum ApiTarget {
     case acessPoints(clToken: String)
     //Auth
     case auth(userAgent: String, clToken: String, proto: SPLoginV3Request)
+    //SignUp
+    case signupValidate(userAgent: String, clToken: String, os: String, appVer: String, validatorKey: String, password: String?)
+    case signup(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: Com_Spotify_Signup_V2_Proto_CreateAccountRequest)
+    //case signupComplete(userAgent: String, clToken: String, os: String, appVer: String, clId: String, sesionId: String)//signup/public/v2/account/complete-creation
     //Authorized
     case profile(userAgent: String, clToken: String, authToken: String, os: String, appVer: String)
     case landing(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, proto: Com_Spotify_Dac_Api_V1_Proto_DacRequest)

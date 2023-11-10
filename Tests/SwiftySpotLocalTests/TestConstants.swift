@@ -64,4 +64,27 @@ class TestConstants {
           "opt_in_trial_premium_only_market" : false
         ]
     ]
+    
+    static let dummyApiValidateInfo: [String: Any] = [
+        "status": 120,
+        "country": "DE",
+        "dmca-radio": false,
+        "shuffle-restricted": false,
+        "can_accept_licenses_in_one_step": true,
+        "requires_marketing_opt_in": false,
+        "requires_marketing_opt_in_text": false,
+        "minimum_age": 13,
+        "country_group": "NA",
+        "specific_licenses": false,
+        "pretick_eula": true,
+        "show_collect_personal_info": false,
+        "use_all_genders": true,
+        "use_other_gender": false,
+        "use_prefer_not_to_say_gender": false,
+        "show_non_required_fields_as_optional": false,
+        "date_endianness": 2,
+        "is_country_launched": true,
+        "push-notifications": false,
+    ]
+    //{"status":120,"country":"DE","dmca-radio":false,"shuffle-restricted":false,"can_accept_licenses_in_one_step":true,"requires_marketing_opt_in":false,"requires_marketing_opt_in_text":false,"minimum_age":13,"country_group":"NA","specific_licenses":false,"pretick_eula":true,"show_collect_personal_info":false,"use_all_genders":true,"use_other_gender":false,"use_prefer_not_to_say_gender":false,"show_non_required_fields_as_optional":false,"date_endianness":2,"is_country_launched":true,"push-notifications":false}
 }
