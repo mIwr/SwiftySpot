@@ -8,20 +8,22 @@
 ///Represents general exceptions of API work
 public enum SPError
 {
-  ///General-purpose error
-  case general(errCode: Int, data: [String: Any])
-  ///Request init related error
-  case badRequest(errCode: Int, description: String)
-  ///Error response http status code
-  case invalidResponseStatusCode(errCode: Int, description: String)
-  ///Caused error response payload data
-  case badResponseData(errCode: Int, data: [String: Any])
-  ///Refresh authorization errror
-  case refreshAuthDataNotExists(usernameFound: Bool, storedCredFound: Bool)
-  ///Defined file (audio codec) is restricted to play
-  case playIntentRestricted(hexFileId: String)
-  ///Audio file preview not found
-  case audioPreviewNotFound
+    ///General-purpose error
+    case general(errCode: Int, data: [String: Any])
+    ///Request init related error
+    case badRequest(errCode: Int, description: String)
+    ///Error response http status code
+    case invalidResponseStatusCode(errCode: Int, description: String)
+    ///Caused error response payload data
+    case badResponseData(errCode: Int, data: [String: Any])
+    ///Refresh authorization errror
+    case refreshAuthDataNotExists(usernameFound: Bool, storedCredFound: Bool)
+    ///Defined file (audio codec) is restricted to play
+    case playIntentRestricted(hexFileId: String)
+    ///Audio file preview not found
+    case audioPreviewNotFound
+    ///Lyrics info not found for defined object
+    case lyricsNotFound
 }
 
 extension SPError: Error {
@@ -53,6 +55,8 @@ extension SPError: Error {
             return "Play intent for file ID " + hexFileId + " is restricted"
         case .audioPreviewNotFound:
             return "Not found audio preview for defined track"
+        case .lyricsNotFound:
+            return "Lyrics info not found"
         }
     }
 }

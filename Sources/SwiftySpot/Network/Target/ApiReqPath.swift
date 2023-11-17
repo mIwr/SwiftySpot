@@ -19,6 +19,8 @@ extension ApiTarget {
     fileprivate static let _artistUIInfoPathPrefix = "artistview/v1/artist/"
     fileprivate static let _artistInfoPathPrefix = "artist-identity-view/v2/profile/"
     fileprivate static let _metadataPath = "extended-metadata/v0/extended-metadata/"
+    fileprivate static let _lyricsPathPerfix = "/color-lyrics/v2/"
+    fileprivate static let _lyricsReservePathPart = "https://open.spotify.com/"
     fileprivate static let _collectionPathPerfix = "collection/v2/"
     fileprivate static let _collectionInfoPath = _collectionPathPerfix + "paging"
     fileprivate static let _collectionDeltaPath = _collectionPathPerfix + "delta"
@@ -70,6 +72,9 @@ extension ApiTarget {
             return ApiTarget._artistUIInfoPathPrefix + id + "?locale=" + locale + "&application=" + application + "&platform=" + os.lowercased() + "&video=" + String(video).lowercased() + "&podcast=" + String(podcast).lowercased() + "&checkDeviceCapability=false&device_id=" + deviceId + "&purchase_allowed=false&timezone=" + timezone + "&timeFormat=" + timeFormat + "&signal=" + signal
         case .playlist(_, _, _, _, let id, _, _, _): return ApiTarget._playlistInfoPathPrefix + id
         case .metadata: return ApiTarget._metadataPath
+        case .lyrics(_, _, _, _, _, _, let type, let id, let vocalRemove, let syllableSync, let clientLangCode):
+            return ApiTarget._lyricsPathPerfix + type + "/" + id + "?vocalRemoval=" + String(vocalRemove) + "&syllableSync=" + String(syllableSync) + "&clientLanguage=" + clientLangCode
+        case .lyricsReserve(let type, let id): return "?url=" + ApiTarget._lyricsReservePathPart + type + "/" + id + "?autoplay=true"
         case .collection: return ApiTarget._collectionInfoPath
         case .collectionDelta: return ApiTarget._collectionDeltaPath
         case .collectionWrite: return ApiTarget._collectionWritePath

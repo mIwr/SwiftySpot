@@ -85,11 +85,11 @@ struct PlaylistScreen: View {
         .navigationTitle(_playlistDetailed.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            if let safePlaylistInfo = api.client.metaStorage.findPlaylist(uri: _playlistDetailed.uri) {
+            if let safePlaylistInfo = api.client.playlistsMetaStorage.find(uri: _playlistDetailed.uri) {
                 _playlistDetailed.setUris(safePlaylistInfo.tracks.map({ track in
                     return track.uri
                 }))
-                _playlistDetailed.updateTrackDetails(api.client.metaStorage.findTracks(uris: Set(safePlaylistInfo.tracks.map({ trackMeta in
+                _playlistDetailed.updateTrackDetails(api.client.tracksMetaStorage.findAsDict(uris: Set(safePlaylistInfo.tracks.map({ trackMeta in
                     return trackMeta.uri
                 }))))
                 if (_playlistDetailed.noInfoTracks.isEmpty) {
@@ -132,16 +132,14 @@ struct PlaylistScreen: View {
         if (_playlistDetailed.orderedTrackUris.isEmpty) {
             let playlistTracks = await withCheckedContinuation { continuation in
                 api.client.getPlaylistInfo(id: _playlistDetailed.id) { result in
-                    do {
-                        let playlistInfo = try result.get()
+                    switch(result) {
+                    case .success(let playlistInfo):
                         continuation.resume(returning: playlistInfo.tracks)
-                    } catch {
-                        if let spErr = error as? SPError {
-                            _errMsg = spErr.errorDescription
-                        } else {
-                            _errMsg = error.localizedDescription
-                        }
+                        break
+                    case .failure(let error):
+                        _errMsg = error.errorDescription
                         continuation.resume(returning: [])
+                        break
                     }
                 }
             }
@@ -154,17 +152,15 @@ struct PlaylistScreen: View {
         }
         return await withCheckedContinuation { continuation in
             api.client.getTracksDetails(trackUris: [String].init(_playlistDetailed.noInfoTracks)) { result in
-                do {
-                    let info = try result.get()
+                switch (result) {
+                case .success(let info):
                     _playlistDetailed.updateTrackDetails(info)
                     continuation.resume(returning: true)
-                } catch {
-                    if let spErr = error as? SPError {
-                        _errMsg = spErr.errorDescription
-                    } else {
-                        _errMsg = error.localizedDescription
-                    }
+                    return
+                case .failure(let error):
+                    _errMsg = error.errorDescription
                     continuation.resume(returning: false)
+                    return
                 }
             }
         }

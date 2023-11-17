@@ -17,8 +17,11 @@ public final class SPConstants {
     
     ///Default spotify private back-end
     public static let defaultSpClientHost = "https://gew1-spclient.spotify.com/"
+    public static let defaultShareHost = "https://open.spotify.com/"
     ///Default spotify previews cdn
     public static let defaultCdnHeadsHost = "https://heads-ak-spotify-com.akamaized.net/"
+    ///Reserve spotify preview cdn
+    public static let defaultPreviewCdnHost = "https://p.scdn.co/"
     
     ///Navigation uri base prefix
     public static let genUriPrefix = "spotify:"

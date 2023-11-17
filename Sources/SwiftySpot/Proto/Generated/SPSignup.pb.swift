@@ -250,6 +250,7 @@ struct Com_Spotify_Signup_V2_Proto_Tracking {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  ///Client mobile
   var creationPoint: String = String()
 
   var creationFlow: String = String()
@@ -352,8 +353,6 @@ struct Com_Spotify_Signup_V2_Proto_CreateAccountErrorResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  ///
-  ///private Error errorDetails_;
   var details: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -458,8 +457,6 @@ struct Com_Spotify_Signup_V2_Proto_CompleteAccountCreationErrorResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  ///
-  ///private Error errorDetails_;
   var details: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

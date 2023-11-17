@@ -27,7 +27,8 @@ extension SPClient {
             do {
                 let meta = try response.get()
                 let items = self.parseArtistsDetails(response: meta)
-                self.metaStorage.updateArtists(items)
+                self.artistsMetaStorage.update(items)
+                self._metaStorage.updateArtists(items)
                 completion(.success(items))
             } catch {
 #if DEBUG
@@ -87,7 +88,8 @@ extension SPClient {
             do {
                 let meta = try response.get()
                 let items = self.parseAlbumsDetails(response: meta)
-                self.metaStorage.updateAlbums(items)
+                self.albumsMetaStorage.update(items)
+                self._metaStorage.updateAlbums(items)
                 completion(.success(items))
             } catch {
 #if DEBUG
@@ -147,7 +149,8 @@ extension SPClient {
             do {
                 let meta = try response.get()
                 let items = self.parseTracksDetails(response: meta)
-                self.metaStorage.updateTracks(items)
+                self.tracksMetaStorage.update(items)
+                self._metaStorage.updateTracks(items)
                 completion(.success(items))
             } catch {
 #if DEBUG

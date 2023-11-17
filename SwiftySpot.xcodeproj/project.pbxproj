@@ -203,6 +203,19 @@
 		8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */; };
 		8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */; };
 		8B66AE442AE9262A002B4088 /* SPDownloadInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */; };
+		8B817E7B2B0530340097B475 /* Lyrics.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E7A2B0530340097B475 /* Lyrics.pb.swift */; };
+		8B817E7E2B0530580097B475 /* SPLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E7D2B0530580097B475 /* SPLyrics.swift */; };
+		8B817E802B0530F20097B475 /* SPLyricsLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E7F2B0530F20097B475 /* SPLyricsLine.swift */; };
+		8B817E822B05313F0097B475 /* SPLyricsSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E812B05313F0097B475 /* SPLyricsSyllable.swift */; };
+		8B817E842B0532E10097B475 /* SPLyricsColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E832B0532E10097B475 /* SPLyricsColorData.swift */; };
+		8B817E862B0533FF0097B475 /* SPLyricsAlternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E852B0533FF0097B475 /* SPLyricsAlternative.swift */; };
+		8B817E882B0537EB0097B475 /* ApiLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E872B0537EB0097B475 /* ApiLyrics.swift */; };
+		8B817E8A2B053B6E0097B475 /* SPClientApiLyricsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E892B053B6E0097B475 /* SPClientApiLyricsExt.swift */; };
+		8B817E8C2B0542170097B475 /* UnitApiLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E8B2B0542170097B475 /* UnitApiLyrics.swift */; };
+		8B817E8E2B05423D0097B475 /* trackLyricsResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8B817E8D2B05423D0097B475 /* trackLyricsResponse.protobuf */; };
+		8B817E902B0543580097B475 /* UnitRemoteApiLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E8F2B0543580097B475 /* UnitRemoteApiLyrics.swift */; };
+		8B817E922B05505B0097B475 /* SPLyricsSyncType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E912B05505B0097B475 /* SPLyricsSyncType.swift */; };
+		8B817E942B055BF90097B475 /* SPMetaInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E932B055BF90097B475 /* SPMetaInfoController.swift */; };
 		8B99E8EF2AF267B100196FC8 /* searchAutocompleteResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8B99E8EE2AF267B000196FC8 /* searchAutocompleteResponse.protobuf */; };
 		8B99E8F12AF2716D00196FC8 /* SPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F02AF2716D00196FC8 /* SPID.swift */; };
 		8B99E8F32AF2770A00196FC8 /* SPTypedObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */; };
@@ -476,6 +489,20 @@
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
 		8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupSession.swift; sourceTree = "<group>"; };
 		8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDownloadInfoController.swift; sourceTree = "<group>"; };
+		8B817E792B052C190097B475 /* Lyrics.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Lyrics.proto; sourceTree = "<group>"; };
+		8B817E7A2B0530340097B475 /* Lyrics.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyrics.pb.swift; sourceTree = "<group>"; };
+		8B817E7D2B0530580097B475 /* SPLyrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyrics.swift; sourceTree = "<group>"; };
+		8B817E7F2B0530F20097B475 /* SPLyricsLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyricsLine.swift; sourceTree = "<group>"; };
+		8B817E812B05313F0097B475 /* SPLyricsSyllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyricsSyllable.swift; sourceTree = "<group>"; };
+		8B817E832B0532E10097B475 /* SPLyricsColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyricsColorData.swift; sourceTree = "<group>"; };
+		8B817E852B0533FF0097B475 /* SPLyricsAlternative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyricsAlternative.swift; sourceTree = "<group>"; };
+		8B817E872B0537EB0097B475 /* ApiLyrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLyrics.swift; sourceTree = "<group>"; };
+		8B817E892B053B6E0097B475 /* SPClientApiLyricsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientApiLyricsExt.swift; sourceTree = "<group>"; };
+		8B817E8B2B0542170097B475 /* UnitApiLyrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitApiLyrics.swift; sourceTree = "<group>"; };
+		8B817E8D2B05423D0097B475 /* trackLyricsResponse.protobuf */ = {isa = PBXFileReference; lastKnownFileType = file; path = trackLyricsResponse.protobuf; sourceTree = "<group>"; };
+		8B817E8F2B0543580097B475 /* UnitRemoteApiLyrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRemoteApiLyrics.swift; sourceTree = "<group>"; };
+		8B817E912B05505B0097B475 /* SPLyricsSyncType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLyricsSyncType.swift; sourceTree = "<group>"; };
+		8B817E932B055BF90097B475 /* SPMetaInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMetaInfoController.swift; sourceTree = "<group>"; };
 		8B9367B62AF4042D00A81D1C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8B99E8EE2AF267B000196FC8 /* searchAutocompleteResponse.protobuf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = searchAutocompleteResponse.protobuf; sourceTree = "<group>"; };
 		8B99E8F02AF2716D00196FC8 /* SPID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPID.swift; sourceTree = "<group>"; };
@@ -595,6 +622,7 @@
 				8B172C282AD169CA00ECBD74 /* ApiCollection.swift */,
 				8B172C312AD169CA00ECBD74 /* ApiSession.swift */,
 				8B172C322AD169CA00ECBD74 /* ApiDownload.swift */,
+				8B817E872B0537EB0097B475 /* ApiLyrics.swift */,
 				8B172C372AD169CA00ECBD74 /* ApiMetadata.swift */,
 				8B172C382AD169CA00ECBD74 /* ApiAuth.swift */,
 				8B172C392AD169CA00ECBD74 /* ApiProfile.swift */,
@@ -646,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				8B0252FE2AFEB7B600520909 /* SPSignup.pb.swift */,
+				8B817E7A2B0530340097B475 /* Lyrics.pb.swift */,
 				8B172C5C2AD169CA00ECBD74 /* FilterComponent.pb.swift */,
 				8B172C5D2AD169CA00ECBD74 /* PlayCommand.pb.swift */,
 				8B172C5E2AD169CA00ECBD74 /* SPRestrictions.pb.swift */,
@@ -689,6 +718,7 @@
 				8B172C8A2AD169CA00ECBD74 /* Collection */,
 				8B172CCA2AD169CB00ECBD74 /* DownloadInfo */,
 				8B172C872AD169CA00ECBD74 /* Landing */,
+				8B817E7C2B0530450097B475 /* Lyrics */,
 				8B172CAF2AD169CB00ECBD74 /* Metadata */,
 				8B172C8E2AD169CA00ECBD74 /* Playlist */,
 				8B172CAA2AD169CB00ECBD74 /* Profile */,
@@ -862,12 +892,13 @@
 		8B172D7C2AD16B2100ECBD74 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8B172D832AD16B2100ECBD74 /* UnitApiArtist.swift */,
+				8B817E8B2B0542170097B475 /* UnitApiLyrics.swift */,
 				8B172D7D2AD16B2100ECBD74 /* UnitApiSearch.swift */,
 				8B172D7E2AD16B2100ECBD74 /* UnitApiProfile.swift */,
 				8B172D7F2AD16B2100ECBD74 /* UnitApiPlaylist.swift */,
 				8B172D812AD16B2100ECBD74 /* UnitApiLanding.swift */,
 				8B172D822AD16B2100ECBD74 /* UnitApiCollection.swift */,
-				8B172D832AD16B2100ECBD74 /* UnitApiArtist.swift */,
 				8B172D852AD16B2100ECBD74 /* UnitApiMetadata.swift */,
 				8BF94D592AFE8FD200B0AD79 /* UnitApiSignup.swift */,
 			);
@@ -902,6 +933,7 @@
 				8B1850212AF56ED700D9DB11 /* UnitRemoteApiCollection.swift */,
 				8B1850262AF56ED700D9DB11 /* UnitRemoteApiDownload.swift */,
 				8B1850252AF56ED700D9DB11 /* UnitRemoteApiLanding.swift */,
+				8B817E8F2B0543580097B475 /* UnitRemoteApiLyrics.swift */,
 				8B1850242AF56ED700D9DB11 /* UnitRemoteApiMetadata.swift */,
 				8B1850272AF56ED700D9DB11 /* UnitRemoteApiPlaylist.swift */,
 				8B1850222AF56ED700D9DB11 /* UnitRemoteApiProfile.swift */,
@@ -964,6 +996,7 @@
 				8B172C1E2AD169CA00ECBD74 /* SPClientApiSupportExt.swift */,
 				8B172C832AD169CA00ECBD74 /* SPClientApiCollectionExt.swift */,
 				8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */,
+				8B817E892B053B6E0097B475 /* SPClientApiLyricsExt.swift */,
 				8B172C3A2AD169CA00ECBD74 /* SPClientApiSearchExt.swift */,
 				8B172C3C2AD169CA00ECBD74 /* SPClientApiPlaylistExt.swift */,
 				8B172C7C2AD169CA00ECBD74 /* SPClientApiLandingExt.swift */,
@@ -1005,6 +1038,7 @@
 				8B172D9B2AD16B2200ECBD74 /* playlistResponse.protobuf */,
 				8B99E8EE2AF267B000196FC8 /* searchAutocompleteResponse.protobuf */,
 				8B172D902AD16B2200ECBD74 /* searchResponse.protobuf */,
+				8B817E8D2B05423D0097B475 /* trackLyricsResponse.protobuf */,
 				8B172D942AD16B2200ECBD74 /* tracksMetaReq.protobuf */,
 				8B172D9A2AD16B2200ECBD74 /* tracksMetaResponse.protobuf */,
 			);
@@ -1027,6 +1061,7 @@
 				8B172C482AD169CA00ECBD74 /* SPClientInfo.proto */,
 				8B172C492AD169CA00ECBD74 /* SPRestrictions.proto */,
 				8B172C4A2AD169CA00ECBD74 /* ToolbarItem.proto */,
+				8B817E792B052C190097B475 /* Lyrics.proto */,
 				8B172C4B2AD169CA00ECBD74 /* ContextMenu.proto */,
 				8B172C4C2AD169CA00ECBD74 /* CardLarge.proto */,
 				8B172C4D2AD169CA00ECBD74 /* SPDownloadInfo.proto */,
@@ -1047,6 +1082,19 @@
 				8B172C4F2AD169CA00ECBD74 /* README.md */,
 			);
 			path = Proto;
+			sourceTree = "<group>";
+		};
+		8B817E7C2B0530450097B475 /* Lyrics */ = {
+			isa = PBXGroup;
+			children = (
+				8B817E7D2B0530580097B475 /* SPLyrics.swift */,
+				8B817E852B0533FF0097B475 /* SPLyricsAlternative.swift */,
+				8B817E832B0532E10097B475 /* SPLyricsColorData.swift */,
+				8B817E7F2B0530F20097B475 /* SPLyricsLine.swift */,
+				8B817E812B05313F0097B475 /* SPLyricsSyllable.swift */,
+				8B817E912B05505B0097B475 /* SPLyricsSyncType.swift */,
+			);
+			path = Lyrics;
 			sourceTree = "<group>";
 		};
 		8B9367B42AF4042D00A81D1C /* RepoAssets */ = {
@@ -1081,6 +1129,7 @@
 				8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */,
 				8B24DC0D2AE315FC00CE0547 /* SPLikeController.swift */,
 				8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */,
+				8B817E932B055BF90097B475 /* SPMetaInfoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1225,6 +1274,7 @@
 				8B172DC32AD16B2300ECBD74 /* artistsMetaResponse.protobuf in Resources */,
 				8B172DC12AD16B2300ECBD74 /* likedTracksResponse.protobuf in Resources */,
 				8B172DA22AD16B2300ECBD74 /* dislikedTracksReq.protobuf in Resources */,
+				8B817E8E2B05423D0097B475 /* trackLyricsResponse.protobuf in Resources */,
 				8B172DC02AD16B2300ECBD74 /* playlistResponse.protobuf in Resources */,
 				8B172DBE2AD16B2300ECBD74 /* artistsMetaReq.protobuf in Resources */,
 			);
@@ -1239,6 +1289,7 @@
 			files = (
 				8B172D792AD169CB00ECBD74 /* SPBaseObj.swift in Sources */,
 				8B172D4D2AD169CB00ECBD74 /* SPSearchOnDemand.swift in Sources */,
+				8B817E862B0533FF0097B475 /* SPLyricsAlternative.swift in Sources */,
 				8B172D552AD169CB00ECBD74 /* SPSearchTrack.swift in Sources */,
 				8B172D192AD169CB00ECBD74 /* SPLikeCollection.pb.swift in Sources */,
 				8B172CE72AD169CB00ECBD74 /* ApiBaseUrl.swift in Sources */,
@@ -1263,7 +1314,9 @@
 				8B172D2A2AD169CB00ECBD74 /* SPCredentials.pb.swift in Sources */,
 				8B172D462AD169CB00ECBD74 /* SPSearchRelated.swift in Sources */,
 				8B172D5C2AD169CB00ECBD74 /* SPAuthSession.swift in Sources */,
+				8B817E942B055BF90097B475 /* SPMetaInfoController.swift in Sources */,
 				8B172D772AD169CB00ECBD74 /* SPDownloadInfoStatus.swift in Sources */,
+				8B817E8A2B053B6E0097B475 /* SPClientApiLyricsExt.swift in Sources */,
 				8B172D572AD169CB00ECBD74 /* SPAccessPoint.swift in Sources */,
 				8B172D132AD169CB00ECBD74 /* FilterComponent.pb.swift in Sources */,
 				8B172D6A2AD169CB00ECBD74 /* SPMetadataContentRating.swift in Sources */,
@@ -1277,6 +1330,7 @@
 				8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */,
 				8B172D162AD169CB00ECBD74 /* HomeViewService.pb.swift in Sources */,
 				8B172CDC2AD169CB00ECBD74 /* SPConstants.swift in Sources */,
+				8B817E842B0532E10097B475 /* SPLyricsColorData.swift in Sources */,
 				8B172CD62AD169CB00ECBD74 /* BitConvertUtil.swift in Sources */,
 				8B172D292AD169CB00ECBD74 /* ObjMetadata.pb.swift in Sources */,
 				8B172D3C2AD169CB00ECBD74 /* SPLanding.swift in Sources */,
@@ -1294,6 +1348,7 @@
 				8B172D3A2AD169CB00ECBD74 /* SPClientApiCollectionExt.swift in Sources */,
 				8B172D422AD169CB00ECBD74 /* SPPlaylist.swift in Sources */,
 				8B2241702AF4E26C00BFE16B /* SPByteViewProvider.swift in Sources */,
+				8B817E922B05505B0097B475 /* SPLyricsSyncType.swift in Sources */,
 				8B0253022AFEBAA400520909 /* SPGender.swift in Sources */,
 				8BF94D5C2AFE91A300B0AD79 /* SPClientApiSignupExt.swift in Sources */,
 				8B172CE02AD169CB00ECBD74 /* ApiLanding.swift in Sources */,
@@ -1309,6 +1364,7 @@
 				8B172D322AD169CB00ECBD74 /* SPClientPropExt.swift in Sources */,
 				8B172D4C2AD169CB00ECBD74 /* SPSearchAlbum.swift in Sources */,
 				8B172CE82AD169CB00ECBD74 /* ApiHttpMethod.swift in Sources */,
+				8B817E7E2B0530580097B475 /* SPLyrics.swift in Sources */,
 				8B66AE442AE9262A002B4088 /* SPDownloadInfoController.swift in Sources */,
 				8B172D562AD169CB00ECBD74 /* SPSearchResult.swift in Sources */,
 				8B172CD32AD169CB00ECBD74 /* BitShiftUtil.swift in Sources */,
@@ -1349,6 +1405,7 @@
 				8B172D652AD169CB00ECBD74 /* SPMetadataTrack.swift in Sources */,
 				8B172D542AD169CB00ECBD74 /* SPSearchGenre.swift in Sources */,
 				8B172D142AD169CB00ECBD74 /* PlayCommand.pb.swift in Sources */,
+				8B817E802B0530F20097B475 /* SPLyricsLine.swift in Sources */,
 				8B172D482AD169CB00ECBD74 /* SPSearchRecomendations.swift in Sources */,
 				8B172CD72AD169CB00ECBD74 /* DateUtil.swift in Sources */,
 				8B172D3F2AD169CB00ECBD74 /* SPCollectionDelta.swift in Sources */,
@@ -1365,6 +1422,7 @@
 				8B172D6C2AD169CB00ECBD74 /* SPMetadataDate.swift in Sources */,
 				8B172D2C2AD169CB00ECBD74 /* ToolbarItem.pb.swift in Sources */,
 				8B172D4F2AD169CB00ECBD74 /* SPSearchEntityType.swift in Sources */,
+				8B817E822B05313F0097B475 /* SPLyricsSyllable.swift in Sources */,
 				8B172D222AD169CB00ECBD74 /* CardShortcut.pb.swift in Sources */,
 				8B172D442AD169CB00ECBD74 /* SPSearchSegment.swift in Sources */,
 				8B172D4E2AD169CB00ECBD74 /* SPSearchEntity.swift in Sources */,
@@ -1384,7 +1442,9 @@
 				8B172D1F2AD169CB00ECBD74 /* PlaylistInfo.pb.swift in Sources */,
 				8B172D262AD169CB00ECBD74 /* ExtendedMetadata.pb.swift in Sources */,
 				8B172D2B2AD169CB00ECBD74 /* CardMedium.pb.swift in Sources */,
+				8B817E7B2B0530340097B475 /* Lyrics.pb.swift in Sources */,
 				8B172D252AD169CB00ECBD74 /* SPDownloadInfo.pb.swift in Sources */,
+				8B817E882B0537EB0097B475 /* ApiLyrics.swift in Sources */,
 				8B172CEC2AD169CB00ECBD74 /* ApiSession.swift in Sources */,
 				8B172CE62AD169CB00ECBD74 /* ApiTarget.swift in Sources */,
 				8B172D5B2AD169CB00ECBD74 /* SPProfile.swift in Sources */,
@@ -1404,6 +1464,7 @@
 				8B172DBD2AD16B2300ECBD74 /* TestCredentialsTemplate.swift in Sources */,
 				8B172DAE2AD16B2300ECBD74 /* UnitHashcashUtil.swift in Sources */,
 				8B18502C2AF56ED700D9DB11 /* UnitRemoteApiProfile.swift in Sources */,
+				8B817E8C2B0542170097B475 /* UnitApiLyrics.swift in Sources */,
 				8B18502E2AF56ED700D9DB11 /* UnitRemoteApiMetadata.swift in Sources */,
 				8BF94D5A2AFE8FD200B0AD79 /* UnitApiSignup.swift in Sources */,
 				8B172DAD2AD16B2300ECBD74 /* UnitSPBase16.swift in Sources */,
@@ -1415,6 +1476,7 @@
 				8B1850302AF56ED700D9DB11 /* UnitRemoteApiDownload.swift in Sources */,
 				8B1850352AF5771B00D9DB11 /* TestConstantsXCodeEnvExt.swift in Sources */,
 				8B1850292AF56ED700D9DB11 /* UnitRemoteApiArtist.swift in Sources */,
+				8B817E902B0543580097B475 /* UnitRemoteApiLyrics.swift in Sources */,
 				8B1F50372AEFA3AA008D9A09 /* UnitSPBase62.swift in Sources */,
 				8B172DA32AD16B2300ECBD74 /* UnitApiSearch.swift in Sources */,
 				8B172DBC2AD16B2300ECBD74 /* TestConstants.swift in Sources */,
@@ -1483,7 +1545,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1502,7 +1564,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.10;
+				MARKETING_VERSION = 0.4.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1546,7 +1608,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1559,7 +1621,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.10;
+				MARKETING_VERSION = 0.4.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1573,7 +1635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1592,7 +1654,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.10;
+				MARKETING_VERSION = 0.4.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1612,7 +1674,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1631,7 +1693,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.10;
+				MARKETING_VERSION = 0.4.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;

@@ -30,6 +30,8 @@
 "trackInfoArtists" = "Исполнители";
 "trackInfoDuration" = "Продолжительность";
 
+"trackLyricsLoadError" = "Не удалось загрузить текст песни";
+
 "favTitle" = "Избранное";
 "favLikedTracks" = "Понравившиеся треки";
 "favUserPlaylists" = "Плейлисты";

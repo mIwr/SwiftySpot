@@ -22,6 +22,8 @@ extension ApiTarget {
         case .artistUI: return ApiTarget._emptyDict
         case .playlist: return ApiTarget._emptyDict
         case .metadata: return ApiTarget._emptyDict
+        case .lyrics: return ApiTarget._emptyDict
+        case .lyricsReserve: return ApiTarget._emptyDict
         case .collection: return ApiTarget._emptyDict
         case .collectionDelta: return ApiTarget._emptyDict
         case .collectionWrite: return ApiTarget._emptyDict

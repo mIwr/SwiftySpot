@@ -23,6 +23,8 @@ extension ApiTarget {
         case .artistUI: return ApiTarget._getMethod
         case .playlist: return ApiTarget._getMethod
         case .metadata: return ApiTarget._postMethod
+        case .lyrics: return ApiTarget._getMethod
+        case .lyricsReserve: return ApiTarget._getMethod
         case .collection: return ApiTarget._postMethod
         case .collectionDelta: return ApiTarget._postMethod
         case .collectionWrite: return ApiTarget._postMethod

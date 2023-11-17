@@ -11,6 +11,7 @@ extension ApiTarget {
     fileprivate static let _authBaseUrl = "https://login5.spotify.com/"
     fileprivate static let _spClientWgBaseUrl = "https://spclient.wg.spotify.com/"
     fileprivate static let _publicApiBaseUrl = "https://api.spotify.com/"
+    fileprivate static let _lyricsReserveBaseUrl = "https://spotify-lyric-api-984e7b4face0.herokuapp.com/"
     
     var baseURL: String {
         switch self {
@@ -28,6 +29,8 @@ extension ApiTarget {
             return normalizeBaseUrl(apHost)
         case .metadata(let apHost, _, _, _, _, _, _):
             return normalizeBaseUrl(apHost)
+        case .lyrics: return ApiTarget._spClientWgBaseUrl
+        case .lyricsReserve: return ApiTarget._lyricsReserveBaseUrl
         case .collection: return ApiTarget._spClientWgBaseUrl
         case .collectionDelta(let apHost, _, _, _, _, _, _):
             return normalizeBaseUrl(apHost)

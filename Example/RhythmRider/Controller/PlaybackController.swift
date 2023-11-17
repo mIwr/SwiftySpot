@@ -30,6 +30,13 @@ class PlaybackController: NSObject, ObservableObject {
     @Published fileprivate(set) var playSeqIndicies: [Int]
     @Published fileprivate(set) var playingTrackUri: String
     
+    var playingTrackId: String {
+        get {
+            let typedObj = SPTypedObj(uri: playingTrackUri, globalID: [])
+            return typedObj.id
+        }
+    }
+    
     var repeatMode: PlayRepeatMode {
         get {
             if (repeatOne) {
@@ -370,6 +377,7 @@ class PlaybackController: NSObject, ObservableObject {
             notifyPlayStateUpdate(playing: false)
         } else {
             do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                 try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
             } catch {
                 print(error)
@@ -518,8 +526,8 @@ class PlaybackController: NSObject, ObservableObject {
                                 UIApplication.shared.endBackgroundTask(taskId)
                                 return
                             }
-                            do {
-                                let playableData = try dRes.get()
+                            switch(dRes) {
+                            case .success(let playableData):
                                 self._playInputData = playableData
                                 let media = VLCMedia(stream: InputStream(data: self._playInputData))
                                 self._vlcPlayer.media = media
@@ -531,9 +539,9 @@ class PlaybackController: NSObject, ObservableObject {
                                 }
                                 self._vlcPlayer.play()
                                 self.notifyPlayStateUpdate(playing: true)
-                            } catch {
-                                let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
-                                if case .invalidResponseStatusCode(let errCode, _) = parsed {
+                                break
+                            case .failure(let error):
+                                if case .invalidResponseStatusCode(let errCode, _) = error {
                                     if (errCode == 404) {
                                         //Not found or restricted on CDN??? (track meta restrictions is empty) -> next song
 #if DEBUG
@@ -544,6 +552,7 @@ class PlaybackController: NSObject, ObservableObject {
                                             _ = self.pause(force: true)
                                         }
                                     }
+                                    break
                                 }
                             }
                             UIApplication.shared.endBackgroundTask(taskId)

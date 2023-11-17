@@ -11,9 +11,9 @@ struct ErrorView: View {
     
     let title: String
     let subtitle: String
-    let refreshAction: () -> Void
+    let refreshAction: (() -> Void)?
     
-    init(title: String, subtitle: String, refreshAction: @escaping () -> Void) {
+    init(title: String, subtitle: String, refreshAction: (() -> Void)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.refreshAction = refreshAction
@@ -42,11 +42,13 @@ struct ErrorView: View {
                     .multilineTextAlignment(.center)
             }
             Spacer(minLength: 24)
-            Button(action: refreshAction) {
-                Text(R.string.localizable.generalRefresh)
-                    .font(.headline).fontWeight(.semibold)
+            if let safeRefreshAction = refreshAction {
+                Button(action: safeRefreshAction) {
+                    Text(R.string.localizable.generalRefresh)
+                        .font(.headline).fontWeight(.semibold)
+                }
+                .buttonStyle(AccentWideButtonStyle())
             }
-            .buttonStyle(AccentWideButtonStyle())
         }
     }
 }

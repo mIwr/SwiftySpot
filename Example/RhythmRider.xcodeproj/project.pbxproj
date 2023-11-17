@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0A120D2B066C5200B7FA0B /* TrackLyricsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0A120C2B066C5200B7FA0B /* TrackLyricsScreen.swift */; };
+		8B0A12102B066EA700B7FA0B /* TrackLyricsVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0A120F2B066EA700B7FA0B /* TrackLyricsVModel.swift */; };
 		8B103E172AF147C000842D79 /* ProfileInfoVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */; };
 		8B103E1A2AF14DE000842D79 /* ProfileInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */; };
 		8B103E1C2AF1525A00842D79 /* ProfileToggleSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */; };
@@ -29,6 +31,7 @@
 		8B3542E82AEBECCA000B5B9F /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3542E72AEBECCA000B5B9F /* ActivityVC.swift */; };
 		8B3C1AE42AEAEDF00048FF7E /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */; };
 		8B3C1AE62AEAF93F0048FF7E /* PlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */; };
+		8B3D23382B07EC5E00544A0C /* PlaybackProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D23372B07EC5E00544A0C /* PlaybackProgressView.swift */; };
 		8B3DA8862AF3974100895807 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DA8852AF3974100895807 /* SearchController.swift */; };
 		8B4247B82AD4307000749AE3 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B72AD4307000749AE3 /* TrackView.swift */; };
 		8B4247BA2AD4381100749AE3 /* PlaylistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */; };
@@ -67,6 +70,8 @@
 /* Begin PBXFileReference section */
 		720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.release.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.release.xcconfig"; sourceTree = "<group>"; };
 		74A01C47867C04C40488533E /* Pods_RhythmRider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmRider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0A120C2B066C5200B7FA0B /* TrackLyricsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLyricsScreen.swift; sourceTree = "<group>"; };
+		8B0A120F2B066EA700B7FA0B /* TrackLyricsVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLyricsVModel.swift; sourceTree = "<group>"; };
 		8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoVModel.swift; sourceTree = "<group>"; };
 		8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentView.swift; sourceTree = "<group>"; };
 		8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileToggleSettingView.swift; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 		8B3542E72AEBECCA000B5B9F /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScreen.swift; sourceTree = "<group>"; };
+		8B3D23372B07EC5E00544A0C /* PlaybackProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackProgressView.swift; sourceTree = "<group>"; };
 		8B3DA8852AF3974100895807 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		8B4247B72AD4307000749AE3 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				8B248CF82AEB914400405911 /* PlaybackSeqScreen.swift */,
 				8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */,
 				8B9367B22AF3E93600A81D1C /* TrackFullInfoScreen.swift */,
+				8B0A120C2B066C5200B7FA0B /* TrackLyricsScreen.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				8B3C1AE32AEAEDF00048FF7E /* NowPlayingView.swift */,
+				8B3D23372B07EC5E00544A0C /* PlaybackProgressView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 				8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */,
 				8BF13FB62AE29C4D0058C8EB /* PlaylistInfoVModel.swift */,
 				8B103E162AF147C000842D79 /* ProfileInfoVModel.swift */,
+				8B0A120F2B066EA700B7FA0B /* TrackLyricsVModel.swift */,
 			);
 			path = VModel;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				8BF21C102AD993F700FEA6D6 /* ClSessionController.swift in Sources */,
 				8B1D46DD2AF0F05F00FC3906 /* ScrollView.swift in Sources */,
 				8B66AE422AE90A2B002B4088 /* PlaybackTrack.swift in Sources */,
+				8B3D23382B07EC5E00544A0C /* PlaybackProgressView.swift in Sources */,
 				8B8B5CEF2ADDC0680069A435 /* TabItemView.swift in Sources */,
 				8B29B4FD2AD1ED4200A7AD33 /* SecureStorage.swift in Sources */,
 				8B248CF92AEB914400405911 /* PlaybackSeqScreen.swift in Sources */,
@@ -562,6 +572,7 @@
 				8B103E172AF147C000842D79 /* ProfileInfoVModel.swift in Sources */,
 				8B8B5CE32ADDA49E0069A435 /* PlaylistCardView.swift in Sources */,
 				8B3C1AE62AEAF93F0048FF7E /* PlayerScreen.swift in Sources */,
+				8B0A120D2B066C5200B7FA0B /* TrackLyricsScreen.swift in Sources */,
 				8BF21C062AD98B9400FEA6D6 /* Published.swift in Sources */,
 				8B3C1AE42AEAEDF00048FF7E /* NowPlayingView.swift in Sources */,
 				8B8B5CED2ADDBB800069A435 /* LandingPlaylistArrVModel.swift in Sources */,
@@ -575,6 +586,7 @@
 				8BF21C0E2AD9931600FEA6D6 /* AuthSessionController.swift in Sources */,
 				8B66AE402AE8FD25002B4088 /* PlaybackController.swift in Sources */,
 				8B29B4FF2AD1ED5700A7AD33 /* Constants.swift in Sources */,
+				8B0A12102B066EA700B7FA0B /* TrackLyricsVModel.swift in Sources */,
 				8B8B5CE62ADDA7420069A435 /* DateDistanceUtil.swift in Sources */,
 				8B103E1E2AF1621C00842D79 /* SearchScreen.swift in Sources */,
 				8B8B5CE82ADDAB230069A435 /* PlaylistScreen.swift in Sources */,
@@ -719,7 +731,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -731,7 +743,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -739,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -757,7 +769,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -769,7 +781,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -777,7 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

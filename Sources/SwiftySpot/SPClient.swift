@@ -46,8 +46,17 @@ public class SPClient {
     var likedDislikedAlbumsStorage: SPLikeController
     ///User tracks collection
     var likedDislikedTracksStorage: SPLikeController
-    ///Spotify meta repository
-    public var metaStorage: SPMetaController
+    var _metaStorage: SPMetaController
+    ///Spotify artists meta repository
+    public var artistsMetaStorage: SPMetaInfoController<SPMetadataArtist>
+    ///Spotify albums meta repository
+    public var albumsMetaStorage: SPMetaInfoController<SPMetadataAlbum>
+    ///Spotify playlists meta repository
+    public var playlistsMetaStorage: SPMetaInfoController<SPPlaylist>
+    ///Spotify tracks meta repository
+    public var tracksMetaStorage: SPMetaInfoController<SPMetadataTrack>
+    ///Spotify lyrics info repository
+    public var lyricsStorage: SPMetaInfoController<SPLyrics>
     ///Spotify download info repository
     public var downloadInfoStorage: SPDownloadInfoController
     
@@ -61,8 +70,9 @@ public class SPClient {
     ///- Parameter albumsMeta: Albums info for meta repository
     ///- Parameter playlistsMeta: Playlists info for meta repository
     ///- Parameter tracksMeta: Tracks info for meta repository
+    ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
@@ -78,7 +88,14 @@ public class SPClient {
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         likedDislikedTracksStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))
-        metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
+        albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
+        playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
+        tracksMetaStorage = SPMetaInfoController<SPMetadataTrack>(initItems: tracksMeta, keyValidator: SPNavigateUriUtil.validateTrackUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataTrack>.buildTrackMetaUpdateNotification)
+        lyricsStorage = SPMetaInfoController<SPLyrics>(initItems: lyricsInfo, keyValidator: { key in
+            return true
+        }, updateItemNotificationBuilder: SPMetaInfoController<SPLyrics>.buildLyricsUpdateNotification)
         downloadInfoStorage = SPDownloadInfoController(di: [:], intents: [:])
     }
     
@@ -95,8 +112,9 @@ public class SPClient {
     ///- Parameter albumsMeta: Albums info for meta repository
     ///- Parameter playlistsMeta: Playlists info for meta repository
     ///- Parameter tracksMeta: Tracks info for meta repository
+    ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
@@ -115,7 +133,14 @@ public class SPClient {
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         likedDislikedTracksStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))
-        metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
+        albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
+        playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
+        tracksMetaStorage = SPMetaInfoController<SPMetadataTrack>(initItems: tracksMeta, keyValidator: SPNavigateUriUtil.validateTrackUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataTrack>.buildTrackMetaUpdateNotification)
+        lyricsStorage = SPMetaInfoController<SPLyrics>(initItems: lyricsInfo, keyValidator: { key in
+            return true
+        }, updateItemNotificationBuilder: SPMetaInfoController<SPLyrics>.buildLyricsUpdateNotification)
         downloadInfoStorage = SPDownloadInfoController(di: [:], intents: [:])
     }
     
@@ -137,13 +162,14 @@ public class SPClient {
     ///- Parameter albumsMeta: Albums info for meta repository
     ///- Parameter playlistsMeta: Playlists info for meta repository
     ///- Parameter tracksMeta: Tracks info for meta repository
+    ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Parameter likedDislikedArtists: User liked/disliked artist collections
     ///- Parameter likedDislikedTracks User liked/disliked track collections
     ///- Parameter userCollections: User collections, without like/dislike
     ///- Parameter downloadInfos: Download infos dictionary. Key is hexFileId
     ///- Parameter playIntents: Play intents dictionary. Key is hexFileId
     ///- Returns: SPClient instance on authorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], playIntents: [String: SPPlayIntentData] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], playIntents: [String: SPPlayIntentData] = [:]) {
         self.appVersionCode = appVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
@@ -162,7 +188,14 @@ public class SPClient {
         apHosts = []
         dealerHosts = []
         spclientHosts = []
-        metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
+        artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
+        albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
+        playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
+        tracksMetaStorage = SPMetaInfoController<SPMetadataTrack>(initItems: tracksMeta, keyValidator: SPNavigateUriUtil.validateTrackUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataTrack>.buildTrackMetaUpdateNotification)
+        lyricsStorage = SPMetaInfoController<SPLyrics>(initItems: lyricsInfo, keyValidator: { key in
+            return true
+        }, updateItemNotificationBuilder: SPMetaInfoController<SPLyrics>.buildLyricsUpdateNotification)
         self.likedDislikedArtistsStorage = likedDislikedArtists ?? SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         self.likedDislikedAlbumsStorage = likedDislikedAlbums ?? SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         self.likedDislikedTracksStorage = likedDislikedArtists ?? SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))

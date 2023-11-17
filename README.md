@@ -57,7 +57,7 @@ For work with Spotify API need:
 SwiftySpot is available through SPM (Swift Package Manager)
 
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.4.10"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.4.11"))
 ```
 
 ### CocoaPods
@@ -168,11 +168,14 @@ let allAlbumsMeta: [SPMetadataAlbum] = client.metaStorage.cachedAlbumsMeta
 
 3. Through *NotificationCenter* update events
 
-| Notification.Name  | Name key           | Payload type     | Description                      |
-|--------------------|--------------------|------------------|----------------------------------|
-| SPArtistMetaUpdate | SPArtistMetaUpdate | SPMetadataArtist | API client received artist meta  |
-| SPAlbumMetaUpdate  | SPAlbumMetaUpdate  | SPMetadataAlbum  | API client received album meta   |
-| SPTrackMetaUpdate  | SPTrackMetaUpdate  | SPMetadataTrack  | API client received track meta   |
+| Notification.Name    | Name key             | Payload type     | Description                       |
+|----------------------|----------------------|------------------|-----------------------------------|
+| SPArtistMetaUpdate   | SPArtistMetaUpdate   | SPMetadataArtist | API client received artist meta   |
+| SPAlbumMetaUpdate    | SPAlbumMetaUpdate    | SPMetadataAlbum  | API client received album meta    |
+| SPPlaylistMetaUpdate | SPPlaylistMetaUpdate | SPPlaylist       | API client received playlist meta |
+| SPTrackMetaUpdate    | SPTrackMetaUpdate    | SPMetadataTrack  | API client received track meta    |
+| SPTrackMetaUpdate    | SPTrackMetaUpdate    | SPMetadataTrack  | API client received track meta    |
+| SPLyricsUpdate       | SPLyricsUpdate       | SPLyrics         | API client received lyrics info   |
 
 Library has notification extension, which provides methods for parsing payload object to API instances:
 
@@ -180,7 +183,9 @@ Library has notification extension, which provides methods for parsing payload o
 //notification: Notification
 let artistParseRes: (Bool, SPMetadataArtist?) = notifcation.tryParseArtistMetaUpdate()
 let albumParseRes: (Bool, SPMetadataAlbum?) = notifcation.tryParseAlbumMetaUpdate()
+let plylistParseRes: (Bool, SPPlaylist?) = notifcation.tryParsePlaylistMetaUpdate()
 let trackParseRes: (Bool, SPMetadataTrack?) = notifcation.tryParseTrackMetaUpdate()
+let lyricsParseRes: (Bool, SPLyrics?) = notifcation.tryParseLyricsUpdate()
 ```
 
 The first variable in pair (Bool) is parse status. 'True' value means that the notification has correct name and payload object type
@@ -219,8 +224,8 @@ let allAlbumsMeta: [SPCollectionItem] = client.likedAlbumsStorage.orderedItems
 |-----------------------|-----------------------|------------------|----------------|
 | SPArtistLikeUpdate    | SPArtistLikeUpdate    | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
 | SPArtistDislikeUpdate | SPArtistDislikeUpdate | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
-| SPAlbumLikeUpdate    | SPAlbumLikeUpdate    | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
-| SPAlbumDislikeUpdate | SPAlbumDislikeUpdate | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
+| SPAlbumLikeUpdate     | SPAlbumLikeUpdate     | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
+| SPAlbumDislikeUpdate  | SPAlbumDislikeUpdate  | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
 | SPTrackLikeUpdate     | SPTrackLikeUpdate     | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
 | SPTrackDislikeUpdate  | SPTrackDislikeUpdate  | SPCollectionItem | Fires on Like/Dislike op, get collection or update collection by delta API requests |
 

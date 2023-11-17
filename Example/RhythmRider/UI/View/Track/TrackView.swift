@@ -23,7 +23,14 @@ struct TrackView: View {
     
     @State fileprivate var _showTrackInfoSheet: Bool
     
-    var artistString: String {
+    fileprivate var _trackId: String {
+        get {
+            let typedObj = SPTypedObj(uri: trackUri, globalID: [])
+            return typedObj.id
+        }
+    }
+    
+    fileprivate var _artistString: String {
         get {
             if (artists.isEmpty) {
                 return "N/A"
@@ -66,7 +73,7 @@ struct TrackView: View {
                         .font(.headline).lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color(titleFgColor))
-                    Text(artistString)
+                    Text(_artistString)
                         .font(.body).lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color(artistFgColor))
@@ -85,7 +92,7 @@ struct TrackView: View {
         .sheet(isPresented: $_showTrackInfoSheet, onDismiss: {
             _showTrackInfoSheet = false
         }, content: {
-            let safeTrackMeta = api.client.metaStorage.findTrack(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ artistName in
+            let safeTrackMeta = api.client.tracksMetaStorage.find(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ artistName in
                 return SPMetadataArtist(gid: [], name: artistName)
             }))
             TrackFullInfoScreen(_trackInfo: safeTrackMeta, presented: $_showTrackInfoSheet)
@@ -204,7 +211,8 @@ struct TrackView: View {
     fileprivate var _shareMenuAction: Button<Label<Text, some View>> {
         return Button(action: {
             guard let vc = UIApplication.shared.connectedScenes.compactMap({$0 as? UIWindowScene}).first?.windows.first?.rootViewController else { return }
-            let shareActivity = UIActivityViewController(activityItems: [artistString + " - " + title + "\n" + trackUri], applicationActivities: nil)
+            let item = _artistString + " - " + title + "\n" + SPConstants.defaultShareHost + "track/" + _trackId
+            let shareActivity = UIActivityViewController(activityItems: [item], applicationActivities: nil)
             shareActivity.popoverPresentationController?.sourceView = vc.view
             shareActivity.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height, width: 0, height: 0)
             shareActivity.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down

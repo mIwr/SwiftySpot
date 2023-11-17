@@ -108,7 +108,32 @@ extension SPClient {
             completion(.failure(.audioPreviewNotFound))
             return
         }
-        downloadAsOnePiece(cdnLink: previewPath, completion: completion)
+        downloadAsOnePiece(cdnLink: previewPath) { result in
+            if let safeData = try? result.get(), !safeData.isEmpty {
+                completion(result)
+                return
+            }
+            //data is nil or empty -> Reserve download
+            if let safePreviewMp3Format = trackMeta.findPreviewAudioFile(codec: .MP3_96) {
+                self.downloadTrackPreviewReserve(mp3HexFileId: safePreviewMp3Format.hexId, completion: completion)
+                return
+                
+            } else if let safeMp3Format = trackMeta.findAudioFile(codec: .MP3_96) {
+                self.downloadTrackPreviewReserve(mp3HexFileId: safeMp3Format.hexId, completion: completion)
+                return
+            }
+            completion(result)
+        }
+    }
+    
+    func downloadTrackPreviewReserve(mp3HexFileId: String, completion: @escaping (_ result: Result<Data, SPError>) -> Void) {
+        let headers: [String: String] = [
+            "Icy-MetaData": "1",
+            "User-Agent": "previewplayer",
+            "Accept-Encoding": "identity",
+        ]
+        let link = SPConstants.defaultPreviewCdnHost + "mp3-preview/" + mp3HexFileId
+        download(headers: headers, fullPath: link, completion: completion)
     }
     
     ///Download track without chunks as one piece

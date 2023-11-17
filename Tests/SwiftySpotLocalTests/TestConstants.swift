@@ -32,6 +32,7 @@ class TestConstants {
     static let artistId = "4MkrCf9RDnPGcKJJaIen7I"
     static let albumId = "7qTEgfVxRaGRPPwnIeWRRM"
     static let trackId = "1fGmf22HKepZQDSAUeHNEL"
+    static let trackIdWithLyrics = "6QO7NLCdpQnsPDNyUI24kz"
     
     static let realBase62GID = "0XqDOKSvx2HrqsB5snefHl"
     static let realGID: Array<UInt8> = [0x1f, 0x7e, 0xa6, 0xe5, 0xba, 0x13, 0x43, 0x4f, 0x9c, 0xbc, 0x44, 0xee, 0xec, 0xf6, 0x35, 0xfb]
@@ -86,5 +87,19 @@ class TestConstants {
         "is_country_launched": true,
         "push-notifications": false,
     ]
-    //{"status":120,"country":"DE","dmca-radio":false,"shuffle-restricted":false,"can_accept_licenses_in_one_step":true,"requires_marketing_opt_in":false,"requires_marketing_opt_in_text":false,"minimum_age":13,"country_group":"NA","specific_licenses":false,"pretick_eula":true,"show_collect_personal_info":false,"use_all_genders":true,"use_other_gender":false,"use_prefer_not_to_say_gender":false,"show_non_required_fields_as_optional":false,"date_endianness":2,"is_country_launched":true,"push-notifications":false}
+    
+    static let dummyLyricsInfo: [String: Any] = [
+        "error":false,
+        "syncType":"LINE_SYNCED",
+        "lines": [
+            ["startTimeMs":"900","words":"One, two, three, four","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"4030","words":"Ooh-ooh, ooh-ooh-ooh","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"10510","words":"Every time you come around, you know I can't say no","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"18010","words":"Every time the sun goes down, I let you take control","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"25680","words":"I can feel the paradise before my world implodes","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"32800","words":"And tonight had something wonderful","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"39250","words":"My bad habits lead to late nights endin' alone","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"43250","words":"Conversations with a stranger I barely know","syllables":[],"endTimeMs":"0"]
+        ]
+    ]
 }

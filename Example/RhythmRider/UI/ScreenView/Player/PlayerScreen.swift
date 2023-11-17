@@ -18,15 +18,15 @@ struct PlayerScreen: View {
     @Binding var playing: Bool
     @State var shuffle: Bool
     @State var repeatMode: PlaybackController.PlayRepeatMode
-    @State var playbackPositionInS: TimeInterval
-    @State var dragginSlider: Bool
-    @State var durationInMs: TimeInterval
+    
+    
     @State var like: Bool
     @State var dislike: Bool
     
     @State var showPlaybackSeqSheet: Bool
     @State var showShareActivityVC: Bool
     @State var showTrackFullInfoSheet: Bool
+    @State var showTrackLyricsSheet: Bool
     
     init(trackName: Binding<String>, artists: Binding<[String]>, playing: Binding<Bool>) {
         _trackName = trackName
@@ -35,14 +35,12 @@ struct PlayerScreen: View {
         
         _shuffle = State(initialValue: false)
         _repeatMode = State(initialValue: .noRepeat)
-        _playbackPositionInS = State(initialValue: 0)
-        _durationInMs = State(initialValue: 0.0)
-        _dragginSlider = State(initialValue: false)
         _like = State(initialValue: false)
         _dislike = State(initialValue: false)
         _showPlaybackSeqSheet = State(initialValue: false)
         _showShareActivityVC = State(initialValue: false)
         _showTrackFullInfoSheet = State(initialValue: false)
+        _showTrackLyricsSheet = State(initialValue: false)
     }
     
     var artistString: String {
@@ -125,28 +123,8 @@ struct PlayerScreen: View {
                 .frame(width: 32, height: 32, alignment: .center)
             })
             .frame(maxWidth: .infinity, alignment: .leading)
-            Slider(value: $playbackPositionInS, in: 0...durationInMs / 1000) { editing in
-                if (dragginSlider != editing) {
-                    dragginSlider = editing
-                }
-                if (editing) {
-                    return
-                }
-                _ = playController.setPlaybackPosition(playbackPositionInS)
-            }
-            .foregroundColor(Color(R.color.accent))
-            HStack(alignment: .center, spacing: 0, content: {
-                Text(DateUtil.formattedTrackTime(playbackPositionInS))
-                    .font(.caption).fontWeight(.semibold)
-                    .lineLimit(1)
-                    .foregroundColor(Color(R.color.secondary))
-                Spacer(minLength: 16)
-                Text(DateUtil.formattedTrackTime(durationInMs / 1000))
-                    .font(.caption).fontWeight(.semibold)
-                    .lineLimit(1)
-                    .foregroundColor(Color(R.color.secondary))
-            })
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+            PlaybackProgressView()
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
             HStack(alignment: .center, spacing: 0, content: {
                 Button(action: {
                     shuffle = !shuffle
@@ -234,15 +212,13 @@ struct PlayerScreen: View {
                         //disliked after toggle -> dislike cmd
                         api.client.dislikeTrack(uri: playController.playingTrackUri) { dislikeRes in
                             //If fails, the reset update will be received through notification center
-                            do {
-                                let status = try dislikeRes.get()
-                                if (!status) {
-                                    return
-                                }
-                                _ = self.playController.playNextTrack()
-                            } catch {
-                                
+                            guard let safeStatus = try? dislikeRes.get() else {
+                                return
                             }
+                            if (!safeStatus) {
+                                return
+                            }
+                            _ = self.playController.playNextTrack()
                         }
                         if (api.client.likedTracksStorage.find(uri: playController.playingTrackUri) != nil) {
                             api.client.removeTrackLike(uri: playController.playingTrackUri) { _ in
@@ -275,9 +251,26 @@ struct PlayerScreen: View {
                     .sheet(isPresented: $showShareActivityVC, onDismiss: {
                         showShareActivityVC = false
                     }, content: {
-                        let item = artistString + " - " + trackName + "\n" + playController.playingTrackUri
+                        let item = artistString + " - " + trackName + "\n" + SPConstants.defaultShareHost + "track/" + playController.playingTrackId
                         ActivityVC(presented: $showShareActivityVC, activityItems: [item])
                             .ignoresSafeArea(.all, edges: .bottom)
+                    })
+                    Button(action: {
+                        showTrackLyricsSheet = !showTrackLyricsSheet
+                    }, label: {
+                        Image(R.image.icTrackLyrics)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color(R.color.primary))
+                    })
+                    .frame(width: 24, height: 24, alignment: .center)
+                    .sheet(isPresented: $showTrackLyricsSheet, onDismiss: {
+                        showTrackLyricsSheet = false
+                    }, content: {
+                        let trackMeta = playController.playingTrack?.trackMeta ?? SPMetadataTrack(gid: [], name: trackName, uri: playController.playingTrackUri, album: nil, artists: artists.map({ artistName in
+                            return SPMetadataArtist(gid: [], name: artistName)
+                        }))
+                        TrackLyricsScreen(track: trackMeta, presented: $showTrackLyricsSheet)
                     })
                     Button(action: {
                         showTrackFullInfoSheet = !showTrackFullInfoSheet
@@ -322,27 +315,13 @@ struct PlayerScreen: View {
             like = collectionItem != nil ? true : false
             collectionItem = api.client.dislikedTracksStorage.find(uri: safePlayingTrack.uri)
             dislike = collectionItem != nil ? true : false
-            durationInMs = TimeInterval(safePlayingTrack.trackMeta.durationInMs)
-            playbackPositionInS = playController.playbackPositionInS
-        })
-        .onReceive(NotificationCenter.default.publisher(for: .SPPlaybackPositionUpdate), perform: { notification in
-            if (dragginSlider) {
-                return
-            }
-            let parseRes = notification.tryParsePlaybackPositionUpdate()
-            guard let safeNewVal = parseRes.1, parseRes.0 else {return}
-            if (safeNewVal < durationInMs / 1000) {
-                playbackPositionInS = safeNewVal
-                return
-            }
-            playbackPositionInS = safeNewVal
         })
         .onReceive(NotificationCenter.default.publisher(for: .SPPlayItemUpdate), perform: { notification in
             let parseRes = notification.tryParsePlayItemUpdate()
             guard let safeTrack = parseRes.1, parseRes.0 else {return}
-            let newDurationInMs = TimeInterval(safeTrack.trackMeta.durationInMs)
-            playbackPositionInS = 0
-            durationInMs = newDurationInMs
+            if (showTrackLyricsSheet) {
+                showTrackLyricsSheet = false
+            }
             var collectionItem = api.client.likedTracksStorage.find(uri: safeTrack.uri)
             like = collectionItem != nil && collectionItem?.removed == false
             collectionItem = api.client.dislikedTracksStorage.find(uri: safeTrack.uri)

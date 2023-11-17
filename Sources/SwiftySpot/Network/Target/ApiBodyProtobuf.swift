@@ -64,6 +64,8 @@ extension ApiTarget {
                 #endif
             }
             return data
+        case .lyrics: return nil
+        case .lyricsReserve: return nil
         case .collection(_, _, _, _, _, let proto):
             do {
                 data = try proto.serializedData()

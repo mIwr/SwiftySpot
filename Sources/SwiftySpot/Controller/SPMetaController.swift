@@ -68,7 +68,6 @@ public class SPMetaController {
     func updateArtists(_ dict: [String: SPMetadataArtist]) {
         for entry in dict {
             _artists[entry.key] = entry.value
-            notifyArtistMetaUpdate(entry.value)
         }
     }
     
@@ -91,7 +90,6 @@ public class SPMetaController {
     func updateAlbums(_ dict: [String: SPMetadataAlbum]) {
         for entry in dict {
             _albums[entry.key] = entry.value
-            notifyAlbumMetaUpdate(entry.value)
         }
     }
     
@@ -122,7 +120,6 @@ public class SPMetaController {
     func updatePlaylists(_ dict: [String: SPPlaylist]) {
         for entry in dict {
             _playlists[entry.key] = entry.value
-            notifyPlaylistMetaUpdate(entry.value)
         }
     }
     
@@ -145,83 +142,6 @@ public class SPMetaController {
     func updateTracks(_ dict: [String: SPMetadataTrack]) {
         for entry in dict {
             _tracks[entry.key] = entry.value
-            notifyTrackMetaUpdate(entry.value)
         }
-    }
-}
-
-extension SPMetaController {
-    fileprivate static let _artistMetaEventName = "SPArtistMetaUpdate"
-    fileprivate static let _albumMetaEventName = "SPAlbumMetaUpdate"
-    fileprivate static let _playlistMetaEventName = "SPPlaylistMetaUpdate"
-    fileprivate static let _trackMetaEventName = "SPTrackMetaUpdate"
-    
-    func notifyArtistMetaUpdate(_ meta: SPMetadataArtist) {
-        let notification = Notification(name: .SPArtistMetaUpdate, object: meta)
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(notification)
-        }
-    }
-    
-    func notifyAlbumMetaUpdate(_ meta: SPMetadataAlbum) {
-        let notification = Notification(name: .SPAlbumMetaUpdate, object: meta)
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(notification)
-        }
-    }
-    
-    func notifyPlaylistMetaUpdate(_ meta: SPPlaylist) {
-        let notification = Notification(name: .SPPlaylistMetaUpdate, object: meta)
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(notification)
-        }
-    }
-    
-    func notifyTrackMetaUpdate(_ meta: SPMetadataTrack) {
-        let notification = Notification(name: .SPTrackMetaUpdate, object: meta)
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(notification)
-        }
-    }
-}
-
-extension Notification.Name {
-    ///Artist metadata update event. Payload contains in notification.object with type 'SPMetadataArtist'
-    public static let SPArtistMetaUpdate = Notification.Name(SPMetaController._artistMetaEventName)
-    ///Album metadata update event. Payload contains in notification.object with type 'SPMetadataAlbum'
-    public static let SPAlbumMetaUpdate = Notification.Name(SPMetaController._albumMetaEventName)
-    ///Playlist metadata update event. Payload contains in notification.object with type 'SPPlaylist'
-    public static let SPPlaylistMetaUpdate = Notification.Name(SPMetaController._playlistMetaEventName)
-    ///Track metadata update event. Payload contains in notification.object with type 'SPMetadataTrack'
-    public static let SPTrackMetaUpdate = Notification.Name(SPMetaController._trackMetaEventName)
-}
-
-extension Notification {
-    public func tryParseArtistMetaUpdate() -> (Bool, SPMetadataArtist?) {
-        if let meta = object as? SPMetadataArtist, name == Notification.Name.SPArtistMetaUpdate {
-            return (true, meta)
-        }
-        return (false, nil)
-    }
-    
-    public func tryParseAlbumMetaUpdate() -> (Bool, SPMetadataAlbum?) {
-        if let meta = object as? SPMetadataAlbum, name == Notification.Name.SPAlbumMetaUpdate {
-            return (true, meta)
-        }
-        return (false, nil)
-    }
-    
-    public func tryParsePlaylistMetaUpdate() -> (Bool, SPPlaylist?) {
-        if let meta = object as? SPPlaylist, name == Notification.Name.SPPlaylistMetaUpdate {
-            return (true, meta)
-        }
-        return (false, nil)
-    }
-    
-    public func tryParseTrackMetaUpdate() -> (Bool, SPMetadataTrack?) {
-        if let meta = object as? SPMetadataTrack, name == Notification.Name.SPTrackMetaUpdate {
-            return (true, meta)
-        }
-        return (false, nil)
     }
 }

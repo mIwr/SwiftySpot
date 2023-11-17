@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 50 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 51 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -400,6 +400,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var trackInfoReleaseYear: RswiftResources.StringResource { .init(key: "trackInfoReleaseYear", tableName: "Localizable", source: source, developmentValue: "Release Year", comment: nil) }
+
+      /// en translation: Unable to load track lyrics
+      ///
+      /// Key: trackLyricsLoadError
+      ///
+      /// Locales: en, ru
+      var trackLyricsLoadError: RswiftResources.StringResource { .init(key: "trackLyricsLoadError", tableName: "Localizable", source: source, developmentValue: "Unable to load track lyrics", comment: nil) }
     }
   }
 
@@ -438,7 +445,7 @@ struct _R {
     var tertiary: RswiftResources.ColorResource { .init(name: "Tertiary", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 31 images.
+  /// This `_R.image` struct is generated, and contains static references to 32 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -531,6 +538,9 @@ struct _R {
 
     /// Image `IcShuffleFill`.
     var icShuffleFill: RswiftResources.ImageResource { .init(name: "IcShuffleFill", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `IcTrackLyrics`.
+    var icTrackLyrics: RswiftResources.ImageResource { .init(name: "IcTrackLyrics", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `PreviewCover`.
     var previewCover: RswiftResources.ImageResource { .init(name: "PreviewCover", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

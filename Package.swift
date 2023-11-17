@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "SwiftySpot", dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")]),
-        .testTarget(name: "SwiftySpotLocalTests", dependencies: ["SwiftySpot"], exclude: ["TestConstansXCodeEnvExt.swift"], resources: [
+        .testTarget(name: "SwiftySpotLocalTests", dependencies: ["SwiftySpot"], exclude: ["TestConstantsXCodeEnvExt.swift"], resources: [
             .process("albumsMetaReq.protobuf"),
             .process("albumsMetaResponse.protobuf"),
             .process("artistsMetaReq.protobuf"),
@@ -36,6 +36,7 @@ let package = Package(
             .process("playlistResponse.protobuf"),
             .process("searchAutocompleteResponse.protobuf"),
             .process("searchResponse.protobuf"),
+            .process("trackLyricsResponse.protobuf"),
             .process("tracksMetaReq.protobuf"),
             .process("tracksMetaResponse.protobuf"),
         ]),

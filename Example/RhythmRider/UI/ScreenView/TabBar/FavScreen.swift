@@ -137,7 +137,7 @@ struct FavScreen: View {
                 return
             }
             guard let collectionItem = parseRes.1 else {return}
-            if let safeLocalMeta = api.client.metaStorage.findTrack(uri: collectionItem.uri) {
+            if let safeLocalMeta = api.client.tracksMetaStorage.find(uri: collectionItem.uri) {
                 _favTracks.applyOnTrackLikeUpdate(collectionItem: collectionItem, meta: safeLocalMeta)
                 return
             }
@@ -200,20 +200,17 @@ struct FavScreen: View {
         if (_favTracks.orderedPlayUris.isEmpty) {
             let success = await withCheckedContinuation { continuation in
                 api.client.getLikedTracks(pageLimit: SPCollectionController.defaultPageSize, pageToken: nil) { result in
-                    do {
-                        let collection = try result.get()
+                    switch(result) {
+                    case .success(let collection):
                         self._favTracks.setLikesData(orderedLikedUris: collection.items.sorted { a, b in
                             return a.addedTs > b.addedTs
                         }.map({ collectionItem in
                             return collectionItem.uri
                         }))
                         continuation.resume(returning: true)
-                    } catch {
-                        if let spErr = error as? SPError {
-                            _errMsg = spErr.errorDescription
-                        } else {
-                            _errMsg = error.localizedDescription
-                        }
+                        return
+                    case .failure(let error):
+                        _errMsg = error.errorDescription
                         continuation.resume(returning: false)
                     }
                 }
@@ -223,7 +220,7 @@ struct FavScreen: View {
                 return
             }
         }
-        _favTracks.updateMeta(api.client.metaStorage.findTracks(uris: _favTracks.noDetailsUris))
+        _favTracks.updateMeta(api.client.tracksMetaStorage.findAsDict(uris: _favTracks.noDetailsUris))
         let noInfoTracks = _favTracks.orderedNoDetailsUris
         let resolved = !_favTracks.orderedPlayUris.isEmpty && noInfoTracks.count == 0
         if (resolved) {
@@ -239,17 +236,15 @@ struct FavScreen: View {
         }
         let metaLoadSuccess = await withCheckedContinuation { continuation in
             api.client.getTracksDetails(trackUris: metaChunkTask) { metaRes in
-                do {
-                    let meta = try metaRes.get()
+                switch(metaRes) {
+                case .success(let meta):
                     self._favTracks.updateMeta(meta)
                     continuation.resume(returning: true)
-                } catch {
-                    if let spErr = error as? SPError {
-                        _errMsg = spErr.errorDescription
-                    } else {
-                        _errMsg = error.localizedDescription
-                    }
+                    return
+                case .failure(let error):
+                    _errMsg = error.errorDescription
                     continuation.resume(returning: false)
+                    return
                 }
             }
         }
@@ -262,12 +257,12 @@ struct FavScreen: View {
             return
         }
         api.client.getLikedTracks(pageLimit: pageLimit, pageToken: pageToken) { result in
-            do {
-                _ = try result.get()
+            switch (result) {
+            case .success:
                 let uris = api.client.likedTracksStorage.orderedItems.map({ item in
                     return item.uri
                 })
-                self._favTracks.updateMeta(api.client.metaStorage.findTracks(uris: Set<String>(uris)))
+                self._favTracks.updateMeta(api.client.tracksMetaStorage.findAsDict(uris: Set<String>(uris)))
                 self._favTracks.setLikesData(orderedLikedUris: uris)
                 let noInfoTracks = self._favTracks.orderedNoDetailsUris
                 if (noInfoTracks.isEmpty) {
@@ -281,10 +276,12 @@ struct FavScreen: View {
                     metaChunkTask.append(contentsOf: noInfoTracks.prefix(Int(SPCollectionController.defaultPageSize)))
                 }
                 self.loadPageMetaChunk(trackUris: metaChunkTask)
-            } catch {
+                return
+            case .failure:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     _loadingNextPage = false
                 }
+                return
             }
         }
     }
@@ -295,16 +292,17 @@ struct FavScreen: View {
             return
         }
         api.client.getTracksDetails(trackUris: trackUris) { metaRes in
-            do {
-                let meta = try metaRes.get()
+            switch(metaRes) {
+            case .success(let meta):
                 self._favTracks.updateMeta(meta)
                 _loadingNextPage = false
-            } catch {
+                return
+            case .failure:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     _loadingNextPage = false
                 }
+                return
             }
-            
         }
     }
 }

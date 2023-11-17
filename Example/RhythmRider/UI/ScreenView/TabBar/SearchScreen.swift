@@ -123,6 +123,7 @@ struct SearchScreen: View {
                                         return
                                     }
     #endif
+                                    UIApplication.shared.endEditing()
                                     let playOp = {
                                         if (playController.playingTrackUri == uri) {
                                             return

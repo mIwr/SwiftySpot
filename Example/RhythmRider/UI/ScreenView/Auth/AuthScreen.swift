@@ -78,18 +78,14 @@ struct AuthScreen: View {
     #endif
                     api.client.auth(login: _login, password: _pass) { result in
                         _processing = false
-                        do {
-                            let session = try result.get()
-                            if (!session.token.isEmpty) {
+                        switch (result) {
+                        case .success(let session):
+                            if (session.token.isEmpty) {
                                 _err = R.string.localizable.authLoginNoAuthToken()
                                 return
                             }
-                        } catch {
-                            if let spErr = error as? SPError {
-                                _err = spErr.errorDescription
-                                return
-                            }
-                            _err = error.localizedDescription
+                        case .failure(let error):
+                            _err = error.errorDescription
                         }
                     }
                 }) {

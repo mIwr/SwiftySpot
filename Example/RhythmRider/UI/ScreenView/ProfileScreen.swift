@@ -129,12 +129,14 @@ struct ProfileScreen: View {
     fileprivate func loadData() async -> Bool {
         return await withCheckedContinuation { continuation in
             api.client.getProfileInfo { result in
-                do {
-                    let info = try result.get()
+                switch(result) {
+                case .success(let info):
                     self._profileInfo.profile = info
                     continuation.resume(returning: true)
-                } catch {
+                    return
+                case .failure:
                     continuation.resume(returning: false)
+                    return
                 }
             }
         }

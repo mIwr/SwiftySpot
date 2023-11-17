@@ -218,4 +218,11 @@ extension SPClient {
             return likedDislikedTracksStorage.disliked
         }
     }
+    ///Spotify meta repository
+    @available(*, deprecated, message: "Starting from 0.5.0 will be removed. Use separated meta storages instead")
+    public var metaStorage: SPMetaController {
+        get {
+            return _metaStorage
+        }
+    }
 }

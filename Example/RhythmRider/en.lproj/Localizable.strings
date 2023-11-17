@@ -30,6 +30,8 @@
 "trackInfoArtists" = "Artists";
 "trackInfoDuration" = "Duration";
 
+"trackLyricsLoadError" = "Unable to load track lyrics";
+
 "favTitle" = "Favourite";
 "favLikedTracks" = "Liked tracks";
 "favUserPlaylists" = "Playlists";

@@ -123,6 +123,16 @@ public class SPMetadataTrack: SPTypedObj {
         super.init(globalID: gid, type: .track)
     }
     
+    public func findPreviewAudioFile(codec: SPMetadataAudioFormat) -> SPMetadataAudioFile? {
+        for variant in previews {
+            if (variant.format != codec) {
+                continue
+            }
+            return variant
+        }
+        return nil
+    }
+    
     public func findAudioFile(codec: SPMetadataAudioFormat) -> SPMetadataAudioFile? {
         for variant in files {
             if (variant.format != codec) {

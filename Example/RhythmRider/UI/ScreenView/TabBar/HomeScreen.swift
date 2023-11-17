@@ -81,19 +81,22 @@ struct HomeScreen: View {
     fileprivate func loadData() async -> Bool {
         return await withCheckedContinuation { continuation in
             api.client.getLandingData { result in
-                do {
-                    let info = try result.get()
+                switch (result) {
+                case.success(let info):
                     if (_playlists.mayRefresh && _playlists.updSeqTsUTC != 0) {
                         //Remove outdated playlist data from meta repository
-                        api.client.metaStorage.removeOutdatedPlaylists(info.playlists.map({ playlist in
+                        let set = Set<String>(info.playlists.map({ playlist in
                             return playlist.uri
                         }))
+                        api.client.playlistsMetaStorage.remove(uris: set)
                     }
                     _playlists.setLandingPlaylists(info.playlists)
                     continuation.resume(returning: true)
-                } catch {
-                    _errMsg = error.localizedDescription
+                    return
+                case .failure(let error):
+                    _errMsg = error.errorDescription
                     continuation.resume(returning: false)
+                    return
                 }
             }
         }

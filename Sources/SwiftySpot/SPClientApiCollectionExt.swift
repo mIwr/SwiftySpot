@@ -1,5 +1,5 @@
 //
-//  SPClientApiFav.swift
+//  SPClientApiCollectionExt.swift
 //  SwiftySpot
 //
 //  Created by Developer on 25.09.2023.

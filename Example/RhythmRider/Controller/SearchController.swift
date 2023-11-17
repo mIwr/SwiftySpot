@@ -52,8 +52,8 @@ class SearchController: ObservableObject {
         searchEntityTypes = searchTypes
         return await withCheckedContinuation { continuation in
             api.search(query: searchQuery, entityTypes: searchTypes, limit: _pageLimit, pageToken: _pageToken) { result in
-                do {
-                    let searchRes = try result.get()
+                switch(result) {
+                case .success(let searchRes):
                     DispatchQueue.main.async {
                         if (self.searchQuery != query || self.searchEntityTypes != searchTypes) {
                             self.results = searchRes.hits
@@ -75,8 +75,10 @@ class SearchController: ObservableObject {
                         self._pageToken = searchRes.nextPageToken
                     }
                     continuation.resume(returning: searchRes)
-                } catch {
+                    return
+                case .failure:
                     continuation.resume(returning: nil)
+                    return
                 }
             }
         }
@@ -91,8 +93,8 @@ class SearchController: ObservableObject {
         searchEntityTypes = searchTypes
         return await withCheckedContinuation { continuation in
             api.searchSuggestion(query: searchQuery, entityTypes: searchTypes, limit: _pageLimit) { result in
-                do {
-                    let searchRes = try result.get()
+                switch(result) {
+                case .success(let searchRes):
                     //No page tokens -> always new collection
                     DispatchQueue.main.async {
                         self.results = searchRes.hits
@@ -102,8 +104,10 @@ class SearchController: ObservableObject {
                         continuation.resume(returning: searchRes)
                     }
                     self.seqPlayable = false
-                } catch {
+                    return
+                case .failure:
                     continuation.resume(returning: nil)
+                    return
                 }
             }
         }
@@ -128,7 +132,7 @@ class SearchController: ObservableObject {
         }
         let ordered = orderedPlaySeqUris
         let urisSet = Set<String>(ordered)
-        let playable = api.metaStorage.findTracks(uris: urisSet)
+        let playable = api.tracksMetaStorage.findAsDict(uris: urisSet)
         var notFoundUris: [String] = []
         for uri in ordered {
             if (playable.contains(where: { (k,v) in
@@ -154,8 +158,8 @@ class SearchController: ObservableObject {
         //Load meta
         await withCheckedContinuation { continuation in
             api.getTracksDetails(trackUris: notFoundUris) { result in
-                do {
-                    let metaRes = try result.get()
+                switch(result) {
+                case .success(let metaRes):
                     var res: [PlaybackTrack] = []
                     for uri in ordered {
                         if let safeLocalMeta = playable[uri] {
@@ -170,7 +174,10 @@ class SearchController: ObservableObject {
                     DispatchQueue.main.async {
                         self.playSeq = seq
                     }
-                } catch {}
+                    break
+                case .failure:
+                    break
+                }
                 continuation.resume()
             }
         }

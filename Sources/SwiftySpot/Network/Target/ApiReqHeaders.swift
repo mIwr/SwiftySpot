@@ -114,6 +114,19 @@ extension ApiTarget {
             dict["App-Platform"] = os
             dict["Spotify-App-Version"] = appVer
             return dict
+        case .lyrics(let userAgent, let clToken, let authToken, let os, let appVer, let clId, _, _, _, _, _):
+            let dict: [String: String] = [
+                "Accept-Encoding": "gzip",
+                "Accept": "application/protobuf",
+                "User-Agent": userAgent,
+                "client-token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+                "X-Client-Id": clId
+            ]
+            return dict
+        case .lyricsReserve: return [:]
         case .collection(let userAgent, let clToken, let authToken, let os, let appVer, _):
             var dict = ApiTarget._protobufCollectionDict
             dict["User-Agent"] = userAgent
