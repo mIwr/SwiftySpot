@@ -33,10 +33,13 @@ struct TrackLyricsScreen: View {
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: 8) {
-                        ForEach(_trackLyrics.lyrics?.content ?? [], id: \.startTimeMs) { lyricsLine in
-                            Text(lyricsLine.syncedFormattedText)
-                                .font(.body)
-                                .foregroundColor(Color(R.color.primary))
+                        if let safeLyrics = _trackLyrics.lyrics?.formattedLyricsLines, !safeLyrics.isEmpty, _loaded == true {
+                            ForEach(0...safeLyrics.count - 1, id: \.self) { index in
+                                let line = safeLyrics[index]
+                                Text(line)
+                                    .font(.body)
+                                    .foregroundColor(Color(R.color.primary))
+                            }
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

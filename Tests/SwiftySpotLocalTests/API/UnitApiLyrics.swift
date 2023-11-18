@@ -21,8 +21,14 @@ final class UnitApiLyrics: XCTestCase {
         XCTAssertNotEqual(lyrics?.lyrics.lines.count, 0, "Incorrect lyrics proto parsing")
     }
     
-    func testLocalJsonResponseParse() {
-        let info = SPLyrics.from(json: TestConstants.dummyLyricsInfo, target: SPTypedObj(uri: "uri:123", globalID: []))
+    func testLocalSyncedJsonResponseParse() {
+        let info = SPLyrics.from(json: TestConstants.dummySyncedLyricsInfo, target: SPTypedObj(uri: "uri:123", globalID: []))
         XCTAssertNotNil(info, "Lyrics model parsing error: decode result is nil")
+    }
+    
+    func testLocalUnsyncedJsonResponseParse() {
+        let info = SPLyrics.from(json: TestConstants.dummyUnsyncedLyricsInfo, target: SPTypedObj(uri: "uri:123", globalID: []))
+        XCTAssertNotNil(info, "Lyrics model parsing error: decode result is nil")
+        XCTAssertNotEqual(info?.content.count, 0, "Lyrics lines content array is empty")
     }
 }

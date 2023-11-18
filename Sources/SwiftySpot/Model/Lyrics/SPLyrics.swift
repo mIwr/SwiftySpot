@@ -55,22 +55,26 @@ public class SPLyrics {
     ///TODO
     public let showUpsell: Bool
     
-    public var syncedFullLyricsText: String {
-        var text = ""
-        for line in content {
-            text += line.syncedFormattedText + "\n"
+    public var formattedLyricsLines: [String] {
+        var lines: [String] = [String].init(repeating: "", count: content.count)
+        if (syncType == .unsynced) {
+            for i in 0...lines.count - 1 {
+                lines[i] = content[i].text
+            }
+        } else {
+            for i in 0...lines.count - 1 {
+                lines[i] = content[i].syncedFormattedText
+            }
         }
-        return text
+        return lines
     }
     
-    public var unsyncedFullLyricsText: String {
-        get {
-            var text = ""
-            for line in content {
-                text += line.text + "\n"
-            }
-            return text
+    public var formattedFullLyricsText: String {
+        var text = ""
+        for line in formattedLyricsLines {
+            text += line + "\n"
         }
+        return text
     }
     
     public init(target: SPTypedObj, colorData: SPLyricsColorData, vocalRemoval: Bool, vocalRemovalColorData: SPLyricsColorData?, syncType: SPLyricsSyncType, content: [SPLyricsLine], provider: String, providerID: String, providerDisplayName: String, syncLyricsUri: String, alternatives: [SPLyricsAlternative], lang: String, rtlLang: Bool, showUpsell: Bool) {
@@ -121,7 +125,7 @@ public class SPLyrics {
                 lines.append(parsed)
             } catch {
                 #if DEBUG
-                print("Unable parse Lyrics line", error)
+                print("Unable to parse lyrics line", error)
                 #endif
                 continue
             }

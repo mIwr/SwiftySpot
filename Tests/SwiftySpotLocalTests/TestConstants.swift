@@ -9,7 +9,7 @@
 
 import Foundation
 
-class TestConstants {
+final class TestConstants {
     
     static let device = SPDevice(os: "Android", osVer: "6.0.1", osVerNum: 23, cpuAbi: "32", manufacturer: "Samsung", model: "GT-I9500", deviceId: "e4615d56333747b9")
     
@@ -88,7 +88,7 @@ class TestConstants {
         "push-notifications": false,
     ]
     
-    static let dummyLyricsInfo: [String: Any] = [
+    static let dummySyncedLyricsInfo: [String: Any] = [
         "error":false,
         "syncType":"LINE_SYNCED",
         "lines": [
@@ -100,6 +100,27 @@ class TestConstants {
             ["startTimeMs":"32800","words":"And tonight had something wonderful","syllables":[],"endTimeMs":"0"],
             ["startTimeMs":"39250","words":"My bad habits lead to late nights endin' alone","syllables":[],"endTimeMs":"0"],
             ["startTimeMs":"43250","words":"Conversations with a stranger I barely know","syllables":[],"endTimeMs":"0"]
+        ]
+    ]
+    
+    static let dummyUnsyncedLyricsInfo: [String: Any] = [
+        "error":false,
+        "syncType":"UNSYNCED",
+        "lines":[
+            ["startTimeMs":"0","words":"Why are we fighting","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"What do we seek","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"In a heart that's been broken","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Rebuilt by machines","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Is there anyone there?","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"My signal is weak","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"I'm fighting my conscience in a dreamless sleep","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Cuz i'm losing my patience","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"And i'm getting complacent","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Shake my foundation to its core","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"You make me feel like i'm walking on water","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"And you make me question what i'm building these walls for","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Was it your intention to give my spirit a home","syllables":[],"endTimeMs":"0"],
+            ["startTimeMs":"0","words":"Before i let you light my bones on fire","syllables":[],"endTimeMs":"0"]
         ]
     ]
 }
