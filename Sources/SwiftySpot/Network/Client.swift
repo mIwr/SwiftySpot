@@ -32,17 +32,17 @@ func buildRequest(for method: ApiTarget) -> URLRequest? {
 }
 
 ///Send request and try parse as base SPResponse
-func requestSPResponse(_ request: URLRequest, completion: @escaping (_ result: Result<SPResponse, SPError>) -> Void) {
+func requestSPResponse(_ request: URLRequest, completion: @escaping (_ result: Result<SPResponse, SPError>) -> Void) -> URLSessionDataTask {
     let task = URLSession.shared.dataTask(with: request)
     {
         (data, response, error) in
         let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
         guard let responseData = data else {
-            if let g_error = error
-            {
-                completion(.failure(.badResponseData(errCode: statusCode, data: ["description": g_error])))
+            guard let safeErr = error else {
+                completion(.failure(.badResponseData(errCode: statusCode, data: ["description": "Unknown response error"])))
+                return
             }
-            completion(.failure(.badResponseData(errCode: statusCode, data: ["description": "Unknown response error"])))
+            completion(.failure(.badResponseData(errCode: statusCode, data: ["description": safeErr])))
             return
         }
 #if DEBUG
@@ -54,10 +54,11 @@ func requestSPResponse(_ request: URLRequest, completion: @escaping (_ result: R
         completion(.success(spResponse))
     }
     task.resume()
+    return task
 }
 
 ///Send request and try parse as Data instance
-func requestData(_ request: URLRequest, completion: @escaping (_ result: Result<Data, SPError>) -> Void) {
+func requestData(_ request: URLRequest, completion: @escaping (_ result: Result<Data, SPError>) -> Void) -> URLSessionDataTask {
     let task = URLSession.shared.dataTask(with: request)
     {
         (data, response, error) in
@@ -82,10 +83,11 @@ func requestData(_ request: URLRequest, completion: @escaping (_ result: Result<
         completion(.success(responseData))
     }
     task.resume()
+    return task
 }
 
 ///Send request and try parse as pair of Data instance and response headers
-func requestDataWithHeaders(_ request: URLRequest, completion: @escaping (_ result: Result<(Data, [String: String]), SPError>) -> Void) {
+func requestDataWithHeaders(_ request: URLRequest, completion: @escaping (_ result: Result<(Data, [String: String]), SPError>) -> Void) -> URLSessionDataTask {
     let task = URLSession.shared.dataTask(with: request)
     {
         (data, response, error) in
@@ -111,10 +113,11 @@ func requestDataWithHeaders(_ request: URLRequest, completion: @escaping (_ resu
         completion(.success((responseData, headers)))
     }
     task.resume()
+    return task
 }
 
 ///Send request and try parse as json
-func requestJson(_ request: URLRequest, completion: @escaping (_ result: Result<[String: Any], SPError>) -> Void) {
+func requestJson(_ request: URLRequest, completion: @escaping (_ result: Result<[String: Any], SPError>) -> Void) -> URLSessionDataTask {
     let task = URLSession.shared.dataTask(with: request)
     {
         (data, response, error) in
@@ -149,4 +152,5 @@ func requestJson(_ request: URLRequest, completion: @escaping (_ result: Result<
         }
     }
     task.resume()
+    return task
 }

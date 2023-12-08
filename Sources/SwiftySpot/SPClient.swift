@@ -46,7 +46,6 @@ public class SPClient {
     var likedDislikedAlbumsStorage: SPLikeController
     ///User tracks collection
     var likedDislikedTracksStorage: SPLikeController
-    var _metaStorage: SPMetaController
     ///Spotify artists meta repository
     public var artistsMetaStorage: SPMetaInfoController<SPMetadataArtist>
     ///Spotify albums meta repository
@@ -88,7 +87,6 @@ public class SPClient {
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         likedDislikedTracksStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))
-        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
         artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
         albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
         playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
@@ -133,7 +131,6 @@ public class SPClient {
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         likedDislikedTracksStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))
-        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
         artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
         albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
         playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
@@ -188,7 +185,6 @@ public class SPClient {
         apHosts = []
         dealerHosts = []
         spclientHosts = []
-        _metaStorage = SPMetaController(artists: artistsMeta, albums: albumsMeta, tracks: tracksMeta, playlists: playlistsMeta)
         artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
         albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
         playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)

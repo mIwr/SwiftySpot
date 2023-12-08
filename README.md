@@ -42,7 +42,7 @@ Spotify API swift implementation
 
 The library provides an interface for interacting with the Spotify API
 
-macOS 10.13+ and iOS 11.0+ are supported by the module.
+macOS 10.13+ and iOS 11.0+ are supported by the module. Other platforms (watchOS, tvOS, Windows, Linux, Android) have experimental support
 
 For work with Spotify API need:
 
@@ -52,12 +52,12 @@ For work with Spotify API need:
 
 ## Setup
 
-### SwiftPM
+### Swift Package Manager
 
-SwiftySpot is available through SPM (Swift Package Manager)
+SwiftySpot is available with SPM
 
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.4.11"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.0"))
 ```
 
 ### CocoaPods
@@ -88,7 +88,7 @@ Client has 3 states:
 2) Client with session and without authorization
 3) Client with session and authorization, including state without access token, but with refresh credential
 
-**SPClient manages the session itself: Initialize (client session) or refresh (client session and auth token) if needed**
+**SPClient manages the session itself: Initializes (client session) or refreshes (client session and auth token) if needed**
 
 ### Client initialization. State 1
 
@@ -124,7 +124,7 @@ Available API method - Authorize with credentials
 ```swift
 import SwiftySpot
 
-let device = SPDevice(os: "osName", osVer: "os version, osVerNum: {os number}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
+let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {osNumber}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
 
 let clToken = "..."
 let clExpires = 3600
@@ -157,13 +157,13 @@ Metadata from manager can be provided 3 ways:
 
 ```swift
 let trackNavUri = "spotify:track:123
-let track: SPMetadataTrack? = client.metaStorage.findTrack(uri: trackNavUri)
+let track: SPMetadataTrack? = client.tracksMetaStorage.find(uri: trackNavUri)
 ```
 
 2. Through manager instance properties, which return all available data:
 
 ```swift
-let allAlbumsMeta: [SPMetadataAlbum] = client.metaStorage.cachedAlbumsMeta
+let allAlbumsMeta: [SPMetadataAlbum] = client.albumsMetaStorage.items
 ```
 
 3. Through *NotificationCenter* update events
@@ -173,7 +173,6 @@ let allAlbumsMeta: [SPMetadataAlbum] = client.metaStorage.cachedAlbumsMeta
 | SPArtistMetaUpdate   | SPArtistMetaUpdate   | SPMetadataArtist | API client received artist meta   |
 | SPAlbumMetaUpdate    | SPAlbumMetaUpdate    | SPMetadataAlbum  | API client received album meta    |
 | SPPlaylistMetaUpdate | SPPlaylistMetaUpdate | SPPlaylist       | API client received playlist meta |
-| SPTrackMetaUpdate    | SPTrackMetaUpdate    | SPMetadataTrack  | API client received track meta    |
 | SPTrackMetaUpdate    | SPTrackMetaUpdate    | SPMetadataTrack  | API client received track meta    |
 | SPLyricsUpdate       | SPLyricsUpdate       | SPLyrics         | API client received lyrics info   |
 
@@ -247,7 +246,7 @@ The first variable in pair (Bool) is parse status. 'True' value means that the n
 
 ### Start landing (Dac request)
 
-Spotify Dac object contains screen design info and payload data with playlists. SPClient extracts playlists from response and push them to completion handler.
+Spotify Dac object contains screen design info and payload data with playlists. SPClient extracts playlists from response and pushes them to completion handler.
 
 ```swift
 client.getLandingData { result in
@@ -270,7 +269,7 @@ Track metadata also contains codecs download info, which can be used to retrieve
 
 ### Track download info
 
-**Although each spotify track has many codec variants to download (ogg, mp3, mp4, flac and others), only OGG files can be downloaded (Free - 96, 160 kbps, Premium - 320 kbps)**
+**Although each spotify track has many codec variants for download (ogg, mp3, mp4, flac and others), only OGG files can be downloaded (Free - 96, 160 kbps, Premium - 320 kbps)**
 
 ```swift
 let fileIdHex = "..."//From track audio file metadata

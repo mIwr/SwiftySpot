@@ -20,7 +20,7 @@ final class UnitRemoteApiLyrics: XCTestCase {
 
     func testGetTrackLyricsInfo() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getTrackLyrics(TestConstants.trackIdWithLyrics) { result in
+        _ = client.getTrackLyrics(TestConstants.trackIdWithLyrics) { result in
             do {
                 let lyrics = try result.get()
                 XCTAssertNotNil(lyrics, "Lyrics not found for track")

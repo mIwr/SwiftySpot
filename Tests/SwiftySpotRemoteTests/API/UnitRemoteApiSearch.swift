@@ -20,7 +20,7 @@ final class UnitRemoteApiSearch: XCTestCase {
     
     func testSearch() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.search(query: "vita", entityTypes: [.artist, .track, .album], limit: 10, pageToken: nil) { result in
+        _ = client.search(query: "vita", entityTypes: [.artist, .track, .album], limit: 10, pageToken: nil) { result in
             do {
                 let searchRes = try result.get()
                 XCTAssertTrue(!searchRes.hits.isEmpty, "Search results is empty")
@@ -42,7 +42,7 @@ final class UnitRemoteApiSearch: XCTestCase {
     
     func testSearchSuggestion() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.searchSuggestion(query: "vita", entityTypes: [.artist, .track, .album], limit: 20) { result in
+        _ = client.searchSuggestion(query: "vita", entityTypes: [.artist, .track, .album], limit: 20) { result in
             do {
                 let suggestionRes = try result.get()
                 XCTAssertTrue(!suggestionRes.hits.isEmpty, "Search results is empty")

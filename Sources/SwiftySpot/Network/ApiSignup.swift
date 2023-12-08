@@ -7,16 +7,16 @@
 
 import Foundation
 
-func validateSignupByApi(userAgent: String, clToken: String, os: String, appVer: String, validatorKey: String, password: String?, completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) {
+func validateSignupByApi(userAgent: String, clToken: String, os: String, appVer: String, validatorKey: String, password: String?, completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     guard let req = buildRequest(for: .signupValidate(userAgent: userAgent, clToken: clToken, os: os, appVer: appVer, validatorKey: validatorKey, password: password)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build signup validation request")))
-        return
+        return nil
     }
-    requestJson(req) { result in
+    let task = requestJson(req) { result in
         do {
             let json = try result.get()
             let data = try JSONSerialization.data(withJSONObject: json)
@@ -27,18 +27,19 @@ func validateSignupByApi(userAgent: String, clToken: String, os: String, appVer:
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func signupByApi(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: Com_Spotify_Signup_V2_Proto_CreateAccountRequest, completion: @escaping (Result<Com_Spotify_Signup_V2_Proto_CreateAccountResponse, SPError>) -> Void) {
+func signupByApi(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: Com_Spotify_Signup_V2_Proto_CreateAccountRequest, completion: @escaping (Result<Com_Spotify_Signup_V2_Proto_CreateAccountResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     guard let req = buildRequest(for: .signup(userAgent: userAgent, clToken: clToken, os: os, appVer: appVer, clId: clId, proto: proto)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build signup request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let safeData = response.result else {
@@ -52,4 +53,5 @@ func signupByApi(userAgent: String, clToken: String, os: String, appVer: String,
             completion(.failure(parsed))
         }
     }
+    return task
 }

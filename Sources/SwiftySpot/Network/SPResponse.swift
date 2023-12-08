@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Represents low-level parsed response from back-end
+///Represents low-level parsed protobuf response from back-end
 public class SPResponse {
     
     ///Response status code

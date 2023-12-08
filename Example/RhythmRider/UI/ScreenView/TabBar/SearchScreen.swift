@@ -60,6 +60,7 @@ struct SearchScreen: View {
                     })
                 }))
                 .keyboardType(.default)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 Button(action: {
                     if (_inputQuery == "") {
                         return
@@ -158,13 +159,13 @@ struct SearchScreen: View {
                         .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
                     }
                 }
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
             }
             
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .onTapGesture {
-            UIApplication.shared.endEditing()
-        }
     }
     
     fileprivate func refreshApiSuggestionSearch() async {

@@ -14,7 +14,7 @@ final class UnitRemoteApiSession: XCTestCase {
     
     func testRefreshClientToken() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.refreshClientToken { result in
+        _ = client.refreshClientToken { result in
             do {
                 let clToken = try result.get()
                 XCTAssertTrue(!clToken.val.isEmpty, "Client token is empty")

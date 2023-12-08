@@ -7,24 +7,24 @@
 
 import Foundation
 
-func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_AutocompleteViewResponse, SPError>) -> Void) {
+func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_AutocompleteViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (query.isEmpty || limit == 0) {
         completion(.success(Com_Spotify_Searchview_Proto_AutocompleteViewResponse()))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     guard let req: URLRequest = buildRequest(for: .searchSuggestion(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build search suggestion request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -38,26 +38,27 @@ func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func searchByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_MainViewResponse, SPError>) -> Void) {
+func searchByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_MainViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (query.isEmpty || limit == 0) {
         completion(.success(Com_Spotify_Searchview_Proto_MainViewResponse()))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     guard let req: URLRequest = buildRequest(for: .search(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit, pageToken: pageToken)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build search request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -71,4 +72,5 @@ func searchByApi(userAgent: String, clToken: String, authToken: String, os: Stri
             completion(.failure(parsed))
         }
     }
+    return task
 }

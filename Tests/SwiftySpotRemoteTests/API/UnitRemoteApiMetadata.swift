@@ -21,7 +21,7 @@ final class UnitRemoteApiMetadata: XCTestCase {
     func testGetTrackMetadata() {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId)
-        client.getTracksDetails(trackUris: [uri]) { result in
+        _ = client.getTracksDetails(trackUris: [uri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")
@@ -46,7 +46,7 @@ final class UnitRemoteApiMetadata: XCTestCase {
     func testGetAlbumMetadata() {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateAlbumUri(id: TestConstants.albumId)
-        client.getAlbumsDetails(albumUris: [uri]) { result in
+        _ = client.getAlbumsDetails(albumUris: [uri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")
@@ -71,7 +71,7 @@ final class UnitRemoteApiMetadata: XCTestCase {
     func testGetArtistMetadata() {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateArtistUri(id: TestConstants.artistId)
-        client.getArtistsDetails(artistUris: [uri]) { result in
+        _ = client.getArtistsDetails(artistUris: [uri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")

@@ -9,32 +9,30 @@ import Foundation
 import SwiftProtobuf
 
 extension SPClient {
-
-  ///Extract playlists from landing page
-  ///- Parameter completion: Extracted landing data response handler
-    public func getLandingData(completion: @escaping (_ result: Result<SPLandingData, SPError>) -> Void) {
-        guard let safeClToken = clientToken, let safeAuthToken = authToken else {
-            safeAuthReq { safeClToken, safeAuthToken in
-                self.getLandingData(completion: completion)
+    
+    ///Extract playlists from landing page
+    ///- Parameter completion: Extracted landing data response handler
+    ///- Returns: API request session task
+    public func getLandingData(completion: @escaping (_ result: Result<SPLandingData, SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthReq { safeClToken, safeAuthToken in
+            var clientInfo = Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo()
+            clientInfo.appName = self.device.os.uppercased() + "_MUSIC_APP"
+            clientInfo.version = self.appVersionCode
+            let timezone = TimeZone.current.identifier
+            let task = getLandingByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, clientInfo: clientInfo, facetUri: "default", timezone: timezone) { result in
+                do {
+                    let pbResponse = try result.get()
+                    let playlists = self.extractPlaylistsFromDac(pbResponse)
+                    completion(.success(SPLandingData(playlists: playlists)))
+                } catch {
+    #if DEBUG
+                    print(error)
+    #endif
+                    let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                    completion(.failure(parsed))
+                }
             }
-            return
-        }
-        var clientInfo = Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo()
-        clientInfo.appName = device.os.uppercased() + "_MUSIC_APP"
-        clientInfo.version = appVersionCode
-        let timezone = TimeZone.current.identifier
-        getLandingByApi(userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, clId: clientId, clientInfo: clientInfo, facetUri: "default", timezone: timezone) { result in
-            do {
-                let pbResponse = try result.get()
-                let playlists = self.extractPlaylistsFromDac(pbResponse)
-                completion(.success(SPLandingData(playlists: playlists)))
-            } catch {
-#if DEBUG
-                        print(error)
-#endif
-                        let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
-                        completion(.failure(parsed))
-            }
+            return task
         }
     }
     
@@ -48,9 +46,9 @@ extension SPClient {
         var releaseRadar: SPLandingPlaylist?
         var dailyMixes: [SPLandingPlaylist] = []
         if (!dac.component.isA(Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent.self)) {
-            #if DEBUG
+#if DEBUG
             print("Unknown top-level type URL: " + dac.component.typeURL)
-            #endif
+#endif
             return playlists
         }
         do {

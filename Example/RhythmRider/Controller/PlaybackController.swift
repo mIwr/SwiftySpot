@@ -320,28 +320,24 @@ class PlaybackController: NSObject, ObservableObject {
     }
     
     func playNextTrack() -> Bool {
-        if (_currIndex + 1 >= _stockPlayItemsSeq.count && !repeatSeq) {
-            //Index is bigger than playback seq count -> false
-            return false
-        }
-        if (_stockPlayItemsSeq.isEmpty) {
+        if (_stockPlayItemsSeq.isEmpty || (_currIndex + 1 >= _stockPlayItemsSeq.count && !repeatSeq)) {
             return false
         }
         var newIndex = (_currIndex + 1) % _stockPlayItemsSeq.count
         if (_appProps.playbackSkipDisliked) {
             //Skip next disliked tracks
             var skipDislikesIndex = newIndex
-            var sucess = false
+            var success = false
             for _ in 0..._stockPlayItemsSeq.count - 1 {
                 let playItem = playItemsSeq[playSeqIndicies[skipDislikesIndex]]
                 if let _ = _apiClient.dislikedTracksStorage.find(uri: playItem.uri) {
                     skipDislikesIndex = (skipDislikesIndex + 1) % _stockPlayItemsSeq.count
                     continue
                 }
-                sucess = true
+                success = true
                 break
             }
-            if (sucess) {
+            if (success) {
                 newIndex = skipDislikesIndex
             } else {
                 notifyPlayStateUpdate(playing: false)
@@ -452,6 +448,8 @@ class PlaybackController: NSObject, ObservableObject {
         if (_appProps.trafficEconomy || file == nil) {
             file = safePlayingTrack.trackMeta.findAudioFile(codec: .OGG_VORBIS_96)
         }
+        _vlcPlayer.stop()
+        _vlcPlayer.media = nil
         _vlcPlayerTimeLastInMs = 0
         _playbackPositionInMs = 0
         playingTrackUri = safePlayingTrack.uri

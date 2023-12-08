@@ -1,5 +1,20 @@
 #  Changelog
 
+## Version 0.5.0
+**08.12.2023**
+
+**BREAKING CHANGES**
+
+- Deprecated meta repository *metaStorage* was deleted
+
+**Other changes**
+
+- API endpoints return *URLSessionDataTask?* instance for better API requests control
+- Collection remote API unit tests XCAssert block fix
+- Lib doc update
+
+_____________________________
+
 ## Version 0.4.11
 **17.11.2023**
 

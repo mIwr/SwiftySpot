@@ -7,7 +7,7 @@
 
 import Foundation
 
-func getArtistUIInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, id: String, locale: String, application: String, video: Bool, podcast: Bool, deviceId: String, timezone: String, timeFormat: String, onDemandUris: [String], completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) {
+func getArtistUIInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, id: String, locale: String, application: String, video: Bool, podcast: Bool, deviceId: String, timezone: String, timeFormat: String, onDemandUris: [String], completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) -> URLSessionDataTask? {
     var signal = ""
     if (!onDemandUris.isEmpty) {
         signal = "ondemand:"
@@ -19,17 +19,17 @@ func getArtistUIInfoByApi(userAgent: String, clToken: String, authToken: String,
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     guard let req = buildRequest(for: .artistUI(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, id: id, locale: locale, application: application, video: video, podcast: podcast, deviceId: deviceId, timezone: timezone, timeFormat: timeFormat, signal: signal)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build artist info request")))
-        return
+        return nil
     }
-    requestJson(req) { result in
+    let task = requestJson(req) { result in
         do {
             let json = try result.get()
             _ = try JSONSerialization.data(withJSONObject: json)
@@ -40,22 +40,23 @@ func getArtistUIInfoByApi(userAgent: String, clToken: String, authToken: String,
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func getArtistInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, uri: String, fields: [String], imgSize: String, completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) {
+func getArtistInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, uri: String, fields: [String], imgSize: String, completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     guard let req = buildRequest(for: .artist(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, uri: uri, fields: fields, imgSize: imgSize)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build artist info request")))
-        return
+        return nil
     }
-    requestJson(req) { result in
+    let task = requestJson(req) { result in
         do {
             let json = try result.get()
             _ = try JSONSerialization.data(withJSONObject: json)
@@ -66,6 +67,7 @@ func getArtistInfoByApi(userAgent: String, clToken: String, authToken: String, o
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
 /*

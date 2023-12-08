@@ -18,7 +18,7 @@ final class UnitRemoteApiAuth: XCTestCase {
     
     func testAuth() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.auth(login: TestCredentials.login, password: TestCredentials.password) { result in
+        _ = client.auth(login: TestCredentials.login, password: TestCredentials.password) { result in
             do {
                 let authToken = try result.get()
                 XCTAssertTrue(!authToken.token.isEmpty, "Auth token is empty")

@@ -8,32 +8,32 @@
 import Foundation
 import SwiftProtobuf
 
-func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, header: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader, items: [Com_Spotify_Extendedmetadata_Proto_EntityRequest], completion: @escaping (_ result: Result<Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse, SPError>) -> Void) {
+func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, header: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader, items: [Com_Spotify_Extendedmetadata_Proto_EntityRequest], completion: @escaping (_ result: Result<Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (items.isEmpty) {
         let emptyRes = Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse()
         completion(.success(emptyRes))
-        return
+        return nil
     }
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     var reqProtobuf = Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest()
     reqProtobuf.header = header
     reqProtobuf.request = items
     guard let req: URLRequest = buildRequest(for: .metadata(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -47,4 +47,5 @@ func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authTo
             completion(.failure(parsed))
         }
     }
+    return task
 }

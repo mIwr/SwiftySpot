@@ -21,7 +21,7 @@ final class UnitRemoteApiLanding: XCTestCase {
     
     func testLandingApi() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getLandingData { result in
+        _ = client.getLandingData { result in
             do {
                 let landing = try result.get()
                 XCTAssertTrue(!landing.playlists.isEmpty, "Landing playlists array is empty")

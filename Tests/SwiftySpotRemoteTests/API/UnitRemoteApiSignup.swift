@@ -39,7 +39,7 @@ final class UnitRemoteApiSignup: XCTestCase {
 
     func testSignupValidatePass() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.signupValidatePass(TestCredentials.dummyRegisterPassword) { result in
+        _ = client.signupValidatePass(TestCredentials.dummyRegisterPassword) { result in
             do {
                 let valdiation = try result.get()
                 XCTAssertNotEqual(valdiation.countryCode, "", "Parsing error: country code is empty")
@@ -60,7 +60,7 @@ final class UnitRemoteApiSignup: XCTestCase {
     
     func testSignup() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.signup(mail: TestCredentials.dummyRegisterMail, password: TestCredentials.dummyRegisterPassword, displayName: "justT@ste", bDate: Date(timeIntervalSince1970: 0), gender: .nonBinary) { result in
+        _ = client.signup(mail: TestCredentials.dummyRegisterMail, password: TestCredentials.dummyRegisterPassword, displayName: "justT@ste", bDate: Date(timeIntervalSince1970: 0), gender: .nonBinary) { result in
             do {
                 let signupSession = try result.get()
                 XCTAssertNotNil(signupSession.username, "Parsing error: username is empty")

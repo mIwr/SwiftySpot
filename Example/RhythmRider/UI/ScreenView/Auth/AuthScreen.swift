@@ -76,7 +76,7 @@ struct AuthScreen: View {
                         return
                     }
     #endif
-                    api.client.auth(login: _login, password: _pass) { result in
+                    _ = api.client.auth(login: _login, password: _pass) { result in
                         _processing = false
                         switch (result) {
                         case .success(let session):

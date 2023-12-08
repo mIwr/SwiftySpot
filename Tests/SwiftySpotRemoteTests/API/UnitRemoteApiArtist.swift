@@ -21,7 +21,7 @@ final class UnitRemoteApiArtist: XCTestCase {
     func testGetArtistInfo() {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateArtistUri(id: TestConstants.artistId)
-        client.getArtistInfo(uri: uri, imgSize: "large") { result in
+        _ = client.getArtistInfo(uri: uri, imgSize: "large") { result in
             do {
                 let artist = try result.get()
                 XCTAssertNotNil(artist, "Artist is null")

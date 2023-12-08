@@ -21,7 +21,7 @@ final class UnitRemoteApiPlaylist: XCTestCase {
     
     func testGetPlaylistInfo() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getPlaylistInfo(id: TestConstants.playlistId) { result in
+        _ = client.getPlaylistInfo(id: TestConstants.playlistId) { result in
             do {
                 let playlist = try result.get()
                 XCTAssertNotEqual(playlist.name, "", "Playlist name is empty. Possible whole instance is empty")

@@ -21,7 +21,7 @@ final class UnitRemoteApiProfile: XCTestCase {
     
     func testGetAcessPoints() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getAPs { result in
+        _ = client.getAPs { result in
             do {
                 let ap = try result.get()
                 XCTAssertTrue(!ap.spclient.isEmpty, "spclient aps array is empty")
@@ -43,7 +43,7 @@ final class UnitRemoteApiProfile: XCTestCase {
 
     func testGetProfileInfo() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getProfileInfo { result in
+        _ = client.getProfileInfo { result in
             do {
                 let profile = try result.get()
                 XCTAssertNotEqual(profile.username, "", "Parsing error: username is empty")

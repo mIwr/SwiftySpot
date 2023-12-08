@@ -7,19 +7,19 @@
 
 import Foundation
 
-func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPShortClientInfo, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) {
+func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPShortClientInfo, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     var reqProtobuf = SPLoginV3Request()
     reqProtobuf.client = clientInfo
     reqProtobuf.password = cred
     guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init auth request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -33,16 +33,17 @@ func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPSh
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: Data, clientInfo: SPShortClientInfo, answerData: LoginChallengeAnswerData, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) {
+func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: Data, clientInfo: SPShortClientInfo, answerData: LoginChallengeAnswerData, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (loginContext.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth track ID is empty. Retrieve auth challenge first")))
-        return
+        return nil
     }
     var reqProtobuf = SPLoginV3Request()
     reqProtobuf.client = clientInfo
@@ -51,9 +52,9 @@ func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: D
     reqProtobuf.answerData = answerData
     guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build auth request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -67,29 +68,30 @@ func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: D
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func refreshAuthByApi(userAgent: String, clToken: String, clientInfo: SPShortClientInfo, stored: SPStoredCredential, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) {
+func refreshAuthByApi(userAgent: String, clToken: String, clientInfo: SPShortClientInfo, stored: SPStoredCredential, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (stored.username.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Username is empty. Auth by another method")))
-        return
+        return nil
     }
     if (stored.data.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Stored credential is empty. Auth by another method")))
-        return
+        return nil
     }
     var reqProtobuf = SPLoginV3Request()
     reqProtobuf.client = clientInfo
     reqProtobuf.stored = stored
     guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -103,4 +105,5 @@ func refreshAuthByApi(userAgent: String, clToken: String, clientInfo: SPShortCli
             completion(.failure(parsed))
         }
     }
+    return task
 }

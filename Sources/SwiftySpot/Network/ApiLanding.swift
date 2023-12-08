@@ -8,14 +8,14 @@
 import Foundation
 import SwiftProtobuf
 
-func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, clientInfo: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo, facetUri: String, timezone: String, completion: @escaping (_ result: Result<Com_Spotify_Dac_Api_V1_Proto_DacResponse, SPError>) -> Void) {
+func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, clientInfo: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo, facetUri: String, timezone: String, completion: @escaping (_ result: Result<Com_Spotify_Dac_Api_V1_Proto_DacResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     var reqProtobuf = Com_Spotify_Dac_Api_V1_Proto_DacRequest()
     reqProtobuf.clientInfo = clientInfo
@@ -28,9 +28,9 @@ func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: 
     reqProtobuf.featureRequest = anyProtobuf
     guard let req: URLRequest = buildRequest(for: .landing(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -44,5 +44,6 @@ func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: 
             completion(.failure(parsed))
         }
     }
+    return task
 }
 

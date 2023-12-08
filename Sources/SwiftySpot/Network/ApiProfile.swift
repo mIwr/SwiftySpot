@@ -7,20 +7,20 @@
 
 import Foundation
 
-func getProfileInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPProfile, SPError>) -> Void) {
+func getProfileInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPProfile, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     guard let req: URLRequest = buildRequest(for: .profile(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build profile info request")))
-        return
+        return nil
     }
-    requestJson(req) { result in
+    let task = requestJson(req) { result in
         do {
             let json = try result.get()
             let data = try JSONSerialization.data(withJSONObject: json)
@@ -31,4 +31,5 @@ func getProfileInfoByApi(userAgent: String, clToken: String, authToken: String, 
             completion(.failure(parsed))
         }
     }
+    return task
 }

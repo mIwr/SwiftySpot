@@ -7,15 +7,15 @@
 
 import Foundation
 
-func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<ChallengesData, SPError>) -> Void) {
+func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<ChallengesData, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestClientDataRequest
     reqProtobuf.client = initData
     guard let req: URLRequest = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init session request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -34,17 +34,18 @@ func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, comple
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) {
+func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestChallengeAnswersRequest
     reqProtobuf.answerData = answerData
     guard let req: URLRequest = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build solve challenge request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -68,14 +69,15 @@ func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnsw
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func getAccessPointsByApi(clToken: String, completion: @escaping (_ result: Result<SPAccessPoint, SPError>) -> Void) {
+func getAccessPointsByApi(clToken: String, completion: @escaping (_ result: Result<SPAccessPoint, SPError>) -> Void) -> URLSessionDataTask? {
     guard let req: URLRequest = buildRequest(for: .acessPoints(clToken: clToken)) else {
         completion(.failure(.badRequest(errCode: -1, description: "Unable to build access points retrieve request")))
-        return
+        return nil
     }
-    requestJson(req) { result in
+    let task = requestJson(req) { result in
         do {
             let json = try result.get()
             let data = try JSONSerialization.data(withJSONObject: json)
@@ -86,4 +88,5 @@ func getAccessPointsByApi(clToken: String, completion: @escaping (_ result: Resu
             completion(.failure(parsed))
         }
     }
+    return task
 }

@@ -7,18 +7,18 @@
 
 import Foundation
 
-func getCollectionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, paginationToken: String?, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_PageResponse, SPError>) -> Void) {
+func getCollectionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, paginationToken: String?, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_PageResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (limit == 0) {
         completion(.success(Com_Spotify_Collection2_V2_Proto_PageResponse()))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     var reqProtobuf = Com_Spotify_Collection2_V2_Proto_PageRequest()
     reqProtobuf.username = username
@@ -29,9 +29,9 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
     }
     guard let req: URLRequest = buildRequest(for: .collection(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection info request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -45,20 +45,21 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, lastSyncToken: String, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_DeltaResponse, SPError>) -> Void) {
+func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, lastSyncToken: String, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_DeltaResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     var reqProtobuf = Com_Spotify_Collection2_V2_Proto_DeltaRequest()
     reqProtobuf.username = username
@@ -66,9 +67,9 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
     reqProtobuf.lastSyncToken = lastSyncToken
     guard let req: URLRequest = buildRequest(for: .collectionDelta(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection delta request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -82,24 +83,25 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
             completion(.failure(parsed))
         }
     }
+    return task
 }
 
-func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, updItems: [Com_Spotify_Collection2_V2_Proto_CollectionItem], clienUpdateId: String, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) {
+func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, updItems: [Com_Spotify_Collection2_V2_Proto_CollectionItem], clienUpdateId: String, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) -> URLSessionDataTask? {
     if (updItems.isEmpty) {
         completion(.success(true))
-        return
+        return nil
     }
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     var reqProtobuf = Com_Spotify_Collection2_V2_Proto_WriteRequest()
     reqProtobuf.username = username
@@ -108,9 +110,9 @@ func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, a
     reqProtobuf.clientUpdateID = clienUpdateId
     guard let req: URLRequest = buildRequest(for: .collectionWrite(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection delta request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             let success = response.isSuccessStatusCode
@@ -120,4 +122,5 @@ func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, a
             completion(.failure(parsed))
         }
     }
+    return task
 }

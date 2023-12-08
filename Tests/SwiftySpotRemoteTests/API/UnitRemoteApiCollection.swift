@@ -22,11 +22,12 @@ final class UnitRemoteApiCollection: XCTestCase {
     
     func testLikedArtistsCollection() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getLikedArtists(pageLimit: 100, pageToken: nil) {
+        _ = client.getLikedArtists(pageLimit: 100, pageToken: nil) {
             result in
             do {
                 let collection = try result.get()
-                XCTAssertTrue(!collection.items.isEmpty, "Collection is empty")
+                XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
+                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)
@@ -44,11 +45,12 @@ final class UnitRemoteApiCollection: XCTestCase {
     
     func testDislikedArtistsCollection() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getDislikedArtists(pageLimit: 100, pageToken: nil) {
+        _ = client.getDislikedArtists(pageLimit: 100, pageToken: nil) {
             result in
             do {
                 let collection = try result.get()
-                XCTAssertTrue(!collection.items.isEmpty, "Collection is empty")
+                XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
+                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)
@@ -68,11 +70,12 @@ final class UnitRemoteApiCollection: XCTestCase {
     
     func testLikedTracksCollection() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getLikedTracks(pageLimit: 100, pageToken: nil) {
+        _ = client.getLikedTracks(pageLimit: 100, pageToken: nil) {
             result in
             do {
                 let collection = try result.get()
-                XCTAssertTrue(!collection.items.isEmpty, "Collection is empty")
+                XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
+                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)
@@ -90,11 +93,12 @@ final class UnitRemoteApiCollection: XCTestCase {
     
     func testDislikedTracksCollection() {
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getDislikedTracks(pageLimit: 100, pageToken: nil) {
+        _ = client.getDislikedTracks(pageLimit: 100, pageToken: nil) {
             result in
             do {
                 let collection = try result.get()
-                XCTAssertTrue(!collection.items.isEmpty, "Collection is empty")
+                XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
+                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)

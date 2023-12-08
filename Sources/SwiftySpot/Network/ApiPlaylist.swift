@@ -7,25 +7,25 @@
 
 import Foundation
 
-func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, completion: @escaping (_ result: Result<PlaylistInfo, SPError>) -> Void) {
+func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, completion: @escaping (_ result: Result<PlaylistInfo, SPError>) -> Void) -> URLSessionDataTask? {
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
-        return
+        return nil
     }
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
-        return
+        return nil
     }
     if (authToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
-        return
+        return nil
     }
     let listItems = "audio-track, audio-episode"//audio-track, audio-episode, video-episode, audiobook"
     guard let req: URLRequest = buildRequest(for: .playlist(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, id: id, os: os, appVer: appVer, listItems: listItems)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build playlist info request")))
-        return
+        return nil
     }
-    requestSPResponse(req) { result in
+    let task = requestSPResponse(req) { result in
         do {
             let response = try result.get()
             guard let data = response.result else {
@@ -39,4 +39,5 @@ func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, au
             completion(.failure(parsed))
         }
     }
+    return task
 }

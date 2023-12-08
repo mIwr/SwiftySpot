@@ -2,14 +2,17 @@ import Foundation
 import Security
 
 class SecureStorage {
-    let kSecClassValue = NSString(format: kSecClass)
-    let kSecAttrAccountValue = NSString(format: kSecAttrAccount)
-    let kSecValueDataValue = NSString(format: kSecValueData)
-    let kSecClassGenericPasswordValue = NSString(format: kSecClassGenericPassword)
-    let kSecAttrServiceValue = NSString(format: kSecAttrService)
-    let kSecMatchLimitValue = NSString(format: kSecMatchLimit)
-    let kSecReturnDataValue = NSString(format: kSecReturnData)
-    let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
+    
+    static let kSecClassValue = NSString(format: kSecClass)
+    static let kSecAttrAccountValue = NSString(format: kSecAttrAccount)
+    static let kSecValueDataValue = NSString(format: kSecValueData)
+    static let kSecClassGenericPasswordValue = NSString(format: kSecClassGenericPassword)
+    static let kSecAttrServiceValue = NSString(format: kSecAttrService)
+    static let kSecMatchLimitValue = NSString(format: kSecMatchLimit)
+    static let kSecReturnDataValue = NSString(format: kSecReturnData)
+    static let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
+    
+    fileprivate init() {}
 
     class func save(key: String, data: Data) -> OSStatus {
         let query =

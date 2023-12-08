@@ -21,7 +21,7 @@ public class SPMetaInfoController<T> {
     let keyValidator: (String) -> Bool
     let updateItemNotificationBuilder: (T) -> Notification
     
-    init(initItems: [String : T], keyValidator: @escaping (String) -> Bool, updateItemNotificationBuilder: @escaping (T) -> Notification) {
+    init(initItems: [String: T], keyValidator: @escaping (String) -> Bool, updateItemNotificationBuilder: @escaping (T) -> Notification) {
         self._items = initItems
         self.keyValidator = keyValidator
         self.updateItemNotificationBuilder = updateItemNotificationBuilder

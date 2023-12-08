@@ -101,7 +101,8 @@ struct NowPlayingView: View {
                     .frame(width: 20, height: 20, alignment: .center)
                     .foregroundColor(Color(R.color.primary))
                 })
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
+                .frame(width: 40, height: 48, alignment: .center)
+                .contentShape(Rectangle())
                 Button(action: {
                     if (playbackController.playingTrack == nil) {
                         return
@@ -113,9 +114,10 @@ struct NowPlayingView: View {
                     .frame(width: 20, height: 20, alignment: .center)
                     .foregroundColor(Color(R.color.primary))
                 })
-                .frame(width: 32, height: 32, alignment: .center)
+                .frame(width: 44, height: 48, alignment: .center)
+                .contentShape(Rectangle())
             })
-            .padding(EdgeInsets(top: NowPlayingView.containerVPaddingVal, leading: NowPlayingView.containerVPaddingVal * 2, bottom: NowPlayingView.containerVPaddingVal, trailing: NowPlayingView.containerVPaddingVal * 2))
+            .padding(EdgeInsets(top: NowPlayingView.containerVPaddingVal, leading: NowPlayingView.containerVPaddingVal * 2, bottom: NowPlayingView.containerVPaddingVal, trailing: 0))
             .background(Color(R.color.bgSecondary))
             .onReceive(NotificationCenter.default.publisher(for: .SPPlayItemUpdate), perform: { notification in
                 let parseRes = notification.tryParsePlayItemUpdate()

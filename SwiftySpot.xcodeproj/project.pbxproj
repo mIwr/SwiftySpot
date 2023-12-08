@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B0252FF2AFEB7B600520909 /* SPSignup.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0252FE2AFEB7B600520909 /* SPSignup.pb.swift */; };
 		8B0253022AFEBAA400520909 /* SPGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0253012AFEBAA400520909 /* SPGender.swift */; };
-		8B172A982AD1693800ECBD74 /* SwiftySpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B172A8F2AD1693700ECBD74 /* SwiftySpot.framework */; platformFilters = (ios, macos, tvos, watchos, ); };
+		8B172A982AD1693800ECBD74 /* SwiftySpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B172A8F2AD1693700ECBD74 /* SwiftySpot.framework */; };
 		8B172CD32AD169CB00ECBD74 /* BitShiftUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172C162AD169CA00ECBD74 /* BitShiftUtil.swift */; };
 		8B172CD42AD169CB00ECBD74 /* SPNavigateUriUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172C172AD169CA00ECBD74 /* SPNavigateUriUtil.swift */; };
 		8B172CD52AD169CB00ECBD74 /* HashCashUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172C182AD169CA00ECBD74 /* HashCashUtil.swift */; };
@@ -202,6 +202,8 @@
 		8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */; };
 		8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */; };
 		8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */; };
+		8B6532262B230DCA0071A3EC /* UnitSPMetaInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6532252B230DCA0071A3EC /* UnitSPMetaInfoController.swift */; };
+		8B6532282B2312180071A3EC /* UnitSPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6532272B2312180071A3EC /* UnitSPCollectionController.swift */; };
 		8B66AE442AE9262A002B4088 /* SPDownloadInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */; };
 		8B817E7B2B0530340097B475 /* Lyrics.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E7A2B0530340097B475 /* Lyrics.pb.swift */; };
 		8B817E7E2B0530580097B475 /* SPLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E7D2B0530580097B475 /* SPLyrics.swift */; };
@@ -221,7 +223,6 @@
 		8B99E8F32AF2770A00196FC8 /* SPTypedObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */; };
 		8B99E8F62AF27A7800196FC8 /* SPEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */; };
 		8B9AF9C22AF231B70024DDC1 /* SPSearchSuggestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */; };
-		8BCD7CF92AE2DCA700B1F2C3 /* SPMetaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */; };
 		8BEC798B2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */; };
 		8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */; };
 		8BF94D582AFE8B4500B0AD79 /* SPSignupValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */; };
@@ -254,7 +255,7 @@
 		8B172A972AD1693800ECBD74 /* Sptf-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sptf-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B172AA72AD1699D00ECBD74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8B172AA82AD1699D00ECBD74 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8B172AA92AD1699E00ECBD74 /* Changelog.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Changelog.md; sourceTree = "<group>"; };
+		8B172AA92AD1699E00ECBD74 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B172AAA2AD1699E00ECBD74 /* SwiftySpot.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftySpot.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8B172C162AD169CA00ECBD74 /* BitShiftUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitShiftUtil.swift; sourceTree = "<group>"; };
 		8B172C172AD169CA00ECBD74 /* SPNavigateUriUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNavigateUriUtil.swift; sourceTree = "<group>"; };
@@ -488,6 +489,8 @@
 		8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSHA1.swift; sourceTree = "<group>"; };
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
 		8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupSession.swift; sourceTree = "<group>"; };
+		8B6532252B230DCA0071A3EC /* UnitSPMetaInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPMetaInfoController.swift; sourceTree = "<group>"; };
+		8B6532272B2312180071A3EC /* UnitSPCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPCollectionController.swift; sourceTree = "<group>"; };
 		8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDownloadInfoController.swift; sourceTree = "<group>"; };
 		8B817E792B052C190097B475 /* Lyrics.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Lyrics.proto; sourceTree = "<group>"; };
 		8B817E7A2B0530340097B475 /* Lyrics.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyrics.pb.swift; sourceTree = "<group>"; };
@@ -509,7 +512,6 @@
 		8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTypedObj.swift; sourceTree = "<group>"; };
 		8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPEntityType.swift; sourceTree = "<group>"; };
 		8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSearchSuggestionResult.swift; sourceTree = "<group>"; };
-		8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMetaController.swift; sourceTree = "<group>"; };
 		8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientApiLikeDislikeExt.swift; sourceTree = "<group>"; };
 		8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSignup.swift; sourceTree = "<group>"; };
 		8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupValidation.swift; sourceTree = "<group>"; };
@@ -557,7 +559,7 @@
 				8B9367B42AF4042D00A81D1C /* RepoAssets */,
 				8B172C132AD169CA00ECBD74 /* Sources */,
 				8B172A9B2AD1693800ECBD74 /* Tests */,
-				8B172AA92AD1699E00ECBD74 /* Changelog.md */,
+				8B172AA92AD1699E00ECBD74 /* CHANGELOG.md */,
 				8B172AA82AD1699D00ECBD74 /* LICENSE */,
 				8B172AA72AD1699D00ECBD74 /* README.md */,
 				8B344A0B2AEEC5F9004037D0 /* Package.swift */,
@@ -1012,6 +1014,7 @@
 			isa = PBXGroup;
 			children = (
 				8B172D7C2AD16B2100ECBD74 /* API */,
+				8B6532242B230CD30071A3EC /* Controller */,
 				8B2241712AF4F72000BFE16B /* Model */,
 				8B172D872AD16B2100ECBD74 /* Util */,
 				8B172D952AD16B2200ECBD74 /* UnitSPClient.swift */,
@@ -1084,6 +1087,15 @@
 			path = Proto;
 			sourceTree = "<group>";
 		};
+		8B6532242B230CD30071A3EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B6532272B2312180071A3EC /* UnitSPCollectionController.swift */,
+				8B6532252B230DCA0071A3EC /* UnitSPMetaInfoController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8B817E7C2B0530450097B475 /* Lyrics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,7 +1140,6 @@
 				8B24DC0B2AE301E800CE0547 /* SPCollectionController.swift */,
 				8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */,
 				8B24DC0D2AE315FC00CE0547 /* SPLikeController.swift */,
-				8BCD7CF82AE2DCA700B1F2C3 /* SPMetaController.swift */,
 				8B817E932B055BF90097B475 /* SPMetaInfoController.swift */,
 			);
 			path = Controller;
@@ -1336,7 +1347,6 @@
 				8B172D3C2AD169CB00ECBD74 /* SPLanding.swift in Sources */,
 				8B172D6E2AD169CB00ECBD74 /* SPMetadataAlbumType.swift in Sources */,
 				8B172CE52AD169CB00ECBD74 /* ApiBodyParams.swift in Sources */,
-				8BCD7CF92AE2DCA700B1F2C3 /* SPMetaController.swift in Sources */,
 				8B172D302AD169CB00ECBD74 /* HighlightedText.pb.swift in Sources */,
 				8B172D532AD169CB00ECBD74 /* SPSearchArtist.swift in Sources */,
 				8B172D5E2AD169CB00ECBD74 /* SPMetadataBiography.swift in Sources */,
@@ -1474,6 +1484,7 @@
 				8B18502F2AF56ED700D9DB11 /* UnitRemoteApiLanding.swift in Sources */,
 				8B39C8EA2AD2BF04005E682D /* UnitSPClientNotifier.swift in Sources */,
 				8B1850302AF56ED700D9DB11 /* UnitRemoteApiDownload.swift in Sources */,
+				8B6532282B2312180071A3EC /* UnitSPCollectionController.swift in Sources */,
 				8B1850352AF5771B00D9DB11 /* TestConstantsXCodeEnvExt.swift in Sources */,
 				8B1850292AF56ED700D9DB11 /* UnitRemoteApiArtist.swift in Sources */,
 				8B817E902B0543580097B475 /* UnitRemoteApiLyrics.swift in Sources */,
@@ -1486,6 +1497,7 @@
 				8B18502B2AF56ED700D9DB11 /* UnitRemoteApiCollection.swift in Sources */,
 				8B172DA92AD16B2300ECBD74 /* UnitApiArtist.swift in Sources */,
 				8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */,
+				8B6532262B230DCA0071A3EC /* UnitSPMetaInfoController.swift in Sources */,
 				8B172DC22AD16B2300ECBD74 /* TestCredentials.swift in Sources */,
 				8B18502D2AF56ED700D9DB11 /* UnitRemoteApiSearch.swift in Sources */,
 				8B172DAF2AD16B2300ECBD74 /* UnitBitConvertUtil.swift in Sources */,
@@ -1500,12 +1512,6 @@
 /* Begin PBXTargetDependency section */
 		8B172A9A2AD1693800ECBD74 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilters = (
-				ios,
-				macos,
-				tvos,
-				watchos,
-			);
 			target = 8B172A8E2AD1693700ECBD74 /* SwiftySpot */;
 			targetProxy = 8B172A992AD1693800ECBD74 /* PBXContainerItemProxy */;
 		};
@@ -1545,7 +1551,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1564,7 +1570,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.11;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1608,7 +1614,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1621,7 +1627,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.11;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1635,7 +1641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 22;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1654,7 +1660,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.11;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1674,7 +1680,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 22;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1693,7 +1699,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.4.11;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1730,8 +1736,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1762,8 +1768,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";

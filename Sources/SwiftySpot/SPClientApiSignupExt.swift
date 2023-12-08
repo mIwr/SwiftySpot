@@ -10,17 +10,16 @@ import Foundation
 extension SPClient {
     
     func signupValidate(completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) {
-        signupValidatePass("", completion: completion)
+       _ = signupValidatePass("", completion: completion)
     }
     
-    func signupValidatePass(_ password: String, completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) {
+    func signupValidatePass(_ password: String, completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) -> URLSessionDataTask? {
         guard let safeClToken = clientToken else {
-            safeClReq { safeClToken in
-                self.signupValidatePass(password, completion: completion)
+            return safeClReq { safeClToken in
+                return self.signupValidatePass(password, completion: completion)
             }
-            return
         }
-        validateSignupByApi(userAgent: userAgent, clToken: safeClToken, os: device.os, appVer: appVersionCode, validatorKey: clientValidationKey, password: password) { result in
+        let task = validateSignupByApi(userAgent: userAgent, clToken: safeClToken, os: device.os, appVer: appVersionCode, validatorKey: clientValidationKey, password: password) { result in
             do {
                 let validationRes = try result.get()
                 completion(.success(validationRes))
@@ -32,14 +31,14 @@ extension SPClient {
                 completion(.failure(parsed))
             }
         }
+        return task
     }
     
-    func signup(mail: String, password: String, displayName: String, bDate: Date, gender: SPGender, completion: @escaping (Result<SPSignupSession, SPError>) -> Void) {
+    func signup(mail: String, password: String, displayName: String, bDate: Date, gender: SPGender, completion: @escaping (Result<SPSignupSession, SPError>) -> Void) -> URLSessionDataTask? {
         guard let safeClToken = clientToken else {
-            safeClReq { safeClToken in
-                self.signup(mail: mail, password: password, displayName: displayName, bDate: bDate, gender: gender, completion: completion)
+            return safeClReq { safeClToken in
+                return self.signup(mail: mail, password: password, displayName: displayName, bDate: bDate, gender: gender, completion: completion)
             }
-            return
         }
         var accDetails = Com_Spotify_Signup_V2_Proto_AccountDetails()
         accDetails.displayName = displayName
@@ -74,7 +73,7 @@ extension SPClient {
         protobuf.details = accDetails
         protobuf.clientInfo = clInfo
         protobuf.tracking = tracking
-        signupByApi(userAgent: userAgent, clToken: safeClToken, os: device.os, appVer: appVersionCode, clId: clientId, proto: protobuf) { result in
+        let task = signupByApi(userAgent: userAgent, clToken: safeClToken, os: device.os, appVer: appVersionCode, clId: clientId, proto: protobuf) { result in
             do {
                 let sessionRes = try result.get()
                 let parsed = SPSignupSession.from(protobuf: sessionRes)
@@ -87,5 +86,6 @@ extension SPClient {
                 completion(.failure(parsed))
             }
         }
+        return task
     }
 }

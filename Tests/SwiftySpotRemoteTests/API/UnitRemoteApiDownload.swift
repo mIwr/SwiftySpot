@@ -21,7 +21,7 @@ final class UnitRemoteApiDownload: XCTestCase {
     func testPlayIntent() {
         let trackUri = SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId)
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getTracksDetails(trackUris: [trackUri]) { result in
+        _ = client.getTracksDetails(trackUris: [trackUri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")
@@ -46,7 +46,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                     exp.fulfill()
                     return
                 }
-                self.client.sendPlayIntent(hexFileId: safeAudioFileMeta.hexId, token: TestCredentials.dummyPlayIntentToken) { intentRes in
+                _ = self.client.sendPlayIntent(hexFileId: safeAudioFileMeta.hexId, token: TestCredentials.dummyPlayIntentToken) { intentRes in
                     do {
                         let binData = try intentRes.get()
                         XCTAssertTrue(!binData.b4Seq.isEmpty, "b4Seq is empty")
@@ -75,7 +75,7 @@ final class UnitRemoteApiDownload: XCTestCase {
     func testDownloadAudioChunk() {
         let trackUri = SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId)
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getTracksDetails(trackUris: [trackUri]) { result in
+        _ = client.getTracksDetails(trackUris: [trackUri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")
@@ -100,7 +100,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                     exp.fulfill()
                     return
                 }
-                self.client.sendPlayIntent(hexFileId: safeAudioFileMeta.hexId, token: TestCredentials.dummyPlayIntentToken) { intentRes in
+                _ = self.client.sendPlayIntent(hexFileId: safeAudioFileMeta.hexId, token: TestCredentials.dummyPlayIntentToken) { intentRes in
                     do {
                         let binData = try intentRes.get()
                         XCTAssertTrue(!binData.b4Seq.isEmpty, "b4Seq is empty")
@@ -108,7 +108,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                         let hexKey = StringUtil.bytesToHexString(binData.obfuscatedKey)
                         print("Obfuscated key -> " + hexKey)
                         print("File ID -> " + safeAudioFileMeta.hexId)
-                        self.client.requestDownloadInfo(hexFileId: safeAudioFileMeta.hexId) { downloadInfoRes in
+                        _ = self.client.requestDownloadInfo(hexFileId: safeAudioFileMeta.hexId) { downloadInfoRes in
                             do {
                                 let di = try downloadInfoRes.get()
                                 XCTAssertTrue(!di.directLinks.isEmpty, "Track download links' array is empty")
@@ -117,7 +117,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                                     exp.fulfill()
                                     return
                                 }
-                                self.client.downloadAsChunk(cdnLink: safeLink, offsetInBytes: 0, chunkSizeInBytes: 99999999999999999, total: nil) { result in
+                                _ = self.client.downloadAsChunk(cdnLink: safeLink, offsetInBytes: 0, chunkSizeInBytes: SPDownloadProgress.defaultChunkSizeInBytes, total: nil) { result in
                                     do {
                                         let chunk = try result.get()
                                         let progress = chunk.0
@@ -174,7 +174,7 @@ final class UnitRemoteApiDownload: XCTestCase {
     func testDownloadTrackPreview() {
         let trackUri = SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId)
         let exp = self.expectation(description: "Request time-out expectation")
-        client.getTracksDetails(trackUris: [trackUri]) { result in
+        _ = client.getTracksDetails(trackUris: [trackUri]) { result in
             do {
                 let meta = try result.get()
                 XCTAssertTrue(!meta.isEmpty, "Meta is empty")
@@ -186,7 +186,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                     exp.fulfill()
                     return
                 }
-                self.client.downloadTrackPreview(trackMeta, preferFormat: .OGG_VORBIS_160) { result in
+                _ = self.client.downloadTrackPreview(trackMeta, preferFormat: .OGG_VORBIS_160) { result in
                     do {
                         let data = try result.get()
                         XCTAssertNotEqual(data.count, 0, "Track payload data is 0 bytes")
