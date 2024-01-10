@@ -10,12 +10,26 @@ import SwiftySpot
 
 struct TrackFullInfoScreen: View {
     
-    fileprivate let _trackInfo: SPMetadataTrack
+    @State var id: String
+    @State var hexGID: String
+    @State var name: String
+    @State var artists: String
+    @State var albumName: String?
+    @State var albumReleaseYear: UInt16?
+    @State var durationInMs: Int32
     
     @Binding var presented: Bool
     
-    init(_trackInfo: SPMetadataTrack, presented: Binding<Bool>) {
-        self._trackInfo = _trackInfo
+    init(_ trackInfo: SPMetadataTrack, presented: Binding<Bool>) {
+        _id = State(initialValue: trackInfo.id)
+        _hexGID = State(initialValue: trackInfo.hexGlobalID)
+        _name = State(initialValue: trackInfo.name)
+        _artists = State(initialValue: trackInfo.artists.map({ artist in
+            return artist.name
+        }).joined(separator: " • "))
+        _albumName = State(initialValue: trackInfo.album?.name)
+        _albumReleaseYear = State(initialValue: trackInfo.album?.releaseYear)
+        _durationInMs = State(initialValue: trackInfo.durationInMs)
         _presented = presented
     }
     
@@ -28,38 +42,30 @@ struct TrackFullInfoScreen: View {
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                             .cornerRadius(12)
-                        Text(_trackInfo.name)
+                        Text(name)
                             .font(.headline).fontWeight(.semibold)
                             .foregroundColor(Color(R.color.primary))
                     })
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    if (!_trackInfo.artists.isEmpty) {
-                        _textBlockInfo(category: R.string.localizable.trackInfoArtists(), value: _trackInfo.artists.map({ artist in
-                            return artist.name
-                        }).joined(separator: " • "))
+                    if (!artists.isEmpty) {
+                        _textBlockInfo(category: R.string.localizable.trackInfoArtists(), value: artists)
                         Divider()
                     }
-                    if let safeAlbum = _trackInfo.album {
-                        _textBlockInfo(category: R.string.localizable.trackInfoAlbumName(), value: safeAlbum.name)
-                        Divider()
-                        if (safeAlbum.releaseTsUTC != 0) {
-                            _textBlockInfo(category: R.string.localizable.trackInfoReleaseYear(), value: String(safeAlbum.releaseYear))
-                            Divider()
-                        }
-                        if (_trackInfo.artists.isEmpty && !safeAlbum.artists.isEmpty) {
-                            _textBlockInfo(category: R.string.localizable.trackInfoArtists(), value: _trackInfo.artists.map({ artist in
-                                return artist.name
-                            }).joined(separator: " • "))
-                            Divider()
-                        }
-                    }
-                    if (_trackInfo.durationInMs != 0) {
-                        _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: DateUtil.formattedTrackTime(Double(_trackInfo.durationInMs) / 1000))
+                    if let safeAlbumName = albumName {
+                        _textBlockInfo(category: R.string.localizable.trackInfoAlbumName(), value: safeAlbumName)
                         Divider()
                     }
-                    _textBlockInfo(category: "ID", value: _trackInfo.id)
+                    if let safeAlbumReleaseYear = albumReleaseYear {
+                        _textBlockInfo(category: R.string.localizable.trackInfoReleaseYear(), value: String(safeAlbumReleaseYear))
+                        Divider()
+                    }
+                    if (durationInMs != 0) {
+                        _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: DateUtil.formattedTrackTime(Double(durationInMs) / 1000))
+                        Divider()
+                    }
+                    _textBlockInfo(category: "ID", value: id)
                     Divider()
-                    _textBlockInfo(category: "Global ID", value: StringUtil.bytesToHexString(_trackInfo.globalID))
+                    _textBlockInfo(category: "Global ID", value: hexGID)
                     Divider()
                 }
                 .padding(EdgeInsets(top: 16, leading: 0, bottom: Constants.defaultButtonHeight + 16, trailing: 0))
@@ -95,5 +101,5 @@ struct TrackFullInfoScreen: View {
 #Preview {
     @State var shown = true
     let trackInfo = SPMetadataTrack(gid: [], name: "Track name")
-    return TrackFullInfoScreen(_trackInfo: trackInfo, presented: $shown)
+    return TrackFullInfoScreen(trackInfo, presented: $shown)
 }

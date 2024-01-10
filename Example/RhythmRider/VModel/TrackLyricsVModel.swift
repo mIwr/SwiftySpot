@@ -7,10 +7,10 @@
 
 import SwiftySpot
 
-class TrackLyricsVModel {
+class TrackLyricsVModel: ObservableObject {
     
     let track: SPMetadataTrack
-    var lyrics: SPLyrics?
+    @Published var lyrics: SPLyrics?
     
     init(track: SPMetadataTrack, lyrics: SPLyrics? = nil) {
         self.track = track

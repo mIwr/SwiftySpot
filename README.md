@@ -57,7 +57,7 @@ For work with Spotify API need:
 SwiftySpot is available with SPM
 
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.0"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.1"))
 ```
 
 ### CocoaPods
@@ -107,7 +107,7 @@ Available API method - Authorize with credentials. Client token will be generate
 ```swift
 import SwiftySpot
 
-let device = SPDevice(os: "osName", osVer: "os version, osVerNum: {os number}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
+let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {os number}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
 
 let clToken = "..."
 let clExpires = 3600
@@ -151,12 +151,12 @@ You are able to init the manager with start metadata
 
 **Metadata provider tips**
 
-Metadata from manager can be provided 3 ways:
+Metadata from manager can be provided in 3 ways:
 
 1. Through manager instance **search** methods: searchTrack(-s), searchArtist(-s), searchAlbum(-s):
 
 ```swift
-let trackNavUri = "spotify:track:123
+let trackNavUri = "spotify:track:123"
 let track: SPMetadataTrack? = client.tracksMetaStorage.find(uri: trackNavUri)
 ```
 

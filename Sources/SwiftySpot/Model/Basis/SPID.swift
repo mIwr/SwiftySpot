@@ -15,6 +15,12 @@ public class SPID: SPBaseObj, Equatable, Hashable {
     public let globalID: [UInt8]
     ///Spotify navigate uri ID - Base62(gid) (22 chars)
     public let id: String
+    ///Spotify global ID (gid) hex string (Base16)
+    public var hexGlobalID: String {
+        get {
+            return SPBase16.encode(globalID)
+        }
+    }
     
     public init(id: String, globalID: [UInt8]) {
         self.id = id
@@ -39,11 +45,11 @@ public class SPID: SPBaseObj, Equatable, Hashable {
             id = ""
             return
         }
-        guard let low: UInt64 = BitConvertUtil.getVal(globalID) else {
+        guard let low: UInt64 = BitConvertUtil.getVal(globalID, offset: 8) else {
             id = ""
             return
         }
-        guard let high: UInt64 = BitConvertUtil.getVal(globalID, offset: 8) else {
+        guard let high: UInt64 = BitConvertUtil.getVal(globalID) else {
             id = ""
             return
         }
@@ -60,7 +66,7 @@ public class SPID: SPBaseObj, Equatable, Hashable {
     public static func ==(lhs: SPID, rhs: SPID) -> Bool {
         let cmpRes = lhs.id == rhs.id && lhs.globalID == rhs.globalID
         if let typedLhs = lhs as? SPTypedObj, let typedRhs = rhs as? SPTypedObj {
-            //Weird inherited child classes work: set<SPTypedObj>.contains() sometimes produces only SPID '==' call without SPTypedObj '=='
+            //Weird inherited classes work: set<SPTypedObj>.contains() sometimes produces only SPID '==' call without SPTypedObj '=='
             return cmpRes && typedLhs.entityType == typedRhs.entityType
         }
         return cmpRes

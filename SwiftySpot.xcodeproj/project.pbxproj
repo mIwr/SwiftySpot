@@ -197,6 +197,7 @@
 		8B2241702AF4E26C00BFE16B /* SPByteViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B22416F2AF4E26C00BFE16B /* SPByteViewProvider.swift */; };
 		8B24DC0C2AE301E800CE0547 /* SPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24DC0B2AE301E800CE0547 /* SPCollectionController.swift */; };
 		8B24DC0E2AE315FC00CE0547 /* SPLikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24DC0D2AE315FC00CE0547 /* SPLikeController.swift */; };
+		8B34D6292B34892600F5E387 /* UnitSPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34D6282B34892600F5E387 /* UnitSPID.swift */; };
 		8B39C8E82AD2BB5E005E682D /* SPClientSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */; };
 		8B39C8EA2AD2BF04005E682D /* UnitSPClientNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E92AD2BF04005E682D /* UnitSPClientNotifier.swift */; };
 		8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */; };
@@ -478,6 +479,7 @@
 		8B29B4E32AD1E90F00A7AD33 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8B29B4EA2AD1E9FC00A7AD33 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8B344A0B2AEEC5F9004037D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		8B34D6282B34892600F5E387 /* UnitSPID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPID.swift; sourceTree = "<group>"; };
 		8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientSession.swift; sourceTree = "<group>"; };
 		8B39C8E92AD2BF04005E682D /* UnitSPClientNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPClientNotifier.swift; sourceTree = "<group>"; };
 		8B3BD9FB2AF545640039390B /* playlist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = playlist.jpg; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 			children = (
 				8B172D882AD16B2100ECBD74 /* UnitSPBase16.swift */,
 				8B1F50362AEFA3AA008D9A09 /* UnitSPBase62.swift */,
+				8B34D6282B34892600F5E387 /* UnitSPID.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1488,6 +1491,7 @@
 				8B1850352AF5771B00D9DB11 /* TestConstantsXCodeEnvExt.swift in Sources */,
 				8B1850292AF56ED700D9DB11 /* UnitRemoteApiArtist.swift in Sources */,
 				8B817E902B0543580097B475 /* UnitRemoteApiLyrics.swift in Sources */,
+				8B34D6292B34892600F5E387 /* UnitSPID.swift in Sources */,
 				8B1F50372AEFA3AA008D9A09 /* UnitSPBase62.swift in Sources */,
 				8B172DA32AD16B2300ECBD74 /* UnitApiSearch.swift in Sources */,
 				8B172DBC2AD16B2300ECBD74 /* TestConstants.swift in Sources */,
@@ -1551,7 +1555,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1570,7 +1574,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1614,7 +1618,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1627,7 +1631,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1641,7 +1645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1660,7 +1664,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1680,7 +1684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1699,7 +1703,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;

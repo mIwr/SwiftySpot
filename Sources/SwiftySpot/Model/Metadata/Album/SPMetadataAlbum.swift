@@ -102,10 +102,11 @@ public class SPMetadataAlbum: SPTypedObj {
         self.deliveryId = deliveryId
         self.localizedNames = localizedNames
         
-        if (!uri.isEmpty && !gid.isEmpty) {
-            super.init(uri: uri, globalID: gid)
-            return
-        } else if (!uri.isEmpty) {
+        if (!uri.isEmpty) {
+            if (!gid.isEmpty) {
+                super.init(uri: uri, globalID: gid)
+                return
+            }
             super.init(uri: uri)
             return
         }

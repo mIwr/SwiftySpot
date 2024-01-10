@@ -284,6 +284,12 @@ extension SPClient {
     ///- Parameter authReq: API func handler with actual or refreshed client and auth tokens
     ///- Returns: API request session task
     func safeAuthReq(_ authReq: @escaping (_ safeClToken: String, _ safeAuthToken: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        if let aToken = authToken {
+            return safeClReq { safeClToken in
+                let task = authReq(safeClToken, aToken)
+                return task
+            }
+        }
         let task = refreshAuth { result in
             do {
                 _ = try result.get()
@@ -300,6 +306,12 @@ extension SPClient {
     ///- Parameter authProfileReq: API func handler with actual or refreshed private back-end access point, client and auth tokens
     ///- Returns: API request session task
     func safeAuthProfileReq(_ authProfileReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeProfile: SPProfile) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        if let safeProfile = profile {
+            return safeAuthReq { safeClToken, safeAuthToken in
+                let task = authProfileReq(safeClToken, safeAuthToken, safeProfile)
+                return task
+            }
+        }
         let task = getProfileInfo { result in
             var country: String
             if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {

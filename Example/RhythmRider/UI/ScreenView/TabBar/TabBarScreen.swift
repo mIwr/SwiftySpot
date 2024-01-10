@@ -84,6 +84,16 @@ struct TabBarScreen: View {
                 continuation.resume()
             }
         }
+        await withCheckedContinuation { continuation in
+            api.client.getLikedArtists(pageLimit: SPCollectionController.defaultPageSize * 10, pageToken: nil) { _ in
+                continuation.resume()
+            }
+        }
+        await withCheckedContinuation { continuation in
+            api.client.getDislikedArtists(pageLimit: SPCollectionController.defaultPageSize * 10, pageToken: nil) { _ in
+                continuation.resume()
+            }
+        }
         return true
     }
 }

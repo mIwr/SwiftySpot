@@ -1,5 +1,19 @@
 #  Changelog
 
+## Version 0.5.1
+**10.01.2024**
+
+**API-related changes**
+
+- Artist metadata resolver
+
+**Other changes**
+
+- GID <-> Base62 ID conversion fix
+- API credentials refresher fix
+
+_____________________________
+
 ## Version 0.5.0
 **08.12.2023**
 

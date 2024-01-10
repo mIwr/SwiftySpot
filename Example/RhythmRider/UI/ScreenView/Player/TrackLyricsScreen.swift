@@ -12,14 +12,14 @@ struct TrackLyricsScreen: View {
     
     @EnvironmentObject var api: ApiController
     
-    fileprivate var _trackLyrics: TrackLyricsVModel
+    @StateObject fileprivate var _trackLyrics: TrackLyricsVModel
     
     @State fileprivate var _loaded: Bool? = nil
     @State fileprivate var _errMsg: String = ""
     @Binding var presented: Bool
     
     init(track: SPMetadataTrack, presented: Binding<Bool>) {
-        self._trackLyrics = TrackLyricsVModel(track: track)
+        __trackLyrics = StateObject(wrappedValue: TrackLyricsVModel(track: track))
         _presented = presented
     }
     

@@ -17,7 +17,7 @@ struct NowPlayingView: View {
     @EnvironmentObject var playbackController: PlaybackController
     
     @State var trackName: String
-    @State var artists: [String]
+    @State var artists: [(uri: String, name: String)]
     @State var playing: Bool
     
     @State fileprivate var _sheetShow: Bool
@@ -27,10 +27,10 @@ struct NowPlayingView: View {
             if (artists.isEmpty) {
                 return ""
             }
-            var res = artists[0]
+            var res = artists[0].name
             if (artists.count > 1) {
                 for i in 1 ... artists.count - 1 {
-                    res += " • " + artists[i]
+                    res += " • " + artists[i].name
                 }
             }
             return res
@@ -126,7 +126,7 @@ struct NowPlayingView: View {
                 }
                 trackName = parseRes.1?.trackMeta.name ?? ""
                 artists = parseRes.1?.trackMeta.artists.map({ artist in
-                    return artist.name
+                    return (uri: artist.uri, name: artist.name)
                 }) ?? []
             })
             .onReceive(NotificationCenter.default.publisher(for: .SPPlayStateUpdate), perform: { notification in

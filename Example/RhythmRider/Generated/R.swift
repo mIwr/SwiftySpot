@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 51 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 58 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -64,6 +64,41 @@ struct _R {
       ///
       /// Locales: en, ru
       var alertConfirmTitle: RswiftResources.StringResource { .init(key: "alertConfirmTitle", tableName: "Localizable", source: source, developmentValue: "Are you sure?", comment: nil) }
+
+      /// en translation: Appears
+      ///
+      /// Key: artistAppears
+      ///
+      /// Locales: en, ru
+      var artistAppears: RswiftResources.StringResource { .init(key: "artistAppears", tableName: "Localizable", source: source, developmentValue: "Appears", comment: nil) }
+
+      /// en translation: Compilations
+      ///
+      /// Key: artistCompilations
+      ///
+      /// Locales: en, ru
+      var artistCompilations: RswiftResources.StringResource { .init(key: "artistCompilations", tableName: "Localizable", source: source, developmentValue: "Compilations", comment: nil) }
+
+      /// en translation: Artist details load error
+      ///
+      /// Key: artistLoadError
+      ///
+      /// Locales: en, ru
+      var artistLoadError: RswiftResources.StringResource { .init(key: "artistLoadError", tableName: "Localizable", source: source, developmentValue: "Artist details load error", comment: nil) }
+
+      /// en translation: Singles
+      ///
+      /// Key: artistSingles
+      ///
+      /// Locales: en, ru
+      var artistSingles: RswiftResources.StringResource { .init(key: "artistSingles", tableName: "Localizable", source: source, developmentValue: "Singles", comment: nil) }
+
+      /// en translation: Top tracks
+      ///
+      /// Key: artistTopTracks
+      ///
+      /// Locales: en, ru
+      var artistTopTracks: RswiftResources.StringResource { .init(key: "artistTopTracks", tableName: "Localizable", source: source, developmentValue: "Top tracks", comment: nil) }
 
       /// en translation: Empty login
       ///
@@ -127,6 +162,20 @@ struct _R {
       ///
       /// Locales: en, ru
       var favUserPlaylists: RswiftResources.StringResource { .init(key: "favUserPlaylists", tableName: "Localizable", source: source, developmentValue: "Playlists", comment: nil) }
+
+      /// en translation: Albums
+      ///
+      /// Key: generalAlbums
+      ///
+      /// Locales: en, ru
+      var generalAlbums: RswiftResources.StringResource { .init(key: "generalAlbums", tableName: "Localizable", source: source, developmentValue: "Albums", comment: nil) }
+
+      /// en translation: All
+      ///
+      /// Key: generalAll
+      ///
+      /// Locales: en, ru
+      var generalAll: RswiftResources.StringResource { .init(key: "generalAll", tableName: "Localizable", source: source, developmentValue: "All", comment: nil) }
 
       /// en translation: Cancel
       ///

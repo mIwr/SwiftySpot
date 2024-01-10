@@ -113,10 +113,11 @@ public class SPMetadataTrack: SPTypedObj {
         self.versionName = versionName
         self.artistWithRole = artistWithRole
         
-        if (!uri.isEmpty && !gid.isEmpty) {
-            super.init(uri: uri, globalID: gid)
-            return
-        } else if (!uri.isEmpty) {
+        if (!uri.isEmpty) {
+            if (!gid.isEmpty) {
+                super.init(uri: uri, globalID: gid)
+                return
+            }
             super.init(uri: uri)
             return
         }

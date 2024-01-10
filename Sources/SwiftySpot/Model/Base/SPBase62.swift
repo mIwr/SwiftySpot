@@ -31,7 +31,15 @@ public final class SPBase62 {
         255, 255, 255, 255, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
         29, 30, 31, 32, 33, 34, 35, 255, 255, 255, 255, 255, 255, 36, 37, 38, 39, 40, 41, 42, 43, 44,
         45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61,
-    ]// ["A"] -> 10
+    ]// ["A"] -> 10 [0..9,A..Z,a..z]
+    fileprivate static let _decodeMapInversed: Array<UInt8> = [
+        255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+        255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+        255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 255, 255, 255,
+        255, 255, 255, 255, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 255, 255, 255, 255, 255, 255, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
+    ]// ["A"] -> 10 [0..9,a..z,A..Z]
     
     fileprivate static let _base62Pow10 = UInt128(pow(Double(_alphabet.count), 10))//<=10 base62 digits
     fileprivate static let _base62Pow20 = _base62Pow10 * _base62Pow10//<=20 base62 digits
@@ -75,20 +83,20 @@ public final class SPBase62 {
     
     /// Decodes Base62 string value to an UInt128 value.
     /// - Parameter string: A string value that should be decoded.
-    /// - Parameter inversedAlphabet: Use inversed base62 alphabet basis
+    /// - Parameter inversedAlphabet: Use inversed base62 decode map
     /// - Returns: A base62 decoded UInt128 value.
     public static func decode(string: String, inversedAlphabet: Bool = false) -> UInt128 {
         if (inversedAlphabet) {
-            return decode(string: string, alphabet: _alphabetInversed)
+            return decode(string: string, decodeMap: _decodeMapInversed)
         }
-        return decode(string: string, alphabet: _alphabet)
+        return decode(string: string, decodeMap: _decodeMap)
     }
 
-    fileprivate static func decode(string: String, alphabet: Array<Character>) -> UInt128 {
+    fileprivate static func decode(string: String, decodeMap: Array<UInt8>) -> UInt128 {
         if (string.isEmpty) {
             return 0
         }
-        let validateSet = Set<Character>(alphabet)
+        let validateSet = Set<Character>(_alphabet)
         for ch in string {
             if (!validateSet.contains(ch)) {
                 return 0
@@ -103,7 +111,7 @@ public final class SPBase62 {
         }
         for i in 0...endIndex - 1 {
             let digit = strBytes[endIndex - 1 - i]
-            let num = UInt64(_decodeMap[Int(digit)])
+            let num = UInt64(decodeMap[Int(digit)])
             if (num > 61) {
                 continue
             }
@@ -120,7 +128,7 @@ public final class SPBase62 {
         }
         for i in 10...endIndex - 1 {
             let digit = strBytes[endIndex - 1 - i + 10]
-            let num = UInt64(_decodeMap[Int(digit)])
+            let num = UInt64(decodeMap[Int(digit)])
             if (num > 61) {
                 continue
             }
@@ -137,7 +145,7 @@ public final class SPBase62 {
         }
         for i in 20...endIndex - 1 {
             let digit = strBytes[endIndex - 1 - i + 20]
-            let num = UInt64(_decodeMap[Int(digit)])
+            let num = UInt64(decodeMap[Int(digit)])
             if (num > 61) {
                 continue
             }

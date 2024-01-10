@@ -32,6 +32,12 @@
 
 "trackLyricsLoadError" = "Не удалось загрузить текст песни";
 
+"artistTopTracks" = "Популярные треки";
+"artistSingles" = "Синглы";
+"artistAppears" = "Участвовал";
+"artistCompilations" = "Сборники";
+"artistLoadError" = "Ошибка загрузки информации об исполнителе";
+
 "favTitle" = "Избранное";
 "favLikedTracks" = "Понравившиеся треки";
 "favUserPlaylists" = "Плейлисты";
@@ -56,8 +62,10 @@
 "generalUpdated" = "Обновлено";
 "generalToday" = "Сегодня";
 "generalYesterday" = "Вчера";
+"generalAlbums" = "Альбомы";
 "generalTracks" = "Треки";
 "generalRefresh" = "Обновить";
 "generalClose" = "Закрыть";
 "generalLogout" = "Выйти из учетной записи";
 "generalCancel" = "Отмена";
+"generalAll" = "Все";

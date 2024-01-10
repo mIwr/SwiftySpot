@@ -32,6 +32,12 @@
 
 "trackLyricsLoadError" = "Unable to load track lyrics";
 
+"artistTopTracks" = "Top tracks";
+"artistSingles" = "Singles";
+"artistAppears" = "Appears";
+"artistCompilations" = "Compilations";
+"artistLoadError" = "Artist details load error";
+
 "favTitle" = "Favourite";
 "favLikedTracks" = "Liked tracks";
 "favUserPlaylists" = "Playlists";
@@ -56,8 +62,10 @@
 "generalUpdated" = "Updated";
 "generalToday" = "Today";
 "generalYesterday" = "Yesterday";
+"generalAlbums" = "Albums";
 "generalTracks" = "Tracks";
 "generalRefresh" = "Refresh";
 "generalClose" = "Close";
 "generalLogout" = "Logout";
 "generalCancel" = "Cancel";
+"generalAll" = "All";

@@ -36,12 +36,9 @@ public class SPTypedObj: SPID {
     
     public init(globalID: [UInt8], type: SPEntityType) {
         self.entityType = type
-        let low: UInt64 = BitConvertUtil.getVal(globalID) ?? 0
-        let high: UInt64 = BitConvertUtil.getVal(globalID, offset: 8) ?? 0
-        let num = UInt128(high: high, low: low)
-        let seq = SPBase62.encode(num: num, inversedAlphabet: true)
-        self.uri = type.uriPrefix + seq
-        super.init(globalID: globalID)
+        let spid = SPID(globalID: globalID)
+        self.uri = type.uriPrefix + spid.id
+        super.init(id: spid.id, globalID: globalID)
     }
     
     public override func hash(into hasher: inout Hasher) {

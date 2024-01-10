@@ -53,7 +53,7 @@ extension SPClient {
             for item in dataArr.extensionData {
                 if (!item.extensionData.isA(Spotify_Metadata_Artist.self)) {
 #if DEBUG
-                    print("Found unexpected metadata type on album data array: " + item.extensionData.typeURL)
+                    print("Found unexpected metadata type on artist data array: " + item.extensionData.typeURL)
 #endif
                     continue
                 }

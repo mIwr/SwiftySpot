@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "SPClientInfo.proto";
 
-//Requests
 message SPClientTokenRequest {
     ClientTokenRequestType type = 1;
     oneof request {
@@ -51,7 +50,6 @@ message ChallengeAnswerData {
 }
 
 
-//Responses
 message SPClientTokenResponse {
     ClientTokenResponseType type = 1;
     oneof response {

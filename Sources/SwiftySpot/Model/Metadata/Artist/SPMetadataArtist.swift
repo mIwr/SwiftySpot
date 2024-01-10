@@ -11,16 +11,67 @@ public class SPMetadataArtist: SPTypedObj {
     public let name: String
     ///Artist popularity
     public let popularity: Int32
-    ///Top tracks short info
+    ///Top tracks short info by countries
     public let topTracks: [SPMetadataTopTracks]
+    public var allTopTracks: [SPMetadataTrack] {
+        get {
+            var res: [SPMetadataTrack] = []
+            for countryTracks in topTracks {
+                res.append(contentsOf: countryTracks.items)
+            }
+            return res
+        }
+    }
     ///Artist albums
     public let albumGroup: [[SPMetadataAlbum]]
+    public var albums: [SPMetadataAlbum] {
+        get {
+            return extractGroup(albumGroup)
+        }
+    }
     ///Artist singles
     public let singleGroup: [[SPMetadataAlbum]]
+    public var singles: [SPMetadataAlbum] {
+        get {
+            return extractGroup(singleGroup)
+        }
+    }
     ///Artist compilations
     public let compilationGroup: [[SPMetadataAlbum]]
+    public var compilations: [SPMetadataAlbum] {
+        get {
+            return extractGroup(compilationGroup)
+        }
+    }
     ///Artist appears albums
     public let appearsGroup: [[SPMetadataAlbum]]
+    public var appears: [SPMetadataAlbum] {
+        get {
+            return extractGroup(appearsGroup)
+        }
+    }
+    ///All artist albums, singles, appears and compilations
+    public var allAlbums: [SPMetadataAlbum] {
+        get {
+            var res: [SPMetadataAlbum] = []
+            for group in albumGroup {
+                res.append(contentsOf: group)
+            }
+            for group in albumGroup {
+                res.append(contentsOf: group)
+            }
+            for group in singleGroup {
+                res.append(contentsOf: group)
+            }
+            for group in compilationGroup {
+                res.append(contentsOf: group)
+            }
+            for group in appearsGroup {
+                res.append(contentsOf: group)
+            }
+            return res
+        }
+    }
     ///Artist affected genres
     public let genres: [String]
     ///Artist external IDs
@@ -68,13 +119,29 @@ public class SPMetadataArtist: SPTypedObj {
         self.indexVersion = indexVersion
         
         if (!uri.isEmpty) {
-            let obj = SPTypedObj(uri: uri)
-            if (obj.entityType != .artist && (!obj.globalID.isEmpty || obj.globalID == gid)) {
-                super.init(uri: uri)
+            if (!gid.isEmpty) {
+                super.init(uri: uri, globalID: gid)
                 return
             }
+            super.init(uri: uri)
+            return
         }
         super.init(globalID: gid, type: .artist)
+    }
+    
+    fileprivate func extractGroup<T: SPID>(_ group: [[T]]) -> [T] {
+        var res: [T] = []
+        var uriSet = Set<String>()
+        for grNode in group {
+            for item in grNode {
+                if (uriSet.contains(item.hexGlobalID)) {
+                    continue
+                }
+                res.append(item)
+                uriSet.insert(item.hexGlobalID)
+            }
+        }
+        return res
     }
     
     static func from(protobuf: Spotify_Metadata_Artist, uri: String) -> SPMetadataArtist {

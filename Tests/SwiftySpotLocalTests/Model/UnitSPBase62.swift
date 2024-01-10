@@ -18,7 +18,7 @@ final class UnitSPBase62: XCTestCase {
     
     func testDecodeBase62() {
         let str = TestConstants.artistId
-        let num = SPBase62.decode(string: str, inversedAlphabet: true)
+        let num = SPBase62.decode(string: str)
         let expected: UInt128 = UInt128("190726711456610392119944153982734811176", radix: 10) ?? 0
         XCTAssertEqual(expected, num, "Incorrect Base62 decode process")
     }

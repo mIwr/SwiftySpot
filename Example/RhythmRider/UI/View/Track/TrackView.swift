@@ -95,7 +95,7 @@ struct TrackView: View {
             let safeTrackMeta = api.client.tracksMetaStorage.find(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ artistName in
                 return SPMetadataArtist(gid: [], name: artistName)
             }))
-            TrackFullInfoScreen(_trackInfo: safeTrackMeta, presented: $_showTrackInfoSheet)
+            TrackFullInfoScreen(safeTrackMeta, presented: $_showTrackInfoSheet)
         })
         .onAppear(perform: {
             let liked = api.client.likedTracksStorage.find(uri: trackUri)
