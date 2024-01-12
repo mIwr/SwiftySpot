@@ -27,7 +27,9 @@ struct PlayerScreen: View {
     @State var showTrackFullInfoSheet: Bool
     @State var showTrackLyricsSheet: Bool
     
-    @State var showArtistInfoSheet: [Bool]
+    @State var showArtistInfoSheet: Bool
+    @State var preserveArtistInfoSheetState: Bool//Playback update (another artists) preserves opened sheet
+    @State var selectedArtistUri: String?
     
     init(trackName: Binding<String>, artists: Binding<[(uri: String, name: String)]>, playing: Binding<Bool>) {
         _trackName = trackName
@@ -42,7 +44,9 @@ struct PlayerScreen: View {
         _showShareActivityVC = State(initialValue: false)
         _showTrackFullInfoSheet = State(initialValue: false)
         _showTrackLyricsSheet = State(initialValue: false)
-        _showArtistInfoSheet = State(initialValue: [Bool].init(repeating: false, count: artists.wrappedValue.count))
+        _showArtistInfoSheet = State(initialValue: false)
+        _preserveArtistInfoSheetState = State(initialValue: false)
+        _selectedArtistUri = State(initialValue: nil)
     }
     
     var artistString: String {
@@ -104,14 +108,26 @@ struct PlayerScreen: View {
                                         .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
                                 }
                                 Button(action: {
-                                    showArtistInfoSheet[index] = !showArtistInfoSheet[index]
+                                    selectedArtistUri = item.uri
+                                    showArtistInfoSheet = true
+                                    preserveArtistInfoSheetState = false
                                 }, label: {
                                     Text(item.name)
                                         .font(.subheadline).fontWeight(.regular)
                                         .foregroundColor(Color(R.color.secondary))
                                 })
-                                .sheet(isPresented: $showArtistInfoSheet[index], onDismiss: {
-                                    showArtistInfoSheet[index] = false
+                                .sheet(isPresented: Binding<Bool>(get: {
+                                    return showArtistInfoSheet && (item.uri == selectedArtistUri || preserveArtistInfoSheetState)
+                                }, set: { newVal in
+                                    if (!newVal) {
+                                        selectedArtistUri = nil
+                                        preserveArtistInfoSheetState = false
+                                    }
+                                    showArtistInfoSheet = newVal
+                                }), onDismiss: {
+                                    selectedArtistUri = nil
+                                    preserveArtistInfoSheetState = false
+                                    showArtistInfoSheet = false
                                 }, content: {
                                     ArtistScreen(artistShort: SPMetadataArtist(gid: [], name: item.name, uri: item.uri))
                                 })
@@ -359,6 +375,9 @@ struct PlayerScreen: View {
         .onReceive(NotificationCenter.default.publisher(for: .SPPlayItemUpdate), perform: { notification in
             let parseRes = notification.tryParsePlayItemUpdate()
             guard let safeTrack = parseRes.1, parseRes.0 else {return}
+            if (showArtistInfoSheet) {
+                preserveArtistInfoSheetState = true
+            }
             var collectionItem = api.client.likedTracksStorage.find(uri: safeTrack.uri)
             like = collectionItem != nil && collectionItem?.removed == false
             collectionItem = api.client.dislikedTracksStorage.find(uri: safeTrack.uri)

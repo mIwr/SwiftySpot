@@ -95,7 +95,9 @@ struct TrackLyricsScreen: View {
                         continuation.resume(returning: false)
                         return
                     }
-                    _trackLyrics.lyrics = safeLyrics
+                    DispatchQueue.main.async {
+                        _trackLyrics.lyrics = safeLyrics
+                    }
                     continuation.resume(returning: true)
                     return
                     case .failure(let err):

@@ -452,7 +452,9 @@ class PlaybackController: NSObject, ObservableObject {
         _vlcPlayer.media = nil
         _vlcPlayerTimeLastInMs = 0
         _playbackPositionInMs = 0
-        playingTrackUri = safePlayingTrack.uri
+        DispatchQueue.main.async {
+            self.playingTrackUri = safePlayingTrack.uri
+        }
         self.setupNowPlaying()
         guard let safeFile = file else {return}
         let taskId = UIApplication.shared.beginBackgroundTask(withName: "bgDownloadLoop" + safeFile.hexId) {
