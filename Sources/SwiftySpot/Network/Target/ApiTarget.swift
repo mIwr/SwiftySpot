@@ -27,7 +27,6 @@ enum ApiTarget {
     case playlist(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, listItems: String)
     case metadata(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, proto: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest)
     case lyrics(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, type: String, id: String, vocalRemove: Bool, syllableSync: Bool, clientLangCode: String)
-    case lyricsReserve(type: String, id: String)
     case collection(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, proto: Com_Spotify_Collection2_V2_Proto_PageRequest)
     case collectionDelta(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, proto: Com_Spotify_Collection2_V2_Proto_DeltaRequest)
     case collectionWrite(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, proto: Com_Spotify_Collection2_V2_Proto_WriteRequest)
@@ -35,4 +34,5 @@ enum ApiTarget {
     case search(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String)
     case playIntent (apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, audioFileHexId: String, proto: Spotify_Playplay_Proto_PlayIntentRequest)
     case downloadInfo(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, audioFileHexId: String, productType: Int)
+    case playlistFromTrack(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, trackId: String)
 }

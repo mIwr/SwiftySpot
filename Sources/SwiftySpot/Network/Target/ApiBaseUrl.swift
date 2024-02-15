@@ -11,7 +11,6 @@ extension ApiTarget {
     fileprivate static let _authBaseUrl = "https://login5.spotify.com/"
     fileprivate static let _spClientWgBaseUrl = "https://spclient.wg.spotify.com/"
     fileprivate static let _publicApiBaseUrl = "https://api.spotify.com/"
-    fileprivate static let _lyricsReserveBaseUrl = "https://spotify-lyric-api-984e7b4face0.herokuapp.com/"
     
     var baseURL: String {
         switch self {
@@ -25,23 +24,17 @@ extension ApiTarget {
         case .landing: return ApiTarget._spClientWgBaseUrl
         case .artist: return ApiTarget._spClientWgBaseUrl
         case .artistUI: return ApiTarget._spClientWgBaseUrl
-        case .playlist(let apHost, _, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
-        case .metadata(let apHost, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
+        case .playlist(let apHost, _, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
+        case .metadata(let apHost, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
         case .lyrics: return ApiTarget._spClientWgBaseUrl
-        case .lyricsReserve: return ApiTarget._lyricsReserveBaseUrl
         case .collection: return ApiTarget._spClientWgBaseUrl
-        case .collectionDelta(let apHost, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
-        case .collectionWrite(let apHost, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
+        case .collectionDelta(let apHost, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
+        case .collectionWrite(let apHost, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
         case .searchSuggestion: return ApiTarget._spClientWgBaseUrl
         case .search: return ApiTarget._spClientWgBaseUrl
-        case .playIntent(let apHost, _, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
-        case .downloadInfo(let apHost, _, _, _, _, _, _, _):
-            return normalizeBaseUrl(apHost)
+        case .playIntent(let apHost, _, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
+        case .downloadInfo(let apHost, _, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
+        case .playlistFromTrack: return ApiTarget._spClientWgBaseUrl
         }
     }
     

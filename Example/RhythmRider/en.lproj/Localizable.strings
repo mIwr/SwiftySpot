@@ -8,7 +8,9 @@
 "tabFav" = "Favourite";
 "tabSearch" = "Search";
 
-"homePlaylistSet" = "Generated playlists";
+"homeGeneratedPlaylistSet" = "Generated playlists";
+"homeRadioPlaylistSet" = "Radios";
+"homeMiscPlaylistSet" = "Other playlists";
 "homeLoadError" = "Playlists load error";
 
 "playlistNoTracks" = "No tracks";
@@ -16,7 +18,9 @@
 
 "itemContextLike" = "Like";
 "itemContextRemoveLike" = "Remove 'Like'";
-"itemContextInfo" = "Info";
+"itemContextGoToArtist" = "Go to artist";
+"itemContextPlaylistFromTrack" = "Radio by track";
+"itemContextTrackInfo" = "Track info";
 "itemContextShare" = "Share";
 "itemContextDislike" = "Dislike";
 "itemContextRemoveDislike" = "Remove 'Dislike'";

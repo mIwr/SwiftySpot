@@ -126,7 +126,6 @@ extension ApiTarget {
                 "X-Client-Id": clId
             ]
             return dict
-        case .lyricsReserve: return [:]
         case .collection(let userAgent, let clToken, let authToken, let os, let appVer, _):
             var dict = ApiTarget._protobufCollectionDict
             dict["User-Agent"] = userAgent
@@ -194,6 +193,17 @@ extension ApiTarget {
                 "Authorization": "Bearer " + authToken,
                 "App-Platform": os,
                 "Spotify-App-Version": appVer,
+            ]
+            return dict
+        case .playlistFromTrack(let userAgent, let clToken, let authToken, let os, let appVer, let clId, _):
+            let dict: [String: String] = [
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+                "X-Client-Id": clId
             ]
             return dict
         }

@@ -149,8 +149,8 @@ struct SearchScreen: View {
                                     playOp()
                                 }
                                 let track = _searchController.playSeq[index].trackMeta
-                                let artists: [String] = track.artists.map({ artist in
-                                    return artist.name
+                                let artists: [(uri: String, name: String)] = track.artists.map({ artist in
+                                    return (uri: artist.uri, name: artist.name)
                                 })
                                 TrackView(trackUri: uri, title: track.name, img: nil, artists: artists, onPress: onPress, playUri: playController.playingTrackUri)
                                     .id(uri)

@@ -45,12 +45,7 @@ extension SPClient {
                 do {
                     let lyricsData = try result.get()
                     guard let safeLyrics = lyricsData else {
-                        _ = getReserveLyricsByApi(type: type, obj: obj) { reserveResult in
-                            if let safeReserveLyrics = try? reserveResult.get() {
-                                self.lyricsStorage.update([obj.uri: safeReserveLyrics])
-                            }
-                            completion(reserveResult)
-                        }
+                        completion(.failure(.lyricsNotFound))
                         return
                     }
                     let parsed = SPLyrics.from(protobuf: safeLyrics, target: obj)
@@ -67,14 +62,4 @@ extension SPClient {
             return task
         }
     }
-    
-    #if DEBUG
-    func getLyricsReserve(obj: SPTypedObj, completion: @escaping (_ result: Result<SPLyrics?, SPError>) -> Void) {
-        var type = ""
-        if (obj.entityType == .track) {
-            type = "track"
-        }
-        _ = getReserveLyricsByApi(type: type, obj: obj, completion: completion)
-    }
-    #endif
 }

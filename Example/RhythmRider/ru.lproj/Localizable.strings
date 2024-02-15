@@ -8,7 +8,9 @@
 "tabFav" = "Избранное";
 "tabSearch" = "Поиск";
 
-"homePlaylistSet" = "Сгенерированные плейлисты";
+"homeGeneratedPlaylistSet" = "Сгенерированные плейлисты";
+"homeRadioPlaylistSet" = "Радио-плейлисты";
+"homeMiscPlaylistSet" = "Прочее";
 "homeLoadError" = "Ошибка загрузки плейлистов";
 
 "playlistNoTracks" = "Нет треков";
@@ -16,7 +18,9 @@
 
 "itemContextLike" = "Нравится";
 "itemContextRemoveLike" = "Удалить из коллекции 'Нравится'";
-"itemContextInfo" = "Информация";
+"itemContextGoToArtist" = "Перейти к артисту";
+"itemContextTrackInfo" = "Информация о треке";
+"itemContextPlaylistFromTrack" = "Радио по треку";
 "itemContextShare" = "Поделиться";
 "itemContextDislike" = "Не нравится";
 "itemContextRemoveDislike" = "Удалить из коллекции 'Не нравится'";

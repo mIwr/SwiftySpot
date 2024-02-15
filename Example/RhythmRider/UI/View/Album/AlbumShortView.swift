@@ -22,23 +22,19 @@ struct AlbumShortView: View {
     }
     
     var body: some View {
-        Button(action: {
-            //TODO open album tracks in nav link
-        }, label: {
-            VStack(alignment: .leading, spacing: 4, content: {
-                Image(uiImage: img ?? R.image.cover() ?? UIImage())
-                    .resizable()
-                    .frame(width: 128, height: 128)
-                    .cornerRadius(12)
-                Text(name)
-                    .font(.headline.weight(.semibold))
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(Color(R.color.primary))
-                Text(String(releaseYear))
-                    .font(.body)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(Color(R.color.secondary))
-            })
+        VStack(alignment: .leading, spacing: 4, content: {
+            Image(uiImage: img ?? R.image.cover() ?? UIImage())
+                .resizable()
+                .frame(width: 128, height: 128)
+                .cornerRadius(12)
+            Text(name)
+                .font(.headline.weight(.semibold))
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Color(R.color.primary))
+            Text(String(releaseYear))
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Color(R.color.secondary))
         })
         .frame(maxWidth: 128)
     }

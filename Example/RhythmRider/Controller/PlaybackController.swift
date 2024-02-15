@@ -452,8 +452,12 @@ class PlaybackController: NSObject, ObservableObject {
         _vlcPlayer.media = nil
         _vlcPlayerTimeLastInMs = 0
         _playbackPositionInMs = 0
-        DispatchQueue.main.async {
-            self.playingTrackUri = safePlayingTrack.uri
+        if (Thread.isMainThread) {
+            playingTrackUri = safePlayingTrack.uri
+        } else {
+            DispatchQueue.main.sync {
+                playingTrackUri = safePlayingTrack.uri
+            }
         }
         self.setupNowPlaying()
         guard let safeFile = file else {return}

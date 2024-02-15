@@ -37,4 +37,37 @@ extension SPClient {
             return task
         }
     }
+    
+    ///Generate playlist by track seed
+    ///- Parameter trackId: Track ID seed
+    ///- Parameter completion: Playlist info response handler
+    ///- Returns: API request session task
+    public func getPlaylistFromTrack(trackId: String, completion: @escaping (_ result: Result<[SPTypedObj], SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthApReq { safeClToken, safeAuthToken, safeSpclientAP in
+            let task = getPlaylistFromTrackByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, trackId: trackId) { result in
+                do {
+                    let playlists = try result.get()
+                    var parsedPlaylists: [SPTypedObj] = []
+                    for playlistShort in playlists.playlists {
+                        let item = SPTypedObj(uri: playlistShort.uri)
+                        if (item.entityType != .playlist) {
+                            #if DEBUG
+                            print("Unexpected uri (not playlist) " + playlistShort.uri)
+                            #endif
+                            continue
+                        }
+                        parsedPlaylists.append(item)
+                    }
+                    completion(.success(parsedPlaylists))
+                } catch {
+#if DEBUG
+                    print(error)
+#endif
+                    let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                    completion(.failure(parsed))
+                }
+            }
+            return task
+        }
+    }
 }

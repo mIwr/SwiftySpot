@@ -8,15 +8,15 @@
 import Foundation
 import SwiftySpot
 
-class PlaylistInfoVModel {
+class PlaylistInfoVModel: ObservableObject {
     let id: String
     var uri: String {
         get {
             return SPNavigateUriUtil.generatePlaylistUri(id: id)
         }
     }
-    let name: String
-    let desc: String
+    var name: String
+    var desc: String
     
     fileprivate(set) var tracks: ItemsVModel<SPMetadataTrack>
     

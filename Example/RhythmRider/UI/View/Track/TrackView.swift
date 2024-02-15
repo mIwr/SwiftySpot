@@ -15,13 +15,17 @@ struct TrackView: View {
     let trackUri: String
     @State var title: String
     let img: UIImage?
-    @State var artists: [String]
+    @State var artists: [(uri: String, name: String)]
     let onPress: () -> Void
     @State var like: Bool
     @State var dislike: Bool
     @State var playing: Bool
     
+    @State var generatedPlaylistUri: String
+    
     @State fileprivate var _showTrackInfoSheet: Bool
+    @State fileprivate var _showArtistInfoSheet: Bool
+    @State fileprivate var _showGeneratedPlaylistSheet: Bool
     
     fileprivate var _trackId: String {
         get {
@@ -35,26 +39,29 @@ struct TrackView: View {
             if (artists.isEmpty) {
                 return "N/A"
             }
-            var res = artists[0]
+            var res = artists[0].name
             if (artists.count > 1) {
                 for i in 1 ... artists.count - 1 {
-                    res += " • " + artists[i]
+                    res += " • " + artists[i].name
                 }
             }
             return res
         }
     }
     
-    init(trackUri: String, title: String, img: UIImage?, artists: [String], onPress: @escaping () -> Void, playUri: String) {
+    init(trackUri: String, title: String, img: UIImage?, artists: [(uri: String, name: String)], onPress: @escaping () -> Void, playUri: String) {
         self.trackUri = trackUri
         _title = State(initialValue: title)
         self.img = img
         _artists = State(initialValue: artists)
         self.onPress = onPress
+        _generatedPlaylistUri = State(initialValue: "")
         _like = State(initialValue: false)
         _dislike = State(initialValue: false)
         _playing = State(initialValue: playUri == trackUri)
         __showTrackInfoSheet = State(initialValue: false)
+        __showArtistInfoSheet = State(initialValue: false)
+        __showGeneratedPlaylistSheet = State(initialValue: false)
     }
     
     var body: some View {
@@ -85,15 +92,36 @@ struct TrackView: View {
         .cornerRadius(8.0)
         .contextMenu(ContextMenu(menuItems: {
             _likeMenuAction
-            _infoMenuAction
+            if (artists.count == 1) {
+                _goToArtistMenuAction
+            }
+            _generatePlaylistFromTrackSeedMenuAction
+            _trackInfoMenuAction
             _shareMenuAction
             _dislikeMenuAction
         }))
+        .sheet(isPresented: $_showArtistInfoSheet, onDismiss: {
+            _showArtistInfoSheet = false
+        }, content: {
+            let safePair = artists.first ?? (uri: "", name: "N/A")
+            let safeArtistMeta = api.client.artistsMetaStorage.find(uri: safePair.uri) ?? SPMetadataArtist(gid: [], name: safePair.name, uri: safePair.uri)
+            ArtistScreen(artistShort: safeArtistMeta)
+        })
+        .sheet(isPresented: Binding<Bool>(get: {
+            return !generatedPlaylistUri.isEmpty && _showGeneratedPlaylistSheet
+        }, set: { boolVal in
+            _showGeneratedPlaylistSheet = boolVal
+        }), onDismiss: {
+            _showGeneratedPlaylistSheet = false
+        }, content: {
+            let playlist = SPLandingPlaylist(name: "", subtitle: "", uri: generatedPlaylistUri, image: "")
+            PlaylistScreen(playlistShort: playlist)
+        })
         .sheet(isPresented: $_showTrackInfoSheet, onDismiss: {
             _showTrackInfoSheet = false
         }, content: {
-            let safeTrackMeta = api.client.tracksMetaStorage.find(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ artistName in
-                return SPMetadataArtist(gid: [], name: artistName)
+            let safeTrackMeta = api.client.tracksMetaStorage.find(uri: trackUri) ?? SPMetadataTrack(gid: [], name: title, uri: trackUri, artists: artists.map({ pair in
+                return SPMetadataArtist(gid: [], name: pair.name)
             }))
             TrackFullInfoScreen(safeTrackMeta, presented: $_showTrackInfoSheet)
         })
@@ -115,7 +143,7 @@ struct TrackView: View {
             }
             title = trackObj.name
             artists = trackObj.artists.map({ artist in
-                return artist.name
+                return (uri: artist.uri, name: artist.name)
             })
         })
         .onReceive(NotificationCenter.default.publisher(for: .SPPlayItemUpdate), perform: { notification in
@@ -192,12 +220,61 @@ struct TrackView: View {
         })
     }
     
-    fileprivate var _infoMenuAction: some View {
+    fileprivate var _goToArtistMenuAction: some View {
+        return Button(action: {
+            _showArtistInfoSheet = !_showArtistInfoSheet
+        }, label: {
+            Label(
+                title: { Text(R.string.localizable.itemContextGoToArtist()) },
+                icon: {
+                    Image(R.image.icProfile)
+                        .resizable()
+                        .frame(width: 24, height: 24, alignment: .center)
+                        .foregroundColor(Color(R.color.primary))
+                }
+            )
+        })
+    }
+    
+    fileprivate var _generatePlaylistFromTrackSeedMenuAction: some View {
+        return Button(action: {
+            if (!generatedPlaylistUri.isEmpty) {
+                _showGeneratedPlaylistSheet = true
+                return
+            }
+            api.client.getPlaylistFromTrack(trackId: _trackId) { result in
+                do {
+                    let playlistId = try result.get()
+                    guard let safePlaylistId = playlistId.first, safePlaylistId.entityType == .playlist else {
+                        return
+                    }
+                    generatedPlaylistUri = safePlaylistId.uri
+                    _showGeneratedPlaylistSheet = true
+                } catch {
+                    #if DEBUG
+                    print(error)
+                    #endif
+                }
+            }
+        }, label: {
+            Label(
+                title: { Text(R.string.localizable.itemContextPlaylistFromTrack()) },
+                icon: {
+                    Image(R.image.icRadio)
+                        .resizable()
+                        .frame(width: 24, height: 24, alignment: .center)
+                        .foregroundColor(Color(R.color.primary))
+                }
+            )
+        })
+    }
+    
+    fileprivate var _trackInfoMenuAction: some View {
         return Button(action: {
             _showTrackInfoSheet = !_showTrackInfoSheet
         }, label: {
             Label(
-                title: { Text(R.string.localizable.itemContextInfo()) },
+                title: { Text(R.string.localizable.itemContextTrackInfo()) },
                 icon: {
                     Image(R.image.icInfo)
                         .resizable()
@@ -280,9 +357,9 @@ struct TrackView: View {
     @StateObject var api = ApiController(previewApiClient)
     let onPress: () -> Void = {}
     return VStack {
-        TrackView(trackUri: "234", title: "NOT-PLAYING long-long-long-long-long track name", img: R.image.previewCover(), artists: ["Artist1", "Artist2", "Artist3"], onPress: onPress, playUri: playUri)
+        TrackView(trackUri: "234", title: "NOT-PLAYING long-long-long-long-long track name", img: R.image.previewCover(), artists: [(uri: "spotify:123", name: "Artist1"),(uri: "spotify:1234", name: "Artist2"),(uri: "spotify:12345", name: "Artist3")], onPress: onPress, playUri: playUri)
       Divider()
-        TrackView(trackUri: playUri, title: "PLAYING long-long-long-long-long track name", img: R.image.previewCover(), artists: ["Artist1", "Artist2", "Artist3"], onPress: onPress, playUri: playUri)
+        TrackView(trackUri: playUri, title: "PLAYING long-long-long-long-long track name", img: R.image.previewCover(), artists: [(uri: "spotify:123", name: "Artist1"),(uri: "spotify:1234", name: "Artist2"),(uri: "spotify:12345", name: "Artist3")], onPress: onPress, playUri: playUri)
     }
     .environmentObject(api)
 }

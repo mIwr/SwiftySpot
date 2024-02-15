@@ -31,6 +31,7 @@ let package = Package(
             .process("likedArtistsResponse.protobuf"),
             .process("likedTracksReq.protobuf"),
             .process("likedTracksResponse.protobuf"),
+            .process("playlistFromTrackResponse.protobuf"),
             .process("playlistMetaReq.protobuf"),
             .process("playlistMetaResponse.protobuf"),
             .process("playlistResponse.protobuf"),

@@ -64,8 +64,8 @@ struct FavScreen: View {
                                     _ = playController.setPlaybackSeq(_favTracks.playSeq, playIndex: index, playNow: true)
                                 }
                                 if let safeTrack = _favTracks.details[uri] {
-                                    let artists: [String] = safeTrack.artists.map({ artist in
-                                        return artist.name
+                                    let artists: [(uri: String, name: String)] = safeTrack.artists.map({ artist in
+                                        return (uri: artist.uri, name: artist.name)
                                     })
                                     TrackView(trackUri: uri, title: safeTrack.name, img: nil, artists: artists, onPress: onPress, playUri: playController.playingTrackUri)
                                         .id(uri)

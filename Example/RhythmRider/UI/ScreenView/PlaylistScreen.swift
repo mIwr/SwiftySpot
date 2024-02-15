@@ -16,7 +16,7 @@ struct PlaylistScreen: View {
     @State fileprivate var _loaded: Bool? = nil
     @State fileprivate var _errMsg: String = ""
     
-    fileprivate var _playlistDetailed: PlaylistInfoVModel
+    @StateObject fileprivate var _playlistDetailed: PlaylistInfoVModel
     
     init(playlistShort: SPLandingPlaylist) {
         var title = playlistShort.name
@@ -25,7 +25,7 @@ struct PlaylistScreen: View {
             title = playlistShort.subtitle
             subtitle = ""
         }
-        _playlistDetailed = PlaylistInfoVModel(id: playlistShort.id, name: title, desc: subtitle)
+        __playlistDetailed = StateObject(wrappedValue: PlaylistInfoVModel(id: playlistShort.id, name: title, desc: subtitle))
     }
     
     var body: some View {
@@ -69,8 +69,8 @@ struct PlaylistScreen: View {
                                 _ = playController.setPlaybackSeq(_playlistDetailed.orderedPlaybackSeq, playIndex: index, playNow: true)
                             }
                             if let safeTrack = _playlistDetailed.tracks.details[uri] {
-                                let artists: [String] = safeTrack.artists.map({ artist in
-                                    return artist.name
+                                let artists: [(uri: String, name: String)] = safeTrack.artists.map({ artist in
+                                    return (uri: artist.uri, name: artist.name)
                                 })
                                 TrackView(trackUri: uri, title: safeTrack.name, img: nil, artists: artists, onPress: onPress, playUri: playController.playingTrackUri)
                             } else {
@@ -86,6 +86,8 @@ struct PlaylistScreen: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if let safePlaylistInfo = api.client.playlistsMetaStorage.find(uri: _playlistDetailed.uri) {
+                _playlistDetailed.name = safePlaylistInfo.name
+                _playlistDetailed.desc = safePlaylistInfo.desc
                 _playlistDetailed.tracks.setUris(safePlaylistInfo.tracks.map({ track in
                     return track.uri
                 }))
@@ -134,6 +136,8 @@ struct PlaylistScreen: View {
                 api.client.getPlaylistInfo(id: _playlistDetailed.id) { result in
                     switch(result) {
                     case .success(let playlistInfo):
+                        _playlistDetailed.name = playlistInfo.name
+                        _playlistDetailed.desc = playlistInfo.desc
                         continuation.resume(returning: playlistInfo.tracks)
                         break
                     case .failure(let error):

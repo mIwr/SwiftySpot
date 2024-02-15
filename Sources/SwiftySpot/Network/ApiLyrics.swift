@@ -45,25 +45,3 @@ func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: S
     }
     return task
 }
-
-func getReserveLyricsByApi(type: String, obj: SPTypedObj, completion: @escaping (_ result: Result<SPLyrics?, SPError>) -> Void) -> URLSessionDataTask? {
-    if (type.isEmpty || obj.id.isEmpty) {
-        completion(.success(nil))
-        return nil
-    }
-    guard let req: URLRequest = buildRequest(for: .lyricsReserve(type: type, id: obj.id)) else {
-        completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build lyrics info request")))
-        return nil
-    }
-    let task = requestJson(req) { result in
-        do {
-            let json = try result.get()
-            let parsed = SPLyrics.from(json: json, target: obj)
-            completion(.success(parsed))
-        } catch {
-            let parsed: SPError = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
-            completion(.failure(parsed))
-        }
-    }
-    return task
-}

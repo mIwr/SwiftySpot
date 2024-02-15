@@ -39,4 +39,25 @@ final class UnitRemoteApiPlaylist: XCTestCase {
             }
         }
     }
+    
+    func testGetPlaylistFromTrack() {
+        let exp = self.expectation(description: "Request time-out expectation")
+        _ = client.getPlaylistFromTrack(trackId: TestConstants.trackId) { result in
+            do {
+                let playlists = try result.get()
+                XCTAssertNotEqual(playlists.count, 0, "Playlist uri array is empty")
+            } catch {
+                print(error)
+                XCTAssert(false, "Empty playlist object: " + error.localizedDescription)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { error in
+            if let g_error = error
+            {
+                print(g_error)
+                XCTAssert(false, "Timeout error: " + g_error.localizedDescription)
+            }
+        }
+    }
 }

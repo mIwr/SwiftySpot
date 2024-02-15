@@ -111,8 +111,8 @@ struct ArtistScreen: View {
                                     _ = playController.setPlaybackSeq(_artistInfo.orderedPlaybackSeq, playIndex: index, playNow: true)
                                 }
                                 if let safeTrack = _artistInfo.topTracks.details[uri] {
-                                    let artists: [String] = safeTrack.artists.map({ artist in
-                                        return artist.name
+                                    let artists: [(uri: String, name: String)] = safeTrack.artists.map({ artist in
+                                        return (uri: artist.uri, name: artist.name)
                                     })
                                     TrackView(trackUri: uri, title: safeTrack.name, img: nil, artists: artists, onPress: onPress, playUri: playController.playingTrackUri)
                                 } else {

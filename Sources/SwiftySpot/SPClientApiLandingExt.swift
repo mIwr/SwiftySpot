@@ -22,8 +22,8 @@ extension SPClient {
             let task = getLandingByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, clientInfo: clientInfo, facetUri: "default", timezone: timezone) { result in
                 do {
                     let pbResponse = try result.get()
-                    let playlists = self.extractPlaylistsFromDac(pbResponse)
-                    completion(.success(SPLandingData(playlists: playlists)))
+                    let recognized = self.extractPlaylistsFromDac(pbResponse)
+                    completion(.success(SPLandingData(userMixes: recognized.userMixes, radioMixes: recognized.radio, playlists: recognized.playlists)))
                 } catch {
     #if DEBUG
                     print(error)
@@ -36,10 +36,12 @@ extension SPClient {
         }
     }
     
-    func extractPlaylistsFromDac(_ dac: Com_Spotify_Dac_Api_V1_Proto_DacResponse) -> [SPLandingPlaylist] {
+    func extractPlaylistsFromDac(_ dac: Com_Spotify_Dac_Api_V1_Proto_DacResponse) -> (userMixes: [SPLandingPlaylist], radio: [SPLandingPlaylist], playlists: [SPLandingPlaylist]) {
+        var userMixes: [SPLandingPlaylist] = []
+        var radio: [SPLandingPlaylist] = []
         var playlists: [SPLandingPlaylist] = []
         if (!dac.hasComponent) {
-            return playlists
+            return (userMixes: userMixes, radio: radio, playlists: playlists)
         }
         var uris = Set<String>()
         var discoverWeekly: SPLandingPlaylist?
@@ -49,7 +51,7 @@ extension SPClient {
 #if DEBUG
             print("Unknown top-level type URL: " + dac.component.typeURL)
 #endif
-            return playlists
+            return (userMixes: userMixes, radio: radio, playlists: playlists)
         }
         do {
             let page = try Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent(unpackingAny: dac.component)
@@ -81,6 +83,10 @@ extension SPClient {
                         discoverWeekly = playlist
                         continue
                     }
+                    if (lowercasedName.hasSuffix("radio") || lowercasedName.hasSuffix("радио")) {
+                        radio.append(playlist)
+                        continue
+                    }
                     playlists.append(playlist)
                 }
             }
@@ -89,19 +95,20 @@ extension SPClient {
             print(error)
 #endif
         }
+        if let safeReleaseRadar = releaseRadar {
+            userMixes.append(safeReleaseRadar)
+        }
+        if let safeWeekly = discoverWeekly {
+            userMixes.append(safeWeekly)
+        }
         if (!dailyMixes.isEmpty) {
             dailyMixes.sort { a, b in
                 return a.name.compare(b.name) == .orderedAscending
             }
-            playlists.insert(contentsOf: dailyMixes, at: 0)
+            userMixes.append(contentsOf: dailyMixes)
         }
-        if let safeWeekly = discoverWeekly {
-            playlists.insert(safeWeekly, at: 0)
-        }
-        if let safeReleaseRadar = releaseRadar {
-            playlists.insert(safeReleaseRadar, at: 0)
-        }
-        return playlists
+        
+        return (userMixes: userMixes, radio: radio, playlists: playlists)
     }
     
     func tryExtractPlaylistInfo(from component: Google_Protobuf_Any) -> [SPLandingPlaylist] {

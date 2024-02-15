@@ -11,7 +11,7 @@ import SwiftProtobuf
 
 final class UnitApiPlaylist: XCTestCase {
     
-    func testLocalProtobufResponseParse() {
+    func testLocalPlaylistInfoProtobufResponseParse() {
         guard let url = TestConstants.testBundle.url(forResource: "playlistResponse", withExtension: "protobuf") else {
             XCTAssertNotNil(nil, "Protobuf asset not found")
             return
@@ -20,5 +20,16 @@ final class UnitApiPlaylist: XCTestCase {
         let playlist = try? PlaylistInfo(serializedData: data)
         XCTAssertNotNil(playlist, "Playlist is nil")
         XCTAssertNotEqual(playlist?.payload.tracks.count, 0, "Incorrect playlist proto parsing")
+    }
+    
+    func testLocalPlaylistFromTrackResponseParse() {
+        guard let url = TestConstants.testBundle.url(forResource: "playlistFromTrackResponse", withExtension: "protobuf") else {
+            XCTAssertNotNil(nil, "Protobuf asset not found")
+            return
+        }
+        let data = (try? Data(contentsOf: url)) ?? Data()
+        let playlists = try? PlaylistFromTrackSeed(serializedData: data)
+        XCTAssertNotNil(playlists, "Playlist is nil")
+        XCTAssertNotEqual(playlists?.playlists.count, 0, "Incorrect playlist proto parsing")
     }
 }

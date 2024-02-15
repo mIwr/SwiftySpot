@@ -224,6 +224,7 @@
 		8B99E8F32AF2770A00196FC8 /* SPTypedObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */; };
 		8B99E8F62AF27A7800196FC8 /* SPEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */; };
 		8B9AF9C22AF231B70024DDC1 /* SPSearchSuggestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */; };
+		8BEBFD8C2B7028E6005427FC /* playlistFromTrackResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBFD8B2B7028E6005427FC /* playlistFromTrackResponse.protobuf */; };
 		8BEC798B2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */; };
 		8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */; };
 		8BF94D582AFE8B4500B0AD79 /* SPSignupValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */; };
@@ -514,6 +515,7 @@
 		8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTypedObj.swift; sourceTree = "<group>"; };
 		8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPEntityType.swift; sourceTree = "<group>"; };
 		8B9AF9C12AF231B70024DDC1 /* SPSearchSuggestionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSearchSuggestionResult.swift; sourceTree = "<group>"; };
+		8BEBFD8B2B7028E6005427FC /* playlistFromTrackResponse.protobuf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = playlistFromTrackResponse.protobuf; sourceTree = "<group>"; };
 		8BEC798A2AE3B2A600035DD6 /* SPClientApiLikeDislikeExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPClientApiLikeDislikeExt.swift; sourceTree = "<group>"; };
 		8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSignup.swift; sourceTree = "<group>"; };
 		8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupValidation.swift; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 				8B172DA12AD16B2300ECBD74 /* likedArtistsResponse.protobuf */,
 				8B172D8E2AD16B2100ECBD74 /* likedTracksReq.protobuf */,
 				8B172D9C2AD16B2200ECBD74 /* likedTracksResponse.protobuf */,
+				8BEBFD8B2B7028E6005427FC /* playlistFromTrackResponse.protobuf */,
 				8B172D8B2AD16B2100ECBD74 /* playlistMetaReq.protobuf */,
 				8B172D8C2AD16B2100ECBD74 /* playlistMetaResponse.protobuf */,
 				8B172D9B2AD16B2200ECBD74 /* playlistResponse.protobuf */,
@@ -1287,6 +1290,7 @@
 				8B172DBF2AD16B2300ECBD74 /* tracksMetaResponse.protobuf in Resources */,
 				8B172DC32AD16B2300ECBD74 /* artistsMetaResponse.protobuf in Resources */,
 				8B172DC12AD16B2300ECBD74 /* likedTracksResponse.protobuf in Resources */,
+				8BEBFD8C2B7028E6005427FC /* playlistFromTrackResponse.protobuf in Resources */,
 				8B172DA22AD16B2300ECBD74 /* dislikedTracksReq.protobuf in Resources */,
 				8B817E8E2B05423D0097B475 /* trackLyricsResponse.protobuf in Resources */,
 				8B172DC02AD16B2300ECBD74 /* playlistResponse.protobuf in Resources */,
@@ -1555,7 +1559,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1573,8 +1577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.5.1;
+				MARKETING_VERSION = 0.5.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1618,7 +1621,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1630,8 +1633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.5.1;
+				MARKETING_VERSION = 0.5.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1645,7 +1647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1664,17 +1666,17 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.1;
+				MARKETING_VERSION = 0.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1684,7 +1686,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1703,17 +1705,17 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.1;
+				MARKETING_VERSION = 0.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1739,13 +1741,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -1771,12 +1773,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};

@@ -24,7 +24,6 @@ extension ApiTarget {
         case .playlist: return ApiTarget._getMethod
         case .metadata: return ApiTarget._postMethod
         case .lyrics: return ApiTarget._getMethod
-        case .lyricsReserve: return ApiTarget._getMethod
         case .collection: return ApiTarget._postMethod
         case .collectionDelta: return ApiTarget._postMethod
         case .collectionWrite: return ApiTarget._postMethod
@@ -32,6 +31,7 @@ extension ApiTarget {
         case .search: return ApiTarget._getMethod
         case .playIntent: return ApiTarget._postMethod
         case .downloadInfo: return ApiTarget._getMethod
+        case .playlistFromTrack: return ApiTarget._getMethod
         }
     }
 }

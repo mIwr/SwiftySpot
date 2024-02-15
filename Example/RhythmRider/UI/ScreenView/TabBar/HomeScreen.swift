@@ -30,21 +30,64 @@ struct HomeScreen: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             } else {
-                Text(R.string.localizable.homePlaylistSet())
-                    .font(.title3)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .center, spacing: 12.0) {
-                        ForEach(_playlists.orderedValues, id: \.uri) { playlist in
-                            NavigationLink {
-                                PlaylistScreen(playlistShort: playlist)
-                            } label: {
-                                PlaylistCardView(uri: playlist.uri, title: playlist.name, subtitle: playlist.subtitle, img: nil)
+                ScrollView(.vertical, showsIndicators: true) {
+                    LazyVStack(content: {
+                        if (!_playlists.userMixes.isEmpty) {
+                            Text(R.string.localizable.homeGeneratedPlaylistSet())
+                                .font(.title3)
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .center, spacing: 12.0) {
+                                    ForEach(_playlists.userMixes, id: \.uri) { playlist in
+                                        NavigationLink {
+                                            PlaylistScreen(playlistShort: playlist)
+                                        } label: {
+                                            PlaylistCardView(uri: playlist.uri, title: playlist.name, subtitle: playlist.subtitle, img: nil)
+                                        }
+                                    }
+                                }
+                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                             }
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
                         }
-                    }
-                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        if (!_playlists.radioMixes.isEmpty) {
+                            Text(R.string.localizable.homeRadioPlaylistSet())
+                                .font(.title3)
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .center, spacing: 12.0) {
+                                    ForEach(_playlists.radioMixes, id: \.uri) { playlist in
+                                        NavigationLink {
+                                            PlaylistScreen(playlistShort: playlist)
+                                        } label: {
+                                            PlaylistCardView(uri: playlist.uri, title: playlist.name, subtitle: playlist.subtitle, img: nil)
+                                        }
+                                    }
+                                }
+                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                        }
+                        Text(R.string.localizable.homeMiscPlaylistSet())
+                            .font(.title3)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .center, spacing: 12.0) {
+                                ForEach(_playlists.otherPlaylists, id: \.uri) { playlist in
+                                    NavigationLink {
+                                        PlaylistScreen(playlistShort: playlist)
+                                    } label: {
+                                        PlaylistCardView(uri: playlist.uri, title: playlist.name, subtitle: playlist.subtitle, img: nil)
+                                    }
+                                }
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                    })
                 }
             }
         }
@@ -62,11 +105,19 @@ struct HomeScreen: View {
             if (ProcessInfo.processInfo.previewMode) {
                 //Disable real API requests
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    _playlists.setLandingPlaylists([
+                    _playlists.setLanding(SPLandingData(userMixes: [
                         SPLandingPlaylist(name: "Preview playlist", subtitle: "sub", uri: "sp:123", image: ""),
                         SPLandingPlaylist(name: "Preview playlist 2", subtitle: "sub", uri: "sp:1234", image: ""),
                         SPLandingPlaylist(name: "Preview playlist 3", subtitle: "sub", uri: "sp:12345", image: "")
-                    ])
+                    ], radioMixes: [
+                        SPLandingPlaylist(name: "Preview playlist", subtitle: "sub", uri: "sp:123", image: ""),
+                        SPLandingPlaylist(name: "Preview playlist 2", subtitle: "sub", uri: "sp:1234", image: ""),
+                        SPLandingPlaylist(name: "Preview playlist 3", subtitle: "sub", uri: "sp:12345", image: "")
+                    ], playlists: [
+                        SPLandingPlaylist(name: "Preview playlist", subtitle: "sub", uri: "sp:123", image: ""),
+                        SPLandingPlaylist(name: "Preview playlist 2", subtitle: "sub", uri: "sp:1234", image: ""),
+                        SPLandingPlaylist(name: "Preview playlist 3", subtitle: "sub", uri: "sp:12345", image: "")
+                    ]))
                     _loaded = true
                 }
                 return
@@ -91,7 +142,7 @@ struct HomeScreen: View {
                         }))
                         api.client.playlistsMetaStorage.remove(uris: set)
                     }
-                    _playlists.setLandingPlaylists(info.playlists)
+                    _playlists.setLanding(info)
                     continuation.resume(returning: true)
                     return
                 case .failure(let error):

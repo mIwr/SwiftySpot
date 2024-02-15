@@ -156,7 +156,6 @@ extension ClientTokenResponseType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-///Requests
 struct SPClientTokenRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -329,7 +328,6 @@ struct ChallengeAnswerData {
   init() {}
 }
 
-///Responses
 struct SPClientTokenResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

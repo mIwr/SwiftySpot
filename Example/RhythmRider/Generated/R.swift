@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 58 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 62 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -247,6 +247,13 @@ struct _R {
       /// Locales: en, ru
       var generalYesterday: RswiftResources.StringResource { .init(key: "generalYesterday", tableName: "Localizable", source: source, developmentValue: "Yesterday", comment: nil) }
 
+      /// en translation: Generated playlists
+      ///
+      /// Key: homeGeneratedPlaylistSet
+      ///
+      /// Locales: en, ru
+      var homeGeneratedPlaylistSet: RswiftResources.StringResource { .init(key: "homeGeneratedPlaylistSet", tableName: "Localizable", source: source, developmentValue: "Generated playlists", comment: nil) }
+
       /// en translation: Playlists load error
       ///
       /// Key: homeLoadError
@@ -254,12 +261,19 @@ struct _R {
       /// Locales: en, ru
       var homeLoadError: RswiftResources.StringResource { .init(key: "homeLoadError", tableName: "Localizable", source: source, developmentValue: "Playlists load error", comment: nil) }
 
-      /// en translation: Generated playlists
+      /// en translation: Other playlists
       ///
-      /// Key: homePlaylistSet
+      /// Key: homeMiscPlaylistSet
       ///
       /// Locales: en, ru
-      var homePlaylistSet: RswiftResources.StringResource { .init(key: "homePlaylistSet", tableName: "Localizable", source: source, developmentValue: "Generated playlists", comment: nil) }
+      var homeMiscPlaylistSet: RswiftResources.StringResource { .init(key: "homeMiscPlaylistSet", tableName: "Localizable", source: source, developmentValue: "Other playlists", comment: nil) }
+
+      /// en translation: Radios
+      ///
+      /// Key: homeRadioPlaylistSet
+      ///
+      /// Locales: en, ru
+      var homeRadioPlaylistSet: RswiftResources.StringResource { .init(key: "homeRadioPlaylistSet", tableName: "Localizable", source: source, developmentValue: "Radios", comment: nil) }
 
       /// en translation: Dislike
       ///
@@ -268,12 +282,12 @@ struct _R {
       /// Locales: en, ru
       var itemContextDislike: RswiftResources.StringResource { .init(key: "itemContextDislike", tableName: "Localizable", source: source, developmentValue: "Dislike", comment: nil) }
 
-      /// en translation: Info
+      /// en translation: Go to artist
       ///
-      /// Key: itemContextInfo
+      /// Key: itemContextGoToArtist
       ///
       /// Locales: en, ru
-      var itemContextInfo: RswiftResources.StringResource { .init(key: "itemContextInfo", tableName: "Localizable", source: source, developmentValue: "Info", comment: nil) }
+      var itemContextGoToArtist: RswiftResources.StringResource { .init(key: "itemContextGoToArtist", tableName: "Localizable", source: source, developmentValue: "Go to artist", comment: nil) }
 
       /// en translation: Like
       ///
@@ -281,6 +295,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var itemContextLike: RswiftResources.StringResource { .init(key: "itemContextLike", tableName: "Localizable", source: source, developmentValue: "Like", comment: nil) }
+
+      /// en translation: Radio by track
+      ///
+      /// Key: itemContextPlaylistFromTrack
+      ///
+      /// Locales: en, ru
+      var itemContextPlaylistFromTrack: RswiftResources.StringResource { .init(key: "itemContextPlaylistFromTrack", tableName: "Localizable", source: source, developmentValue: "Radio by track", comment: nil) }
 
       /// en translation: Remove 'Dislike'
       ///
@@ -302,6 +323,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var itemContextShare: RswiftResources.StringResource { .init(key: "itemContextShare", tableName: "Localizable", source: source, developmentValue: "Share", comment: nil) }
+
+      /// en translation: Track info
+      ///
+      /// Key: itemContextTrackInfo
+      ///
+      /// Locales: en, ru
+      var itemContextTrackInfo: RswiftResources.StringResource { .init(key: "itemContextTrackInfo", tableName: "Localizable", source: source, developmentValue: "Track info", comment: nil) }
 
       /// en translation: Not playing
       ///
@@ -494,7 +522,7 @@ struct _R {
     var tertiary: RswiftResources.ColorResource { .init(name: "Tertiary", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 32 images.
+  /// This `_R.image` struct is generated, and contains static references to 33 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -566,6 +594,9 @@ struct _R {
 
     /// Image `IcRadar`.
     var icRadar: RswiftResources.ImageResource { .init(name: "IcRadar", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `IcRadio`.
+    var icRadio: RswiftResources.ImageResource { .init(name: "IcRadio", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `IcRepeat`.
     var icRepeat: RswiftResources.ImageResource { .init(name: "IcRepeat", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

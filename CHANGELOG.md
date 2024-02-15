@@ -1,5 +1,19 @@
 #  Changelog
 
+## Version 0.5.2
+**15.02.2024**
+
+**API-related changes**
+
+- Playlist generator from track seed
+
+**Other changes**
+
+- Landing playlists recognizer upd
+- Lyrics API fix
+
+_____________________________
+
 ## Version 0.5.1
 **10.01.2024**
 

@@ -41,3 +41,33 @@ func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, au
     }
     return task
 }
+
+func getPlaylistFromTrackByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, trackId: String, completion: @escaping (_ result: Result<PlaylistFromTrackSeed, SPError>) -> Void) -> URLSessionDataTask? {
+    if (clToken.isEmpty) {
+        completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
+        return nil
+    }
+    if (authToken.isEmpty) {
+        completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
+        return nil
+    }
+    guard let req: URLRequest = buildRequest(for: .playlistFromTrack(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, trackId: trackId)) else {
+        completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build playlist from track request")))
+        return nil
+    }
+    let task = requestSPResponse(req) { result in
+        do {
+            let response = try result.get()
+            guard let data = response.result else {
+                completion(.failure(.badResponseData(errCode: response.statusCode, data: ["description": "Response data is nil"])))
+                return
+            }
+            let parsed = try PlaylistFromTrackSeed(serializedData: data)
+            completion(.success(parsed))
+        } catch {
+            let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+            completion(.failure(parsed))
+        }
+    }
+    return task
+}

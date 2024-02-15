@@ -39,26 +39,4 @@ final class UnitRemoteApiLyrics: XCTestCase {
             }
         }
     }
-    
-    func testGetTrackReserveLyricsInfo() {
-        let exp = self.expectation(description: "Request time-out expectation")
-        client.getLyricsReserve(obj: SPTypedObj(id: TestConstants.trackIdWithLyrics, entityType: .track)) { result in
-            do {
-                let lyrics = try result.get()
-                XCTAssertNotNil(lyrics, "Lyrics not found for track")
-                XCTAssertNotEqual(lyrics?.content.count, 0, "Lyrics lines seq is empty")
-            } catch {
-                print(error)
-                XCTAssert(false, "Empty lyrics object: " + error.localizedDescription)
-            }
-            exp.fulfill()
-        }
-        waitForExpectations(timeout: 10) { error in
-            if let g_error = error
-            {
-                print(g_error)
-                XCTAssert(false, "Timeout error: " + g_error.localizedDescription)
-            }
-        }
-    }
 }

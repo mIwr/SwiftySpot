@@ -57,7 +57,7 @@ For work with Spotify API need:
 SwiftySpot is available with SPM
 
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.1"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.2"))
 ```
 
 ### CocoaPods

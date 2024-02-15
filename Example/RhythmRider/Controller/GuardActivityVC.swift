@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-///Shows share activity controller through through UIKit VController placeholder 
+///Shows share activity controller through UIKit VController placeholder 
 struct GuardActivityVC: UIViewControllerRepresentable {
 
     let activityItems: [Any]

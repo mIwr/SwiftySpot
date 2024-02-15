@@ -1,6 +1,15 @@
 
 syntax = "proto3";
 
+message PlaylistFromTrackSeed {
+    int32 total = 2;
+    repeated PlaylistFromTrackShort playlists = 7;
+}
+
+message PlaylistFromTrackShort {
+    string uri = 2;
+}
+
 message PlaylistInfo {
     bytes uid = 1;
     int32 count = 2;

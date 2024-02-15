@@ -23,7 +23,6 @@ extension ApiTarget {
         case .playlist: return ApiTarget._emptyDict
         case .metadata: return ApiTarget._emptyDict
         case .lyrics: return ApiTarget._emptyDict
-        case .lyricsReserve: return ApiTarget._emptyDict
         case .collection: return ApiTarget._emptyDict
         case .collectionDelta: return ApiTarget._emptyDict
         case .collectionWrite: return ApiTarget._emptyDict
@@ -31,6 +30,7 @@ extension ApiTarget {
         case .search: return ApiTarget._emptyDict
         case .playIntent: return ApiTarget._emptyDict
         case .downloadInfo: return ApiTarget._emptyDict
+        case .playlistFromTrack: return ApiTarget._emptyDict
         }
     }
 }
