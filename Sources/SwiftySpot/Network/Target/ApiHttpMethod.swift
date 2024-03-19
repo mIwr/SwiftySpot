@@ -31,7 +31,7 @@ extension ApiTarget {
         case .search: return ApiTarget._getMethod
         case .playIntent: return ApiTarget._postMethod
         case .downloadInfo: return ApiTarget._getMethod
-        case .playlistFromTrack: return ApiTarget._getMethod
+        case .playlistFromSeed: return ApiTarget._getMethod
         }
     }
 }

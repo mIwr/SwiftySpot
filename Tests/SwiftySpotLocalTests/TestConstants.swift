@@ -33,6 +33,8 @@ final class TestConstants {
     static let albumId = "7qTEgfVxRaGRPPwnIeWRRM"
     static let trackId = "1fGmf22HKepZQDSAUeHNEL"
     static let trackIdWithLyrics = "6QO7NLCdpQnsPDNyUI24kz"
+    static let feedbackTrackId = "spotify:track:1fGmf22HKepZQDSAUeHNEL"
+    static let feedbackContext = "spotify:playlist:37i9dQZF1E371G6gGxF85G"
     
     static let realBase62GID = "0XqDOKSvx2HrqsB5snefHl"
     static let realGID: Array<UInt8> = [0x1f, 0x7e, 0xa6, 0xe5, 0xba, 0x13, 0x43, 0x4f, 0x9c, 0xbc, 0x44, 0xee, 0xec, 0xf6, 0x35, 0xfb]

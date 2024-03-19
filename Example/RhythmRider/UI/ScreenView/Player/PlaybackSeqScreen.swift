@@ -26,7 +26,7 @@ struct PlaybackSeqScreen: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             if (playbackSeq.isEmpty) {
                 VStack(alignment: .center, spacing: 16) {
-                    Image(R.image.icAlertCircle)
+                    Image(R.image.icAlertTriangle)
                         .resizable()
                         .frame(width: 80, height: 80, alignment: .center)
                         .foregroundColor(Color(R.color.primary))

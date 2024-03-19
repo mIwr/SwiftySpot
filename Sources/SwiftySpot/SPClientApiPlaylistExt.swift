@@ -43,8 +43,16 @@ extension SPClient {
     ///- Parameter completion: Playlist info response handler
     ///- Returns: API request session task
     public func getPlaylistFromTrack(trackId: String, completion: @escaping (_ result: Result<[SPTypedObj], SPError>) -> Void) -> URLSessionDataTask? {
+        return getPlaylistFromSeed(uri: SPNavigateUriUtil.generateTrackUri(id: trackId), completion: completion)
+    }
+    
+    ///Generate playlist by seed
+    ///- Parameter uri: Navigation uri seed
+    ///- Parameter completion: Playlist info response handler
+    ///- Returns: API request session task
+    public func getPlaylistFromSeed(uri: String, completion: @escaping (_ result: Result<[SPTypedObj], SPError>) -> Void) -> URLSessionDataTask? {
         return safeAuthApReq { safeClToken, safeAuthToken, safeSpclientAP in
-            let task = getPlaylistFromTrackByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, trackId: trackId) { result in
+            let task = getPlaylistFromSeedByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, uri: uri) { result in
                 do {
                     let playlists = try result.get()
                     var parsedPlaylists: [SPTypedObj] = []

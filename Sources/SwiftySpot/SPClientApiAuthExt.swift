@@ -95,6 +95,19 @@ extension SPClient {
         }
     }
     
+    //Authorize with stored credential
+    ///- Parameter login: User login: mail, phone number or username
+    ///- Parameter storedCredential: Authorization stored credential. Used for refreshing auth tokens
+    ///- Parameter completion: Authorization status response handler
+    ///- Returns: API request session task
+    public func auth(login: String, storedCredential: String, completion: @escaping (_ result: Result<SPAuthSession, SPError>) -> Void) -> URLSessionDataTask? {
+        var session = SPAuthToken()
+        session.username = login
+        session.storedCredential = storedCredential.data(using: .utf8) ?? Data()
+        authSession = session
+        return refreshAuth(completion: completion)
+    }
+    
     ///Drop current authorization (token and refresh credential)
     ///- Parameter dropClSession: Drop active client session
     public func logout(dropClSession: Bool) {

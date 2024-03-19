@@ -227,7 +227,7 @@ struct TrackView: View {
             Label(
                 title: { Text(R.string.localizable.itemContextGoToArtist()) },
                 icon: {
-                    Image(R.image.icProfile)
+                    Image(R.image.icUser)
                         .resizable()
                         .frame(width: 24, height: 24, alignment: .center)
                         .foregroundColor(Color(R.color.primary))
@@ -260,7 +260,7 @@ struct TrackView: View {
             Label(
                 title: { Text(R.string.localizable.itemContextPlaylistFromTrack()) },
                 icon: {
-                    Image(R.image.icRadio)
+                    Image(R.image.icAudio)
                         .resizable()
                         .frame(width: 24, height: 24, alignment: .center)
                         .foregroundColor(Color(R.color.primary))

@@ -145,7 +145,7 @@ extension SPClient {
                     }
                     self.authSession = authRes.auth
                     self.authTokenCreateTsUTC = Int64(Date.timeIntervalBetween1970AndReferenceDate + Date.timeIntervalSinceReferenceDate)
-                    let session = SPAuthSession(username: authRes.auth.username, token: authRes.auth.token, storedCred: authRes.auth.storedCredential, createTsUTC: self.clTokenCreateTsUTC, expiresInS: authRes.auth.expiresInS)
+                    let session = SPAuthSession(username: authRes.auth.username, token: authRes.auth.token, storedCred: authRes.auth.storedCredential, createTsUTC: self.authTokenCreateTsUTC, expiresInS: authRes.auth.expiresInS)
                     self.notifyAuthUpdate(session)
                     completion(.success(session))
                 } catch {

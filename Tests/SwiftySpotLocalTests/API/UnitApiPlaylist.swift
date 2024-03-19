@@ -28,7 +28,7 @@ final class UnitApiPlaylist: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let playlists = try? PlaylistFromTrackSeed(serializedData: data)
+        let playlists = try? PlaylistFromSeed(serializedData: data)
         XCTAssertNotNil(playlists, "Playlist is nil")
         XCTAssertNotEqual(playlists?.playlists.count, 0, "Incorrect playlist proto parsing")
     }

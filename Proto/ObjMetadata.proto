@@ -173,8 +173,10 @@ enum AudioFormat {
     MP4_256_CBCS = 15;
     FLAC_FLAC = 16;
     MP4_FLAC = 17;
-    MP4_Unknown = 18;
-    MP3_Unknown = 19;
+    XHE_AAC_24 = 18;
+    XHE_AAC_16 = 19;
+    XHE_AAC_12 = 20;
+    FLAC_FLAC_24BIT = 22;
 }
 
 message ContentRating {

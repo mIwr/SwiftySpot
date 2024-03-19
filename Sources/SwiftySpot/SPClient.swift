@@ -10,9 +10,9 @@ import Foundation
 ///Spotify API client
 public class SPClient {
     ///Version code of module
-    public static let version: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    public static let version: String = Bundle(for: SPClient.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     ///Version build number of module
-    public static let buildNum: String = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+    public static let buildNum: String = Bundle(for: SPClient.self).infoDictionary?["CFBundleVersion"] as? String ?? "1"
     
     ///Spotify version
     public var appVersionCode: String

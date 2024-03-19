@@ -1,12 +1,12 @@
 
 syntax = "proto3";
 
-message PlaylistFromTrackSeed {
+message PlaylistFromSeed {
     int32 total = 2;
-    repeated PlaylistFromTrackShort playlists = 7;
+    repeated PlaylistFromSeedShort playlists = 7;
 }
 
-message PlaylistFromTrackShort {
+message PlaylistFromSeedShort {
     string uri = 2;
 }
 

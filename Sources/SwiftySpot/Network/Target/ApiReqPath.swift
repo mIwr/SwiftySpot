@@ -31,7 +31,7 @@ extension ApiTarget {
     fileprivate static let _searchDrillDownPath = _searchPath + "/drilldowns"
     fileprivate static let _playIntentPathPrefix = "playplay/v1/key/"
     fileprivate static let _downloadInfoPathPrefix = "storage-resolve/v2/files/audio/interactive/"
-    fileprivate static let _playlistFromTrackPathPrefix = "inspiredby-mix/v2/seed_to_playlist/"
+    fileprivate static let _playlistFromSeedPathPrefix = "inspiredby-mix/v2/seed_to_playlist/"
     
     var path: String {
         switch self {
@@ -99,7 +99,7 @@ extension ApiTarget {
             //&album_states=live%2Cprerelease
         case .playIntent(_, _, _, _, _, _, let audioFileHexId, _): return ApiTarget._playIntentPathPrefix + audioFileHexId
         case .downloadInfo(_, _, _, _, _, _, let audioFileHexId, let productType): return ApiTarget._downloadInfoPathPrefix + String(productType) + "/" + audioFileHexId + "?product=" + String(productType)
-        case .playlistFromTrack(_, _, _, _, _, _, let trackId): return ApiTarget._playlistFromTrackPathPrefix + SPNavigateUriUtil.generateTrackUri(id: trackId)
+        case .playlistFromSeed(_, _, _, _, _, _, let uri): return ApiTarget._playlistFromSeedPathPrefix + uri
         }
     }
 }

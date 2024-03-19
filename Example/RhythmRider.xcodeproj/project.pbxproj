@@ -21,6 +21,7 @@
 		8B172DFC2AD1A56B00ECBD74 /* RhythmRiderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B172DFB2AD1A56B00ECBD74 /* RhythmRiderApp.swift */; };
 		8B172E002AD1A56C00ECBD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B172DFF2AD1A56C00ECBD74 /* Assets.xcassets */; };
 		8B1A9BBD2B30D51A00E6727A /* AlbumShortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A9BBC2B30D51A00E6727A /* AlbumShortView.swift */; };
+		8B1B07F52BA9F47500F0F343 /* ProfileActionSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B07F42BA9F47500F0F343 /* ProfileActionSettingView.swift */; };
 		8B1D46DD2AF0F05F00FC3906 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D46DC2AF0F05F00FC3906 /* ScrollView.swift */; };
 		8B1D46DF2AF0F3E500FC3906 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D46DE2AF0F3E500FC3906 /* OffsetObservingScrollView.swift */; };
 		8B1F502C2AEF81B0008D9A09 /* FavScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F502B2AEF81B0008D9A09 /* FavScreen.swift */; };
@@ -97,6 +98,7 @@
 		8B172DFF2AD1A56C00ECBD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B172E022AD1A56C00ECBD74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B1A9BBC2B30D51A00E6727A /* AlbumShortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShortView.swift; sourceTree = "<group>"; };
+		8B1B07F42BA9F47500F0F343 /* ProfileActionSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionSettingView.swift; sourceTree = "<group>"; };
 		8B1D46DC2AF0F05F00FC3906 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		8B1D46DE2AF0F3E500FC3906 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
 		8B1F502B2AEF81B0008D9A09 /* FavScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavScreen.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		8B103E182AF14DC300842D79 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8B1B07F42BA9F47500F0F343 /* ProfileActionSettingView.swift */,
 				8B103E192AF14DE000842D79 /* ProfileInfoComponentView.swift */,
 				8B103E1B2AF1525A00842D79 /* ProfileToggleSettingView.swift */,
 			);
@@ -610,6 +613,7 @@
 				8B103E1C2AF1525A00842D79 /* ProfileToggleSettingView.swift in Sources */,
 				8B004C972B4D794B00E0F074 /* WrappingHStack.swift in Sources */,
 				8B004C9A2B4D794B00E0F074 /* NewLine.swift in Sources */,
+				8B1B07F52BA9F47500F0F343 /* ProfileActionSettingView.swift in Sources */,
 				8B4247BC2AD43A3A00749AE3 /* AuthScreen.swift in Sources */,
 				8B3DA8862AF3974100895807 /* SearchController.swift in Sources */,
 				8B103E1A2AF14DE000842D79 /* ProfileInfoComponentView.swift in Sources */,
@@ -799,7 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -819,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -837,7 +841,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -857,7 +861,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

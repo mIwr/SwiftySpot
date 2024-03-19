@@ -1,7 +1,11 @@
+"authType" = "Auth type";
+"authTypePass" = "Password";
+"authTypeStoredCred" = "Stored credential";
 "authLoginTitle" = "E-mail or username";
 "authLoginSignIn" = "Login";
 "authLoginEmptyLogin" = "Empty login";
 "authLoginEmptyPassword" = "Empty password";
+"authLoginEmptyStoredCred" = "Empty stored credential";
 "authLoginNoAuthToken" = "Login fail: no authorization token. Check your credentials and repeat";
 
 "tabHome" = "Home";
@@ -48,12 +52,14 @@
 "favLikedTracksLoadError" = "Liked tracks info load fail";
 
 "profileBirthdate" = "Birthdate";
+"profileStoredCred" = "Auth (Stored cred)";
 "profileCountry" = "Country";
 "profileSubscriptionPlan" = "Subscription plan";
 "profileTrafficEconomyTitle" = "Traffic economy";
 "profileTrafficEconomySubtitle" = "If enabled, each track will be loaded in the lowest possible quality";
 "profileSkipDislikedTitle" = "Disliked tracks skip";
 "profileSkipDislikedSubtitle" = "If enabled, the disliked tracks will be skipped during playback except user-selected disliked tracks for play";
+"profileAboutApp" = "About";
 
 "searchQueryHint" = "Search";
 "searchLoadError" = "Search suggestions load error";
@@ -73,3 +79,4 @@
 "generalLogout" = "Logout";
 "generalCancel" = "Cancel";
 "generalAll" = "All";
+"generalCopy" = "Copy";

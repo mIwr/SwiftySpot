@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftySpot"
-  spec.version      = "0.5.2"
+  spec.version      = "0.5.3"
   spec.summary      = "Unofficial Spotify API"
   spec.homepage     = "https://github.com/mIwr/SwiftySpot"
   spec.license      = { :type => "MIT", :file => "LICENSE" }

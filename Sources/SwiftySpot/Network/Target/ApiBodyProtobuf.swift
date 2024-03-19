@@ -104,7 +104,7 @@ extension ApiTarget {
             }
             return data
         case .downloadInfo: return nil
-        case .playlistFromTrack: return nil
+        case .playlistFromSeed: return nil
         }
     }
 }

@@ -26,8 +26,10 @@ public enum SPMetadataAudioFormat: Int8 {
     case MP4_256_CBCS = 15
     case FLAC_FLAC = 16
     case MP4_FLAC = 17
-    case MP4_Unknown = 18
-    case MP3_Unknown = 19
+    case XHE_AAC_24 = 18
+    case XHE_AAC_16 = 19
+    case XHE_AAC_12 = 20
+    case FLAC_FLAC_24BIT = 22
 }
 
 extension SPMetadataAudioFormat {
@@ -51,8 +53,10 @@ extension SPMetadataAudioFormat {
         case .mp4256Cbcs: return .MP4_256_CBCS
         case .flacFlac: return .FLAC_FLAC
         case .mp4Flac: return .MP4_FLAC
-        case .mp4Unknown: return .MP4_Unknown
-        case .mp3Unknown: return .MP3_Unknown
+        case .xheAac24: return .XHE_AAC_24
+        case .xheAac16: return .XHE_AAC_16
+        case .xheAac12: return .XHE_AAC_12
+        case .flacFlac24Bit: return .FLAC_FLAC_24BIT
             
         case .UNRECOGNIZED:
             #if DEBUG
@@ -89,7 +93,6 @@ extension SPMetadataAudioFormat {
         case .MP3_160_ENC: return true
         case .MP3_256: return true
         case .MP3_320: return true
-        case .MP3_Unknown: return true
         default: return false
         }
     }

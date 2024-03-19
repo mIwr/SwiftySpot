@@ -32,7 +32,7 @@ struct ArtistHeaderView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 12, content: {
-            Image(uiImage: img ?? R.image.icProfile() ?? UIImage())
+            Image(uiImage: img ?? R.image.icUser() ?? UIImage())
                 .resizable()
                 .frame(width: 128, height: 128)
                 .cornerRadius(12)

@@ -34,7 +34,7 @@ extension ApiTarget {
         case .search: return ApiTarget._spClientWgBaseUrl
         case .playIntent(let apHost, _, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
         case .downloadInfo(let apHost, _, _, _, _, _, _, _): return normalizeBaseUrl(apHost)
-        case .playlistFromTrack: return ApiTarget._spClientWgBaseUrl
+        case .playlistFromSeed: return ApiTarget._spClientWgBaseUrl
         }
     }
     

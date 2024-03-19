@@ -34,5 +34,5 @@ enum ApiTarget {
     case search(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String)
     case playIntent (apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, audioFileHexId: String, proto: Spotify_Playplay_Proto_PlayIntentRequest)
     case downloadInfo(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, audioFileHexId: String, productType: Int)
-    case playlistFromTrack(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, trackId: String)
+    case playlistFromSeed(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, uri: String)
 }

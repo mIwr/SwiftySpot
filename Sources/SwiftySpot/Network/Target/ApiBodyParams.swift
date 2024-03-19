@@ -30,7 +30,7 @@ extension ApiTarget {
         case .search: return ApiTarget._emptyDict
         case .playIntent: return ApiTarget._emptyDict
         case .downloadInfo: return ApiTarget._emptyDict
-        case .playlistFromTrack: return ApiTarget._emptyDict
+        case .playlistFromSeed: return ApiTarget._emptyDict
         }
     }
 }

@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 62 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 69 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -114,6 +114,13 @@ struct _R {
       /// Locales: en, ru
       var authLoginEmptyPassword: RswiftResources.StringResource { .init(key: "authLoginEmptyPassword", tableName: "Localizable", source: source, developmentValue: "Empty password", comment: nil) }
 
+      /// en translation: Empty stored credential
+      ///
+      /// Key: authLoginEmptyStoredCred
+      ///
+      /// Locales: en, ru
+      var authLoginEmptyStoredCred: RswiftResources.StringResource { .init(key: "authLoginEmptyStoredCred", tableName: "Localizable", source: source, developmentValue: "Empty stored credential", comment: nil) }
+
       /// en translation: Login fail: no authorization token. Check your credentials and repeat
       ///
       /// Key: authLoginNoAuthToken
@@ -134,6 +141,27 @@ struct _R {
       ///
       /// Locales: en, ru
       var authLoginTitle: RswiftResources.StringResource { .init(key: "authLoginTitle", tableName: "Localizable", source: source, developmentValue: "E-mail or username", comment: nil) }
+
+      /// en translation: Auth type
+      ///
+      /// Key: authType
+      ///
+      /// Locales: en, ru
+      var authType: RswiftResources.StringResource { .init(key: "authType", tableName: "Localizable", source: source, developmentValue: "Auth type", comment: nil) }
+
+      /// en translation: Password
+      ///
+      /// Key: authTypePass
+      ///
+      /// Locales: en, ru
+      var authTypePass: RswiftResources.StringResource { .init(key: "authTypePass", tableName: "Localizable", source: source, developmentValue: "Password", comment: nil) }
+
+      /// en translation: Stored credential
+      ///
+      /// Key: authTypeStoredCred
+      ///
+      /// Locales: en, ru
+      var authTypeStoredCred: RswiftResources.StringResource { .init(key: "authTypeStoredCred", tableName: "Localizable", source: source, developmentValue: "Stored credential", comment: nil) }
 
       /// en translation: Liked tracks
       ///
@@ -190,6 +218,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var generalClose: RswiftResources.StringResource { .init(key: "generalClose", tableName: "Localizable", source: source, developmentValue: "Close", comment: nil) }
+
+      /// en translation: Copy
+      ///
+      /// Key: generalCopy
+      ///
+      /// Locales: en, ru
+      var generalCopy: RswiftResources.StringResource { .init(key: "generalCopy", tableName: "Localizable", source: source, developmentValue: "Copy", comment: nil) }
 
       /// en translation: Logout
       ///
@@ -366,6 +401,13 @@ struct _R {
       /// Locales: en, ru
       var playlistTracksLoadError: RswiftResources.StringResource { .init(key: "playlistTracksLoadError", tableName: "Localizable", source: source, developmentValue: "Playlist tracks info load error", comment: nil) }
 
+      /// en translation: About
+      ///
+      /// Key: profileAboutApp
+      ///
+      /// Locales: en, ru
+      var profileAboutApp: RswiftResources.StringResource { .init(key: "profileAboutApp", tableName: "Localizable", source: source, developmentValue: "About", comment: nil) }
+
       /// en translation: Birthdate
       ///
       /// Key: profileBirthdate
@@ -393,6 +435,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var profileSkipDislikedTitle: RswiftResources.StringResource { .init(key: "profileSkipDislikedTitle", tableName: "Localizable", source: source, developmentValue: "Disliked tracks skip", comment: nil) }
+
+      /// en translation: Auth (Stored cred)
+      ///
+      /// Key: profileStoredCred
+      ///
+      /// Locales: en, ru
+      var profileStoredCred: RswiftResources.StringResource { .init(key: "profileStoredCred", tableName: "Localizable", source: source, developmentValue: "Auth (Stored cred)", comment: nil) }
 
       /// en translation: Subscription plan
       ///
@@ -522,7 +571,7 @@ struct _R {
     var tertiary: RswiftResources.ColorResource { .init(name: "Tertiary", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 33 images.
+  /// This `_R.image` struct is generated, and contains static references to 34 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -537,6 +586,9 @@ struct _R {
 
     /// Image `IcAlertCircle`.
     var icAlertCircle: RswiftResources.ImageResource { .init(name: "IcAlertCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `IcAlertTriangle`.
+    var icAlertTriangle: RswiftResources.ImageResource { .init(name: "IcAlertTriangle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `IcAudio`.
     var icAudio: RswiftResources.ImageResource { .init(name: "IcAudio", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -589,14 +641,8 @@ struct _R {
     /// Image `IcPlaylist`.
     var icPlaylist: RswiftResources.ImageResource { .init(name: "IcPlaylist", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `IcProfile`.
-    var icProfile: RswiftResources.ImageResource { .init(name: "IcProfile", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
     /// Image `IcRadar`.
     var icRadar: RswiftResources.ImageResource { .init(name: "IcRadar", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `IcRadio`.
-    var icRadio: RswiftResources.ImageResource { .init(name: "IcRadio", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `IcRepeat`.
     var icRepeat: RswiftResources.ImageResource { .init(name: "IcRepeat", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -619,8 +665,14 @@ struct _R {
     /// Image `IcShuffleFill`.
     var icShuffleFill: RswiftResources.ImageResource { .init(name: "IcShuffleFill", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `IcText`.
+    var icText: RswiftResources.ImageResource { .init(name: "IcText", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `IcTrackLyrics`.
     var icTrackLyrics: RswiftResources.ImageResource { .init(name: "IcTrackLyrics", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `IcUser`.
+    var icUser: RswiftResources.ImageResource { .init(name: "IcUser", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `PreviewCover`.
     var previewCover: RswiftResources.ImageResource { .init(name: "PreviewCover", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

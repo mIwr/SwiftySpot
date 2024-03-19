@@ -97,16 +97,18 @@ extension SPClient {
             return hex
         }
     }
-    public var storedCredRaw: String? {
+    #endif
+    
+    ///Authorization refresh credential
+    public var authStoredCred: String? {
         get {
-            if (authSession.storedCredential.isEmpty) {
+            if authSession.storedCredential.isEmpty {
                 return nil
             }
-            let str = String(bytes: authSession.storedCredential, encoding: .utf8)
-            return str
+            let storedCredStr = String(bytes: authSession.storedCredential, encoding: .utf8)
+            return storedCredStr
         }
     }
-    #endif
     
     ///Authorization token
     public var authToken: String? {

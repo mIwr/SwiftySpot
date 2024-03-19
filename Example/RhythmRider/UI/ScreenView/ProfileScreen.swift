@@ -30,7 +30,7 @@ struct ProfileScreen: View {
                 ScrollView(.vertical) {
                     VStack(alignment: .center, spacing: 8) {
                         HStack(alignment: .center, spacing: 0, content: {
-                            Image(R.image.icProfile)
+                            Image(R.image.icUser)
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
@@ -63,6 +63,20 @@ struct ProfileScreen: View {
                             appProperties.playbackSkipDisliked = newVal
                             appProperties.save()
                         }
+                        ProfileActionSettingView(title: R.string.localizable.profileStoredCred(), subtitle: api.client.authStoredCred, actionTitle: R.string.localizable.generalCopy()) {
+                            UIPasteboard.general.string = api.client.authStoredCred
+                        }
+                        #if DEBUG
+                        if (ProcessInfo.processInfo.previewMode) {
+                            ProfileInfoComponentView(category: R.string.localizable.profileAboutApp(), value: "App - 1.0.0 \nSwiftySpot - 1.0.0")
+                        } else {
+                            ProfileInfoComponentView(category: R.string.localizable.profileAboutApp(), value:
+                                                        (Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "App") + " - " + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") + "\nSwiftySpot - " + SPClient.version + " (" + SPClient.buildNum + ")")
+                        }
+                        #else
+                        ProfileInfoComponentView(category: R.string.localizable.profileAboutApp(), value:
+                                                    (Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "App") + " - " + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") + "\nSwiftySpot - " + SPClient.version + " (" + SPClient.buildNum + ")")
+                        #endif
                     }
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                 }

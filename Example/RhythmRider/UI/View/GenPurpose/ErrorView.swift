@@ -28,7 +28,7 @@ struct ErrorView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             Spacer(minLength: 24)
-            Image(R.image.icAlertCircle)
+            Image(R.image.icAlertTriangle)
                 .resizable()
                 .frame(width: 64, height: 64)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))

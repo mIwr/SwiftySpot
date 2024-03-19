@@ -489,6 +489,7 @@
 		8B3BD9FE2AF545640039390B /* playback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = playback.jpg; sourceTree = "<group>"; };
 		8B3BD9FF2AF545640039390B /* search.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = search.jpg; sourceTree = "<group>"; };
 		8B3BDA002AF545640039390B /* feed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed.jpg; sourceTree = "<group>"; };
+		8B3D45BD2B867AB30037575B /* XCFramework.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = XCFramework.md; sourceTree = "<group>"; };
 		8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSHA1.swift; sourceTree = "<group>"; };
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
 		8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupSession.swift; sourceTree = "<group>"; };
@@ -566,6 +567,7 @@
 				8B172AA92AD1699E00ECBD74 /* CHANGELOG.md */,
 				8B172AA82AD1699D00ECBD74 /* LICENSE */,
 				8B172AA72AD1699D00ECBD74 /* README.md */,
+				8B3D45BD2B867AB30037575B /* XCFramework.md */,
 				8B344A0B2AEEC5F9004037D0 /* Package.swift */,
 				8B172AAA2AD1699E00ECBD74 /* SwiftySpot.podspec */,
 				8B172A902AD1693700ECBD74 /* Products */,
@@ -620,6 +622,7 @@
 				8B172C332AD169CA00ECBD74 /* Error */,
 				8B172C292AD169CA00ECBD74 /* Target */,
 				8B172C222AD169CA00ECBD74 /* ApiArtist.swift */,
+				8B172C382AD169CA00ECBD74 /* ApiAuth.swift */,
 				8B172C232AD169CA00ECBD74 /* ApiPlaylist.swift */,
 				8B172C242AD169CA00ECBD74 /* ApiLanding.swift */,
 				8B172C252AD169CA00ECBD74 /* SPResponse.swift */,
@@ -630,7 +633,6 @@
 				8B172C322AD169CA00ECBD74 /* ApiDownload.swift */,
 				8B817E872B0537EB0097B475 /* ApiLyrics.swift */,
 				8B172C372AD169CA00ECBD74 /* ApiMetadata.swift */,
-				8B172C382AD169CA00ECBD74 /* ApiAuth.swift */,
 				8B172C392AD169CA00ECBD74 /* ApiProfile.swift */,
 				8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */,
 				8B172C362AD169CA00ECBD74 /* Client.swift */,
@@ -1559,7 +1561,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1577,7 +1579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.5.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1621,7 +1623,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1633,7 +1635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.5.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1647,7 +1649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1666,7 +1668,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1686,7 +1688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1705,7 +1707,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;

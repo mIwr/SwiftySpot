@@ -195,7 +195,7 @@ extension ApiTarget {
                 "Spotify-App-Version": appVer,
             ]
             return dict
-        case .playlistFromTrack(let userAgent, let clToken, let authToken, let os, let appVer, let clId, _):
+        case .playlistFromSeed(let userAgent, let clToken, let authToken, let os, let appVer, let clId, _):
             let dict: [String: String] = [
                 "Accept-Encoding": "gzip",
                 "User-Agent": userAgent,

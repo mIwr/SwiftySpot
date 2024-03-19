@@ -20,21 +20,21 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct PlaylistFromTrackSeed {
+struct PlaylistFromSeed {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var total: Int32 = 0
 
-  var playlists: [PlaylistFromTrackShort] = []
+  var playlists: [PlaylistFromSeedShort] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct PlaylistFromTrackShort {
+struct PlaylistFromSeedShort {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -215,8 +215,8 @@ struct PlaylistTrack {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension PlaylistFromTrackSeed: @unchecked Sendable {}
-extension PlaylistFromTrackShort: @unchecked Sendable {}
+extension PlaylistFromSeed: @unchecked Sendable {}
+extension PlaylistFromSeedShort: @unchecked Sendable {}
 extension PlaylistInfo: @unchecked Sendable {}
 extension PlaylistPayload: @unchecked Sendable {}
 extension PlaylistMeta: @unchecked Sendable {}
@@ -227,8 +227,8 @@ extension PlaylistTrack.Info: @unchecked Sendable {}
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-extension PlaylistFromTrackSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "PlaylistFromTrackSeed"
+extension PlaylistFromSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "PlaylistFromSeed"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "total"),
     7: .same(proto: "playlists"),
@@ -257,7 +257,7 @@ extension PlaylistFromTrackSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistFromTrackSeed, rhs: PlaylistFromTrackSeed) -> Bool {
+  static func ==(lhs: PlaylistFromSeed, rhs: PlaylistFromSeed) -> Bool {
     if lhs.total != rhs.total {return false}
     if lhs.playlists != rhs.playlists {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -265,8 +265,8 @@ extension PlaylistFromTrackSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension PlaylistFromTrackShort: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "PlaylistFromTrackShort"
+extension PlaylistFromSeedShort: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "PlaylistFromSeedShort"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "uri"),
   ]
@@ -290,7 +290,7 @@ extension PlaylistFromTrackShort: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistFromTrackShort, rhs: PlaylistFromTrackShort) -> Bool {
+  static func ==(lhs: PlaylistFromSeedShort, rhs: PlaylistFromSeedShort) -> Bool {
     if lhs.uri != rhs.uri {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

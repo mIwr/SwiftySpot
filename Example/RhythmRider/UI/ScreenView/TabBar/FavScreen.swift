@@ -90,7 +90,7 @@ struct FavScreen: View {
                 NavigationLink(destination: {
                     return ProfileScreen()
                 }, label: {
-                    Image(R.image.icProfile)
+                    Image(R.image.icUser)
                         .resizable()
                         .frame(width: 24, height: 24, alignment: .center)
                 })

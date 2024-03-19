@@ -164,8 +164,10 @@ enum Spotify_Metadata_AudioFormat: SwiftProtobuf.Enum {
   case mp4256Cbcs // = 15
   case flacFlac // = 16
   case mp4Flac // = 17
-  case mp4Unknown // = 18
-  case mp3Unknown // = 19
+  case xheAac24 // = 18
+  case xheAac16 // = 19
+  case xheAac12 // = 20
+  case flacFlac24Bit // = 22
   case UNRECOGNIZED(Int)
 
   init() {
@@ -192,8 +194,10 @@ enum Spotify_Metadata_AudioFormat: SwiftProtobuf.Enum {
     case 15: self = .mp4256Cbcs
     case 16: self = .flacFlac
     case 17: self = .mp4Flac
-    case 18: self = .mp4Unknown
-    case 19: self = .mp3Unknown
+    case 18: self = .xheAac24
+    case 19: self = .xheAac16
+    case 20: self = .xheAac12
+    case 22: self = .flacFlac24Bit
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -218,8 +222,10 @@ enum Spotify_Metadata_AudioFormat: SwiftProtobuf.Enum {
     case .mp4256Cbcs: return 15
     case .flacFlac: return 16
     case .mp4Flac: return 17
-    case .mp4Unknown: return 18
-    case .mp3Unknown: return 19
+    case .xheAac24: return 18
+    case .xheAac16: return 19
+    case .xheAac12: return 20
+    case .flacFlac24Bit: return 22
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -249,8 +255,10 @@ extension Spotify_Metadata_AudioFormat: CaseIterable {
     .mp4256Cbcs,
     .flacFlac,
     .mp4Flac,
-    .mp4Unknown,
-    .mp3Unknown,
+    .xheAac24,
+    .xheAac16,
+    .xheAac12,
+    .flacFlac24Bit,
   ]
 }
 
@@ -946,8 +954,10 @@ extension Spotify_Metadata_AudioFormat: SwiftProtobuf._ProtoNameProviding {
     15: .same(proto: "MP4_256_CBCS"),
     16: .same(proto: "FLAC_FLAC"),
     17: .same(proto: "MP4_FLAC"),
-    18: .same(proto: "MP4_Unknown"),
-    19: .same(proto: "MP3_Unknown"),
+    18: .same(proto: "XHE_AAC_24"),
+    19: .same(proto: "XHE_AAC_16"),
+    20: .same(proto: "XHE_AAC_12"),
+    22: .same(proto: "FLAC_FLAC_24BIT"),
   ]
 }
 

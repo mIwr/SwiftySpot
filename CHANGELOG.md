@@ -1,5 +1,17 @@
 #  Changelog
 
+## Version 0.5.3
+**19.03.2024**
+
+**API-related changes**
+
+- Authorization with login(phone,mail,username) and stored credential support. Internal impl is refreshing access token with the provided login and stored credential
+
+**Other changes**
+
+- New audio formats for download info
+- Playlist generator from custom navigation uri support
+
 ## Version 0.5.2
 **15.02.2024**
 

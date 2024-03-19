@@ -1,7 +1,11 @@
+"authType" = "Тип авторизации";
+"authTypePass" = "Пароль";
+"authTypeStoredCred" = "Stored credential";
 "authLoginTitle" = "Эл. почта или имя пользователя";
 "authLoginSignIn" = "Войти";
 "authLoginEmptyLogin" = "Не введен логин";
 "authLoginEmptyPassword" = "Не введен пароль";
+"authLoginEmptyStoredCred" = "Не введен Stored Credential";
 "authLoginNoAuthToken" = "Ошибка входа: отсутствует токен авторизации. Проверьте правильность ввода учетных данных и повторите";
 
 "tabHome" = "Главная";
@@ -48,12 +52,14 @@
 "favLikedTracksLoadError" = "Не удалось загрузить информацию о понравившихся треках";
 
 "profileBirthdate" = "Дата рождения";
+"profileStoredCred" = "Авторизация (Stored cred)";
 "profileCountry" = "Страна";
 "profileSubscriptionPlan" = "План подписки";
 "profileTrafficEconomyTitle" = "Экономия трафика";
 "profileTrafficEconomySubtitle" = "При включенной опции каждый трек будет загружаться в минимально возможном качестве";
 "profileSkipDislikedTitle" = "Пропуск дизлайкнутых треков";
 "profileSkipDislikedSubtitle" = "Включение опции дает пропуск дизлайкнутых треков при проигрывании плейлистов";
+"profileAboutApp" = "О приложении";
 
 "searchQueryHint" = "Поиск";
 "searchLoadError" = "Ошибка загрузки предложений по поиску";
@@ -73,3 +79,4 @@
 "generalLogout" = "Выйти из учетной записи";
 "generalCancel" = "Отмена";
 "generalAll" = "Все";
+"generalCopy" = "Скопировать";
