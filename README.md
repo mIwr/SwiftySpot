@@ -42,7 +42,7 @@ Spotify API swift implementation
 
 The library provides an interface for interacting with the Spotify API
 
-macOS 10.13+ and iOS 11.0+ are supported by the module. Other platforms (watchOS, tvOS, Windows, Linux, Android) have experimental support
+macOS 10.13+ and iOS 11.0+ are supported by the module. Other platforms (watchOS 4.0+, tvOS 11.0+, Windows, Linux, Android) have experimental support
 
 For work with Spotify API need:
 
@@ -56,8 +56,36 @@ For work with Spotify API need:
 
 SwiftySpot is available with SPM
 
+- Package sources
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.2"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.3"))
+```
+
+- Precompiled XCFramework (macOS, iOS, iOS Simulator, watchOS, tvOS): make your own Swift package and import it to the target project
+```swift
+// swift-tools-version: 5.9
+import PackageDescription
+
+let package = Package(
+    name: "MySwiftySpot",
+    platforms: [
+        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11), .watchOS(.v4)
+    ],
+    products: [
+        .library(name: "SwiftySpot", targets: ["SwiftySpot"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.25.0")
+    ],
+    targets: [
+        .binaryTarget(
+            name: "SwiftySpot",
+            dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")],
+            url: "https://github.com/mIwr/SwiftySpot/releases/download/0.5.3/SwiftySpot.xcframework.zip",
+            checksum: "9e7f4e9e78362e7b2ffc9e358e37c9b1abbadfbfde57ea1ae2a4dc28717294fb"
+        ),
+    ]
+)
 ```
 
 ### CocoaPods
@@ -74,6 +102,20 @@ pod 'SwiftySpot'
 - macOS
 ```ruby
 platform :osx, '10.13'
+...
+pod 'SwiftySpot'
+```
+
+- tvOS
+```ruby
+platform :tvos, '11.0'
+...
+pod 'SwiftySpot'
+```
+
+- watchOS
+```ruby
+platform :watchos, '4.0'
 ...
 pod 'SwiftySpot'
 ```

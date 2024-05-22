@@ -56,6 +56,9 @@ public class SPLyrics {
     public let showUpsell: Bool
     
     public var formattedLyricsLines: [String] {
+        if (content.isEmpty) {
+            return []
+        }
         var lines: [String] = [String].init(repeating: "", count: content.count)
         if (syncType == .unsynced) {
             for i in 0...lines.count - 1 {

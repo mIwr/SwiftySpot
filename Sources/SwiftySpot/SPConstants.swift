@@ -9,7 +9,7 @@ public final class SPConstants {
     fileprivate init() {}
     
     public static let appBundleId = "com.spotify.music"
-    public static let appVersionCode = "8.8.66.563"
+    public static let appVersionCode = "8.9.38.494"
     ///Client ID
     public static let clID = "9a8d2f0ce77a4e248bb71fefcb557637"
     ///Client validation key
