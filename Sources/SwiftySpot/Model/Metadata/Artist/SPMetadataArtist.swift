@@ -75,9 +75,9 @@ public class SPMetadataArtist: SPTypedObj {
     ///Artist affected genres
     public let genres: [String]
     ///Artist external IDs
-    public let extIds: [SPMetadataExtId]
+    public let extIds: [SPMetadataExternalId]
     ///Artist portraits
-    public let portraitVariants: [SPMetadataImg]
+    public let portraitVariants: [SPMetadataImage]
     ///Artist bio
     public let bio: [SPMetadataBiography]
     public let restrictions: [SPMetadataRestriction]
@@ -87,7 +87,7 @@ public class SPMetadataArtist: SPTypedObj {
     public let related: [SPMetadataArtist]
     public let isPortraitAlbumCover: Bool
     ///Artist portraits by size group
-    public let portraitGroup: [[SPMetadataImg]]
+    public let portraitGroup: [[SPMetadataImage]]
     ///Artist sale periods
     public let salePeriods: [SPMetadataSalePeriod]
     ///Artist localized names
@@ -96,7 +96,7 @@ public class SPMetadataArtist: SPTypedObj {
     public let availability: [SPMetadataAvailability]
     public let indexVersion: Int64
     
-    public init(gid: [UInt8], name: String, uri: String = "", popularity: Int32 = 0, topTracks: [SPMetadataTopTracks] = [], albumGroup: [[SPMetadataAlbum]] = [], singleGroup: [[SPMetadataAlbum]] = [], compilationGroup: [[SPMetadataAlbum]] = [], appearsGroup: [[SPMetadataAlbum]] = [], genres: [String] = [], extIds: [SPMetadataExtId] = [], portraitVariants: [SPMetadataImg] = [], bio: [SPMetadataBiography] = [], restrictions: [SPMetadataRestriction] = [], activity: [SPMetadataActivityPeriod] = [], related: [SPMetadataArtist] = [], isPortraitAlbumCover: Bool = false, portraitGroup: [[SPMetadataImg]] = [], salePeriods: [SPMetadataSalePeriod] = [], localizedNames: [SPMetadataLocalizedString] = [], availability: [SPMetadataAvailability] = [], indexVersion: Int64 = 0) {
+    public init(gid: [UInt8], name: String, uri: String = "", popularity: Int32 = 0, topTracks: [SPMetadataTopTracks] = [], albumGroup: [[SPMetadataAlbum]] = [], singleGroup: [[SPMetadataAlbum]] = [], compilationGroup: [[SPMetadataAlbum]] = [], appearsGroup: [[SPMetadataAlbum]] = [], genres: [String] = [], extIds: [SPMetadataExternalId] = [], portraitVariants: [SPMetadataImage] = [], bio: [SPMetadataBiography] = [], restrictions: [SPMetadataRestriction] = [], activity: [SPMetadataActivityPeriod] = [], related: [SPMetadataArtist] = [], isPortraitAlbumCover: Bool = false, portraitGroup: [[SPMetadataImage]] = [], salePeriods: [SPMetadataSalePeriod] = [], localizedNames: [SPMetadataLocalizedString] = [], availability: [SPMetadataAvailability] = [], indexVersion: Int64 = 0) {
         self.name = name
         self.popularity = popularity
         self.topTracks = topTracks
@@ -144,7 +144,7 @@ public class SPMetadataArtist: SPTypedObj {
         return res
     }
     
-    static func from(protobuf: Spotify_Metadata_Artist, uri: String) -> SPMetadataArtist {
+    static func from(protobuf: SPMetaArtist, uri: String) -> SPMetadataArtist {
         let gid = [UInt8].init(protobuf.gid)
         var topTracks: [SPMetadataTopTracks] = []
         for top in protobuf.topTracks {
@@ -155,47 +155,7 @@ public class SPMetadataArtist: SPTypedObj {
         let singleGroup = fromAlbumGroup(protobuf.singleGroup)
         let compilationGroup = fromAlbumGroup(protobuf.compilationGroup)
         let appearsGroup = fromAlbumGroup(protobuf.appearsOnGroup)
-        var extIds: [SPMetadataExtId] = []
-        for extItem in protobuf.externalIds {
-            let parsed = SPMetadataExtId.from(protobuf: extItem)
-            extIds.append(parsed)
-        }
-        var portraitVariants: [SPMetadataImg] = []
-        for item in protobuf.portraitVariants {
-            let parsed = SPMetadataImg.from(protobuf: item)
-            portraitVariants.append(parsed)
-        }
-        var bio: [SPMetadataBiography] = []
-        for item in protobuf.biography {
-            let parsed = SPMetadataBiography.from(protobuf: item)
-            bio.append(parsed)
-        }
-        var restrictions: [SPMetadataRestriction] = []
-        for item in protobuf.restrictions {
-            let parsed = SPMetadataRestriction.from(protobuf: item)
-            restrictions.append(parsed)
-        }
-        var activity: [SPMetadataActivityPeriod] = []
-        for item in protobuf.activity {
-            let parsed = SPMetadataActivityPeriod.from(protobuf: item)
-            activity.append(parsed)
-        }
-        let portraitGroup = SPMetadataImg.fromGroup(protobuf.portraitGroup)
-        var salePeriods: [SPMetadataSalePeriod] = []
-        for item in protobuf.salePreiods {
-            let parsed = SPMetadataSalePeriod.from(protobuf: item)
-            salePeriods.append(parsed)
-        }
-        var localizedNames: [SPMetadataLocalizedString] = []
-        for item in protobuf.localizedNames {
-            let parsed = SPMetadataLocalizedString.from(protobuf: item)
-            localizedNames.append(parsed)
-        }
-        var availability: [SPMetadataAvailability] = []
-        for item in protobuf.availability {
-            let parsed = SPMetadataAvailability.from(protobuf: item)
-            availability.append(parsed)
-        }
+        let portraitGroup = SPMetadataImage.fromGroup(protobuf.portraitGroup)
         var related: [SPMetadataArtist] = []
         for item in protobuf.related {
             let shortGid = [UInt8].init(item.gid)
@@ -205,10 +165,10 @@ public class SPMetadataArtist: SPTypedObj {
             related.append(parsed)
         }
         
-        return SPMetadataArtist(gid: gid, name: protobuf.name, uri: uri, topTracks: topTracks, albumGroup: albumGroup, singleGroup: singleGroup, compilationGroup: compilationGroup, appearsGroup: appearsGroup, genres: protobuf.genres, extIds: extIds, portraitVariants: portraitVariants, bio: bio, restrictions: restrictions, activity: activity, related: related, isPortraitAlbumCover: protobuf.isPortraitAlbumCover, portraitGroup: portraitGroup, salePeriods: salePeriods, localizedNames: localizedNames, availability: availability, indexVersion: protobuf.indexVersion)
+        return SPMetadataArtist(gid: gid, name: protobuf.name, uri: uri, topTracks: topTracks, albumGroup: albumGroup, singleGroup: singleGroup, compilationGroup: compilationGroup, appearsGroup: appearsGroup, genres: protobuf.genres, extIds: protobuf.externalIds, portraitVariants: protobuf.portraitVariants, bio: protobuf.biography, restrictions: protobuf.restrictions, activity: protobuf.activity, related: related, isPortraitAlbumCover: protobuf.isPortraitAlbumCover, portraitGroup: portraitGroup, salePeriods: protobuf.salePeriods, localizedNames: protobuf.localizedNames, availability: protobuf.availability, indexVersion: protobuf.indexVersion)
     }
     
-    fileprivate static func fromAlbumGroup(_ group: [Spotify_Metadata_AlbumGroup]) -> [[SPMetadataAlbum]] {
+    fileprivate static func fromAlbumGroup(_ group: [SPMetaAlbumGroup]) -> [[SPMetadataAlbum]] {
         var parsedGroup: [[SPMetadataAlbum]] = []
         for itemGroup in group {
             var items: [SPMetadataAlbum] = []

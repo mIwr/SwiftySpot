@@ -8,7 +8,7 @@
 import Foundation
 import SwiftProtobuf
 
-func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, clientInfo: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo, facetUri: String, timezone: String, completion: @escaping (_ result: Result<Com_Spotify_Dac_Api_V1_Proto_DacResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, clientInfo: SPDacRequest.ClientInfo, facetUri: String, timezone: String, completion: @escaping (_ result: Result<SPDacResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
         return nil
@@ -17,10 +17,10 @@ func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: 
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    var reqProtobuf = Com_Spotify_Dac_Api_V1_Proto_DacRequest()
+    var reqProtobuf = SPDacRequest()
     reqProtobuf.clientInfo = clientInfo
     reqProtobuf.uri = "dac:home"
-    var featureReq = Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest()
+    var featureReq = SPDacHomeViewServiceRequest()
     featureReq.facet = facetUri
     featureReq.timezone = timezone
     var anyProtobuf = Google_Protobuf_Any()
@@ -37,7 +37,7 @@ func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: 
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Dac_Api_V1_Proto_DacResponse(serializedData: data)
+            let parsed = try SPDacResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

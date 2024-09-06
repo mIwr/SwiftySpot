@@ -41,7 +41,7 @@ public final class SPBase62 {
         20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
     ]// ["A"] -> 10 [0..9,a..z,A..Z]
     
-    fileprivate static let _base62Pow10 = UInt128(pow(Double(_alphabet.count), 10))//<=10 base62 digits
+    fileprivate static let _base62Pow10 = SPUInt128(pow(Double(_alphabet.count), 10))//<=10 base62 digits
     fileprivate static let _base62Pow20 = _base62Pow10 * _base62Pow10//<=20 base62 digits
     
     fileprivate init() {}
@@ -50,14 +50,14 @@ public final class SPBase62 {
     /// - Parameter num: An UIn128 value that should be encoded.
     /// - Parameter inversedAlphabet: Use inversed base62 alphabet basis
     /// - Returns: A base62 encoded string.
-    public static func encode(num: UInt128, inversedAlphabet: Bool = false) -> String {
+    public static func encode(num: SPUInt128, inversedAlphabet: Bool = false) -> String {
         if (inversedAlphabet) {
             return encode(num: num, alphabet: _alphabetInversed)
         }
         return encode(num: num, alphabet: _alphabet)
     }
     
-    fileprivate static func encode(num: UInt128, alphabet: Array<Character>) -> String {
+    fileprivate static func encode(num: SPUInt128, alphabet: Array<Character>) -> String {
         //u128 will be have 22 bas62 digits
         var mutableNum = num
         var nlow = UInt64(mutableNum % _base62Pow10)
@@ -85,14 +85,14 @@ public final class SPBase62 {
     /// - Parameter string: A string value that should be decoded.
     /// - Parameter inversedAlphabet: Use inversed base62 decode map
     /// - Returns: A base62 decoded UInt128 value.
-    public static func decode(string: String, inversedAlphabet: Bool = false) -> UInt128 {
+    public static func decode(string: String, inversedAlphabet: Bool = false) -> SPUInt128 {
         if (inversedAlphabet) {
             return decode(string: string, decodeMap: _decodeMapInversed)
         }
         return decode(string: string, decodeMap: _decodeMap)
     }
 
-    fileprivate static func decode(string: String, decodeMap: Array<UInt8>) -> UInt128 {
+    fileprivate static func decode(string: String, decodeMap: Array<UInt8>) -> SPUInt128 {
         if (string.isEmpty) {
             return 0
         }
@@ -118,9 +118,9 @@ public final class SPBase62 {
             sectionBuff = sectionBuff * _alphabetSize + num
         }
         if (endIndex < 10) {
-            return UInt128(sectionBuff)
+            return SPUInt128(sectionBuff)
         }
-        var res = UInt128(sectionBuff)
+        var res = SPUInt128(sectionBuff)
         sectionBuff = 0
         endIndex += 10
         if (strBytes.count < endIndex) {
@@ -151,7 +151,7 @@ public final class SPBase62 {
             }
             sectionBuff = sectionBuff * _alphabetSize + num
         }
-        var overflowCheck = _base62Pow20.multipliedReportingOverflow(by: UInt128(high: 0, low: sectionBuff))
+        var overflowCheck = _base62Pow20.multipliedReportingOverflow(by: SPUInt128(high: 0, low: sectionBuff))
         if (overflowCheck.overflow) {
             #if DEBUG
             print("Decoding " + string + " overflow error: " + String(sectionBuff) + " * " + String(_base62Pow20))

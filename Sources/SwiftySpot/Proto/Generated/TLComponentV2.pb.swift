@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2 {
+struct SPDacToolbarComponentV2 {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,8 +44,8 @@ struct Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2 {
     set {_uniqueStorage()._items = newValue}
   }
 
-  var profileBtn: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent {
-    get {return _storage._profileBtn ?? Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent()}
+  var profileBtn: SPDacToolbarItemProfileComponent {
+    get {return _storage._profileBtn ?? SPDacToolbarItemProfileComponent()}
     set {_uniqueStorage()._profileBtn = newValue}
   }
   /// Returns true if `profileBtn` has been explicitly set.
@@ -53,8 +53,8 @@ struct Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2 {
   /// Clears the value of `profileBtn`. Subsequent reads from it will return its default value.
   mutating func clearProfileBtn() {_uniqueStorage()._profileBtn = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _storage._ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _storage._ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_uniqueStorage()._ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -69,15 +69,15 @@ struct Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2 {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2 {
+struct SPDacShortcutsSectionComponentV2 {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var shortcuts: [SwiftProtobuf.Google_Protobuf_Any] = []
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -89,19 +89,19 @@ struct Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2 {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2: @unchecked Sendable {}
+extension SPDacToolbarComponentV2: @unchecked Sendable {}
+extension SPDacShortcutsSectionComponentV2: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.component.v2.proto"
 
-extension Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarComponentV2: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarComponentV2"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "day_part_message"),
@@ -115,8 +115,8 @@ extension Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2: SwiftProto
     var _dayPartMessage: String = String()
     var _subtitle: String? = nil
     var _items: [SwiftProtobuf.Google_Protobuf_Any] = []
-    var _profileBtn: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent? = nil
-    var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+    var _profileBtn: SPDacToolbarItemProfileComponent? = nil
+    var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -182,7 +182,7 @@ extension Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2, rhs: Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2) -> Bool {
+  static func ==(lhs: SPDacToolbarComponentV2, rhs: SPDacToolbarComponentV2) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -201,7 +201,7 @@ extension Com_Spotify_Home_Dac_Component_V2_Proto_ToolbarComponentV2: SwiftProto
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacShortcutsSectionComponentV2: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortcutsSectionComponentV2"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shortcuts"),
@@ -235,7 +235,7 @@ extension Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2, rhs: Com_Spotify_Home_Dac_Component_V2_Proto_ShortcutsSectionComponentV2) -> Bool {
+  static func ==(lhs: SPDacShortcutsSectionComponentV2, rhs: SPDacShortcutsSectionComponentV2) -> Bool {
     if lhs.shortcuts != rhs.shortcuts {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -1,0 +1,163 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+package com.spotify.searchview.proto;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+//Restful banner on search
+message BannerContent {
+    //Banner ID
+    string id = 1;
+    //Banner title
+    string title = 2;
+    //Banner description text
+    string desc = 3;
+    //Action button title
+    string button_title = 4;
+    //Action button url launch on press
+    string url = 5;
+}
+
+//Related search query
+message SearchRelated {
+    //Search query
+    string text = 1;
+    //Entity navigation uri
+    string uri = 2;
+}
+
+//Search suggestion
+message SearchAutocompleteQuery {
+    //Suggestion entity naviagtion uri
+    string uri = 1;
+    //Suggestion snippet
+    SearchSnippet snippet = 2;
+    //Suggestion text
+    string chip_text = 100;
+}
+
+//Search snippet
+message SearchSnippet {
+    //Snippet segments
+    repeated SearchSegment segments = 1;
+}
+
+//Search query segment
+message SearchSegment {
+    //Query segment value
+    string value = 1;
+    //Match flag
+    bool matched = 2;
+}
+
+//Artist search match
+message SearchArtist {
+    //Artist is verified flag
+    bool verified = 1;
+}
+
+//Album search match
+message SearchAlbum {
+    //Artists-authors
+    repeated string artist_names = 1;
+    //Album type
+    int32 type = 2;
+    //Album release year
+    int32 release_year = 3;
+    //State type
+    int32 state = 4;
+    //Create timestamp
+    optional .google.protobuf.Timestamp timestamp = 5;
+    optional string user_country_release_iso_time = 6;
+}
+
+//Playlist search match
+message SearchPlaylist {
+    //User-related playlist flag
+    bool personalized = 1;
+    //Spotify is author flag
+    bool owned_by_spotify = 2;
+    //Tracks count
+    int32 tracks_count = 3;
+}
+
+//Track search match
+message SearchTrack {
+    //Track is explicit flag
+    bool explicit = 1;
+    //Track is windowed flag
+    optional bool windowed = 2;
+    //Track album info
+    RelatedEntity album = 3;
+    //Track authors info
+    repeated RelatedEntity artists = 4;
+    //TODO
+    optional bool mogef19 = 6;
+    //Lyrics flag
+    optional bool lyrics_match = 7;
+    //Search on demand
+    optional OnDemand on_demand = 8;
+}
+
+//Audio show search match
+message SearchAudioShow {
+    //Publisher name
+    string publisher_name = 1;
+    //Show contains music and talk flag
+    bool music_and_talk = 3;
+    //Show category
+    string category = 4;
+}
+
+//Genre search match
+message SearchGenre {
+    
+}
+
+//Profile search match info
+message SearchProfile {
+    //Profile verified flag
+    bool verified = 1;
+}
+
+//Audiobook search match
+message SearchAudiobook {
+    //Authors
+    repeated string author_names = 1;
+    //Narrators
+    repeated string narrator_names = 2;
+    //Audiobook is explicit flag
+    bool explicit = 3;
+    //Audiobook duration
+    .google.protobuf.Duration duration = 4;
+    //Audiobook description
+    string desc = 5;
+    //Audio book search access settings
+    Access access = 6;
+}
+
+//Search object access settings
+message Access {
+    //TODO
+    string signifier = 1;
+    //Unlocked for play
+    bool unlocked = 2;
+}
+
+//Related entity for search match
+message RelatedEntity {
+    //Entity navigation uri
+    string uri = 1;
+    //Entity name
+    string name = 2;
+}
+
+//Search on demand match
+message OnDemand {
+    //Track navigation uri
+    string track_uri = 1;
+    //Playlist navigation uri
+    string playlist_uri = 2;
+}

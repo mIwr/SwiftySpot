@@ -20,21 +20,21 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct PlaylistFromSeed {
+struct SPPlaylistFromSeed {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var total: Int32 = 0
 
-  var playlists: [PlaylistFromSeedShort] = []
+  var playlists: [SPPlaylistFromSeedShort] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct PlaylistFromSeedShort {
+struct SPPlaylistFromSeedShort {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -46,7 +46,7 @@ struct PlaylistFromSeedShort {
   init() {}
 }
 
-struct PlaylistInfo {
+struct SPPlaylistInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -61,8 +61,8 @@ struct PlaylistInfo {
     set {_uniqueStorage()._count = newValue}
   }
 
-  var meta: PlaylistMeta {
-    get {return _storage._meta ?? PlaylistMeta()}
+  var meta: SPPlaylistMeta {
+    get {return _storage._meta ?? SPPlaylistMeta()}
     set {_uniqueStorage()._meta = newValue}
   }
   /// Returns true if `meta` has been explicitly set.
@@ -70,8 +70,8 @@ struct PlaylistInfo {
   /// Clears the value of `meta`. Subsequent reads from it will return its default value.
   mutating func clearMeta() {_uniqueStorage()._meta = nil}
 
-  var payload: PlaylistPayload {
-    get {return _storage._payload ?? PlaylistPayload()}
+  var payload: SPPlaylistPayload {
+    get {return _storage._payload ?? SPPlaylistPayload()}
     set {_uniqueStorage()._payload = newValue}
   }
   /// Returns true if `payload` has been explicitly set.
@@ -94,8 +94,8 @@ struct PlaylistInfo {
     set {_uniqueStorage()._todoUnknownNum = newValue}
   }
 
-  var obj: PlaylistMetaUnknownObj {
-    get {return _storage._obj ?? PlaylistMetaUnknownObj()}
+  var obj: SPPlaylistMetaUnknownObj {
+    get {return _storage._obj ?? SPPlaylistMetaUnknownObj()}
     set {_uniqueStorage()._obj = newValue}
   }
   /// Returns true if `obj` has been explicitly set.
@@ -110,7 +110,7 @@ struct PlaylistInfo {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct PlaylistPayload {
+struct SPPlaylistPayload {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -119,14 +119,62 @@ struct PlaylistPayload {
 
   var val2: Int32 = 0
 
-  var tracks: [PlaylistTrack] = []
+  var tracks: [SPPlaylistPayload.Track] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  struct Track {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var uri: String = String()
+
+    var info: SPPlaylistPayload.Track.Info {
+      get {return _info ?? SPPlaylistPayload.Track.Info()}
+      set {_info = newValue}
+    }
+    /// Returns true if `info` has been explicitly set.
+    var hasInfo: Bool {return self._info != nil}
+    /// Clears the value of `info`. Subsequent reads from it will return its default value.
+    mutating func clearInfo() {self._info = nil}
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    struct Info {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      var createTsMsUtc: Int64 {
+        get {return _createTsMsUtc ?? 0}
+        set {_createTsMsUtc = newValue}
+      }
+      /// Returns true if `createTsMsUtc` has been explicitly set.
+      var hasCreateTsMsUtc: Bool {return self._createTsMsUtc != nil}
+      /// Clears the value of `createTsMsUtc`. Subsequent reads from it will return its default value.
+      mutating func clearCreateTsMsUtc() {self._createTsMsUtc = nil}
+
+      var props: Dictionary<String,String> = [:]
+
+      var todoUnknownBytes: Data = Data()
+
+      var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      init() {}
+
+      fileprivate var _createTsMsUtc: Int64? = nil
+    }
+
+    init() {}
+
+    fileprivate var _info: SPPlaylistPayload.Track.Info? = nil
+  }
 
   init() {}
 }
 
-struct PlaylistMeta {
+struct SPPlaylistMeta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -148,7 +196,7 @@ struct PlaylistMeta {
   init() {}
 }
 
-struct PlaylistMetaUnknownObj {
+struct SPPlaylistMetaUnknownObj {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -166,68 +214,20 @@ struct PlaylistMetaUnknownObj {
   init() {}
 }
 
-struct PlaylistTrack {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var uri: String = String()
-
-  var info: PlaylistTrack.Info {
-    get {return _info ?? PlaylistTrack.Info()}
-    set {_info = newValue}
-  }
-  /// Returns true if `info` has been explicitly set.
-  var hasInfo: Bool {return self._info != nil}
-  /// Clears the value of `info`. Subsequent reads from it will return its default value.
-  mutating func clearInfo() {self._info = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct Info {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var createTsMsUtc: Int64 {
-      get {return _createTsMsUtc ?? 0}
-      set {_createTsMsUtc = newValue}
-    }
-    /// Returns true if `createTsMsUtc` has been explicitly set.
-    var hasCreateTsMsUtc: Bool {return self._createTsMsUtc != nil}
-    /// Clears the value of `createTsMsUtc`. Subsequent reads from it will return its default value.
-    mutating func clearCreateTsMsUtc() {self._createTsMsUtc = nil}
-
-    var props: Dictionary<String,String> = [:]
-
-    var todoUnknownBytes: Data = Data()
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _createTsMsUtc: Int64? = nil
-  }
-
-  init() {}
-
-  fileprivate var _info: PlaylistTrack.Info? = nil
-}
-
 #if swift(>=5.5) && canImport(_Concurrency)
-extension PlaylistFromSeed: @unchecked Sendable {}
-extension PlaylistFromSeedShort: @unchecked Sendable {}
-extension PlaylistInfo: @unchecked Sendable {}
-extension PlaylistPayload: @unchecked Sendable {}
-extension PlaylistMeta: @unchecked Sendable {}
-extension PlaylistMetaUnknownObj: @unchecked Sendable {}
-extension PlaylistTrack: @unchecked Sendable {}
-extension PlaylistTrack.Info: @unchecked Sendable {}
+extension SPPlaylistFromSeed: @unchecked Sendable {}
+extension SPPlaylistFromSeedShort: @unchecked Sendable {}
+extension SPPlaylistInfo: @unchecked Sendable {}
+extension SPPlaylistPayload: @unchecked Sendable {}
+extension SPPlaylistPayload.Track: @unchecked Sendable {}
+extension SPPlaylistPayload.Track.Info: @unchecked Sendable {}
+extension SPPlaylistMeta: @unchecked Sendable {}
+extension SPPlaylistMetaUnknownObj: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-extension PlaylistFromSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistFromSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistFromSeed"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "total"),
@@ -257,7 +257,7 @@ extension PlaylistFromSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistFromSeed, rhs: PlaylistFromSeed) -> Bool {
+  static func ==(lhs: SPPlaylistFromSeed, rhs: SPPlaylistFromSeed) -> Bool {
     if lhs.total != rhs.total {return false}
     if lhs.playlists != rhs.playlists {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -265,7 +265,7 @@ extension PlaylistFromSeed: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension PlaylistFromSeedShort: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistFromSeedShort: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistFromSeedShort"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "uri"),
@@ -290,14 +290,14 @@ extension PlaylistFromSeedShort: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistFromSeedShort, rhs: PlaylistFromSeedShort) -> Bool {
+  static func ==(lhs: SPPlaylistFromSeedShort, rhs: SPPlaylistFromSeedShort) -> Bool {
     if lhs.uri != rhs.uri {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension PlaylistInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "uid"),
@@ -313,12 +313,12 @@ extension PlaylistInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   fileprivate class _StorageClass {
     var _uid: Data = Data()
     var _count: Int32 = 0
-    var _meta: PlaylistMeta? = nil
-    var _payload: PlaylistPayload? = nil
+    var _meta: SPPlaylistMeta? = nil
+    var _payload: SPPlaylistPayload? = nil
     var _createTsUtc: Int64 = 0
     var _author: String = String()
     var _todoUnknownNum: Int32 = 0
-    var _obj: PlaylistMetaUnknownObj? = nil
+    var _obj: SPPlaylistMetaUnknownObj? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -399,7 +399,7 @@ extension PlaylistInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistInfo, rhs: PlaylistInfo) -> Bool {
+  static func ==(lhs: SPPlaylistInfo, rhs: SPPlaylistInfo) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -421,7 +421,7 @@ extension PlaylistInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension PlaylistPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistPayload"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "val1"),
@@ -456,7 +456,7 @@ extension PlaylistPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistPayload, rhs: PlaylistPayload) -> Bool {
+  static func ==(lhs: SPPlaylistPayload, rhs: SPPlaylistPayload) -> Bool {
     if lhs.val1 != rhs.val1 {return false}
     if lhs.val2 != rhs.val2 {return false}
     if lhs.tracks != rhs.tracks {return false}
@@ -465,7 +465,97 @@ extension PlaylistPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension PlaylistMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistPayload.Track: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = SPPlaylistPayload.protoMessageName + ".Track"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "uri"),
+    2: .same(proto: "info"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.uri) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._info) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.uri.isEmpty {
+      try visitor.visitSingularStringField(value: self.uri, fieldNumber: 1)
+    }
+    try { if let v = self._info {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: SPPlaylistPayload.Track, rhs: SPPlaylistPayload.Track) -> Bool {
+    if lhs.uri != rhs.uri {return false}
+    if lhs._info != rhs._info {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SPPlaylistPayload.Track.Info: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = SPPlaylistPayload.Track.protoMessageName + ".Info"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    2: .standard(proto: "create_ts_ms_utc"),
+    11: .same(proto: "props"),
+    12: .same(proto: "todoUnknownBytes"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self._createTsMsUtc) }()
+      case 11: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.props) }()
+      case 12: try { try decoder.decodeSingularBytesField(value: &self.todoUnknownBytes) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._createTsMsUtc {
+      try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
+    } }()
+    if !self.props.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.props, fieldNumber: 11)
+    }
+    if !self.todoUnknownBytes.isEmpty {
+      try visitor.visitSingularBytesField(value: self.todoUnknownBytes, fieldNumber: 12)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: SPPlaylistPayload.Track.Info, rhs: SPPlaylistPayload.Track.Info) -> Bool {
+    if lhs._createTsMsUtc != rhs._createTsMsUtc {return false}
+    if lhs.props != rhs.props {return false}
+    if lhs.todoUnknownBytes != rhs.todoUnknownBytes {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SPPlaylistMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistMeta"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
@@ -515,7 +605,7 @@ extension PlaylistMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistMeta, rhs: PlaylistMeta) -> Bool {
+  static func ==(lhs: SPPlaylistMeta, rhs: SPPlaylistMeta) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.desc != rhs.desc {return false}
     if lhs.todoUnknownNum != rhs.todoUnknownNum {return false}
@@ -527,7 +617,7 @@ extension PlaylistMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension PlaylistMetaUnknownObj: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPPlaylistMetaUnknownObj: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PlaylistMetaUnknownObj"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "var1"),
@@ -567,101 +657,11 @@ extension PlaylistMetaUnknownObj: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: PlaylistMetaUnknownObj, rhs: PlaylistMetaUnknownObj) -> Bool {
+  static func ==(lhs: SPPlaylistMetaUnknownObj, rhs: SPPlaylistMetaUnknownObj) -> Bool {
     if lhs.var1 != rhs.var1 {return false}
     if lhs.var2 != rhs.var2 {return false}
     if lhs.var4 != rhs.var4 {return false}
     if lhs.var5 != rhs.var5 {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension PlaylistTrack: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "PlaylistTrack"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uri"),
-    2: .same(proto: "info"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.uri) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._info) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if !self.uri.isEmpty {
-      try visitor.visitSingularStringField(value: self.uri, fieldNumber: 1)
-    }
-    try { if let v = self._info {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: PlaylistTrack, rhs: PlaylistTrack) -> Bool {
-    if lhs.uri != rhs.uri {return false}
-    if lhs._info != rhs._info {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension PlaylistTrack.Info: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = PlaylistTrack.protoMessageName + ".Info"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "create_ts_ms_utc"),
-    11: .same(proto: "props"),
-    12: .same(proto: "todoUnknownBytes"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self._createTsMsUtc) }()
-      case 11: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.props) }()
-      case 12: try { try decoder.decodeSingularBytesField(value: &self.todoUnknownBytes) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._createTsMsUtc {
-      try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
-    } }()
-    if !self.props.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.props, fieldNumber: 11)
-    }
-    if !self.todoUnknownBytes.isEmpty {
-      try visitor.visitSingularBytesField(value: self.todoUnknownBytes, fieldNumber: 12)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: PlaylistTrack.Info, rhs: PlaylistTrack.Info) -> Bool {
-    if lhs._createTsMsUtc != rhs._createTsMsUtc {return false}
-    if lhs.props != rhs.props {return false}
-    if lhs.todoUnknownBytes != rhs.todoUnknownBytes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

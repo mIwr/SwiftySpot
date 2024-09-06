@@ -28,7 +28,7 @@ public class SPCollectionItem: SPTypedObj {
         super.init(uri: uri)
     }
     
-    static func from(protobuf: Com_Spotify_Collection2_V2_Proto_CollectionItem) -> SPCollectionItem {
+    static func from(protobuf: SPCollectionPageItem) -> SPCollectionItem {
         return SPCollectionItem(uri: protobuf.uri, addedTs: protobuf.addedAtTs, removed: protobuf.isRemoved)
     }
 }

@@ -1,0 +1,199 @@
+syntax = "proto3";
+option swift_prefix="SPMetadata";
+
+package spotify.metadata;
+
+//Bio meta data
+message Biography {
+    //Bio text
+    string text = 1;
+    //Biography portraits
+    repeated .spotify.metadata.Image portrait_variants = 2;
+    //Biography portraits by sizes group
+    repeated .spotify.metadata.ImageGroup portrait_groups = 3;
+}
+
+//External ID meta info
+message ExternalId {
+    string type = 1;
+    string id = 2;
+}
+
+//Image meta info
+message Image {
+    //Image ID
+    bytes file_id = 1;
+    //Image size in bytes
+    int32 size = 2;
+    //Image width in pixels
+    int32 width = 3;
+    //Image height in pixels
+    int32 height = 4;
+}
+
+//Images array
+message ImageGroup {
+    //Images
+    repeated Image images = 1;
+}
+
+//Sale period meta info
+message SalePeriod {
+    //Restrictions info
+    repeated Restriction restrictions = 1;
+    //Sale period start timestamp
+    Date start = 2;
+    //Sale period end timestamp
+    Date end = 3;
+}
+
+//Restriction meta info
+message Restriction {
+    //Profile product types requirements
+    repeated int32 catalogue = 1;
+    //repeated string countries_allowed = 2;
+    //repeated string countries_forbidden = 3;
+    //Restriction type
+    int32 type = 4;
+    //Profile product requirements
+    repeated string catalogue_str = 5;
+}
+
+//Date metadata info. Values from API is x2 of real. Can trigger it by year (4046 = 2023 * 2) or month (16 = 8 * 2)
+message Date {
+    //Date year. X2 from real value
+    int32 stockYear = 1;
+    //Date month. X2 from real value
+    int32 stockMonth = 2;
+    //Date day. X2 from real value
+    int32 stockDay = 3;
+    //Date hour. X2 from real value
+    int32 stockHour = 4;
+    //Date minute. X2 from real value
+    int32 stockMinute = 5;
+}
+
+//Availability meta info
+message Availability {
+    ///Profile product types requirements
+    repeated string catalogue_str = 1;
+    //Availability start timestamp
+    Date start = 2;
+}
+
+//Copyright meta info
+message Copyright {
+    //Copyright type
+    CopyrightType type = 1;
+    //Copiryght text
+    string text = 2;
+}
+
+//Meta copyright type
+enum CopyrightType {
+    P = 0;
+    C = 1;
+}
+
+//Content rating meta info
+message ContentRating {
+    //Country code
+    string country = 1;
+    //Rating rags
+    repeated string tags = 2;
+}
+
+//Licensor meta info
+message Licensor {
+    //Licensor UUID
+    bytes uuid = 1;
+}
+
+message Block {
+    string countries = 1;
+    int32 type = 2;
+}
+
+//Localized string meta info
+message LocalizedString {
+    //Language code
+    string language = 1;
+    //Localized string value
+    string value = 2;
+}
+
+enum AlbumType {
+    UNKNOWN = 0;
+    ALBUM = 1;
+    SINGLE = 2;
+    COMPILATION = 3;
+    EP = 4;
+    AUDIOBOOK = 5;
+    PODCAST = 6;
+}
+
+//Artist activity period meta info
+message ActivityPeriod {
+    //Period start year
+    int32 start_year = 1;
+    //Period end year
+    optional int32 end_year = 2;
+    //Period decade
+    int32 decade = 3;
+}
+
+//Artist and role meta info
+message ArtistWithRole {
+    //Artist GID
+    bytes gid = 1;
+    //Artist name
+    string name = 2;
+    //Artist role
+    ArtistRole role = 3;
+}
+
+//Artist role type
+enum ArtistRole {
+    ARTIST_ROLE_UNKNOWN = 0;
+    ARTIST_ROLE_MAIN_ARTIST = 1;
+    ARTIST_ROLE_FEATURED_ARTIST = 2;
+    ARTIST_ROLE_REMIXER = 3;
+    ARTIST_ROLE_ACTOR = 4;
+    ARTIST_ROLE_COMPOSER = 5;
+    ARTIST_ROLE_CONDUCTOR = 6;
+    ARTIST_ROLE_ORCHESTRA = 7;
+}
+
+//Audio file meta info
+message AudioFile {
+    //File ID
+    bytes file_id = 1;
+    //Audio file format (codec)
+    AudioFormat format = 2;
+}
+
+//Audio file format (codec)
+enum AudioFormat {
+    OGG_VORBIS_96 = 0;
+    OGG_VORBIS_160 = 1;
+    OGG_VORBIS_320 = 2;
+    MP3_256 = 3;
+    MP3_320 = 4;
+    MP3_160 = 5;
+    MP3_96 = 6;
+    MP3_160_ENC = 7;
+    AAC_24 = 8;
+    AAC_48 = 9;
+    MP4_128 = 10;
+    MP4_128_DUAL = 11;
+    MP4_128_CBCS = 12;
+    MP4_256 = 13;
+    MP4_256_DUAL = 14;
+    MP4_256_CBCS = 15;
+    FLAC_FLAC = 16;
+    MP4_FLAC = 17;
+    XHE_AAC_24 = 18;
+    XHE_AAC_16 = 19;
+    XHE_AAC_12 = 20;
+    FLAC_FLAC_24BIT = 22;
+}

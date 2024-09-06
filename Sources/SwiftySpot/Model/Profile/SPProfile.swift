@@ -49,7 +49,7 @@ public class SPProfile: SPBaseObj, Decodable {
   ///Birthdate date instance
   public var bDate: Date? {
     get {
-      return DateUtil.fromBirthdateFormat(birthdate)
+      return SPDateUtil.fromBirthdateFormat(birthdate)
     }
   }
   ///Profile external links

@@ -5,10 +5,10 @@
 //  Created by Developer on 21.09.2023.
 //
 
-import Foundation
+//import Foundation
 
 //Artist info
-public class SPArtist: SPBaseObj {
+class SPArtist: SPBaseObj {
     
 }
 /*

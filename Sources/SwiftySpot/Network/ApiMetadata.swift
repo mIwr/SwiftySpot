@@ -8,9 +8,9 @@
 import Foundation
 import SwiftProtobuf
 
-func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, header: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader, items: [Com_Spotify_Extendedmetadata_Proto_EntityRequest], completion: @escaping (_ result: Result<Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, header: SPMetaBatchedEntityRequestHeader, items: [SPMetaEntityRequest], completion: @escaping (_ result: Result<SPMetaBatchedExtensionResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (items.isEmpty) {
-        let emptyRes = Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse()
+        let emptyRes = SPMetaBatchedExtensionResponse()
         completion(.success(emptyRes))
         return nil
     }
@@ -26,7 +26,7 @@ func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authTo
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    var reqProtobuf = Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest()
+    var reqProtobuf = SPMetaBatchedEntityRequest()
     reqProtobuf.header = header
     reqProtobuf.request = items
     guard let req: URLRequest = buildRequest(for: .metadata(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
@@ -40,7 +40,7 @@ func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authTo
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse(serializedData: data)
+            let parsed = try SPMetaBatchedExtensionResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

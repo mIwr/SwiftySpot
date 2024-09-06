@@ -1,0 +1,34 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+package com.spotify.collection2.v2.proto;
+
+//Collection data page
+message PageResponse {
+    //Collection items
+    repeated CollectionPageItem items = 1;
+    //Collection next page ID. May be nil, if page is the last or single
+    string next_page_token = 2;
+    //Collection state ID for synchronizing
+    string sync_token = 3;
+}
+
+//Collection, which represent data comparing with actual collection (remote) and current (local) by sync token
+message DeltaResponse {
+    //Local collection may be updated flag
+    bool delta_update_possible = 1;
+    //Collection items
+    repeated CollectionPageItem items = 2;
+    //Actual collection state ID for synchronizing
+    string sync_token = 3;
+}
+
+//Universal collection item
+message CollectionPageItem {
+    ///Item navigate uri
+    string uri = 1;
+    //Item create timestamp
+    int64 added_at_ts = 2;
+    //Item was removed from collection flag
+    bool is_removed = 3;
+}

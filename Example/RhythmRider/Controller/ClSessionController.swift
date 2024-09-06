@@ -47,7 +47,7 @@ class ClSessionController {
             print("Error during save client session token")
             return
         }
-        var bytes = BitConvertUtil.getBytes(safeSession.expiresInS)
+        var bytes = SPBinaryUtil.getBytes(safeSession.expiresInS)
         let expiresData = Data(bytes)
         status = SecureStorage.save(key: ClSessionController._clTokenExpiresKey, data: expiresData)
         if status != errSecSuccess
@@ -55,7 +55,7 @@ class ClSessionController {
             print("Error during save client session token expires")
             return
         }
-        bytes = BitConvertUtil.getBytes(safeSession.createTsUTC)
+        bytes = SPBinaryUtil.getBytes(safeSession.createTsUTC)
         let createTsData = Data(bytes)
         status = SecureStorage.save(key: ClSessionController._clTokenCreateTsKey, data: createTsData)
         if status != errSecSuccess
@@ -69,9 +69,9 @@ class ClSessionController {
         guard let safeTokenData = SecureStorage.load(key: ClSessionController._clTokenKey) else { return nil }
         guard let token = String(data: safeTokenData, encoding: .utf8) else { return nil }
         guard let safeExpiresData = SecureStorage.load(key: ClSessionController._clTokenExpiresKey) else { return nil }
-        guard let expires: Int32 = BitConvertUtil.getVal([UInt8].init(safeExpiresData)) else { return nil }
+        guard let expires: Int32 = SPBinaryUtil.getVal([UInt8].init(safeExpiresData)) else { return nil }
         guard let safeCreateTsData = SecureStorage.load(key: ClSessionController._clTokenCreateTsKey) else { return nil }
-        guard let createTs: Int64 = BitConvertUtil.getVal([UInt8].init(safeCreateTsData)) else { return nil }
+        guard let createTs: Int64 = SPBinaryUtil.getVal([UInt8].init(safeCreateTsData)) else { return nil }
         return SPClientSession(token: token, createTsUTC: createTs, expiresInS: expires, refreshInS: expires)
     }
 }

@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SwiftySpot",
     platforms: [
-        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11), .watchOS(.v4)
+        .macOS(.v10_13), .macCatalyst(.v13), .iOS(.v11), .tvOS(.v11), .watchOS(.v5), .visionOS(.v1)
     ],
     products: [
         .library(
@@ -13,10 +13,14 @@ let package = Package(
             targets: ["SwiftySpot"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.25.0")
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.27.1")
     ],
     targets: [
-        .target(name: "SwiftySpot", dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")]),
+        .target(name: "SwiftySpot", dependencies: [
+            .product(name: "SwiftProtobuf", package: "swift-protobuf")
+        ], resources: [
+            .copy("PrivacyInfo.xcprivacy")
+        ]),
         .testTarget(name: "SwiftySpotLocalTests", dependencies: ["SwiftySpot"], exclude: ["TestConstantsXCodeEnvExt.swift"], resources: [
             .process("albumsMetaReq.protobuf"),
             .process("albumsMetaResponse.protobuf"),

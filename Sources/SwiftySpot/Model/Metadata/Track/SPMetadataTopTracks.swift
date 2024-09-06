@@ -17,7 +17,7 @@ public class SPMetadataTopTracks {
     self.items = items
   }
   
-  static func from(protobuf: Spotify_Metadata_TopTracks) -> SPMetadataTopTracks {
+  static func from(protobuf: SPMetaTopTracks) -> SPMetadataTopTracks {
     var tracks: [SPMetadataTrack] = []
     for item in protobuf.tracks {
       let track = SPMetadataTrack.from(protobuf: item, uri: "")

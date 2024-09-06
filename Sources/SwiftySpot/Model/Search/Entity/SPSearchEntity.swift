@@ -50,7 +50,7 @@ public class SPSearchEntity: SPTypedObj {
         super.init(uri: uri)
     }
     
-    static func from(protobuf: Com_Spotify_Searchview_Proto_Entity) -> SPSearchEntity {
+    static func from(protobuf: SPSearchResultEntity) -> SPSearchEntity {
         var artist: SPSearchArtist?
         var track: SPSearchTrack?
         var album: SPSearchAlbum?
@@ -61,30 +61,30 @@ public class SPSearchEntity: SPTypedObj {
         var audiobook: SPSearchAudiobook?
         var autocomplete: SPSearchAutocompleteQuery?
         if case .artist? = protobuf.info {
-            artist = SPSearchArtist.from(protobuf: protobuf.artist)
+            artist = protobuf.artist
         } else if case .track? = protobuf.info {
-            track = SPSearchTrack.from(protobuf: protobuf.track)
+            track = protobuf.track
         } else if case .album? = protobuf.info {
-            album = SPSearchAlbum.from(protobuf: protobuf.album)
+            album = protobuf.album
         } else if case .playlist? = protobuf.info {
-            playlist = SPSearchPlaylist.from(protobuf: protobuf.playlist)
+            playlist = protobuf.playlist
         } else if case .genre? = protobuf.info {
-            genre = SPSearchGenre.from(protobuf: protobuf.genre)
+            genre = protobuf.genre
         } else if case .show? = protobuf.info {
-            show = SPSearchAudioShow.from(protobuf: protobuf.show)
+            show = protobuf.show
         } else if case .profile? = protobuf.info {
-            profile = SPSearchProfile.from(protobuf: protobuf.profile)
+            profile = protobuf.profile
         } else if case .audiobook? = protobuf.info {
-            audiobook = SPSearchAudiobook.from(protobuf: protobuf.audiobook)
+            audiobook = protobuf.audiobook
         } else if case .autocompleteQuery? = protobuf.info {
-            autocomplete = SPSearchAutocompleteQuery.from(protobuf: protobuf.autocompleteQuery)
+            autocomplete = protobuf.autocompleteQuery
         }
         return SPSearchEntity(uri: protobuf.uri, name: protobuf.name, imgUri: protobuf.imageUri, artist: artist, track: track, album: album, playlist: playlist, genre: genre, show: show, profile: profile, audiobook: audiobook, autocomplete: autocomplete, serpMeta: protobuf.serpMetadata)
     }
 }
 
 extension SPSearchEntity {
-    ///Generated from search info about artist
+    //Generated from search info about artist
     public var generatedArtistMeta: SPMetadataArtist? {
         get {
             guard let safeArtist = artist else {

@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option swift_prefix="SPUbi";
 
 package com.spotify.ubi.proto.elementinfo.v1;
 

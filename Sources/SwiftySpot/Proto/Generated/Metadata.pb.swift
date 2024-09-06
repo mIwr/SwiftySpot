@@ -20,484 +20,870 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Spotify_Metadata_CopyrightType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
-  case p // = 0
-  case c // = 1
-  case UNRECOGNIZED(Int)
+///Album meta info (Internal access)
+struct SPMetaAlbum {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
-  init() {
-    self = .p
+  var gid: Data {
+    get {return _storage._gid}
+    set {_uniqueStorage()._gid = newValue}
   }
 
-  init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .p
-    case 1: self = .c
-    default: self = .UNRECOGNIZED(rawValue)
-    }
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
   }
 
-  var rawValue: Int {
-    switch self {
-    case .p: return 0
-    case .c: return 1
-    case .UNRECOGNIZED(let i): return i
-    }
+  var artists: [SPMetaArtist] {
+    get {return _storage._artists}
+    set {_uniqueStorage()._artists = newValue}
   }
 
-}
-
-#if swift(>=4.2)
-
-extension Spotify_Metadata_CopyrightType: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Spotify_Metadata_CopyrightType] = [
-    .p,
-    .c,
-  ]
-}
-
-#endif  // swift(>=4.2)
-
-struct Spotify_Metadata_ExternalId {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var type: String = String()
-
-  var id: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_Image {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var fileID: Data = Data()
-
-  var size: Int32 = 0
-
-  var width: Int32 = 0
-
-  var height: Int32 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_ImageGroup {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var images: [Spotify_Metadata_Image] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_SalePeriod {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var restrictions: [Spotify_Metadata_Restriction] = []
-
-  var start: Spotify_Metadata_Date {
-    get {return _start ?? Spotify_Metadata_Date()}
-    set {_start = newValue}
+  var type: SPMetadataAlbumType {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
   }
-  /// Returns true if `start` has been explicitly set.
-  var hasStart: Bool {return self._start != nil}
-  /// Clears the value of `start`. Subsequent reads from it will return its default value.
-  mutating func clearStart() {self._start = nil}
 
-  var end: Spotify_Metadata_Date {
-    get {return _end ?? Spotify_Metadata_Date()}
-    set {_end = newValue}
+  var label: String {
+    get {return _storage._label}
+    set {_uniqueStorage()._label = newValue}
   }
-  /// Returns true if `end` has been explicitly set.
-  var hasEnd: Bool {return self._end != nil}
-  /// Clears the value of `end`. Subsequent reads from it will return its default value.
-  mutating func clearEnd() {self._end = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _start: Spotify_Metadata_Date? = nil
-  fileprivate var _end: Spotify_Metadata_Date? = nil
-}
-
-struct Spotify_Metadata_Restriction {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var catalogue: [Int32] = []
-
-  ///repeated string countries_allowed = 2;
-  ///repeated string countries_forbidden = 3;
-  var type: Int32 = 0
-
-  var catalogueStr: [String] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_Date {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var year: Int32 = 0
-
-  var month: Int32 = 0
-
-  var day: Int32 = 0
-
-  var hour: Int32 = 0
-
-  var minute: Int32 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_Availability {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var catalogueStr: [String] = []
-
-  var start: Spotify_Metadata_Date {
-    get {return _start ?? Spotify_Metadata_Date()}
-    set {_start = newValue}
+  var date: SPMetadataDate {
+    get {return _storage._date ?? SPMetadataDate()}
+    set {_uniqueStorage()._date = newValue}
   }
-  /// Returns true if `start` has been explicitly set.
-  var hasStart: Bool {return self._start != nil}
-  /// Clears the value of `start`. Subsequent reads from it will return its default value.
-  mutating func clearStart() {self._start = nil}
+  /// Returns true if `date` has been explicitly set.
+  var hasDate: Bool {return _storage._date != nil}
+  /// Clears the value of `date`. Subsequent reads from it will return its default value.
+  mutating func clearDate() {_uniqueStorage()._date = nil}
+
+  var popularity: Int32 {
+    get {return _storage._popularity}
+    set {_uniqueStorage()._popularity = newValue}
+  }
+
+  var genres: [String] {
+    get {return _storage._genres}
+    set {_uniqueStorage()._genres = newValue}
+  }
+
+  var cover: [SPMetadataImage] {
+    get {return _storage._cover}
+    set {_uniqueStorage()._cover = newValue}
+  }
+
+  var externalIds: [SPMetadataExternalId] {
+    get {return _storage._externalIds}
+    set {_uniqueStorage()._externalIds = newValue}
+  }
+
+  var discs: [SPMetaDisc] {
+    get {return _storage._discs}
+    set {_uniqueStorage()._discs = newValue}
+  }
+
+  var reviews: [String] {
+    get {return _storage._reviews}
+    set {_uniqueStorage()._reviews = newValue}
+  }
+
+  var copyrights: [SPMetadataCopyright] {
+    get {return _storage._copyrights}
+    set {_uniqueStorage()._copyrights = newValue}
+  }
+
+  var restrictions: [SPMetadataRestriction] {
+    get {return _storage._restrictions}
+    set {_uniqueStorage()._restrictions = newValue}
+  }
+
+  var related: [SPMetaAlbum] {
+    get {return _storage._related}
+    set {_uniqueStorage()._related = newValue}
+  }
+
+  var salePeriods: [SPMetadataSalePeriod] {
+    get {return _storage._salePeriods}
+    set {_uniqueStorage()._salePeriods = newValue}
+  }
+
+  var coverGroup: [SPMetadataImageGroup] {
+    get {return _storage._coverGroup}
+    set {_uniqueStorage()._coverGroup = newValue}
+  }
+
+  var originalTitle: String {
+    get {return _storage._originalTitle}
+    set {_uniqueStorage()._originalTitle = newValue}
+  }
+
+  var versionTitle: String {
+    get {return _storage._versionTitle}
+    set {_uniqueStorage()._versionTitle = newValue}
+  }
+
+  var typeStr: String {
+    get {return _storage._typeStr}
+    set {_uniqueStorage()._typeStr = newValue}
+  }
+
+  var visibilityBlocks: [SPMetadataBlock] {
+    get {return _storage._visibilityBlocks}
+    set {_uniqueStorage()._visibilityBlocks = newValue}
+  }
+
+  var earliestLiveTimestamp: Int64 {
+    get {return _storage._earliestLiveTimestamp ?? 0}
+    set {_uniqueStorage()._earliestLiveTimestamp = newValue}
+  }
+  /// Returns true if `earliestLiveTimestamp` has been explicitly set.
+  var hasEarliestLiveTimestamp: Bool {return _storage._earliestLiveTimestamp != nil}
+  /// Clears the value of `earliestLiveTimestamp`. Subsequent reads from it will return its default value.
+  mutating func clearEarliestLiveTimestamp() {_uniqueStorage()._earliestLiveTimestamp = nil}
+
+  var availability: [SPMetadataAvailability] {
+    get {return _storage._availability}
+    set {_uniqueStorage()._availability = newValue}
+  }
+
+  var windowedTracks: [SPMetaTrack] {
+    get {return _storage._windowedTracks}
+    set {_uniqueStorage()._windowedTracks = newValue}
+  }
+
+  var licensor: SPMetadataLicensor {
+    get {return _storage._licensor ?? SPMetadataLicensor()}
+    set {_uniqueStorage()._licensor = newValue}
+  }
+  /// Returns true if `licensor` has been explicitly set.
+  var hasLicensor: Bool {return _storage._licensor != nil}
+  /// Clears the value of `licensor`. Subsequent reads from it will return its default value.
+  mutating func clearLicensor() {_uniqueStorage()._licensor = nil}
+
+  var version: Int64 {
+    get {return _storage._version ?? 0}
+    set {_uniqueStorage()._version = newValue}
+  }
+  /// Returns true if `version` has been explicitly set.
+  var hasVersion: Bool {return _storage._version != nil}
+  /// Clears the value of `version`. Subsequent reads from it will return its default value.
+  mutating func clearVersion() {_uniqueStorage()._version = nil}
+
+  var feedGid: String {
+    get {return _storage._feedGid ?? String()}
+    set {_uniqueStorage()._feedGid = newValue}
+  }
+  /// Returns true if `feedGid` has been explicitly set.
+  var hasFeedGid: Bool {return _storage._feedGid != nil}
+  /// Clears the value of `feedGid`. Subsequent reads from it will return its default value.
+  mutating func clearFeedGid() {_uniqueStorage()._feedGid = nil}
+
+  var deliveryID: String {
+    get {return _storage._deliveryID ?? String()}
+    set {_uniqueStorage()._deliveryID = newValue}
+  }
+  /// Returns true if `deliveryID` has been explicitly set.
+  var hasDeliveryID: Bool {return _storage._deliveryID != nil}
+  /// Clears the value of `deliveryID`. Subsequent reads from it will return its default value.
+  mutating func clearDeliveryID() {_uniqueStorage()._deliveryID = nil}
+
+  var localizedNames: [SPMetadataLocalizedString] {
+    get {return _storage._localizedNames}
+    set {_uniqueStorage()._localizedNames = newValue}
+  }
+
+  var uri: String {
+    get {return _storage._uri ?? String()}
+    set {_uniqueStorage()._uri = newValue}
+  }
+  /// Returns true if `uri` has been explicitly set.
+  var hasUri: Bool {return _storage._uri != nil}
+  /// Clears the value of `uri`. Subsequent reads from it will return its default value.
+  mutating func clearUri() {_uniqueStorage()._uri = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _start: Spotify_Metadata_Date? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Spotify_Metadata_Copyright {
+///Disc meta info (Internal access)
+struct SPMetaDisc {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: Spotify_Metadata_CopyrightType = .p
+  var number: Int32 = 0
 
-  var text: String = String()
+  var name: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Spotify_Metadata_Licensor {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var uuid: Data = Data()
+  var tracks: [SPMetaTrack] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Spotify_Metadata_Block {
+///Artist meta info (Internal access)
+struct SPMetaArtist {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var countries: String = String()
+  var gid: Data {
+    get {return _storage._gid}
+    set {_uniqueStorage()._gid = newValue}
+  }
 
-  var type: Int32 = 0
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
+
+  var popularity: Int32 {
+    get {return _storage._popularity}
+    set {_uniqueStorage()._popularity = newValue}
+  }
+
+  var topTracks: [SPMetaTopTracks] {
+    get {return _storage._topTracks}
+    set {_uniqueStorage()._topTracks = newValue}
+  }
+
+  var albumGroup: [SPMetaAlbumGroup] {
+    get {return _storage._albumGroup}
+    set {_uniqueStorage()._albumGroup = newValue}
+  }
+
+  var singleGroup: [SPMetaAlbumGroup] {
+    get {return _storage._singleGroup}
+    set {_uniqueStorage()._singleGroup = newValue}
+  }
+
+  var compilationGroup: [SPMetaAlbumGroup] {
+    get {return _storage._compilationGroup}
+    set {_uniqueStorage()._compilationGroup = newValue}
+  }
+
+  var appearsOnGroup: [SPMetaAlbumGroup] {
+    get {return _storage._appearsOnGroup}
+    set {_uniqueStorage()._appearsOnGroup = newValue}
+  }
+
+  var genres: [String] {
+    get {return _storage._genres}
+    set {_uniqueStorage()._genres = newValue}
+  }
+
+  var externalIds: [SPMetadataExternalId] {
+    get {return _storage._externalIds}
+    set {_uniqueStorage()._externalIds = newValue}
+  }
+
+  var portraitVariants: [SPMetadataImage] {
+    get {return _storage._portraitVariants}
+    set {_uniqueStorage()._portraitVariants = newValue}
+  }
+
+  var biography: [SPMetadataBiography] {
+    get {return _storage._biography}
+    set {_uniqueStorage()._biography = newValue}
+  }
+
+  var activity: [SPMetadataActivityPeriod] {
+    get {return _storage._activity}
+    set {_uniqueStorage()._activity = newValue}
+  }
+
+  var restrictions: [SPMetadataRestriction] {
+    get {return _storage._restrictions}
+    set {_uniqueStorage()._restrictions = newValue}
+  }
+
+  var related: [SPMetaArtist] {
+    get {return _storage._related}
+    set {_uniqueStorage()._related = newValue}
+  }
+
+  var isPortraitAlbumCover: Bool {
+    get {return _storage._isPortraitAlbumCover ?? false}
+    set {_uniqueStorage()._isPortraitAlbumCover = newValue}
+  }
+  /// Returns true if `isPortraitAlbumCover` has been explicitly set.
+  var hasIsPortraitAlbumCover: Bool {return _storage._isPortraitAlbumCover != nil}
+  /// Clears the value of `isPortraitAlbumCover`. Subsequent reads from it will return its default value.
+  mutating func clearIsPortraitAlbumCover() {_uniqueStorage()._isPortraitAlbumCover = nil}
+
+  var portraitGroup: [SPMetadataImageGroup] {
+    get {return _storage._portraitGroup}
+    set {_uniqueStorage()._portraitGroup = newValue}
+  }
+
+  var salePeriods: [SPMetadataSalePeriod] {
+    get {return _storage._salePeriods}
+    set {_uniqueStorage()._salePeriods = newValue}
+  }
+
+  var localizedNames: [SPMetadataLocalizedString] {
+    get {return _storage._localizedNames}
+    set {_uniqueStorage()._localizedNames = newValue}
+  }
+
+  var availability: [SPMetadataAvailability] {
+    get {return _storage._availability}
+    set {_uniqueStorage()._availability = newValue}
+  }
+
+  var indexVersion: Int64 {
+    get {return _storage._indexVersion ?? 0}
+    set {_uniqueStorage()._indexVersion = newValue}
+  }
+  /// Returns true if `indexVersion` has been explicitly set.
+  var hasIndexVersion: Bool {return _storage._indexVersion != nil}
+  /// Clears the value of `indexVersion`. Subsequent reads from it will return its default value.
+  mutating func clearIndexVersion() {_uniqueStorage()._indexVersion = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+///Short meta info about top tracks (Internal access)
+struct SPMetaTopTracks {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var country: String = String()
+
+  var tracks: [SPMetaTrack] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Spotify_Metadata_LocalizedString {
+///Albums array (Internal access)
+struct SPMetaAlbumGroup {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var language: String = String()
-
-  var value: String = String()
+  var albums: [SPMetaAlbum] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
+
+///Track meta info (Internal access)
+struct SPMetaTrack {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var gid: Data {
+    get {return _storage._gid}
+    set {_uniqueStorage()._gid = newValue}
+  }
+
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
+
+  var album: SPMetaAlbum {
+    get {return _storage._album ?? SPMetaAlbum()}
+    set {_uniqueStorage()._album = newValue}
+  }
+  /// Returns true if `album` has been explicitly set.
+  var hasAlbum: Bool {return _storage._album != nil}
+  /// Clears the value of `album`. Subsequent reads from it will return its default value.
+  mutating func clearAlbum() {_uniqueStorage()._album = nil}
+
+  var artists: [SPMetaArtist] {
+    get {return _storage._artists}
+    set {_uniqueStorage()._artists = newValue}
+  }
+
+  var number: Int32 {
+    get {return _storage._number}
+    set {_uniqueStorage()._number = newValue}
+  }
+
+  var discNumber: Int32 {
+    get {return _storage._discNumber}
+    set {_uniqueStorage()._discNumber = newValue}
+  }
+
+  var durationInMs: Int32 {
+    get {return _storage._durationInMs}
+    set {_uniqueStorage()._durationInMs = newValue}
+  }
+
+  var popularity: Int32 {
+    get {return _storage._popularity}
+    set {_uniqueStorage()._popularity = newValue}
+  }
+
+  var explicit: Bool {
+    get {return _storage._explicit}
+    set {_uniqueStorage()._explicit = newValue}
+  }
+
+  var externalIds: [SPMetadataExternalId] {
+    get {return _storage._externalIds}
+    set {_uniqueStorage()._externalIds = newValue}
+  }
+
+  var restrictions: [SPMetadataRestriction] {
+    get {return _storage._restrictions}
+    set {_uniqueStorage()._restrictions = newValue}
+  }
+
+  var files: [SPMetadataAudioFile] {
+    get {return _storage._files}
+    set {_uniqueStorage()._files = newValue}
+  }
+
+  var alternatives: [SPMetaTrack] {
+    get {return _storage._alternatives}
+    set {_uniqueStorage()._alternatives = newValue}
+  }
+
+  var salePeriods: [SPMetadataSalePeriod] {
+    get {return _storage._salePeriods}
+    set {_uniqueStorage()._salePeriods = newValue}
+  }
+
+  var previews: [SPMetadataAudioFile] {
+    get {return _storage._previews}
+    set {_uniqueStorage()._previews = newValue}
+  }
+
+  var tags: [String] {
+    get {return _storage._tags}
+    set {_uniqueStorage()._tags = newValue}
+  }
+
+  var earliestLiveTimestamp: Int64 {
+    get {return _storage._earliestLiveTimestamp}
+    set {_uniqueStorage()._earliestLiveTimestamp = newValue}
+  }
+
+  var lyrics: Bool {
+    get {return _storage._lyrics}
+    set {_uniqueStorage()._lyrics = newValue}
+  }
+
+  var availability: [SPMetadataAvailability] {
+    get {return _storage._availability}
+    set {_uniqueStorage()._availability = newValue}
+  }
+
+  var lyricsCountry: [String] {
+    get {return _storage._lyricsCountry}
+    set {_uniqueStorage()._lyricsCountry = newValue}
+  }
+
+  var licensor: SPMetadataLicensor {
+    get {return _storage._licensor ?? SPMetadataLicensor()}
+    set {_uniqueStorage()._licensor = newValue}
+  }
+  /// Returns true if `licensor` has been explicitly set.
+  var hasLicensor: Bool {return _storage._licensor != nil}
+  /// Clears the value of `licensor`. Subsequent reads from it will return its default value.
+  mutating func clearLicensor() {_uniqueStorage()._licensor = nil}
+
+  var languageOrPerfomance: [String] {
+    get {return _storage._languageOrPerfomance}
+    set {_uniqueStorage()._languageOrPerfomance = newValue}
+  }
+
+  var localizedNames: [SPMetadataLocalizedString] {
+    get {return _storage._localizedNames}
+    set {_uniqueStorage()._localizedNames = newValue}
+  }
+
+  var original: SPMetadataAudioFile {
+    get {return _storage._original ?? SPMetadataAudioFile()}
+    set {_uniqueStorage()._original = newValue}
+  }
+  /// Returns true if `original` has been explicitly set.
+  var hasOriginal: Bool {return _storage._original != nil}
+  /// Clears the value of `original`. Subsequent reads from it will return its default value.
+  mutating func clearOriginal() {_uniqueStorage()._original = nil}
+
+  var contentRating: [SPMetadataContentRating] {
+    get {return _storage._contentRating}
+    set {_uniqueStorage()._contentRating = newValue}
+  }
+
+  var indexVersion: Int64 {
+    get {return _storage._indexVersion ?? 0}
+    set {_uniqueStorage()._indexVersion = newValue}
+  }
+  /// Returns true if `indexVersion` has been explicitly set.
+  var hasIndexVersion: Bool {return _storage._indexVersion != nil}
+  /// Clears the value of `indexVersion`. Subsequent reads from it will return its default value.
+  mutating func clearIndexVersion() {_uniqueStorage()._indexVersion = nil}
+
+  var originalTitle: String {
+    get {return _storage._originalTitle}
+    set {_uniqueStorage()._originalTitle = newValue}
+  }
+
+  var versionTitle: String {
+    get {return _storage._versionTitle}
+    set {_uniqueStorage()._versionTitle = newValue}
+  }
+
+  var artistWithRole: [SPMetadataArtistWithRole] {
+    get {return _storage._artistWithRole}
+    set {_uniqueStorage()._artistWithRole = newValue}
+  }
+
+  var uri: String {
+    get {return _storage._uri ?? String()}
+    set {_uniqueStorage()._uri = newValue}
+  }
+  /// Returns true if `uri` has been explicitly set.
+  var hasUri: Bool {return _storage._uri != nil}
+  /// Clears the value of `uri`. Subsequent reads from it will return its default value.
+  mutating func clearUri() {_uniqueStorage()._uri = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Spotify_Metadata_CopyrightType: @unchecked Sendable {}
-extension Spotify_Metadata_ExternalId: @unchecked Sendable {}
-extension Spotify_Metadata_Image: @unchecked Sendable {}
-extension Spotify_Metadata_ImageGroup: @unchecked Sendable {}
-extension Spotify_Metadata_SalePeriod: @unchecked Sendable {}
-extension Spotify_Metadata_Restriction: @unchecked Sendable {}
-extension Spotify_Metadata_Date: @unchecked Sendable {}
-extension Spotify_Metadata_Availability: @unchecked Sendable {}
-extension Spotify_Metadata_Copyright: @unchecked Sendable {}
-extension Spotify_Metadata_Licensor: @unchecked Sendable {}
-extension Spotify_Metadata_Block: @unchecked Sendable {}
-extension Spotify_Metadata_LocalizedString: @unchecked Sendable {}
+extension SPMetaAlbum: @unchecked Sendable {}
+extension SPMetaDisc: @unchecked Sendable {}
+extension SPMetaArtist: @unchecked Sendable {}
+extension SPMetaTopTracks: @unchecked Sendable {}
+extension SPMetaAlbumGroup: @unchecked Sendable {}
+extension SPMetaTrack: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "spotify.metadata"
 
-extension Spotify_Metadata_CopyrightType: SwiftProtobuf._ProtoNameProviding {
+extension SPMetaAlbum: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Album"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "P"),
-    1: .same(proto: "C"),
-  ]
-}
-
-extension Spotify_Metadata_ExternalId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ExternalId"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.id) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.type.isEmpty {
-      try visitor.visitSingularStringField(value: self.type, fieldNumber: 1)
-    }
-    if !self.id.isEmpty {
-      try visitor.visitSingularStringField(value: self.id, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Spotify_Metadata_ExternalId, rhs: Spotify_Metadata_ExternalId) -> Bool {
-    if lhs.type != rhs.type {return false}
-    if lhs.id != rhs.id {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Spotify_Metadata_Image: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Image"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "file_id"),
-    2: .same(proto: "size"),
-    3: .same(proto: "width"),
-    4: .same(proto: "height"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularBytesField(value: &self.fileID) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.size) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.width) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.height) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.fileID.isEmpty {
-      try visitor.visitSingularBytesField(value: self.fileID, fieldNumber: 1)
-    }
-    if self.size != 0 {
-      try visitor.visitSingularInt32Field(value: self.size, fieldNumber: 2)
-    }
-    if self.width != 0 {
-      try visitor.visitSingularInt32Field(value: self.width, fieldNumber: 3)
-    }
-    if self.height != 0 {
-      try visitor.visitSingularInt32Field(value: self.height, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Spotify_Metadata_Image, rhs: Spotify_Metadata_Image) -> Bool {
-    if lhs.fileID != rhs.fileID {return false}
-    if lhs.size != rhs.size {return false}
-    if lhs.width != rhs.width {return false}
-    if lhs.height != rhs.height {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Spotify_Metadata_ImageGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ImageGroup"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "images"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.images.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Spotify_Metadata_ImageGroup, rhs: Spotify_Metadata_ImageGroup) -> Bool {
-    if lhs.images != rhs.images {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Spotify_Metadata_SalePeriod: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SalePeriod"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "restrictions"),
-    2: .same(proto: "start"),
-    3: .same(proto: "end"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.restrictions) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._start) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._end) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if !self.restrictions.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.restrictions, fieldNumber: 1)
-    }
-    try { if let v = self._start {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._end {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Spotify_Metadata_SalePeriod, rhs: Spotify_Metadata_SalePeriod) -> Bool {
-    if lhs.restrictions != rhs.restrictions {return false}
-    if lhs._start != rhs._start {return false}
-    if lhs._end != rhs._end {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Spotify_Metadata_Restriction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Restriction"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "catalogue"),
+    1: .same(proto: "gid"),
+    2: .same(proto: "name"),
+    3: .same(proto: "artists"),
     4: .same(proto: "type"),
-    5: .standard(proto: "catalogue_str"),
+    5: .same(proto: "label"),
+    6: .same(proto: "date"),
+    7: .same(proto: "popularity"),
+    8: .same(proto: "genres"),
+    9: .same(proto: "cover"),
+    10: .standard(proto: "external_ids"),
+    11: .same(proto: "discs"),
+    12: .same(proto: "reviews"),
+    13: .same(proto: "copyrights"),
+    14: .same(proto: "restrictions"),
+    15: .same(proto: "related"),
+    16: .standard(proto: "sale_periods"),
+    17: .standard(proto: "cover_group"),
+    18: .standard(proto: "original_title"),
+    19: .standard(proto: "version_title"),
+    20: .standard(proto: "type_str"),
+    21: .standard(proto: "visibility_blocks"),
+    22: .standard(proto: "earliest_live_timestamp"),
+    23: .same(proto: "availability"),
+    24: .standard(proto: "windowed_tracks"),
+    25: .same(proto: "licensor"),
+    26: .same(proto: "version"),
+    27: .standard(proto: "feed_gid"),
+    28: .standard(proto: "delivery_id"),
+    29: .standard(proto: "localized_names"),
+    35: .same(proto: "uri"),
   ]
 
+  fileprivate class _StorageClass {
+    var _gid: Data = Data()
+    var _name: String = String()
+    var _artists: [SPMetaArtist] = []
+    var _type: SPMetadataAlbumType = .unknown
+    var _label: String = String()
+    var _date: SPMetadataDate? = nil
+    var _popularity: Int32 = 0
+    var _genres: [String] = []
+    var _cover: [SPMetadataImage] = []
+    var _externalIds: [SPMetadataExternalId] = []
+    var _discs: [SPMetaDisc] = []
+    var _reviews: [String] = []
+    var _copyrights: [SPMetadataCopyright] = []
+    var _restrictions: [SPMetadataRestriction] = []
+    var _related: [SPMetaAlbum] = []
+    var _salePeriods: [SPMetadataSalePeriod] = []
+    var _coverGroup: [SPMetadataImageGroup] = []
+    var _originalTitle: String = String()
+    var _versionTitle: String = String()
+    var _typeStr: String = String()
+    var _visibilityBlocks: [SPMetadataBlock] = []
+    var _earliestLiveTimestamp: Int64? = nil
+    var _availability: [SPMetadataAvailability] = []
+    var _windowedTracks: [SPMetaTrack] = []
+    var _licensor: SPMetadataLicensor? = nil
+    var _version: Int64? = nil
+    var _feedGid: String? = nil
+    var _deliveryID: String? = nil
+    var _localizedNames: [SPMetadataLocalizedString] = []
+    var _uri: String? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _gid = source._gid
+      _name = source._name
+      _artists = source._artists
+      _type = source._type
+      _label = source._label
+      _date = source._date
+      _popularity = source._popularity
+      _genres = source._genres
+      _cover = source._cover
+      _externalIds = source._externalIds
+      _discs = source._discs
+      _reviews = source._reviews
+      _copyrights = source._copyrights
+      _restrictions = source._restrictions
+      _related = source._related
+      _salePeriods = source._salePeriods
+      _coverGroup = source._coverGroup
+      _originalTitle = source._originalTitle
+      _versionTitle = source._versionTitle
+      _typeStr = source._typeStr
+      _visibilityBlocks = source._visibilityBlocks
+      _earliestLiveTimestamp = source._earliestLiveTimestamp
+      _availability = source._availability
+      _windowedTracks = source._windowedTracks
+      _licensor = source._licensor
+      _version = source._version
+      _feedGid = source._feedGid
+      _deliveryID = source._deliveryID
+      _localizedNames = source._localizedNames
+      _uri = source._uri
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedInt32Field(value: &self.catalogue) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
-      case 5: try { try decoder.decodeRepeatedStringField(value: &self.catalogueStr) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularBytesField(value: &_storage._gid) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 3: try { try decoder.decodeRepeatedMessageField(value: &_storage._artists) }()
+        case 4: try { try decoder.decodeSingularEnumField(value: &_storage._type) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._label) }()
+        case 6: try { try decoder.decodeSingularMessageField(value: &_storage._date) }()
+        case 7: try { try decoder.decodeSingularInt32Field(value: &_storage._popularity) }()
+        case 8: try { try decoder.decodeRepeatedStringField(value: &_storage._genres) }()
+        case 9: try { try decoder.decodeRepeatedMessageField(value: &_storage._cover) }()
+        case 10: try { try decoder.decodeRepeatedMessageField(value: &_storage._externalIds) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._discs) }()
+        case 12: try { try decoder.decodeRepeatedStringField(value: &_storage._reviews) }()
+        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._copyrights) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._restrictions) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._related) }()
+        case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._salePeriods) }()
+        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._coverGroup) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._originalTitle) }()
+        case 19: try { try decoder.decodeSingularStringField(value: &_storage._versionTitle) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._typeStr) }()
+        case 21: try { try decoder.decodeRepeatedMessageField(value: &_storage._visibilityBlocks) }()
+        case 22: try { try decoder.decodeSingularInt64Field(value: &_storage._earliestLiveTimestamp) }()
+        case 23: try { try decoder.decodeRepeatedMessageField(value: &_storage._availability) }()
+        case 24: try { try decoder.decodeRepeatedMessageField(value: &_storage._windowedTracks) }()
+        case 25: try { try decoder.decodeSingularMessageField(value: &_storage._licensor) }()
+        case 26: try { try decoder.decodeSingularInt64Field(value: &_storage._version) }()
+        case 27: try { try decoder.decodeSingularStringField(value: &_storage._feedGid) }()
+        case 28: try { try decoder.decodeSingularStringField(value: &_storage._deliveryID) }()
+        case 29: try { try decoder.decodeRepeatedMessageField(value: &_storage._localizedNames) }()
+        case 35: try { try decoder.decodeSingularStringField(value: &_storage._uri) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.catalogue.isEmpty {
-      try visitor.visitPackedInt32Field(value: self.catalogue, fieldNumber: 1)
-    }
-    if self.type != 0 {
-      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 4)
-    }
-    if !self.catalogueStr.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.catalogueStr, fieldNumber: 5)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if !_storage._gid.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._gid, fieldNumber: 1)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 2)
+      }
+      if !_storage._artists.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._artists, fieldNumber: 3)
+      }
+      if _storage._type != .unknown {
+        try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 4)
+      }
+      if !_storage._label.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._label, fieldNumber: 5)
+      }
+      try { if let v = _storage._date {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      } }()
+      if _storage._popularity != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._popularity, fieldNumber: 7)
+      }
+      if !_storage._genres.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._genres, fieldNumber: 8)
+      }
+      if !_storage._cover.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._cover, fieldNumber: 9)
+      }
+      if !_storage._externalIds.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._externalIds, fieldNumber: 10)
+      }
+      if !_storage._discs.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._discs, fieldNumber: 11)
+      }
+      if !_storage._reviews.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._reviews, fieldNumber: 12)
+      }
+      if !_storage._copyrights.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._copyrights, fieldNumber: 13)
+      }
+      if !_storage._restrictions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._restrictions, fieldNumber: 14)
+      }
+      if !_storage._related.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._related, fieldNumber: 15)
+      }
+      if !_storage._salePeriods.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._salePeriods, fieldNumber: 16)
+      }
+      if !_storage._coverGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._coverGroup, fieldNumber: 17)
+      }
+      if !_storage._originalTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._originalTitle, fieldNumber: 18)
+      }
+      if !_storage._versionTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._versionTitle, fieldNumber: 19)
+      }
+      if !_storage._typeStr.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._typeStr, fieldNumber: 20)
+      }
+      if !_storage._visibilityBlocks.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._visibilityBlocks, fieldNumber: 21)
+      }
+      try { if let v = _storage._earliestLiveTimestamp {
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 22)
+      } }()
+      if !_storage._availability.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._availability, fieldNumber: 23)
+      }
+      if !_storage._windowedTracks.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._windowedTracks, fieldNumber: 24)
+      }
+      try { if let v = _storage._licensor {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
+      } }()
+      try { if let v = _storage._version {
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 26)
+      } }()
+      try { if let v = _storage._feedGid {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 27)
+      } }()
+      try { if let v = _storage._deliveryID {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 28)
+      } }()
+      if !_storage._localizedNames.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._localizedNames, fieldNumber: 29)
+      }
+      try { if let v = _storage._uri {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 35)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_Restriction, rhs: Spotify_Metadata_Restriction) -> Bool {
-    if lhs.catalogue != rhs.catalogue {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.catalogueStr != rhs.catalogueStr {return false}
+  static func ==(lhs: SPMetaAlbum, rhs: SPMetaAlbum) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._gid != rhs_storage._gid {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._artists != rhs_storage._artists {return false}
+        if _storage._type != rhs_storage._type {return false}
+        if _storage._label != rhs_storage._label {return false}
+        if _storage._date != rhs_storage._date {return false}
+        if _storage._popularity != rhs_storage._popularity {return false}
+        if _storage._genres != rhs_storage._genres {return false}
+        if _storage._cover != rhs_storage._cover {return false}
+        if _storage._externalIds != rhs_storage._externalIds {return false}
+        if _storage._discs != rhs_storage._discs {return false}
+        if _storage._reviews != rhs_storage._reviews {return false}
+        if _storage._copyrights != rhs_storage._copyrights {return false}
+        if _storage._restrictions != rhs_storage._restrictions {return false}
+        if _storage._related != rhs_storage._related {return false}
+        if _storage._salePeriods != rhs_storage._salePeriods {return false}
+        if _storage._coverGroup != rhs_storage._coverGroup {return false}
+        if _storage._originalTitle != rhs_storage._originalTitle {return false}
+        if _storage._versionTitle != rhs_storage._versionTitle {return false}
+        if _storage._typeStr != rhs_storage._typeStr {return false}
+        if _storage._visibilityBlocks != rhs_storage._visibilityBlocks {return false}
+        if _storage._earliestLiveTimestamp != rhs_storage._earliestLiveTimestamp {return false}
+        if _storage._availability != rhs_storage._availability {return false}
+        if _storage._windowedTracks != rhs_storage._windowedTracks {return false}
+        if _storage._licensor != rhs_storage._licensor {return false}
+        if _storage._version != rhs_storage._version {return false}
+        if _storage._feedGid != rhs_storage._feedGid {return false}
+        if _storage._deliveryID != rhs_storage._deliveryID {return false}
+        if _storage._localizedNames != rhs_storage._localizedNames {return false}
+        if _storage._uri != rhs_storage._uri {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Spotify_Metadata_Date: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Date"
+extension SPMetaDisc: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Disc"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "year"),
-    2: .same(proto: "month"),
-    3: .same(proto: "day"),
-    4: .same(proto: "hour"),
-    5: .same(proto: "minute"),
+    1: .same(proto: "number"),
+    2: .same(proto: "name"),
+    3: .same(proto: "tracks"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -506,93 +892,269 @@ extension Spotify_Metadata_Date: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self.year) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.month) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.day) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.hour) }()
-      case 5: try { try decoder.decodeSingularInt32Field(value: &self.minute) }()
+      case 1: try { try decoder.decodeSingularInt32Field(value: &self.number) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.tracks) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.year != 0 {
-      try visitor.visitSingularInt32Field(value: self.year, fieldNumber: 1)
+    if self.number != 0 {
+      try visitor.visitSingularInt32Field(value: self.number, fieldNumber: 1)
     }
-    if self.month != 0 {
-      try visitor.visitSingularInt32Field(value: self.month, fieldNumber: 2)
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
-    if self.day != 0 {
-      try visitor.visitSingularInt32Field(value: self.day, fieldNumber: 3)
-    }
-    if self.hour != 0 {
-      try visitor.visitSingularInt32Field(value: self.hour, fieldNumber: 4)
-    }
-    if self.minute != 0 {
-      try visitor.visitSingularInt32Field(value: self.minute, fieldNumber: 5)
+    if !self.tracks.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tracks, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_Date, rhs: Spotify_Metadata_Date) -> Bool {
-    if lhs.year != rhs.year {return false}
-    if lhs.month != rhs.month {return false}
-    if lhs.day != rhs.day {return false}
-    if lhs.hour != rhs.hour {return false}
-    if lhs.minute != rhs.minute {return false}
+  static func ==(lhs: SPMetaDisc, rhs: SPMetaDisc) -> Bool {
+    if lhs.number != rhs.number {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.tracks != rhs.tracks {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Spotify_Metadata_Availability: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Availability"
+extension SPMetaArtist: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Artist"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "catalogue_str"),
-    2: .same(proto: "start"),
+    1: .same(proto: "gid"),
+    2: .same(proto: "name"),
+    3: .same(proto: "popularity"),
+    4: .standard(proto: "top_tracks"),
+    5: .standard(proto: "album_group"),
+    6: .standard(proto: "single_group"),
+    7: .standard(proto: "compilation_group"),
+    8: .standard(proto: "appears_on_group"),
+    9: .same(proto: "genres"),
+    10: .standard(proto: "external_ids"),
+    11: .standard(proto: "portrait_variants"),
+    12: .same(proto: "biography"),
+    13: .same(proto: "activity"),
+    14: .same(proto: "restrictions"),
+    15: .same(proto: "related"),
+    16: .standard(proto: "is_portrait_album_cover"),
+    17: .standard(proto: "portrait_group"),
+    18: .standard(proto: "sale_periods"),
+    19: .standard(proto: "localized_names"),
+    20: .same(proto: "availability"),
+    21: .standard(proto: "index_version"),
   ]
 
+  fileprivate class _StorageClass {
+    var _gid: Data = Data()
+    var _name: String = String()
+    var _popularity: Int32 = 0
+    var _topTracks: [SPMetaTopTracks] = []
+    var _albumGroup: [SPMetaAlbumGroup] = []
+    var _singleGroup: [SPMetaAlbumGroup] = []
+    var _compilationGroup: [SPMetaAlbumGroup] = []
+    var _appearsOnGroup: [SPMetaAlbumGroup] = []
+    var _genres: [String] = []
+    var _externalIds: [SPMetadataExternalId] = []
+    var _portraitVariants: [SPMetadataImage] = []
+    var _biography: [SPMetadataBiography] = []
+    var _activity: [SPMetadataActivityPeriod] = []
+    var _restrictions: [SPMetadataRestriction] = []
+    var _related: [SPMetaArtist] = []
+    var _isPortraitAlbumCover: Bool? = nil
+    var _portraitGroup: [SPMetadataImageGroup] = []
+    var _salePeriods: [SPMetadataSalePeriod] = []
+    var _localizedNames: [SPMetadataLocalizedString] = []
+    var _availability: [SPMetadataAvailability] = []
+    var _indexVersion: Int64? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _gid = source._gid
+      _name = source._name
+      _popularity = source._popularity
+      _topTracks = source._topTracks
+      _albumGroup = source._albumGroup
+      _singleGroup = source._singleGroup
+      _compilationGroup = source._compilationGroup
+      _appearsOnGroup = source._appearsOnGroup
+      _genres = source._genres
+      _externalIds = source._externalIds
+      _portraitVariants = source._portraitVariants
+      _biography = source._biography
+      _activity = source._activity
+      _restrictions = source._restrictions
+      _related = source._related
+      _isPortraitAlbumCover = source._isPortraitAlbumCover
+      _portraitGroup = source._portraitGroup
+      _salePeriods = source._salePeriods
+      _localizedNames = source._localizedNames
+      _availability = source._availability
+      _indexVersion = source._indexVersion
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedStringField(value: &self.catalogueStr) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._start) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularBytesField(value: &_storage._gid) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._popularity) }()
+        case 4: try { try decoder.decodeRepeatedMessageField(value: &_storage._topTracks) }()
+        case 5: try { try decoder.decodeRepeatedMessageField(value: &_storage._albumGroup) }()
+        case 6: try { try decoder.decodeRepeatedMessageField(value: &_storage._singleGroup) }()
+        case 7: try { try decoder.decodeRepeatedMessageField(value: &_storage._compilationGroup) }()
+        case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._appearsOnGroup) }()
+        case 9: try { try decoder.decodeRepeatedStringField(value: &_storage._genres) }()
+        case 10: try { try decoder.decodeRepeatedMessageField(value: &_storage._externalIds) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._portraitVariants) }()
+        case 12: try { try decoder.decodeRepeatedMessageField(value: &_storage._biography) }()
+        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._activity) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._restrictions) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._related) }()
+        case 16: try { try decoder.decodeSingularBoolField(value: &_storage._isPortraitAlbumCover) }()
+        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._portraitGroup) }()
+        case 18: try { try decoder.decodeRepeatedMessageField(value: &_storage._salePeriods) }()
+        case 19: try { try decoder.decodeRepeatedMessageField(value: &_storage._localizedNames) }()
+        case 20: try { try decoder.decodeRepeatedMessageField(value: &_storage._availability) }()
+        case 21: try { try decoder.decodeSingularInt64Field(value: &_storage._indexVersion) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if !self.catalogueStr.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.catalogueStr, fieldNumber: 1)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if !_storage._gid.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._gid, fieldNumber: 1)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 2)
+      }
+      if _storage._popularity != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._popularity, fieldNumber: 3)
+      }
+      if !_storage._topTracks.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._topTracks, fieldNumber: 4)
+      }
+      if !_storage._albumGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._albumGroup, fieldNumber: 5)
+      }
+      if !_storage._singleGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._singleGroup, fieldNumber: 6)
+      }
+      if !_storage._compilationGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._compilationGroup, fieldNumber: 7)
+      }
+      if !_storage._appearsOnGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._appearsOnGroup, fieldNumber: 8)
+      }
+      if !_storage._genres.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._genres, fieldNumber: 9)
+      }
+      if !_storage._externalIds.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._externalIds, fieldNumber: 10)
+      }
+      if !_storage._portraitVariants.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._portraitVariants, fieldNumber: 11)
+      }
+      if !_storage._biography.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._biography, fieldNumber: 12)
+      }
+      if !_storage._activity.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._activity, fieldNumber: 13)
+      }
+      if !_storage._restrictions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._restrictions, fieldNumber: 14)
+      }
+      if !_storage._related.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._related, fieldNumber: 15)
+      }
+      try { if let v = _storage._isPortraitAlbumCover {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
+      } }()
+      if !_storage._portraitGroup.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._portraitGroup, fieldNumber: 17)
+      }
+      if !_storage._salePeriods.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._salePeriods, fieldNumber: 18)
+      }
+      if !_storage._localizedNames.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._localizedNames, fieldNumber: 19)
+      }
+      if !_storage._availability.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._availability, fieldNumber: 20)
+      }
+      try { if let v = _storage._indexVersion {
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 21)
+      } }()
     }
-    try { if let v = self._start {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_Availability, rhs: Spotify_Metadata_Availability) -> Bool {
-    if lhs.catalogueStr != rhs.catalogueStr {return false}
-    if lhs._start != rhs._start {return false}
+  static func ==(lhs: SPMetaArtist, rhs: SPMetaArtist) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._gid != rhs_storage._gid {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._popularity != rhs_storage._popularity {return false}
+        if _storage._topTracks != rhs_storage._topTracks {return false}
+        if _storage._albumGroup != rhs_storage._albumGroup {return false}
+        if _storage._singleGroup != rhs_storage._singleGroup {return false}
+        if _storage._compilationGroup != rhs_storage._compilationGroup {return false}
+        if _storage._appearsOnGroup != rhs_storage._appearsOnGroup {return false}
+        if _storage._genres != rhs_storage._genres {return false}
+        if _storage._externalIds != rhs_storage._externalIds {return false}
+        if _storage._portraitVariants != rhs_storage._portraitVariants {return false}
+        if _storage._biography != rhs_storage._biography {return false}
+        if _storage._activity != rhs_storage._activity {return false}
+        if _storage._restrictions != rhs_storage._restrictions {return false}
+        if _storage._related != rhs_storage._related {return false}
+        if _storage._isPortraitAlbumCover != rhs_storage._isPortraitAlbumCover {return false}
+        if _storage._portraitGroup != rhs_storage._portraitGroup {return false}
+        if _storage._salePeriods != rhs_storage._salePeriods {return false}
+        if _storage._localizedNames != rhs_storage._localizedNames {return false}
+        if _storage._availability != rhs_storage._availability {return false}
+        if _storage._indexVersion != rhs_storage._indexVersion {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Spotify_Metadata_Copyright: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Copyright"
+extension SPMetaTopTracks: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TopTracks"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "text"),
+    1: .same(proto: "country"),
+    2: .same(proto: "tracks"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -601,35 +1163,35 @@ extension Spotify_Metadata_Copyright: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularEnumField(value: &self.type) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.text) }()
+      case 1: try { try decoder.decodeSingularStringField(value: &self.country) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tracks) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.type != .p {
-      try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
+    if !self.country.isEmpty {
+      try visitor.visitSingularStringField(value: self.country, fieldNumber: 1)
     }
-    if !self.text.isEmpty {
-      try visitor.visitSingularStringField(value: self.text, fieldNumber: 2)
+    if !self.tracks.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tracks, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_Copyright, rhs: Spotify_Metadata_Copyright) -> Bool {
-    if lhs.type != rhs.type {return false}
-    if lhs.text != rhs.text {return false}
+  static func ==(lhs: SPMetaTopTracks, rhs: SPMetaTopTracks) -> Bool {
+    if lhs.country != rhs.country {return false}
+    if lhs.tracks != rhs.tracks {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Spotify_Metadata_Licensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Licensor"
+extension SPMetaAlbumGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AlbumGroup"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
+    1: .same(proto: "albums"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -638,97 +1200,321 @@ extension Spotify_Metadata_Licensor: SwiftProtobuf.Message, SwiftProtobuf._Messa
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularBytesField(value: &self.uuid) }()
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.albums) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.uuid.isEmpty {
-      try visitor.visitSingularBytesField(value: self.uuid, fieldNumber: 1)
+    if !self.albums.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.albums, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_Licensor, rhs: Spotify_Metadata_Licensor) -> Bool {
-    if lhs.uuid != rhs.uuid {return false}
+  static func ==(lhs: SPMetaAlbumGroup, rhs: SPMetaAlbumGroup) -> Bool {
+    if lhs.albums != rhs.albums {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Spotify_Metadata_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Block"
+extension SPMetaTrack: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Track"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "countries"),
-    2: .same(proto: "type"),
+    1: .same(proto: "gid"),
+    2: .same(proto: "name"),
+    3: .same(proto: "album"),
+    4: .same(proto: "artists"),
+    5: .same(proto: "number"),
+    6: .standard(proto: "disc_number"),
+    7: .standard(proto: "duration_in_ms"),
+    8: .same(proto: "popularity"),
+    9: .same(proto: "explicit"),
+    10: .standard(proto: "external_ids"),
+    11: .same(proto: "restrictions"),
+    12: .same(proto: "files"),
+    13: .same(proto: "alternatives"),
+    14: .standard(proto: "sale_periods"),
+    15: .same(proto: "previews"),
+    16: .same(proto: "tags"),
+    17: .standard(proto: "earliest_live_timestamp"),
+    18: .same(proto: "lyrics"),
+    19: .same(proto: "availability"),
+    20: .standard(proto: "lyrics_country"),
+    21: .same(proto: "licensor"),
+    22: .standard(proto: "language_or_perfomance"),
+    23: .standard(proto: "localized_names"),
+    24: .same(proto: "original"),
+    25: .standard(proto: "content_rating"),
+    26: .standard(proto: "index_version"),
+    27: .standard(proto: "original_title"),
+    28: .standard(proto: "version_title"),
+    32: .standard(proto: "artist_with_role"),
+    36: .same(proto: "uri"),
   ]
 
+  fileprivate class _StorageClass {
+    var _gid: Data = Data()
+    var _name: String = String()
+    var _album: SPMetaAlbum? = nil
+    var _artists: [SPMetaArtist] = []
+    var _number: Int32 = 0
+    var _discNumber: Int32 = 0
+    var _durationInMs: Int32 = 0
+    var _popularity: Int32 = 0
+    var _explicit: Bool = false
+    var _externalIds: [SPMetadataExternalId] = []
+    var _restrictions: [SPMetadataRestriction] = []
+    var _files: [SPMetadataAudioFile] = []
+    var _alternatives: [SPMetaTrack] = []
+    var _salePeriods: [SPMetadataSalePeriod] = []
+    var _previews: [SPMetadataAudioFile] = []
+    var _tags: [String] = []
+    var _earliestLiveTimestamp: Int64 = 0
+    var _lyrics: Bool = false
+    var _availability: [SPMetadataAvailability] = []
+    var _lyricsCountry: [String] = []
+    var _licensor: SPMetadataLicensor? = nil
+    var _languageOrPerfomance: [String] = []
+    var _localizedNames: [SPMetadataLocalizedString] = []
+    var _original: SPMetadataAudioFile? = nil
+    var _contentRating: [SPMetadataContentRating] = []
+    var _indexVersion: Int64? = nil
+    var _originalTitle: String = String()
+    var _versionTitle: String = String()
+    var _artistWithRole: [SPMetadataArtistWithRole] = []
+    var _uri: String? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _gid = source._gid
+      _name = source._name
+      _album = source._album
+      _artists = source._artists
+      _number = source._number
+      _discNumber = source._discNumber
+      _durationInMs = source._durationInMs
+      _popularity = source._popularity
+      _explicit = source._explicit
+      _externalIds = source._externalIds
+      _restrictions = source._restrictions
+      _files = source._files
+      _alternatives = source._alternatives
+      _salePeriods = source._salePeriods
+      _previews = source._previews
+      _tags = source._tags
+      _earliestLiveTimestamp = source._earliestLiveTimestamp
+      _lyrics = source._lyrics
+      _availability = source._availability
+      _lyricsCountry = source._lyricsCountry
+      _licensor = source._licensor
+      _languageOrPerfomance = source._languageOrPerfomance
+      _localizedNames = source._localizedNames
+      _original = source._original
+      _contentRating = source._contentRating
+      _indexVersion = source._indexVersion
+      _originalTitle = source._originalTitle
+      _versionTitle = source._versionTitle
+      _artistWithRole = source._artistWithRole
+      _uri = source._uri
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.countries) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularBytesField(value: &_storage._gid) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._album) }()
+        case 4: try { try decoder.decodeRepeatedMessageField(value: &_storage._artists) }()
+        case 5: try { try decoder.decodeSingularInt32Field(value: &_storage._number) }()
+        case 6: try { try decoder.decodeSingularInt32Field(value: &_storage._discNumber) }()
+        case 7: try { try decoder.decodeSingularInt32Field(value: &_storage._durationInMs) }()
+        case 8: try { try decoder.decodeSingularInt32Field(value: &_storage._popularity) }()
+        case 9: try { try decoder.decodeSingularBoolField(value: &_storage._explicit) }()
+        case 10: try { try decoder.decodeRepeatedMessageField(value: &_storage._externalIds) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._restrictions) }()
+        case 12: try { try decoder.decodeRepeatedMessageField(value: &_storage._files) }()
+        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._alternatives) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._salePeriods) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._previews) }()
+        case 16: try { try decoder.decodeRepeatedStringField(value: &_storage._tags) }()
+        case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._earliestLiveTimestamp) }()
+        case 18: try { try decoder.decodeSingularBoolField(value: &_storage._lyrics) }()
+        case 19: try { try decoder.decodeRepeatedMessageField(value: &_storage._availability) }()
+        case 20: try { try decoder.decodeRepeatedStringField(value: &_storage._lyricsCountry) }()
+        case 21: try { try decoder.decodeSingularMessageField(value: &_storage._licensor) }()
+        case 22: try { try decoder.decodeRepeatedStringField(value: &_storage._languageOrPerfomance) }()
+        case 23: try { try decoder.decodeRepeatedMessageField(value: &_storage._localizedNames) }()
+        case 24: try { try decoder.decodeSingularMessageField(value: &_storage._original) }()
+        case 25: try { try decoder.decodeRepeatedMessageField(value: &_storage._contentRating) }()
+        case 26: try { try decoder.decodeSingularInt64Field(value: &_storage._indexVersion) }()
+        case 27: try { try decoder.decodeSingularStringField(value: &_storage._originalTitle) }()
+        case 28: try { try decoder.decodeSingularStringField(value: &_storage._versionTitle) }()
+        case 32: try { try decoder.decodeRepeatedMessageField(value: &_storage._artistWithRole) }()
+        case 36: try { try decoder.decodeSingularStringField(value: &_storage._uri) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.countries.isEmpty {
-      try visitor.visitSingularStringField(value: self.countries, fieldNumber: 1)
-    }
-    if self.type != 0 {
-      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Spotify_Metadata_Block, rhs: Spotify_Metadata_Block) -> Bool {
-    if lhs.countries != rhs.countries {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Spotify_Metadata_LocalizedString: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".LocalizedString"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "language"),
-    2: .same(proto: "value"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.language) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
-      default: break
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if !_storage._gid.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._gid, fieldNumber: 1)
       }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.language.isEmpty {
-      try visitor.visitSingularStringField(value: self.language, fieldNumber: 1)
-    }
-    if !self.value.isEmpty {
-      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 2)
+      }
+      try { if let v = _storage._album {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+      if !_storage._artists.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._artists, fieldNumber: 4)
+      }
+      if _storage._number != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._number, fieldNumber: 5)
+      }
+      if _storage._discNumber != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._discNumber, fieldNumber: 6)
+      }
+      if _storage._durationInMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._durationInMs, fieldNumber: 7)
+      }
+      if _storage._popularity != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._popularity, fieldNumber: 8)
+      }
+      if _storage._explicit != false {
+        try visitor.visitSingularBoolField(value: _storage._explicit, fieldNumber: 9)
+      }
+      if !_storage._externalIds.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._externalIds, fieldNumber: 10)
+      }
+      if !_storage._restrictions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._restrictions, fieldNumber: 11)
+      }
+      if !_storage._files.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._files, fieldNumber: 12)
+      }
+      if !_storage._alternatives.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._alternatives, fieldNumber: 13)
+      }
+      if !_storage._salePeriods.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._salePeriods, fieldNumber: 14)
+      }
+      if !_storage._previews.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._previews, fieldNumber: 15)
+      }
+      if !_storage._tags.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._tags, fieldNumber: 16)
+      }
+      if _storage._earliestLiveTimestamp != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._earliestLiveTimestamp, fieldNumber: 17)
+      }
+      if _storage._lyrics != false {
+        try visitor.visitSingularBoolField(value: _storage._lyrics, fieldNumber: 18)
+      }
+      if !_storage._availability.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._availability, fieldNumber: 19)
+      }
+      if !_storage._lyricsCountry.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._lyricsCountry, fieldNumber: 20)
+      }
+      try { if let v = _storage._licensor {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      } }()
+      if !_storage._languageOrPerfomance.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._languageOrPerfomance, fieldNumber: 22)
+      }
+      if !_storage._localizedNames.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._localizedNames, fieldNumber: 23)
+      }
+      try { if let v = _storage._original {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 24)
+      } }()
+      if !_storage._contentRating.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._contentRating, fieldNumber: 25)
+      }
+      try { if let v = _storage._indexVersion {
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 26)
+      } }()
+      if !_storage._originalTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._originalTitle, fieldNumber: 27)
+      }
+      if !_storage._versionTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._versionTitle, fieldNumber: 28)
+      }
+      if !_storage._artistWithRole.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._artistWithRole, fieldNumber: 32)
+      }
+      try { if let v = _storage._uri {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 36)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Spotify_Metadata_LocalizedString, rhs: Spotify_Metadata_LocalizedString) -> Bool {
-    if lhs.language != rhs.language {return false}
-    if lhs.value != rhs.value {return false}
+  static func ==(lhs: SPMetaTrack, rhs: SPMetaTrack) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._gid != rhs_storage._gid {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._album != rhs_storage._album {return false}
+        if _storage._artists != rhs_storage._artists {return false}
+        if _storage._number != rhs_storage._number {return false}
+        if _storage._discNumber != rhs_storage._discNumber {return false}
+        if _storage._durationInMs != rhs_storage._durationInMs {return false}
+        if _storage._popularity != rhs_storage._popularity {return false}
+        if _storage._explicit != rhs_storage._explicit {return false}
+        if _storage._externalIds != rhs_storage._externalIds {return false}
+        if _storage._restrictions != rhs_storage._restrictions {return false}
+        if _storage._files != rhs_storage._files {return false}
+        if _storage._alternatives != rhs_storage._alternatives {return false}
+        if _storage._salePeriods != rhs_storage._salePeriods {return false}
+        if _storage._previews != rhs_storage._previews {return false}
+        if _storage._tags != rhs_storage._tags {return false}
+        if _storage._earliestLiveTimestamp != rhs_storage._earliestLiveTimestamp {return false}
+        if _storage._lyrics != rhs_storage._lyrics {return false}
+        if _storage._availability != rhs_storage._availability {return false}
+        if _storage._lyricsCountry != rhs_storage._lyricsCountry {return false}
+        if _storage._licensor != rhs_storage._licensor {return false}
+        if _storage._languageOrPerfomance != rhs_storage._languageOrPerfomance {return false}
+        if _storage._localizedNames != rhs_storage._localizedNames {return false}
+        if _storage._original != rhs_storage._original {return false}
+        if _storage._contentRating != rhs_storage._contentRating {return false}
+        if _storage._indexVersion != rhs_storage._indexVersion {return false}
+        if _storage._originalTitle != rhs_storage._originalTitle {return false}
+        if _storage._versionTitle != rhs_storage._versionTitle {return false}
+        if _storage._artistWithRole != rhs_storage._artistWithRole {return false}
+        if _storage._uri != rhs_storage._uri {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -2,6 +2,8 @@
 
 ## Make Platform archives
 
+### From XCode project file
+
 macOS
 
 ```
@@ -40,6 +42,81 @@ tvOS
 xcodebuild archive -project SwiftySpot.xcodeproj -scheme SwiftySpot \
 -destination "generic/platform=tvOS" -archivePath "archives/SwiftySpot-tvOS" \
 SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+```
+
+### From Package.swift file
+
+First of all you need set lybrary type as *.dynamic*
+
+```swift
+//...
+products: [
+        .library(
+            name: "SwiftySpot",
+            type: .dynamic,
+            targets: ["SwiftySpot"]),
+],
+//...
+```
+
+macOS
+
+```
+xcodebuild archive -scheme SwiftySpot -destination "generic/platform=macOS" \
+-archivePath "archives/SwiftySpot-macOS" \
+SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+INSTALL_PATH=/Library/Frameworks MODULES_FOLDER_PATH=SwiftySpot.framework/Modules \
+PRODUCT_TYPE=com.apple.product-type.framework \
+PUBLIC_HEADERS_FOLDER_PATH=SwiftySpot.framework/Headers \
+SWIFT_INSTALL_OBJC_HEADER=YES
+```
+
+iOS simulator
+
+```
+xcodebuild archive -scheme SwiftySpot -destination "generic/platform=iOS Simulator" \
+-archivePath "archives/SwiftySpot-iOSSim" \
+SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES DEFINE_MODULES=YES\
+INSTALL_PATH=/Library/Frameworks MODULES_FOLDER_PATH=SwiftySpot.framework/Modules \
+PRODUCT_TYPE=com.apple.product-type.framework \
+PUBLIC_HEADERS_FOLDER_PATH=SwiftySpot.framework/Headers \
+SWIFT_INSTALL_OBJC_HEADER=YES
+```
+
+iOS
+
+```
+xcodebuild archive -scheme SwiftySpot -destination "generic/platform=iOS" \
+-archivePath "archives/SwiftySpot-iOS" \
+SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+INSTALL_PATH=/Library/Frameworks MODULES_FOLDER_PATH=SwiftySpot.framework/Modules \
+PRODUCT_TYPE=com.apple.product-type.framework \
+PUBLIC_HEADERS_FOLDER_PATH=SwiftySpot.framework/Headers \
+SWIFT_INSTALL_OBJC_HEADER=YES
+```
+
+watchOS
+
+```
+xcodebuild archive -scheme SwiftySpot -destination "generic/platform=watchOS" \
+-archivePath "archives/SwiftySpot-watchOS" \
+SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+INSTALL_PATH=/Library/Frameworks MODULES_FOLDER_PATH=SwiftySpot.framework/Modules \
+PRODUCT_TYPE=com.apple.product-type.framework \
+PUBLIC_HEADERS_FOLDER_PATH=SwiftySpot.framework/Headers \
+SWIFT_INSTALL_OBJC_HEADER=YES
+```
+
+tvOS
+
+```
+xcodebuild archive -scheme SwiftySpot -destination "generic/platform=tvOS" \
+-archivePath "archives/SwiftySpot-tvOS" \
+SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+INSTALL_PATH=/Library/Frameworks MODULES_FOLDER_PATH=SwiftySpot.framework/Modules \
+PRODUCT_TYPE=com.apple.product-type.framework \
+PUBLIC_HEADERS_FOLDER_PATH=SwiftySpot.framework/Headers \
+SWIFT_INSTALL_OBJC_HEADER=YES
 ```
 
 ## Build XCFramework

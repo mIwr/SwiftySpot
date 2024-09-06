@@ -39,7 +39,7 @@ class AppProperties: Codable, ObservableObject
             self.deviceId = SPDevice.generateRandomDeviceId()
             save()
         } else {
-            self.deviceId = StringUtil.bytesToHexString(deviceId)
+            self.deviceId = SPBase16.encode(deviceId)
         }
     }
     

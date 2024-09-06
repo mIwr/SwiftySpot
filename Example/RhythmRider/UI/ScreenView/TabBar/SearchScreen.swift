@@ -181,9 +181,9 @@ struct SearchScreen: View {
         if (ProcessInfo.processInfo.previewMode) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 _searchController.update(query: "autoco", hits: [
-                    SPSearchEntity(uri: "sp:123", name: "Track name", imgUri: "", artist: nil, track: SPSearchTrack(explicit: true, windowed: true, album: SPSearchRelatedEntity(uri: "sp:0", name: "Album name"), artists: [
-                        SPSearchRelatedEntity(uri: "sp:ar:1", name: "Artist 1"),
-                        SPSearchRelatedEntity(uri: "sp:ar:2", name: "Artist 2")
+                    SPSearchEntity(uri: "sp:123", name: "Track name", imgUri: "", artist: nil, track: SPSearchTrack(explicit: true, windowed: true, album: SPRelatedEntity(uri: "sp:0", name: "Album name"), artists: [
+                        SPRelatedEntity(uri: "sp:ar:1", name: "Artist 1"),
+                        SPRelatedEntity(uri: "sp:ar:2", name: "Artist 2")
                     ], mogef19: false, lyricsMatch: false, onDemand: nil), album: nil, playlist: nil, genre: nil, show: nil, profile: nil, audiobook: nil, autocomplete: nil, serpMeta: "")
                 ], suggestions: [
                     SPSearchAutocompleteQuery(uri: "sp:ato:1", snippet: SPSearchSnippet(segments: [SPSearchSegment(segVal: "autocomplete text 1", match: true)]), chipText: ""),

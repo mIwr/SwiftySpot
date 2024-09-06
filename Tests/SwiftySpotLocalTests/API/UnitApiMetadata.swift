@@ -18,7 +18,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let batchReq = try? Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest(serializedData: data)
+        let batchReq = try? SPMetaBatchedEntityRequest(serializedBytes: data)
         XCTAssertNotNil(batchReq, "Tracks batched request is nil")
         XCTAssertNotEqual(batchReq?.request.count, 0, "Incorrect generated tracks batched request proto model")
     }
@@ -29,7 +29,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse(serializedData: data)
+        let response = try? SPMetaBatchedExtensionResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Tracks meta is nil")
         XCTAssertNotEqual(response?.extendedMetadata.count, 0, "Incorrect tracks meta proto parsing")
         guard let safeResponse = response else {return}
@@ -43,7 +43,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let batchReq = try? Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest(serializedData: data)
+        let batchReq = try? SPMetaBatchedEntityRequest(serializedBytes: data)
         XCTAssertNotNil(batchReq, "Albums batched request is nil")
         XCTAssertNotEqual(batchReq?.request.count, 0, "Incorrect generated albums batched request proto model")
     }
@@ -54,7 +54,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse(serializedData: data)
+        let response = try? SPMetaBatchedExtensionResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Albums meta is nil")
         XCTAssertNotEqual(response?.extendedMetadata.count, 0, "Incorrect albums meta proto parsing")
         guard let safeResponse = response else {return}
@@ -68,7 +68,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let batchReq = try? Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest(serializedData: data)
+        let batchReq = try? SPMetaBatchedEntityRequest(serializedBytes: data)
         XCTAssertNotNil(batchReq, "Artists batched request is nil")
         XCTAssertNotEqual(batchReq?.request.count, 0, "Incorrect generated artists batched request proto model")
     }
@@ -79,7 +79,7 @@ final class UnitApiMetadata: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse(serializedData: data)
+        let response = try? SPMetaBatchedExtensionResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Artists meta is nil")
         XCTAssertNotEqual(response?.extendedMetadata.count, 0, "Incorrect artists meta proto parsing")
         guard let safeResponse = response else {return}

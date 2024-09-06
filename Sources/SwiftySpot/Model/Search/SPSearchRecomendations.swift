@@ -18,7 +18,7 @@ public class SPSearchRecomendations {
     self.entities = entities
   }
 
-  static func from(protobuf: Com_Spotify_Searchview_Proto_Recommendations) -> SPSearchRecomendations {
+  static func from(protobuf: SPSearchRecommendations) -> SPSearchRecomendations {
     var items: [SPSearchEntity] = []
     for item in protobuf.entities {
       let parsed = SPSearchEntity.from(protobuf: item)

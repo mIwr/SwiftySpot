@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent {
+struct SPDacPlaylistCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -31,8 +31,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent {
 
   var image: String = String()
 
-  var playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
-    get {return _playCommand ?? Com_Spotify_Dac_Player_V1_Proto_PlayCommand()}
+  var playCommand: SPDacPlayCommand {
+    get {return _playCommand ?? SPDacPlayCommand()}
     set {_playCommand = newValue}
   }
   /// Returns true if `playCommand` has been explicitly set.
@@ -49,8 +49,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent {
   /// Clears the value of `contextMenu`. Subsequent reads from it will return its default value.
   mutating func clearContextMenu() {self._contextMenu = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -62,12 +62,12 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent {
 
   init() {}
 
-  fileprivate var _playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand? = nil
+  fileprivate var _playCommand: SPDacPlayCommand? = nil
   fileprivate var _contextMenu: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent {
+struct SPDacArtistCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -78,8 +78,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent {
 
   var image: String = String()
 
-  var playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
-    get {return _playCommand ?? Com_Spotify_Dac_Player_V1_Proto_PlayCommand()}
+  var playCommand: SPDacPlayCommand {
+    get {return _playCommand ?? SPDacPlayCommand()}
     set {_playCommand = newValue}
   }
   /// Returns true if `playCommand` has been explicitly set.
@@ -96,8 +96,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent {
   /// Clears the value of `contextMenu`. Subsequent reads from it will return its default value.
   mutating func clearContextMenu() {self._contextMenu = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -109,12 +109,12 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent {
 
   init() {}
 
-  fileprivate var _playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand? = nil
+  fileprivate var _playCommand: SPDacPlayCommand? = nil
   fileprivate var _contextMenu: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent {
+struct SPDacAlbumCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -125,8 +125,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent {
 
   var image: String = String()
 
-  var playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
-    get {return _playCommand ?? Com_Spotify_Dac_Player_V1_Proto_PlayCommand()}
+  var playCommand: SPDacPlayCommand {
+    get {return _playCommand ?? SPDacPlayCommand()}
     set {_playCommand = newValue}
   }
   /// Returns true if `playCommand` has been explicitly set.
@@ -143,8 +143,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent {
   /// Clears the value of `contextMenu`. Subsequent reads from it will return its default value.
   mutating func clearContextMenu() {self._contextMenu = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -156,12 +156,12 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent {
 
   init() {}
 
-  fileprivate var _playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand? = nil
+  fileprivate var _playCommand: SPDacPlayCommand? = nil
   fileprivate var _contextMenu: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent {
+struct SPDacEpisodeCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,8 +176,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent {
 
   var progressPercentage: Int64 = 0
 
-  var playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
-    get {return _playCommand ?? Com_Spotify_Dac_Player_V1_Proto_PlayCommand()}
+  var playCommand: SPDacPlayCommand {
+    get {return _playCommand ?? SPDacPlayCommand()}
     set {_playCommand = newValue}
   }
   /// Returns true if `playCommand` has been explicitly set.
@@ -196,8 +196,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent {
 
   var saveUri: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -209,12 +209,12 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent {
 
   init() {}
 
-  fileprivate var _playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand? = nil
+  fileprivate var _playCommand: SPDacPlayCommand? = nil
   fileprivate var _contextMenu: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent {
+struct SPDacShowCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -225,8 +225,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent {
 
   var image: String = String()
 
-  var playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
-    get {return _playCommand ?? Com_Spotify_Dac_Player_V1_Proto_PlayCommand()}
+  var playCommand: SPDacPlayCommand {
+    get {return _playCommand ?? SPDacPlayCommand()}
     set {_playCommand = newValue}
   }
   /// Returns true if `playCommand` has been explicitly set.
@@ -243,8 +243,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent {
   /// Clears the value of `contextMenu`. Subsequent reads from it will return its default value.
   mutating func clearContextMenu() {self._contextMenu = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -256,12 +256,12 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent {
 
   init() {}
 
-  fileprivate var _playCommand: Com_Spotify_Dac_Player_V1_Proto_PlayCommand? = nil
+  fileprivate var _playCommand: SPDacPlayCommand? = nil
   fileprivate var _contextMenu: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComponent {
+struct SPDacRecentlyPlayedCardShortcutComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -270,8 +270,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutCompone
 
   var uri: String = String()
 
-  var accessibility: Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility {
-    get {return _accessibility ?? Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility()}
+  var accessibility: SPDacAccessibility {
+    get {return _accessibility ?? SPDacAccessibility()}
     set {_accessibility = newValue}
   }
   /// Returns true if `accessibility` has been explicitly set.
@@ -279,8 +279,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutCompone
   /// Clears the value of `accessibility`. Subsequent reads from it will return its default value.
   mutating func clearAccessibility() {self._accessibility = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -292,24 +292,24 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutCompone
 
   init() {}
 
-  fileprivate var _accessibility: Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _accessibility: SPDacAccessibility? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComponent: @unchecked Sendable {}
+extension SPDacPlaylistCardShortcutComponent: @unchecked Sendable {}
+extension SPDacArtistCardShortcutComponent: @unchecked Sendable {}
+extension SPDacAlbumCardShortcutComponent: @unchecked Sendable {}
+extension SPDacEpisodeCardShortcutComponent: @unchecked Sendable {}
+extension SPDacShowCardShortcutComponent: @unchecked Sendable {}
+extension SPDacRecentlyPlayedCardShortcutComponent: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.component.v1.proto"
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacPlaylistCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PlaylistCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -363,7 +363,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent:
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacPlaylistCardShortcutComponent, rhs: SPDacPlaylistCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs.image != rhs.image {return false}
@@ -375,7 +375,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_PlaylistCardShortcutComponent:
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacArtistCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ArtistCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -429,7 +429,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacArtistCardShortcutComponent, rhs: SPDacArtistCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs.image != rhs.image {return false}
@@ -441,7 +441,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ArtistCardShortcutComponent: S
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacAlbumCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AlbumCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -495,7 +495,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent: Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacAlbumCardShortcutComponent, rhs: SPDacAlbumCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs.image != rhs.image {return false}
@@ -507,7 +507,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_AlbumCardShortcutComponent: Sw
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacEpisodeCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EpisodeCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -576,7 +576,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacEpisodeCardShortcutComponent, rhs: SPDacEpisodeCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs.image != rhs.image {return false}
@@ -591,7 +591,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_EpisodeCardShortcutComponent: 
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacShowCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShowCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -645,7 +645,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacShowCardShortcutComponent, rhs: SPDacShowCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs.image != rhs.image {return false}
@@ -657,7 +657,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ShowCardShortcutComponent: Swi
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacRecentlyPlayedCardShortcutComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RecentlyPlayedCardShortcutComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -701,7 +701,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedCardShortcutComponent) -> Bool {
+  static func ==(lhs: SPDacRecentlyPlayedCardShortcutComponent, rhs: SPDacRecentlyPlayedCardShortcutComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs._accessibility != rhs._accessibility {return false}

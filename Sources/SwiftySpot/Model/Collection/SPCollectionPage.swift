@@ -30,7 +30,7 @@ public class SPCollectionPage {
     self.pageSize = pageSise
   }
 
-  static func from(protobuf: Com_Spotify_Collection2_V2_Proto_PageResponse, pageSize: UInt) -> SPCollectionPage {
+  static func from(protobuf: SPPageResponse, pageSize: UInt) -> SPCollectionPage {
     var items: [SPCollectionItem] = []
     for item in protobuf.items {
       items.append(SPCollectionItem.from(protobuf: item))

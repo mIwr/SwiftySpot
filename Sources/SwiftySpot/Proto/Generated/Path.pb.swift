@@ -20,19 +20,19 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Ubi_Proto_Elementinfo_V1_Path {
+struct SPUbiPath {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nodes: [Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode] = []
+  var nodes: [SPUbiPathNode] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode {
+struct SPUbiPathNode {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -86,15 +86,15 @@ struct Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_Path: @unchecked Sendable {}
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode: @unchecked Sendable {}
+extension SPUbiPath: @unchecked Sendable {}
+extension SPUbiPathNode: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.ubi.proto.elementinfo.v1"
 
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_Path: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPUbiPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Path"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "nodes"),
@@ -119,14 +119,14 @@ extension Com_Spotify_Ubi_Proto_Elementinfo_V1_Path: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_Path, rhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_Path) -> Bool {
+  static func ==(lhs: SPUbiPath, rhs: SPUbiPath) -> Bool {
     if lhs.nodes != rhs.nodes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPUbiPathNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PathNode"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
@@ -175,7 +175,7 @@ extension Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode, rhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_PathNode) -> Bool {
+  static func ==(lhs: SPUbiPathNode, rhs: SPUbiPathNode) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs._id != rhs._id {return false}
     if lhs._uri != rhs._uri {return false}

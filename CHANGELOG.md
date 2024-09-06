@@ -1,5 +1,23 @@
 #  Changelog
 
+## Version 0.6.0
+**06.09.2024**
+
+**BREAKING CHANGES**
+
+- Replaced by stock protobuf non-main models and enums: 'Search', 'Metadata', 'Lyrics', 'Collection', 'DownloadInfo'
+- Remove 'public' access modifier for util classes: [SPBinaryUtil](./Sources/SwiftySpot/Util/SPBinaryUtil.swift), [SPDateUtil](./Sources/SwiftySpot/Util/SPDateUtil.swift)
+
+**API-related changes**
+
+- Spotify seektable (contains Widevine PSSH box) support
+- Spotify Widevine license request API support
+
+**Other changes**
+
+- Reduce boilerplate code by adopting some protobuf messages and enums for using outside of framework (public access modifier)
+- Module privacy info
+
 ## Version 0.5.3
 **19.03.2024**
 

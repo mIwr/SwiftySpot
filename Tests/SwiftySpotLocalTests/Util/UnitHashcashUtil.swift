@@ -12,7 +12,7 @@ final class UnitHashcashUtil: XCTestCase {
     
     func testClTokenHashcashSolve() {
         let exp = self.expectation(description: "Request time-out expectation")
-        HashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.clTokenHashcashPrefix, length: TestConstants.clTokenHashcashLength) { hashcash in
+        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.clTokenHashcashPrefix, length: TestConstants.clTokenHashcashLength) { hashcash in
             XCTAssertNotNil(hashcash, "Hashcash solution is nil")
             XCTAssertEqual(hashcash?.uppercased(), TestConstants.clTokenHashcashAnswer, "Incorrect client token hashcash solve process")
             exp.fulfill()
@@ -28,7 +28,7 @@ final class UnitHashcashUtil: XCTestCase {
     
     func testHardClTokenHashcashSolve() {
         let exp = self.expectation(description: "Request time-out expectation")
-        HashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.hardClTokenHashcashPrefix, length: TestConstants.hardClTokenHashcashLength) { hashcash in
+        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.hardClTokenHashcashPrefix, length: TestConstants.hardClTokenHashcashLength) { hashcash in
             XCTAssertNotNil(hashcash, "Hashcash solution is nil")
             XCTAssertEqual(hashcash?.uppercased(), TestConstants.hardClTokenHashcashAnswer, "Incorrect client token hashcash solve process")
             exp.fulfill()
@@ -43,16 +43,16 @@ final class UnitHashcashUtil: XCTestCase {
     }
     
     func testAuthHashcashSolve() {
-        let contextBytes = StringUtil.hexStringToBytes(TestConstants.authContextHex)
+        let contextBytes = SPBase16.decode(TestConstants.authContextHex)
         let context = Data(contextBytes)
-        let prefixBytes = StringUtil.hexStringToBytes(TestConstants.authHashcashPrefixHex)
+        let prefixBytes = SPBase16.decode(TestConstants.authHashcashPrefixHex)
         let prefix = Data(prefixBytes)
         
-        guard let solution = HashCashUtil.solveAuthChallenge(context: context, prefix: prefix, length: TestConstants.authHashcashLength) else {
+        guard let solution = SPHashCashUtil.solveAuthChallenge(context: context, prefix: prefix, length: TestConstants.authHashcashLength) else {
             XCTAssertNotNil(nil, "Hashcash solution is nil")
             return
         }
-        let solutionHex = StringUtil.bytesToHexString(solution).uppercased()
+        let solutionHex = SPBase16.encode(solution).uppercased()
         let expected = TestConstants.authHashcashAnswerHex.uppercased()
         XCTAssertEqual(solutionHex, expected, "Incorrect auth hashcash solve process")
     }

@@ -20,13 +20,13 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
+struct SPUbiUbiElementInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var path: Com_Spotify_Ubi_Proto_Elementinfo_V1_Path {
-    get {return _path ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_Path()}
+  var path: SPUbiPath {
+    get {return _path ?? SPUbiPath()}
     set {_path = newValue}
   }
   /// Returns true if `path` has been explicitly set.
@@ -38,11 +38,11 @@ struct Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
 
   var specID: String = String()
 
-  var specVer: String = String()
+  var specVersion: String = String()
 
   var appID: String = String()
 
-  var generatorVer: String = String()
+  var generatorVersion: String = String()
 
   var impressionMode: Int32 = 0
 
@@ -50,26 +50,26 @@ struct Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
 
   init() {}
 
-  fileprivate var _path: Com_Spotify_Ubi_Proto_Elementinfo_V1_Path? = nil
+  fileprivate var _path: SPUbiPath? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo: @unchecked Sendable {}
+extension SPUbiUbiElementInfo: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.ubi.proto.elementinfo.v1"
 
-extension Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPUbiUbiElementInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UbiElementInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "path"),
     2: .same(proto: "impression"),
     3: .standard(proto: "spec_id"),
-    4: .standard(proto: "spec_ver"),
+    4: .standard(proto: "spec_version"),
     5: .standard(proto: "app_id"),
-    6: .standard(proto: "generator_ver"),
+    6: .standard(proto: "generator_version"),
     7: .standard(proto: "impression_mode"),
   ]
 
@@ -82,9 +82,9 @@ extension Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo: SwiftProtobuf.Mes
       case 1: try { try decoder.decodeSingularMessageField(value: &self._path) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.impression) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.specID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.specVer) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.specVersion) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.appID) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.generatorVer) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.generatorVersion) }()
       case 7: try { try decoder.decodeSingularInt32Field(value: &self.impressionMode) }()
       default: break
       }
@@ -105,14 +105,14 @@ extension Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo: SwiftProtobuf.Mes
     if !self.specID.isEmpty {
       try visitor.visitSingularStringField(value: self.specID, fieldNumber: 3)
     }
-    if !self.specVer.isEmpty {
-      try visitor.visitSingularStringField(value: self.specVer, fieldNumber: 4)
+    if !self.specVersion.isEmpty {
+      try visitor.visitSingularStringField(value: self.specVersion, fieldNumber: 4)
     }
     if !self.appID.isEmpty {
       try visitor.visitSingularStringField(value: self.appID, fieldNumber: 5)
     }
-    if !self.generatorVer.isEmpty {
-      try visitor.visitSingularStringField(value: self.generatorVer, fieldNumber: 6)
+    if !self.generatorVersion.isEmpty {
+      try visitor.visitSingularStringField(value: self.generatorVersion, fieldNumber: 6)
     }
     if self.impressionMode != 0 {
       try visitor.visitSingularInt32Field(value: self.impressionMode, fieldNumber: 7)
@@ -120,13 +120,13 @@ extension Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo, rhs: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo) -> Bool {
+  static func ==(lhs: SPUbiUbiElementInfo, rhs: SPUbiUbiElementInfo) -> Bool {
     if lhs._path != rhs._path {return false}
     if lhs.impression != rhs.impression {return false}
     if lhs.specID != rhs.specID {return false}
-    if lhs.specVer != rhs.specVer {return false}
+    if lhs.specVersion != rhs.specVersion {return false}
     if lhs.appID != rhs.appID {return false}
-    if lhs.generatorVer != rhs.generatorVer {return false}
+    if lhs.generatorVersion != rhs.generatorVersion {return false}
     if lhs.impressionMode != rhs.impressionMode {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option swift_prefix="SP";
 
 message PlaylistFromSeed {
     int32 total = 2;
@@ -22,9 +22,18 @@ message PlaylistInfo {
 }
 
 message PlaylistPayload {
+    message Track {
+        message Info {
+            optional int64 create_ts_ms_utc = 2;
+            map<string, string> props = 11;
+            bytes todoUnknownBytes = 12;
+        }
+        string uri = 1;
+        Info info = 2;
+    }
     int32 val1 = 1;
     int32 val2 = 2;
-    repeated PlaylistTrack tracks = 3;
+    repeated Track tracks = 3;
 }
 
 message PlaylistMeta {
@@ -41,14 +50,4 @@ message PlaylistMetaUnknownObj {
     int32 var2 = 2;
     int32 var4 = 4;
     int32 var5 = 5;
-}
-
-message PlaylistTrack {
-    message Info {
-        optional int64 create_ts_ms_utc = 2;
-        map<string, string> props = 11;
-        bytes todoUnknownBytes = 12;
-    }
-    string uri = 1;
-    Info info = 2;
 }

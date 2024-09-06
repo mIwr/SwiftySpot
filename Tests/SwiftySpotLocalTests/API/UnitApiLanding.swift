@@ -19,7 +19,7 @@ final class UnitApiLanding: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let landing = (try? Com_Spotify_Dac_Api_V1_Proto_DacResponse(serializedData: data)) ?? Com_Spotify_Dac_Api_V1_Proto_DacResponse()
+        let landing = (try? SPDacResponse(serializedBytes: data)) ?? SPDacResponse()
         let recognized = client.extractPlaylistsFromDac(landing)
         XCTAssertNotEqual(recognized.userMixes.count, 0, "Incorrect landing user playlists parse")
         XCTAssertNotEqual(recognized.radio.count, 0, "Incorrect landing radio playlists parse")

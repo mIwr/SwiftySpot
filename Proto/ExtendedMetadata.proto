@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option swift_prefix="SPMeta";
 
 package com.spotify.extendedmetadata.proto;
 

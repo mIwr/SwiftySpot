@@ -113,7 +113,7 @@ class PlaybackController: NSObject, ObservableObject {
     }
     var playbackPositionFormatted: String {
         get {
-            return DateUtil.formattedTrackTime(playbackPositionInS)
+            return SPDateUtil.formattedTrackTime(playbackPositionInS)
         }
     }
     var durationInMs: TimeInterval {
@@ -134,7 +134,7 @@ class PlaybackController: NSObject, ObservableObject {
     }
     var trackDurationFormatted: String {
         get {
-            return DateUtil.formattedTrackTime(durationInS)
+            return SPDateUtil.formattedTrackTime(durationInS)
         }
     }
     
@@ -444,9 +444,10 @@ class PlaybackController: NSObject, ObservableObject {
     
     fileprivate func initPlay(forceCodec: SPMetadataAudioFormat? = nil) {
         guard let safePlayingTrack = playingTrack else {return}
-        var file = safePlayingTrack.trackMeta.findAudioFile(codec: forceCodec ?? .OGG_VORBIS_160)
+        //TODO MP4 support via widevine
+        var file = safePlayingTrack.trackMeta.findAudioFile(codec: forceCodec ?? .oggVorbis160)
         if (_appProps.trafficEconomy || file == nil) {
-            file = safePlayingTrack.trackMeta.findAudioFile(codec: .OGG_VORBIS_96)
+            file = safePlayingTrack.trackMeta.findAudioFile(codec: .oggVorbis96)
         }
         _vlcPlayer.stop()
         _vlcPlayer.media = nil
@@ -464,168 +465,171 @@ class PlaybackController: NSObject, ObservableObject {
         let taskId = UIApplication.shared.beginBackgroundTask(withName: "bgDownloadLoop" + safeFile.hexId) {
             print("Background task expired")
         }
-        _apiClient.findOrSendPlayIntent(hexFileId: safeFile.hexId, token: YDConstants.playIntentToken) { intentRes in
-            if (safePlayingTrack.uri != self.playingTrackUri) {
-                UIApplication.shared.endBackgroundTask(taskId)
-                return
-            }
-            guard let safeIntent = try? intentRes.get() else {
-                UIApplication.shared.endBackgroundTask(taskId)
-                let status = self.playNextTrack()
-                if (!status) {
-                    _ = self.pause(force: true)
-                }
-                return
-            }
-            self._apiClient.findOrRequestDownloadInfo(hexFileId: safeFile.hexId) { diRes in
+        if (safeFile.format.oggVorbis) {
+            _apiClient.findOrSendPlayIntent(hexFileId: safeFile.hexId, token: YDConstants.playIntentToken) { intentRes in
                 if (safePlayingTrack.uri != self.playingTrackUri) {
                     UIApplication.shared.endBackgroundTask(taskId)
                     return
                 }
-                guard let safeDi = try? diRes.get() else {
+                guard let safeIntent = try? intentRes.get() else {
                     UIApplication.shared.endBackgroundTask(taskId)
-                    return
-                }
-                guard let safeDirectLink = safeDi.directLinks.first else {
-                    UIApplication.shared.endBackgroundTask(taskId)
-                    return
-                }
-                let decoder: (Data) -> Data = { input in
-                    if (safePlayingTrack.uri != self.playingTrackUri) {
-                        UIApplication.shared.endBackgroundTask(taskId)
-                        return Data()
+                    let status = self.playNextTrack()
+                    if (!status) {
+                        _ = self.pause(force: true)
                     }
-                    let bytes = [UInt8].init(input)
-                    let decoded = YAD.decrypt(bytes, safeFile.id, safeIntent.obfuscatedKey)
-                    let resData = Data(decoded)
-                    return resData
+                    return
                 }
-                //1 - check decode for the first 256 bytes chunk
-                self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, chunkSizeInBytes: 256, total: nil, decryptHandler: decoder) { chunkRes in
+                self._apiClient.findOrRequestDownloadInfo(hexFileId: safeFile.hexId) { diRes in
                     if (safePlayingTrack.uri != self.playingTrackUri) {
                         UIApplication.shared.endBackgroundTask(taskId)
                         return
                     }
-                    do {
-                        let pair = try chunkRes.get()
-                        let markerBytes = [UInt8].init(pair.1)
-                        if (markerBytes.count < 3) {
+                    guard let safeDi = try? diRes.get() else {
+                        UIApplication.shared.endBackgroundTask(taskId)
+                        return
+                    }
+                    guard let safeDirectLink = safeDi.directLinks.first else {
+                        UIApplication.shared.endBackgroundTask(taskId)
+                        return
+                    }
+                    let decoder: (Data) -> Data = { input in
+                        if (safePlayingTrack.uri != self.playingTrackUri) {
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            return Data()
+                        }
+                        let bytes = [UInt8].init(input)
+                        let decoded = YAD.decrypt(bytes, safeFile.id, [UInt8].init(safeIntent.obfuscatedKey))
+                        let resData = Data(decoded)
+                        return resData
+                    }
+                    //1 - check decode for the first 256 bytes chunk
+                    self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, chunkSizeInBytes: 256, total: nil, decryptHandler: decoder) { chunkRes in
+                        if (safePlayingTrack.uri != self.playingTrackUri) {
                             UIApplication.shared.endBackgroundTask(taskId)
                             return
                         }
-                        if (markerBytes[0] != 0x4f || markerBytes[1] != 0x67 || markerBytes[2] != 0x67) {
-                            //fail decrypt -> force ogg96
-                            UIApplication.shared.endBackgroundTask(taskId)
-                            if (forceCodec == nil) {
-                                self.initPlay(forceCodec: .OGG_VORBIS_96)
-                            }
-                            #if DEBUG
-                            print("Fail decode " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
-                            #endif
-                            return
-                        }
-                        //2 - download all data
-                        self._apiClient.downloadAsOnePiece(cdnLink: safeDirectLink, decryptHandler: decoder) { dRes in
-                            if (safePlayingTrack.uri != self.playingTrackUri) {
+                        do {
+                            let pair = try chunkRes.get()
+                            let markerBytes = [UInt8].init(pair.1)
+                            if (markerBytes.count < 3) {
                                 UIApplication.shared.endBackgroundTask(taskId)
                                 return
                             }
-                            switch(dRes) {
-                            case .success(let playableData):
-                                self._playInputData = playableData
+                            if (markerBytes[0] != 0x4f || markerBytes[1] != 0x67 || markerBytes[2] != 0x67) {
+                                //fail decrypt -> force ogg96
+                                UIApplication.shared.endBackgroundTask(taskId)
+                                if (forceCodec == nil) {
+                                    self.initPlay(forceCodec: .oggVorbis96)
+                                }
+                                #if DEBUG
+                                print("Fail decode " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+                                #endif
+                                return
+                            }
+                            //2 - download all data
+                            self._apiClient.downloadAsOnePiece(cdnLink: safeDirectLink, decryptHandler: decoder) { dRes in
+                                if (safePlayingTrack.uri != self.playingTrackUri) {
+                                    UIApplication.shared.endBackgroundTask(taskId)
+                                    return
+                                }
+                                switch(dRes) {
+                                case .success(let playableData):
+                                    self._playInputData = playableData
+                                    let media = VLCMedia(stream: InputStream(data: self._playInputData))
+                                    self._vlcPlayer.media = media
+                                    do {
+                                        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                                        try AVAudioSession.sharedInstance().setActive(true)
+                                    } catch {
+                                        print(error)
+                                    }
+                                    self._vlcPlayer.play()
+                                    self.notifyPlayStateUpdate(playing: true)
+                                    break
+                                case .failure(let error):
+                                    if case .invalidResponseStatusCode(let errCode, _) = error {
+                                        if (errCode == 404) {
+                                            //Not found or restricted on CDN??? (track meta restrictions is empty) -> next song
+    #if DEBUG
+                                            print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+    #endif
+                                            let status = self.playNextTrack()
+                                            if (!status) {
+                                                _ = self.pause(force: true)
+                                            }
+                                        }
+                                        break
+                                    }
+                                }
+                                UIApplication.shared.endBackgroundTask(taskId)
+                            }
+                        } catch {
+                            let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                            if case .invalidResponseStatusCode(let errCode, _) = parsed {
+                                if (errCode == 404) {
+                                    //Not found or restricted on CDN -> next song
+    #if DEBUG
+                                    print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
+    #endif
+                                    let status = self.playNextTrack()
+                                    if (!status) {
+                                        _ = self.pause(force: true)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /*self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, total: nil, decryptHandler: { data in
+                        if (safePlayingTrack.uri != self.playingTrackUri) {
+                            return Data()
+                        }
+                        let bytes = [UInt8].init(data)
+                        let decoded = YAD.decrypt(bytes, safeFile.id, safeIntent.obfuscatedKey)
+                        let resData = Data(decoded)
+                        return resData
+                    }) { downloadProgressRes in
+                        if (safePlayingTrack.uri != self.playingTrackUri) {
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            return
+                        }
+                        guard let pair = try? downloadProgressRes.get() else {
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            return
+                        }
+                        self._playInputData = pair.1
+                        if (UIApplication.shared.backgroundTimeRemaining < 10) {
+                            self._pendingPlayTrack = PendingPlayTrack(track: safePlayingTrack, intent: safeIntent, di: safeDi, progress: pair.0, playableData: pair.1)
+                            UIApplication.shared.endBackgroundTask(taskId)
+                            return
+                        }
+                        self.bgDownloadLoop(trackUri: safePlayingTrack.uri, dataId: safeFile.id, keyBasis: safeIntent.obfuscatedKey, progress: pair.0) { loopResult in
+                            if (safePlayingTrack.uri != self.playingTrackUri) {
+                                self._pendingPlayTrack = nil
+                                UIApplication.shared.endBackgroundTask(taskId)
+                                return
+                            }
+                            let progress = loopResult.0
+                            let data = loopResult.1
+                            self._playInputData.append(data)
+                            if (UIApplication.shared.backgroundTimeRemaining < 10) {
+                                self._pendingPlayTrack = PendingPlayTrack(track: safePlayingTrack, intent: safeIntent, di: safeDi, progress: pair.0, playableData: self._playInputData)
+                                UIApplication.shared.endBackgroundTask(taskId)
+                                return
+                            }
+                            if (progress.remains == 0) {
+                                //Downloaded
+                                self._pendingPlayTrack = nil
                                 let media = VLCMedia(stream: InputStream(data: self._playInputData))
                                 self._vlcPlayer.media = media
-                                do {
-                                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                                    try AVAudioSession.sharedInstance().setActive(true)
-                                } catch {
-                                    print(error)
-                                }
                                 self._vlcPlayer.play()
                                 self.notifyPlayStateUpdate(playing: true)
-                                break
-                            case .failure(let error):
-                                if case .invalidResponseStatusCode(let errCode, _) = error {
-                                    if (errCode == 404) {
-                                        //Not found or restricted on CDN??? (track meta restrictions is empty) -> next song
-#if DEBUG
-                                        print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
-#endif
-                                        let status = self.playNextTrack()
-                                        if (!status) {
-                                            _ = self.pause(force: true)
-                                        }
-                                    }
-                                    break
-                                }
-                            }
-                            UIApplication.shared.endBackgroundTask(taskId)
-                        }
-                    } catch {
-                        let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
-                        if case .invalidResponseStatusCode(let errCode, _) = parsed {
-                            if (errCode == 404) {
-                                //Not found or restricted on CDN -> next song
-#if DEBUG
-                                print("Not found file " + safeFile.hexId + " (" + String(describing: safeFile.format) + ")")
-#endif
-                                let status = self.playNextTrack()
-                                if (!status) {
-                                    _ = self.pause(force: true)
-                                }
+                                UIApplication.shared.endBackgroundTask(taskId)
                             }
                         }
-                    }
+                    }*/
                 }
-                /*self._apiClient.downloadAsChunk(cdnLink: safeDirectLink, offsetInBytes: 0, total: nil, decryptHandler: { data in
-                    if (safePlayingTrack.uri != self.playingTrackUri) {
-                        return Data()
-                    }
-                    let bytes = [UInt8].init(data)
-                    let decoded = YAD.decrypt(bytes, safeFile.id, safeIntent.obfuscatedKey)
-                    let resData = Data(decoded)
-                    return resData
-                }) { downloadProgressRes in
-                    if (safePlayingTrack.uri != self.playingTrackUri) {
-                        UIApplication.shared.endBackgroundTask(taskId)
-                        return
-                    }
-                    guard let pair = try? downloadProgressRes.get() else {
-                        UIApplication.shared.endBackgroundTask(taskId)
-                        return
-                    }
-                    self._playInputData = pair.1
-                    if (UIApplication.shared.backgroundTimeRemaining < 10) {
-                        self._pendingPlayTrack = PendingPlayTrack(track: safePlayingTrack, intent: safeIntent, di: safeDi, progress: pair.0, playableData: pair.1)
-                        UIApplication.shared.endBackgroundTask(taskId)
-                        return
-                    }
-                    self.bgDownloadLoop(trackUri: safePlayingTrack.uri, dataId: safeFile.id, keyBasis: safeIntent.obfuscatedKey, progress: pair.0) { loopResult in
-                        if (safePlayingTrack.uri != self.playingTrackUri) {
-                            self._pendingPlayTrack = nil
-                            UIApplication.shared.endBackgroundTask(taskId)
-                            return
-                        }
-                        let progress = loopResult.0
-                        let data = loopResult.1
-                        self._playInputData.append(data)
-                        if (UIApplication.shared.backgroundTimeRemaining < 10) {
-                            self._pendingPlayTrack = PendingPlayTrack(track: safePlayingTrack, intent: safeIntent, di: safeDi, progress: pair.0, playableData: self._playInputData)
-                            UIApplication.shared.endBackgroundTask(taskId)
-                            return
-                        }
-                        if (progress.remains == 0) {
-                            //Downloaded
-                            self._pendingPlayTrack = nil
-                            let media = VLCMedia(stream: InputStream(data: self._playInputData))
-                            self._vlcPlayer.media = media
-                            self._vlcPlayer.play()
-                            self.notifyPlayStateUpdate(playing: true)
-                            UIApplication.shared.endBackgroundTask(taskId)
-                        }
-                    }
-                }*/
             }
+            return
         }
     }
     

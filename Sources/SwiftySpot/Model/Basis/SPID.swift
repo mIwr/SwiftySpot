@@ -6,7 +6,7 @@
 //
 
 ///Spotify ID object
-public class SPID: SPBaseObj, Equatable, Hashable {
+public class SPID: SPBaseObj, ISPID {
     
     public static let idSize: UInt8 = 22
     public static let gidSize: UInt8 = 16
@@ -34,8 +34,8 @@ public class SPID: SPBaseObj, Equatable, Hashable {
             return
         }
         let num = SPBase62.decode(string: id, inversedAlphabet: true)
-        var seq = BitConvertUtil.getBytes(num.high)
-        seq.append(contentsOf: BitConvertUtil.getBytes(num.low))
+        var seq = SPBinaryUtil.getBytes(num.high)
+        seq.append(contentsOf: SPBinaryUtil.getBytes(num.low))
         globalID = seq
     }
     
@@ -45,15 +45,15 @@ public class SPID: SPBaseObj, Equatable, Hashable {
             id = ""
             return
         }
-        guard let low: UInt64 = BitConvertUtil.getVal(globalID, offset: 8) else {
+        guard let low: UInt64 = SPBinaryUtil.getVal(globalID, offset: 8) else {
             id = ""
             return
         }
-        guard let high: UInt64 = BitConvertUtil.getVal(globalID) else {
+        guard let high: UInt64 = SPBinaryUtil.getVal(globalID) else {
             id = ""
             return
         }
-        let num = UInt128(high: high, low: low)
+        let num = SPUInt128(high: high, low: low)
         let seq = SPBase62.encode(num: num, inversedAlphabet: true)
         id = seq
     }

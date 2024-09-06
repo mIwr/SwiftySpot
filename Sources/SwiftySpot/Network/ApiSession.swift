@@ -7,7 +7,7 @@
 
 import Foundation
 
-func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<ChallengesData, SPError>) -> Void) -> URLSessionDataTask? {
+func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<SPChallengesData, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestClientDataRequest
     reqProtobuf.client = initData
@@ -22,8 +22,8 @@ func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, comple
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            guard let parsed = try? SPClientTokenResponse(serializedData: data) else {
-                let badReq = try SPClientTokenBadRequest(serializedData: data)
+            guard let parsed = try? SPClientTokenResponse(serializedBytes: data) else {
+                let badReq = try SPClientTokenBadRequest(serializedBytes: data)
                 let err = SPError.badRequest(errCode: response.statusCode, description: badReq.errMsg)
                 completion(.failure(err))
                 return
@@ -37,7 +37,7 @@ func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, comple
     return task
 }
 
-func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
+func initSessionSolveChallengeByApi(userAgent: String, answerData: SPChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestChallengeAnswersRequest
     reqProtobuf.answerData = answerData
@@ -57,8 +57,8 @@ func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnsw
                 completion(.failure(err))
                 return
             }
-            guard let parsed = try? SPClientTokenResponse(serializedData: data) else {
-                let badReq = try SPClientTokenBadRequest(serializedData: data)
+            guard let parsed = try? SPClientTokenResponse(serializedBytes: data) else {
+                let badReq = try SPClientTokenBadRequest(serializedBytes: data)
                 let err = SPError.badRequest(errCode: response.statusCode, description: badReq.errMsg)
                 completion(.failure(err))
                 return
@@ -72,7 +72,7 @@ func initSessionSolveChallengeByApi(userAgent: String, answerData: ChallengeAnsw
     return task
 }
 
-func getAccessPointsByApi(clToken: String, completion: @escaping (_ result: Result<SPAccessPoint, SPError>) -> Void) -> URLSessionDataTask? {
+func getAccessPointsByApi(clToken: String?, completion: @escaping (_ result: Result<SPAccessPoint, SPError>) -> Void) -> URLSessionDataTask? {
     guard let req: URLRequest = buildRequest(for: .acessPoints(clToken: clToken)) else {
         completion(.failure(.badRequest(errCode: -1, description: "Unable to build access points retrieve request")))
         return nil

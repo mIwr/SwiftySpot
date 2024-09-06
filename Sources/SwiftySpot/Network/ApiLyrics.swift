@@ -8,7 +8,7 @@
 import Foundation
 import SwiftProtobuf
 
-func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, type: String, id: String, vocalRemove: Bool, syllableSync: Bool, clientLangCode: String, completion: @escaping (_ result: Result<Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse?, SPError>) -> Void) -> URLSessionDataTask? {
+func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, type: String, id: String, vocalRemove: Bool, syllableSync: Bool, clientLangCode: String, completion: @escaping (_ result: Result<SPColorLyricsResponse?, SPError>) -> Void) -> URLSessionDataTask? {
     if (type.isEmpty || id.isEmpty) {
         completion(.success(nil))
         return nil
@@ -36,7 +36,7 @@ func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: S
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse(serializedData: data)
+            let parsed = try SPColorLyricsResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Com_Spotify_Extendedmetadata_Proto_ExtensionType: SwiftProtobuf.Enum {
+enum SPMetaExtensionType: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case unknown // = 0
   case generic // = 1
@@ -53,9 +53,9 @@ enum Com_Spotify_Extendedmetadata_Proto_ExtensionType: SwiftProtobuf.Enum {
 
 #if swift(>=4.2)
 
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionType: CaseIterable {
+extension SPMetaExtensionType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Com_Spotify_Extendedmetadata_Proto_ExtensionType] = [
+  static let allCases: [SPMetaExtensionType] = [
     .unknown,
     .generic,
     .assoc,
@@ -64,7 +64,7 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum Com_Spotify_Extendedmetadata_Proto_ExtensionKind: SwiftProtobuf.Enum {
+enum SPMetaExtensionKind: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case unknownExtension // = 0
   case canvaz // = 1
@@ -403,9 +403,9 @@ enum Com_Spotify_Extendedmetadata_Proto_ExtensionKind: SwiftProtobuf.Enum {
 
 #if swift(>=4.2)
 
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionKind: CaseIterable {
+extension SPMetaExtensionKind: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Com_Spotify_Extendedmetadata_Proto_ExtensionKind] = [
+  static let allCases: [SPMetaExtensionKind] = [
     .unknownExtension,
     .canvaz,
     .storylines,
@@ -516,13 +516,13 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionKind: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-struct Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest {
+struct SPMetaBatchedEntityRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader {
-    get {return _header ?? Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader()}
+  var header: SPMetaBatchedEntityRequestHeader {
+    get {return _header ?? SPMetaBatchedEntityRequestHeader()}
     set {_header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
@@ -530,16 +530,16 @@ struct Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest {
   /// Clears the value of `header`. Subsequent reads from it will return its default value.
   mutating func clearHeader() {self._header = nil}
 
-  var request: [Com_Spotify_Extendedmetadata_Proto_EntityRequest] = []
+  var request: [SPMetaEntityRequest] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _header: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader? = nil
+  fileprivate var _header: SPMetaBatchedEntityRequestHeader? = nil
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader {
+struct SPMetaBatchedEntityRequestHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -555,26 +555,26 @@ struct Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader {
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_EntityRequest {
+struct SPMetaEntityRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var uri: String = String()
 
-  var query: [Com_Spotify_Extendedmetadata_Proto_ExtensionQuery] = []
+  var query: [SPMetaExtensionQuery] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_ExtensionQuery {
+struct SPMetaExtensionQuery {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var kind: Com_Spotify_Extendedmetadata_Proto_ExtensionKind = .unknownExtension
+  var kind: SPMetaExtensionKind = .unknownExtension
 
   var etag: String {
     get {return _etag ?? String()}
@@ -592,13 +592,13 @@ struct Com_Spotify_Extendedmetadata_Proto_ExtensionQuery {
   fileprivate var _etag: String? = nil
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse {
+struct SPMetaBatchedExtensionResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader {
-    get {return _header ?? Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader()}
+  var header: SPMetaBatchedExtensionResponseHeader {
+    get {return _header ?? SPMetaBatchedExtensionResponseHeader()}
     set {_header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
@@ -606,16 +606,16 @@ struct Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse {
   /// Clears the value of `header`. Subsequent reads from it will return its default value.
   mutating func clearHeader() {self._header = nil}
 
-  var extendedMetadata: [Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray] = []
+  var extendedMetadata: [SPMetaEntityExtensionDataArray] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _header: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader? = nil
+  fileprivate var _header: SPMetaBatchedExtensionResponseHeader? = nil
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader {
+struct SPMetaBatchedExtensionResponseHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -625,13 +625,13 @@ struct Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader {
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray {
+struct SPMetaEntityExtensionDataArray {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader {
-    get {return _header ?? Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader()}
+  var header: SPMetaEntityExtensionDataArrayHeader {
+    get {return _header ?? SPMetaEntityExtensionDataArrayHeader()}
     set {_header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
@@ -639,18 +639,18 @@ struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray {
   /// Clears the value of `header`. Subsequent reads from it will return its default value.
   mutating func clearHeader() {self._header = nil}
 
-  var kind: Com_Spotify_Extendedmetadata_Proto_ExtensionKind = .unknownExtension
+  var kind: SPMetaExtensionKind = .unknownExtension
 
-  var extensionData: [Com_Spotify_Extendedmetadata_Proto_EntityExtensionData] = []
+  var extensionData: [SPMetaEntityExtensionData] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _header: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader? = nil
+  fileprivate var _header: SPMetaEntityExtensionDataArrayHeader? = nil
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader {
+struct SPMetaEntityExtensionDataArrayHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -661,20 +661,20 @@ struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader {
 
   var offlineTtlInSeconds: Int64 = 0
 
-  var extensionType: Com_Spotify_Extendedmetadata_Proto_ExtensionType = .unknown
+  var extensionType: SPMetaExtensionType = .unknown
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionData {
+struct SPMetaEntityExtensionData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader {
-    get {return _header ?? Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader()}
+  var header: SPMetaEntityExtensionDataHeader {
+    get {return _header ?? SPMetaEntityExtensionDataHeader()}
     set {_header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
@@ -698,11 +698,11 @@ struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionData {
 
   init() {}
 
-  fileprivate var _header: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader? = nil
+  fileprivate var _header: SPMetaEntityExtensionDataHeader? = nil
   fileprivate var _extensionData: SwiftProtobuf.Google_Protobuf_Any? = nil
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader {
+struct SPMetaEntityExtensionDataHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -722,7 +722,7 @@ struct Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader {
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_PlainListAssoc {
+struct SPMetaPlainListAssoc {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -734,7 +734,7 @@ struct Com_Spotify_Extendedmetadata_Proto_PlainListAssoc {
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_AssocHeader {
+struct SPMetaAssocHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -744,13 +744,13 @@ struct Com_Spotify_Extendedmetadata_Proto_AssocHeader {
   init() {}
 }
 
-struct Com_Spotify_Extendedmetadata_Proto_Assoc {
+struct SPMetaAssoc {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Com_Spotify_Extendedmetadata_Proto_AssocHeader {
-    get {return _header ?? Com_Spotify_Extendedmetadata_Proto_AssocHeader()}
+  var header: SPMetaAssocHeader {
+    get {return _header ?? SPMetaAssocHeader()}
     set {_header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
@@ -758,8 +758,8 @@ struct Com_Spotify_Extendedmetadata_Proto_Assoc {
   /// Clears the value of `header`. Subsequent reads from it will return its default value.
   mutating func clearHeader() {self._header = nil}
 
-  var plainList: Com_Spotify_Extendedmetadata_Proto_PlainListAssoc {
-    get {return _plainList ?? Com_Spotify_Extendedmetadata_Proto_PlainListAssoc()}
+  var plainList: SPMetaPlainListAssoc {
+    get {return _plainList ?? SPMetaPlainListAssoc()}
     set {_plainList = newValue}
   }
   /// Returns true if `plainList` has been explicitly set.
@@ -771,33 +771,33 @@ struct Com_Spotify_Extendedmetadata_Proto_Assoc {
 
   init() {}
 
-  fileprivate var _header: Com_Spotify_Extendedmetadata_Proto_AssocHeader? = nil
-  fileprivate var _plainList: Com_Spotify_Extendedmetadata_Proto_PlainListAssoc? = nil
+  fileprivate var _header: SPMetaAssocHeader? = nil
+  fileprivate var _plainList: SPMetaPlainListAssoc? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionType: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionKind: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_EntityRequest: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionQuery: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionData: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_PlainListAssoc: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_AssocHeader: @unchecked Sendable {}
-extension Com_Spotify_Extendedmetadata_Proto_Assoc: @unchecked Sendable {}
+extension SPMetaExtensionType: @unchecked Sendable {}
+extension SPMetaExtensionKind: @unchecked Sendable {}
+extension SPMetaBatchedEntityRequest: @unchecked Sendable {}
+extension SPMetaBatchedEntityRequestHeader: @unchecked Sendable {}
+extension SPMetaEntityRequest: @unchecked Sendable {}
+extension SPMetaExtensionQuery: @unchecked Sendable {}
+extension SPMetaBatchedExtensionResponse: @unchecked Sendable {}
+extension SPMetaBatchedExtensionResponseHeader: @unchecked Sendable {}
+extension SPMetaEntityExtensionDataArray: @unchecked Sendable {}
+extension SPMetaEntityExtensionDataArrayHeader: @unchecked Sendable {}
+extension SPMetaEntityExtensionData: @unchecked Sendable {}
+extension SPMetaEntityExtensionDataHeader: @unchecked Sendable {}
+extension SPMetaPlainListAssoc: @unchecked Sendable {}
+extension SPMetaAssocHeader: @unchecked Sendable {}
+extension SPMetaAssoc: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.extendedmetadata.proto"
 
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionType: SwiftProtobuf._ProtoNameProviding {
+extension SPMetaExtensionType: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN"),
     1: .same(proto: "GENERIC"),
@@ -805,7 +805,7 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionType: SwiftProtobuf._Proto
   ]
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionKind: SwiftProtobuf._ProtoNameProviding {
+extension SPMetaExtensionKind: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN_EXTENSION"),
     1: .same(proto: "CANVAZ"),
@@ -915,7 +915,7 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionKind: SwiftProtobuf._Proto
   ]
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaBatchedEntityRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BatchedEntityRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
@@ -949,7 +949,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest, rhs: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest) -> Bool {
+  static func ==(lhs: SPMetaBatchedEntityRequest, rhs: SPMetaBatchedEntityRequest) -> Bool {
     if lhs._header != rhs._header {return false}
     if lhs.request != rhs.request {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -957,7 +957,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequest: SwiftProtobuf
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaBatchedEntityRequestHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BatchedEntityRequestHeader"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "country"),
@@ -992,7 +992,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader, rhs: Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader) -> Bool {
+  static func ==(lhs: SPMetaBatchedEntityRequestHeader, rhs: SPMetaBatchedEntityRequestHeader) -> Bool {
     if lhs.country != rhs.country {return false}
     if lhs.catalogue != rhs.catalogue {return false}
     if lhs.taskID != rhs.taskID {return false}
@@ -1001,7 +1001,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedEntityRequestHeader: SwiftPr
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_EntityRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaEntityRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EntityRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "uri"),
@@ -1031,7 +1031,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityRequest: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_EntityRequest, rhs: Com_Spotify_Extendedmetadata_Proto_EntityRequest) -> Bool {
+  static func ==(lhs: SPMetaEntityRequest, rhs: SPMetaEntityRequest) -> Bool {
     if lhs.uri != rhs.uri {return false}
     if lhs.query != rhs.query {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1039,7 +1039,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityRequest: SwiftProtobuf.Messag
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_ExtensionQuery: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaExtensionQuery: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ExtensionQuery"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "kind"),
@@ -1073,7 +1073,7 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionQuery: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_ExtensionQuery, rhs: Com_Spotify_Extendedmetadata_Proto_ExtensionQuery) -> Bool {
+  static func ==(lhs: SPMetaExtensionQuery, rhs: SPMetaExtensionQuery) -> Bool {
     if lhs.kind != rhs.kind {return false}
     if lhs._etag != rhs._etag {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1081,7 +1081,7 @@ extension Com_Spotify_Extendedmetadata_Proto_ExtensionQuery: SwiftProtobuf.Messa
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaBatchedExtensionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BatchedExtensionResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
@@ -1115,7 +1115,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse, rhs: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse) -> Bool {
+  static func ==(lhs: SPMetaBatchedExtensionResponse, rhs: SPMetaBatchedExtensionResponse) -> Bool {
     if lhs._header != rhs._header {return false}
     if lhs.extendedMetadata != rhs.extendedMetadata {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1123,7 +1123,7 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponse: SwiftProt
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaBatchedExtensionResponseHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BatchedExtensionResponseHeader"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -1136,13 +1136,13 @@ extension Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader, rhs: Com_Spotify_Extendedmetadata_Proto_BatchedExtensionResponseHeader) -> Bool {
+  static func ==(lhs: SPMetaBatchedExtensionResponseHeader, rhs: SPMetaBatchedExtensionResponseHeader) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaEntityExtensionDataArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EntityExtensionDataArray"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
@@ -1181,7 +1181,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray, rhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray) -> Bool {
+  static func ==(lhs: SPMetaEntityExtensionDataArray, rhs: SPMetaEntityExtensionDataArray) -> Bool {
     if lhs._header != rhs._header {return false}
     if lhs.kind != rhs.kind {return false}
     if lhs.extensionData != rhs.extensionData {return false}
@@ -1190,7 +1190,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArray: SwiftProt
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaEntityExtensionDataArrayHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EntityExtensionDataArrayHeader"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "provider_error_status"),
@@ -1230,7 +1230,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader, rhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader) -> Bool {
+  static func ==(lhs: SPMetaEntityExtensionDataArrayHeader, rhs: SPMetaEntityExtensionDataArrayHeader) -> Bool {
     if lhs.providerErrorStatus != rhs.providerErrorStatus {return false}
     if lhs.cacheTtlInSeconds != rhs.cacheTtlInSeconds {return false}
     if lhs.offlineTtlInSeconds != rhs.offlineTtlInSeconds {return false}
@@ -1240,7 +1240,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataArrayHeader: Swi
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaEntityExtensionData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EntityExtensionData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
@@ -1279,7 +1279,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionData: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionData, rhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionData) -> Bool {
+  static func ==(lhs: SPMetaEntityExtensionData, rhs: SPMetaEntityExtensionData) -> Bool {
     if lhs._header != rhs._header {return false}
     if lhs.entityUri != rhs.entityUri {return false}
     if lhs._extensionData != rhs._extensionData {return false}
@@ -1288,7 +1288,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionData: SwiftProtobuf.
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaEntityExtensionDataHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EntityExtensionDataHeader"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "status_code"),
@@ -1333,7 +1333,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader, rhs: Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader) -> Bool {
+  static func ==(lhs: SPMetaEntityExtensionDataHeader, rhs: SPMetaEntityExtensionDataHeader) -> Bool {
     if lhs.statusCode != rhs.statusCode {return false}
     if lhs.etag != rhs.etag {return false}
     if lhs.locale != rhs.locale {return false}
@@ -1344,7 +1344,7 @@ extension Com_Spotify_Extendedmetadata_Proto_EntityExtensionDataHeader: SwiftPro
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_PlainListAssoc: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaPlainListAssoc: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PlainListAssoc"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "entity_uri"),
@@ -1369,14 +1369,14 @@ extension Com_Spotify_Extendedmetadata_Proto_PlainListAssoc: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_PlainListAssoc, rhs: Com_Spotify_Extendedmetadata_Proto_PlainListAssoc) -> Bool {
+  static func ==(lhs: SPMetaPlainListAssoc, rhs: SPMetaPlainListAssoc) -> Bool {
     if lhs.entityUri != rhs.entityUri {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_AssocHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaAssocHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AssocHeader"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -1389,13 +1389,13 @@ extension Com_Spotify_Extendedmetadata_Proto_AssocHeader: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_AssocHeader, rhs: Com_Spotify_Extendedmetadata_Proto_AssocHeader) -> Bool {
+  static func ==(lhs: SPMetaAssocHeader, rhs: SPMetaAssocHeader) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Extendedmetadata_Proto_Assoc: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPMetaAssoc: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Assoc"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
@@ -1429,7 +1429,7 @@ extension Com_Spotify_Extendedmetadata_Proto_Assoc: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Extendedmetadata_Proto_Assoc, rhs: Com_Spotify_Extendedmetadata_Proto_Assoc) -> Bool {
+  static func ==(lhs: SPMetaAssoc, rhs: SPMetaAssoc) -> Bool {
     if lhs._header != rhs._header {return false}
     if lhs._plainList != rhs._plainList {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -19,7 +19,7 @@ class UnitSPSHA1: XCTestCase {
             return
         }
         let bytes = [UInt8].init(data)
-        let digestHexStr = CryptoUtil.sha1String(buffer: bytes)
+        let digestHexStr = SPCryptoUtil.sha1String(buffer: bytes)
         XCTAssert(digestHexStr == "3b9548ccf57fe8e8451bbb793040c61719f22f5a", "Reference digest isn't equal calculated")
     }
 }

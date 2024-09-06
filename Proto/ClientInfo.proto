@@ -1,0 +1,15 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+import "Connectivity.proto";
+
+message ClientInfo {
+    string appVerCode = 1;
+    string clId = 2;
+    Connectivity connectivity = 3;
+}
+
+message ShortClientInfo {
+    string clId = 1;
+    string deviceId = 2;
+}

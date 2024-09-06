@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent {
+struct SPDacToolbarItemFeedComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -29,8 +29,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent {
 
   var uri: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -42,10 +42,10 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryComponent {
+struct SPDacToolbarItemListeningHistoryComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -54,8 +54,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryCompon
 
   var uri: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -67,10 +67,10 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryCompon
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent {
+struct SPDacToolbarItemProfileComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -87,8 +87,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent {
 
   var displayName: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -100,10 +100,10 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent {
+struct SPDacToolbarItemSettingsComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -112,8 +112,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent {
 
   var uri: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -125,21 +125,21 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent: @unchecked Sendable {}
+extension SPDacToolbarItemFeedComponent: @unchecked Sendable {}
+extension SPDacToolbarItemListeningHistoryComponent: @unchecked Sendable {}
+extension SPDacToolbarItemProfileComponent: @unchecked Sendable {}
+extension SPDacToolbarItemSettingsComponent: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.component.v1.proto"
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarItemFeedComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarItemFeedComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -178,7 +178,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent: Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent) -> Bool {
+  static func ==(lhs: SPDacToolbarItemFeedComponent, rhs: SPDacToolbarItemFeedComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
@@ -187,7 +187,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemFeedComponent: Swif
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarItemListeningHistoryComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarItemListeningHistoryComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -226,7 +226,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryCom
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryComponent) -> Bool {
+  static func ==(lhs: SPDacToolbarItemListeningHistoryComponent, rhs: SPDacToolbarItemListeningHistoryComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
@@ -235,7 +235,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemListeningHistoryCom
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarItemProfileComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarItemProfileComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "accessibilityTitle"),
@@ -294,7 +294,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent) -> Bool {
+  static func ==(lhs: SPDacToolbarItemProfileComponent, rhs: SPDacToolbarItemProfileComponent) -> Bool {
     if lhs.accessibilityTitle != rhs.accessibilityTitle {return false}
     if lhs.username != rhs.username {return false}
     if lhs.firstInitial != rhs.firstInitial {return false}
@@ -307,7 +307,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemProfileComponent: S
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarItemSettingsComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarItemSettingsComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -346,7 +346,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarItemSettingsComponent) -> Bool {
+  static func ==(lhs: SPDacToolbarItemSettingsComponent, rhs: SPDacToolbarItemSettingsComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.uri != rhs.uri {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}

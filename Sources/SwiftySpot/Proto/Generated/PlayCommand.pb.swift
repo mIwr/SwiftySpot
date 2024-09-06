@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
+struct SPDacPlayCommand {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -37,14 +37,14 @@ struct Com_Spotify_Dac_Player_V1_Proto_PlayCommand {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Dac_Player_V1_Proto_PlayCommand: @unchecked Sendable {}
+extension SPDacPlayCommand: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.dac.player.v1.proto"
 
-extension Com_Spotify_Dac_Player_V1_Proto_PlayCommand: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacPlayCommand: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PlayCommand"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "context"),
@@ -74,7 +74,7 @@ extension Com_Spotify_Dac_Player_V1_Proto_PlayCommand: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Dac_Player_V1_Proto_PlayCommand, rhs: Com_Spotify_Dac_Player_V1_Proto_PlayCommand) -> Bool {
+  static func ==(lhs: SPDacPlayCommand, rhs: SPDacPlayCommand) -> Bool {
     if lhs.context != rhs.context {return false}
     if lhs.options != rhs.options {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

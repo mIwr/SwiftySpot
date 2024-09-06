@@ -64,6 +64,9 @@ struct RhythmRiderApp: App {
         let spClient: SPClient = SPClient(device: device, clToken: clToken, clTokenExpires: clTokenExpires, clTokenRefreshAfter: clTokenRefreshAfter, clTokenCreateTsUTC: clTokenCreateTsUTC, authToken: authToken, authExpiresInS: authExpiresInS, username: username, storedCred: [UInt8].init(storedCred), authTokenCreateTsUTC: authTokenCreateTsUTC)
         _api = StateObject(wrappedValue: ApiController(spClient))
         _hasAuth = spClient.authorized
+        _ = spClient.getWdvCert { result in
+            print("Spotify app cert load res", result)
+        }
         let playController = PlaybackController(apiClient: spClient, appProps: props)
         _playController = StateObject(wrappedValue: playController)
     }

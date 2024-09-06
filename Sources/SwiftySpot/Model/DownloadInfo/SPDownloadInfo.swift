@@ -18,7 +18,7 @@ public class SPDownloadInfo {
   ///Audio file ID hex string
   public var hexFileId: String {
     get {
-      let hex = StringUtil.bytesToHexString(fileId)
+        let hex = SPBase16.encode(fileId)
       return hex
     }
   }
@@ -51,7 +51,7 @@ public class SPDownloadInfo {
     get {
       let nowTs = Int64(Date().timeIntervalSince1970)
       let expiryTs = Int64(expiresInS) + createTsUTC
-      return result == .CDN && nowTs < expiryTs
+      return result == .cdn && nowTs < expiryTs
     }
   }
 
@@ -63,9 +63,8 @@ public class SPDownloadInfo {
     self.expiresInS = expiresInS
   }
 
-  static func from(protobuf: Spotify_Playplay_Proto_DownloadInfoResponse, createTs: Int64? = nil) -> SPDownloadInfo {
+  static func from(protobuf: SPDownloadInfoResponse, createTs: Int64? = nil) -> SPDownloadInfo {
     let ts = createTs ?? Int64(Date().timeIntervalSince1970)
-    let result = SPDownloadInfoStatus.from(protobuf: protobuf.result)
-    return SPDownloadInfo(result: result, directLinks: protobuf.directLinks, fileId: [UInt8].init(protobuf.fileID), createTsUTC: ts, expiresInS: protobuf.expiresInS)
+      return SPDownloadInfo(result: protobuf.result, directLinks: protobuf.directLinks, fileId: [UInt8].init(protobuf.fileID), createTsUTC: ts, expiresInS: protobuf.expiresInS)
   }
 }

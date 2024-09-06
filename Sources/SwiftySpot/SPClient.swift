@@ -16,6 +16,8 @@ public class SPClient {
     
     ///Spotify version
     public var appVersionCode: String
+    ///Spotify web version
+    public var webAppVersionCode: String
     ///Spotify client ID
     public var clientId: String
     ///Spotify client validation key
@@ -36,6 +38,8 @@ public class SPClient {
     var dealerHosts: [String]
     ///Spotify API access points
     var spclientHosts: [String]
+    ///Spotify DRM application certificate raw bytes data
+    var wdvCert: Data?
     ///Spotify account info
     var profile: SPProfile?
     ///User collections repository (without like/dislike)
@@ -61,6 +65,7 @@ public class SPClient {
     
     ///Uninitialized unauthorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
+    ///- Parameter webAppVersionCode: Spotify web client version code
     ///- Parameter clientId: Spotify client ID
     ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
@@ -71,8 +76,9 @@ public class SPClient {
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
+        self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
         self.device = device
@@ -83,6 +89,7 @@ public class SPClient {
         apHosts = []
         dealerHosts = []
         spclientHosts = []
+        wdvCert = nil
         collectionsStorage = [:]
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
@@ -94,11 +101,12 @@ public class SPClient {
         lyricsStorage = SPMetaInfoController<SPLyrics>(initItems: lyricsInfo, keyValidator: { key in
             return true
         }, updateItemNotificationBuilder: SPMetaInfoController<SPLyrics>.buildLyricsUpdateNotification)
-        downloadInfoStorage = SPDownloadInfoController(di: [:], intents: [:])
+        downloadInfoStorage = SPDownloadInfoController(di: [:], seektables: [:], intents: [:])
     }
     
     ///Initialized unauthorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
+    ///- Parameter webAppVersionCode: Spotify web client version code
     ///- Parameter clientId: Spotify client ID
     ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
@@ -112,8 +120,9 @@ public class SPClient {
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
+        self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
         self.device = device
@@ -127,6 +136,7 @@ public class SPClient {
         apHosts = []
         dealerHosts = []
         spclientHosts = []
+        wdvCert = nil
         collectionsStorage = [:]
         likedDislikedArtistsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedArtistsCollectionName, notificationChannel: .SPArtistLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedArtistsCollectionName, notificationChannel: .SPArtistDislikeUpdate))
         likedDislikedAlbumsStorage = SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
@@ -138,11 +148,12 @@ public class SPClient {
         lyricsStorage = SPMetaInfoController<SPLyrics>(initItems: lyricsInfo, keyValidator: { key in
             return true
         }, updateItemNotificationBuilder: SPMetaInfoController<SPLyrics>.buildLyricsUpdateNotification)
-        downloadInfoStorage = SPDownloadInfoController(di: [:], intents: [:])
+        downloadInfoStorage = SPDownloadInfoController(di: [:], seektables: [:], intents: [:])
     }
     
     ///Authorized state ctor
     ///- Parameter appVersionCode: Spotify client version code
+    ///- Parameter webAppVersionCode: Spotify web client version code
     ///- Parameter clientId: Spotify client ID
     ///- Parameter clValidationKey: Spotify client validation key
     ///- Parameter playIntentToken: Spotify PlayPlayReq token
@@ -166,8 +177,9 @@ public class SPClient {
     ///- Parameter downloadInfos: Download infos dictionary. Key is hexFileId
     ///- Parameter playIntents: Play intents dictionary. Key is hexFileId
     ///- Returns: SPClient instance on authorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], playIntents: [String: SPPlayIntentData] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], seektables: [String: SPWDVSeektable] = [:], playIntents: [String: SPPlayIntentResponse] = [:]) {
         self.appVersionCode = appVersionCode
+        self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId
         self.clientValidationKey = clValidationKey
         self.device = device
@@ -185,6 +197,7 @@ public class SPClient {
         apHosts = []
         dealerHosts = []
         spclientHosts = []
+        wdvCert = nil
         artistsMetaStorage = SPMetaInfoController<SPMetadataArtist>(initItems: artistsMeta, keyValidator: SPNavigateUriUtil.validateArtistUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataArtist>.buildArtistMetaUpdateNotification)
         albumsMetaStorage = SPMetaInfoController<SPMetadataAlbum>(initItems: albumsMeta, keyValidator: SPNavigateUriUtil.validateAlbumUri, updateItemNotificationBuilder: SPMetaInfoController<SPMetadataAlbum>.buildAlbumMetaUpdateNotification)
         playlistsMetaStorage = SPMetaInfoController<SPPlaylist>(initItems: playlistsMeta, keyValidator: SPNavigateUriUtil.validatePlaylistUri, updateItemNotificationBuilder: SPMetaInfoController<SPPlaylist>.buildPlaylistMetaUpdateNotification)
@@ -196,6 +209,6 @@ public class SPClient {
         self.likedDislikedAlbumsStorage = likedDislikedAlbums ?? SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPAlbumDislikeUpdate))
         self.likedDislikedTracksStorage = likedDislikedArtists ?? SPLikeController(liked: SPCollectionController(name: SPCollectionController.likedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackLikeUpdate), disliked: SPCollectionController(name: SPCollectionController.dislikedTracksAndAlbumsCollectionName, notificationChannel: .SPTrackDislikeUpdate))
         collectionsStorage = userCollections
-        self.downloadInfoStorage = SPDownloadInfoController(di: downloadInfos, intents: playIntents)
+        self.downloadInfoStorage = SPDownloadInfoController(di: downloadInfos, seektables: seektables, intents: playIntents)
     }
 }

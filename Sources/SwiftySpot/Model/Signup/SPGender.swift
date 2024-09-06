@@ -13,7 +13,7 @@ public enum SPGender: UInt8 {
 }
 
 extension SPGender {
-    var protoEnum: Com_Spotify_Signup_V2_Proto_UserGender {
+    var protoEnum: SPUserGender {
         switch(self) {
         case .unknown: return .unknownUserGender
         case .male: return .male
@@ -22,7 +22,7 @@ extension SPGender {
         }
     }
     
-    static func from(protobuf: Com_Spotify_Signup_V2_Proto_UserGender) -> SPGender {
+    static func from(protobuf: SPUserGender) -> SPGender {
         switch (protobuf) {
         case .unknownUserGender: return .unknown
         case .male: return .male

@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option swift_prefix="SPUbi";
 
 package com.spotify.ubi.proto.elementinfo.v1;
 
@@ -9,8 +9,8 @@ message UbiElementInfo {
     Path path = 1;
     bool impression = 2;
     string spec_id = 3;
-    string spec_ver = 4;
+    string spec_version = 4;
     string app_id = 5;
-    string generator_ver = 6;
+    string generator_version = 6;
     int32 impression_mode = 7;
 }

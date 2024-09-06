@@ -1,0 +1,46 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+package spotify.playplay.proto;
+
+//PlayPlayLicenseResponse - Audio play intent data
+message PlayIntentResponse {
+    //Audio file obfuscated decryption key
+    bytes obfuscated_key = 1;
+    //TODO
+    bytes b4_seq = 2;
+}
+
+//Resolve-storage response - Audio file download info
+message DownloadInfoResponse {
+    //Download source
+    DownloadInfoStatus result = 1;
+    //Download links
+    repeated string direct_links = 2;
+    //Audio file ID bytes
+    bytes file_id = 4;
+    //Audio file ID hex string
+    int32 expires_in_s = 5;
+}
+
+enum Interactivity {
+    UNKNOWN_INTERACTIVITY = 0;
+    INTERACTIVE = 1;
+    DOWNLOAD = 2;
+}
+
+enum ContentType {
+    UNKNOWN_CONTENT_TYPE = 0;
+    AUDIO_TRACK = 1;
+    AUDIO_EPISODE = 2;
+    AUDIO_ADD = 3;
+}
+
+//Audio file source
+enum DownloadInfoStatus {
+    //Remote
+    CDN = 0;
+    //Cached
+    STORAGE = 1;
+    RESTRICTED = 3;
+}

@@ -1,7 +1,9 @@
-
 syntax = "proto3";
+option swift_prefix="SP";
 
 package com.spotify.lyrics.endpointretrofit.proto;
+
+import "public/LyricsModel.proto";
 
 message ColorLyricsResponse {
     LyricsResponse lyrics = 1;
@@ -10,15 +12,9 @@ message ColorLyricsResponse {
     optional ColorData vocal_removal_color_data = 4;
 }
 
-message ColorData {
-    int32 background = 1;
-    int32 text = 2;
-    int32 highlight_text = 3;
-}
-
 message LyricsResponse {
     SyncType sync_type = 1;
-    repeated LyricsLine lines = 2;
+    repeated Line lines = 2;
     string provider = 3;
     string provider_lyrics_id = 4;
     string provider_display_name = 5;
@@ -27,27 +23,4 @@ message LyricsResponse {
     string lang = 10;
     optional bool rtl_lang = 11;
     optional bool show_upsell = 13;
-}
-
-enum SyncType {
-    UNSYNCED = 0;
-    LINE_SYNCED = 1;
-    SYLLABLE_SYNCED = 2;
-}
-
-message Alternative {
-    string language = 1;
-    repeated LyricsLine lines = 2;
-    optional bool rtl_lang = 3;
-}
-
-message LyricsLine {
-    int64 start_time_ms = 1;
-    string text = 2;
-    repeated Syllable syllables = 3;
-}
-
-message Syllable {
-    int64 start_time_ms = 1;
-    int64 num_chars = 2;
 }

@@ -1,0 +1,16 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+package spotify.playplay.proto;
+
+import "public/DownloadInfoModel.proto";
+
+//PlayPlayLicenseRequest
+message PlayIntentRequest {
+    int32 version = 1;
+    bytes token = 2;
+    optional bytes cache_id = 3;
+    Interactivity interactivity = 4;
+    ContentType content_type = 5;
+    int64 timestamp = 6;
+}

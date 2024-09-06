@@ -1,0 +1,44 @@
+syntax = "proto3";
+option swift_prefix="SPSearch";
+
+package com.spotify.searchview.proto;
+
+import "public/SearchModel.proto";
+
+message AutocompleteViewResponse {
+    repeated ResultEntity hits = 1;
+    repeated SearchAutocompleteQuery autocomplete_queries = 1000;
+}
+
+message MainViewResponse {
+    repeated ResultEntity hits = 1;
+    optional Recommendations recommendations = 2;
+    bytes entity_types = 3;
+    optional string next_page_token = 4;
+    optional BannerContent banner = 5;
+    repeated SearchRelated related_searches = 6;
+    repeated SearchAutocompleteQuery autocomplete_queries = 7;
+}
+
+message Recommendations {
+    int32 type = 1;
+    repeated ResultEntity entities = 2;
+}
+
+message ResultEntity {
+    string uri = 1;
+    string name = 2;
+    string image_uri = 3;
+    oneof info {
+        SearchArtist artist = 4;
+        SearchTrack track = 5;
+        SearchAlbum album = 6;
+        SearchPlaylist playlist = 7;
+        SearchGenre genre = 8;
+        SearchAudioShow show = 9;
+        SearchProfile profile = 11;
+        SearchAudiobook audiobook = 13;
+        SearchAutocompleteQuery autocomplete_query = 2046;
+    }
+    optional string serp_metadata = 2047;
+}

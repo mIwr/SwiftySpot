@@ -44,7 +44,7 @@ class SPSignupSession {
         error = nil
     }
     
-    static func from(protobuf: Com_Spotify_Signup_V2_Proto_CreateAccountResponse) -> SPSignupSession {
+    static func from(protobuf: SPCreateAccountResponse) -> SPSignupSession {
         switch(protobuf.resultCase) {
         case .success(let data): return SPSignupSession(username: data.username, loginToken: data.loginToken)
         case .error(let err): return SPSignupSession(error: err.details)

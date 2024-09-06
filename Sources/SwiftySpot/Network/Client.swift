@@ -17,13 +17,13 @@ func buildRequest(for method: ApiTarget) -> URLRequest? {
     #if DEBUG
     print("Request -> " + method.method + " '" + method.baseURL + method.path + "'")
     #endif
-    if let protobuf = method.protobuf {
-        urlReq.httpBody = protobuf
-        urlReq.allHTTPHeaderFields?["Content-Length"] = String(protobuf.count)
+    if let safeReqBody = method.reqBody {
+        urlReq.httpBody = safeReqBody
+        urlReq.allHTTPHeaderFields?["Content-Length"] = String(safeReqBody.count)
         #if DEBUG
-        if !protobuf.isEmpty{
-            let bytes = [UInt8].init(protobuf)
-            let hexStr = StringUtil.bytesToHexString(bytes)
+        if !safeReqBody.isEmpty{
+            let bytes = [UInt8].init(safeReqBody)
+            let hexStr = SPBase16.encode(bytes)
             print("Request protobuf body hex string (" + String(bytes.count) + " bytes): " + hexStr)
         }
         #endif
@@ -47,7 +47,7 @@ func requestSPResponse(_ request: URLRequest, completion: @escaping (_ result: R
         }
 #if DEBUG
         let bytes = [UInt8].init(responseData)
-        let hexStr = StringUtil.bytesToHexString(bytes)
+        let hexStr = SPBase16.encode(bytes)
         print("Raw hex string (" + String(bytes.count) + " bytes) response [" + String(statusCode) + "]: " + hexStr)
 #endif
         let spResponse = SPResponse(statusCode: statusCode, result: responseData, error: nil)
@@ -133,7 +133,7 @@ func requestJson(_ request: URLRequest, completion: @escaping (_ result: Result<
         }
 #if DEBUG
         let bytes = [UInt8].init(responseData)
-        let hexStr = StringUtil.bytesToHexString(bytes)
+        let hexStr = SPBase16.encode(bytes)
         print("Raw hex string (" + String(bytes.count) + " bytes) response [" + String(statusCode) + "]: " + hexStr)
 #endif
         guard (response as? HTTPURLResponse).map({ (200..<300).contains($0.statusCode) }) != false else

@@ -40,6 +40,8 @@
 		8B3C1AE62AEAF93F0048FF7E /* PlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */; };
 		8B3D23382B07EC5E00544A0C /* PlaybackProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D23372B07EC5E00544A0C /* PlaybackProgressView.swift */; };
 		8B3DA8862AF3974100895807 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DA8852AF3974100895807 /* SearchController.swift */; };
+		8B40B5422C7F00F400954BB6 /* SPDateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40B5402C7F00F400954BB6 /* SPDateUtil.swift */; };
+		8B40B5432C7F00F400954BB6 /* SPBinaryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40B5412C7F00F400954BB6 /* SPBinaryUtil.swift */; };
 		8B4247B82AD4307000749AE3 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B72AD4307000749AE3 /* TrackView.swift */; };
 		8B4247BA2AD4381100749AE3 /* PlaylistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */; };
 		8B4247BC2AD43A3A00749AE3 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4247BB2AD43A3A00749AE3 /* AuthScreen.swift */; };
@@ -56,7 +58,6 @@
 		8B66AE422AE90A2B002B4088 /* PlaybackTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE412AE90A2B002B4088 /* PlaybackTrack.swift */; };
 		8B8B5CE12ADDA4830069A435 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE02ADDA4830069A435 /* HomeScreen.swift */; };
 		8B8B5CE32ADDA49E0069A435 /* PlaylistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE22ADDA49E0069A435 /* PlaylistCardView.swift */; };
-		8B8B5CE62ADDA7420069A435 /* DateDistanceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */; };
 		8B8B5CE82ADDAB230069A435 /* PlaylistScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CE72ADDAB230069A435 /* PlaylistScreen.swift */; };
 		8B8B5CED2ADDBB800069A435 /* LandingPlaylistArrVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */; };
 		8B8B5CEF2ADDC0680069A435 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B5CEE2ADDC0680069A435 /* TabItemView.swift */; };
@@ -120,6 +121,8 @@
 		8B3C1AE52AEAF93F0048FF7E /* PlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScreen.swift; sourceTree = "<group>"; };
 		8B3D23372B07EC5E00544A0C /* PlaybackProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackProgressView.swift; sourceTree = "<group>"; };
 		8B3DA8852AF3974100895807 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		8B40B5402C7F00F400954BB6 /* SPDateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPDateUtil.swift; path = ../../../Sources/SwiftySpot/Util/SPDateUtil.swift; sourceTree = "<group>"; };
+		8B40B5412C7F00F400954BB6 /* SPBinaryUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPBinaryUtil.swift; path = ../../../Sources/SwiftySpot/Util/SPBinaryUtil.swift; sourceTree = "<group>"; };
 		8B4247B72AD4307000749AE3 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		8B4247B92AD4381100749AE3 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
 		8B4247BB2AD43A3A00749AE3 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
@@ -137,7 +140,6 @@
 		8B66AE412AE90A2B002B4088 /* PlaybackTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackTrack.swift; sourceTree = "<group>"; };
 		8B8B5CE02ADDA4830069A435 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		8B8B5CE22ADDA49E0069A435 /* PlaylistCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCardView.swift; sourceTree = "<group>"; };
-		8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDistanceUtil.swift; sourceTree = "<group>"; };
 		8B8B5CE72ADDAB230069A435 /* PlaylistScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistScreen.swift; sourceTree = "<group>"; };
 		8B8B5CEC2ADDBB800069A435 /* LandingPlaylistArrVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPlaylistArrVModel.swift; sourceTree = "<group>"; };
 		8B8B5CEE2ADDC0680069A435 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -378,7 +380,8 @@
 		8B8B5CE42ADDA7180069A435 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				8B8B5CE52ADDA7420069A435 /* DateDistanceUtil.swift */,
+				8B40B5412C7F00F400954BB6 /* SPBinaryUtil.swift */,
+				8B40B5402C7F00F400954BB6 /* SPDateUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				8B4247BC2AD43A3A00749AE3 /* AuthScreen.swift in Sources */,
 				8B3DA8862AF3974100895807 /* SearchController.swift in Sources */,
 				8B103E1A2AF14DE000842D79 /* ProfileInfoComponentView.swift in Sources */,
+				8B40B5432C7F00F400954BB6 /* SPBinaryUtil.swift in Sources */,
 				8B1F502C2AEF81B0008D9A09 /* FavScreen.swift in Sources */,
 				8B9614032B30923F00AE2E92 /* ArtistScreen.swift in Sources */,
 				8B9127932AEA3AFD00EBCCB3 /* ProcessInfo.swift in Sources */,
@@ -628,6 +632,7 @@
 				8B66AE422AE90A2B002B4088 /* PlaybackTrack.swift in Sources */,
 				8B3D23382B07EC5E00544A0C /* PlaybackProgressView.swift in Sources */,
 				8B8B5CEF2ADDC0680069A435 /* TabItemView.swift in Sources */,
+				8B40B5422C7F00F400954BB6 /* SPDateUtil.swift in Sources */,
 				8B29B4FD2AD1ED4200A7AD33 /* SecureStorage.swift in Sources */,
 				8B248CF92AEB914400405911 /* PlaybackSeqScreen.swift in Sources */,
 				8B3542E62AEBE169000B5B9F /* GuardActivityVC.swift in Sources */,
@@ -659,7 +664,6 @@
 				8B66AE402AE8FD25002B4088 /* PlaybackController.swift in Sources */,
 				8B29B4FF2AD1ED5700A7AD33 /* Constants.swift in Sources */,
 				8B0A12102B066EA700B7FA0B /* TrackLyricsVModel.swift in Sources */,
-				8B8B5CE62ADDA7420069A435 /* DateDistanceUtil.swift in Sources */,
 				8B103E1E2AF1621C00842D79 /* SearchScreen.swift in Sources */,
 				8B8B5CE82ADDAB230069A435 /* PlaylistScreen.swift in Sources */,
 				8B47DFF02AD5DB5F00410D12 /* SecureTextFieldWithReveal.swift in Sources */,
@@ -803,7 +807,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -824,7 +828,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -842,7 +846,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -863,7 +867,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

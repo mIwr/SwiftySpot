@@ -58,7 +58,7 @@ SwiftySpot is available with SPM
 
 - Package sources
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.5.3"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.6.0"))
 ```
 
 - Precompiled XCFramework (macOS, iOS, iOS Simulator, watchOS, tvOS): make your own Swift package and import it to the target project
@@ -69,13 +69,13 @@ import PackageDescription
 let package = Package(
     name: "MySwiftySpot",
     platforms: [
-        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11), .watchOS(.v4)
+        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11), .watchOS(.v5), .visionOS(.v1)
     ],
     products: [
         .library(name: "SwiftySpot", targets: ["SwiftySpot"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.25.0")
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.27.1")
     ],
     targets: [
         .binaryTarget(
@@ -119,6 +119,9 @@ platform :watchos, '4.0'
 ...
 pod 'SwiftySpot'
 ```
+
+**Notice: XCode 15+ doesn't allow to use iOS 11, tvOS 11 as minimum deployment target during build process with SwiftySpot from SPM. So the mimimum deployment target for these platforms in your project must be 12 in fact.**
+**If you want to bypass this limitation, you have to roll back to XCode 14 or use SwiftySpot with CocoaPods.** More info: [1](https://github.com/Alamofire/Alamofire/pull/3823), [2](https://github.com/realm/realm-swift/issues/8368#issuecomment-1737604011)
 
 ## Getting started
 
@@ -311,8 +314,6 @@ Track metadata also contains codecs download info, which can be used to retrieve
 
 ### Track download info
 
-**Although each spotify track has many codec variants for download (ogg, mp3, mp4, flac and others), only OGG files can be downloaded (Free - 96, 160 kbps, Premium - 320 kbps)**
-
 ```swift
 let fileIdHex = "..."//From track audio file metadata
 client.getDownloadInfo(hexFileId: fileIdHex) { result in
@@ -320,6 +321,8 @@ client.getDownloadInfo(hexFileId: fileIdHex) { result in
     //processing track direct download links...
 }
 ```
+
+**You can download DRM'ed track file with any codec (ogg, mp3, mp4, flac and others). But retrieving DRM license for each codec variant process is limited by your subscription plan (Free, Premium). For example, at free subscription plan you can potentially retrieve license for OGG 96 & 160 kbps, 320 kbps is available only for premium plan**
 
 ## App example
 

@@ -1,71 +1,117 @@
-
 syntax = "proto3";
+option swift_prefix="SPMeta";
 
 package spotify.metadata;
 
-message ExternalId {
-    string type = 1;
-    string id = 2;
+import "public/MetadataModel.proto";
+
+//Album meta info (Internal access)
+message Album {
+    bytes gid = 1;
+    string name = 2;
+    repeated Artist artists = 3;
+    AlbumType type = 4;
+    string label = 5;
+    .spotify.metadata.Date date = 6;
+    int32 popularity = 7;
+    repeated string genres = 8;
+    repeated .spotify.metadata.Image cover = 9;
+    repeated .spotify.metadata.ExternalId external_ids = 10;
+    repeated Disc discs = 11;
+    repeated string reviews = 12;
+    repeated .spotify.metadata.Copyright copyrights = 13;
+    repeated .spotify.metadata.Restriction restrictions = 14;
+    repeated Album related = 15;
+    repeated .spotify.metadata.SalePeriod sale_periods = 16;
+    repeated .spotify.metadata.ImageGroup cover_group = 17;
+    string original_title = 18;
+    string version_title = 19;
+    string type_str = 20;
+    repeated .spotify.metadata.Block visibility_blocks = 21;
+    optional int64 earliest_live_timestamp = 22;
+    repeated .spotify.metadata.Availability availability = 23;
+    repeated Track windowed_tracks = 24;
+    optional .spotify.metadata.Licensor licensor = 25;
+    optional int64 version = 26;
+    optional string feed_gid = 27;
+    optional string delivery_id = 28;
+    repeated .spotify.metadata.LocalizedString localized_names = 29;
+    optional string uri = 35;
 }
 
-message Image {
-    bytes file_id = 1;
-    int32 size = 2;
-    int32 width = 3;
-    int32 height = 4;
+//Disc meta info (Internal access)
+message Disc {
+    int32 number = 1;
+    string name = 2;
+    repeated Track tracks = 3;
 }
 
-message ImageGroup {
-    repeated Image images = 1;
+//Artist meta info (Internal access)
+message Artist {
+    bytes gid = 1;
+    string name = 2;
+    int32 popularity = 3;
+    repeated TopTracks top_tracks = 4;
+    repeated AlbumGroup album_group = 5;
+    repeated AlbumGroup single_group = 6;
+    repeated AlbumGroup compilation_group = 7;
+    repeated AlbumGroup appears_on_group = 8;
+    repeated string genres = 9;
+    repeated .spotify.metadata.ExternalId external_ids = 10;
+    repeated .spotify.metadata.Image portrait_variants = 11;
+    repeated Biography biography = 12;
+    repeated ActivityPeriod activity = 13;
+    repeated .spotify.metadata.Restriction restrictions = 14;
+    repeated Artist related = 15;
+    optional bool is_portrait_album_cover = 16;
+    repeated .spotify.metadata.ImageGroup portrait_group = 17;
+    repeated .spotify.metadata.SalePeriod sale_periods = 18;
+    repeated .spotify.metadata.LocalizedString localized_names = 19;
+    repeated .spotify.metadata.Availability availability = 20;
+    optional int64 index_version = 21;
 }
 
-message SalePeriod {
-    repeated Restriction restrictions = 1;
-    Date start = 2;
-    Date end = 3;
+//Short meta info about top tracks (Internal access)
+message TopTracks {
+    string country = 1;
+    repeated Track tracks = 2;
 }
 
-message Restriction {
-    repeated int32 catalogue = 1;
-    //repeated string countries_allowed = 2;
-    //repeated string countries_forbidden = 3;
-    int32 type = 4;
-    repeated string catalogue_str = 5;
+//Albums array (Internal access)
+message AlbumGroup {
+    repeated Album albums = 1;
 }
 
-message Date {
-    int32 year = 1;
-    int32 month = 2;
-    int32 day = 3;
-    int32 hour = 4;
-    int32 minute = 5;
-}
-
-message Availability {
-    repeated string catalogue_str = 1;
-    Date start = 2;
-}
-
-message Copyright {
-    CopyrightType type = 1;
-    string text = 2;
-}
-
-enum CopyrightType {
-    P = 0;
-    C = 1;
-}
-
-message Licensor {
-    bytes uuid = 1;
-}
-
-message Block {
-    string countries = 1;
-    int32 type = 2;
-}
-
-message LocalizedString {
-    string language = 1;
-    string value = 2;
+//Track meta info (Internal access)
+message Track {
+    bytes gid = 1;
+    string name = 2;
+    Album album = 3;
+    repeated Artist artists = 4;
+    int32 number = 5;
+    int32 disc_number = 6;
+    int32 duration_in_ms = 7;
+    int32 popularity = 8;
+    bool explicit = 9;
+    repeated .spotify.metadata.ExternalId external_ids = 10;
+    repeated .spotify.metadata.Restriction restrictions = 11;
+    repeated AudioFile files = 12;
+    repeated Track alternatives = 13;
+    repeated .spotify.metadata.SalePeriod sale_periods = 14;
+    repeated AudioFile previews = 15;
+    repeated string tags = 16;
+    int64 earliest_live_timestamp = 17;
+    bool lyrics = 18;
+    repeated .spotify.metadata.Availability availability = 19;
+    repeated string lyrics_country = 20;
+    .spotify.metadata.Licensor licensor = 21;
+    repeated string language_or_perfomance = 22;
+    repeated .spotify.metadata.LocalizedString localized_names = 23;
+    AudioFile original = 24;
+    repeated ContentRating content_rating = 25;
+    optional int64 index_version = 26;
+    string original_title = 27;
+    string version_title = 28;
+    repeated ArtistWithRole artist_with_role = 32;
+    optional string uri = 36;
 }

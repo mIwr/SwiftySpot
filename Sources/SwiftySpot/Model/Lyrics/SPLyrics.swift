@@ -10,6 +10,7 @@ import Foundation
 ///Represents lyrics info for defined object
 public class SPLyrics {
     
+    ///Linked with lyrics spotify object
     public let target: SPTypedObj
     
     enum CodingKeys: String, CodingKey {
@@ -35,7 +36,7 @@ public class SPLyrics {
     public let vocalRemoval: Bool
     ///TODO
     public let vocalRemovalColorData: SPLyricsColorData?
-    
+    ///Lyrics words and time synchronization type
     public let syncType: SPLyricsSyncType
     ///Lyrics lines
     public let content: [SPLyricsLine]
@@ -45,6 +46,7 @@ public class SPLyrics {
     public let providerID: String
     ///Lyrics provider display name
     public let providerDisplayName: String
+    ///TODO
     public let syncLyricsUri: String
     ///Lyrics alternative variants
     public let alternatives: [SPLyricsAlternative]
@@ -55,6 +57,7 @@ public class SPLyrics {
     ///TODO
     public let showUpsell: Bool
     
+    ///Combined lyrics lines onto string array
     public var formattedLyricsLines: [String] {
         if (content.isEmpty) {
             return []
@@ -72,6 +75,7 @@ public class SPLyrics {
         return lines
     }
     
+    ///Combined lyrics lines onto single string
     public var formattedFullLyricsText: String {
         var text = ""
         for line in formattedLyricsLines {
@@ -97,22 +101,8 @@ public class SPLyrics {
         self.showUpsell = showUpsell
     }
     
-    static func from(protobuf: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse, target: SPTypedObj) -> SPLyrics {
-        let colorData = SPLyricsColorData.from(protobuf: protobuf.colorData)
-        var lines: [SPLyricsLine] = []
-        for line in protobuf.lyrics.lines {
-            lines.append(SPLyricsLine.from(protobuf: line))
-        }
-        var alternatives: [SPLyricsAlternative] = []
-        for alternative in protobuf.lyrics.alternatives {
-            alternatives.append(SPLyricsAlternative.from(protobuf: alternative))
-        }
-        var vocalRemovalColorData: SPLyricsColorData? = nil
-        if (protobuf.hasVocalRemovalColorData) {
-            vocalRemovalColorData = SPLyricsColorData.from(protobuf: protobuf.vocalRemovalColorData)
-        }
-        let syncType = SPLyricsSyncType.from(protobuf: protobuf.lyrics.syncType)
-        return SPLyrics(target: target, colorData: colorData, vocalRemoval: protobuf.vocalRemoval, vocalRemovalColorData: vocalRemovalColorData, syncType: syncType, content: lines, provider: protobuf.lyrics.provider, providerID: protobuf.lyrics.providerLyricsID, providerDisplayName: protobuf.lyrics.providerDisplayName, syncLyricsUri: protobuf.lyrics.syncLyricsUri, alternatives: alternatives, lang: protobuf.lyrics.lang, rtlLang: protobuf.lyrics.rtlLang, showUpsell: protobuf.lyrics.showUpsell)
+    static func from(protobuf: SPColorLyricsResponse, target: SPTypedObj) -> SPLyrics {
+        return SPLyrics(target: target, colorData: protobuf.colorData, vocalRemoval: protobuf.vocalRemoval, vocalRemovalColorData: protobuf.vocalRemovalColorData, syncType: protobuf.lyrics.syncType, content: protobuf.lyrics.lines, provider: protobuf.lyrics.provider, providerID: protobuf.lyrics.providerLyricsID, providerDisplayName: protobuf.lyrics.providerDisplayName, syncLyricsUri: protobuf.lyrics.syncLyricsUri, alternatives: protobuf.lyrics.alternatives, lang: protobuf.lyrics.lang, rtlLang: protobuf.lyrics.rtlLang, showUpsell: protobuf.lyrics.showUpsell)
     }
     
     static func from(json: [String: Any], target: SPTypedObj) -> SPLyrics? {
@@ -133,7 +123,10 @@ public class SPLyrics {
                 continue
             }
         }
-        let colorData = SPLyricsColorData(bg: 0, text: 0, highlightText: 0)
+        var colorData = SPLyricsColorData()
+        colorData.background = 0
+        colorData.text = 0
+        colorData.highlightText = 0
         
         return SPLyrics(target: target, colorData: colorData, vocalRemoval: false, vocalRemovalColorData: nil, syncType: syncType, content: lines, provider: "MusixMatch", providerID: "", providerDisplayName: "MusixMatch", syncLyricsUri: "", alternatives: [], lang: "", rtlLang: false, showUpsell: false)
     }

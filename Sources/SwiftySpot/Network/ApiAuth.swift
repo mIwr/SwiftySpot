@@ -26,7 +26,7 @@ func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPSh
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try SPLoginV3Response(serializedData: data)
+            let parsed = try SPLoginV3Response(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -36,7 +36,7 @@ func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPSh
     return task
 }
 
-func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: Data, clientInfo: SPShortClientInfo, answerData: LoginChallengeAnswerData, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
+func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: Data, clientInfo: SPShortClientInfo, answerData: SPLoginChallengeAnswerData, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
         return nil
@@ -61,7 +61,7 @@ func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: D
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try SPLoginV3Response(serializedData: data)
+            let parsed = try SPLoginV3Response(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -98,7 +98,7 @@ func refreshAuthByApi(userAgent: String, clToken: String, clientInfo: SPShortCli
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try SPLoginV3Response(serializedData: data)
+            let parsed = try SPLoginV3Response(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

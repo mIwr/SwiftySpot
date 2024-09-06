@@ -18,7 +18,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let pageReq = try? Com_Spotify_Collection2_V2_Proto_PageRequest(serializedData: data)
+        let pageReq = try? SPCollectionPageRequest(serializedBytes: data)
         XCTAssertNotNil(pageReq, "Info request is nil")
         XCTAssertNotEqual(pageReq?.username, nil, "Incorrect info request proto model")
     }
@@ -29,7 +29,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Collection2_V2_Proto_PageResponse(serializedData: data)
+        let response = try? SPPageResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Collection info is nil")
         XCTAssertNotEqual(response?.items.count, 0, "Incorrect collection info proto parsing")
     }
@@ -41,7 +41,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let pageReq = try? Com_Spotify_Collection2_V2_Proto_PageRequest(serializedData: data)
+        let pageReq = try? Com_Spotify_Collection2_V2_Proto_PageRequest(serializedBytes: data)
         XCTAssertNotNil(pageReq, "Info request is nil")
         XCTAssertNotEqual(pageReq?.username, nil, "Incorrect info request proto model")
     }*/
@@ -52,7 +52,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Collection2_V2_Proto_PageResponse(serializedData: data)
+        let response = try? SPPageResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Collection info is nil")
         XCTAssertNotEqual(response?.items.count, 0, "Incorrect collection info proto parsing")
     }
@@ -65,7 +65,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let pageReq = try? Com_Spotify_Collection2_V2_Proto_PageRequest(serializedData: data)
+        let pageReq = try? SPCollectionPageRequest(serializedBytes: data)
         XCTAssertNotNil(pageReq, "Info request is nil")
         XCTAssertNotEqual(pageReq?.username, nil, "Incorrect info request proto model")
     }
@@ -76,7 +76,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Collection2_V2_Proto_PageResponse(serializedData: data)
+        let response = try? SPPageResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Collection info is nil")
         XCTAssertNotEqual(response?.items.count, 0, "Incorrect collection info proto parsing")
     }
@@ -87,7 +87,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let pageReq = try? Com_Spotify_Collection2_V2_Proto_PageRequest(serializedData: data)
+        let pageReq = try? SPCollectionPageRequest(serializedBytes: data)
         XCTAssertNotNil(pageReq, "Info request is nil")
         XCTAssertNotEqual(pageReq?.username, nil, "Incorrect info request proto model")
     }
@@ -98,7 +98,7 @@ final class UnitApiCollection: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Collection2_V2_Proto_PageResponse(serializedData: data)
+        let response = try? SPPageResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Collection info is nil")
         XCTAssertNotEqual(response?.items.count, 0, "Incorrect collection info proto parsing")
     }

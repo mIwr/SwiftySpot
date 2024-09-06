@@ -7,9 +7,9 @@
 
 import Foundation
 
-func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_AutocompleteViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, completion: @escaping (_ result: Result<SPSearchAutocompleteViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (query.isEmpty || limit == 0) {
-        completion(.success(Com_Spotify_Searchview_Proto_AutocompleteViewResponse()))
+        completion(.success(SPSearchAutocompleteViewResponse()))
         return nil
     }
     if (clToken.isEmpty) {
@@ -31,7 +31,7 @@ func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Searchview_Proto_AutocompleteViewResponse(serializedData: data)
+            let parsed = try SPSearchAutocompleteViewResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -41,9 +41,9 @@ func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String
     return task
 }
 
-func searchByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String, completion: @escaping (_ result: Result<Com_Spotify_Searchview_Proto_MainViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func searchByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, pageToken: String, completion: @escaping (_ result: Result<SPSearchMainViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (query.isEmpty || limit == 0) {
-        completion(.success(Com_Spotify_Searchview_Proto_MainViewResponse()))
+        completion(.success(SPSearchMainViewResponse()))
         return nil
     }
     if (clToken.isEmpty) {
@@ -65,7 +65,7 @@ func searchByApi(userAgent: String, clToken: String, authToken: String, os: Stri
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Searchview_Proto_MainViewResponse(serializedData: data)
+            let parsed = try SPSearchMainViewResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

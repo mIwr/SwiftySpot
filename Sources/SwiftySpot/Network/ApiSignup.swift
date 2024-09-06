@@ -30,7 +30,7 @@ func validateSignupByApi(userAgent: String, clToken: String, os: String, appVer:
     return task
 }
 
-func signupByApi(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: Com_Spotify_Signup_V2_Proto_CreateAccountRequest, completion: @escaping (Result<Com_Spotify_Signup_V2_Proto_CreateAccountResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func signupByApi(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: SPCreateAccountRequest, completion: @escaping (Result<SPCreateAccountResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
         return nil
@@ -46,7 +46,7 @@ func signupByApi(userAgent: String, clToken: String, os: String, appVer: String,
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Signup_V2_Proto_CreateAccountResponse(serializedData: safeData)
+            let parsed = try SPCreateAccountResponse(serializedBytes: safeData)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

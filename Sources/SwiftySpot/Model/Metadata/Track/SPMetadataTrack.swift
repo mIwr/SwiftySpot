@@ -24,7 +24,7 @@ public class SPMetadataTrack: SPTypedObj {
     ///Track is explicit flag
     public let explicit: Bool
     ///Track external IDs
-    public let extIds: [SPMetadataExtId]
+    public let extIds: [SPMetadataExternalId]
     ///Track restrictions info
     public let restrictions: [SPMetadataRestriction]
     ///Available audio files (codecs) for track
@@ -84,7 +84,7 @@ public class SPMetadataTrack: SPTypedObj {
         }
     }
     
-    public init(gid: [UInt8], name: String, uri: String = "", album: SPMetadataAlbum? = nil, artists: [SPMetadataArtist] = [], number: Int32 = 0, discNumber: Int32 = 0, durationInMs: Int32 = 0, popularity: Int32 = 0, explicit: Bool = false, extIds: [SPMetadataExtId] = [], restrictions: [SPMetadataRestriction] = [], files: [SPMetadataAudioFile] = [], alternatives: [SPMetadataTrack] = [], salePeriods: [SPMetadataSalePeriod] = [], previews: [SPMetadataAudioFile] = [], tags: [String] = [], earliestLiveTs: Int64 = 0, lyrics: Bool = false, localizedNames: [SPMetadataLocalizedString] = [], availability: [SPMetadataAvailability] = [], licensor: SPMetadataLicensor? = nil, langOrPerfomance: [String] = [], original: SPMetadataAudioFile? = nil, contentRating: [SPMetadataContentRating] = [], indexVersion: Int64 = 0, origName: String = "", versionName: String = "", artistWithRole: [SPMetadataArtistWithRole] = []) {
+    public init(gid: [UInt8], name: String, uri: String = "", album: SPMetadataAlbum? = nil, artists: [SPMetadataArtist] = [], number: Int32 = 0, discNumber: Int32 = 0, durationInMs: Int32 = 0, popularity: Int32 = 0, explicit: Bool = false, extIds: [SPMetadataExternalId] = [], restrictions: [SPMetadataRestriction] = [], files: [SPMetadataAudioFile] = [], alternatives: [SPMetadataTrack] = [], salePeriods: [SPMetadataSalePeriod] = [], previews: [SPMetadataAudioFile] = [], tags: [String] = [], earliestLiveTs: Int64 = 0, lyrics: Bool = false, localizedNames: [SPMetadataLocalizedString] = [], availability: [SPMetadataAvailability] = [], licensor: SPMetadataLicensor? = nil, langOrPerfomance: [String] = [], original: SPMetadataAudioFile? = nil, contentRating: [SPMetadataContentRating] = [], indexVersion: Int64 = 0, origName: String = "", versionName: String = "", artistWithRole: [SPMetadataArtistWithRole] = []) {
         self.name = name
         self.album = album
         self.artists = artists
@@ -147,7 +147,7 @@ public class SPMetadataTrack: SPTypedObj {
         return nil
     }
     
-    static func from(protobuf: Spotify_Metadata_Track, uri: String) -> SPMetadataTrack {
+    static func from(protobuf: SPMetaTrack, uri: String) -> SPMetadataTrack {
         let gid = [UInt8].init(protobuf.gid)
         let safeUri = !protobuf.uri.isEmpty && protobuf.uri == uri ? protobuf.uri : uri //reserving navigate uri
         var album: SPMetadataAlbum?
@@ -159,59 +159,6 @@ public class SPMetadataTrack: SPTypedObj {
             let parsed = SPMetadataArtist.from(protobuf: item, uri: "")
             artists.append(parsed)
         }
-        var extIds: [SPMetadataExtId] = []
-        for extItem in protobuf.externalIds {
-            let parsed = SPMetadataExtId.from(protobuf: extItem)
-            extIds.append(parsed)
-        }
-        var restrictions: [SPMetadataRestriction] = []
-        for item in protobuf.restrictions {
-            let parsed = SPMetadataRestriction.from(protobuf: item)
-            restrictions.append(parsed)
-        }
-        var files: [SPMetadataAudioFile] = []
-        for item in protobuf.files {
-            let parsed = SPMetadataAudioFile.from(protobuf: item)
-            files.append(parsed)
-        }
-        var salePeriods: [SPMetadataSalePeriod] = []
-        for item in protobuf.salePeriods {
-            let parsed = SPMetadataSalePeriod.from(protobuf: item)
-            salePeriods.append(parsed)
-        }
-        var previews: [SPMetadataAudioFile] = []
-        for item in protobuf.previews {
-            let parsed = SPMetadataAudioFile.from(protobuf: item)
-            previews.append(parsed)
-        }
-        var localizedNames: [SPMetadataLocalizedString] = []
-        for item in protobuf.localizedNames {
-            let parsed = SPMetadataLocalizedString.from(protobuf: item)
-            localizedNames.append(parsed)
-        }
-        var availability: [SPMetadataAvailability] = []
-        for item in protobuf.availability {
-            let parsed = SPMetadataAvailability.from(protobuf: item)
-            availability.append(parsed)
-        }
-        var licensor: SPMetadataLicensor?
-        if (protobuf.hasLicensor) {
-            licensor = SPMetadataLicensor.from(protobuf: protobuf.licensor)
-        }
-        var original: SPMetadataAudioFile?
-        if (protobuf.hasOriginal) {
-            original = SPMetadataAudioFile.from(protobuf: protobuf.original)
-        }
-        var contentRating: [SPMetadataContentRating] = []
-        for item in protobuf.contentRating {
-            let parsed = SPMetadataContentRating.from(protobuf: item)
-            contentRating.append(parsed)
-        }
-        var artistWithRole: [SPMetadataArtistWithRole] = []
-        for item in protobuf.artistWithRole {
-            let parsed = SPMetadataArtistWithRole.from(protobuf: item)
-            artistWithRole.append(parsed)
-        }
         var alternatives: [SPMetadataTrack] = []
         for item in protobuf.alternatives {
             let shortGid = [UInt8].init(item.gid)
@@ -222,6 +169,6 @@ public class SPMetadataTrack: SPTypedObj {
         }
         //Track always has duration which is x2 of real value
         
-        return SPMetadataTrack(gid: gid, name: protobuf.name, uri: safeUri, album: album, artists: artists, number: protobuf.number, discNumber: protobuf.discNumber, durationInMs: protobuf.durationInMs / 2, popularity: protobuf.popularity, explicit: protobuf.explicit, extIds: extIds, restrictions: restrictions, files: files, alternatives: alternatives, salePeriods: salePeriods, previews: previews, tags: protobuf.tags, earliestLiveTs: protobuf.earliestLiveTimestamp, lyrics: protobuf.lyrics, localizedNames: localizedNames, availability: availability, licensor: licensor, langOrPerfomance: protobuf.languageOrPerfomance, original: original, contentRating: contentRating, indexVersion: protobuf.indexVersion, origName: protobuf.originalTitle, versionName: protobuf.versionTitle, artistWithRole: artistWithRole)
+        return SPMetadataTrack(gid: gid, name: protobuf.name, uri: safeUri, album: album, artists: artists, number: protobuf.number, discNumber: protobuf.discNumber, durationInMs: protobuf.durationInMs / 2, popularity: protobuf.popularity, explicit: protobuf.explicit, extIds: protobuf.externalIds, restrictions: protobuf.restrictions, files: protobuf.files, alternatives: alternatives, salePeriods: protobuf.salePeriods, previews: protobuf.previews, tags: protobuf.tags, earliestLiveTs: protobuf.earliestLiveTimestamp, lyrics: protobuf.lyrics, localizedNames: protobuf.localizedNames, availability: protobuf.availability, licensor: protobuf.licensor, langOrPerfomance: protobuf.languageOrPerfomance, original: protobuf.original, contentRating: protobuf.contentRating, indexVersion: protobuf.indexVersion, origName: protobuf.originalTitle, versionName: protobuf.versionTitle, artistWithRole: protobuf.artistWithRole)
     }
 }

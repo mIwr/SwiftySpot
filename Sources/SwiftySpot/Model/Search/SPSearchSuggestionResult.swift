@@ -18,18 +18,13 @@ public class SPSearchSuggestionResult {
         self.autocomplete = autocomplete
     }
     
-    static func from(protobuf: Com_Spotify_Searchview_Proto_AutocompleteViewResponse) -> SPSearchSuggestionResult {
+    static func from(protobuf: SPSearchAutocompleteViewResponse) -> SPSearchSuggestionResult {
         var hits: [SPSearchEntity] = []
         for item in protobuf.hits {
           let parsed = SPSearchEntity.from(protobuf: item)
           hits.append(parsed)
         }
-        var autocomplete: [SPSearchAutocompleteQuery] = []
-        for item in protobuf.autocompleteQueries {
-          let parsed = SPSearchAutocompleteQuery.from(protobuf: item)
-          autocomplete.append(parsed)
-        }
         
-        return SPSearchSuggestionResult(hits: hits, autocomplete: autocomplete)
+        return SPSearchSuggestionResult(hits: hits, autocomplete: protobuf.autocompleteQueries)
     }
 }

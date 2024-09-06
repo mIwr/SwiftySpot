@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Dac_Api_V1_Proto_DacRequest {
+struct SPDacRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,8 +36,8 @@ struct Com_Spotify_Dac_Api_V1_Proto_DacRequest {
   /// Clears the value of `featureRequest`. Subsequent reads from it will return its default value.
   mutating func clearFeatureRequest() {self._featureRequest = nil}
 
-  var clientInfo: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo {
-    get {return _clientInfo ?? Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo()}
+  var clientInfo: SPDacRequest.ClientInfo {
+    get {return _clientInfo ?? SPDacRequest.ClientInfo()}
     set {_clientInfo = newValue}
   }
   /// Returns true if `clientInfo` has been explicitly set.
@@ -64,10 +64,10 @@ struct Com_Spotify_Dac_Api_V1_Proto_DacRequest {
   init() {}
 
   fileprivate var _featureRequest: SwiftProtobuf.Google_Protobuf_Any? = nil
-  fileprivate var _clientInfo: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo? = nil
+  fileprivate var _clientInfo: SPDacRequest.ClientInfo? = nil
 }
 
-struct Com_Spotify_Dac_Api_V1_Proto_DacResponse {
+struct SPDacResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -109,16 +109,16 @@ struct Com_Spotify_Dac_Api_V1_Proto_DacResponse {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Dac_Api_V1_Proto_DacRequest: @unchecked Sendable {}
-extension Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo: @unchecked Sendable {}
-extension Com_Spotify_Dac_Api_V1_Proto_DacResponse: @unchecked Sendable {}
+extension SPDacRequest: @unchecked Sendable {}
+extension SPDacRequest.ClientInfo: @unchecked Sendable {}
+extension SPDacResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.dac.api.v1.proto"
 
-extension Com_Spotify_Dac_Api_V1_Proto_DacRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DacRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "uri"),
@@ -157,7 +157,7 @@ extension Com_Spotify_Dac_Api_V1_Proto_DacRequest: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Dac_Api_V1_Proto_DacRequest, rhs: Com_Spotify_Dac_Api_V1_Proto_DacRequest) -> Bool {
+  static func ==(lhs: SPDacRequest, rhs: SPDacRequest) -> Bool {
     if lhs.uri != rhs.uri {return false}
     if lhs._featureRequest != rhs._featureRequest {return false}
     if lhs._clientInfo != rhs._clientInfo {return false}
@@ -166,8 +166,8 @@ extension Com_Spotify_Dac_Api_V1_Proto_DacRequest: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = Com_Spotify_Dac_Api_V1_Proto_DacRequest.protoMessageName + ".ClientInfo"
+extension SPDacRequest.ClientInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = SPDacRequest.protoMessageName + ".ClientInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "app_name"),
     2: .same(proto: "version"),
@@ -196,7 +196,7 @@ extension Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo, rhs: Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo) -> Bool {
+  static func ==(lhs: SPDacRequest.ClientInfo, rhs: SPDacRequest.ClientInfo) -> Bool {
     if lhs.appName != rhs.appName {return false}
     if lhs.version != rhs.version {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -204,7 +204,7 @@ extension Com_Spotify_Dac_Api_V1_Proto_DacRequest.ClientInfo: SwiftProtobuf.Mess
   }
 }
 
-extension Com_Spotify_Dac_Api_V1_Proto_DacResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DacResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "component"),
@@ -243,7 +243,7 @@ extension Com_Spotify_Dac_Api_V1_Proto_DacResponse: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Dac_Api_V1_Proto_DacResponse, rhs: Com_Spotify_Dac_Api_V1_Proto_DacResponse) -> Bool {
+  static func ==(lhs: SPDacResponse, rhs: SPDacResponse) -> Bool {
     if lhs._component != rhs._component {return false}
     if lhs._homeLoggingSpanID != rhs._homeLoggingSpanID {return false}
     if lhs._isHomeFallback != rhs._isHomeFallback {return false}

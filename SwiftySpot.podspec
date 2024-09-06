@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftySpot"
-  spec.version      = "0.5.3"
+  spec.version      = "0.6.0"
   spec.summary      = "Unofficial Spotify API"
   spec.homepage     = "https://github.com/mIwr/SwiftySpot"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
@@ -15,4 +15,5 @@ Pod::Spec.new do |spec|
   spec.exclude_files = "Sources/Exclude", "Sources/Exclude/*.*"
   spec.framework     = "Foundation"
   spec.dependency      "SwiftProtobuf"
+  spec.resource_bundles = {'SwiftySpot' => ['Sources/SwiftySpot/PrivacyInfo.xcprivacy']}
 end

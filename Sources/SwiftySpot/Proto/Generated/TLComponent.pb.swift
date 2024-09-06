@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent {
+struct SPDacHomePageComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -28,8 +28,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent {
   ///Primary sections
   var components: [SwiftProtobuf.Google_Protobuf_Any] = []
 
-  var pageInfo: Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo {
-    get {return _pageInfo ?? Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo()}
+  var pageInfo: SPDacPageInfo {
+    get {return _pageInfo ?? SPDacPageInfo()}
     set {_pageInfo = newValue}
   }
   /// Returns true if `pageInfo` has been explicitly set.
@@ -37,8 +37,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent {
   /// Clears the value of `pageInfo`. Subsequent reads from it will return its default value.
   mutating func clearPageInfo() {self._pageInfo = nil}
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -50,11 +50,11 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent {
 
   init() {}
 
-  fileprivate var _pageInfo: Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _pageInfo: SPDacPageInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent {
+struct SPDacToolbarComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -72,8 +72,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent {
 
   var items: [SwiftProtobuf.Google_Protobuf_Any] = []
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -86,18 +86,18 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent {
   init() {}
 
   fileprivate var _subtitle: String? = nil
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent {
+struct SPDacSectionHeaderComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var title: String = String()
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -109,10 +109,10 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent {
+struct SPDacShortcutsSectionComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,8 +121,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent {
 
   var shortcuts: [SwiftProtobuf.Google_Protobuf_Any] = []
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -134,10 +134,10 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent {
+struct SPDacSectionComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -145,8 +145,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent {
   ///Card components
   var components: [SwiftProtobuf.Google_Protobuf_Any] = []
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -158,16 +158,16 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent {
+struct SPDacRecentlyPlayedSectionComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -175,8 +175,8 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent {
   /// Clears the value of `ubiElementInfo`. Subsequent reads from it will return its default value.
   mutating func clearUbiElementInfo() {self._ubiElementInfo = nil}
 
-  var componentInstanceInfo: Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo {
-    get {return _componentInstanceInfo ?? Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo()}
+  var componentInstanceInfo: SPDacComponentInstanceInfo {
+    get {return _componentInstanceInfo ?? SPDacComponentInstanceInfo()}
     set {_componentInstanceInfo = newValue}
   }
   /// Returns true if `componentInstanceInfo` has been explicitly set.
@@ -188,11 +188,11 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
-  fileprivate var _componentInstanceInfo: Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
+  fileprivate var _componentInstanceInfo: SPDacComponentInstanceInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo {
+struct SPDacPageInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -204,7 +204,7 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo {
   init() {}
 }
 
-struct Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo {
+struct SPDacComponentInstanceInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -217,21 +217,21 @@ struct Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo: @unchecked Sendable {}
+extension SPDacHomePageComponent: @unchecked Sendable {}
+extension SPDacToolbarComponent: @unchecked Sendable {}
+extension SPDacSectionHeaderComponent: @unchecked Sendable {}
+extension SPDacShortcutsSectionComponent: @unchecked Sendable {}
+extension SPDacSectionComponent: @unchecked Sendable {}
+extension SPDacRecentlyPlayedSectionComponent: @unchecked Sendable {}
+extension SPDacPageInfo: @unchecked Sendable {}
+extension SPDacComponentInstanceInfo: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.component.v1.proto"
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacHomePageComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".HomePageComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "components"),
@@ -270,7 +270,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent) -> Bool {
+  static func ==(lhs: SPDacHomePageComponent, rhs: SPDacHomePageComponent) -> Bool {
     if lhs.components != rhs.components {return false}
     if lhs._pageInfo != rhs._pageInfo {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
@@ -279,7 +279,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_HomePageComponent: SwiftProtob
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacToolbarComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToolbarComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "day_part_message"),
@@ -323,7 +323,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent) -> Bool {
+  static func ==(lhs: SPDacToolbarComponent, rhs: SPDacToolbarComponent) -> Bool {
     if lhs.dayPartMessage != rhs.dayPartMessage {return false}
     if lhs._subtitle != rhs._subtitle {return false}
     if lhs.items != rhs.items {return false}
@@ -333,7 +333,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ToolbarComponent: SwiftProtobu
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacSectionHeaderComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SectionHeaderComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -367,7 +367,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent) -> Bool {
+  static func ==(lhs: SPDacSectionHeaderComponent, rhs: SPDacSectionHeaderComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -375,7 +375,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionHeaderComponent: SwiftP
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacShortcutsSectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortcutsSectionComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -414,7 +414,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent) -> Bool {
+  static func ==(lhs: SPDacShortcutsSectionComponent, rhs: SPDacShortcutsSectionComponent) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.shortcuts != rhs.shortcuts {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
@@ -423,7 +423,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ShortcutsSectionComponent: Swi
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacSectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SectionComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "components"),
@@ -457,7 +457,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent) -> Bool {
+  static func ==(lhs: SPDacSectionComponent, rhs: SPDacSectionComponent) -> Bool {
     if lhs.components != rhs.components {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -465,7 +465,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_SectionComponent: SwiftProtobu
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacRecentlyPlayedSectionComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RecentlyPlayedSectionComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2000: .standard(proto: "ubi_element_info"),
@@ -499,7 +499,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent) -> Bool {
+  static func ==(lhs: SPDacRecentlyPlayedSectionComponent, rhs: SPDacRecentlyPlayedSectionComponent) -> Bool {
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
     if lhs._componentInstanceInfo != rhs._componentInstanceInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -507,7 +507,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_RecentlyPlayedSectionComponent
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacPageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PageInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "facet"),
@@ -532,14 +532,14 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_PageInfo) -> Bool {
+  static func ==(lhs: SPDacPageInfo, rhs: SPDacPageInfo) -> Bool {
     if lhs.facet != rhs.facet {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacComponentInstanceInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ComponentInstanceInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -564,7 +564,7 @@ extension Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo, rhs: Com_Spotify_Home_Dac_Component_V1_Proto_ComponentInstanceInfo) -> Bool {
+  static func ==(lhs: SPDacComponentInstanceInfo, rhs: SPDacComponentInstanceInfo) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

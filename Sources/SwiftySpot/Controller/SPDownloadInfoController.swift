@@ -15,29 +15,38 @@ public class SPDownloadInfoController {
             return _di
         }
     }
-    fileprivate var _intents: [String: SPPlayIntentData]
+    fileprivate var _wdvMeta: [String: SPWDVSeektable]
+    ///Wdv meta dictionary. Key is hexFileId
+    public var wdvMeta: [String: SPWDVSeektable] {
+        get {
+            return _wdvMeta
+        }
+    }
+    fileprivate var _intents: [String: SPPlayIntentResponse]
     ///Play intents  dictionary. Key is hexFileId
-    public var playIntents: [String: SPPlayIntentData] {
+    public var playIntents: [String: SPPlayIntentResponse] {
         get {
             return _intents
         }
     }
     
-    public init(di: [String : SPDownloadInfo], intents: [String:SPPlayIntentData]) {
+    public init(di: [String: SPDownloadInfo], seektables: [String: SPWDVSeektable], intents: [String: SPPlayIntentResponse]) {
         self._di = di
+        self._wdvMeta = seektables
         self._intents = intents
         refreshDownloadInfo()
     }
     
-    ///Find download info and play intent pair by hexFileId key
-    public func find(hexFileId: String) -> (SPDownloadInfo?, SPPlayIntentData?) {
+    ///Find download info, linked play and wdv intents by file ID hex key
+    public func find(hexFileId: String) -> (SPDownloadInfo?, SPPlayIntentResponse?, SPWDVSeektable?) {
         var di = _di[hexFileId]
         if (di?.active == false || di?.directLinks.isEmpty == true) {
             di = nil
             _di.removeValue(forKey: hexFileId)
         }
         let intent = _intents[hexFileId]
-        return (di, intent)
+        let seektable = _wdvMeta[hexFileId]
+        return (di, intent, seektable)
     }
     
     ///Removes expired download info instances
@@ -58,7 +67,13 @@ public class SPDownloadInfoController {
         }
     }
     
-    public func updatePlayIntents(_ intents: [String: SPPlayIntentData]) {
+    public func updateSeektables(_ seektables: [String: SPWDVSeektable]) {
+        for entry in seektables {
+            _wdvMeta[entry.key] = entry.value
+        }
+    }
+    
+    public func updatePlayIntents(_ intents: [String: SPPlayIntentResponse]) {
         for entry in intents {
             _intents[entry.key] = entry.value
         }
@@ -66,6 +81,7 @@ public class SPDownloadInfoController {
     
     public func removeAll() {
         _di.removeAll()
+        _wdvMeta.removeAll()
         _intents.removeAll()
     }
 }

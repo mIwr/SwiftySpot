@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility {
+struct SPDacAccessibility {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -33,14 +33,14 @@ struct Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility: @unchecked Sendable {}
+extension SPDacAccessibility: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.accessibility.v1.proto"
 
-extension Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacAccessibility: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Accessibility"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "description"),
@@ -65,7 +65,7 @@ extension Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility, rhs: Com_Spotify_Home_Dac_Accessibility_V1_Proto_Accessibility) -> Bool {
+  static func ==(lhs: SPDacAccessibility, rhs: SPDacAccessibility) -> Bool {
     if lhs.description_p != rhs.description_p {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

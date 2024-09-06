@@ -1,0 +1,107 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+package com.spotify.signup.v2.proto;
+
+message CreateAccountRequest {
+    string callback_uri = 1;
+    AccountDetails details = 2;
+    SignupClientInfo client_info = 3;
+    Tracking tracking = 4;
+}
+
+message AccountDetails {
+    string display_name = 1;
+    string birthdate = 2;
+    UserGender gender = 3;
+    ConsentFlags consent_flags = 4;
+    EmailAndPasswordIdentifier identifier = 101;
+}
+
+enum UserGender {
+    UNKNOWN_USER_GENDER = 0;
+    MALE = 1;
+    FEMALE = 2;
+    NON_BINARY = 3;
+}
+
+message ConsentFlags {
+    bool eula_agreed = 1;
+    bool collect_info = 2;
+    bool send_email = 3;
+    bool third_party_email = 4;
+    bool push_notificaitons = 5;
+}
+
+message EmailAndPasswordIdentifier {
+    string email = 1;
+    string password = 2;
+}
+
+message SignupClientInfo {
+    string signup_key = 1;
+    //device CPU info. Example value: Android-ARM
+    string platform = 2;
+    string app_version = 3;
+    repeated Capability capabilities = 4;
+    //Installation ID
+    string device_id = 5;
+}
+
+enum Capability {
+    UNKNOWN_CAPABILITY = 0;
+    CAPABILITY_WEB_INTERACTION_V1 = 1;
+}
+
+message Tracking {
+    //Client mobile
+    string creation_point = 1;
+    string creation_flow = 2;
+    string referrer = 3;
+    string partner = 4;
+    string created_by_partner = 5;
+    //Mobile product test field
+    string test = 6;
+}
+
+message CreateAccountResponse {
+    oneof result_case {
+        CreateAccountSuccessResponse success = 1;
+        CreateAccountErrorResponse error = 2;
+        CreateAccountChallengeResponse challenge = 3;
+    }
+}
+
+message CreateAccountSuccessResponse {
+    string username = 1;
+    string login_token = 2;
+}
+
+message CreateAccountErrorResponse {
+    string details = 1;
+}
+
+message CreateAccountChallengeResponse {
+    string session_id = 1;
+}
+
+message CompleteAccountCreationRequest {
+    string session_id = 1;
+    string request_id = 2;
+}
+
+message CompleteAccountCreationResponse {
+    oneof result_case {
+        CompleteAccountCreationSuccessResponse success = 1;
+        CompleteAccountCreationErrorResponse error = 2;
+    }
+}
+
+message CompleteAccountCreationSuccessResponse {
+    string username = 1;
+    string login_token = 2;
+}
+
+message CompleteAccountCreationErrorResponse {
+    string details = 1;
+}

@@ -72,14 +72,14 @@ public final class SPBase16 {
     }
 }
 
-public protocol BinaryIntegerBase16View {
+protocol BinaryIntegerBase16View {
     var hex: String {
         get
     }
 }
 
 extension UInt64: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -87,7 +87,7 @@ extension UInt64: BinaryIntegerBase16View {
 }
 
 extension UInt32: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -95,7 +95,7 @@ extension UInt32: BinaryIntegerBase16View {
 }
 
 extension UInt16: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -103,7 +103,7 @@ extension UInt16: BinaryIntegerBase16View {
 }
 
 extension UInt8: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -111,7 +111,7 @@ extension UInt8: BinaryIntegerBase16View {
 }
 
 extension Int8: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -119,7 +119,7 @@ extension Int8: BinaryIntegerBase16View {
 }
 
 extension Int16: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -127,7 +127,7 @@ extension Int16: BinaryIntegerBase16View {
 }
 
 extension Int32: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }
@@ -135,7 +135,7 @@ extension Int32: BinaryIntegerBase16View {
 }
 
 extension Int64: BinaryIntegerBase16View {
-    public var hex: String {
+    var hex: String {
         get {
             return String(format: "%02x", self)
         }

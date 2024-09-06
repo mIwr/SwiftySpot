@@ -20,7 +20,7 @@ public class SPCollectionDelta {
     self.items = items
   }
 
-  static func from(protobuf: Com_Spotify_Collection2_V2_Proto_DeltaResponse) -> SPCollectionDelta {
+  static func from(protobuf: SPDeltaResponse) -> SPCollectionDelta {
     var items: [SPCollectionItem] = []
     for item in protobuf.items {
       items.append(SPCollectionItem.from(protobuf: item))

@@ -37,9 +37,9 @@ public class SPMetadataAlbum: SPTypedObj {
     ///Album popularity
     public let popularity: Int32
     ///Album cover image info
-    public let cover: [SPMetadataImg]
+    public let cover: [SPMetadataImage]
     ///Album external IDs
-    public let extIds: [SPMetadataExtId]
+    public let extIds: [SPMetadataExternalId]
     ///Album discs info
     public let discs: [SPMetadataDisc]
     ///Album copyrights
@@ -51,7 +51,7 @@ public class SPMetadataAlbum: SPTypedObj {
     ///Album sale periods info
     public let salePeriods: [SPMetadataSalePeriod]
     ///Album cover variants by size
-    public let coverGroup: [[SPMetadataImg]]
+    public let coverGroup: [[SPMetadataImage]]
     ///Album stock  name
     public let origName: String
     ///Album version name
@@ -75,7 +75,7 @@ public class SPMetadataAlbum: SPTypedObj {
     public let localizedNames: [SPMetadataLocalizedString]
     
     
-    public init(gid: [UInt8], name: String, uri: String = "", artists: [SPMetadataArtist] = [], type: SPMetadataAlbumType = .ALBUM, label: String = "", releaseTsUTC: Int64 = 0, popularity: Int32 = 0, cover: [SPMetadataImg] = [], extIds: [SPMetadataExtId] = [], discs: [SPMetadataDisc] = [], copyrights: [SPMetadataCopyright] = [], restrictions: [SPMetadataRestriction] = [], related: [SPMetadataAlbum] = [], salePeriods: [SPMetadataSalePeriod] = [], coverGroup: [[SPMetadataImg]] = [], origName: String = "", versionName: String = "", typeStr: String = "", earliestLiveTs: Int64 = 0, availability: [SPMetadataAvailability] = [], windowedTracks: [SPMetadataTrack] = [], licensor: SPMetadataLicensor? = nil, version: Int64 = 0, feedGid: String = "", deliveryId: String = "", localizedNames: [SPMetadataLocalizedString] = []) {
+    public init(gid: [UInt8], name: String, uri: String = "", artists: [SPMetadataArtist] = [], type: SPMetadataAlbumType = .album, label: String = "", releaseTsUTC: Int64 = 0, popularity: Int32 = 0, cover: [SPMetadataImage] = [], extIds: [SPMetadataExternalId] = [], discs: [SPMetadataDisc] = [], copyrights: [SPMetadataCopyright] = [], restrictions: [SPMetadataRestriction] = [], related: [SPMetadataAlbum] = [], salePeriods: [SPMetadataSalePeriod] = [], coverGroup: [[SPMetadataImage]] = [], origName: String = "", versionName: String = "", typeStr: String = "", earliestLiveTs: Int64 = 0, availability: [SPMetadataAvailability] = [], windowedTracks: [SPMetadataTrack] = [], licensor: SPMetadataLicensor? = nil, version: Int64 = 0, feedGid: String = "", deliveryId: String = "", localizedNames: [SPMetadataLocalizedString] = []) {
         self.name = name
         self.artists = artists
         self.type = type
@@ -113,7 +113,7 @@ public class SPMetadataAlbum: SPTypedObj {
         super.init(globalID: gid, type: .album)
     }
     
-    static func from(protobuf: Spotify_Metadata_Album, uri: String) -> SPMetadataAlbum {
+    static func from(protobuf: SPMetaAlbum, uri: String) -> SPMetadataAlbum {
         let gid = [UInt8].init(protobuf.gid)
         let safeUri = !protobuf.uri.isEmpty && protobuf.uri == uri ? protobuf.uri : uri //reserving navigate uri
         var artists: [SPMetadataArtist] = []
@@ -121,58 +121,17 @@ public class SPMetadataAlbum: SPTypedObj {
             let parsed = SPMetadataArtist.from(protobuf: item, uri: "")
             artists.append(parsed)
         }
-        let type = SPMetadataAlbumType.from(protobuf: protobuf.type)
-        let dt = SPMetadataDate.from(protobuf: protobuf.date)
-        let ts = dt.timestamp
-        var cover: [SPMetadataImg] = []
-        for item in protobuf.cover {
-            let parsed = SPMetadataImg.from(protobuf: item)
-            cover.append(parsed)
-        }
-        var extIds: [SPMetadataExtId] = []
-        for extItem in protobuf.externalIds {
-            let parsed = SPMetadataExtId.from(protobuf: extItem)
-            extIds.append(parsed)
-        }
+        let ts = protobuf.date.timestamp
         var discs: [SPMetadataDisc] = []
         for item in protobuf.discs {
             let parsed = SPMetadataDisc.from(protobuf: item)
             discs.append(parsed)
         }
-        var copyrights: [SPMetadataCopyright] = []
-        for item in protobuf.copyrights {
-            let parsed = SPMetadataCopyright.from(protobuf: item)
-            copyrights.append(parsed)
-        }
-        var restrictions: [SPMetadataRestriction] = []
-        for item in protobuf.restrictions {
-            let parsed = SPMetadataRestriction.from(protobuf: item)
-            restrictions.append(parsed)
-        }
-        var salePeriods: [SPMetadataSalePeriod] = []
-        for item in protobuf.saledPeriods {
-            let parsed = SPMetadataSalePeriod.from(protobuf: item)
-            salePeriods.append(parsed)
-        }
-        let coverGroup = SPMetadataImg.fromGroup(protobuf.coverGroup)
-        var availability: [SPMetadataAvailability] = []
-        for item in protobuf.availability {
-            let parsed = SPMetadataAvailability.from(protobuf: item)
-            availability.append(parsed)
-        }
+        let coverGroup = SPMetadataImage.fromGroup(protobuf.coverGroup)
         var windowedTracks: [SPMetadataTrack] = []
         for item in protobuf.windowedTracks {
             let parsed = SPMetadataTrack.from(protobuf: item, uri: "")
             windowedTracks.append(parsed)
-        }
-        var licensor: SPMetadataLicensor? = nil
-        if (protobuf.hasLicensor) {
-            licensor = SPMetadataLicensor.from(protobuf: protobuf.licensor)
-        }
-        var localizedNames: [SPMetadataLocalizedString] = []
-        for item in protobuf.localizedNames {
-            let parsed = SPMetadataLocalizedString.from(protobuf: item)
-            localizedNames.append(parsed)
         }
         var related: [SPMetadataAlbum] = []
         for item in protobuf.related {
@@ -183,6 +142,6 @@ public class SPMetadataAlbum: SPTypedObj {
             related.append(parsed)
         }
         
-        return SPMetadataAlbum(gid: gid, name: protobuf.name, uri: safeUri, artists: artists, type: type, label: protobuf.label, releaseTsUTC: ts, popularity: protobuf.popularity, cover: cover, extIds: extIds, discs: discs, copyrights: copyrights, restrictions: restrictions, related: related, salePeriods: salePeriods, coverGroup: coverGroup, origName: protobuf.originalTitle, versionName: protobuf.versionTitle, typeStr: protobuf.typeStr, earliestLiveTs: protobuf.earliestLiveTimestamp, availability: availability, windowedTracks: windowedTracks, licensor: licensor, version: protobuf.version, feedGid: protobuf.feedGid, deliveryId: protobuf.deliveryID, localizedNames: localizedNames)
+        return SPMetadataAlbum(gid: gid, name: protobuf.name, uri: safeUri, artists: artists, type: protobuf.type, label: protobuf.label, releaseTsUTC: ts, popularity: protobuf.popularity, cover: protobuf.cover, extIds: protobuf.externalIds, discs: discs, copyrights: protobuf.copyrights, restrictions: protobuf.restrictions, related: related, salePeriods: protobuf.salePeriods, coverGroup: coverGroup, origName: protobuf.originalTitle, versionName: protobuf.versionTitle, typeStr: protobuf.typeStr, earliestLiveTs: protobuf.earliestLiveTimestamp, availability: protobuf.availability, windowedTracks: windowedTracks, licensor: protobuf.licensor, version: protobuf.version, feedGid: protobuf.feedGid, deliveryId: protobuf.deliveryID, localizedNames: protobuf.localizedNames)
     }
 }

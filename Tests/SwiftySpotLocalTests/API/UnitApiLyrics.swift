@@ -16,7 +16,7 @@ final class UnitApiLyrics: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let lyrics = try? Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse(serializedData: data)
+        let lyrics = try? SPColorLyricsResponse(serializedBytes: data)
         XCTAssertNotNil(lyrics, "Lyrics is nil")
         XCTAssertNotEqual(lyrics?.lyrics.lines.count, 0, "Incorrect lyrics proto parsing")
     }

@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option swift_prefix="SP";
 
 package com.spotify.dac.api.v1.proto;
 

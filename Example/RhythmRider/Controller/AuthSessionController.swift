@@ -51,7 +51,7 @@ class AuthSessionController {
             print("Error during save authorization token")
             return
         }
-        var bytes = BitConvertUtil.getBytes(safeSession.expiresInS)
+        var bytes = SPBinaryUtil.getBytes(safeSession.expiresInS)
         let expiresData = Data(bytes)
         status = SecureStorage.save(key: AuthSessionController._authTokenExpiresKey, data: expiresData)
         if status != errSecSuccess
@@ -59,7 +59,7 @@ class AuthSessionController {
             print("Error during save authorization token expires")
             return
         }
-        bytes = BitConvertUtil.getBytes(safeSession.createTsUTC)
+        bytes = SPBinaryUtil.getBytes(safeSession.createTsUTC)
         let createTsData = Data(bytes)
         status = SecureStorage.save(key: AuthSessionController._authTokenCreateTsKey, data: createTsData)
         if status != errSecSuccess
@@ -86,9 +86,9 @@ class AuthSessionController {
         guard let safeTokenData = SecureStorage.load(key: AuthSessionController._authTokenKey) else { return nil }
         guard let token = String(data: safeTokenData, encoding: .utf8) else { return nil }
         guard let safeExpiresData = SecureStorage.load(key: AuthSessionController._authTokenExpiresKey) else { return nil }
-        guard let expires: Int32 = BitConvertUtil.getVal([UInt8].init(safeExpiresData)) else { return nil }
+        guard let expires: Int32 = SPBinaryUtil.getVal([UInt8].init(safeExpiresData)) else { return nil }
         guard let safeCreateTsData = SecureStorage.load(key: AuthSessionController._authTokenCreateTsKey) else { return nil }
-        guard let createTs: Int64 = BitConvertUtil.getVal([UInt8].init(safeCreateTsData)) else { return nil }
+        guard let createTs: Int64 = SPBinaryUtil.getVal([UInt8].init(safeCreateTsData)) else { return nil }
         guard let safeUsernameData = SecureStorage.load(key: AuthSessionController._authUsernameKey) else { return nil }
         guard let username = String(data: safeUsernameData, encoding: .utf8) else { return nil }
         guard let safeStoredCredData = SecureStorage.load(key: AuthSessionController._authStoredCredKey) else { return nil }

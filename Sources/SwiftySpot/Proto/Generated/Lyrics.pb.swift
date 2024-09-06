@@ -20,57 +20,13 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
-  case unsynced // = 0
-  case lineSynced // = 1
-  case syllableSynced // = 2
-  case UNRECOGNIZED(Int)
-
-  init() {
-    self = .unsynced
-  }
-
-  init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .unsynced
-    case 1: self = .lineSynced
-    case 2: self = .syllableSynced
-    default: self = .UNRECOGNIZED(rawValue)
-    }
-  }
-
-  var rawValue: Int {
-    switch self {
-    case .unsynced: return 0
-    case .lineSynced: return 1
-    case .syllableSynced: return 2
-    case .UNRECOGNIZED(let i): return i
-    }
-  }
-
-}
-
-#if swift(>=4.2)
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType] = [
-    .unsynced,
-    .lineSynced,
-    .syllableSynced,
-  ]
-}
-
-#endif  // swift(>=4.2)
-
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse {
+struct SPColorLyricsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var lyrics: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse {
-    get {return _storage._lyrics ?? Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse()}
+  var lyrics: SPLyricsResponse {
+    get {return _storage._lyrics ?? SPLyricsResponse()}
     set {_uniqueStorage()._lyrics = newValue}
   }
   /// Returns true if `lyrics` has been explicitly set.
@@ -78,8 +34,8 @@ struct Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse {
   /// Clears the value of `lyrics`. Subsequent reads from it will return its default value.
   mutating func clearLyrics() {_uniqueStorage()._lyrics = nil}
 
-  var colorData: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData {
-    get {return _storage._colorData ?? Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData()}
+  var colorData: SPLyricsColorData {
+    get {return _storage._colorData ?? SPLyricsColorData()}
     set {_uniqueStorage()._colorData = newValue}
   }
   /// Returns true if `colorData` has been explicitly set.
@@ -96,8 +52,8 @@ struct Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse {
   /// Clears the value of `vocalRemoval`. Subsequent reads from it will return its default value.
   mutating func clearVocalRemoval() {_uniqueStorage()._vocalRemoval = nil}
 
-  var vocalRemovalColorData: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData {
-    get {return _storage._vocalRemovalColorData ?? Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData()}
+  var vocalRemovalColorData: SPLyricsColorData {
+    get {return _storage._vocalRemovalColorData ?? SPLyricsColorData()}
     set {_uniqueStorage()._vocalRemovalColorData = newValue}
   }
   /// Returns true if `vocalRemovalColorData` has been explicitly set.
@@ -112,30 +68,14 @@ struct Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData {
+struct SPLyricsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var background: Int32 = 0
+  var syncType: SPLyricsSyncType = .unsynced
 
-  var text: Int32 = 0
-
-  var highlightText: Int32 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var syncType: Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType = .unsynced
-
-  var lines: [Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine] = []
+  var lines: [SPLyricsLine] = []
 
   var provider: String = String()
 
@@ -145,7 +85,7 @@ struct Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse {
 
   var syncLyricsUri: String = String()
 
-  var alternatives: [Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative] = []
+  var alternatives: [SPLyricsAlternative] = []
 
   var lang: String = String()
 
@@ -175,84 +115,16 @@ struct Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse {
   fileprivate var _showUpsell: Bool? = nil
 }
 
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var language: String = String()
-
-  var lines: [Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine] = []
-
-  var rtlLang: Bool {
-    get {return _rtlLang ?? false}
-    set {_rtlLang = newValue}
-  }
-  /// Returns true if `rtlLang` has been explicitly set.
-  var hasRtlLang: Bool {return self._rtlLang != nil}
-  /// Clears the value of `rtlLang`. Subsequent reads from it will return its default value.
-  mutating func clearRtlLang() {self._rtlLang = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _rtlLang: Bool? = nil
-}
-
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var startTimeMs: Int64 = 0
-
-  var text: String = String()
-
-  var syllables: [Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var startTimeMs: Int64 = 0
-
-  var numChars: Int64 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine: @unchecked Sendable {}
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable: @unchecked Sendable {}
+extension SPColorLyricsResponse: @unchecked Sendable {}
+extension SPLyricsResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.lyrics.endpointretrofit.proto"
 
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_SyncType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNSYNCED"),
-    1: .same(proto: "LINE_SYNCED"),
-    2: .same(proto: "SYLLABLE_SYNCED"),
-  ]
-}
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPColorLyricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ColorLyricsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "lyrics"),
@@ -262,10 +134,10 @@ extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse: SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    var _lyrics: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse? = nil
-    var _colorData: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData? = nil
+    var _lyrics: SPLyricsResponse? = nil
+    var _colorData: SPLyricsColorData? = nil
     var _vocalRemoval: Bool? = nil
-    var _vocalRemovalColorData: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData? = nil
+    var _vocalRemovalColorData: SPLyricsColorData? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -326,7 +198,7 @@ extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse) -> Bool {
+  static func ==(lhs: SPColorLyricsResponse, rhs: SPColorLyricsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -344,51 +216,7 @@ extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorLyricsResponse: SwiftPr
   }
 }
 
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ColorData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "background"),
-    2: .same(proto: "text"),
-    3: .standard(proto: "highlight_text"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self.background) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.text) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.highlightText) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.background != 0 {
-      try visitor.visitSingularInt32Field(value: self.background, fieldNumber: 1)
-    }
-    if self.text != 0 {
-      try visitor.visitSingularInt32Field(value: self.text, fieldNumber: 2)
-    }
-    if self.highlightText != 0 {
-      try visitor.visitSingularInt32Field(value: self.highlightText, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_ColorData) -> Bool {
-    if lhs.background != rhs.background {return false}
-    if lhs.text != rhs.text {return false}
-    if lhs.highlightText != rhs.highlightText {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPLyricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LyricsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "sync_type"),
@@ -462,7 +290,7 @@ extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse) -> Bool {
+  static func ==(lhs: SPLyricsResponse, rhs: SPLyricsResponse) -> Bool {
     if lhs.syncType != rhs.syncType {return false}
     if lhs.lines != rhs.lines {return false}
     if lhs.provider != rhs.provider {return false}
@@ -473,136 +301,6 @@ extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsResponse: SwiftProtobu
     if lhs.lang != rhs.lang {return false}
     if lhs._rtlLang != rhs._rtlLang {return false}
     if lhs._showUpsell != rhs._showUpsell {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Alternative"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "language"),
-    2: .same(proto: "lines"),
-    3: .standard(proto: "rtl_lang"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.language) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.lines) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self._rtlLang) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if !self.language.isEmpty {
-      try visitor.visitSingularStringField(value: self.language, fieldNumber: 1)
-    }
-    if !self.lines.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.lines, fieldNumber: 2)
-    }
-    try { if let v = self._rtlLang {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_Alternative) -> Bool {
-    if lhs.language != rhs.language {return false}
-    if lhs.lines != rhs.lines {return false}
-    if lhs._rtlLang != rhs._rtlLang {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".LyricsLine"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "start_time_ms"),
-    2: .same(proto: "text"),
-    3: .same(proto: "syllables"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.startTimeMs) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.text) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.syllables) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.startTimeMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.startTimeMs, fieldNumber: 1)
-    }
-    if !self.text.isEmpty {
-      try visitor.visitSingularStringField(value: self.text, fieldNumber: 2)
-    }
-    if !self.syllables.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.syllables, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_LyricsLine) -> Bool {
-    if lhs.startTimeMs != rhs.startTimeMs {return false}
-    if lhs.text != rhs.text {return false}
-    if lhs.syllables != rhs.syllables {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Syllable"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "start_time_ms"),
-    2: .standard(proto: "num_chars"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.startTimeMs) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.numChars) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.startTimeMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.startTimeMs, fieldNumber: 1)
-    }
-    if self.numChars != 0 {
-      try visitor.visitSingularInt64Field(value: self.numChars, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable, rhs: Com_Spotify_Lyrics_Endpointretrofit_Proto_Syllable) -> Bool {
-    if lhs.startTimeMs != rhs.startTimeMs {return false}
-    if lhs.numChars != rhs.numChars {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

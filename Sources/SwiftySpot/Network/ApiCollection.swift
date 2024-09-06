@@ -7,9 +7,9 @@
 
 import Foundation
 
-func getCollectionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, paginationToken: String?, limit: UInt, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_PageResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func getCollectionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, paginationToken: String?, limit: UInt, completion: @escaping (_ result: Result<SPPageResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (limit == 0) {
-        completion(.success(Com_Spotify_Collection2_V2_Proto_PageResponse()))
+        completion(.success(SPPageResponse()))
         return nil
     }
     if (clToken.isEmpty) {
@@ -20,7 +20,7 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    var reqProtobuf = Com_Spotify_Collection2_V2_Proto_PageRequest()
+    var reqProtobuf = SPCollectionPageRequest()
     reqProtobuf.username = username
     reqProtobuf.setName = collectionName
     reqProtobuf.limit = Int32(limit)
@@ -38,7 +38,7 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Collection2_V2_Proto_PageResponse(serializedData: data)
+            let parsed = try SPPageResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -48,7 +48,7 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
     return task
 }
 
-func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, lastSyncToken: String, completion: @escaping (_ result: Result<Com_Spotify_Collection2_V2_Proto_DeltaResponse, SPError>) -> Void) -> URLSessionDataTask? {
+func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, lastSyncToken: String, completion: @escaping (_ result: Result<SPDeltaResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
         return nil
@@ -61,7 +61,7 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    var reqProtobuf = Com_Spotify_Collection2_V2_Proto_DeltaRequest()
+    var reqProtobuf = SPCollectionDeltaRequest()
     reqProtobuf.username = username
     reqProtobuf.setName = collectionName
     reqProtobuf.lastSyncToken = lastSyncToken
@@ -76,7 +76,7 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try Com_Spotify_Collection2_V2_Proto_DeltaResponse(serializedData: data)
+            let parsed = try SPDeltaResponse(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -86,7 +86,7 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
     return task
 }
 
-func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, updItems: [Com_Spotify_Collection2_V2_Proto_CollectionItem], clienUpdateId: String, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) -> URLSessionDataTask? {
+func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, updItems: [SPCollectionPageItem], clienUpdateId: String, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) -> URLSessionDataTask? {
     if (updItems.isEmpty) {
         completion(.success(true))
         return nil
@@ -103,7 +103,7 @@ func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, a
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    var reqProtobuf = Com_Spotify_Collection2_V2_Proto_WriteRequest()
+    var reqProtobuf = SPCollectionWriteRequest()
     reqProtobuf.username = username
     reqProtobuf.setName = collectionName
     reqProtobuf.items = updItems

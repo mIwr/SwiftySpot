@@ -6,6 +6,6 @@
 //
 
 ///Base spotify object
-public class SPBaseObj {
+public class SPBaseObj: ISPObj {
 
 }

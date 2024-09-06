@@ -67,7 +67,8 @@ struct TrackLyricsScreen: View {
             if (ProcessInfo.processInfo.previewMode) {
                 //Disable real API requests
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    let dummyLyrics = SPLyrics(target: _trackLyrics.track, colorData: SPLyricsColorData(bg: 0, text: 0, highlightText: 0), vocalRemoval: false, vocalRemovalColorData: nil, syncType: .lineSynced, content: [
+                    let colorData = SPLyricsColorData(bg: 0, text: 0, highlightText: 0)
+                    let dummyLyrics = SPLyrics(target: _trackLyrics.track, colorData: colorData, vocalRemoval: false, vocalRemovalColorData: nil, syncType: .lineSynced, content: [
                         SPLyricsLine(startTimeMs: 0, text: "Some text", syllables: []),
                         SPLyricsLine(startTimeMs: 561, text: "Some text line 2", syllables: []),
                         SPLyricsLine(startTimeMs: 1245, text: "Some text line 3", syllables: []),

@@ -60,7 +60,7 @@ struct TrackFullInfoScreen: View {
                         Divider()
                     }
                     if (durationInMs != 0) {
-                        _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: DateUtil.formattedTrackTime(Double(durationInMs) / 1000))
+                        _textBlockInfo(category: R.string.localizable.trackInfoDuration(), value: SPDateUtil.formattedTrackTime(Double(durationInMs) / 1000))
                         Divider()
                     }
                     _textBlockInfo(category: "ID", value: id)

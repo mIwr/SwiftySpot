@@ -7,7 +7,7 @@
 
 import Foundation
 
-func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, completion: @escaping (_ result: Result<PlaylistInfo, SPError>) -> Void) -> URLSessionDataTask? {
+func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPPlaylistInfo, SPError>) -> Void) -> URLSessionDataTask? {
     if (apHost.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Private back-end is empty. Retrieve access points first")))
         return nil
@@ -32,7 +32,7 @@ func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, au
                 completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try PlaylistInfo(serializedData: data)
+            let parsed = try SPPlaylistInfo(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
@@ -42,7 +42,7 @@ func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, au
     return task
 }
 
-func getPlaylistFromSeedByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, uri: String, completion: @escaping (_ result: Result<PlaylistFromSeed, SPError>) -> Void) -> URLSessionDataTask? {
+func getPlaylistFromSeedByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, uri: String, completion: @escaping (_ result: Result<SPPlaylistFromSeed, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))
         return nil
@@ -62,7 +62,7 @@ func getPlaylistFromSeedByApi(userAgent: String, clToken: String, authToken: Str
                 completion(.failure(.badResponseData(errCode: response.statusCode, data: ["description": "Response data is nil"])))
                 return
             }
-            let parsed = try PlaylistFromSeed(serializedData: data)
+            let parsed = try SPPlaylistFromSeed(serializedBytes: data)
             completion(.success(parsed))
         } catch {
             let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])

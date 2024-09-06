@@ -65,7 +65,7 @@ public class SPDevice {
       }
       buff[i] = UInt8(rnd)
     }
-    let hex = StringUtil.bytesToHexString(buff)
+      let hex = SPBase16.encode(buff)
     return hex
   }
 }

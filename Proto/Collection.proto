@@ -1,0 +1,42 @@
+syntax = "proto3";
+option swift_prefix="SPCollection";
+
+package com.spotify.collection2.v2.proto;
+
+import "public/CollectionModel.proto";
+
+message PageRequest {
+    string username = 1;
+    string set_name = 2;
+    string pagination_token = 3;
+    int32 limit = 4;
+}
+
+message DeltaRequest {
+    string username = 1;
+    string set_name = 2;
+    string last_sync_token = 3;
+}
+
+message WriteRequest {
+    string username = 1;
+    string set_name = 2;
+    repeated CollectionPageItem items = 3;
+    string client_update_id = 4;
+}
+
+message PubSubUpdate {
+    string username = 1;
+    string set_name = 2;
+    repeated CollectionPageItem items = 3;
+    string client_update_id = 4;
+}
+
+message InitializedRequest {
+    string username = 1;
+    string set_name = 2;
+}
+
+message InitializedResponse {
+    bool initialized = 1;
+}

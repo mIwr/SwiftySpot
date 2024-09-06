@@ -20,15 +20,15 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent {
+struct SPDacFilterComponent {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var facets: [Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet] = []
+  var facets: [SPDacFacet] = []
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -40,10 +40,10 @@ struct Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
-struct Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet {
+struct SPDacFacet {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -54,8 +54,8 @@ struct Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet {
 
   var selected: Bool = false
 
-  var ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo {
-    get {return _ubiElementInfo ?? Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo()}
+  var ubiElementInfo: SPUbiUbiElementInfo {
+    get {return _ubiElementInfo ?? SPUbiUbiElementInfo()}
     set {_ubiElementInfo = newValue}
   }
   /// Returns true if `ubiElementInfo` has been explicitly set.
@@ -67,19 +67,19 @@ struct Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet {
 
   init() {}
 
-  fileprivate var _ubiElementInfo: Com_Spotify_Ubi_Proto_Elementinfo_V1_UbiElementInfo? = nil
+  fileprivate var _ubiElementInfo: SPUbiUbiElementInfo? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet: @unchecked Sendable {}
+extension SPDacFilterComponent: @unchecked Sendable {}
+extension SPDacFacet: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.component.experimental.v1.proto"
 
-extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacFilterComponent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".FilterComponent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "facets"),
@@ -113,7 +113,7 @@ extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent, rhs: Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent) -> Bool {
+  static func ==(lhs: SPDacFilterComponent, rhs: SPDacFilterComponent) -> Bool {
     if lhs.facets != rhs.facets {return false}
     if lhs._ubiElementInfo != rhs._ubiElementInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -121,7 +121,7 @@ extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_FilterComponent: 
   }
 }
 
-extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacFacet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Facet"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -165,7 +165,7 @@ extension Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet, rhs: Com_Spotify_Home_Dac_Component_Experimental_V1_Proto_Facet) -> Bool {
+  static func ==(lhs: SPDacFacet, rhs: SPDacFacet) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.value != rhs.value {return false}
     if lhs.selected != rhs.selected {return false}

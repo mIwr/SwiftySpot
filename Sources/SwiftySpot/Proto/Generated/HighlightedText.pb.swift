@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText {
+struct SPDacHighlightedText {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -37,14 +37,14 @@ struct Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText: @unchecked Sendable {}
+extension SPDacHighlightedText: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.element.v1.proto"
 
-extension Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacHighlightedText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".HighlightedText"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "text"),
@@ -79,7 +79,7 @@ extension Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText, rhs: Com_Spotify_Home_Dac_Element_V1_Proto_HighlightedText) -> Bool {
+  static func ==(lhs: SPDacHighlightedText, rhs: SPDacHighlightedText) -> Bool {
     if lhs.text != rhs.text {return false}
     if lhs.startInclusive != rhs.startInclusive {return false}
     if lhs.endInclusive != rhs.endInclusive {return false}

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest {
+struct SPDacHomeViewServiceRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -37,14 +37,14 @@ struct Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest: @unchecked Sendable {}
+extension SPDacHomeViewServiceRequest: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.viewservice.v1.proto"
 
-extension Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacHomeViewServiceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".HomeViewServiceRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "facet"),
@@ -74,7 +74,7 @@ extension Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest: Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest, rhs: Com_Spotify_Home_Dac_Viewservice_V1_Proto_HomeViewServiceRequest) -> Bool {
+  static func ==(lhs: SPDacHomeViewServiceRequest, rhs: SPDacHomeViewServiceRequest) -> Bool {
     if lhs.facet != rhs.facet {return false}
     if lhs.timezone != rhs.timezone {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

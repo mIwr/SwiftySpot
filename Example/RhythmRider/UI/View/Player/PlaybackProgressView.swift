@@ -34,12 +34,12 @@ struct PlaybackProgressView: View {
             }
             .foregroundColor(Color(R.color.accent))
             HStack(alignment: .center, spacing: 0, content: {
-                Text(DateUtil.formattedTrackTime(playbackPositionInS))
+                Text(SPDateUtil.formattedTrackTime(playbackPositionInS))
                     .font(.caption).fontWeight(.semibold)
                     .lineLimit(1)
                     .foregroundColor(Color(R.color.secondary))
                 Spacer(minLength: 16)
-                Text(DateUtil.formattedTrackTime(durationInMs / 1000))
+                Text(SPDateUtil.formattedTrackTime(durationInMs / 1000))
                     .font(.caption).fontWeight(.semibold)
                     .lineLimit(1)
                     .foregroundColor(Color(R.color.secondary))

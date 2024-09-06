@@ -22,7 +22,7 @@ public class SPMetadataDisc {
     self.tracks = tracks
   }
   
-  static func from(protobuf: Spotify_Metadata_Disc) -> SPMetadataDisc {
+  static func from(protobuf: SPMetaDisc) -> SPMetadataDisc {
     var tracks: [SPMetadataTrack] = []
     for item in protobuf.tracks {
       let parsed = SPMetadataTrack.from(protobuf: item, uri: "")

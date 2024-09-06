@@ -16,7 +16,7 @@ final class UnitApiSearch: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Searchview_Proto_MainViewResponse(serializedData: data)
+        let response = try? SPSearchMainViewResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Search response is nil")
         XCTAssertNotEqual(response?.hits.count, 0, "Incorrect search response content proto parsing")
         guard let safeResponse = response else {return}
@@ -30,7 +30,7 @@ final class UnitApiSearch: XCTestCase {
             return
         }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let response = try? Com_Spotify_Searchview_Proto_AutocompleteViewResponse(serializedData: data)
+        let response = try? SPSearchAutocompleteViewResponse(serializedBytes: data)
         XCTAssertNotNil(response, "Search response is nil")
         XCTAssertNotEqual(response?.hits.count, 0, "Incorrect search response content proto parsing")
         guard let safeResponse = response else {return}

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu {
+struct SPDacContextMenu {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -49,7 +49,7 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu {
   /// Clears the value of `placeholder`. Subsequent reads from it will return its default value.
   mutating func clearPlaceholder() {self._placeholder = nil}
 
-  var actions: [Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction] = []
+  var actions: [SPDacContextAction] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -59,25 +59,25 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu {
   fileprivate var _placeholder: String? = nil
 }
 
-struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction {
+struct SPDacContextAction {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var action: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction.OneOf_Action? = nil
+  var action: SPDacContextAction.OneOf_Action? = nil
 
-  var dismiss: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss {
+  var dismiss: SPDacContextActionDismiss {
     get {
       if case .dismiss(let v)? = action {return v}
-      return Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss()
+      return SPDacContextActionDismiss()
     }
     set {action = .dismiss(newValue)}
   }
 
-  var notInterested: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested {
+  var notInterested: SPDacContextActionNotInterested {
     get {
       if case .notInterested(let v)? = action {return v}
-      return Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested()
+      return SPDacContextActionNotInterested()
     }
     set {action = .notInterested(newValue)}
   }
@@ -85,11 +85,11 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   enum OneOf_Action: Equatable {
-    case dismiss(Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss)
-    case notInterested(Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested)
+    case dismiss(SPDacContextActionDismiss)
+    case notInterested(SPDacContextActionNotInterested)
 
   #if !swift(>=4.1)
-    static func ==(lhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction.OneOf_Action, rhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction.OneOf_Action) -> Bool {
+    static func ==(lhs: SPDacContextAction.OneOf_Action, rhs: SPDacContextAction.OneOf_Action) -> Bool {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
@@ -111,7 +111,7 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction {
   init() {}
 }
 
-struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss {
+struct SPDacContextActionDismiss {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,7 +121,7 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss {
   init() {}
 }
 
-struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested {
+struct SPDacContextActionNotInterested {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -134,18 +134,18 @@ struct Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction.OneOf_Action: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss: @unchecked Sendable {}
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested: @unchecked Sendable {}
+extension SPDacContextMenu: @unchecked Sendable {}
+extension SPDacContextAction: @unchecked Sendable {}
+extension SPDacContextAction.OneOf_Action: @unchecked Sendable {}
+extension SPDacContextActionDismiss: @unchecked Sendable {}
+extension SPDacContextActionNotInterested: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "com.spotify.home.dac.contextMenu.v1.proto"
 
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacContextMenu: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ContextMenu"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "uri"),
@@ -199,7 +199,7 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu, rhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu) -> Bool {
+  static func ==(lhs: SPDacContextMenu, rhs: SPDacContextMenu) -> Bool {
     if lhs.uri != rhs.uri {return false}
     if lhs.title != rhs.title {return false}
     if lhs._subtitle != rhs._subtitle {return false}
@@ -211,7 +211,7 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextMenu: SwiftProtobuf.M
   }
 }
 
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacContextAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ContextAction"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dismiss"),
@@ -225,7 +225,7 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction: SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try {
-        var v: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss?
+        var v: SPDacContextActionDismiss?
         var hadOneofValue = false
         if let current = self.action {
           hadOneofValue = true
@@ -238,7 +238,7 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction: SwiftProtobuf
         }
       }()
       case 2: try {
-        var v: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested?
+        var v: SPDacContextActionNotInterested?
         var hadOneofValue = false
         if let current = self.action {
           hadOneofValue = true
@@ -274,14 +274,14 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction, rhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextAction) -> Bool {
+  static func ==(lhs: SPDacContextAction, rhs: SPDacContextAction) -> Bool {
     if lhs.action != rhs.action {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacContextActionDismiss: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ContextActionDismiss"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -294,13 +294,13 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss, rhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionDismiss) -> Bool {
+  static func ==(lhs: SPDacContextActionDismiss, rhs: SPDacContextActionDismiss) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension SPDacContextActionNotInterested: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ContextActionNotInterested"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "entity_type"),
@@ -325,7 +325,7 @@ extension Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested, rhs: Com_Spotify_Home_Dac_ContextMenu_V1_Proto_ContextActionNotInterested) -> Bool {
+  static func ==(lhs: SPDacContextActionNotInterested, rhs: SPDacContextActionNotInterested) -> Bool {
     if lhs.entityType != rhs.entityType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
