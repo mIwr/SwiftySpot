@@ -11,7 +11,11 @@ extension SPClient {
     ///Generated client user agent
     public var userAgent: String {
         get {
-            let userAgent = "Spotify/" + appVersionCode + " " + device.os + "/" + device.osVersionCode + " (" + device.model + ")"
+            var osVer = String(device.osVersionNumber)
+            if (device.iOS) {
+                osVer = device.osVersionCode
+            }
+            let userAgent = "Spotify/" + appVersionCode + " " + device.os + "/" + osVer + " (" + device.model + ")"
             return userAgent
         }
     }

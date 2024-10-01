@@ -42,7 +42,7 @@ extension ApiTarget {
         case .auth(let userAgent, let clToken, _):
             var dict = ApiTarget._protobufDict
             dict["User-Agent"] = userAgent
-            dict["client-token"] = clToken
+            dict["Client-Token"] = clToken
             return dict
         case .signupValidate(let userAgent, let clToken, let os, let appVer, _, _):
             let dict: [String: String] = [

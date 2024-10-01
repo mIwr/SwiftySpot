@@ -58,7 +58,7 @@ SwiftySpot is available with SPM
 
 - Package sources
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.6.0"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.6.1"))
 ```
 
 - Precompiled XCFramework (macOS, iOS, iOS Simulator, watchOS, tvOS): make your own Swift package and import it to the target project
@@ -163,6 +163,8 @@ let client = SPClient(device: device, clToken: clToken, clTokenExpires: clExpire
 ```
 
 Available API method - Authorize with credentials
+
+**Notice: Spotify recently disabled authorization with login/password. On mobile clients it still works, but how long is unknown. So in general authorization with stored credentials is preferred**
 
 ### Client initialization. State 3
 

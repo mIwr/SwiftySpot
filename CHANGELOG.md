@@ -1,5 +1,12 @@
 #  Changelog
 
+## Version 0.6.1
+**01.10.2024**
+
+**API-related changes**
+
+- Login/Password authorization fix (User-Agent header rename according device platform)
+
 ## Version 0.6.0
 **06.09.2024**
 

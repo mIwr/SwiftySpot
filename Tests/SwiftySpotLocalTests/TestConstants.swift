@@ -9,7 +9,7 @@
 
 import Foundation
 
-final class TestConstants {
+class TestConstants {
     
     static let device = SPDevice(os: "Android", osVer: "6.0.1", osVerNum: 23, cpuAbi: "32", manufacturer: "Samsung", model: "GT-I9500", deviceId: "e4615d56333747b9")
     
