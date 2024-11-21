@@ -10,12 +10,11 @@ import XCTest
 
 final class UnitRemoteApiSearch: XCTestCase {
     
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var guestClient: SPClient {
+        get { return TestCredentials.guestClient }
+    }
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
     
     func testSearch() {
@@ -40,12 +39,41 @@ final class UnitRemoteApiSearch: XCTestCase {
         }
     }
     
+    func testWebSearch() {
+        _webSearch(client: client)
+    }
+    
+    func testWebSearchByGuest() {
+        _webSearch(client: guestClient)
+    }
+    
     func testSearchSuggestion() {
         let exp = self.expectation(description: "Request time-out expectation")
         _ = client.searchSuggestion(query: "vita", entityTypes: [.artist, .track, .album], limit: 20) { result in
             do {
                 let suggestionRes = try result.get()
                 XCTAssertTrue(!suggestionRes.hits.isEmpty, "Search results is empty")
+            } catch {
+                print(error)
+                XCTAssert(false, "Empty search result object: " + error.localizedDescription)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 20) { error in
+            if let g_error = error
+            {
+                print(g_error)
+                XCTAssert(false, "Timeout error: " + g_error.localizedDescription)
+            }
+        }
+    }
+    
+    fileprivate func _webSearch(client: SPClient) {
+        let exp = self.expectation(description: "Request time-out expectation")
+        _ = client.webSearch(query: "vita", entityTypes: [.artist, .track, .album], limit: 10, offset: nil) { result in
+            do {
+                let searchRes = try result.get()
+                XCTAssertTrue(!searchRes.tracks.isEmpty || !searchRes.albums.isEmpty || !searchRes.artists.isEmpty, "Search results is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty search result object: " + error.localizedDescription)

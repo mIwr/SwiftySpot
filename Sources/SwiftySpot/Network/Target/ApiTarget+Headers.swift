@@ -26,6 +26,14 @@ extension ApiTarget {
             var dict = ApiTarget._protobufDict
             dict["User-Agent"] = userAgent
             return dict
+        case .webClToken(let userAgent, _, _, _, _) :
+            let dict: [String: String] = [
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent
+            ]
+            return dict
         case .acessPoints(let clToken):
             var dict: [String: String] = [
                 "Accept-Encoding": "gzip",
@@ -37,6 +45,14 @@ extension ApiTarget {
         case .wdvCert:
             let dict: [String: String] = [
                 "Accept-Encoding": "gzip",
+            ]
+            return dict
+        case .guestAuth(let userAgent, let os, let appVer):
+            let dict: [String: String] = [
+                "Accept": "application/json",
+                "User-Agent": userAgent,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
             ]
             return dict
         case .auth(let userAgent, let clToken, _):
@@ -59,6 +75,38 @@ extension ApiTarget {
                 "App-Platform": os,
                 "Spotify-App-Version": appVer,
                 "X-Client-Id": clId
+            ]
+            return dict
+        case .webProfile(let userAgent, let clToken, let authToken, let os, let appVer):
+            let dict: [String: String] = [
+                "Accept": "application/json",
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+            ]
+            return dict
+        case .webProfileCustom(let userAgent, let clToken, let authToken, let os, let appVer, _):
+            let dict: [String: String] = [
+                "Accept": "application/json",
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+            ]
+            return dict
+        case .webProfileCustom2(let userAgent, let clToken, let authToken, let os, let appVer, _):
+            let dict: [String: String] = [
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
             ]
             return dict
         case .profile(let userAgent, let clToken, let authToken, let os, let appVer):
@@ -168,6 +216,17 @@ extension ApiTarget {
                 "App-Platform": os,
                 "Spotify-App-Version": appVer,
                 "X-Client-Id": clId
+            ]
+            return dict
+        case .webSearch(let userAgent, let clToken, let authToken, let os, let appVer, _, _, _, _, _):
+            let dict: [String: String] = [
+                "Accept-Encoding": "gzip",
+                "Accept": "application/json",
+                "User-Agent": userAgent,
+                "Client-Token": clToken,
+                "Authorization": "Bearer " + authToken,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
             ]
             return dict
         case .search(let userAgent, let clToken, let authToken, let os, let appVer, let clId, _, _, _, _, _, _, _, _, _):

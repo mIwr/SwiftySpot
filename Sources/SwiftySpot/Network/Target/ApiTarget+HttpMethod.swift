@@ -14,11 +14,16 @@ extension ApiTarget {
         case .download: return ApiTarget._getMethod
         case .wdvSeektable: return ApiTarget._getMethod
         case .clToken: return ApiTarget._postMethod
+        case .webClToken: return ApiTarget._postMethod
         case .acessPoints: return ApiTarget._getMethod
         case .wdvCert: return ApiTarget._getMethod
+        case .guestAuth: return ApiTarget._getMethod
         case .auth: return ApiTarget._postMethod
         case .signupValidate: return ApiTarget._getMethod
         case .signup: return ApiTarget._postMethod
+        case .webProfile: return ApiTarget._getMethod
+        case .webProfileCustom: return ApiTarget._getMethod
+        case .webProfileCustom2: return ApiTarget._getMethod
         case .profile: return ApiTarget._getMethod
         case .landing: return ApiTarget._postMethod
         case .artist: return ApiTarget._getMethod
@@ -30,6 +35,7 @@ extension ApiTarget {
         case .collectionDelta: return ApiTarget._postMethod
         case .collectionWrite: return ApiTarget._postMethod
         case .searchSuggestion: return ApiTarget._getMethod
+        case .webSearch: return ApiTarget._getMethod
         case .search: return ApiTarget._getMethod
         case .playIntent: return ApiTarget._postMethod
         case .wdvIntentUrl: return ApiTarget._getMethod

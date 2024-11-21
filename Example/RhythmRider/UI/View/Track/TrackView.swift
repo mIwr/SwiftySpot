@@ -11,6 +11,7 @@ import SwiftySpot
 struct TrackView: View {
     
     @EnvironmentObject var api: ApiController
+    @EnvironmentObject var playController: PlaybackController
     
     let trackUri: String
     @State var title: String
@@ -329,12 +330,19 @@ struct TrackView: View {
                 }
             } else {
                 //disliked after toggle -> dislike cmd
-                api.client.dislikeTrack(uri: trackUri) { _ in
+                api.client.dislikeTrack(uri: trackUri) { dislikeRes in
                     //If fails, the reset update will be received through notification center
+                    guard let safeStatus = try? dislikeRes.get() else {
+                        return
+                    }
+                    if (!safeStatus || !playing) {
+                        return
+                    }
+                    _ = self.playController.playNextTrack()
                 }
                 if (api.client.likedTracksStorage.find(uri: trackUri) != nil) {
                     api.client.removeTrackLike(uri: trackUri) { _ in
-                        
+                        //If fails, the reset update will be received through notification center
                     }
                 }
             }
@@ -362,4 +370,5 @@ struct TrackView: View {
         TrackView(trackUri: playUri, title: "PLAYING long-long-long-long-long track name", img: R.image.previewCover(), artists: [(uri: "spotify:123", name: "Artist1"),(uri: "spotify:1234", name: "Artist2"),(uri: "spotify:12345", name: "Artist3")], onPress: onPress, playUri: playUri)
     }
     .environmentObject(api)
+    .environmentObject(previewPlayController)
 }

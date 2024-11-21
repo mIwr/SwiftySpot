@@ -42,6 +42,7 @@ extension SPClient {
     
     ///Search data
     ///- Parameter query: Search query
+    ///- Parameter entityTypes: Allowed for search entity types
     ///- Parameter limit: Search results page limit
     ///- Parameter pageToken: Pagination token. If not stated, the first page will be requested
     ///- Parameter onDemandSets: TODO
@@ -69,6 +70,47 @@ extension SPClient {
                 }
             }
             return task
+        }
+    }
+    
+    ///Search data through Web API and convert result as mobile entities array
+    ///- Parameter query: Search query
+    ///- Parameter entityTypes: Allowed for search entity types
+    ///- Parameter limit: Search results page limit
+    ///- Parameter offset: Search results offset
+    ///- Parameter completion: Search result response handler
+    ///- Returns: API request session task
+    public func webSearchWithConversion(query: String, entityTypes: [SPSearchEntityType], limit: UInt, offset: UInt?, completion: @escaping (_ result: Result<[SPSearchEntity], SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+            return self.webSearch(query: query, entityTypes: entityTypes, limit: limit, offset: offset) { result in
+                do {
+                    let searchRes = try result.get()
+                    completion(.success(searchRes.asSearchResultEntities()))
+                } catch {
+     #if DEBUG
+                    print(error)
+     #endif
+                    let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                    completion(.failure(parsed))
+                }
+            }
+        }
+    }
+    
+    ///Search data through Web API
+    ///- Parameter query: Search query
+    ///- Parameter entityTypes: Allowed for search entity types
+    ///- Parameter limit: Search results page limit
+    ///- Parameter offset: Search results offset
+    ///- Parameter completion: Search result response handler
+    ///- Returns: API request session task
+    public func webSearch(query: String, entityTypes: [SPSearchEntityType], limit: UInt, offset: UInt?, completion: @escaping (_ result: Result<SPWebSearchResult, SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+            var opPair = SPSearchEntityType.searchDesktopPersistedQuery
+            if (entityTypes.count == 1) {
+                opPair = entityTypes[0].webOpType
+            }
+            return webSearchByApi(userAgent: self.webUserAgent, clToken: safeClToken, authToken: safeAuthToken, os: SPConstants.webPlatform, appVer: self.webAppVersionCode, query: query, opName: opPair.opName, opQueryHashHexString: opPair.persistedQueryHashHex, limit: limit, offset: offset ?? 0, completion: completion)
         }
     }
 }

@@ -267,17 +267,10 @@ struct PlayerScreen: View {
                             //disliked after toggle -> dislike cmd
                             api.client.dislikeTrack(uri: playController.playingTrackUri) { dislikeRes in
                                 //If fails, the reset update will be received through notification center
-                                guard let safeStatus = try? dislikeRes.get() else {
-                                    return
-                                }
-                                if (!safeStatus) {
-                                    return
-                                }
-                                _ = self.playController.playNextTrack()
                             }
                             if (api.client.likedTracksStorage.find(uri: playController.playingTrackUri) != nil) {
                                 api.client.removeTrackLike(uri: playController.playingTrackUri) { _ in
-                                    
+                                    //If fails, the reset update will be received through notification center
                                 }
                             }
                         }
@@ -398,6 +391,10 @@ struct PlayerScreen: View {
                 return
             }
             dislike = !item.removed && item.addedTs > 0
+            if (!dislike) {
+                return
+            }
+            _ = playController.playNextTrack()
         })
     }
     

@@ -10,12 +10,8 @@ import XCTest
 
 final class UnitRemoteApiLyrics: XCTestCase {
 
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
 
     func testGetTrackLyricsInfo() {

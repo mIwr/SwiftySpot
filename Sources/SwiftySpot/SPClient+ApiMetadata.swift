@@ -9,7 +9,7 @@ import Foundation
 
 extension SPClient {
     
-    ///Get artists meta
+    ///Get artists meta. Can be executed with guest authorization
     ///- Parameter artistUris: Artist navigation uri's
     ///- Parameter completion: Meta info response handler
     ///- Returns: API request session task
@@ -71,7 +71,7 @@ extension SPClient {
         return items
     }
     
-    ///Get albums meta
+    ///Get albums meta. Can be executed with guest authorization
     ///- Parameter albumUris: Album navigation uri's
     ///- Parameter completion: Meta info response handler
     ///- Returns: API request session task
@@ -133,7 +133,7 @@ extension SPClient {
         return items
     }
     
-    ///Get tracks meta
+    ///Get tracks meta. Can be executed with guest authorization
     ///- Parameter trackUris: Track navigation uri's
     ///- Parameter completion: Meta info response handler
     ///- Returns: API request session task
@@ -195,13 +195,13 @@ extension SPClient {
         return items
     }
     
-    ///Get meta info
+    ///Get meta info. Can be executed with guest authorization
     ///- Parameter uris: Navigation uri's
     ///- Parameter kind: Meta type
     ///- Parameter completion: Meta info response handler
     ///- Returns: API request session task
     fileprivate func getMetadata(uris: [String], kind: SPMetaExtensionKind, completion: @escaping (_ response: Result<SPMetaBatchedExtensionResponse, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthProfileApReq { safeClToken, safeAuthToken, safeProfile, safeAp in
+        return safeAuthIncludingGuestProfileApReq { safeClToken, safeAuthToken, safeProfile, safeAp in
             var protoHeader = SPMetaBatchedEntityRequestHeader()
             var country: String = safeProfile.country
             if (country.isEmpty) {

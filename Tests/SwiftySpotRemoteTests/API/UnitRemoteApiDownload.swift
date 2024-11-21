@@ -10,12 +10,11 @@ import XCTest
 
 final class UnitRemoteApiDownload: XCTestCase {
 
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var guestClient: SPClient {
+        get { return TestCredentials.guestClient }
+    }
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
     
     func testWdvCert() {
@@ -260,7 +259,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                     return
                 }
                 print("File ID -> " + safeAudioFileMeta.hexId)
-                _ = self.client.requestDownloadInfo(hexFileId: safeAudioFileMeta.hexId) { downloadInfoRes in
+                _ = self.guestClient.requestDownloadInfo(hexFileId: safeAudioFileMeta.hexId) { downloadInfoRes in
                     do {
                         let di = try downloadInfoRes.get()
                         XCTAssertTrue(!di.directLinks.isEmpty, "Track download links' array is empty")

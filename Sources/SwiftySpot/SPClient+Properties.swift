@@ -121,6 +121,15 @@ extension SPClient {
         }
     }
     
+    ///Guest authorization token
+    public var guestAuthToken: String? {
+        get {
+            if (guestAuthSession.token.isEmpty || guestAuthSession.expired) {
+                return nil
+            }
+            return guestAuthSession.token
+        }
+    }
     ///Authorization token
     public var authToken: String? {
         get {

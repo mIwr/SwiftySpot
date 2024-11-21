@@ -61,4 +61,46 @@ final class UnitRemoteApiProfile: XCTestCase {
             }
         }
     }
+    
+    func testGetWebProfileInfo() {
+        let exp = self.expectation(description: "Request time-out expectation")
+        _ = client.getWebProfileInfo { result in
+            do {
+                let profile = try result.get()
+                XCTAssertNotEqual(profile.username, "", "Parsing error: username is empty")
+            } catch {
+                print(error)
+                XCTAssert(false, "Empty profile object: " + error.localizedDescription)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { error in
+            if let g_error = error
+            {
+                print(g_error)
+                XCTAssert(false, "Timeout error: " + g_error.localizedDescription)
+            }
+        }
+    }
+    
+    func testGetWebProfileInfoReserve() {
+        let exp = self.expectation(description: "Request time-out expectation")
+        _ = client.getWebProfileInfoReserve { result in
+            do {
+                let profile = try result.get()
+                XCTAssertNotEqual(profile.username, "", "Parsing error: username is empty")
+            } catch {
+                print(error)
+                XCTAssert(false, "Empty profile object: " + error.localizedDescription)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { error in
+            if let g_error = error
+            {
+                print(g_error)
+                XCTAssert(false, "Timeout error: " + g_error.localizedDescription)
+            }
+        }
+    }
 }

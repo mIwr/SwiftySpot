@@ -10,10 +10,14 @@ import Foundation
 extension ApiTarget {
     
     fileprivate static let _clientTokenPath = "v1/clienttoken"
+    fileprivate static let _guestAuthPath = "get_access_token"
+    fileprivate static let _webApiPathPrefix = "pathfinder/v1/query"
     fileprivate static let _authPath = "v3/login"
     fileprivate static let _signupValidatePathPrefix = "signup/public/v1/account/"
     fileprivate static let _signupPath = "signup/public/v2/account/create"
     fileprivate static let _profileInfoPath = "v1/me"
+    fileprivate static let _webProfileCustomInfoPathPrefix = "user-profile-view/v3/profile/"
+    fileprivate static let _webProfileCustomInfo2PathPrefix = "identity/v3/user/username/"
     fileprivate static let _dacLandingPath = "home-dac-viewservice/v1/view"
     fileprivate static let _playlistInfoPathPrefix = "playlist/v2/playlist/"
     fileprivate static let _artistUIInfoPathPrefix = "artistview/v1/artist/"
@@ -43,10 +47,12 @@ extension ApiTarget {
         case .download: return ""
         case .wdvSeektable(let fileHexId): return ApiTarget._wdvSeektablePathPrefix + fileHexId + ".json"
         case .clToken: return ApiTarget._clientTokenPath
+        case .webClToken: return ApiTarget._clientTokenPath
         case .acessPoints:
             let nowTsUtc = Int64(Date().timeIntervalSince1970)
             return "?time=" + String(nowTsUtc) + "&type=accesspoint&type=spclient&type=dealer" 
         case .wdvCert: return ApiTarget._wdvCertPath
+        case .guestAuth: return ApiTarget._guestAuthPath + "?reason=transport&productType=web-player"
         case .auth: return ApiTarget._authPath
         case .signupValidate(_, _, _, _, let validatorKey, let password):
             var path = ApiTarget._signupValidatePathPrefix + "?validate=1&key=" + validatorKey
@@ -56,6 +62,22 @@ extension ApiTarget {
             }
             return path
         case .signup: return ApiTarget._signupPath
+        case .webProfile:
+            var path = ApiTarget._webApiPathPrefix + "?operationName=profileAttributes&variables={}"
+            let dict: [String: Any] = [
+                "persistedQuery": [
+                    "sha256Hash": "53bcb064f6cd18c23f752bc324a791194d20df612d8e1239c735144ab0399cea",
+                    "version": 1
+                ]
+            ]
+            let data = (try? JSONSerialization.data(withJSONObject: dict)) ?? Data()
+            let jsonStr = String(data: data, encoding: .utf8) ?? ""
+            path += "&extensions=" + jsonStr
+            return path
+        case .webProfileCustom(_, _, _, _, _, let username):
+            return ApiTarget._webProfileCustomInfoPathPrefix + username
+        case .webProfileCustom2(_, _, _, _, _, let username):
+            return ApiTarget._webProfileCustomInfo2PathPrefix + username
         case .profile: return ApiTarget._profileInfoPath
         case .landing: return ApiTarget._dacLandingPath
         case .artist(_, _, _, _, _, _, let uri, let fields, let imgSize):
@@ -94,6 +116,30 @@ extension ApiTarget {
             }
             return ApiTarget._searchSuggestionPath + "?request_id=" + reqId.uuidString.lowercased() + "&query=" + query + "&catalogue=" + catalogue + "&locale=" + locale + "&entity_types=" + types + "&timestamp=" + String(ts) + "&on_demand_sets_enabled=" + String(onDemandSets) + "&limit=" + String(limit)
             //&album_states=live%2Cprerelease
+        case .webSearch(_, _, _, _, _, let query, let opName, let opQueryHashHexString, let limit, let offset):
+            var dict: [String: Any] = [
+                "searchTerm": query,
+                "limit": limit,
+                "offset": offset,
+                "numberOfTopResults": limit,
+                "includeAudiobooks": false,
+                "includePreReleases": false,
+                "includeArtistHasConcertsField": false,
+                "includeLocalConcertsField": false,
+            ]
+            var data = (try? JSONSerialization.data(withJSONObject: dict)) ?? Data()
+            var jsonStr = String(data: data, encoding: .utf8) ?? ""
+            var path = ApiTarget._webApiPathPrefix + "?operationName=" + opName + "&variables=" + jsonStr
+            dict = [
+                "persistedQuery": [
+                    "version": 1,
+                    "sha256Hash": opQueryHashHexString
+                ]
+            ]
+            data = (try? JSONSerialization.data(withJSONObject: dict)) ?? Data()
+            jsonStr = String(data: data, encoding: .utf8) ?? ""
+            path += "&extensions=" + jsonStr
+            return path
         case .search(_, _, _, _, _, _, let reqId, let query, let catalogue, let locale, let entityTypes, let ts, let onDemandSets, let limit, let pageToken):
             var types = ""
             for type in entityTypes {

@@ -11,15 +11,30 @@ import SwiftProtobuf
 
 final class UnitRemoteApiPlaylist: XCTestCase {
     
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var guestClient: SPClient {
+        get { return TestCredentials.guestClient }
+    }
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
     
     func testGetPlaylistInfo() {
+        _getPlaylistInfo(client: client)
+    }
+    
+    func testGetPlaylistInfoByGuest() {
+        _getPlaylistInfo(client: guestClient)
+    }
+    
+    func testGetPlaylistFromTrack() {
+        _getPlaylistFromTrack(client: client)
+    }
+    
+    func testGetPlaylistFromTrackByGuest() {
+        _getPlaylistFromTrack(client: guestClient)
+    }
+    
+    fileprivate func _getPlaylistInfo(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         _ = client.getPlaylistInfo(id: TestConstants.playlistId) { result in
             do {
@@ -40,7 +55,7 @@ final class UnitRemoteApiPlaylist: XCTestCase {
         }
     }
     
-    func testGetPlaylistFromTrack() {
+    fileprivate func _getPlaylistFromTrack(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         _ = client.getPlaylistFromTrack(trackId: TestConstants.trackId) { result in
             do {

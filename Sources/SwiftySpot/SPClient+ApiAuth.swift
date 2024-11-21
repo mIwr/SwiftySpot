@@ -10,6 +10,26 @@ import SwiftProtobuf
 
 extension SPClient {
     
+    ///Authorize with no credentials (guest access)
+    ///- Parameter completion: Authorization status response handler
+    ///- Returns: API request session task
+    func refreshGuestAuth(completion: @escaping (_ result: Result<SPAuthSession, SPError>) -> Void) -> URLSessionDataTask? {
+        return getGuestAuthByApi(userAgent: webUserAgent, os: SPConstants.webPlatform, appVer: webAppVersionCode) { result in
+            do {
+                let authRes = try result.get()
+                let session = SPAuthSession.from(guestAuth: authRes)
+                self.guestAuthSession = session
+                completion(.success(session))
+            } catch {
+#if DEBUG
+                print(error)
+#endif
+                let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                completion(.failure(parsed))
+            }
+        }
+    }
+    
     ///Authorize with credentials
     ///- Parameter login: User login: mail, phone number or username
     ///- Parameter password: User account password

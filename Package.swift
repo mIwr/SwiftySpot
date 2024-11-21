@@ -13,7 +13,7 @@ let package = Package(
             targets: ["SwiftySpot"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.27.1")
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.2")
     ],
     targets: [
         .target(name: "SwiftySpot", dependencies: [

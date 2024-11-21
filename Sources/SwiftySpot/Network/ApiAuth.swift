@@ -7,6 +7,25 @@
 
 import Foundation
 
+func getGuestAuthByApi(userAgent: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPGuestWebAuthSession, SPError>) -> Void) -> URLSessionDataTask? {
+    guard let req: URLRequest = buildRequest(for: .guestAuth(userAgent: userAgent, os: os, appVer: appVer)) else {
+        completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init auth request")))
+        return nil
+    }
+    let task = requestJson(req) { result in
+        do {
+            let json = try result.get()
+            let data = try JSONSerialization.data(withJSONObject: json)
+            let auth: SPGuestWebAuthSession = try JSONDecoder().decode(SPGuestWebAuthSession.self, from: data)
+            completion(.success(auth))
+        } catch {
+            let parsed: SPError = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+            completion(.failure(parsed))
+        }
+    }
+    return task
+}
+
 func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPShortClientInfo, cred: SPPassword, completion: @escaping (_ result: Result<SPLoginV3Response, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Client Token is empty. Initialize session first")))

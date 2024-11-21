@@ -9,12 +9,12 @@ import Foundation
 
 extension SPClient {
     
-    ///Get playlist info by its ID
+    ///Get playlist info by its ID. Can be executed with guest authorization
     ///- Parameter ID: Playlist navigation uri ID
     ///- Parameter completion: Playlist info response handler
     ///- Returns: API request session task
     public func getPlaylistInfo(id: String, completion: @escaping (_ result: Result<SPPlaylist, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthApReq { safeClToken, safeAuthToken, safeSpclientAP in
+        return safeAuthIncludingGuestApReq { safeClToken, safeAuthToken, safeSpclientAP in
             let task = getPlaylistInfoByApi(apHost: safeSpclientAP, userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, id: id, os: self.device.os, appVer: self.appVersionCode) { result in
                 do {
                     let info = try result.get()
@@ -46,12 +46,12 @@ extension SPClient {
         return getPlaylistFromSeed(uri: SPNavigateUriUtil.generateTrackUri(id: trackId), completion: completion)
     }
     
-    ///Generate playlist by seed
+    ///Generate playlist by seed. Can be executed with guest authorization
     ///- Parameter uri: Navigation uri seed
     ///- Parameter completion: Playlist info response handler
     ///- Returns: API request session task
     public func getPlaylistFromSeed(uri: String, completion: @escaping (_ result: Result<[SPTypedObj], SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthApReq { safeClToken, safeAuthToken, safeSpclientAP in
+        return safeAuthIncludingGuestApReq { safeClToken, safeAuthToken, safeSpclientAP in
             let task = getPlaylistFromSeedByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, uri: uri) { result in
                 do {
                     let playlists = try result.get()

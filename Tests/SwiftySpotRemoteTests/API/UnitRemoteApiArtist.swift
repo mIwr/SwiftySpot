@@ -10,15 +10,22 @@ import XCTest
 
 final class UnitRemoteApiArtist: XCTestCase {
 
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var guestClient: SPClient {
+        get { return TestCredentials.guestClient }
+    }
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
     
     func testGetArtistInfo() {
+        _getArtistInfo(client: client)
+    }
+    
+    func testGetArtistInfoByGuest() {
+        _getArtistInfo(client: guestClient)
+    }
+    
+    fileprivate func _getArtistInfo(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateArtistUri(id: TestConstants.artistId)
         _ = client.getArtistInfo(uri: uri, imgSize: "large") { result in

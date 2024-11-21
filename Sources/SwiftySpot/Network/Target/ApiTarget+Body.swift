@@ -23,8 +23,32 @@ extension ApiTarget {
                 #endif
             }
             return data
+        case .webClToken(_, let clId, let os, let appVer, let deviceId):
+            let dict: [String: Any] = [
+                "client_data": [
+                    "client_version": appVer,
+                    "client_id": clId,
+                    "js_sdk_data": [
+                        "device_brand":"unknown",
+                        "device_model":"unknown",
+                        "os": os,
+                        "os_version":"unknown",
+                        "device_id": deviceId,
+                        "device_type":"computer"
+                    ]
+                ]
+            ]
+            do {
+                data = try JSONSerialization.data(withJSONObject: dict)
+            } catch {
+                #if DEBUG
+                print(error)
+                #endif
+            }
+            return data
         case.acessPoints: return nil
         case .wdvCert: return nil
+        case .guestAuth: return nil
         case .auth(_, _, let proto):
             do {
                 data = try proto.serializedData()
@@ -44,6 +68,9 @@ extension ApiTarget {
                 #endif
             }
             return data
+        case .webProfile: return nil
+        case .webProfileCustom: return nil
+        case .webProfileCustom2: return nil
         case .profile: return nil
         case .landing(_, _, _, _, _, _, let proto):
             do {
@@ -95,6 +122,7 @@ extension ApiTarget {
             }
             return data
         case .searchSuggestion: return nil
+        case .webSearch: return nil
         case .search: return nil
         case .playIntent(_, _, _, _, _, _, _, let proto):
             do {

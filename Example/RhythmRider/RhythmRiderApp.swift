@@ -86,6 +86,7 @@ struct RhythmRiderApp: App {
                         let session = parseStatus.1
                         if (session == nil && _hasAuth) {
                             //Lost auth
+                            _ = playController.pause(force: true)
                             _hasAuth = false
                         } else if (session != nil && !_hasAuth) {
                             //Auth

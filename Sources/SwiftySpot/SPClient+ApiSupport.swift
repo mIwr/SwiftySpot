@@ -9,6 +9,30 @@ import Foundation
 
 extension SPClient {
     
+    func generateWebClientToken(completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
+        let task = getWebSessionByApi(userAgent: webUserAgent, clId: SPConstants.webClID, os: device.os, appVer: webAppVersionCode, deviceId: device.deviceId) { result in
+            do {
+                let tk = try result.get()
+                #if DEBUG
+                print("WEB client token", tk.val)
+                #endif
+                /*self.clToken = tk
+                self.clTokenCreateTsUTC = Int64(Date.timeIntervalBetween1970AndReferenceDate + Date.timeIntervalSinceReferenceDate)
+                let clSession = SPClientSession(token: tk.val, createTsUTC: self.clTokenCreateTsUTC, expiresInS: tk.expiresInS, refreshInS: tk.refreshAfterS)
+                self.notifyClSessionUpdate(clSession)*/
+                completion(.success(tk))
+            } catch {
+#if DEBUG
+                print(error)
+#endif
+                let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                completion(.failure(parsed))
+                
+            }
+        }
+        return task
+    }
+    
     ///Refresh client session
     func refreshClientToken(completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
         var clientInfo = SPClientInfo()
@@ -83,9 +107,9 @@ extension SPClient {
                                 self.notifyClSessionUpdate(clSession)
                                 completion(.success(tk))
                             } catch {
-        #if DEBUG
+#if DEBUG
                                 print(error)
-        #endif
+#endif
                                 let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
                                 completion(.failure(parsed))
                                 
@@ -133,9 +157,9 @@ extension SPClient {
                         }
                     }
                     if case .error(let err)? = authRes.response {
-    #if DEBUG
+#if DEBUG
                         print(err)
-    #endif
+#endif
                         let parsedErr = SPError.badRequest(errCode: err.rawValue, description: String(describing: err))
                         if (err == .invalidCredentials) {
                             self.commitLostAuth()
@@ -149,9 +173,9 @@ extension SPClient {
                     self.notifyAuthUpdate(session)
                     completion(.success(session))
                 } catch {
-    #if DEBUG
+#if DEBUG
                     print(error)
-    #endif
+#endif
                     let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
                     completion(.failure(parsed))
                 }
@@ -270,9 +294,100 @@ extension SPClient {
                     }
                     completion(.success(profileRes))
                 } catch {
-    #if DEBUG
+#if DEBUG
+                print(error)
+#endif
+                    _ = self.getWebProfileInfo(completion: completion)
+                }
+            }
+            return task
+        }
+    }
+    
+    ///Get profile info from Web API
+    ///- Parameter completion: Profile info response handler
+    ///- Returns: API request session task
+    func getWebProfileInfo(completion: @escaping (_ result: Result<SPProfile, SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthReq { safeClToken, safeAuthToken in
+            let task = getWebProfileCustomByApi(userAgent: self.webUserAgent, clToken: safeClToken, authToken: safeAuthToken, os: SPConstants.webPlatform, appVer: self.webAppVersionCode, username: self.authSession.username) { result in
+                do {
+                    let json = try result.get()
+                    guard let safeUri = json["uri"] as? String else {
+                        return completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: json)))
+                    }
+                    let spObj = SPTypedObj(uri: safeUri)
+                    let name = (json["name"] as? String) ?? ""
+                    let currUser = (json["is_current_user"] as? Bool) ?? false
+                    var country: String
+                    if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
+                        country = Locale.current.region?.identifier ?? "DE"
+                    } else {
+                        country = Locale.current.regionCode ?? "DE"
+                    }
+                    let profile = SPProfile(id: spObj.id, type: "user", email: "", displayName: name, birthdate: "", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: true, locked: false), policies: nil)
+                    if (currUser) {
+                        var usernameCorrection = false
+                        if let safeStockProfile = self.profile {
+                            usernameCorrection = profile.username != self.authSession.username
+                            self.profile = SPProfile(id: spObj.id, type: safeStockProfile.type, email: safeStockProfile.email, displayName: name, birthdate: safeStockProfile.birthdate, extUrls: safeStockProfile.extUrls, href: safeStockProfile.href, images: safeStockProfile.images, country: safeStockProfile.country, product: safeStockProfile.product, explicitContent: safeStockProfile.explicitContent, policies: safeStockProfile.policies)
+                        } else {
+                            self.profile = profile
+                        }
+                        self.notifyProfileUpdate(self.profile)
+                        if (usernameCorrection) {
+                            //Username updated or corrected -> Update for refresh auth data
+                            self.authSession.username = profile.username
+                            let updAuth = SPAuthSession(username: profile.username, token: self.authSession.token, storedCred: self.authSession.storedCredential, createTsUTC: self.authTokenCreateTsUTC, expiresInS: self.authSession.expiresInS)
+                            self.notifyAuthUpdate(updAuth)
+                        }
+                    }
+                    completion(.success(profile))
+                } catch {
+#if DEBUG
                     print(error)
-    #endif
+#endif
+                    let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
+                    completion(.failure(parsed))
+                }
+            }
+            return task
+        }
+    }
+    
+    ///Get profile info from Web API
+    ///- Parameter completion: Profile info response handler
+    ///- Returns: API request session task
+    func getWebProfileInfoReserve(completion: @escaping (_ result: Result<SPProfile, SPError>) -> Void) -> URLSessionDataTask? {
+        return safeAuthReq { safeClToken, safeAuthToken in
+            let task = getWebProfileCustom2ByApi(userAgent: self.webUserAgent, clToken: safeClToken, authToken: safeAuthToken, os: SPConstants.webPlatform, appVer: self.webAppVersionCode, username: self.authSession.username) { result in
+                do {
+                    let profileData = try result.get()
+                    var country: String
+                    if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
+                        country = Locale.current.region?.identifier ?? "DE"
+                    } else {
+                        country = Locale.current.regionCode ?? "DE"
+                    }
+                    let profile = SPProfile(id: profileData.username.value, type: "user", email: "", displayName: profileData.displayName.value, birthdate: "", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: true, locked: false), policies: nil)
+                    var usernameCorrection = false
+                    if let safeStockProfile = self.profile {
+                        usernameCorrection = profile.username != self.authSession.username
+                        self.profile = SPProfile(id: profileData.username.value, type: safeStockProfile.type, email: safeStockProfile.email, displayName: profileData.displayName.value, birthdate: safeStockProfile.birthdate, extUrls: safeStockProfile.extUrls, href: safeStockProfile.href, images: safeStockProfile.images, country: safeStockProfile.country, product: safeStockProfile.product, explicitContent: safeStockProfile.explicitContent, policies: safeStockProfile.policies)
+                    } else {
+                        self.profile = profile
+                    }
+                    self.notifyProfileUpdate(self.profile)
+                    if (usernameCorrection) {
+                        //Username updated or corrected -> Update for refresh auth data
+                        self.authSession.username = profile.username
+                        let updAuth = SPAuthSession(username: profile.username, token: self.authSession.token, storedCred: self.authSession.storedCredential, createTsUTC: self.authTokenCreateTsUTC, expiresInS: self.authSession.expiresInS)
+                        self.notifyAuthUpdate(updAuth)
+                    }
+                    completion(.success(profile))
+                } catch {
+#if DEBUG
+                    print(error)
+#endif
                     let parsed = error as? SPError ?? SPError.general(errCode: SPError.GeneralErrCode, data: ["description": error])
                     completion(.failure(parsed))
                 }
@@ -322,8 +437,44 @@ extension SPClient {
         return task
     }
     
+    ///Execute API func with required client and auth tokens + optional guest auth tokens
+    ///- Parameter authReq: API func handler with actual or refreshed client and auth tokens
+    ///- Returns: API request session task
+    func safeAuthIncludingGuestReq(_ authReq: @escaping (_ safeClToken: String, _ safeAuthToken: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        if let aToken = authToken {
+            return safeClReq { safeClToken in
+                let task = authReq(safeClToken, aToken)
+                return task
+            }
+        } else if !authorized {
+            //No user auth
+            if let gAToken = guestAuthToken  {
+                //Actual guest auth token
+                return safeClReq { safeClToken in
+                    let task = authReq(safeClToken, gAToken)
+                    return task
+                }
+            }
+            //Regresh guest auth token
+            let guestTask = refreshGuestAuth { _ in
+                _ = authReq(self.clToken.val, self.guestAuthSession.token)
+            }
+            return guestTask
+        }
+        let task = refreshAuth { result in
+            do {
+                _ = try result.get()
+                _ = authReq(self.clToken.val, self.authSession.token)
+            } catch {
+                self.commitLostAuthToken()
+                _ = authReq(self.clToken.val, self.authSession.token)
+            }
+        }
+        return task
+    }
+    
     ///Execute API func with required profile instance, client and auth tokens
-    ///- Parameter authProfileReq: API func handler with actual or refreshed private back-end access point, client and auth tokens
+    ///- Parameter authProfileReq: API func handler with actual or refreshed client and auth tokens, profile instance
     ///- Returns: API request session task
     func safeAuthProfileReq(_ authProfileReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeProfile: SPProfile) -> URLSessionDataTask?) -> URLSessionDataTask? {
         if let safeProfile = profile {
@@ -343,6 +494,28 @@ extension SPClient {
             _ = authProfileReq(self.clientToken ?? "", self.authToken ?? "", safeProfile)
         }
         return task
+    }
+    
+    ///Execute API func with required client, auth tokens and profile instance or dummy profile info with guest auth tokens
+    ///- Parameter authProfileReq: API func handler with actual or refreshed client and auth tokens, profile instance or dummy profile info with guest auth tokens
+    ///- Returns: API request session task
+    func safeAuthIncludingGuestProfileReq(_ authProfileReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeProfile: SPProfile) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        if let safeProfile = profile {
+            return safeAuthReq { safeClToken, safeAuthToken in
+                let task = authProfileReq(safeClToken, safeAuthToken, safeProfile)
+                return task
+            }
+        }
+        var country: String
+        if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
+            country = Locale.current.region?.identifier ?? "DE"
+        } else {
+            country = Locale.current.regionCode ?? "DE"
+        }
+        let safeProfile = SPProfile(id: "Guest", type: "user", email: "", displayName: "User", birthdate: "1970-01-01", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: false, locked: false), policies: SPPolicies(optInTrialPremiumOnlyMarket: false))
+        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+            return authProfileReq(safeClToken, safeAuthToken, safeProfile)
+        }
     }
     
     ///Execute API func with required private back-end access point, client and auth tokens
@@ -367,11 +540,55 @@ extension SPClient {
         return task
     }
     
+    ///Execute API func with required private back-end access point, client and auth tokens + optional guest auth tokens
+    ///- Parameter authApReq: API func handler with actual or refreshed private back-end access point, client and auth tokens
+    ///- Returns: API request session task
+    func safeAuthIncludingGuestApReq(_ authApReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeAp: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        let task = safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+            if let ap = self.spclientAp {
+                return authApReq(safeClToken, safeAuthToken, ap)
+            }
+            if (safeClToken.isEmpty) {
+                //After refresh client token is empty -> exec callback
+                //+ Prevent client token refresh (required for AP) after parent task cancel
+                return authApReq(safeClToken, safeAuthToken, SPConstants.defaultSpClientHost)
+            }
+            let refreshTask = self.getAPs { result in
+                let ap = self.spclientAp ?? SPConstants.defaultSpClientHost
+                _ = authApReq(safeClToken, safeAuthToken, ap)
+            }
+            return refreshTask
+        }
+        return task
+    }
+    
     ///Execute API func with required private back-end access point, profile instance, client and auth tokens
     ///- Parameter authProfileApReq: API func handler with actual or refreshed private back-end access point, profile instance, client and auth tokens
     ///- Returns: API request session task
     func safeAuthProfileApReq(_ authProfileApReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeProfile: SPProfile, _ safeAp: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
         let task = safeAuthProfileReq { safeClToken, safeAuthToken, safeProfile in
+            if let ap = self.spclientAp {
+                return authProfileApReq(safeClToken, safeAuthToken, safeProfile, ap)
+            }
+            if (safeClToken.isEmpty) {
+                //After refresh client token is empty -> exec callback
+                //+ Prevent client token refresh (required for AP) after parent task cancel
+                return authProfileApReq(safeClToken, safeAuthToken, safeProfile, SPConstants.defaultSpClientHost)
+            }
+            let refreshTask = self.getAPs { result in
+                let ap = self.spclientAp ?? SPConstants.defaultSpClientHost
+                _ = authProfileApReq(safeClToken, safeAuthToken, safeProfile, ap)
+            }
+            return refreshTask
+        }
+        return task
+    }
+    
+    ///Execute API func with required private back-end access point, profile instance, client and auth tokens + optional guest auth tokens
+    ///- Parameter authProfileApReq: API func handler with actual or refreshed private back-end access point, profile instance, client and auth tokens
+    ///- Returns: API request session task
+    func safeAuthIncludingGuestProfileApReq(_ authProfileApReq: @escaping (_ safeClToken: String, _ safeAuthToken: String, _ safeProfile: SPProfile, _ safeAp: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        let task = safeAuthIncludingGuestProfileReq { safeClToken, safeAuthToken, safeProfile in
             if let ap = self.spclientAp {
                 return authProfileApReq(safeClToken, safeAuthToken, safeProfile, ap)
             }

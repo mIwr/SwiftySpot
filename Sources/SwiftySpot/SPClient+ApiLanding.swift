@@ -14,7 +14,7 @@ extension SPClient {
     ///- Parameter completion: Extracted landing data response handler
     ///- Returns: API request session task
     public func getLandingData(completion: @escaping (_ result: Result<SPLandingData, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthReq { safeClToken, safeAuthToken in
+        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
             var clientInfo = SPDacRequest.ClientInfo()
             clientInfo.appName = self.device.os.uppercased() + "_MUSIC_APP"
             clientInfo.version = self.appVersionCode

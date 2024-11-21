@@ -11,9 +11,13 @@ public final class SPConstants {
     
     public static let appBundleId = "com.spotify.music"
     public static let appVersionCode = "8.9.38.494"
-    public static let webAppVersionCode = "1.2.35.284.g56aba07f"
+    public static let webAppVersionCode = "1.2.48.15.gc6d53b12"
+    
+    public static let webPlatform = "WebPlayer"
     ///Client ID
     public static let clID = "9a8d2f0ce77a4e248bb71fefcb557637"
+    ///Web client ID
+    public static let webClID = "d8a5ed958d274c2e8ee717e6a4b0971d"
     ///Client validation key
     public static let clValidationKey = "142b583129b2df829de3656f9eb484e6"
     
@@ -35,6 +39,12 @@ public final class SPConstants {
     public static let playlistUriPrefix = genUriPrefix + "playlist:"
     ///Track navigation uri prefix
     public static let trackUriPrefix = genUriPrefix + "track:"
+    ///User profile navigation uri prefix
+    public static let userUriPrefix = genUriPrefix + "user:"
+    ///Genre navigation uri prefix
+    public static let genreUriPrefix = genUriPrefix + "genre:"
+    ///Show or podcast navigation uri prefix
+    public static let showUriPrefix = genUriPrefix + "show:"
     ///Search navigation uri prefix
     public static let searchUriPrefix = genUriPrefix + "search:"
 }

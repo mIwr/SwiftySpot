@@ -1,0 +1,11 @@
+syntax = "proto3";
+option swift_prefix="SPWeb";
+
+message ProfileResponse {
+    StringVal username = 1;
+    StringVal display_name = 2;
+}
+
+message StringVal {
+    string value = 1;
+}

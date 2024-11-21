@@ -77,12 +77,11 @@
 		8BF21C102AD993F700FEA6D6 /* ClSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF21C0F2AD993F700FEA6D6 /* ClSessionController.swift */; };
 		8BF4D8F92B4E807C0089597C /* AlbumsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4D8F82B4E807C0089597C /* AlbumsCollectionView.swift */; };
 		8BFE6C072AF3D00F009CF608 /* FavStorageVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE6C062AF3D00F009CF608 /* FavStorageVModel.swift */; };
-		A9EBD3AB645F7D97250EB0D5 /* Pods_RhythmRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A01C47867C04C40488533E /* Pods_RhythmRider.framework */; };
+		97B41B3C5DBDB2979A356418 /* Pods_RhythmRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCC92F14606E33951E9CE71 /* Pods_RhythmRider.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.release.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.release.xcconfig"; sourceTree = "<group>"; };
-		74A01C47867C04C40488533E /* Pods_RhythmRider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmRider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CCC92F14606E33951E9CE71 /* Pods_RhythmRider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmRider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B004C912B4D794A00E0F074 /* InternalWrappingHStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalWrappingHStack.swift; sourceTree = "<group>"; };
 		8B004C922B4D794A00E0F074 /* WrappingHStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
 		8B004C932B4D794B00E0F074 /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
@@ -160,7 +159,8 @@
 		8BF21C0F2AD993F700FEA6D6 /* ClSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClSessionController.swift; sourceTree = "<group>"; };
 		8BF4D8F82B4E807C0089597C /* AlbumsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionView.swift; sourceTree = "<group>"; };
 		8BFE6C062AF3D00F009CF608 /* FavStorageVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavStorageVModel.swift; sourceTree = "<group>"; };
-		EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.debug.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.debug.xcconfig"; sourceTree = "<group>"; };
+		B061AF533B3C7914D65F1052 /* Pods-RhythmRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.release.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.release.xcconfig"; sourceTree = "<group>"; };
+		B085E9D95D5EEE3D1E29712E /* Pods-RhythmRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmRider.debug.xcconfig"; path = "Target Support Files/Pods-RhythmRider/Pods-RhythmRider.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9EBD3AB645F7D97250EB0D5 /* Pods_RhythmRider.framework in Frameworks */,
+				97B41B3C5DBDB2979A356418 /* Pods_RhythmRider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8B29B4E62AD1E9A900A7AD33 /* SwiftySpot.framework */,
-				74A01C47867C04C40488533E /* Pods_RhythmRider.framework */,
+				2CCC92F14606E33951E9CE71 /* Pods_RhythmRider.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -454,8 +454,8 @@
 		9719BC03B7C3C6E5D313F64A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */,
-				720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */,
+				B085E9D95D5EEE3D1E29712E /* Pods-RhythmRider.debug.xcconfig */,
+				B061AF533B3C7914D65F1052 /* Pods-RhythmRider.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -467,20 +467,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B172E062AD1A56C00ECBD74 /* Build configuration list for PBXNativeTarget "RhythmRider" */;
 			buildPhases = (
-				D4EBB1D242725FC797B00B2F /* [CP] Check Pods Manifest.lock */,
+				E8723BA6681274C538B73CEF /* [CP] Check Pods Manifest.lock */,
 				8B4247D02AD46AE500749AE3 /* R.swift Generator */,
 				8B172DF42AD1A56B00ECBD74 /* Sources */,
 				8B172DF52AD1A56B00ECBD74 /* Frameworks */,
 				8B172DF62AD1A56B00ECBD74 /* Resources */,
-				8C31380BFDD0C1DFD944ECC9 /* [CP] Embed Pods Frameworks */,
+				F972CFE9590C1C5CB1138157 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RhythmRider;
-			packageProductDependencies = (
-			);
 			productName = RhythmRider;
 			productReference = 8B172DF82AD1A56B00ECBD74 /* RhythmRider.app */;
 			productType = "com.apple.product-type.application";
@@ -510,8 +508,6 @@
 				ru,
 			);
 			mainGroup = 8B172DEF2AD1A56B00ECBD74;
-			packageReferences = (
-			);
 			productRefGroup = 8B172DF92AD1A56B00ECBD74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -559,24 +555,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$PROJECT_DIR/RhythmRider/Generated/R.swift\" --generators image,string,color --access-level internal\n";
 		};
-		8C31380BFDD0C1DFD944ECC9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4EBB1D242725FC797B00B2F /* [CP] Check Pods Manifest.lock */ = {
+		E8723BA6681274C538B73CEF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,6 +575,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F972CFE9590C1C5CB1138157 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RhythmRider/Pods-RhythmRider-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -802,12 +798,12 @@
 		};
 		8B172E072AD1A56C00ECBD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA442EC64FEF49FB8C1B53CA /* Pods-RhythmRider.debug.xcconfig */;
+			baseConfigurationReference = B085E9D95D5EEE3D1E29712E /* Pods-RhythmRider.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -815,7 +811,6 @@
 				INFOPLIST_FILE = RhythmRider/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RhythmRider;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -828,7 +823,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -841,12 +836,12 @@
 		};
 		8B172E082AD1A56C00ECBD74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 720CC08F974A871C6ADC4A75 /* Pods-RhythmRider.release.xcconfig */;
+			baseConfigurationReference = B061AF533B3C7914D65F1052 /* Pods-RhythmRider.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "RhythmRider/Preview\\ Content";
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -854,7 +849,6 @@
 				INFOPLIST_FILE = RhythmRider/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RhythmRider;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -867,7 +861,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.zeit.rhythm-rider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

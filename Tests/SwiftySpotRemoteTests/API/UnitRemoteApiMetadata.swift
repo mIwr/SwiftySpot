@@ -10,15 +10,38 @@ import XCTest
 
 final class UnitRemoteApiMetadata: XCTestCase {
     
-    var client = SPClient(device: TestConstants.device)
-    
-    override func setUp() {
-        let data = TestCredentials.storedCredential.data(using: .utf8) ?? Data()
-        let storedCred = [UInt8].init(data)
-        client = SPClient(device: TestConstants.device, clToken: TestCredentials.clToken, clTokenExpires: TestCredentials.clExpires, clTokenRefreshAfter: TestCredentials.clRefresh, clTokenCreateTsUTC: TestCredentials.clCreated, authToken: "", authExpiresInS: 1, username: TestCredentials.username, storedCred: storedCred, authTokenCreateTsUTC: 1)
+    var guestClient: SPClient {
+        get { return TestCredentials.guestClient }
+    }
+    var client: SPClient {
+        get { return TestCredentials.client }
     }
     
     func testGetTrackMetadata() {
+        _getTrackMetadata(client: client)
+    }
+    
+    func testGetTrackMetadataByGuest() {
+        _getTrackMetadata(client: guestClient)
+    }
+    
+    func testGetAlbumMetadata() {
+        _getAlbumMetadata(client: client)
+    }
+    
+    func testGetAlbumMetadataByGuest() {
+        _getAlbumMetadata(client: guestClient)
+    }
+    
+    func testGetArtistMetadata() {
+        _getArtistMetadata(client: client)
+    }
+    
+    func testGetArtistMetadataByGuest() {
+        _getArtistMetadata(client: guestClient)
+    }
+    
+    fileprivate func _getTrackMetadata(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId)
         _ = client.getTracksDetails(trackUris: [uri]) { result in
@@ -43,7 +66,7 @@ final class UnitRemoteApiMetadata: XCTestCase {
         }
     }
     
-    func testGetAlbumMetadata() {
+    fileprivate func _getAlbumMetadata(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateAlbumUri(id: TestConstants.albumId)
         _ = client.getAlbumsDetails(albumUris: [uri]) { result in
@@ -68,7 +91,7 @@ final class UnitRemoteApiMetadata: XCTestCase {
         }
     }
     
-    func testGetArtistMetadata() {
+    fileprivate func _getArtistMetadata(client: SPClient) {
         let exp = self.expectation(description: "Request time-out expectation")
         let uri = SPNavigateUriUtil.generateArtistUri(id: TestConstants.artistId)
         _ = client.getArtistsDetails(artistUris: [uri]) { result in

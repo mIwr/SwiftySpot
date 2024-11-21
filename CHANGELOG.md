@@ -1,5 +1,23 @@
 #  Changelog
 
+## Version 0.7.0
+**21.11.2024**
+
+**API-related changes**
+
+- Guest authorization
+- Guest authorization supported API methods:
+-- Dac landing (Without personal playlists)
+-- Playlist details
+-- Metadata
+-- Playlist generator by track seed
+-- DRM'ed track
+-- Search
+
+**Other changes**
+
+- Profile API endpoint variants to bypass Spotify restrictions
+
 ## Version 0.6.1
 **01.10.2024**
 

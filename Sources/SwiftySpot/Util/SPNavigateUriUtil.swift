@@ -38,6 +38,16 @@ public final class SPNavigateUriUtil {
     public static func validateTrackUri(_ uri: String) -> Bool {
         return uri.hasPrefix(SPConstants.trackUriPrefix)
     }
+    ///Generate navigation uri with kind 'spotify:user:{UserID or Username}'
+    public static func generateUserUri(username: String) -> String {
+        return SPConstants.userUriPrefix + username
+    }
+    public static func validateUserUri(_ uri: String) -> Bool {
+        return uri.hasPrefix(SPConstants.userUriPrefix)
+    }
+    public static func extractUsernameFromUserUri(_ uri: String) -> String {
+        return uri.replacingOccurrences(of: SPConstants.userUriPrefix, with: "")
+    }
     public static func validateSearchUri(_ uri: String) -> Bool {
         return uri.hasPrefix(SPConstants.searchUriPrefix)
     }

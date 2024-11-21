@@ -152,12 +152,12 @@ extension SPClient {
         return requestDownloadInfo(hexFileId: hexFileId, completion: completion)
     }
     
-    ///Retrieves download info with direct links to encrypted audio file
+    ///Retrieves download info with direct links to encrypted audio file. Can be executed with guest authorization
     ///- Parameter hexFileId: Audio file (codec) ID hex string
     ///- Parameter completion: Download info response handler
     ///- Returns: API request session task
     public func requestDownloadInfo(hexFileId: String, completion: @escaping (_ result: Result<SPDownloadInfo, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthProfileApReq { safeClToken, safeAuthToken, safeProfile, safeAp in
+        return safeAuthIncludingGuestProfileApReq { safeClToken, safeAuthToken, safeProfile, safeAp in
             let task = getDownloadInfoByApi(apHost: safeAp, userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, audioFileHexId: hexFileId, productType: safeProfile.productType) { response in
                 do {
                     let downloadInfo = try response.get()

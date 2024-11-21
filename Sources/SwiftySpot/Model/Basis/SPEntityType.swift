@@ -10,8 +10,11 @@ public enum SPEntityType: UInt8 {
     case unknown = 0
     case artist = 1
     case album = 2
-    case playlist = 3
-    case track = 4
+    case genre = 3
+    case playlist = 4
+    case show = 5
+    case track = 6
+    case user = 8
     
     case search = 100
 }
@@ -23,6 +26,9 @@ extension SPEntityType {
         .album: SPConstants.albumUriPrefix,
         .playlist: SPConstants.playlistUriPrefix,
         .track: SPConstants.trackUriPrefix,
+        .user: SPConstants.userUriPrefix,
+        .genre: SPConstants.genreUriPrefix,
+        .show: SPConstants.showUriPrefix,
         .search: SPConstants.searchUriPrefix,
     ]
     
@@ -31,6 +37,9 @@ extension SPEntityType {
         SPConstants.albumUriPrefix: .album,
         SPConstants.playlistUriPrefix: .playlist,
         SPConstants.trackUriPrefix: .track,
+        SPConstants.userUriPrefix: .user,
+        SPConstants.genreUriPrefix: .genre,
+        SPConstants.showUriPrefix: .show,
         SPConstants.searchUriPrefix: .search,
     ]
     
@@ -57,6 +66,9 @@ extension SPEntityType {
             case .album: return SPConstants.albumUriPrefix
             case .playlist: return SPConstants.playlistUriPrefix
             case .track: return SPConstants.trackUriPrefix
+            case .user: return SPConstants.userUriPrefix
+            case .genre: return SPConstants.genreUriPrefix
+            case .show: return SPConstants.showUriPrefix
             case .search: return SPConstants.searchUriPrefix
             }
         }

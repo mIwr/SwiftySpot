@@ -28,6 +28,8 @@ public class SPClient {
     var clToken: SPClientToken
     ///Client token creation timestamp (UTC+0)
     var clTokenCreateTsUTC: Int64
+    ///Guest authorization session
+    var guestAuthSession: SPAuthSession
     ///Authorized session protobuf obj
     var authSession: SPAuthToken
     ///Authorized timestamp (UTC+0)
@@ -84,6 +86,7 @@ public class SPClient {
         self.device = device
         clToken = SPClientToken()
         clTokenCreateTsUTC = 0
+        guestAuthSession = SPAuthSession()
         authSession = SPAuthToken()
         authTokenCreateTsUTC = 0
         apHosts = []
@@ -131,6 +134,7 @@ public class SPClient {
         self.clToken.expiresInS = clTokenExpires
         self.clToken.refreshAfterS = clTokenRefreshAfter
         self.clTokenCreateTsUTC = clTokenCreateTsUTC
+        guestAuthSession = SPAuthSession()
         authSession = SPAuthToken()
         authTokenCreateTsUTC = 0
         apHosts = []
@@ -188,6 +192,7 @@ public class SPClient {
         self.clToken.expiresInS = clTokenExpires
         self.clToken.refreshAfterS = clTokenRefreshAfter
         self.clTokenCreateTsUTC = clTokenCreateTsUTC
+        guestAuthSession = SPAuthSession()
         authSession = SPAuthToken()
         authSession.token = authToken
         authSession.expiresInS = authExpiresInS

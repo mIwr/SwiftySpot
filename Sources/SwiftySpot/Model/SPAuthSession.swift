@@ -9,6 +9,7 @@ import Foundation
 
 ///Spotify auth session
 public class SPAuthSession {
+    
     ///Account username. Used for auth token refresh
     public let username: String
     ///Authorization token
@@ -40,6 +41,10 @@ public class SPAuthSession {
             return dt
         }
     }
+    ///Authorization session is guest (no username)
+    public var guest: Bool {
+        return username.isEmpty
+    }
     ///Has stable authorization (stored credentials exist) flag
     public var authorized: Bool {
         return !storedCred.isEmpty
@@ -65,5 +70,19 @@ public class SPAuthSession {
         self.storedCred = storedCred
         self.createTsUTC = createTsUTC
         self.expiresInS = expiresInS
+    }
+    
+    init() {
+        username = ""
+        token = ""
+        storedCred = Data()
+        createTsUTC = 0
+        expiresInS = 0
+    }
+    
+    static func from(guestAuth: SPGuestWebAuthSession) -> SPAuthSession {
+        let createTsUTC = Int64(Date.timeIntervalBetween1970AndReferenceDate + Date.timeIntervalSinceReferenceDate)
+        let expiresInS = guestAuth.expirationTsMsUTC / 1000 - Int64(Date().timeIntervalSince1970)
+        return SPAuthSession(username: "", token: guestAuth.token, storedCred: Data(), createTsUTC: createTsUTC, expiresInS: Int32(expiresInS))
     }
 }

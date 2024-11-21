@@ -182,13 +182,13 @@ extension SPClient {
     }
     
     fileprivate func getLikeDislikeCollection(pageLimit: UInt, pageToken: String?, collectionVariant: LikeDislikeCollectionVariant, liked: Bool, completion: @escaping (_ result: Result<SPCollectionPage, SPError>) -> Void) -> URLSessionDataTask? {
-        guard let safeProfile = profile, let safeClToken = clientToken, let safeAuthToken = authToken else {
-            return safeAuthProfileReq { safeClToken, safeAuthToken, safeProfile in
+        guard let safeClToken = clientToken, let safeAuthToken = authToken else {
+            return safeAuthReq { safeClToken, safeAuthToken in
                 return self.getLikeDislikeCollection(pageLimit: pageLimit, pageToken: pageToken, collectionVariant: collectionVariant, liked: liked, completion: completion)
             }
         }
         let collectionName = getCollectionName(collectionVariant: collectionVariant, liked: liked)
-        let task = getCollectionByApi(userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: safeProfile.username, collectionName: collectionName, paginationToken: pageToken, limit: pageLimit) { response in
+        let task = getCollectionByApi(userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: authSession.username, collectionName: collectionName, paginationToken: pageToken, limit: pageLimit) { response in
             do {
                 let collection = try response.get()
                 let parsed = SPCollectionPage.from(protobuf: collection, pageSize: pageLimit)
@@ -231,13 +231,13 @@ extension SPClient {
     }
     
     fileprivate func getLikeDislikeCollectionDelta(syncToken: String, collectionVariant: LikeDislikeCollectionVariant, liked: Bool, completion: @escaping (_ result: Result<SPCollectionDelta, SPError>) -> Void) -> URLSessionDataTask? {
-        guard let safeAp = spclientAp, let safeProfile = profile, let safeClToken = clientToken, let safeAuthToken = authToken else {
-            return safeAuthProfileApReq({ safeClToken, safeAuthToken, safeProfile, safeAp in
+        guard let safeAp = spclientAp, let safeClToken = clientToken, let safeAuthToken = authToken else {
+            return safeAuthApReq({ safeClToken, safeAuthToken, safeAp in
                 return self.getLikeDislikeCollectionDelta(syncToken: syncToken, collectionVariant: collectionVariant, liked: liked, completion: completion)
             })
         }
         let collectionName = getCollectionName(collectionVariant: collectionVariant, liked: liked)
-        let task = getCollectionDeltaByApi(apHost: safeAp, userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: safeProfile.username, collectionName: collectionName, lastSyncToken: syncToken) { response in
+        let task = getCollectionDeltaByApi(apHost: safeAp, userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: authSession.username, collectionName: collectionName, lastSyncToken: syncToken) { response in
             do {
                 let delta = try response.get()
                 let parsed = SPCollectionDelta.from(protobuf: delta)
@@ -280,8 +280,8 @@ extension SPClient {
     }
     
     fileprivate func likeDislikeCollectionWrite(appendUris: [String], removeUris: [String], collectionVariant: LikeDislikeCollectionVariant, liked: Bool, username: String? = nil, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) -> URLSessionDataTask? {
-        guard let safeAp = spclientAp, let safeProfile = profile, let safeClToken = clientToken, let safeAuthToken = authToken else {
-            return safeAuthProfileApReq({ safeClToken, safeAuthToken, safeProfile, safeAp in
+        guard let safeAp = spclientAp, let safeClToken = clientToken, let safeAuthToken = authToken else {
+            return safeAuthApReq({ safeClToken, safeAuthToken, safeAp in
                 return self.likeDislikeCollectionWrite(appendUris: appendUris, removeUris: removeUris, collectionVariant: collectionVariant, liked: liked, username: username, completion: completion)
             })
         }
@@ -303,7 +303,7 @@ extension SPClient {
             items.append(item)
         }
         let collectionName = getCollectionName(collectionVariant: collectionVariant, liked: liked)
-        let task = collectionUpdateByApi(apHost: safeAp, userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: username ?? safeProfile.username, collectionName: collectionName, updItems: items, clienUpdateId: clUpdId) { response in
+        let task = collectionUpdateByApi(apHost: safeAp, userAgent: userAgent, clToken: safeClToken, authToken: safeAuthToken, os: device.os, appVer: appVersionCode, username: username ?? authSession.username, collectionName: collectionName, updItems: items, clienUpdateId: clUpdId) { response in
             do {
                 let success = try response.get()
                 let updItems: [SPCollectionItem] = items.map { item in

@@ -84,7 +84,7 @@ public class SPSearchEntity: SPTypedObj {
 }
 
 extension SPSearchEntity {
-    //Generated from search info about artist
+    ///Generated from search info about artist
     public var generatedArtistMeta: SPMetadataArtist? {
         get {
             guard let safeArtist = artist else {
