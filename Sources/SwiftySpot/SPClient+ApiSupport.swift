@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
@@ -318,12 +321,7 @@ extension SPClient {
                     let spObj = SPTypedObj(uri: safeUri)
                     let name = (json["name"] as? String) ?? ""
                     let currUser = (json["is_current_user"] as? Bool) ?? false
-                    var country: String
-                    if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-                        country = Locale.current.region?.identifier ?? "DE"
-                    } else {
-                        country = Locale.current.regionCode ?? "DE"
-                    }
+                    let country = SPLocaleUtil.getCurrLocaleRegionCode() ?? "DE"
                     let profile = SPProfile(id: spObj.id, type: "user", email: "", displayName: name, birthdate: "", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: true, locked: false), policies: nil)
                     if (currUser) {
                         var usernameCorrection = false
@@ -362,12 +360,7 @@ extension SPClient {
             let task = getWebProfileCustom2ByApi(userAgent: self.webUserAgent, clToken: safeClToken, authToken: safeAuthToken, os: SPConstants.webPlatform, appVer: self.webAppVersionCode, username: self.authSession.username) { result in
                 do {
                     let profileData = try result.get()
-                    var country: String
-                    if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-                        country = Locale.current.region?.identifier ?? "DE"
-                    } else {
-                        country = Locale.current.regionCode ?? "DE"
-                    }
+                    let country = SPLocaleUtil.getCurrLocaleRegionCode() ?? "DE"
                     let profile = SPProfile(id: profileData.username.value, type: "user", email: "", displayName: profileData.displayName.value, birthdate: "", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: true, locked: false), policies: nil)
                     var usernameCorrection = false
                     if let safeStockProfile = self.profile {
@@ -484,12 +477,7 @@ extension SPClient {
             }
         }
         let task = getProfileInfo { result in
-            var country: String
-            if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-                country = Locale.current.region?.identifier ?? "DE"
-            } else {
-                country = Locale.current.regionCode ?? "DE"
-            }
+            let country = SPLocaleUtil.getCurrLocaleRegionCode() ?? "DE"
             let safeProfile = self.profile ?? SPProfile(id: self.authSession.username, type: "user", email: "", displayName: "User", birthdate: "1970-01-01", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: false, locked: false), policies: SPPolicies(optInTrialPremiumOnlyMarket: false))
             _ = authProfileReq(self.clientToken ?? "", self.authToken ?? "", safeProfile)
         }
@@ -506,12 +494,7 @@ extension SPClient {
                 return task
             }
         }
-        var country: String
-        if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-            country = Locale.current.region?.identifier ?? "DE"
-        } else {
-            country = Locale.current.regionCode ?? "DE"
-        }
+        let country = SPLocaleUtil.getCurrLocaleRegionCode() ?? "DE"
         let safeProfile = SPProfile(id: "Guest", type: "user", email: "", displayName: "User", birthdate: "1970-01-01", extUrls: [:], href: "", images: [], country: country, product: "free", explicitContent: SPExplicit(enabled: false, locked: false), policies: SPPolicies(optInTrialPremiumOnlyMarket: false))
         return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
             return authProfileReq(safeClToken, safeAuthToken, safeProfile)

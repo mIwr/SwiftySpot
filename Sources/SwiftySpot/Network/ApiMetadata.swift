@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import SwiftProtobuf
 
 func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authToken: String, os: String, appVer: String, header: SPMetaBatchedEntityRequestHeader, items: [SPMetaEntityRequest], completion: @escaping (_ result: Result<SPMetaBatchedExtensionResponse, SPError>) -> Void) -> URLSessionDataTask? {
@@ -29,7 +32,7 @@ func getMetadataByApi(apHost: String, userAgent: String, clToken: String, authTo
     var reqProtobuf = SPMetaBatchedEntityRequest()
     reqProtobuf.header = header
     reqProtobuf.request = items
-    guard let req: URLRequest = buildRequest(for: .metadata(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .metadata(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
         return nil
     }

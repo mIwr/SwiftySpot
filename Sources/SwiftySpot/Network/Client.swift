@@ -6,12 +6,15 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 ///Initializes request for predefined api methods
 func buildRequest(for method: ApiTarget) -> URLRequest? {
     let pathEncoded = method.path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     guard let url: URL = URL(string: method.baseURL + pathEncoded) else {return nil}
-    var urlReq: URLRequest = URLRequest(url: url)
+    var urlReq = URLRequest(url: url)
     urlReq.httpMethod = method.method
     urlReq.allHTTPHeaderFields = method.headers
     #if DEBUG
@@ -24,7 +27,7 @@ func buildRequest(for method: ApiTarget) -> URLRequest? {
         if !safeReqBody.isEmpty{
             let bytes = [UInt8].init(safeReqBody)
             let hexStr = SPBase16.encode(bytes)
-            print("Request protobuf body hex string (" + String(bytes.count) + " bytes): " + hexStr)
+            print("Request body hex string (" + String(bytes.count) + " bytes): " + hexStr)
         }
         #endif
     }

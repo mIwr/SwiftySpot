@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getCollectionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, username: String, collectionName: String, paginationToken: String?, limit: UInt, completion: @escaping (_ result: Result<SPPageResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (limit == 0) {
@@ -27,7 +30,7 @@ func getCollectionByApi(userAgent: String, clToken: String, authToken: String, o
     if let safePageToken = paginationToken {
         reqProtobuf.paginationToken = safePageToken
     }
-    guard let req: URLRequest = buildRequest(for: .collection(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .collection(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection info request")))
         return nil
     }
@@ -65,7 +68,7 @@ func getCollectionDeltaByApi(apHost: String, userAgent: String, clToken: String,
     reqProtobuf.username = username
     reqProtobuf.setName = collectionName
     reqProtobuf.lastSyncToken = lastSyncToken
-    guard let req: URLRequest = buildRequest(for: .collectionDelta(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .collectionDelta(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection delta request")))
         return nil
     }
@@ -108,7 +111,7 @@ func collectionUpdateByApi(apHost: String, userAgent: String, clToken: String, a
     reqProtobuf.setName = collectionName
     reqProtobuf.items = updItems
     reqProtobuf.clientUpdateID = clienUpdateId
-    guard let req: URLRequest = buildRequest(for: .collectionWrite(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .collectionWrite(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build collection delta request")))
         return nil
     }

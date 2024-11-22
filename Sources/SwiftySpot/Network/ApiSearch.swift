@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, reqId: UUID, query: String, catalogue: String, locale: String, entityTypes: [String], ts: Int64, onDemandSets: Bool, limit: UInt, completion: @escaping (_ result: Result<SPSearchAutocompleteViewResponse, SPError>) -> Void) -> URLSessionDataTask? {
     if (query.isEmpty || limit == 0) {
@@ -20,7 +23,7 @@ func searchSuggestionByApi(userAgent: String, clToken: String, authToken: String
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .searchSuggestion(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit)) else {
+    guard let req = buildRequest(for: .searchSuggestion(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build search suggestion request")))
         return nil
     }
@@ -54,7 +57,7 @@ func searchByApi(userAgent: String, clToken: String, authToken: String, os: Stri
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .search(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit, pageToken: pageToken)) else {
+    guard let req = buildRequest(for: .search(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, reqId: reqId, query: query, catalogue: catalogue, locale: locale, entityTypes: entityTypes, ts: ts, onDemandSets: onDemandSets, limit: limit, pageToken: pageToken)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build search request")))
         return nil
     }
@@ -88,7 +91,7 @@ func webSearchByApi(userAgent: String, clToken: String, authToken: String, os: S
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .webSearch(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, query: query, opName: opName, opQueryHashHexString: opQueryHashHexString, limit: limit, offset: offset)) else {
+    guard let req = buildRequest(for: .webSearch(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, query: query, opName: opName, opQueryHashHexString: opQueryHashHexString, limit: limit, offset: offset)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build search request")))
         return nil
     }

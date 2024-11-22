@@ -23,11 +23,11 @@ public class SPCollectionPage {
   ///Page size paramter for collection
   public let pageSize: UInt
 
-  public init(syncToken: String, nextPageToken: String?, items: [SPCollectionItem], pageSise: UInt) {
+  public init(syncToken: String, nextPageToken: String?, items: [SPCollectionItem], pageSize: UInt) {
     self.syncToken = syncToken
     _nextPageToken = nextPageToken
     self.items = items
-    self.pageSize = pageSise
+    self.pageSize = pageSize
   }
 
   static func from(protobuf: SPPageResponse, pageSize: UInt) -> SPCollectionPage {
@@ -35,6 +35,6 @@ public class SPCollectionPage {
     for item in protobuf.items {
       items.append(SPCollectionItem.from(protobuf: item))
     }
-    return SPCollectionPage(syncToken: protobuf.syncToken, nextPageToken: protobuf.nextPageToken, items: items, pageSise: pageSize)
+    return SPCollectionPage(syncToken: protobuf.syncToken, nextPageToken: protobuf.nextPageToken, items: items, pageSize: pageSize)
   }
 }

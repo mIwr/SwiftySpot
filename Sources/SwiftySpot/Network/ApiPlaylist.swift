@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, authToken: String, id: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPPlaylistInfo, SPError>) -> Void) -> URLSessionDataTask? {
     if (apHost.isEmpty) {
@@ -21,7 +24,7 @@ func getPlaylistInfoByApi(apHost: String, userAgent: String, clToken: String, au
         return nil
     }
     let listItems = "audio-track, audio-episode"//audio-track, audio-episode, video-episode, audiobook"
-    guard let req: URLRequest = buildRequest(for: .playlist(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, id: id, os: os, appVer: appVer, listItems: listItems)) else {
+    guard let req = buildRequest(for: .playlist(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, id: id, os: os, appVer: appVer, listItems: listItems)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build playlist info request")))
         return nil
     }
@@ -51,7 +54,7 @@ func getPlaylistFromSeedByApi(userAgent: String, clToken: String, authToken: Str
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .playlistFromSeed(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, uri: uri)) else {
+    guard let req = buildRequest(for: .playlistFromSeed(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, uri: uri)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build playlist from seed request")))
         return nil
     }

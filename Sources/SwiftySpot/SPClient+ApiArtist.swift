@@ -6,11 +6,14 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
     func getArtistInfo(uri: String, imgSize: String, completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+        let task = safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
             let objFields: [String] = []
             //name,isVerified,header,biography,autobiography,monthlyListeners,gallery&imgSize=large
             let task = getArtistInfoByApi(userAgent: self.userAgent, clToken: safeClToken, authToken: safeAuthToken, os: self.device.os, appVer: self.appVersionCode, clId: self.clientId, uri: uri, fields: objFields, imgSize: imgSize) { result in
@@ -27,5 +30,6 @@ extension SPClient {
             }
             return task
         }
+        return task
     }
 }

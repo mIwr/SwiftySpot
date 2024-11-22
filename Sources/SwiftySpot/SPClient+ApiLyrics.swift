@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
@@ -29,14 +32,7 @@ extension SPClient {
     ///- Returns: API request session task
     public func getLyrics(obj: SPTypedObj, vocalRemove: Bool, syllableSync: Bool, completion: @escaping (_ result: Result<SPLyrics?, SPError>) -> Void) -> URLSessionDataTask? {
         return safeAuthReq { safeClToken, safeAuthToken in
-            var langCode = ""
-            if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-                langCode = Locale.current.language.languageCode?.identifier(.alpha2) ?? "de"
-                langCode += "_" + (Locale.current.region?.identifier ?? "DE")
-            } else {
-                langCode = Locale.current.languageCode ?? "de"
-                langCode += "_" + (Locale.current.regionCode ?? "DE")
-            }
+            let langCode = SPLocaleUtil.getCurrLocaleLangCode() ?? "de_DE"
             var type = ""
             if (obj.entityType == .track) {
                 type = "track"

@@ -6,9 +6,12 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getGuestAuthByApi(userAgent: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPGuestWebAuthSession, SPError>) -> Void) -> URLSessionDataTask? {
-    guard let req: URLRequest = buildRequest(for: .guestAuth(userAgent: userAgent, os: os, appVer: appVer)) else {
+    guard let req = buildRequest(for: .guestAuth(userAgent: userAgent, os: os, appVer: appVer)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init auth request")))
         return nil
     }
@@ -34,7 +37,7 @@ func initAuthChallengeByApi(userAgent: String, clToken: String, clientInfo: SPSh
     var reqProtobuf = SPLoginV3Request()
     reqProtobuf.client = clientInfo
     reqProtobuf.password = cred
-    guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init auth request")))
         return nil
     }
@@ -69,7 +72,7 @@ func authSolveChallengeByApi(userAgent: String, clToken: String, loginContext: D
     reqProtobuf.context = loginContext
     reqProtobuf.password = cred
     reqProtobuf.answerData = answerData
-    guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build auth request")))
         return nil
     }
@@ -106,7 +109,7 @@ func refreshAuthByApi(userAgent: String, clToken: String, clientInfo: SPShortCli
     var reqProtobuf = SPLoginV3Request()
     reqProtobuf.client = clientInfo
     reqProtobuf.stored = stored
-    guard let req: URLRequest = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .auth(userAgent: userAgent, clToken: clToken, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
         return nil
     }

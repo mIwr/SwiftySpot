@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getWdvCertByApi(completion: @escaping (_ result: Result<Data, SPError>) -> Void) -> URLSessionDataTask? {
     let apiFunc = ApiTarget.wdvCert
@@ -17,7 +20,7 @@ func getWdvSeektableByApi(fileHexId: String, completion: @escaping (_ result: Re
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Empty file ID")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .wdvSeektable(fileHexId: fileHexId)) else {
+    guard let req = buildRequest(for: .wdvSeektable(fileHexId: fileHexId)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build seektable request")))
         return nil
     }
@@ -48,7 +51,7 @@ func getWdvIntentUrlByApi(apHost: String, userAgent: String, clToken: String, au
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .wdvIntentUrl(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, fileType: fileType)) else {
+    guard let req = buildRequest(for: .wdvIntentUrl(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, fileType: fileType)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build wdv intent permission request")))
         return nil
     }
@@ -79,7 +82,7 @@ func postWdvIntentByApi(apHost: String, userAgent: String, clToken: String, auth
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .wdvIntent(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, fileType: fileType, challenge: challenge)) else {
+    guard let req = buildRequest(for: .wdvIntent(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, fileType: fileType, challenge: challenge)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build wdv intent request")))
         return nil
     }
@@ -112,7 +115,7 @@ func postPlayIntentByApi(apHost: String, userAgent: String, clToken: String, aut
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .playIntent(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, audioFileHexId: audioFileHexId, proto: proto)) else {
+    guard let req = buildRequest(for: .playIntent(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, audioFileHexId: audioFileHexId, proto: proto)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build play intent request")))
         return nil
     }
@@ -167,7 +170,7 @@ func getDownloadInfoByApi(apHost: String, userAgent: String, clToken: String, au
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .downloadInfo(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, audioFileHexId: audioFileHexId, productType: productType)) else {
+    guard let req = buildRequest(for: .downloadInfo(apHost: apHost, userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, audioFileHexId: audioFileHexId, productType: productType)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build download info request")))
         return nil
     }

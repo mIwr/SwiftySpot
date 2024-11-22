@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func validateSignupByApi(userAgent: String, clToken: String, os: String, appVer: String, validatorKey: String, password: String?, completion: @escaping (Result<SPSignupValidation, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {

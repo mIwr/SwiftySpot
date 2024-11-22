@@ -28,6 +28,8 @@ public final class SPConstants {
     public static let defaultCdnHeadsHost = "https://heads-ak-spotify-com.akamaized.net/"
     ///Reserve spotify preview cdn
     public static let defaultPreviewCdnHost = "https://p.scdn.co/"
+    ///Reserve spotify image cdn
+    public static let defaultImgCdnHost = "https://i.scdn.co/"
     
     ///Navigation uri base prefix
     public static let genUriPrefix = "spotify:"

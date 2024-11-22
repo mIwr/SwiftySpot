@@ -22,7 +22,7 @@ final class UnitSPCollectionController: XCTestCase {
         let page = SPCollectionPage(syncToken: "someToken", nextPageToken: "tk", items: [
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackBase62ID"), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
-        ], pageSise: 2)
+        ], pageSize: 2)
         controller.updateFromPage(page)
         XCTAssertEqual(controller.itemsCount, page.items.count, "Controller items not updated")
         XCTAssertEqual(controller.syncToken, page.syncToken, "Controller sync token not updated")
@@ -33,7 +33,7 @@ final class UnitSPCollectionController: XCTestCase {
         let page = SPCollectionPage(syncToken: "someToken", nextPageToken: "tk", items: [
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackBase62ID"), addedTs: Int64(Date().timeIntervalSince1970), removed: true),
-        ], pageSise: 2)
+        ], pageSize: 2)
         controller.updateFromPage(page)
         XCTAssertEqual(controller.itemsCount, page.items.count - 1, "Controller items not updated")
         XCTAssertEqual(controller.syncToken, page.syncToken, "Controller sync token not updated")
@@ -44,7 +44,7 @@ final class UnitSPCollectionController: XCTestCase {
         let page = SPCollectionPage(syncToken: "someToken", nextPageToken: "tk", items: [
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackBase62ID"), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
-        ], pageSise: 2)
+        ], pageSize: 2)
         controller.updateFromPage(page)
         let delta = SPCollectionDelta(updatePossible: false, syncToken: "syncTk", items: [
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackID"), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
@@ -59,8 +59,12 @@ final class UnitSPCollectionController: XCTestCase {
         let page = SPCollectionPage(syncToken: "someToken", nextPageToken: "tk", items: [
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackBase62ID"), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
-        ], pageSise: 2)
+        ], pageSize: 2)
+        #if _runtime(_ObjC)
         NotificationCenter.default.addObserver(self, selector: #selector(onControllerItemUpdate), name: .SPTrackLikeUpdate, object: nil)
+        #else
+        onControllerItemUpdate(Notification(name: .SPTrackLikeUpdate))
+        #endif
         controller.updateFromPage(page)
         let exp = self.expectation(description: "Request time-out expectation")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -78,7 +82,10 @@ final class UnitSPCollectionController: XCTestCase {
         }
     }
     
-    @objc fileprivate func onControllerItemUpdate(_ notification: Notification) {
+    #if _runtime(_ObjC)
+    @objc
+    #endif
+    fileprivate func onControllerItemUpdate(_ notification: Notification) {
         notifierFired = true
     }
 }

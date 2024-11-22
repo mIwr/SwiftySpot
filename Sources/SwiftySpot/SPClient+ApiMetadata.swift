@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
@@ -205,11 +208,7 @@ extension SPClient {
             var protoHeader = SPMetaBatchedEntityRequestHeader()
             var country: String = safeProfile.country
             if (country.isEmpty) {
-                if #available(macOS 13, iOS 16, tvOS 16, watchOS 9, *) {
-                    country = Locale.current.region?.identifier ?? "DE"
-                } else {
-                    country = Locale.current.regionCode ?? "DE"
-                }
+                country = SPLocaleUtil.getCurrLocaleRegionCode() ?? "DE"
             }
             var catalogue = safeProfile.product
             if (catalogue.isEmpty) {
@@ -217,8 +216,7 @@ extension SPClient {
             }
             protoHeader.country = country
             protoHeader.catalogue = catalogue
-            var taskBytes: [UInt8] = [UInt8].init(repeating: 0, count: 16)
-            _ = SecRandomCopyBytes(kSecRandomDefault, taskBytes.count, &taskBytes)
+            let taskBytes = SPBinaryUtil.randomBytesArr(count: 16)
             protoHeader.taskID = Data(taskBytes)
             var items: [SPMetaEntityRequest] = []
             for uri in uris {

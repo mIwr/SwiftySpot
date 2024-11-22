@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import SwiftProtobuf
 
 func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, type: String, id: String, vocalRemove: Bool, syllableSync: Bool, clientLangCode: String, completion: @escaping (_ result: Result<SPColorLyricsResponse?, SPError>) -> Void) -> URLSessionDataTask? {
@@ -21,7 +24,7 @@ func getLyricsByApi(userAgent: String, clToken: String, authToken: String, os: S
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .lyrics(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, type: type, id: id, vocalRemove: vocalRemove, syllableSync: syllableSync, clientLangCode: clientLangCode)) else {
+    guard let req = buildRequest(for: .lyrics(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, type: type, id: id, vocalRemove: vocalRemove, syllableSync: syllableSync, clientLangCode: clientLangCode)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build lyrics info request")))
         return nil
     }

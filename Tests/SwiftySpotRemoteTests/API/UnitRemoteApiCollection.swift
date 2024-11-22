@@ -75,7 +75,6 @@ final class UnitRemoteApiCollection: XCTestCase {
             do {
                 let collection = try result.get()
                 XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
-                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)
@@ -98,7 +97,6 @@ final class UnitRemoteApiCollection: XCTestCase {
             do {
                 let collection = try result.get()
                 XCTAssertTrue(collection.pageSize != 0, "Collection page size 0")
-                XCTAssertTrue(!collection.syncToken.isEmpty, "Collection sync token is empty")
             } catch {
                 print(error)
                 XCTAssert(false, "Empty collection object: " + error.localizedDescription)

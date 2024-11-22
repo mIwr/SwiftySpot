@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
@@ -209,11 +212,11 @@ extension SPClient {
                         }
                     }
                     if (!tracks.isEmpty) {
-                        let tracksPage = SPCollectionPage(syncToken: parsed.syncToken, nextPageToken: parsed.nextPageToken, items: tracks, pageSise: parsed.pageSize)
+                        let tracksPage = SPCollectionPage(syncToken: parsed.syncToken, nextPageToken: parsed.nextPageToken, items: tracks, pageSize: parsed.pageSize)
                         self.likedDislikedTracksStorage.updateFromPage(tracksPage, liked: liked)
                     }
                     if (!albums.isEmpty) {
-                        let albumsPage = SPCollectionPage(syncToken: parsed.syncToken, nextPageToken: parsed.nextPageToken, items: albums, pageSise: parsed.pageSize)
+                        let albumsPage = SPCollectionPage(syncToken: parsed.syncToken, nextPageToken: parsed.nextPageToken, items: albums, pageSize: parsed.pageSize)
                         self.likedDislikedAlbumsStorage.updateFromPage(albumsPage, liked: liked)
                     }
                     break
@@ -285,8 +288,7 @@ extension SPClient {
                 return self.likeDislikeCollectionWrite(appendUris: appendUris, removeUris: removeUris, collectionVariant: collectionVariant, liked: liked, username: username, completion: completion)
             })
         }
-        var clUpdIdBytes = [UInt8].init(repeating: 0, count: 8)
-        _ = SecRandomCopyBytes(kSecRandomDefault, clUpdIdBytes.count, &clUpdIdBytes)
+        let clUpdIdBytes = SPBinaryUtil.randomBytesArr(count: 8)
         let clUpdId = SPBase16.encode(clUpdIdBytes)
         var items: [SPCollectionPageItem] = []
         let ts = Int64(Date().timeIntervalSince1970)

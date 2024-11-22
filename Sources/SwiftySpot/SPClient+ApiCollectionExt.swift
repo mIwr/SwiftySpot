@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension SPClient {
     
@@ -86,8 +89,7 @@ extension SPClient {
     ///- Returns: API request session task
     public func collectionWrite(appendUris: [String], removeUris: [String], collectionName: String, username: String? = nil, completion: @escaping (_ result: Result<Bool, SPError>) -> Void) -> URLSessionDataTask? {
         return safeAuthApReq { safeClToken, safeAuthToken, safeAp in
-            var clUpdIdBytes = [UInt8].init(repeating: 0, count: 8)
-            _ = SecRandomCopyBytes(kSecRandomDefault, clUpdIdBytes.count, &clUpdIdBytes)
+            let clUpdIdBytes = SPBinaryUtil.randomBytesArr(count: 8)
             let clUpdId = SPBase16.encode(clUpdIdBytes)
             var items: [SPCollectionPageItem] = []
             let ts = Int64(Date().timeIntervalSince1970)

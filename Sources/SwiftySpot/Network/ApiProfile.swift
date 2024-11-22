@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getWebProfileInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, completion: @escaping (_ result: Result<SPProfile, SPError>) -> Void) -> URLSessionDataTask? {
     if (clToken.isEmpty) {
@@ -16,7 +19,7 @@ func getWebProfileInfoByApi(userAgent: String, clToken: String, authToken: Strin
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .webProfile(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer)) else {
+    guard let req = buildRequest(for: .webProfile(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build profile info request")))
         return nil
     }
@@ -43,7 +46,7 @@ func getWebProfileCustomByApi(userAgent: String, clToken: String, authToken: Str
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Username is empty")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .webProfileCustom(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, username: username)) else {
+    guard let req = buildRequest(for: .webProfileCustom(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, username: username)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build profile info request")))
         return nil
     }
@@ -68,7 +71,7 @@ func getWebProfileCustom2ByApi(userAgent: String, clToken: String, authToken: St
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Username is empty")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .webProfileCustom2(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, username: username)) else {
+    guard let req = buildRequest(for: .webProfileCustom2(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, username: username)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build profile info request")))
         return nil
     }
@@ -98,7 +101,7 @@ func getProfileInfoByApi(userAgent: String, clToken: String, authToken: String, 
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Auth Token is empty. Authorize session first")))
         return nil
     }
-    guard let req: URLRequest = buildRequest(for: .profile(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer)) else {
+    guard let req = buildRequest(for: .profile(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build profile info request")))
         return nil
     }

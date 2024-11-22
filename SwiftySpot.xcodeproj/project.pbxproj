@@ -152,6 +152,7 @@
 		8B34D6292B34892600F5E387 /* UnitSPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34D6282B34892600F5E387 /* UnitSPID.swift */; };
 		8B39C8E82AD2BB5E005E682D /* SPClientSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */; };
 		8B39C8EA2AD2BF04005E682D /* UnitSPClientNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E92AD2BF04005E682D /* UnitSPClientNotifier.swift */; };
+		8B3C01552CF068CF0025D14A /* SPLocaleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */; };
 		8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */; };
 		8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */; };
 		8B489ECF2C0F5587009BEEF4 /* SPWDVSeektable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B489ECE2C0F5587009BEEF4 /* SPWDVSeektable.swift */; };
@@ -420,6 +421,7 @@
 		8B3BD9FE2AF545640039390B /* playback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = playback.jpg; sourceTree = "<group>"; };
 		8B3BD9FF2AF545640039390B /* search.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = search.jpg; sourceTree = "<group>"; };
 		8B3BDA002AF545640039390B /* feed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed.jpg; sourceTree = "<group>"; };
+		8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLocaleUtil.swift; sourceTree = "<group>"; };
 		8B3D45BD2B867AB30037575B /* XCFramework.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = XCFramework.md; sourceTree = "<group>"; };
 		8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSHA1.swift; sourceTree = "<group>"; };
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 				8B172C1D2AD169CA00ECBD74 /* SPCryptoUtil.swift */,
 				8B172C182AD169CA00ECBD74 /* SPHashCashUtil.swift */,
 				8B172C1A2AD169CA00ECBD74 /* SPDateUtil.swift */,
+				8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */,
 				8B172C172AD169CA00ECBD74 /* SPNavigateUriUtil.swift */,
 				8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */,
 			);
@@ -1280,7 +1283,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					8B172A8E2AD1693700ECBD74 = {
 						CreatedOnToolsVersion = 14.2;
@@ -1457,6 +1460,7 @@
 				8B172D582AD169CB00ECBD74 /* CancellationToken.swift in Sources */,
 				8B6E1F9F2C6400E30061D62F /* ClientToken.pb.swift in Sources */,
 				8B310E962C651C460014B4E0 /* SPSearchArtist+Ctor.swift in Sources */,
+				8B3C01552CF068CF0025D14A /* SPLocaleUtil.swift in Sources */,
 				8B172D7A2AD169CB00ECBD74 /* SPClient.swift in Sources */,
 				8B310E9B2C651EB10014B4E0 /* SPSearchTrack+Ctor.swift in Sources */,
 				8B4ED4472C64C055006455BD /* ISPID.swift in Sources */,
@@ -1636,9 +1640,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 29;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1698,9 +1704,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 29;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1722,13 +1730,16 @@
 		8B172AA22AD1693800ECBD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1742,7 +1753,9 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.7.1;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1761,13 +1774,16 @@
 		8B172AA32AD1693800ECBD74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1781,7 +1797,9 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.7.1;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -1804,9 +1822,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1823,7 +1842,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
@@ -1835,9 +1854,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1853,7 +1873,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;

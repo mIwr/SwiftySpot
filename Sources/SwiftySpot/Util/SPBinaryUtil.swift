@@ -13,6 +13,22 @@ final class SPBinaryUtil {
     fileprivate init() {}
     
     @inlinable
+    static func randomBytesArr(count: Int) -> Array<UInt8> {
+        var res = [UInt8].init(repeating: UInt8.zero, count: count)
+        #if targetEnvironment(simulator) || targetEnvironment(macCatalyst) || os(macOS) || os(iOS) || os(watchOS) || os(tvOS) || os(visionOS)
+        //Avaliable only on Apple platforms
+        guard SecRandomCopyBytes(kSecRandomDefault, res.count, &res) == errSecSuccess else {
+            fatalError("random failed")
+        }
+        #else
+        for i in 0...(count - 1) {
+            res[i] = UInt8.random(in: UInt8.min...UInt8.max)
+        }
+        #endif
+        return res
+    }
+    
+    @inlinable
     static func getLEndianBytes<T: BinaryInteger>(_ val: T) -> Array<UInt8> {
         let size = MemoryLayout.size(ofValue: val)
         var res = Array<UInt8>.init(repeating: 0, count: size)

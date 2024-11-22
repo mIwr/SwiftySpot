@@ -6,9 +6,12 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getWebSessionByApi(userAgent: String, clId: String, os: String, appVer: String, deviceId: String, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
-    guard let req: URLRequest = buildRequest(for: .webClToken(userAgent: userAgent, clId: clId, os: os, appVer: appVer, deviceId: deviceId)) else {
+    guard let req = buildRequest(for: .webClToken(userAgent: userAgent, clId: clId, os: os, appVer: appVer, deviceId: deviceId)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build get client session request")))
         return nil
     }
@@ -54,7 +57,7 @@ func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, comple
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestClientDataRequest
     reqProtobuf.client = initData
-    guard let req: URLRequest = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build init session request")))
         return nil
     }
@@ -84,7 +87,7 @@ func initSessionSolveChallengeByApi(userAgent: String, answerData: SPChallengeAn
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestChallengeAnswersRequest
     reqProtobuf.answerData = answerData
-    guard let req: URLRequest = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .clToken(userAgent: userAgent, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build solve challenge request")))
         return nil
     }
@@ -116,7 +119,7 @@ func initSessionSolveChallengeByApi(userAgent: String, answerData: SPChallengeAn
 }
 
 func getAccessPointsByApi(clToken: String?, completion: @escaping (_ result: Result<SPAccessPoint, SPError>) -> Void) -> URLSessionDataTask? {
-    guard let req: URLRequest = buildRequest(for: .acessPoints(clToken: clToken)) else {
+    guard let req = buildRequest(for: .acessPoints(clToken: clToken)) else {
         completion(.failure(.badRequest(errCode: -1, description: "Unable to build access points retrieve request")))
         return nil
     }

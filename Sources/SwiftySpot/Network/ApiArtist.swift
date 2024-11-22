@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func getArtistUIInfoByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, id: String, locale: String, application: String, video: Bool, podcast: Bool, deviceId: String, timezone: String, timeFormat: String, onDemandUris: [String], completion: @escaping (_ result: Result<SPArtist, SPError>) -> Void) -> URLSessionDataTask? {
     var signal = ""

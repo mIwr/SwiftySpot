@@ -6,7 +6,7 @@
 
 
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=flat&colorA=28a745&&colorB=4E4E4E)](https://github.com/apple/swift-package-manager)
-[![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20Android%20%7CmacOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-4E4E4E.svg?colorA=28a745)](#Setup)
+[![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20Android%20%7CmacOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Windows%20%7C%20Linux-4E4E4E.svg?colorA=28a745)](#Setup)
 
 
 <p align="center">
@@ -42,7 +42,7 @@ Spotify API swift implementation
 
 The library provides an interface for interacting with the Spotify API
 
-macOS 10.13+ and iOS 11.0+ are supported by the module. Other platforms (watchOS 4.0+, tvOS 11.0+, Windows, Linux, Android) have experimental support
+macOS 10.13+, iOS 11.0+ and Windows are supported by the module. Other platforms (watchOS 4.0+, tvOS 11.0+, Linux, Android) have experimental support
 
 For work with Spotify API need:
 
@@ -58,7 +58,7 @@ SwiftySpot is available with SPM
 
 - Package sources
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.7.0"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.7.1"))
 ```
 
 - Precompiled XCFramework (macOS, iOS, iOS Simulator, watchOS, watchOS simulator, tvOS, tvOS simulator): make your own Swift package and import it to the target project

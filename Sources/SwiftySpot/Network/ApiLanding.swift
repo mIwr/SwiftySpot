@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import SwiftProtobuf
 
 func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: String, appVer: String, clId: String, clientInfo: SPDacRequest.ClientInfo, facetUri: String, timezone: String, completion: @escaping (_ result: Result<SPDacResponse, SPError>) -> Void) -> URLSessionDataTask? {
@@ -26,7 +29,7 @@ func getLandingByApi(userAgent: String, clToken: String, authToken: String, os: 
     var anyProtobuf = Google_Protobuf_Any()
     anyProtobuf.value = (try? featureReq.serializedData()) ?? Data()
     reqProtobuf.featureRequest = anyProtobuf
-    guard let req: URLRequest = buildRequest(for: .landing(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, proto: reqProtobuf)) else {
+    guard let req = buildRequest(for: .landing(userAgent: userAgent, clToken: clToken, authToken: authToken, os: os, appVer: appVer, clId: clId, proto: reqProtobuf)) else {
         completion(.failure(.badRequest(errCode: SPError.GeneralErrCode, description: "Unable to build refresh auth request")))
         return nil
     }

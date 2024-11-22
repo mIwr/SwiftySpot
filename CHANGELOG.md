@@ -1,5 +1,16 @@
 #  Changelog
 
+## Version 0.7.1
+**22.11.2024**
+
+**BREAKING CHANGES**
+
+- Renamed 'SPCollectionPage' ctor parameter from 'pageSise' to 'pageSize'
+
+**Other changes**
+
+- Non-Apple platforms build support fixes
+
 ## Version 0.7.0
 **21.11.2024**
 
