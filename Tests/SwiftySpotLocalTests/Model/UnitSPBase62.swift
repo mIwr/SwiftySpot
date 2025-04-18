@@ -13,7 +13,7 @@ final class UnitSPBase62: XCTestCase {
     func testEncodeBase62() {
         let stock: SPUInt128 = SPUInt128("190726711456610392119944153982734811176", radix: 10) ?? 0
         let base62 = SPBase62.encode(num: stock)
-        XCTAssertEqual(TestConstants.artistId, base62, "Incorrect Base62 decode process")
+        XCTAssertEqual(TestConstants.artistId, base62, "Incorrect Base62 encode process")
     }
     
     func testDecodeBase62() {

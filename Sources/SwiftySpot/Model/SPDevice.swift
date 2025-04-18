@@ -8,7 +8,7 @@
 ///Represents device info for requests
 public class SPDevice {
 
-  public static let defaultDeviceIdBytesCount = 8
+  public static let defaultDeviceIdBytesCount = 16
 
   ///Device operating system name (Android, iOS and others)
   public let os: String
@@ -33,7 +33,7 @@ public class SPDevice {
   public let manufacturer: String
   ///Device model name
   public let model: String
-  ///Device ID (8 bytes)
+  ///Device ID
   public let deviceId: String
 
   public init(os: String, osVer: String, osVerNum: Int32, cpuAbi: String, manufacturer: String, model: String, deviceId: String) {
@@ -56,7 +56,7 @@ public class SPDevice {
     self.deviceId = SPDevice.generateRandomDeviceId()
   }
 
-  ///Generates correct device ID format for client
+  ///Generates  device ID  for client
   public static func generateRandomDeviceId() -> String {
     var buff: [UInt8] = [UInt8].init(repeating: 0, count: defaultDeviceIdBytesCount)
     for i in 0...defaultDeviceIdBytesCount - 1 {

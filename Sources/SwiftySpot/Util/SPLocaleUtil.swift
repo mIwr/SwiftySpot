@@ -34,7 +34,7 @@ final class SPLocaleUtil {
         let regionCode = getCurrLocaleRegionCode()
         if var safeLangCode = langCode {
             if let safeRegionCode = regionCode {
-                safeLangCode += "_" + safeRegionCode
+                safeLangCode += "-" + safeRegionCode
             }
             return safeLangCode
         }

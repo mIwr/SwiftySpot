@@ -22,6 +22,7 @@ extension ApiTarget {
         switch self {
         case .download(let headers, _): return headers
         case .wdvSeektable: return ApiTarget._emptyDict
+        case .serverTime: return ApiTarget._emptyDict
         case .clToken(let userAgent, _):
             var dict = ApiTarget._protobufDict
             dict["User-Agent"] = userAgent
@@ -47,12 +48,24 @@ extension ApiTarget {
                 "Accept-Encoding": "gzip",
             ]
             return dict
-        case .guestAuth(let userAgent, let os, let appVer):
+        case .guestAuth(let userAgent, let os, let appVer, _, _, _):
             let dict: [String: String] = [
                 "Accept": "application/json",
                 "User-Agent": userAgent,
                 "App-Platform": os,
                 "Spotify-App-Version": appVer,
+            ]
+            return dict
+        case .initAuthMagicLink(let userAgent, let clToken, let clId, let os, let appVer, _, _):
+            let dict: [String: String] = [
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip",
+                "User-Agent": userAgent,
+                "App-Platform": os,
+                "Spotify-App-Version": appVer,
+                "X-Client-Id": clId,
+                "Client-Token": clToken,
             ]
             return dict
         case .auth(let userAgent, let clToken, _):
@@ -222,6 +235,7 @@ extension ApiTarget {
             let dict: [String: String] = [
                 "Accept-Encoding": "gzip",
                 "Accept": "application/json",
+                "Content-Type": "application/json",
                 "User-Agent": userAgent,
                 "Client-Token": clToken,
                 "Authorization": "Bearer " + authToken,

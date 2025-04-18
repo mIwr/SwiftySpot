@@ -13,11 +13,12 @@ final class SPHashCashUtil {
     fileprivate init() {}
     
     ///Compute hashcash for client token challenge asynchronously
-    ///- Parameter prefix:hex string for calculating hashcash
+    ///- Parameter prefix:hex string data for calculating hashcash
     ///- Parameter length: hashcash trailing zeros count
     ///- Parameter completion: hashcash solution completion handler
-    static func solveClTokenChallengeAsync(prefix: String, length: Int32, completion: @escaping (String?) -> Void) {
-        let prefixBytes = SPBase16.decode(prefix)
+    static func solveClTokenChallengeAsync(prefix: Data, length: Int32, completion: @escaping (String?) -> Void) {
+        let prefixStr = String(data: prefix, encoding: .utf8) ?? ""
+        let prefixBytes = SPBase16.decode(prefixStr)
         let contextDigest = SPCryptoUtil.sha1(buffer: [])//Empty context for cl token challenge
         let seed = [UInt8].init(contextDigest[12...19])
         solveHashCashAsync(prefix: prefixBytes, length: length, random: seed) { hashcash in
@@ -98,7 +99,7 @@ final class SPHashCashUtil {
         return nil
     }
     
-    fileprivate static func solveHashCashAsync(prefix: [UInt8], length: Int32, random: [UInt8], tasks: UInt = 5, taskIterations: UInt = 400000, timeoutInS: UInt = 8, completion: @escaping ([UInt8]?) -> Void) {
+    fileprivate static func solveHashCashAsync(prefix: [UInt8], length: Int32, random: [UInt8], tasks: UInt = 5, taskIterations: UInt = 400000, timeoutInS: UInt = 9, completion: @escaping ([UInt8]?) -> Void) {
         guard let startL1: Int64 = SPBinaryUtil.getVal(random, bigEndian: true) else {
 #if DEBUG
             print("Parse Int64 fail from random bytes")
@@ -113,19 +114,23 @@ final class SPHashCashUtil {
         let startTs = Date().timeIntervalSince1970
         #endif
         let dispatchGroup = DispatchGroup()
+        
         DispatchQueue.main.async {
             _ = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { _ in
     #if DEBUG
                     print("Hashcash solve timeout (expired " + String(timeoutInS) + " secs)")
     #endif
                 timeoutCancellation = true
-                completion(nil)
             }
         }
         let solver: (UInt, [UInt8], Int32, Int64, Int64) -> Void = { (taskIndex, prefix, length, startL1, startL2) in
             var taskL1 = startL1
             var taskL2 = startL2
             while !timeoutCancellation && solution == nil {
+                if (solution != nil) {
+                    dispatchGroup.leave()
+                    return
+                }
                 guard let safeHashCash = hashCashIteration(taskIndex: taskIndex, prefix: prefix, l1: &taskL1, l2: &taskL2, length: length) else {
                     continue
                 }

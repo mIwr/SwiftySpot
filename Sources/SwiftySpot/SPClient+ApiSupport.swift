@@ -19,10 +19,10 @@ extension SPClient {
                 #if DEBUG
                 print("WEB client token", tk.val)
                 #endif
-                /*self.clToken = tk
+                self.clToken = tk
                 self.clTokenCreateTsUTC = Int64(Date.timeIntervalBetween1970AndReferenceDate + Date.timeIntervalSinceReferenceDate)
                 let clSession = SPClientSession(token: tk.val, createTsUTC: self.clTokenCreateTsUTC, expiresInS: tk.expiresInS, refreshInS: tk.refreshAfterS)
-                self.notifyClSessionUpdate(clSession)*/
+                self.notifyClSessionUpdate(clSession)
                 completion(.success(tk))
             } catch {
 #if DEBUG
@@ -75,7 +75,7 @@ extension SPClient {
         let task = initSessionChallengeByApi(userAgent: userAgent, initData: clientInfo) { result in
             do {
                 let res = try result.get()
-                var solution = SPChallengeAnswerData()
+                var solution = SPClientTokenChallengeAnswerData()
                 solution.context = res.context
                 if (res.challenges.isEmpty) {
                     completion(.failure(.badResponseData(errCode: SPError.GeneralErrCode, data: ["description": "No challenges"])))
@@ -96,10 +96,10 @@ extension SPClient {
                             _ = self.refreshClientToken(completion: completion)
                             return
                         }
-                        var answer = SPChallengeAnswer()
+                        var answer = SPClientTokenChallengeAnswer()
                         answer.type = challenge.type
-                        answer.hashcash = SPHashCashAnswer()
-                        answer.hashcash.suffix = safeHashcashSolution.uppercased()
+                        answer.hashcash = SPHashcashChallengeAnswer()
+                        answer.hashcash.suffix = safeHashcashSolution.uppercased().data(using: .utf8) ?? Data()
                         solution.answers.append(answer)
                         _ = initSessionSolveChallengeByApi(userAgent: self.userAgent, answerData: solution) { solveResult in
                             do {
@@ -148,7 +148,7 @@ extension SPClient {
             clInfo.clID = self.clientId
             clInfo.deviceID = self.device.deviceId
             var stored = SPStoredCredential()
-            stored.username = self.authSession.username
+            stored.id = self.authSession.username
             stored.data = self.authSession.storedCredential
             let task = refreshAuthByApi(userAgent: self.userAgent, clToken: safeClToken, clientInfo: clInfo, stored: stored) { result in
                 do {
@@ -399,11 +399,10 @@ extension SPClient {
         let refreshTask = refreshClientToken { result in
             do {
                 _ = try result.get()
-                _ = clReq(self.clToken.val)
             } catch {
                 self.commitLostClToken()
-                _ = clReq(self.clToken.val)
             }
+            _ = clReq(self.clToken.val)
         }
         return refreshTask
     }
@@ -430,6 +429,25 @@ extension SPClient {
         return task
     }
     
+    ///Execute API func with required client and guest web auth tokens
+    ///- Parameter authReq: API func handler with actual or refreshed client and auth tokens
+    ///- Returns: API request session task
+    func safeGuestWebAuthReq(_ authReq: @escaping (_ safeClToken: String, _ safeAuthToken: String) -> URLSessionDataTask?) -> URLSessionDataTask? {
+        //No user auth
+        if let gAToken = guestAuthToken  {
+            //Actual guest auth token
+            return safeClReq { safeClToken in
+                let task = authReq(safeClToken, gAToken)
+                return task
+            }
+        }
+        //Regresh guest auth token
+        let guestTask = refreshGuestAuth { _ in
+            _ = authReq(self.clToken.val, self.guestAuthSession.token)
+        }
+        return guestTask
+    }
+    
     ///Execute API func with required client and auth tokens + optional guest auth tokens
     ///- Parameter authReq: API func handler with actual or refreshed client and auth tokens
     ///- Returns: API request session task
@@ -440,19 +458,7 @@ extension SPClient {
                 return task
             }
         } else if !authorized {
-            //No user auth
-            if let gAToken = guestAuthToken  {
-                //Actual guest auth token
-                return safeClReq { safeClToken in
-                    let task = authReq(safeClToken, gAToken)
-                    return task
-                }
-            }
-            //Regresh guest auth token
-            let guestTask = refreshGuestAuth { _ in
-                _ = authReq(self.clToken.val, self.guestAuthSession.token)
-            }
-            return guestTask
+            return safeGuestWebAuthReq(authReq)
         }
         let task = refreshAuth { result in
             do {

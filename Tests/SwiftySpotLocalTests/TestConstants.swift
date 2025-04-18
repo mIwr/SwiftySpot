@@ -11,7 +11,7 @@ import Foundation
 
 class TestConstants {
     
-    static let device = SPDevice(os: "Android", osVer: "6.0.1", osVerNum: 23, cpuAbi: "32", manufacturer: "Samsung", model: "GT-I9500", deviceId: "e4615d56333747b9")
+    static let device = SPDevice(os: "Android", osVer: "7.1.0", osVerNum: 25, cpuAbi: "32", manufacturer: "Samsung", model: "GT-I9500", deviceId: "e4615d56333747b9")
     
     static let clTokenContext = "AAB5nARw0grHJXTHGbtYcoK3bdZCIrsoXtZ2V1+4EUxUxN8VuRilSJLTWt7sFyPw2KlBe6Lcgg5ir/bhMCfmRgKBBXFdOSMMxjfElCmgx77cGWtTHjDOKFk0R+WeNKq6+4Zp4Yb8OfeAgKm4NRBZspPtMq8ff69q33bSzeuuWXAfFni7wHEaBvG4K1dNcTHGTizIvCmqPtKHn/Ro160LwXfy7hBkVDMugJDTApY1hTn2rJ4UEYqWX+6iYueyj9JTZ1BWObLttXMKRNdfG67orfn+JXq/XiWRxV9la91NBe9Fz0veFico/HO5IO0IcA=="
     static let clTokenHashcashPrefix = "0FA5978342C731C21B57CC4816848E64"

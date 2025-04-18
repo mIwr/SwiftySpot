@@ -2,12 +2,24 @@ syntax = "proto3";
 option swift_prefix="SP";
 
 import "ClientInfo.proto";
+import "Challenge.proto";
+
+message ClientToken {
+    string val = 1;
+    int32 expiresInS = 2;
+    int32 refreshAfterS = 3;
+    repeated ClientTokenDomain domains = 4;
+}
+
+message ClientTokenDomain {
+    string domain = 1;
+}
 
 message ClientTokenRequest {
     ClientTokenRequestType type = 1;
     oneof request {
         ClientInfo client = 2;
-        ChallengeAnswerData answerData = 3;
+        ClientTokenChallengeAnswerData answerData = 3;
     }
 }
 
@@ -17,37 +29,25 @@ enum ClientTokenRequestType {
     REQUEST_CHALLENGE_ANSWERS_REQUEST = 2;
 }
 
-message ChallengeAnswer {
-    ChallengeType type = 1;
-    oneof answer {
-        ClientSecretHMACAnswer clSecretAnswer = 2;
-        EvaluateJSAnswer evaluateJS = 3;
-        HashCashAnswer hashcash = 4;
-    }
-}
-
-enum ChallengeType {
+enum ClientTokenChallengeType {
     CHALLENGE_UNKNOWN = 0;
     CHALLENGE_CLIENT_SECRET_HMAC = 1;
     CHALLENGE_EVALUATE_JS = 2;
     CHALLENGE_HASH_CASH = 3;
 }
 
-message ClientSecretHMACAnswer {
-    string hmac = 1;
-}
-
-message EvaluateJSAnswer {
-    string result = 1;
-}
-
-message HashCashAnswer {
-    string suffix = 1;
-}
-
-message ChallengeAnswerData {
+message ClientTokenChallengeAnswerData {
     string context = 1;//librespot-java: string state = 1;
-    repeated ChallengeAnswer answers = 2;
+    repeated ClientTokenChallengeAnswer answers = 2;
+}
+
+message ClientTokenChallengeAnswer {
+    ClientTokenChallengeType type = 1;
+    oneof answer {
+        ClientSecretHMACAnswer clSecretAnswer = 2;
+        EvaluateJSAnswer evaluateJS = 3;
+        HashcashChallengeAnswer hashcash = 4;
+    }
 }
 
 
@@ -55,7 +55,7 @@ message ClientTokenResponse {
     ClientTokenResponseType type = 1;
     oneof response {
         ClientToken token = 2;
-        ChallengesData challenges = 3;
+        ClientTokenChallengesData challenges = 3;
     }
 }
 
@@ -65,43 +65,18 @@ enum ClientTokenResponseType {
     RESPONSE_CHALLENGES_RESPONSE = 2;
 }
 
-message ClientToken {
-    string val = 1;
-    int32 expiresInS = 2;
-    int32 refreshAfterS = 3;
-    repeated TokenDomain domains = 4;
-}
-
-message TokenDomain {
-    string domain = 1;
-}
-
-message ChallengesData {
+message ClientTokenChallengesData {
     string context = 1;
-    repeated Challenge challenges = 2;
+    repeated ClientTokenChallenge challenges = 2;
 }
 
-message Challenge {
-    ChallengeType type = 1;
+message ClientTokenChallenge {
+    ClientTokenChallengeType type = 1;
     oneof parameters {
-        ClientSecretParameters clSecretParameters = 2;
-        EvaluateJSParameters jsParameters = 3;
-        HashCashParameters hashcashParameters = 4;
+        ClientSecretChallenge clSecretParameters = 2;
+        EvaluateJSChallenge jsParameters = 3;
+        HashcashChallenge hashcashParameters = 4;
     }
-}
-
-message ClientSecretParameters {
-    string salt = 1;
-}
-
-message EvaluateJSParameters {
-    string code = 1;
-    repeated string libraries = 2;
-}
-
-message HashCashParameters {
-    int32 length = 1;
-    string prefix = 2;
 }
 
 message ClientTokenBadRequest {

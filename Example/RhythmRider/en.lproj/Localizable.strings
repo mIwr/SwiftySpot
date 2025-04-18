@@ -1,12 +1,17 @@
 "authType" = "Auth type";
 "authTypePass" = "Password";
 "authTypeStoredCred" = "Stored credential";
+"authTypeMagicLink" = "Magic link";
 "authLoginTitle" = "E-mail or username";
+"authLoginMagicLinkTitle" = "Auth link from e-mail";
+"authLoginMagicLinkInit" = "Send link to mail";
 "authLoginSignIn" = "Login";
 "authLoginEmptyLogin" = "Empty login";
 "authLoginEmptyPassword" = "Empty password";
 "authLoginEmptyStoredCred" = "Empty stored credential";
+"authLoginEmptyMagicLink" = "Empty magic link";
 "authLoginNoAuthToken" = "Login fail: no authorization token. Check your credentials and repeat";
+"authLoginChallengePassFail" = "Not passed challenge. Repeat authorization";
 
 "tabHome" = "Home";
 "tabFav" = "Favourite";

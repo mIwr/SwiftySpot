@@ -1,12 +1,17 @@
 "authType" = "Тип авторизации";
 "authTypePass" = "Пароль";
 "authTypeStoredCred" = "Stored credential";
+"authTypeMagicLink" = "Magic link";
 "authLoginTitle" = "Эл. почта или имя пользователя";
+"authLoginMagicLinkTitle" = "Ссылка авторизации из e-mail";
+"authLoginMagicLinkInit" = "Отправить ссылку на почту";
 "authLoginSignIn" = "Войти";
 "authLoginEmptyLogin" = "Не введен логин";
 "authLoginEmptyPassword" = "Не введен пароль";
 "authLoginEmptyStoredCred" = "Не введен Stored Credential";
+"authLoginEmptyMagicLink" = "Не указана одноразовая ссылка авторизации";
 "authLoginNoAuthToken" = "Ошибка входа: отсутствует токен авторизации. Проверьте правильность ввода учетных данных и повторите";
+"authLoginChallengePassFail" = "Проверка не пройдена. Повторите авторизацию";
 
 "tabHome" = "Главная";
 "tabFav" = "Избранное";

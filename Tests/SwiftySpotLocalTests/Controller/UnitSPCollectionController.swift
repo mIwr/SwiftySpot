@@ -60,11 +60,7 @@ final class UnitSPCollectionController: XCTestCase {
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
             SPCollectionItem(uri: SPNavigateUriUtil.generateTrackUri(id: "trackBase62ID"), addedTs: Int64(Date().timeIntervalSince1970), removed: false),
         ], pageSize: 2)
-        #if _runtime(_ObjC)
-        NotificationCenter.default.addObserver(self, selector: #selector(onControllerItemUpdate), name: .SPTrackLikeUpdate, object: nil)
-        #else
-        onControllerItemUpdate(Notification(name: .SPTrackLikeUpdate))
-        #endif
+        NotificationCenter.default.addObserver(forName: .SPTrackLikeUpdate, object: nil, queue: .main, using: onControllerItemUpdate)
         controller.updateFromPage(page)
         let exp = self.expectation(description: "Request time-out expectation")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -82,9 +78,6 @@ final class UnitSPCollectionController: XCTestCase {
         }
     }
     
-    #if _runtime(_ObjC)
-    @objc
-    #endif
     fileprivate func onControllerItemUpdate(_ notification: Notification) {
         notifierFired = true
     }

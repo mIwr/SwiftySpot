@@ -11,14 +11,16 @@ enum ApiTarget {
     //General
     case download(headers: [String: String], fullPath: String)
     case wdvSeektable(fileHexId: String)
+    case serverTime
     //Init
     case clToken(userAgent: String, proto: SPClientTokenRequest)
     case webClToken(userAgent: String, clId: String, os: String, appVer: String, deviceId: String)
     case acessPoints(clToken: String?)
     case wdvCert
     //Auth
-    case guestAuth(userAgent: String, os: String, appVer: String)
-    case auth(userAgent: String, clToken: String, proto: SPLoginV3Request)
+    case guestAuth(userAgent: String, os: String, appVer: String, totp: String, totpVer: UInt8, timestamp: Int64)
+    case initAuthMagicLink(userAgent: String, clToken: String, clId: String, os: String, appVer: String, login: String, deviceId: String)
+    case auth(userAgent: String, clToken: String, proto: SPLoginRequest)
     //SignUp
     case signupValidate(userAgent: String, clToken: String, os: String, appVer: String, validatorKey: String, password: String?)
     case signup(userAgent: String, clToken: String, os: String, appVer: String, clId: String, proto: SPCreateAccountRequest)

@@ -78,7 +78,7 @@ public class SPClient {
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.androidClID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
         self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId
@@ -123,7 +123,7 @@ public class SPClient {
     ///- Parameter tracksMeta: Tracks info for meta repository
     ///- Parameter lyricsInfo: Lyrics info for repository
     ///- Returns: SPClient instance on unauthorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.androidClID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:]) {
         self.appVersionCode = appVersionCode
         self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId
@@ -181,7 +181,7 @@ public class SPClient {
     ///- Parameter downloadInfos: Download infos dictionary. Key is hexFileId
     ///- Parameter playIntents: Play intents dictionary. Key is hexFileId
     ///- Returns: SPClient instance on authorized state
-    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.clID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], seektables: [String: SPWDVSeektable] = [:], playIntents: [String: SPPlayIntentResponse] = [:]) {
+    public init(appVersionCode: String = SPConstants.appVersionCode, webAppVersionCode: String = SPConstants.webAppVersionCode, clientId: String = SPConstants.androidClID, clValidationKey: String = SPConstants.clValidationKey, device: SPDevice, clToken: String, clTokenExpires: Int32, clTokenRefreshAfter: Int32, clTokenCreateTsUTC: Int64, authToken: String, authExpiresInS: Int32, username: String, storedCred: [UInt8], authTokenCreateTsUTC: Int64, artistsMeta: [String: SPMetadataArtist] = [:], albumsMeta: [String: SPMetadataAlbum] = [:], playlistsMeta: [String: SPPlaylist] = [:], tracksMeta: [String: SPMetadataTrack] = [:], lyricsInfo: [String: SPLyrics] = [:], likedDislikedArtists: SPLikeController? = nil, likedDislikedAlbums: SPLikeController? = nil, likedDislikedTracks: SPLikeController? = nil, userCollections: [String: SPCollectionController] = [:], downloadInfos: [String: SPDownloadInfo] = [:], seektables: [String: SPWDVSeektable] = [:], playIntents: [String: SPPlayIntentResponse] = [:]) {
         self.appVersionCode = appVersionCode
         self.webAppVersionCode = webAppVersionCode
         self.clientId = clientId

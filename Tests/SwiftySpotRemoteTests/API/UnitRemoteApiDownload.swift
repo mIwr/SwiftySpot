@@ -91,7 +91,6 @@ final class UnitRemoteApiDownload: XCTestCase {
                     do {
                         let seektable = try seektableRes.get()
                         XCTAssertTrue(!seektable.pssh.isEmpty, "PSSH is empty")
-                        
                     } catch {
                         print(error)
                         XCTAssert(false, "Empty metadata object: " + error.localizedDescription)
@@ -211,7 +210,7 @@ final class UnitRemoteApiDownload: XCTestCase {
                         XCTAssertTrue(!binData.obfuscatedKey.isEmpty, "b16Seq is empty")
                     } catch {
                         print(error)
-                        XCTAssert(false, "Empty metadata object: " + error.localizedDescription)
+                        XCTAssert(false, "Empty play intent object: " + error.localizedDescription)
                     }
                     exp.fulfill()
                 }

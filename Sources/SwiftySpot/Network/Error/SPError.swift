@@ -39,7 +39,7 @@ extension SPError: Error {
         case .invalidResponseStatusCode(let errCode, let description):
             return "Invalid response status code " + String(errCode) + "\n" + description
         case .badResponseData:
-            return "Invalida response data"
+            return "Invalid response data"
         case .refreshAuthDataNotExists(let usernameFound, let storedCredFound):
             if (!usernameFound && !storedCredFound) {
                 return "Not found username and stored credentials to refresh auth"

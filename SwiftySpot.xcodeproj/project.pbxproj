@@ -153,6 +153,8 @@
 		8B39C8E82AD2BB5E005E682D /* SPClientSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */; };
 		8B39C8EA2AD2BF04005E682D /* UnitSPClientNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C8E92AD2BF04005E682D /* UnitSPClientNotifier.swift */; };
 		8B3C01552CF068CF0025D14A /* SPLocaleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */; };
+		8B42DFDD2DA7D65A0010E1BE /* Challenge.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42DFDC2DA7D65A0010E1BE /* Challenge.pb.swift */; };
+		8B42DFDF2DA7D6690010E1BE /* Login5.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42DFDE2DA7D6690010E1BE /* Login5.pb.swift */; };
 		8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */; };
 		8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */; };
 		8B489ECF2C0F5587009BEEF4 /* SPWDVSeektable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B489ECE2C0F5587009BEEF4 /* SPWDVSeektable.swift */; };
@@ -173,6 +175,7 @@
 		8B4ED4552C64DA26006455BD /* SPLyricsSyncType+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ED4542C64DA25006455BD /* SPLyricsSyncType+Decoder.swift */; };
 		8B4ED4572C64DE77006455BD /* SPDownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ED4562C64DE77006455BD /* SPDownloadInfo.swift */; };
 		8B5AE0CC2AFEBE4E001A25FD /* SPSignupSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */; };
+		8B61FE362DA80167002FE5B4 /* SPAuthInitMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B61FE352DA8015A002FE5B4 /* SPAuthInitMeta.swift */; };
 		8B6532262B230DCA0071A3EC /* UnitSPMetaInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6532252B230DCA0071A3EC /* UnitSPMetaInfoController.swift */; };
 		8B6532282B2312180071A3EC /* UnitSPCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6532272B2312180071A3EC /* UnitSPCollectionController.swift */; };
 		8B66AE442AE9262A002B4088 /* SPDownloadInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */; };
@@ -193,7 +196,6 @@
 		8B6E1FA62C6400E30061D62F /* Accessibility.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F812C6400E30061D62F /* Accessibility.pb.swift */; };
 		8B6E1FA72C6400E30061D62F /* Metadata.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F822C6400E30061D62F /* Metadata.pb.swift */; };
 		8B6E1FA82C6400E30061D62F /* HighlightedText.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F832C6400E30061D62F /* HighlightedText.pb.swift */; };
-		8B6E1FA92C6400E30061D62F /* LoginV3.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F842C6400E30061D62F /* LoginV3.pb.swift */; };
 		8B6E1FAB2C6400E30061D62F /* ApiLanding.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F862C6400E30061D62F /* ApiLanding.pb.swift */; };
 		8B6E1FAC2C6400E30061D62F /* CardShortcut.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F872C6400E30061D62F /* CardShortcut.pb.swift */; };
 		8B6E1FAD2C6400E30061D62F /* CardSmall.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1F882C6400E30061D62F /* CardSmall.pb.swift */; };
@@ -224,6 +226,7 @@
 		8B817E8E2B05423D0097B475 /* trackLyricsResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8B817E8D2B05423D0097B475 /* trackLyricsResponse.protobuf */; };
 		8B817E902B0543580097B475 /* UnitRemoteApiLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E8F2B0543580097B475 /* UnitRemoteApiLyrics.swift */; };
 		8B817E942B055BF90097B475 /* SPMetaInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B817E932B055BF90097B475 /* SPMetaInfoController.swift */; };
+		8B8B8C902DB229C200840861 /* UnitSPTOTPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B8C8E2DB229B800840861 /* UnitSPTOTPUtil.swift */; };
 		8B8C06CA2CE7728E00D643A6 /* SPWebSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C06C92CE7728E00D643A6 /* SPWebSearchResult.swift */; };
 		8B8C06CD2CE77C7700D643A6 /* SPWebSearchTopResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C06CC2CE77C7700D643A6 /* SPWebSearchTopResults.swift */; };
 		8B8C06CF2CE787DC00D643A6 /* SPSearchAudioShow+Ctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C06CE2CE787DC00D643A6 /* SPSearchAudioShow+Ctor.swift */; };
@@ -232,6 +235,11 @@
 		8B99E8F12AF2716D00196FC8 /* SPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F02AF2716D00196FC8 /* SPID.swift */; };
 		8B99E8F32AF2770A00196FC8 /* SPTypedObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */; };
 		8B99E8F62AF27A7800196FC8 /* SPEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */; };
+		8BA9E22D2DB12BB9005E60AB /* SPTOTPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9E22B2DB12BB4005E60AB /* SPTOTPUtil.swift */; };
+		8BA9E22F2DB12E6F005E60AB /* SPBase32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9E22E2DB12E6B005E60AB /* SPBase32.swift */; };
+		8BA9E2312DB13DC6005E60AB /* UnitSPBase32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9E2302DB13DC3005E60AB /* UnitSPBase32.swift */; };
+		8BB6ADF92DB0D701004A0939 /* SPAuthChallengeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6ADF82DB0D6F9004A0939 /* SPAuthChallengeInfo.swift */; };
+		8BB6ADFE2DB0E1CF004A0939 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6ADFD2DB0E1CF004A0939 /* URL.swift */; };
 		8BEBFD8C2B7028E6005427FC /* playlistFromTrackResponse.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBFD8B2B7028E6005427FC /* playlistFromTrackResponse.protobuf */; };
 		8BEC798B2AE3B2A600035DD6 /* SPClient+ApiLikeDislike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC798A2AE3B2A600035DD6 /* SPClient+ApiLikeDislike.swift */; };
 		8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */; };
@@ -423,6 +431,10 @@
 		8B3BDA002AF545640039390B /* feed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feed.jpg; sourceTree = "<group>"; };
 		8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLocaleUtil.swift; sourceTree = "<group>"; };
 		8B3D45BD2B867AB30037575B /* XCFramework.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = XCFramework.md; sourceTree = "<group>"; };
+		8B42DFD62DA7C9610010E1BE /* Login5.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Login5.proto; sourceTree = "<group>"; };
+		8B42DFD92DA7CE270010E1BE /* Challenge.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Challenge.proto; sourceTree = "<group>"; };
+		8B42DFDC2DA7D65A0010E1BE /* Challenge.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.pb.swift; sourceTree = "<group>"; };
+		8B42DFDE2DA7D6690010E1BE /* Login5.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login5.pb.swift; sourceTree = "<group>"; };
 		8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSHA1.swift; sourceTree = "<group>"; };
 		8B46FCAA2AEED34400A9C939 /* UnitSPSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPSHA1.swift; sourceTree = "<group>"; };
 		8B489ECE2C0F5587009BEEF4 /* SPWDVSeektable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWDVSeektable.swift; sourceTree = "<group>"; };
@@ -437,6 +449,7 @@
 		8B4ED4542C64DA25006455BD /* SPLyricsSyncType+Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SPLyricsSyncType+Decoder.swift"; sourceTree = "<group>"; };
 		8B4ED4562C64DE77006455BD /* SPDownloadInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadInfo.swift; sourceTree = "<group>"; };
 		8B5AE0CB2AFEBE4E001A25FD /* SPSignupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSignupSession.swift; sourceTree = "<group>"; };
+		8B61FE352DA8015A002FE5B4 /* SPAuthInitMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAuthInitMeta.swift; sourceTree = "<group>"; };
 		8B6532252B230DCA0071A3EC /* UnitSPMetaInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPMetaInfoController.swift; sourceTree = "<group>"; };
 		8B6532272B2312180071A3EC /* UnitSPCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPCollectionController.swift; sourceTree = "<group>"; };
 		8B66AE432AE9262A002B4088 /* SPDownloadInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDownloadInfoController.swift; sourceTree = "<group>"; };
@@ -452,7 +465,6 @@
 		8B6E1F522C63F7FE0061D62F /* HomeViewService.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = HomeViewService.proto; sourceTree = "<group>"; };
 		8B6E1F532C63F7FE0061D62F /* Search.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Search.proto; sourceTree = "<group>"; };
 		8B6E1F542C63F7FE0061D62F /* Restrictions.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Restrictions.proto; sourceTree = "<group>"; };
-		8B6E1F552C63F7FE0061D62F /* LoginV3.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = LoginV3.proto; sourceTree = "<group>"; };
 		8B6E1F562C63F7FE0061D62F /* Credentials.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Credentials.proto; sourceTree = "<group>"; };
 		8B6E1F572C63F7FE0061D62F /* ClientInfo.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = ClientInfo.proto; sourceTree = "<group>"; };
 		8B6E1F582C63F7FE0061D62F /* ToolbarItem.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = ToolbarItem.proto; sourceTree = "<group>"; };
@@ -493,7 +505,6 @@
 		8B6E1F812C6400E30061D62F /* Accessibility.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessibility.pb.swift; sourceTree = "<group>"; };
 		8B6E1F822C6400E30061D62F /* Metadata.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.pb.swift; sourceTree = "<group>"; };
 		8B6E1F832C6400E30061D62F /* HighlightedText.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedText.pb.swift; sourceTree = "<group>"; };
-		8B6E1F842C6400E30061D62F /* LoginV3.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginV3.pb.swift; sourceTree = "<group>"; };
 		8B6E1F862C6400E30061D62F /* ApiLanding.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiLanding.pb.swift; sourceTree = "<group>"; };
 		8B6E1F872C6400E30061D62F /* CardShortcut.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShortcut.pb.swift; sourceTree = "<group>"; };
 		8B6E1F882C6400E30061D62F /* CardSmall.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSmall.pb.swift; sourceTree = "<group>"; };
@@ -530,6 +541,7 @@
 		8B81AD922CBD728D006E637F /* SPWebSearchCardImageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWebSearchCardImageColors.swift; sourceTree = "<group>"; };
 		8B81AD952CBD73DC006E637F /* SPwebSearchCardImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPwebSearchCardImageSource.swift; sourceTree = "<group>"; };
 		8B81AD972CBD7C12006E637F /* SPWebSearchProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWebSearchProfile.swift; sourceTree = "<group>"; };
+		8B8B8C8E2DB229B800840861 /* UnitSPTOTPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPTOTPUtil.swift; sourceTree = "<group>"; };
 		8B8C06C92CE7728E00D643A6 /* SPWebSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWebSearchResult.swift; sourceTree = "<group>"; };
 		8B8C06CC2CE77C7700D643A6 /* SPWebSearchTopResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWebSearchTopResults.swift; sourceTree = "<group>"; };
 		8B8C06CE2CE787DC00D643A6 /* SPSearchAudioShow+Ctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SPSearchAudioShow+Ctor.swift"; sourceTree = "<group>"; };
@@ -540,6 +552,12 @@
 		8B99E8F02AF2716D00196FC8 /* SPID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPID.swift; sourceTree = "<group>"; };
 		8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTypedObj.swift; sourceTree = "<group>"; };
 		8B99E8F52AF27A7800196FC8 /* SPEntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPEntityType.swift; sourceTree = "<group>"; };
+		8BA9E22B2DB12BB4005E60AB /* SPTOTPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTOTPUtil.swift; sourceTree = "<group>"; };
+		8BA9E22E2DB12E6B005E60AB /* SPBase32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBase32.swift; sourceTree = "<group>"; };
+		8BA9E2302DB13DC3005E60AB /* UnitSPBase32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSPBase32.swift; sourceTree = "<group>"; };
+		8BB6ADF82DB0D6F9004A0939 /* SPAuthChallengeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAuthChallengeInfo.swift; sourceTree = "<group>"; };
+		8BB6ADFB2DB0D8BD004A0939 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		8BB6ADFD2DB0E1CF004A0939 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		8BEBFD8B2B7028E6005427FC /* playlistFromTrackResponse.protobuf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = playlistFromTrackResponse.protobuf; sourceTree = "<group>"; };
 		8BEC798A2AE3B2A600035DD6 /* SPClient+ApiLikeDislike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SPClient+ApiLikeDislike.swift"; sourceTree = "<group>"; };
 		8BF94D542AFE8AF800B0AD79 /* ApiSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSignup.swift; sourceTree = "<group>"; };
@@ -602,6 +620,7 @@
 				8B172AA82AD1699D00ECBD74 /* LICENSE */,
 				8B172AA72AD1699D00ECBD74 /* README.md */,
 				8B3D45BD2B867AB30037575B /* XCFramework.md */,
+				8BB6ADFB2DB0D8BD004A0939 /* TODO.md */,
 				8B344A0B2AEEC5F9004037D0 /* Package.swift */,
 				8B172AAA2AD1699E00ECBD74 /* SwiftySpot.podspec */,
 				8B172A902AD1693700ECBD74 /* Products */,
@@ -646,6 +665,7 @@
 				8B3C01542CF068CF0025D14A /* SPLocaleUtil.swift */,
 				8B172C172AD169CA00ECBD74 /* SPNavigateUriUtil.swift */,
 				8B46FCA82AEED31C00A9C939 /* SPSHA1.swift */,
+				8BA9E22B2DB12BB4005E60AB /* SPTOTPUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -714,6 +734,7 @@
 		8B172C842AD169CA00ECBD74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8BB6ADF62DB0D6ED004A0939 /* Auth */,
 				8B22416C2AF4DFA500BFE16B /* Base */,
 				8B99E8F42AF27A5100196FC8 /* Basis */,
 				8B172C852AD169CA00ECBD74 /* Artist */,
@@ -730,8 +751,6 @@
 				8B021DD22CE72BF6004035DC /* Web */,
 				8BF94D572AFE8B4500B0AD79 /* SPSignupValidation.swift */,
 				8B172CA72AD169CA00ECBD74 /* SPAccessPoint.swift */,
-				8B172CAE2AD169CB00ECBD74 /* SPAuthSession.swift */,
-				8B8E8B202CB9599C007F56A2 /* SPGuestWebAuthSession.swift */,
 				8B39C8E72AD2BB5E005E682D /* SPClientSession.swift */,
 				8B0800BA2CE4D5B700F1D018 /* SPDateTime.swift */,
 				8B172CCF2AD169CB00ECBD74 /* SPDevice.swift */,
@@ -901,6 +920,7 @@
 			children = (
 				8B172D8A2AD16B2100ECBD74 /* UnitBitConvertUtil.swift */,
 				8B172D892AD16B2100ECBD74 /* UnitHashcashUtil.swift */,
+				8B8B8C8E2DB229B800840861 /* UnitSPTOTPUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -940,6 +960,7 @@
 			children = (
 				8B22416F2AF4E26C00BFE16B /* SPBinaryIntegerExt.swift */,
 				8B22416D2AF4DFBA00BFE16B /* SPBase16.swift */,
+				8BA9E22E2DB12E6B005E60AB /* SPBase32.swift */,
 				8B1F50322AEF9F76008D9A09 /* SPBase62.swift */,
 				8B1F50342AEFA200008D9A09 /* SPUInt128.swift */,
 			);
@@ -949,6 +970,7 @@
 		8B2241712AF4F72000BFE16B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8BA9E2302DB13DC3005E60AB /* UnitSPBase32.swift */,
 				8B172D882AD16B2100ECBD74 /* UnitSPBase16.swift */,
 				8B1F50362AEFA3AA008D9A09 /* UnitSPBase62.swift */,
 				8B34D6282B34892600F5E387 /* UnitSPID.swift */,
@@ -975,6 +997,7 @@
 		8B344A072AEEC3E6004037D0 /* SwiftySpot */ = {
 			isa = PBXGroup;
 			children = (
+				8BB6ADFC2DB0E1C7004A0939 /* Extension */,
 				8B172C212AD169CA00ECBD74 /* Network */,
 				8BCD7CF52AE2D11700B1F2C3 /* Controller */,
 				8B172C842AD169CA00ECBD74 /* Model */,
@@ -1058,6 +1081,7 @@
 				8B6E1F4F2C63F7FE0061D62F /* ApiLanding.proto */,
 				8B6E1F572C63F7FE0061D62F /* ClientInfo.proto */,
 				8B6E1F6A2C63F7FE0061D62F /* ClientToken.proto */,
+				8B42DFD92DA7CE270010E1BE /* Challenge.proto */,
 				8B6E1F492C63F7FE0061D62F /* FilterComponent.proto */,
 				8B6E1F4A2C63F7FE0061D62F /* Path.proto */,
 				8B6E1F672C63F7FE0061D62F /* Collection.proto */,
@@ -1068,7 +1092,7 @@
 				8B6E1F512C63F7FE0061D62F /* Connectivity.proto */,
 				8B6E1F522C63F7FE0061D62F /* HomeViewService.proto */,
 				8B6E1F542C63F7FE0061D62F /* Restrictions.proto */,
-				8B6E1F552C63F7FE0061D62F /* LoginV3.proto */,
+				8B42DFD62DA7C9610010E1BE /* Login5.proto */,
 				8B6E1F562C63F7FE0061D62F /* Credentials.proto */,
 				8B6E1F582C63F7FE0061D62F /* ToolbarItem.proto */,
 				8B6E1F5D2C63F7FE0061D62F /* ContextMenu.proto */,
@@ -1122,7 +1146,6 @@
 				8B6E1F812C6400E30061D62F /* Accessibility.pb.swift */,
 				8B6E1F822C6400E30061D62F /* Metadata.pb.swift */,
 				8B6E1F832C6400E30061D62F /* HighlightedText.pb.swift */,
-				8B6E1F842C6400E30061D62F /* LoginV3.pb.swift */,
 				8B6E1F862C6400E30061D62F /* ApiLanding.pb.swift */,
 				8B6E1F872C6400E30061D62F /* CardShortcut.pb.swift */,
 				8B6E1F882C6400E30061D62F /* CardSmall.pb.swift */,
@@ -1138,6 +1161,8 @@
 				8B6E1F922C6400E30061D62F /* ToolbarItem.pb.swift */,
 				8B6E1F932C6400E30061D62F /* UbiElementInfo.pb.swift */,
 				8B6E1F942C6400E30061D62F /* TLComponent.pb.swift */,
+				8B42DFDE2DA7D6690010E1BE /* Login5.pb.swift */,
+				8B42DFDC2DA7D65A0010E1BE /* Challenge.pb.swift */,
 				8B6E1F952C6400E30061D62F /* FilterComponent.pb.swift */,
 				8B6E1F962C6400E30061D62F /* HomeViewService.pb.swift */,
 			);
@@ -1209,6 +1234,25 @@
 				8B99E8F22AF2770A00196FC8 /* SPTypedObj.swift */,
 			);
 			path = Basis;
+			sourceTree = "<group>";
+		};
+		8BB6ADF62DB0D6ED004A0939 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6ADF82DB0D6F9004A0939 /* SPAuthChallengeInfo.swift */,
+				8B61FE352DA8015A002FE5B4 /* SPAuthInitMeta.swift */,
+				8B172CAE2AD169CB00ECBD74 /* SPAuthSession.swift */,
+				8B8E8B202CB9599C007F56A2 /* SPGuestWebAuthSession.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8BB6ADFC2DB0E1C7004A0939 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6ADFD2DB0E1CF004A0939 /* URL.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8BCD7CF52AE2D11700B1F2C3 /* Controller */ = {
@@ -1283,7 +1327,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					8B172A8E2AD1693700ECBD74 = {
 						CreatedOnToolsVersion = 14.2;
@@ -1435,13 +1479,14 @@
 				8B172CE02AD169CB00ECBD74 /* ApiLanding.swift in Sources */,
 				8B172D332AD169CB00ECBD74 /* SPClient+ApiLanding.swift in Sources */,
 				8B0800BD2CE4D92A00F1D018 /* SPWebPlayability.swift in Sources */,
-				8B6E1FA92C6400E30061D62F /* LoginV3.pb.swift in Sources */,
 				8B172D702AD169CB00ECBD74 /* SPMetadataAlbum.swift in Sources */,
+				8BB6ADF92DB0D701004A0939 /* SPAuthChallengeInfo.swift in Sources */,
 				8B6E1FB92C6400E30061D62F /* TLComponent.pb.swift in Sources */,
 				8B172D342AD169CB00ECBD74 /* SPClient+ApiDownload.swift in Sources */,
 				8B1F50332AEF9F76008D9A09 /* SPBase62.swift in Sources */,
 				8B172CEA2AD169CB00ECBD74 /* ApiTarget+Body.swift in Sources */,
 				8B172CF52AD169CB00ECBD74 /* SPClient+ApiPlaylist.swift in Sources */,
+				8B42DFDD2DA7D65A0010E1BE /* Challenge.pb.swift in Sources */,
 				8B8C06CF2CE787DC00D643A6 /* SPSearchAudioShow+Ctor.swift in Sources */,
 				8B172D672AD169CB00ECBD74 /* SPMetadataAudioFormat+Properties.swift in Sources */,
 				8B6E1FB22C6400E30061D62F /* PlayCommand.pb.swift in Sources */,
@@ -1489,8 +1534,11 @@
 				8B172CF22AD169CB00ECBD74 /* ApiAuth.swift in Sources */,
 				8B0800C12CE4E40600F1D018 /* SPWebSearchPlaylist.swift in Sources */,
 				8B6E1FB82C6400E30061D62F /* UbiElementInfo.pb.swift in Sources */,
+				8BA9E22F2DB12E6F005E60AB /* SPBase32.swift in Sources */,
 				8B6E1FBB2C6400E30061D62F /* HomeViewService.pb.swift in Sources */,
+				8B42DFDF2DA7D6690010E1BE /* Login5.pb.swift in Sources */,
 				8B4ED44D2C64CC55006455BD /* SPSearchRecomendations.swift in Sources */,
+				8BB6ADFE2DB0E1CF004A0939 /* URL.swift in Sources */,
 				8B172D732AD169CB00ECBD74 /* SPMetadataAvailability+Properties.swift in Sources */,
 				8B8C06CA2CE7728E00D643A6 /* SPWebSearchResult.swift in Sources */,
 				8BF94D582AFE8B4500B0AD79 /* SPSignupValidation.swift in Sources */,
@@ -1506,6 +1554,7 @@
 				8B8E8B212CB9599C007F56A2 /* SPGuestWebAuthSession.swift in Sources */,
 				8B46FCA92AEED31D00A9C939 /* SPSHA1.swift in Sources */,
 				8B172CEF2AD169CB00ECBD74 /* SPError.swift in Sources */,
+				8BA9E22D2DB12BB9005E60AB /* SPTOTPUtil.swift in Sources */,
 				8B6E1FA12C6400E30061D62F /* PlaylistInfo.pb.swift in Sources */,
 				8BF94D552AFE8AF800B0AD79 /* ApiSignup.swift in Sources */,
 				8B172CE42AD169CB00ECBD74 /* ApiCollection.swift in Sources */,
@@ -1531,6 +1580,7 @@
 				8B172CED2AD169CB00ECBD74 /* ApiDownload.swift in Sources */,
 				8B172D392AD169CB00ECBD74 /* SPClient+ApiArtist.swift in Sources */,
 				8B8C06CD2CE77C7700D643A6 /* SPWebSearchTopResults.swift in Sources */,
+				8B61FE362DA80167002FE5B4 /* SPAuthInitMeta.swift in Sources */,
 				8B489ECF2C0F5587009BEEF4 /* SPWDVSeektable.swift in Sources */,
 				8B4D8D562CE63D8000E0A2BF /* SPWebSearchProfile.swift in Sources */,
 				8B24DC0E2AE315FC00CE0547 /* SPLikeController.swift in Sources */,
@@ -1583,8 +1633,10 @@
 				8B172DA82AD16B2300ECBD74 /* UnitApiCollection.swift in Sources */,
 				8B172DAB2AD16B2300ECBD74 /* UnitApiMetadata.swift in Sources */,
 				8B18502B2AF56ED700D9DB11 /* UnitRemoteApiCollection.swift in Sources */,
+				8BA9E2312DB13DC6005E60AB /* UnitSPBase32.swift in Sources */,
 				8B172DA92AD16B2300ECBD74 /* UnitApiArtist.swift in Sources */,
 				8B46FCAC2AEED34900A9C939 /* UnitSPSHA1.swift in Sources */,
+				8B8B8C902DB229C200840861 /* UnitSPTOTPUtil.swift in Sources */,
 				8B6532262B230DCA0071A3EC /* UnitSPMetaInfoController.swift in Sources */,
 				8B172DC22AD16B2300ECBD74 /* TestCredentials.swift in Sources */,
 				8B18502D2AF56ED700D9DB11 /* UnitRemoteApiSearch.swift in Sources */,
@@ -1639,7 +1691,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = "";
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1659,12 +1711,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.7.0;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1703,7 +1757,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = "";
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1717,11 +1771,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.7.0;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1732,7 +1788,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 32;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
@@ -1753,7 +1809,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.7.1;
+				MARKETING_VERSION = 0.8.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
@@ -1768,6 +1824,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -1776,7 +1833,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 32;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
@@ -1797,7 +1854,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.7.1;
+				MARKETING_VERSION = 0.8.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf;
@@ -1812,18 +1869,18 @@
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
 		8B172AA52AD1693800ECBD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KTJ3SX58WK;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1831,10 +1888,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = macosx;
 				SUPPORTS_MACCATALYST = NO;
@@ -1850,12 +1908,11 @@
 		8B172AA62AD1693800ECBD74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KTJ3SX58WK;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1863,10 +1920,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.sptf.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = macosx;
 				SUPPORTS_MACCATALYST = NO;
@@ -1916,7 +1974,7 @@
 			repositoryURL = "https://github.com/apple/swift-protobuf.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.28.2;
+				minimumVersion = 1.29.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

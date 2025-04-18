@@ -11,6 +11,7 @@ import Foundation
 public class SPGuestWebAuthSession: Decodable {
     
     enum CodingKeys: String, CodingKey {
+      //case clId = "clientId"
       case token = "accessToken"
       case expirationTsMsUTC = "accessTokenExpirationTimestampMs"
     }

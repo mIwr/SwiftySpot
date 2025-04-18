@@ -14,6 +14,7 @@ struct AuthScreen: View {
     
     static fileprivate let _authTypePass = 0
     static fileprivate let _authTypeStoredCred = 1
+    static fileprivate let _authTypeMagicLink = 2
     
     @State fileprivate var _authType = 0
     fileprivate var _passAuth: Bool {
@@ -26,11 +27,21 @@ struct AuthScreen: View {
             return _authType == AuthScreen._authTypeStoredCred
         }
     }
+    fileprivate var _magicLinkAuth: Bool {
+        get {
+            return _authType == AuthScreen._authTypeMagicLink
+        }
+    }
     @State fileprivate var _login = ""
     @State fileprivate var _pass = ""
     @State fileprivate var _storedCred = ""
+    @State fileprivate var _magicLink = ""
     @State fileprivate var _processing = false
     @State fileprivate var _err = ""
+    
+    @StateObject fileprivate var _authInitMeta = AuthInitMetaVModel()
+    @State fileprivate var _showChallengeSheet = false
+    @State fileprivate var _passedChallengeInteractRef = ""
     
     var body: some View {
         ZStack(content: {
@@ -66,6 +77,7 @@ struct AuthScreen: View {
                 Picker(R.string.localizable.authType(), selection: $_authType) {
                     Text(R.string.localizable.authTypePass()).tag(AuthScreen._authTypePass)
                     Text(R.string.localizable.authTypeStoredCred()).tag(AuthScreen._authTypeStoredCred)
+                    Text(R.string.localizable.authTypeMagicLink()).tag(AuthScreen._authTypeMagicLink)
                 }
                 .pickerStyle(.segmented)
                 if (_passAuth) {
@@ -96,6 +108,50 @@ struct AuthScreen: View {
                             _err = ""
                         }
                         .frame(minHeight: 80, maxHeight: 160)
+                } else if (_magicLinkAuth) {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            if (_processing || !_passedChallengeInteractRef.isEmpty) {
+                                return
+                            }
+                            if (_login.isEmpty) {
+                                _err = R.string.localizable.authLoginEmptyLogin()
+                                return
+                            }
+                            _ = api.client.initAuth(login: _login, password: nil, completion: { result in
+                                switch (result) {
+                                case .success(let authInit):
+                                    DispatchQueue.main.async {
+                                        _authInitMeta.authInitMeta = authInit
+                                        _magicLink = ""
+                                    }
+                                    break
+                                case .failure(let err):
+                                    authComepltion(.failure(err))
+                                    return
+                                }
+                            })
+                        }) {
+                            Text(R.string.localizable.authLoginMagicLinkInit())
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    Text(R.string.localizable.authLoginMagicLinkTitle())
+                        .font(.title3.weight(.semibold))
+                        .foregroundColor(Color(R.color.primary))
+                        .alignmentGuide(.leading) { _ in 0 }
+                    TextEditor(text: $_magicLink)
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                        .cornerRadius(12)
+                        .overlay(RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(R.color.bgSecondary), lineWidth: 1.0)
+                        )
+                        .onTapGesture {
+                            _err = ""
+                        }
+                        .frame(minHeight: 80, maxHeight: 160)
                 }
                 Spacer(minLength: 16)
                 VStack(alignment: .center, spacing: 12, content: {
@@ -104,7 +160,7 @@ struct AuthScreen: View {
                         .foregroundColor(Color(R.color.error))
                         .multilineTextAlignment(.leading)
                     Button(action: {
-                        if (_processing) {
+                        if (_processing || !_passedChallengeInteractRef.isEmpty) {
                             return
                         }
                         if (_login.isEmpty) {
@@ -130,24 +186,32 @@ struct AuthScreen: View {
                             return
                         }
         #endif
-                        let completion: ((Result<SPAuthSession, SPError>) -> Void) = {
-                            result in
-                            _processing = false
-                            switch (result) {
-                            case .success(let session):
-                                if (session.token.isEmpty) {
-                                    _err = R.string.localizable.authLoginNoAuthToken()
-                                    return
-                                }
-                            case .failure(let error):
-                                _err = error.errorDescription
-                            }
-                        }
                         if (_storedCredAuth) {
-                            _ = api.client.auth(login: _login, storedCredential: _storedCred, completion: completion)
+                            _ = api.client.auth(login: _login, storedCredential: _storedCred, completion: authComepltion)
                             return
                         }
-                        _ = api.client.auth(login: _login, password: _pass, completion: completion)
+                        if (_magicLinkAuth) {
+                            if (_magicLink.isEmpty) {
+                                _err = R.string.localizable.authLoginEmptyMagicLink()
+                                _processing = false
+                                return
+                            }
+                            _ = api.client.authWithMagicLink(_magicLink, authInitMeta: _authInitMeta.authInitMeta, completion: authComepltion)
+                            return
+                        }
+                        _ = api.client.initAuth(login: _login, password: _pass, completion: { result in
+                            switch (result) {
+                            case .success(let authInit):
+                                DispatchQueue.main.async {
+                                    _authInitMeta.authInitMeta = authInit
+                                    _showChallengeSheet = true
+                                }
+                                break
+                            case .failure(let err):
+                                authComepltion(.failure(err))
+                                return
+                            }
+                        })
                     }) {
                         if (_processing) {
                             ProgressView().progressViewStyle(.circular)
@@ -158,11 +222,43 @@ struct AuthScreen: View {
                         }
                     }
                     .buttonStyle(AccentWideButtonStyle())
+                    .sheet(isPresented: $_showChallengeSheet) {
+                        _showChallengeSheet = false
+                        if (_passedChallengeInteractRef.isEmpty) {
+                            _err = R.string.localizable.authLoginChallengePassFail()
+                            _processing = false
+                            return
+                        }
+                        guard let safeCaptcha = _authInitMeta.authInitMeta.captcha else {
+                            _err = R.string.localizable.authLoginChallengePassFail()
+                            _processing = false
+                            return
+                        }
+                        _ = api.client.authWithCaptcha(login: _login, password: _pass, authInitMeta: _authInitMeta.authInitMeta, loginContext: safeCaptcha.context, challengeInteractRef: _passedChallengeInteractRef, completion: authComepltion)
+                    } content: {
+                        CaptchaChallengeScreen(presented: $_showChallengeSheet, interactRef: $_passedChallengeInteractRef, challengeUrl: _authInitMeta.challengeUrl, callbackUrl: _authInitMeta.authInitMeta.callbackUrl)
+                    }
+
                 })
                 .frame(maxWidth: .infinity, minHeight: Constants.defaultButtonHeight * 2, alignment: .bottom)
             }
             .padding(EdgeInsets(top: 24, leading: 16, bottom: 16, trailing: 16))
         })
+    }
+    
+    fileprivate func authComepltion(_ result: Result<SPAuthSession, SPError>) {
+        _processing = false
+        _passedChallengeInteractRef = ""
+        switch (result) {
+        case .success(let session):
+            if (session.token.isEmpty) {
+                _err = R.string.localizable.authLoginNoAuthToken()
+                return
+            }
+        case .failure(let error):
+            _authInitMeta.authInitMeta = SPAuthInitMeta()
+            _err = error.errorDescription
+        }
     }
 }
 

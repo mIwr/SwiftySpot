@@ -52,11 +52,7 @@ final class UnitSPMetaInfoController: XCTestCase {
     
     func testUpdateNotify() {
         let updItem = SPTypedObj(uri: SPNavigateUriUtil.generateTrackUri(id: TestConstants.trackId), globalID: [])
-        #if _runtime(_ObjC)
-        NotificationCenter.default.addObserver(self, selector: #selector(onControllerItemUpdate), name: .SPTrackMetaUpdate, object: nil)
-        #else
-        onControllerItemUpdate(Notification(name: .SPTrackMetaUpdate))
-        #endif
+        NotificationCenter.default.addObserver(forName: .SPTrackMetaUpdate, object: nil, queue: .main, using: onControllerItemUpdate)
         let exp = self.expectation(description: "Request time-out expectation")
         controller.update([
             updItem.uri: updItem
@@ -76,9 +72,6 @@ final class UnitSPMetaInfoController: XCTestCase {
         }
     }
     
-    #if _runtime(_ObjC)
-    @objc
-    #endif
     fileprivate func onControllerItemUpdate(_ notification: Notification) {
         notifierFired = true
     }

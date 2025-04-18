@@ -12,7 +12,7 @@ final class UnitHashcashUtil: XCTestCase {
     
     func testClTokenHashcashSolve() {
         let exp = self.expectation(description: "Request time-out expectation")
-        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.clTokenHashcashPrefix, length: TestConstants.clTokenHashcashLength) { hashcash in
+        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.clTokenHashcashPrefix.data(using: .utf8) ?? Data(), length: TestConstants.clTokenHashcashLength) { hashcash in
             XCTAssertNotNil(hashcash, "Hashcash solution is nil")
             XCTAssertEqual(hashcash?.uppercased(), TestConstants.clTokenHashcashAnswer, "Incorrect client token hashcash solve process")
             exp.fulfill()
@@ -28,7 +28,7 @@ final class UnitHashcashUtil: XCTestCase {
     
     func testHardClTokenHashcashSolve() {
         let exp = self.expectation(description: "Request time-out expectation")
-        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.hardClTokenHashcashPrefix, length: TestConstants.hardClTokenHashcashLength) { hashcash in
+        SPHashCashUtil.solveClTokenChallengeAsync(prefix: TestConstants.hardClTokenHashcashPrefix.data(using: .utf8) ?? Data(), length: TestConstants.hardClTokenHashcashLength) { hashcash in
             XCTAssertNotNil(hashcash, "Hashcash solution is nil")
             XCTAssertEqual(hashcash?.uppercased(), TestConstants.hardClTokenHashcashAnswer, "Incorrect client token hashcash solve process")
             exp.fulfill()

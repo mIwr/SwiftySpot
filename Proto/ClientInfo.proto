@@ -4,12 +4,12 @@ option swift_prefix="SP";
 import "Connectivity.proto";
 
 message ClientInfo {
-    string appVerCode = 1;
-    string clId = 2;
+    string app_ver_code = 1;
+    string cl_id = 2;
     Connectivity connectivity = 3;
 }
 
 message ShortClientInfo {
-    string clId = 1;
-    string deviceId = 2;
+    string cl_id = 1;
+    string device_id = 2;
 }

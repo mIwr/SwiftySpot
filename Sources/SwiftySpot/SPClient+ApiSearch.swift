@@ -108,7 +108,8 @@ extension SPClient {
     ///- Parameter completion: Search result response handler
     ///- Returns: API request session task
     public func webSearch(query: String, entityTypes: [SPSearchEntityType], limit: UInt, offset: UInt?, completion: @escaping (_ result: Result<SPWebSearchResult, SPError>) -> Void) -> URLSessionDataTask? {
-        return safeAuthIncludingGuestReq { safeClToken, safeAuthToken in
+        //Not work with mobile app access tokens anymore (RBAC: access denied) -> Use web access token only
+        return safeGuestWebAuthReq { safeClToken, safeAuthToken in
             var opPair = SPSearchEntityType.searchDesktopPersistedQuery
             if (entityTypes.count == 1) {
                 opPair = entityTypes[0].webOpType

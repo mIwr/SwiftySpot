@@ -36,7 +36,7 @@ extension SPSearchEntityType {
     }
     
     
-    public static let searchDesktopPersistedQuery: (opName: String, persistedQueryHashHex: String) = (opName: "searchDesktop", persistedQueryHashHex: "2ae11a661a59c58695ad9b8bd6605dce6e3876f900555e21543c19f7a0a0ea6a")
+    public static let searchDesktopPersistedQuery: (opName: String, persistedQueryHashHex: String) = (opName: "searchDesktop", persistedQueryHashHex: "d9f785900f0710b31c07818d617f4f7600c1e21217e80f5b043d1e78d74e6026")
     
     //Valid Apollo GraphQL persisted queries' SHA256 hashes can be retrieved from https://open.spotifycdn.com/cdn/build/web-player/xpui-routes-search.{xpui_route. Example - a88913ae}.js
     public var webOpType: (opName: String, persistedQueryHashHex: String) {
@@ -47,9 +47,9 @@ extension SPSearchEntityType {
             case .genre: return (opName: "searchGenres", persistedQueryHashHex: "9e1c0e056c46239dd1956ea915b988913c87c04ce3dadccdb537774490266f46")
             case .playlist: return (opName: "searchPlaylists", persistedQueryHashHex: "fc3a690182167dbad20ac7a03f842b97be4e9737710600874cb903f30112ad58")
             case .userProfile: return (opName: "searchUsers", persistedQueryHashHex: "d3f7547835dc86a4fdf3997e0f79314e7580eaf4aaf2f4cb1e71e189c5dfcb1f")
-            case .track: return (opName: "searchTracks", persistedQueryHashHex: "5307479c18ff24aa1bd70691fdb0e77734bede8cce3bd7d43b6ff7314f52a6b8")
-            case .audioEpisode: return (opName: "searchFullEpisodes", persistedQueryHashHex: "37e3f18a893c9969817eb0aa46f4a69479a8b0f7964a36d801e69a8c0ab17fcb")
-            case .show: return (opName: "searchFullEpisodes", persistedQueryHashHex: "37e3f18a893c9969817eb0aa46f4a69479a8b0f7964a36d801e69a8c0ab17fcb")
+            case .track: return (opName: "searchTracks", persistedQueryHashHex: "bc1ca2fcd0ba1013a0fc88e6cc4f190af501851e3dafd3e1ef85840297694428")
+            case .audioEpisode: return (opName: "searchFullEpisodes", persistedQueryHashHex: "308e2a1f392c0f1ea9aa921393de470424bef0d0ea417b086ae3e9d960e327de")
+            case .show: return (opName: "searchFullEpisodes", persistedQueryHashHex: "308e2a1f392c0f1ea9aa921393de470424bef0d0ea417b086ae3e9d960e327de")
             }
         }
     }

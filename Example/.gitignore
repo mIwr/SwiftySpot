@@ -1,6 +1,10 @@
 
 .DS_Store
 
+## User-defined
+ffmpeg-kit-ios-audio/
+ffmpeg-kit-ios-audio/*
+
 ## User settings
 xcuserdata/
 

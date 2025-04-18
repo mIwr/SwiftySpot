@@ -25,7 +25,7 @@ func getWebSessionByApi(userAgent: String, clId: String, os: String, appVer: Str
             let tk = safeTkDict["token"] as? String ?? ""
             let expiresInS = safeTkDict["expires_after_seconds"] as? Int32 ?? 0
             let refreshAfterS = safeTkDict["refresh_after_seconds"] as? Int32 ?? 0
-            var domains: [SPTokenDomain] = []
+            var domains: [SPClientTokenDomain] = []
             if let safeDomains = safeTkDict["domains"] as? [[String: Any]] {
                 for dict in safeDomains {
                     guard let safeDomain = dict["domain"] as? String else {
@@ -34,7 +34,7 @@ func getWebSessionByApi(userAgent: String, clId: String, os: String, appVer: Str
                         #endif
                         continue
                     }
-                    var pbDomain = SPTokenDomain()
+                    var pbDomain = SPClientTokenDomain()
                     pbDomain.domain = safeDomain
                     domains.append(pbDomain)
                 }
@@ -53,7 +53,7 @@ func getWebSessionByApi(userAgent: String, clId: String, os: String, appVer: Str
     return task
 }
 
-func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<SPChallengesData, SPError>) -> Void) -> URLSessionDataTask? {
+func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, completion: @escaping (_ result: Result<SPClientTokenChallengesData, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestClientDataRequest
     reqProtobuf.client = initData
@@ -83,7 +83,7 @@ func initSessionChallengeByApi(userAgent: String, initData: SPClientInfo, comple
     return task
 }
 
-func initSessionSolveChallengeByApi(userAgent: String, answerData: SPChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
+func initSessionSolveChallengeByApi(userAgent: String, answerData: SPClientTokenChallengeAnswerData, completion: @escaping (_ result: Result<SPClientToken, SPError>) -> Void) -> URLSessionDataTask? {
     var reqProtobuf = SPClientTokenRequest()
     reqProtobuf.type = .requestChallengeAnswersRequest
     reqProtobuf.answerData = answerData

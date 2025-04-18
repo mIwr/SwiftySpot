@@ -58,7 +58,7 @@ SwiftySpot is available with SPM
 
 - Package sources
 ```
-.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.7.1"))
+.package(url: "https://github.com/mIwr/SwiftySpot.git", .from(from: "0.8.0"))
 ```
 
 - Precompiled XCFramework (macOS, iOS, iOS Simulator, watchOS, watchOS simulator, tvOS, tvOS simulator): make your own Swift package and import it to the target project
@@ -75,14 +75,14 @@ let package = Package(
         .library(name: "SwiftySpot", targets: ["SwiftySpot"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.2")
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.29.0")
     ],
     targets: [
         .binaryTarget(
             name: "SwiftySpot",
             dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")],
-            url: "https://github.com/mIwr/SwiftySpot/releases/download/0.7.0/SwiftySpot.xcframework.zip",
-            checksum: "a22a98588e19c487e9957a1aa5bc9bf27b173595c68e1e1638a25c9d79b58ac1"
+            url: "https://github.com/mIwr/SwiftySpot/releases/download/0.8.0/SwiftySpot.xcframework.zip",
+            checksum: "efca03ee54c3abf79f43216a059fc8ca4fefecc19023749a4b23eefe396a911b"
         ),
     ]
 )
@@ -137,19 +137,22 @@ Client has 3 states:
 
 **User authorization has priority under the guest one. It means the API methods, which are available from guest access, will be executed with user authorization instead of guest one**
 
+**Only for search through web API the guest web authorization is prefered**
+
 ### Client initialization. State 1
 
 ```swift
 import SwiftySpot
 
-let device = SPDevice(os: "osName", osVer: "osVersion", osVerNum: 1, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
+let device = SPDevice(os: "osName", osVer: "osVersion", osVerNum: 1, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{16 bytes hex string}")
 
 let client = SPClient(device: device)
 ```
 
 Available API methods:
 
-- Authorize with credentials
+- Authorize with credentials (passing captcha challenge)
+- Authorize with magic link (send the one time token to account e-mail)
 - Get Dac landing
 - Get playlist details
 - Get entity metadata (tested with artist, album, track)
@@ -158,12 +161,16 @@ Available API methods:
 
 **Client token will be generated automatically**
 
+**Notice: Spotify disabled authorization with straight login/password (login/v3). So it is needed user interaction for login/v4 authorization with login/password or magic link from mail**
+
+**The only authorization without user interaction is stored credentials with login (account mail, username or phone number)**
+
 ### Client initialization. State 2
 
 ```swift
 import SwiftySpot
 
-let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {os number}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
+let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {os number}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{16 bytes hex string}")
 
 let clToken = "..."
 let clExpires = 3600
@@ -175,14 +182,12 @@ let client = SPClient(device: device, clToken: clToken, clTokenExpires: clExpire
 
 Available API methods are same with the State 1
 
-**Notice: Spotify recently disabled authorization with login/password. On mobile clients it still works, but how long is unknown. So in general authorization with stored credentials is preferred**
-
 ### Client initialization. State 3
 
 ```swift
 import SwiftySpot
 
-let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {osNumber}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{8 bytes hex string}")
+let device = SPDevice(os: "osName", osVer: "os version", osVerNum: {osNumber}, cpuAbi: "32", manufacturer: "brand", model: "model", deviceId: "{16 bytes hex string}")
 
 let clToken = "..."
 let clExpires = 3600
@@ -335,7 +340,7 @@ client.getDownloadInfo(hexFileId: fileIdHex) { result in
 }
 ```
 
-**You can download DRM'ed track file with any codec (ogg, mp3, mp4, flac and others). But retrieving DRM license for each codec variant process is limited by your subscription plan (Free, Premium). For example, at free subscription plan you can potentially retrieve license for OGG 96 & 160 kbps, 320 kbps is available only for premium plan**
+**You can download DRM'ed track file with any codec (ogg, mp3, mp4, flac and others). But retrieving DRM license for each codec variant process is limited by your subscription plan (Free, Premium). For example, at free subscription plan you can potentially retrieve license for OGG 96 & 160 kbps, but 320 kbps is available only for premium plan**
 
 ## App example
 

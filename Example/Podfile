@@ -5,10 +5,8 @@ target 'RhythmRider' do
 
   pod 'R.swift'
   pod 'MobileVLCKit'
-  pod 'ffmpeg-kit-ios-audio'
   pod 'SwPSSH' 
-  pod 'SwWidevine' 
-  pod 'YAD'
+  pod 'SwWidevine'
   pod 'SwiftySpot', :path => "../SwiftySpot.podspec"
 end
 

@@ -172,3 +172,10 @@ xcodebuild -create-xcframework \
 -framework archives/SwiftySpot-tvOSSim.xcarchive/Products/Library/Frameworks/SwiftySpot.framework -debug-symbols "$(pwd -P)"/archives/SwiftySpot-tvOSSim.xcarchive/dSYMs/SwiftySpot.framework.dSYM \
 -output archives/SwiftySpot.xcframework
 ```
+
+## SPM checksum
+
+Compress XCFramework directory and compute the checksum for archive:
+```
+swift package compute-checksum archives/SwiftySpot.xcframework.zip
+```

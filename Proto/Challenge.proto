@@ -1,0 +1,74 @@
+syntax = "proto3";
+option swift_prefix="SP";
+
+import "google/protobuf/duration.proto";
+
+//Client token generation and authorization hashcash challenge
+message HashcashChallenge {
+    int32 length = 1;
+    bytes prefix = 2;
+}
+
+//Hashcash challenge answer
+message HashcashChallengeAnswer {
+    bytes suffix = 1;
+    //Authorization hashcash challenge solving duration
+    optional .google.protobuf.Duration duration = 2;
+}
+
+//Client token generation client secret challenge
+message ClientSecretChallenge {
+    string salt = 1;
+}
+
+//Client secret challenge answer
+message ClientSecretHMACAnswer {
+    bytes hmac = 1;
+}
+
+//Client token generation JS challenge
+message EvaluateJSChallenge{
+    string code = 1;
+    repeated string libraries = 2;
+}
+
+//JS challenge answer
+message EvaluateJSAnswer {
+    string result = 1;
+}
+
+//Authorization code challenge
+message CodeChallenge {
+    enum Method {
+        UNKNOWN = 0;
+        SMS = 1;
+    }
+    Method method = 1;
+    int32 code_length = 2;
+    int32 expires_in_s = 3;
+    string canonical_phone_number = 4;
+}
+
+//Code challenge answer
+message CodeChallengeAnswer {
+    string code = 1;
+}
+
+//Authorization captcha challenge
+message CaptchaChallenge {
+    CaptchaUrlContainer url_container = 1;
+    CaptchaInteractRefContainer interact_ref_container = 10;
+}
+
+message CaptchaUrlContainer {
+    string url = 1;
+}
+
+message CaptchaInteractRefContainer {
+    string interact_ref = 1;
+}
+
+//Captcha challenge answer
+message CaptchaChallengeAnswer {
+    string interact_ref = 1;
+}

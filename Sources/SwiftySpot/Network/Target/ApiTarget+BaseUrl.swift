@@ -19,11 +19,13 @@ extension ApiTarget {
         switch self {
         case .download(_, let path): return path
         case .wdvSeektable: return ApiTarget._seektableApiBaseUrl
+        case .serverTime: return ApiTarget._guestAuthBaseUrl
         case .clToken: return ApiTarget._clientTokenBaseUrl
         case .webClToken: return ApiTarget._clientTokenBaseUrl
         case .acessPoints: return ApiTarget._apBaseUrl
         case .wdvCert: return ApiTarget._spClientWgBaseUrl
         case .guestAuth: return ApiTarget._guestAuthBaseUrl
+        case .initAuthMagicLink: return ApiTarget._spClientWgBaseUrl
         case .auth: return ApiTarget._authBaseUrl
         case .signupValidate: return ApiTarget._spClientWgBaseUrl
         case .signup: return ApiTarget._spClientWgBaseUrl

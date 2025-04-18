@@ -1,5 +1,25 @@
 #  Changelog
 
+## Version 0.8.0
+**18.04.2025**
+
+**BREAKING CHANGES**
+
+- Login v4 flow disables straight authorization with login/password. If you want to authorize without user interaction (captcha, email token and other), use login (account mail, username or phone number) with stored credentials
+
+**API-related changes**
+
+- Login v4 flow support
+- Authorization by email token support
+- Guest authorization fix
+- Web search fix (Apollo GraphQL persisted queries' SHA256 hashes update)
+
+**Other changes**
+
+- Optimize proto models
+- Hashcash solve fix
+- Static mobile app client ID in SPClient *clID* marked as deprecated. Use IDs according OS platform
+
 ## Version 0.7.1
 **22.11.2024**
 

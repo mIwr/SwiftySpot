@@ -9,10 +9,12 @@ import Foundation
 
 extension ApiTarget {
     
+    fileprivate static let _serverTimePath = "server-time"
     fileprivate static let _clientTokenPath = "v1/clienttoken"
     fileprivate static let _guestAuthPath = "get_access_token"
     fileprivate static let _webApiPathPrefix = "pathfinder/v1/query"
-    fileprivate static let _authPath = "v3/login"
+    fileprivate static let _initAuthMagicLinkPath = "accountrecovery/v3/magiclink";
+    fileprivate static let _authPath = "v4/login"
     fileprivate static let _signupValidatePathPrefix = "signup/public/v1/account/"
     fileprivate static let _signupPath = "signup/public/v2/account/create"
     fileprivate static let _profileInfoPath = "v1/me"
@@ -46,13 +48,16 @@ extension ApiTarget {
         switch self {
         case .download: return ""
         case .wdvSeektable(let fileHexId): return ApiTarget._wdvSeektablePathPrefix + fileHexId + ".json"
+        case .serverTime: return ApiTarget._serverTimePath
         case .clToken: return ApiTarget._clientTokenPath
         case .webClToken: return ApiTarget._clientTokenPath
         case .acessPoints:
             let nowTsUtc = Int64(Date().timeIntervalSince1970)
             return "?time=" + String(nowTsUtc) + "&type=accesspoint&type=spclient&type=dealer" 
         case .wdvCert: return ApiTarget._wdvCertPath
-        case .guestAuth: return ApiTarget._guestAuthPath + "?reason=transport&productType=web-player"
+        case .guestAuth(_, _, _, let totp, let totpVer, let timestamp):
+            return ApiTarget._guestAuthPath + "?reason=transport&productType=web-player&totp=" + totp + "&totpVer=" + String(totpVer) + "&ts=" + String(timestamp)
+        case .initAuthMagicLink: return ApiTarget._initAuthMagicLinkPath
         case .auth: return ApiTarget._authPath
         case .signupValidate(_, _, _, _, let validatorKey, let password):
             var path = ApiTarget._signupValidatePathPrefix + "?validate=1&key=" + validatorKey
@@ -126,6 +131,7 @@ extension ApiTarget {
                 "includePreReleases": false,
                 "includeArtistHasConcertsField": false,
                 "includeLocalConcertsField": false,
+                "includeAuthors": false,
             ]
             var data = (try? JSONSerialization.data(withJSONObject: dict)) ?? Data()
             var jsonStr = String(data: data, encoding: .utf8) ?? ""

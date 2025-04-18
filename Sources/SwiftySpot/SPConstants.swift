@@ -10,12 +10,21 @@ public final class SPConstants {
     fileprivate init() {}
     
     public static let appBundleId = "com.spotify.music"
-    public static let appVersionCode = "8.9.38.494"
-    public static let webAppVersionCode = "1.2.48.15.gc6d53b12"
+    public static let appVersionCode = "9.0.36.134"
+    public static let webAppVersionCode = "1.2.63.4.gfa6bbd6f"
     
     public static let webPlatform = "WebPlayer"
-    ///Client ID
-    public static let clID = "9a8d2f0ce77a4e248bb71fefcb557637"
+    ///Android client ID
+    @available(*, deprecated, message: "Use Android or iOS client ID instead")
+    public static var clID: String {
+        get {
+            return androidClID
+        }
+    }
+    ///Android client ID
+    public static let androidClID = "9a8d2f0ce77a4e248bb71fefcb557637"
+    ///iOS client ID
+    public static let iOSClID = "58bd3c95768941ea9eb4350aaa033eb3"
     ///Web client ID
     public static let webClID = "d8a5ed958d274c2e8ee717e6a4b0971d"
     ///Client validation key

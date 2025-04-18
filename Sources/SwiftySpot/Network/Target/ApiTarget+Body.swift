@@ -14,6 +14,7 @@ extension ApiTarget {
         switch self {
         case .download: return nil
         case .wdvSeektable: return nil
+        case .serverTime: return nil
         case .clToken(_, let proto):
             do {
                 data = try proto.serializedData()
@@ -49,6 +50,19 @@ extension ApiTarget {
         case.acessPoints: return nil
         case .wdvCert: return nil
         case .guestAuth: return nil
+        case .initAuthMagicLink(_, _, _, _, _, let login, let deviceId):
+            let dict: [String: String] = [
+                "deviceId": deviceId,
+                "emailOrUsername": login
+            ]
+            do {
+                data = try JSONSerialization.data(withJSONObject: dict)
+            } catch {
+                #if DEBUG
+                print(error)
+                #endif
+            }
+            return data
         case .auth(_, _, let proto):
             do {
                 data = try proto.serializedData()

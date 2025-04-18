@@ -4,6 +4,10 @@ __MACOSX/*
 Packages
 DerivedData/
 
+## User-defined
+archives/
+archives/*
+
 ## SwiftPM
 Package.resolved
 .swiftpm/*

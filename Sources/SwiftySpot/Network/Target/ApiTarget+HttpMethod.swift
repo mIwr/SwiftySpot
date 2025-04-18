@@ -13,11 +13,13 @@ extension ApiTarget {
         switch self {
         case .download: return ApiTarget._getMethod
         case .wdvSeektable: return ApiTarget._getMethod
+        case .serverTime: return ApiTarget._getMethod
         case .clToken: return ApiTarget._postMethod
         case .webClToken: return ApiTarget._postMethod
         case .acessPoints: return ApiTarget._getMethod
         case .wdvCert: return ApiTarget._getMethod
         case .guestAuth: return ApiTarget._getMethod
+        case .initAuthMagicLink: return ApiTarget._postMethod
         case .auth: return ApiTarget._postMethod
         case .signupValidate: return ApiTarget._getMethod
         case .signup: return ApiTarget._postMethod

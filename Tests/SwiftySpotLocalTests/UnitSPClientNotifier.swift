@@ -16,9 +16,7 @@ class UnitSPClientNotifier: XCTestCase {
     
     override func setUp() {
         client = SPClient(device: TestConstants.device)
-        #if _runtime(_ObjC)
-        NotificationCenter.default.addObserver(self, selector: #selector(onSessionUpdate), name: .SPSessionUpdate, object: nil)
-        #endif
+        NotificationCenter.default.addObserver(forName: .SPSessionUpdate, object: nil, queue: .main, using: onSessionUpdate)
     }
     
     override func tearDown() {
@@ -26,9 +24,6 @@ class UnitSPClientNotifier: XCTestCase {
         clSession = nil
     }
     
-    #if _runtime(_ObjC)
-    @objc
-    #endif
     fileprivate func onSessionUpdate(_ notification: Notification) {
         let parseRes = notification.tryParseClientSessionUpdate()
         clSession = parseRes.1

@@ -47,7 +47,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 69 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 74 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -100,12 +100,26 @@ struct _R {
       /// Locales: en, ru
       var artistTopTracks: RswiftResources.StringResource { .init(key: "artistTopTracks", tableName: "Localizable", source: source, developmentValue: "Top tracks", comment: nil) }
 
+      /// en translation: Not passed challenge. Repeat authorization
+      ///
+      /// Key: authLoginChallengePassFail
+      ///
+      /// Locales: en, ru
+      var authLoginChallengePassFail: RswiftResources.StringResource { .init(key: "authLoginChallengePassFail", tableName: "Localizable", source: source, developmentValue: "Not passed challenge. Repeat authorization", comment: nil) }
+
       /// en translation: Empty login
       ///
       /// Key: authLoginEmptyLogin
       ///
       /// Locales: en, ru
       var authLoginEmptyLogin: RswiftResources.StringResource { .init(key: "authLoginEmptyLogin", tableName: "Localizable", source: source, developmentValue: "Empty login", comment: nil) }
+
+      /// en translation: Empty magic link
+      ///
+      /// Key: authLoginEmptyMagicLink
+      ///
+      /// Locales: en, ru
+      var authLoginEmptyMagicLink: RswiftResources.StringResource { .init(key: "authLoginEmptyMagicLink", tableName: "Localizable", source: source, developmentValue: "Empty magic link", comment: nil) }
 
       /// en translation: Empty password
       ///
@@ -120,6 +134,20 @@ struct _R {
       ///
       /// Locales: en, ru
       var authLoginEmptyStoredCred: RswiftResources.StringResource { .init(key: "authLoginEmptyStoredCred", tableName: "Localizable", source: source, developmentValue: "Empty stored credential", comment: nil) }
+
+      /// en translation: Send link to mail
+      ///
+      /// Key: authLoginMagicLinkInit
+      ///
+      /// Locales: en, ru
+      var authLoginMagicLinkInit: RswiftResources.StringResource { .init(key: "authLoginMagicLinkInit", tableName: "Localizable", source: source, developmentValue: "Send link to mail", comment: nil) }
+
+      /// en translation: Auth link from e-mail
+      ///
+      /// Key: authLoginMagicLinkTitle
+      ///
+      /// Locales: en, ru
+      var authLoginMagicLinkTitle: RswiftResources.StringResource { .init(key: "authLoginMagicLinkTitle", tableName: "Localizable", source: source, developmentValue: "Auth link from e-mail", comment: nil) }
 
       /// en translation: Login fail: no authorization token. Check your credentials and repeat
       ///
@@ -148,6 +176,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var authType: RswiftResources.StringResource { .init(key: "authType", tableName: "Localizable", source: source, developmentValue: "Auth type", comment: nil) }
+
+      /// en translation: Magic link
+      ///
+      /// Key: authTypeMagicLink
+      ///
+      /// Locales: en, ru
+      var authTypeMagicLink: RswiftResources.StringResource { .init(key: "authTypeMagicLink", tableName: "Localizable", source: source, developmentValue: "Magic link", comment: nil) }
 
       /// en translation: Password
       ///
